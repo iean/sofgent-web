@@ -1,7 +1,7 @@
+import logo from "@assets/images/sofgent-logo.svg";
+import Image from "next/image";
 import Link from "next/link";
 import Topbar from "./Topbar";
-import logo from '@assets/images/sofgent-logo.svg'
-import Image from "next/image";
 
 const Header = () => {
    return (
@@ -13,7 +13,12 @@ const Header = () => {
                   <div className="flex 2xl:space-x-[100px] xl:space-x-10 justify-between items-center w-full xl:w-auto">
                      <div className="w-2/4">
                         <Link href="/" aria-label="logo">
-                           <Image width={200} height={50} src={logo} alt="SoftGen Logo" />
+                           <Image
+                              width={200}
+                              height={50}
+                              src={logo}
+                              alt="SoftGen Logo"
+                           />
                         </Link>
                      </div>
                      <div className="w-2/4">
@@ -26,6 +31,12 @@ const Header = () => {
                            </li>
                            <li className="font-semibold text-paragraph hover:underline hover:text-brand">
                               <Link href="/services">Services</Link>
+                           </li>
+                           <li className="font-semibold text-paragraph hover:underline hover:text-brand">
+                              <Link href="/projects">Projects</Link>
+                           </li>
+                           <li className="font-semibold text-paragraph hover:underline hover:text-brand">
+                              <Link href="/blog">Blog</Link>
                            </li>
                            <li className="font-semibold text-paragraph hover:underline hover:text-brand">
                               <Link href="/contact">Contact</Link>

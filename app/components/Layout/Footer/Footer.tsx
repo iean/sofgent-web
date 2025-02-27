@@ -39,6 +39,10 @@ const quickLinks = [
       url: "/services",
    },
    {
+      title: "Blog",
+      url: "/blog",
+   },
+   {
       title: "Contact Us",
       url: "/contact",
    },

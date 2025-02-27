@@ -6,8 +6,8 @@ export default function AboutService() {
   return (
     <section className="w-full py-16 md:pt-[94px] md:pb-[130px] items-center">
       <div className="w-full mx-auto theme-container">
-        <div className="box-border grid grid-cols-6 lg:grid-cols-12">
-          <div className="flex flex-col justify-center col-span-5">
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          <div>
             <h1 className="text-24 md:text-48 font-semibold mt-2.5 md:mt-5">
               Sofgent Offers a Wide Range of Services
             </h1>
@@ -23,12 +23,11 @@ export default function AboutService() {
               processes and expertise involved.
             </p>
             <Button
-              className="w-[29%]"
               btnText="Explore Service"
               href="/services"
             />
           </div>
-          <div className="relative flex flex-col justify-end w-full col-span-7 overflow-hidden sm:flex-row">
+          <div>
             <Image
               width={700}
               height={700}

@@ -1,23 +1,47 @@
 import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
+import { RxOpenInNewWindow } from "react-icons/rx";
 import { twMerge } from "tailwind-merge";
 
 interface PropsType {
    className?: string;
    href?: string;
    btnText?: string;
+   external?: boolean|false;
 }
-const Button: React.FC<PropsType> = ({ className, href, btnText }) => {
+const Button: React.FC<PropsType> = ({
+   className,
+   href,
+   btnText,
+   external,
+}) => {
    return (
       <>
-         <Link
-            href={href ? href : "#"}
-            className={twMerge(
-               "rounded-full inline-block px-5 py-2.5 overflow-hidden group bg-brand relative hover:bg-gradient-to-r hover:from-[#5ca979] text-white transition-all ease-out duration-300",
-               className
-            )}>
-            <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-72 ease"></span>
-            <span className="relative">{btnText}</span>
-         </Link>
+         {external ? (
+            <>
+               <a
+                  href={href ? href : "#"}
+                  className={twMerge(
+                     "inline-flex items-center px-6 py-3 mt-4 sm:mt-0 bg-brand text-white rounded-lg font-semibold shadow-md hover:bg-secondary transform hover:-translate-y-0.5 transition-all duration-200 group",
+                     className
+                  )}>
+                  {btnText}
+                  <RxOpenInNewWindow className="w-4 h-4 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+               </a>
+            </>
+         ) : (
+            <>
+               <Link
+                  href={href ? href : "#"}
+                  className={twMerge(
+                     "inline-flex items-center px-6 py-3 mt-4 sm:mt-0 bg-brand text-white rounded-lg font-semibold shadow-md hover:bg-secondary transform hover:-translate-y-0.5 transition-all duration-200 group",
+                     className
+                  )}>
+                  {btnText}
+                  <FaArrowRight className="w-4 h-4 ml-2" />
+               </Link>
+            </>
+         )}
       </>
    );
 };
