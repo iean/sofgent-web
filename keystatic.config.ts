@@ -3,12 +3,12 @@ import { collection, config, fields } from "@keystatic/core";
 
 export default config({
    storage: {
-      // kind: "local",
-      // repo: {
-      //    owner: "iean",
-      //    name: "sofgent-web",
-      // },
-      kind:'local'
+      kind: "github",
+      repo: {
+         owner: "iean",
+         name: "sofgent-web",
+      },
+      // kind:'local'
    },
    collections: {
       posts: collection({
