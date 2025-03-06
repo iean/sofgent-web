@@ -15,7 +15,8 @@ export function getPosts() {
       const { data, content } = matter(fileContent);
 
       return {
-         slug: filename.replace(".md", ""),
+         // slug: filename.replace(".md", ""),
+         // slug: data.slug,
          title: data.title,
          excerpt: data.excerpt,
          author: data.author,
@@ -36,6 +37,7 @@ export async function getPostBySlug(slug: string) {
    const contentHtml = processedContent.toString();
 
    return {
+      // slug: data.slug,
       title: data.title,
       excerpt: data.excerpt,
       author: data.author,

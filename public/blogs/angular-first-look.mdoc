@@ -1,0 +1,165 @@
+---
+title: Angular First look
+excerpt: My test blog
+author: masud alam
+date: 2025-02-27
+imageUrl: imageUrl.png
+readTime: 5 minute
+---
+# A Beginner's Guide to Angular: Getting Started
+
+Angular is a popular front-end framework developed by Google for building dynamic web applications. This guide will walk you through the basics of Angular, setting up a project, and building a simple app.
+
+## What is Angular?
+
+Angular is a TypeScript-based framework for developing web applications. It provides a structured way to build scalable and maintainable applications with features like two-way data binding, dependency injection, and modular development.
+
+## Setting Up Angular
+
+### Prerequisites
+
+Before you start, ensure you have the following installed:
+
+- **Node.js** (Download from [nodejs.org](https://nodejs.org/))
+- **Angular CLI** (Command Line Interface)
+
+### Install Angular CLI
+
+Run the following command in your terminal to install Angular CLI globally:
+
+```
+npm install -g @angular/cli
+
+```
+
+### Create a New Angular Project
+
+Generate a new Angular project by running:
+
+```
+ng new my-angular-app
+cd my-angular-app
+
+```
+
+Choose the options according to your preferences when prompted.
+
+### Serve the Application
+
+Navigate to the project directory and start the development server:
+
+```
+ng serve
+
+```
+
+Open your browser and visit `http://localhost:4200/` to see your running Angular application.
+
+## Understanding Angular Basics
+
+### 1. Components
+
+Components are the building blocks of Angular applications. They consist of:
+
+- **Template (HTML)**
+- **Styles (CSS or SCSS)**
+- **Logic (TypeScript)**
+
+Create a new component using the CLI:
+
+```
+ng generate component my-component
+
+```
+
+This command generates the necessary files and updates your module automatically.
+
+### 2. Modules
+
+Angular applications are modular and rely on **NgModules**. The main module is `app.module.ts`, where you declare components and import necessary dependencies.
+
+### 3. Data Binding
+
+Angular provides multiple ways to bind data:
+
+- **Interpolation (`{{ }}`)**: Displays data in templates.
+- **Property Binding (`[property]="value"`)**: Binds a property to an element.
+- **Event Binding (`(event)="method()"`)**: Handles events like clicks.
+- **Two-way Binding (`[(ngModel)]="value"`)**: Syncs data between input fields and component properties.
+
+### 4. Directives
+
+Directives modify the behavior of elements. Common directives include:
+
+- `*ngIf` – Conditionally renders elements.
+- `*ngFor` – Iterates over lists.
+- `ngClass` – Dynamically applies CSS classes.
+
+Example:
+
+```
+<p *ngIf="isVisible">Hello, Angular!</p>
+<ul>
+  <li *ngFor="let item of items">{{ item }}</li>
+</ul>
+
+```
+
+## Building a Simple App
+
+Let’s build a simple **To-Do List** application.
+
+### Step 1: Create a Component
+
+```
+ng generate component todo
+
+```
+
+### Step 2: Update `todo.component.ts`
+
+```
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-todo',
+  templateUrl: './todo.component.html',
+  styleUrls: ['./todo.component.css']
+})
+export class TodoComponent {
+  tasks: string[] = [];
+  newTask: string = '';
+
+  addTask() {
+    if (this.newTask.trim()) {
+      this.tasks.push(this.newTask);
+      this.newTask = '';
+    }
+  }
+}
+
+```
+
+### Step 3: Update `todo.component.html`
+
+```
+<input [(ngModel)]="newTask" placeholder="Enter a task" />
+<button (click)="addTask()">Add</button>
+<ul>
+  <li *ngFor="let task of tasks">{{ task }}</li>
+</ul>
+
+```
+
+### Step 4: Use the Component in `app.component.html`
+
+```
+<app-todo></app-todo>
+
+```
+
+## Conclusion
+
+This guide covered the basics of Angular, including setting up a project, understanding components, data binding, and building a simple application. As you explore further, consider learning about services, routing, and reactive forms to build more advanced applications.
+
+Happy coding!

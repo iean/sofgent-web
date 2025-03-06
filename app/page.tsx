@@ -4,6 +4,8 @@ import Hero from "@components/home/hero";
 import dynamic from "next/dynamic";
 import Expertise from "./components/home/expertise";
 import WhyChooseUs from "./components/home/whyChooseUs";
+import Header from "./components/Layout/Header/Header";
+import Footer from "./components/Layout/Footer/Footer";
 
 export const CtaNoSSR = dynamic(() => import("@components/home/cta"), {
    ssr: false,
@@ -14,6 +16,7 @@ const ServiceNoSSR = dynamic(() => import("@components/home/services"), {
 export default function Home() {
    return (
       <main>
+         <Header/>
          <Hero />
          <About />
          <Expertise />
@@ -21,6 +24,7 @@ export default function Home() {
          <FunFact />
          <ServiceNoSSR />
          <CtaNoSSR />
+         <Footer/>
       </main>
    );
 }

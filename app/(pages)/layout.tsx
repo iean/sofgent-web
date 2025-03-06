@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { inter, manrope } from "./fonts/fonts";
-import "./globals.css";
+import { inter, manrope } from "../fonts/fonts";
+// import "./globals.css";
+import Header from "../components/Layout/Header/Header";
+import Footer from "../components/Layout/Footer/Footer";
 
 // Meta title & description
 export const metadata: Metadata = {
@@ -8,7 +10,7 @@ export const metadata: Metadata = {
    description: "Software IT Company",
 };
 
-export default function RootLayout({
+export default function PagesLayout({
    children,
 }: Readonly<{
    children: React.ReactNode;
@@ -16,9 +18,11 @@ export default function RootLayout({
    return (
       <html lang="en">
          <body className={`${manrope.className} ${inter.variable}`}>
-            {/* <Header /> */}
+         
+            <Header/>
             {children}
-            {/* <Footer /> */}
+           <Footer/>
+         
          </body>
       </html>
    );

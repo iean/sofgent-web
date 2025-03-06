@@ -1,3 +1,4 @@
+import { Node as MarkdocNode } from "@markdoc/markdoc";
 import { Clock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,11 +8,11 @@ interface BlogPost {
    slug: string;
    title: string;
    excerpt: string;
-   content: string;
    author: string;
-   date: string;
-   imageUrl: string;
+   date: string | null;
+   imageUrl: string | null;
    readTime: string;
+   content: () => Promise<{ node: MarkdocNode }>;
 }
 interface BlogCardProps {
    post: BlogPost;
@@ -24,7 +25,9 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
             <Image
                width={400}
                height={300}
-               src={post.imageUrl}
+               src={
+                  `/blogs/${post.slug}/${post.imageUrl}` || "/default-image.jpg"
+               }
                alt={post.title}
                className="w-full h-48 object-cover"
             />

@@ -1,14 +1,28 @@
 import BreadCrumb from "@/app/components/common/BreadCrumb";
-import { getPostBySlug } from "@/app/utils/md_post_converter";
+import keystaticConfig from "@/keystatic.config";
+import { createReader } from "@keystatic/core/reader";
+import Markdoc from "@markdoc/markdoc";
 import { ArrowLeft, Clock, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 import "./style.css";
 
+const reader = createReader(process.cwd(), keystaticConfig);
 const BlogPost = async ({ params }: { params: { slug: string } }) => {
    const slug = params.slug;
-   const post = await getPostBySlug(slug);
-   console.log(post);
+   // const post = await getPostBySlug(slug);
+   const post = await reader.collections.posts.read(slug);
+   if (!post) {
+      return <div>No Post Found</div>;
+   }
+   const { node } = await post.content();
+   const errors = Markdoc.validate(node);
+   if (errors.length) {
+      console.error(errors);
+      throw new Error("Invalid content");
+   }
+   const renderable = Markdoc.transform(node);
 
    if (!post) {
       return (
@@ -41,7 +55,10 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
                   <Image
                      width={800}
                      height={700}
-                     src={post.imageUrl}
+                     src={
+                        `/blogs/${slug}/${post.imageUrl}` ||
+                        "/default-image.jpg"
+                     }
                      alt={post.title}
                      className="w-full h-64 object-cover rounded-xl mb-8"
                   />
@@ -56,9 +73,13 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
                         <span>{post.readTime}</span>
                      </div>
                   </div>
-                  <div
+                  <div className="prose">
+                     {Markdoc.renderers.react(renderable, React)}
+                  </div>
+
+                  {/* <div
                      dangerouslySetInnerHTML={{ __html: post?.content }}
-                     className="prose prose-lg max-w-none"></div>
+                     className="prose prose-lg max-w-none"></div> */}
                </article>
             </div>
          </div>
