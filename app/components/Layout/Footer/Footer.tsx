@@ -7,7 +7,7 @@ import Copyright from "./Copyright";
 // Services List
 const serviceList = [
   {
-    title: "Custom Software Development",
+    title: "Custom Software Development with us",
     url: "/custom-software-development",
   },
   {
