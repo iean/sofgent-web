@@ -1,0 +1,184 @@
+---
+title: tutorial on introducting primeng
+author: Masud Alam
+date: 2025-03-25
+readTime: 10m
+---
+PrimeNG is a popular open-source UI component library for Angular applications. It provides a wide range of customizable and responsive UI components, such as buttons, tables, forms, charts, and more. In this tutorial, we will walk through how to get started with PrimeNG in your Angular project.
+
+### 1. Setting Up a New Angular Project
+
+If you don't already have an Angular project, you can create one by following these steps:
+
+1. **Install Node.js and Angular CLI:**
+
+   - Make sure you have Node.js installed. You can download it from [Node.js Official Website](https://nodejs.org/).
+
+   - Install Angular CLI globally if you haven't already:
+
+     ```
+     npm install -g @angular/cli
+     
+     ```
+
+1. **Create a new Angular project:**
+
+   Run the following command to create a new Angular project:
+
+   ```
+   ng new primeng-demo
+   
+   ```
+
+   Navigate to your project folder:
+
+   ```
+   cd primeng-demo
+   
+   ```
+
+1. **Serve the application:**
+
+   To ensure that everything is working correctly, run:
+
+   ```
+   ng serve
+   
+   ```
+
+   Now open your browser and navigate to `http://localhost:4200/` to see your running Angular app.
+
+### 2. Installing PrimeNG and PrimeIcons
+
+To use PrimeNG in your Angular project, you need to install the `primeng` and `primeicons` packages.
+
+1. **Install PrimeNG and PrimeIcons:**
+
+   In the project directory, run:
+
+   ```
+   npm install primeng primeicons
+   
+   ```
+
+1. **Import CSS files:**
+
+   After installing the necessary packages, you need to import the CSS files for PrimeNG and PrimeIcons in your project.
+
+   Open `angular.json` and add the CSS files in the `styles` array:
+
+   ```
+   "styles": [
+     "src/styles.css",
+     "node_modules/primeng/resources/primeng.min.css",
+     "node_modules/primeicons/primeicons.css"
+   ]
+   
+   ```
+
+### 3. Using PrimeNG Components
+
+Now that you've set up PrimeNG, let's use some of its components in your application.
+
+#### 3.1. Importing PrimeNG Modules
+
+PrimeNG components are available as Angular modules. To use a specific component, you need to import the corresponding module.
+
+For example, let's use a **Button** and **InputText** components.
+
+1. Open `app.module.ts` and import the required PrimeNG modules:
+
+   ```
+   import { NgModule } from '@angular/core';
+   import { BrowserModule } from '@angular/platform-browser';
+   import { AppComponent } from './app.component';
+   
+   // Import PrimeNG modules
+   import { ButtonModule } from 'primeng/button';
+   import { InputTextModule } from 'primeng/inputtext';
+   
+   @NgModule({
+     declarations: [
+       AppComponent
+     ],
+     imports: [
+       BrowserModule,
+       ButtonModule,
+       InputTextModule
+     ],
+     providers: [],
+     bootstrap: [AppComponent]
+   })
+   export class AppModule { }
+   
+   ```
+
+#### 3.2. Adding PrimeNG Components to Your Template
+
+Next, open `app.component.html` and use the PrimeNG components.
+
+```
+<div style="text-align:center">
+  <h1>
+    Welcome to PrimeNG Demo!
+  </h1>
+
+  <!-- InputText Component -->
+  <p-inputText placeholder="Enter your name"></p-inputText>
+
+  <!-- Button Component -->
+  <p-button label="Click Me" icon="pi pi-check" (click)="handleClick()"></p-button>
+</div>
+
+```
+
+#### 3.3. Handling Button Clicks
+
+In `app.component.ts`, let's define the `handleClick` method to handle button clicks:
+
+```
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'primeng-demo';
+
+  handleClick() {
+    alert('Button clicked!');
+  }
+}
+
+```
+
+### 4. Running the Application
+
+Once you've added the components, run the Angular development server:
+
+```
+ng serve
+
+```
+
+Now, open `http://localhost:4200` in your browser. You should see the PrimeNG button and input field on the page. When you click the button, an alert will pop up.
+
+### 5. Exploring More PrimeNG Components
+
+PrimeNG has a large number of components that you can use in your application. Some of the most popular components are:
+
+- **DataTable** for displaying tabular data.
+- **Dialog** for creating modals.
+- **Chart** for displaying charts (supports different chart types like pie, bar, line, etc.).
+- **Dropdown** for creating dropdown menus.
+- **Calendar** for creating date pickers.
+
+To use more components, just import the corresponding module (e.g., `DataTableModule`, `DialogModule`, etc.) and include the components in your templates.
+
+### 6. Conclusion
+
+PrimeNG is a powerful UI component library that helps build rich user interfaces for Angular applications. In this tutorial, we learned how to set up a new Angular project, install PrimeNG, and use some of its components like `Button` and `InputText`. There are many more components available in PrimeNG, and you can explore them in the [PrimeNG Documentation](https://primefaces.org/primeng/).
+
+By following the steps above, you can integrate PrimeNG into your Angular project and enhance the UI with beautiful, responsive components.
