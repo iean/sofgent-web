@@ -14,9 +14,8 @@ const ServiceNoSSR = dynamic(() => import("@components/home/services"), {
    ssr: false,
 });
 export default function Home() {
-   return (
-      <main>
-         <Header/>
+   return (<main>
+      <Header/>
          <Hero />
          <About />
          <Expertise />
