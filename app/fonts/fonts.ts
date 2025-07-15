@@ -1,36 +1,15 @@
-import { Inter, Manrope } from "next/font/google";
-import { Baloo_2, Nunito } from 'next/font/google';
+import { DM_Sans, Rubik } from 'next/font/google';
 
-export const baloo = Baloo_2({
+export const dmSans = DM_Sans({
   subsets: ['latin'],
-  weight: ['600', '700'],
-  variable: '--font-baloo',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-dm-sans',
   display: 'swap',
 });
 
-export const nunito = Nunito({
+export const rubik = Rubik({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-nunito',
-  display: 'swap',
-});
-
-export const manrope = Manrope({
-   subsets: ["latin"],
-   weight: ["400", "500", "600", "700"],
-});
-export const inter = Inter({
-   subsets: ["latin"],
-   variable: "--font-inter",
-   weight: ["300", "400", "500", "600"],
-});
-
-
-import { IBM_Plex_Mono } from 'next/font/google';
-
-export const ibmPlexMono = IBM_Plex_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-ibm',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-rubik',
   display: 'swap',
 });
