@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { inter, manrope } from "../fonts/fonts";
+import { dmSans, rubik } from "../fonts/fonts";
 // import "./globals.css";
 import Header from "../components/Layout/Header/Header";
 import Footer from "../components/Layout/Footer/Footer";
@@ -16,8 +16,8 @@ export default function PagesLayout({
    children: React.ReactNode;
 }>) {
    return (
-      <html lang="en">
-         <body className={`${manrope.className} ${inter.variable}`}>
+      <html lang="en" className={`${dmSans.variable} ${rubik.variable}`}>
+         <body className="font-dmSans font-rubik"> 
          
             <Header/>
             {children}
