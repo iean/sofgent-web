@@ -73,14 +73,13 @@ export default function Hero() {
                 </span>
               </div>
               <h2 className="text-4xl md:text-[56px] leading-normal text-main-black font-semibold mb-[35px] pointer-events-auto">
-                <span>Crafting High </span> <br />
-                <span>Performance </span>
+                <span>Building </span>
                 <span className="relative inline-block px-3 font-bold text-white uppercase">
-                  <span className="relative z-10">SaaS</span>
+                  <span className="relative z-10">Modern</span>
                   <span className="absolute top-0 left-0 block w-full h-full bg-gradient-to-r from-brand"></span>
                 </span>
                 <br />
-                <span className="italic"> Solutions for Tomorrow </span>
+                <span>SaaS Solutions for Growth</span>
               </h2>
               <div className="px-6 py-[14px] bg-white border-l-2 border-brand mb-[35px] pointer-events-auto xl:w-full md:w-[500px]">
                 <p className="text-ptwo text-paragraph">
