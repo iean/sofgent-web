@@ -1,5 +1,11 @@
 import BreadCrumb from "@/app/components/common/BreadCrumb";
 import "./style.css";
+import getPageMeta from "@/app/utils/getPageMeta";
+import type { Metadata } from "next";
+
+export function generateMetadata(): Metadata {
+   return getPageMeta("/terms-conditions");
+}
 
 export default function TermsCondition() {
    return (
