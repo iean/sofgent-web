@@ -2,6 +2,12 @@ import BlogCard from "@/app/components/common/BlogCard";
 import BreadCrumb from "@/app/components/common/BreadCrumb";
 import keystaticConfig from "@/keystatic.config";
 import { createReader } from "@keystatic/core/reader";
+import getPageMeta from "@/app/utils/getPageMeta";
+import type { Metadata } from "next";
+
+export function generateMetadata(): Metadata {
+   return getPageMeta("/blog");
+}
 
 const reader = createReader(process.cwd(), keystaticConfig);
 const BlogList = async () => {

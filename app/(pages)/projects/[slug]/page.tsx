@@ -2,6 +2,12 @@ import BreadCrumb from "@/app/components/common/BreadCrumb";
 import Button from "@/app/components/common/Button";
 import readLocalFile from "@/app/utils/readLocalFile";
 import Image from "next/image";
+import getPageMeta from "@/app/utils/getPageMeta";
+import type { Metadata } from "next";
+
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+   return getPageMeta(`/projects/${params.slug}`);
+}
 
 interface ProjectFieldsType {
    title: string;

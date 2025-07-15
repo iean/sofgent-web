@@ -6,6 +6,12 @@ import Expertise from "./components/home/expertise";
 import WhyChooseUs from "./components/home/whyChooseUs";
 import Header from "./components/Layout/Header/Header";
 import Footer from "./components/Layout/Footer/Footer";
+import getPageMeta from "@/app/utils/getPageMeta";
+import type { Metadata } from "next";
+
+export function generateMetadata(): Metadata {
+  return getPageMeta("/");
+}
 
 export const CtaNoSSR = dynamic(() => import("@components/home/cta"), {
    ssr: false,
