@@ -1,0 +1,98 @@
+{
+  "/": {
+    "title": "Custom Software Development Agency | SofGent",
+    "description": "SofGent is a results-driven custom software development agency offering scalable, secure, and tailored digital solutions. Build smarter with adaptive software today."
+  },
+  "/about": {
+    "title": "About SofGent | Trusted Custom Software Partner",
+    "description": "Learn about SofGent’s mission, team, and commitment to delivering innovative, scalable AI software solutions with a focus on quality, agility, and client success."
+  },
+  "/services": {
+    "title": "Enterprise Software Development Services | Sofgent",
+    "description": "Explore SofGent’s wide range of Enterprise Software Development Services including custom software, AI solutions, SaaS development, DevOps, testing."
+  },
+  "/projects": {
+    "title": "Our Projects | Custom AI Software Solutions Delivered",
+    "description": "Browse successful case studies and software projects delivered by SofGent. From SaaS platforms to AI Software Solutions, see how we solve real business challenges."
+  },
+  "/blog": {
+    "title": "Tech Insights & Software Trends Blog | SofGent",
+    "description": "Stay updated with the latest in software development, DevOps, AI, and agile practices. Read expert tips, industry insights, and thought leadership from SofGent."
+  },
+  "/contact": {
+    "title": "Contact SofGent | Start Your AI Driven Solutions",
+    "description": "Have a software idea or project? Contact SofGent today for a consultation. Let’s build secure, scalable, and tailored AI Driven Solutions together."
+  },
+  "/services/custom-software-development": {
+    "title": "Custom Software Development Services | Scalable Solutions",
+    "description": "Get bespoke software built for your unique needs. SofGent develops adaptive software development which is scalable, and secure."
+  },
+  "/services/devops-deployment-continuous-delivery": {
+    "title": "cloud devops consulting services & CI/CD Services | Faster, Reliable Deployments",
+    "description": "Optimize your software lifecycle with SofGent’s cloud devops consulting services. Accelerate development and reduce deployment risks."
+  },
+  "/services/advanced-ai-solutions": {
+    "title": "Advanced AI solutions company | SofGent Software Solution",
+    "description": "Unlock business growth with the best AI solutions company. SofGent offers AI-powered solutions including automation, analytics, and intelligent decision systems tailored to your goals."
+  },
+  "/services/saas-micro-saas-solutions": {
+    "title": "Cloud based saas Company | SofGent",
+    "description": "Build and scale your SaaS product with SofGent. We specialize in cloud-based SaaS and Micro-SaaS platforms tailored for innovation and growth."
+  },
+  "/privacy-policy": {
+    "title": "Privacy Policy | SofGent",
+    "description": "Review how SofGent collects, uses, and protects your data. We’re committed to transparency and safeguarding your privacy."
+  },
+  "/terms-conditions": {
+    "title": "Terms & Conditions | SofGent",
+    "description": "Read the terms and conditions for using SofGent’s services and website. Understand your rights and responsibilities."
+  },
+  "/services/net-core-api-clean-architecture-design-services": {
+    "title": ".NET Core API & Clean Architecture Services | SofGent",
+    "description": "Develop clean, scalable, and maintainable applications using .NET Core. SofGent offers modern architecture solutions tailored to enterprise needs."
+  },
+  "/services/software-testing": {
+    "title": "Software Testing & QA automation services | SofGent",
+    "description": "Ensure software quality with our end-to-end testing services. From manual QA to QA automation services, SofGent ensures reliable and bug-free solutions."
+  },
+  "/services/system-integration": {
+    "title": "System Integration management system| SofGent",
+    "description": "Connect and streamline your IT systems with SofGent. We deliver a secure and seamless system integration management system for improved data flow and performance."
+  },
+  "/services/system-maintenance": {
+    "title": "Software maintenance management system | SofGent",
+    "description": "Keep your software running smoothly with a proactive maintenance management system by SofGent. Ensure stability, security, and performance at all times."
+  },
+  "/projects/personal-portfolio": {
+    "title": "Custom UI/UX & Development | SofGent",
+    "description": "Explore our personal portfolio project showcasing modern UI/UX, responsive design, and custom frontend-backend development with clean architecture."
+  },
+  "/projects/personal-portfolio2": {
+    "title": "custom web application development company | SofGent",
+    "description": "See how SofGent built a creative personal portfolio using full-stack development, custom components, and seamless performance optimization."
+  },
+  "/projects/personal-portfolio3": {
+    "title": "Developer Portfolio Showcase | SofGent",
+    "description": "A developer-focused portfolio project built with clean code structure, interactive UI, and optimized performance to reflect best coding practices."
+  },
+  "/services/privacy-policy": {
+    "title": "Privacy Policy for Services | SofGent",
+    "description": "Understand how SofGent handles your data securely when you use our software development services. We prioritize your privacy and compliance."
+  },
+  "/services/terms-conditions": {
+    "title": "Terms & Conditions for Services | SofGent",
+    "description": "Read the terms governing the use of SofGent’s services including software development, DevOps, and AI solutions. Transparency you can trust."
+  },
+  "/projects/www.google.com": {
+    "title": "",
+    "description": ""
+  },
+  "/projects/privacy-policy": {
+    "title": "Privacy-Centric Software Project | SofGent",
+    "description": "This project emphasizes privacy-first architecture with compliance-driven design, secure storage, and responsible data handling practices."
+  },
+  "/projects/terms-conditions": {
+    "title": "Legal-Focused Software Project | SofGent",
+    "description": "A software solution centered on managing terms, policies, and user agreements—designed for flexibility, version control, and legal compliance."
+  }
+}

@@ -2,6 +2,12 @@ import BreadCrumb from "@/app/components/common/BreadCrumb";
 import ServiceDetailsInfo from "@/app/components/serviceDetails";
 import { CtaNoSSR } from "@/app/page";
 import getServicesMeta from "@/app/utils/getServicesMeta";
+import getPageMeta from "@/app/utils/getPageMeta";
+import type { Metadata } from "next";
+
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+   return getPageMeta(`/services/${params.slug}`);
+}
 
 export async function generateStaticParams() {
    const services = getServicesMeta("/app/data/services");

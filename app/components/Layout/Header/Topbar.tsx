@@ -1,6 +1,6 @@
 export default function Topbar() {
    return (
-      <div className="w-full bg-gradient-to-r from-gray to-brand h-[45px] justify-between items-center pl-[50px] bg-white border border-[#e7e8e9] hidden h1-top-bar">
+      <div className="w-full bg-gradient-to-r from-gray to-brand h-[45px] justify-between items-center pl-[50px] bg-white border border-[#e7e8e9] hidden xl:flex">
          <span className="hidden 2xl:block">
             Welcome to
             <span className="font-semibold text-brand"> SofGent</span>

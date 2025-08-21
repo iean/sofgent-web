@@ -69,10 +69,10 @@ const config: Config = {
             ptwo: ["16px", "26px"],
          },
          fontFamily: {
-            ibm: ['var(--font-ibm)', 'monospace'],
-            baloo: ['var(--font-baloo)', 'cursive'],
+            dmSans: ['var(--font-dm-sans)', 'sans-serif'],
+            rubik: ['var(--font-rubik)', 'sans-serif'],
             sans: ['Inter', 'sans-serif'], // or fallback
-          },
+         },
          letterSpacing: {
             tight: "-0.03em",
          },
