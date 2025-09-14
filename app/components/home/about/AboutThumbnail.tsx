@@ -28,12 +28,13 @@ export default function AboutThumbnail() {
                   <div
                      data-aos="fade-right"
                      className="hidden thumbnil-wrapper md:block">
-                     <Image
-                        width={600}
-                        height={600}
-                        src={aboutShape}
-                        alt="About Image Background Shape"
-                     />
+                  <Image
+                     width={600}
+                     height={600}
+                     src={aboutShape}
+                     alt="About Image Background Shape"
+                     className="w-full h-auto max-w-[600px]"
+                  />
                   </div>
                </div>
             </div>
@@ -46,7 +47,7 @@ export default function AboutThumbnail() {
                      height={600}
                      src={aboutThumb}
                      alt="About main image"
-                     className="rounded-[20px] overflow-hidden"
+                     className="rounded-[20px] overflow-hidden w-full h-auto max-w-[650px]"
                   />
                </div>
             </div>

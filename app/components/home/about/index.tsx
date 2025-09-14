@@ -19,8 +19,10 @@ export default function About() {
             <div className="about-article-area">
               <SectionTag tag="About Company" />
               <h2 className="md:text-48 mt-6 text-34 font-semibold text-main-black mb-[30px] md:w-[80%] w-full xl:w-full">
-                Innovating the Future, Your Partner in SaaS Excellence
+                Innovating the Future, Your Partner in Cloud Based SaaS Services
               </h2>
+
+              <p>SofGent, a leading custom application development company, delivers end-to-end software development, seamless system integration, advanced image processing, and scalable SaaS services. As a trusted software development company, we combine technical expertise with a commitment to quality. Our robust DevOps services ensure high performance, scalability, and continuous delivery. This document outlines our core offerings and the value SofGent brings to every project.</p>
               <p className="text-paragraph mb-[50px]">
                 In todays rapidly evolving digital landscape, businesses require
                 tailored software solutions to remain competitive. Sofgent
@@ -29,7 +31,7 @@ export default function About() {
                 software development to system integration and image processing,
                 Sofgent employs teams of skilled professionals dedicated to
                 delivering high-quality results. This document outlines the
-                comprehensive services offered by Sofgen, emphasizing the
+                comprehensive services offered by Sofgent, emphasizing the
                 processes and expertise involved.
               </p>
               <ul className="flex flex-wrap md:gap-[30px] gap-5 mb-[50px]">

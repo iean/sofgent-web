@@ -7,9 +7,9 @@ export default function Hero() {
     <section id="home-one-hero">
       <div className="hero-one-section-wrapper w-full xl:h-[905px] overflow-hidden relative">
         <WinGrid />
-        <div className="relative z-10 h-full mx-auto pointer-events-none theme-container">
-          <div className="w-full grid xl:grid-cols-2 grid-cols-1 2xl:gap-[130px] gap-10 items-center lg:pt-[223px] pt-[130px] h-full">
-            <div className="article-area">
+        <div className="relative z-10 h-full mx-auto theme-container">
+          <div className="w-full grid grid-cols-1 xl:grid-cols-[1.3fr_0.7fr] 2xl:grid-cols-[1.4fr_0.6fr] 2xl:gap-24 xl:gap-16 gap-10 items-center lg:pt-[223px] pt-[130px] h-full">
+            <div className="article-area relative z-20">
               <div className="inline-flex md:px-6 px-3 py-2.5 md:py-[14px] bg-white space-x-2.5 items-center rounded-full shadow-common mb-5">
                 <span>
                   <svg
@@ -68,30 +68,30 @@ export default function Hero() {
                     </defs>
                   </svg>
                 </span>
-                <span className="text-sm font-semibold pointer-events-auto md:text-20 text-brand">
-                  Welcome to Sofgent
-                </span>
+                <h1 className="text-sm font-semibold pointer-events-auto md:text-20 text-brand">
+                  Custom SaaS Development & AI Solutions
+                </h1>
               </div>
               <h2 className="text-4xl md:text-[56px] leading-normal text-main-black font-semibold mb-[35px] pointer-events-auto">
-                <span>Building </span>
+                <span>Crafting </span>
                 <span className="relative inline-block px-3 font-bold text-white uppercase">
-                  <span className="relative z-10">Modern</span>
+                  <span className="relative z-10">Innovation-First</span>
                   <span className="absolute top-0 left-0 block w-full h-full bg-gradient-to-r from-brand"></span>
                 </span>
                 <br />
-                <span>SaaS Solutions for Growth</span>
+                <span>Next-Gen Software for a Smarter Tomorrow.</span>
               </h2>
-              <div className="px-6 py-[14px] bg-white border-l-2 border-brand mb-[35px] pointer-events-auto xl:w-full md:w-[500px]">
+              <div className="px-6 py-[14px] bg-white border-l-2 border-brand mb-[35px] pointer-events-auto xl:w-full md:w-[620px]">
                 <p className="text-ptwo text-paragraph">
-                  At Sofgent, we don’t just develop software; we create powerful
-                  SaaS solutions that adapt, integrate, and grow with your
-                  business. Our approach combines cutting-edge
-                  technology, speed, and high-quality output, ensuring seamless
-                  solutions that elevate operational efficiency.
-                </p>
+At Sofgent, we offer enterprise software development services that drive scalable SaaS success. As a trusted software development company, we focus on speed, quality, and seamless integration — empowering your business with systems that enhance performance and operational efficiency                </p>
               </div>
-              <div className="flex space-x-[30px] items-center pointer-events-auto">
+              <div className="flex flex-wrap gap-4 items-center pointer-events-auto">
                 <Button btnText="Our Services" href="/services" />
+                <Button
+                  btnText="Lets discuss your project"
+                  href="/contact"
+                  className="bg-transparent text-brand border border-brand hover:bg-brand hover:text-white"
+                />
               </div>
             </div>
             {/* Right Image */}

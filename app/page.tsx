@@ -21,7 +21,7 @@ const ServiceNoSSR = dynamic(() => import("@components/home/services"), {
 });
 export default function Home() {
    return (<main>
-      <Header/>
+         <Header/>
          <Hero />
          <About />
          <Expertise />

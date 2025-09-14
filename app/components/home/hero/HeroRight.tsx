@@ -28,6 +28,7 @@ export default function HeroRight() {
                      height={700}
                      src={HeroRightImage}
                      alt="Home - Hero Right Image"
+                     className="w-full h-auto max-w-[600px]"
                   />
                </div>
             </div>
@@ -73,6 +74,7 @@ export default function HeroRight() {
                      height={420}
                      src={HeroRightBg}
                      alt="hero Right Bg"
+                     className="w-full h-auto max-w-[750px]"
                   />
                </div>
             </div>
