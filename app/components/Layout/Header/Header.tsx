@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import logo from "@assets/images/sofgent-logo.svg";
 import Image from "next/image";

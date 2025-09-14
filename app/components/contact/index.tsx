@@ -59,14 +59,57 @@ export default function ContactForm() {
       setErrors((prev) => ({ ...prev, [field]: err }));
    };
 
-   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+   const [isSubmitting, setIsSubmitting] = useState(false);
+   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      if (errors) {
+      
+      // Check if there are any validation errors
+      const hasErrors = Object.values(errors).some(error => error !== '');
+      if (hasErrors) {
          return;
       }
-      console.log(formData);
+
+      setIsSubmitting(true);
+      setSubmitStatus('idle');
+
+      try {
+         const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+               'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+         });
+
+         if (response.ok) {
+            setSubmitStatus('success');
+            // Reset form after successful submission
+            setFormData({
+               name: "",
+               email: "",
+               phone: "",
+               subject: "",
+               message: "",
+            });
+            setErrors({
+               name: "",
+               email: "",
+               phone: "",
+               subject: "",
+               message: "",
+            });
+         } else {
+            setSubmitStatus('error');
+         }
+      } catch (error) {
+         console.error('Error submitting form:', error);
+         setSubmitStatus('error');
+      } finally {
+         setIsSubmitting(false);
+      }
    };
-   console.log(errors);
 
    return (
       <section className="py-16 md:py-[130px]">
@@ -175,10 +218,25 @@ export default function ContactForm() {
                      <div className="col-span-6 md:col-span-12">
                         <button
                            type="submit"
-                           className="rounded-full inline-block px-5 py-2.5 overflow-hidden group bg-brand relative hover:bg-gradient-to-r hover:from-[#5ca979] text-white transition-all ease-out duration-300">
+                           disabled={isSubmitting}
+                           className="rounded-full inline-block px-5 py-2.5 overflow-hidden group bg-brand relative hover:bg-gradient-to-r hover:from-[#5ca979] text-white transition-all ease-out duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
                            <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-72 ease"></span>
-                           <span className="relative">Send Message</span>
+                           <span className="relative">
+                              {isSubmitting ? 'Sending...' : 'Send Message'}
+                           </span>
                         </button>
+                        
+                        {/* Status Messages */}
+                        {submitStatus === 'success' && (
+                           <div className="mt-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded">
+                              Thank you! Your message has been sent successfully.
+                           </div>
+                        )}
+                        {submitStatus === 'error' && (
+                           <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+                              Sorry! There was an error sending your message. Please try again.
+                           </div>
+                        )}
                      </div>
                   </form>
                </div>

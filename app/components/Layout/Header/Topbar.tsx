@@ -1,3 +1,5 @@
+"use client";
+
 export default function Topbar() {
    return (
       <div className="w-full bg-gradient-to-r from-gray to-brand h-[45px] justify-between items-center pl-[50px] bg-white border border-[#e7e8e9] hidden xl:flex">
