@@ -3,11 +3,33 @@ import SectionTag from "../../common/SectionTag";
 import AboutCheckList from "./AboutCheckList";
 import AboutThumbnail from "./AboutThumbnail";
 
-const checkList = [
-  "Full SaaS Development",
-  "Advanced AI Solutions",
-  "Mastery in Integrations",
-  "Quick Delivery",
+type CheckItem = {
+  text: string;
+  href: string;
+  icon: string;
+};
+
+const checkList: CheckItem[] = [
+  {
+    text: "Custom Software Development",
+    href: "/services/custom-software-development",
+    icon: "/icons/services/software-development.svg",
+  },
+  {
+    text: "Full SaaS Development",
+    href: "/services/saas-micro-saas-solutions",
+    icon: "/icons/services/image-processing.svg",
+  },
+  {
+    text: "Advanced AI Solutions",
+    href: "/services/advanced-ai-solutions",
+    icon: "/icons/services/ui-ux-design.svg",
+  },
+  {
+    text: "Mastery in Integrations",
+    href: "/services/system-integration",
+    icon: "/icons/services/system-integration.svg",
+  },
 ];
 export default function About() {
   return (
@@ -22,7 +44,11 @@ export default function About() {
                 Innovating the Future, Your Partner in Cloud Based SaaS Services
               </h2>
 
-              <p>SofGent, a leading custom application development company, delivers end-to-end software development, seamless system integration, advanced image processing, and scalable SaaS services. As a trusted software development company, we combine technical expertise with a commitment to quality. Our robust DevOps services ensure high performance, scalability, and continuous delivery. This document outlines our core offerings and the value SofGent brings to every project.</p>
+              <p className="text-paragraph mb-[50px]">SofGent, a leading custom application development company, delivers end-to-end software development, 
+              seamless system integration, advanced image processing, and scalable SaaS services. As a trusted software development company,
+               we combine technical expertise with a commitment to quality. 
+               Our robust DevOps services ensure high performance, scalability, and continuous delivery. 
+               This document outlines our core offerings and the value SofGent brings to every project.</p>
               <p className="text-paragraph mb-[50px]">
                 In todays rapidly evolving digital landscape, businesses require
                 tailored software solutions to remain competitive. Sofgent
@@ -35,8 +61,8 @@ export default function About() {
                 processes and expertise involved.
               </p>
               <ul className="flex flex-wrap md:gap-[30px] gap-5 mb-[50px]">
-                {checkList.map((check, index) => (
-                  <AboutCheckList key={index} text={check} />
+                {checkList.map((item, index) => (
+                  <AboutCheckList key={index} text={item.text} icon={item.icon} href={item.href} />
                 ))}
               </ul>
               <Button btnText="Learn More" href="/about" />

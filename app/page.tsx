@@ -3,6 +3,7 @@ import FunFact from "@/app/components/home/funFact";
 import Hero from "@components/home/hero";
 import dynamic from "next/dynamic";
 import Expertise from "./components/home/expertise";
+import HowWeWork from "./components/home/howWeWork";
 import WhyChooseUs from "./components/home/whyChooseUs";
 import Header from "./components/Layout/Header/Header";
 import Footer from "./components/Layout/Footer/Footer";
@@ -24,6 +25,7 @@ export default function Home() {
          <Header/>
          <Hero />
          <About />
+         <HowWeWork />
          <Expertise />
          <WhyChooseUs />
          <FunFact />
