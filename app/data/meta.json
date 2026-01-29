@@ -21,7 +21,11 @@
   },
   "/contact": {
     "title": "Contact SofGent | Start Your AI Driven Solutions",
-    "description": "Have a software idea or project? Contact SofGent today for a consultation. Let’s build secure, scalable, and tailored AI Driven Solutions together."
+    "description": "Have a software idea or project? Contact SofGent today for a consultation. Let's build secure, scalable, and tailored AI Driven Solutions together."
+  },
+  "/how-we-build-saas": {
+    "title": "How We Build Scalable SaaS Products | SofGent",
+    "description": "Learn how SofGent builds secure, scalable SaaS platforms from MVP to scale. Our proven 4-step delivery process, enterprise-tested tech stack, and post-launch support ensure production-ready products without costly rewrites."
   },
   "/services/custom-software-development": {
     "title": "Custom Software Development Services | Scalable Solutions",
@@ -62,6 +66,10 @@
   "/services/system-maintenance": {
     "title": "Software maintenance management system | SofGent",
     "description": "Keep your software running smoothly with a proactive maintenance management system by SofGent. Ensure stability, security, and performance at all times."
+  },
+  "/projects/heart-haven-healthcare-staffing": {
+    "title": "Heart & Haven Healthcare Staffing Page | React & Next.js Development | SofGent",
+    "description": "Healthcare staffing web platform built with React and Next.js. Focused on performance, accessibility, SEO optimization, and lead generation for healthcare staffing services."
   },
   "/projects/personal-portfolio": {
     "title": "Custom UI/UX & Development | SofGent",

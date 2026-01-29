@@ -12,6 +12,7 @@ const Header = () => {
       { href: "/", label: "Home" },
       { href: "/about", label: "About" },
       { href: "/services", label: "Services" },
+      { href: "/how-we-build-saas", label: "How We Build SaaS" },
       { href: "/projects", label: "Projects" },
       { href: "/blog", label: "Blog" },
       { href: "/contact", label: "Contact" },
@@ -23,7 +24,7 @@ const Header = () => {
          <div className="fixed top-0 left-0 z-40 w-full bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-[#e7e8e9] xl:hidden">
             <div className="flex items-center justify-between h-[60px] px-4">
                <Link href="/" aria-label="logo">
-                  <Image width={160} height={40} src={logo} alt="SoftGen Logo" />
+                  <Image width={160} height={40} src={logo} alt="Sofgent Logo" />
                </Link>
                <button
                   aria-label="Toggle menu"
@@ -87,7 +88,7 @@ const Header = () => {
                            width={200}
                            height={50}
                            src={logo}
-                           alt="SoftGen Logo"
+                           alt="Sofgent Logo"
                         />
                      </Link>
                      <nav className="flex items-center gap-8">

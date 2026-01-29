@@ -1,6 +1,52 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+// WhatsApp notification function
+async function sendWhatsAppNotification(formData: { name: string; email: string; phone: string; subject: string; message: string }) {
+  const whatsappNumber = process.env.WHATSAPP_NUMBER; // Your WhatsApp number (e.g., +8801537740365)
+  const whatsappApiUrl = process.env.WHATSAPP_API_URL; // Your WhatsApp API endpoint
+  
+  if (!whatsappNumber || !whatsappApiUrl) {
+    console.log('WhatsApp configuration missing');
+    return;
+  }
+
+  const message = `🔔 *New Contact Form Submission*
+
+👤 *Name:* ${formData.name}
+📧 *Email:* ${formData.email}
+📱 *Phone:* ${formData.phone}
+📋 *Subject:* ${formData.subject}
+
+💬 *Message:*
+${formData.message}
+
+---
+*Sent from SofGent Website*`;
+
+  try {
+    const response = await fetch(whatsappApiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        to: whatsappNumber,
+        message: message,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`WhatsApp API error: ${response.status}`);
+    }
+
+    console.log('WhatsApp notification sent successfully');
+  } catch (error) {
+    console.error('Failed to send WhatsApp notification:', error);
+    throw error;
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
     const { name, email, phone, subject, message } = await request.json();
@@ -42,6 +88,14 @@ export async function POST(request: NextRequest) {
 
     // Send email
     await transporter.sendMail(mailOptions);
+
+    // Send WhatsApp notification
+    try {
+      await sendWhatsAppNotification({ name, email, phone, subject, message });
+    } catch (whatsappError) {
+      console.error('WhatsApp notification failed:', whatsappError);
+      // Don't fail the entire request if WhatsApp fails
+    }
 
     return NextResponse.json(
       { message: 'Email sent successfully' },

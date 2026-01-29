@@ -5,7 +5,7 @@ export default function Topbar() {
       <div className="w-full bg-gradient-to-r from-gray to-brand h-[45px] justify-between items-center pl-[50px] bg-white border border-[#e7e8e9] hidden xl:flex">
          <span className="hidden 2xl:block">
             Welcome to
-            <span className="font-semibold text-brand"> SofGent</span>
+            <span className="font-semibold text-brand"> SofGent ,</span> <span style={{ color: '#0F172A' }}>Build and Launch Your SaaS MVP—Fast, Scalable, and Production-Ready</span>
          </span>
          <div className="2xl:w-[1021px] w-full h-full flex items-center justify-end">
             <div className="flex space-x-2.5 items-center mr-7">
@@ -66,7 +66,7 @@ export default function Topbar() {
                   </svg>
                </span>
                <span className="font-bold text-white">
-                  Call : 000 (123) 456 88
+                  Call : +8801537740365
                </span>
             </div>
             {/* <!-- social --> */}
@@ -90,7 +90,7 @@ export default function Topbar() {
                <li>
                   <a
                      href="https://www.linkedin.com/company/sofgent/"
-                     aria-label="twitter"
+                     aria-label="linkedin"
                      className="text-white opacity-50 hover:opacity-100">
                      <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +104,7 @@ export default function Topbar() {
                      </svg>
                   </a>
                </li>
-               <li>
+               {/* <li>
                   <a
                      href="#"
                      aria-label="instagram"
@@ -120,7 +120,7 @@ export default function Topbar() {
                         />
                      </svg>
                   </a>
-               </li>
+               </li> */}
             </ul>
          </div>
       </div>

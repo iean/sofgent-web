@@ -13,7 +13,7 @@ interface FormData {
 // Form validation
 const validateField = (name: keyof FormData, value: string) => {
    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-   const phoneRegex = /^\d{10}$/;  // Validates 10-digit phone numbers
+   const phoneRegex = /^(\+880|880)?\s?1[3-9]\d{8}$/;  // Validates Bangladeshi phone numbers
  
    switch (name) {
      case 'name':
@@ -23,7 +23,7 @@ const validateField = (name: keyof FormData, value: string) => {
               !emailRegex.test(value) ? 'Invalid email format' : '';
      case 'phone':
        return !value ? 'Phone is required' : 
-              !phoneRegex.test(value) ? 'Phone must be 10 digits' : '';
+              !phoneRegex.test(value) ? 'Please enter a valid Bangladeshi phone number' : '';
      case 'subject':
        return value.length < 3 ? 'Subject must be at least 3 characters' : '';
      case 'message':
@@ -135,7 +135,7 @@ export default function ContactForm() {
                   <div className="col-span-1">
                      <h2 className="flex gap-2.5 items-center">
                         <BiPhone className="text-2xl text-brand" />{" "}
-                        <a href="tel:0123456789">0123456789</a>
+                        <a href="tel:+8801537740365">+880 1537740365</a>
                      </h2>
                   </div>
                </div>

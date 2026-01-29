@@ -5,8 +5,8 @@ import LottieLines from "../../common/LottieLine";
 // Faq Items
 const faqItems = [
    {
-     "question": "Why should I outsource custom software development to SoftGen?",
-     "answer": "Outsourcing to SoftGen allows you to leverage a team of experienced developers, cutting-edge technology, and proven processes. We focus on delivering high-quality, scalable software solutions tailored to your specific business needs, all while helping you save time and reduce costs."
+     "question": "Why should I outsource custom software development to Sofgent?",
+     "answer": "Outsourcing to Sofgent allows you to leverage a team of experienced developers, cutting-edge technology, and proven processes. We focus on delivering high-quality, scalable software solutions tailored to your specific business needs, all while helping you save time and reduce costs."
    },
    {
      "question": "How do you ensure the security of my project and data?",
@@ -14,7 +14,7 @@ const faqItems = [
    },
    {
      "question": "What industries do you specialize in for custom software development?",
-     "answer": "SoftGen has successfully delivered solutions for a wide range of industries, including Healthcare, Finance and FinTech, E-commerce, Education and eLearning, Logistics and Supply Chain, and Real Estate. If your industry isn’t listed, we’re confident in our ability to adapt and meet your specific needs."
+     "answer": "Sofgent has successfully delivered solutions for a wide range of industries, including Healthcare, Finance and FinTech, E-commerce, Education and eLearning, Logistics and Supply Chain, and Real Estate. If your industry isn’t listed, we’re confident in our ability to adapt and meet your specific needs."
    },
    {
      "question": "How will I stay updated on the progress of my project?",
@@ -49,7 +49,7 @@ const faqItems = [
      "answer": "We provide comprehensive post-launch support, including bug fixes and updates, feature enhancements, and maintenance and monitoring services. You can choose from flexible support packages to keep your software running smoothly."
    },
    {
-     "question": "How do I start my project with SoftGen?",
+     "question": "How do I start my project with Sofgent?",
      "answer": "Getting started is simple! Contact us through our website or email with your requirements, schedule a free consultation to discuss your goals, receive a tailored proposal with timelines and pricing, and kick off your project with our dedicated team!"
    },
    {
@@ -61,8 +61,8 @@ const faqItems = [
      "answer": "We mitigate risks with thorough planning and agile methodologies. If challenges arise, we proactively communicate, adapt our strategies, and work diligently to stay on track without compromising quality."
    },
    {
-     "question": "Why choose SoftGen over other outsourcing agencies?",
-     "answer": "With SoftGen, you gain access to a proven track record of delivering successful projects, expertise in modern technologies and industry best practices, transparent communication and customer-centric processes, and tailored solutions designed to align with your unique business goals."
+     "question": "Why choose Sofgent over other outsourcing agencies?",
+     "answer": "With Sofgent, you gain access to a proven track record of delivering successful projects, expertise in modern technologies and industry best practices, transparent communication and customer-centric processes, and tailored solutions designed to align with your unique business goals."
    }
  ]
  

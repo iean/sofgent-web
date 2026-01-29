@@ -21,6 +21,8 @@ const Button: React.FC<PropsType> = ({
             <>
                <a
                   href={href ? href : "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={twMerge(
                      "inline-flex items-center px-6 py-3 mt-4 sm:mt-0 bg-brand text-white rounded-lg font-semibold shadow-md hover:bg-secondary transform hover:-translate-y-0.5 transition-all duration-200 group",
                      className

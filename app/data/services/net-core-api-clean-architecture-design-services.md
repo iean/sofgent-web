@@ -1,13 +1,15 @@
 ---
 icon: "/icons/services/image-processing.svg"
-title: .NET and Angular development 
+title: .NET and Angular development
 description: .NET Core API solutions using clean architecture.
 order: 2
 ---
+
 ![Image Processing](/images/services/image-processing.webp)
+
 ## .NET Core and Angular Development Services
 
-In today’s fast-paced digital landscape, the demand for robust, scalable, and maintainable APIs is at an all-time high. Whether you’re developing microservices, enterprise-level applications, or scalable APIs, **clean architecture** is the gold standard. At Softgen, we specialize in building **.NET Core APIs with clean architecture design**, ensuring your applications are well-structured, resilient, and future-proof.
+In today’s fast-paced digital landscape, the demand for robust, scalable, and maintainable APIs is at an all-time high. Whether you’re developing microservices, enterprise-level applications, or scalable APIs, **clean architecture** is the gold standard. At Sofgent, we specialize in building **.NET Core APIs with clean architecture design**, ensuring your applications are well-structured, resilient, and future-proof.
 
 Our expert team leverages the power of **.NET Core** and the principles of **clean architecture** to create APIs that are not only efficient but also adaptable to ever-changing business needs. We prioritize **separation of concerns**, **maintainability**, and **scalability**—making your API development journey seamless and cost-effective.
 
@@ -15,9 +17,10 @@ Our expert team leverages the power of **.NET Core** and the principles of **cle
 
 ## .NET Core API with Clean Architecture Design
 
-**Sub-Services We Offer:**  
- - **Custom API Development**   
- Tailored .NET Core APIs designed for your specific business use case, ensuring maximum efficiency and compatibility with your systems.
+**Sub-Services We Offer:**
+
+- **Custom API Development**  
+  Tailored .NET Core APIs designed for your specific business use case, ensuring maximum efficiency and compatibility with your systems.
 
 - **Integration Services**  
   Seamless integration with third-party services, databases, and legacy systems to extend the functionality of your applications.
@@ -55,7 +58,7 @@ Our expert team leverages the power of **.NET Core** and the principles of **cle
 
 <br>
 
-## Why Choose Softgen?
+## Why Choose Sofgent?
 
 1. **Industry Expertise**  
    Over **[X years]** of experience delivering enterprise-grade .NET Core APIs across industries like healthcare, finance, and e-commerce.

@@ -1,5 +1,40 @@
 [
    {
+      "title": "Heart & Haven Care | Healthcare Services Platform",
+      "slug": "heart-haven-healthcare-staffing",
+      "publish_date": "February 2025",
+      "preview_link": "https://heartandhavenhealthcare.co.uk/",
+      "description": "Developed a comprehensive healthcare services platform for Heart & Haven Care using React and Next.js, featuring three core service areas: Domiciliary Care, Temporary Staffing, and Supported Living. Built with a strong focus on performance, accessibility, and search visibility to showcase compassionate care services. Delivered a clean, responsive layout using modular, reusable components to present service offerings, care features (Hourly Visiting, Live In, 24h Service), compliance standards (CQC registration), and clear lead-generation calls to action. Optimized the application for fast load times through efficient asset handling, code splitting, and SEO-friendly meta structure. Ensured consistent styling across all screen sizes and built a scalable frontend foundation that supports future content growth and feature expansion.",
+      "thumbnail": "/images/project/haven/banner_01.png",
+      "overview": "A modern healthcare services platform built with React and Next.js, showcasing domiciliary care, temporary staffing, and supported living services with focus on performance, accessibility, and SEO optimization.",
+      "screenshots": [
+         {
+            "image": "/images/project/haven/banner_01.png",
+            "title": "Homepage Banner"
+         },
+         {
+            "image": "/images/project/haven/banner_02.jpg",
+            "title": "Service Overview Section"
+         },
+         {
+            "image": "/images/project/haven/home_card_domilciary.jpg",
+            "title": "Domiciliary Care Services"
+         },
+         {
+            "image": "/images/project/haven/home_card_staffing.jpg",
+            "title": "Temporary Staffing Services"
+         },
+         {
+            "image": "/images/project/haven/home_card_supported_living.jpg",
+            "title": "Supported Living Solutions"
+         },
+         {
+            "image": "/images/project/haven/banner_03.png",
+            "title": "Care Features & Information"
+         }
+      ]
+   },
+   {
       "title": "Personal Portfolio Website",
       "slug": "personal-portfolio",
       "publish_date": "February 17, 2025",

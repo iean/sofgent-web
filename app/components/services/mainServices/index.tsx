@@ -14,7 +14,7 @@ export default function ServiceMain() {
                         Explore Services
                      </span>
                      <h2 className="sm:text-48 text-24 font-semibold text-main-black mb-[50px] text-center lg:w-[685px] w-full">
-                        High Impact Marketing Services to grow your business
+                        High Impact Software development Services to grow your business
                      </h2>
                   </div>
                   <div className="w-full grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 xl:gap-[70px] gap-8">

@@ -69,7 +69,7 @@ export default function Hero() {
                   </svg>
                 </span>
                 <h1 className="text-sm font-semibold pointer-events-auto md:text-20 text-brand">
-                  Custom SaaS Development & AI Solutions
+                  Top Software Development Company
                 </h1>
               </div>
               <h2 className="text-4xl md:text-[56px] leading-normal text-main-black font-semibold mb-[35px] pointer-events-auto">
