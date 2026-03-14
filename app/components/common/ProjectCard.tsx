@@ -1,67 +1,108 @@
-import cardShape from "@assets/images/about/about-card-shape.webp";
-import Image from "next/image";
 import Link from "next/link";
+import type { ProjectFieldsType } from "@/app/data/projects/types";
 
-interface ProjectFieldsType {
-   title: string;
-   thumbnail: string;
-   slug: string;
-   overview: string;
-   publish_date: string;
-   screenshots: { title: string; image: string }[];
-}
 export default function ProjectCard({
    project,
+   index,
 }: {
    project: ProjectFieldsType;
+   index: number;
 }) {
+   const projectNumber = `${index + 1}`.padStart(2, "0");
+   const capabilityPreview = project.capabilities.slice(0, 3);
+
    return (
-      <div data-aos="fade-left" className="col-span-4">
-         <div className="pb-[92px] pr-[30px] w-full bg-white relative">
-            <Image
-               width={200}
-               height={200}
-               src={project.thumbnail}
-               alt="Project Thumbnail"
-               className="w-full max-w-[380px] rounded-lg"
-            />
-            <div className="group shadow-card pl-5 pr-5 md:pl-10 md:pr-16 lg:pl-5 lg:pr-5 xl:pl-10 xl:pr-16 py-5 rounded-2xl absolute top-[50%] md:top-[63%] z-10 bg-white -right-0 h-[146px] hover:h-[185px] transition-all duration-300 hover:bg-brand hover:shadow-brand hover:-translate-y-[22px] overflow-hidden h5-story_slider_active_card">
-               <Image
-                  width={100}
-                  height={200}
-                  src={cardShape}
-                  alt="Card Shape"
-                  className="absolute right-2 top-bottom-moving"
-               />
-               <h1 className="transition-all duration-300 text-paragraph group-hover:text-white">
-                  {project.publish_date}
-               </h1>
-               <h2 className="text-18 sm:text-20 font-semibold mt-3 max-w-[255px] group-hover:text-white">
+      <Link
+         href={`/projects/${project.slug}`}
+         className="group block h-full"
+         data-aos="fade-up">
+         <article className="flex h-full flex-col overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-2 hover:border-slate-300 hover:shadow-[0_32px_90px_rgba(15,23,42,0.14)]">
+            <div
+               className="relative overflow-hidden px-6 pb-6 pt-6 md:px-7"
+               style={{
+                  background: `radial-gradient(circle at top right, ${project.theme.secondary} 0%, transparent 38%), linear-gradient(135deg, ${project.theme.surface} 0%, #ffffff 82%)`,
+               }}>
+               <div className="absolute right-5 top-5 h-24 w-24 rounded-full border border-white/60 opacity-60" />
+               <div className="absolute right-10 top-10 h-12 w-12 rounded-full border border-white/60 opacity-80" />
+               <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent" />
+
+               <div className="relative z-10 flex items-start justify-between gap-5">
+                  <div>
+                     <div
+                        className="inline-flex items-center rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em]"
+                        style={{
+                           color: project.theme.primary,
+                           backgroundColor: `${project.theme.secondary}55`,
+                        }}>
+                        {project.category}
+                     </div>
+                     <p className="mt-4 text-sm text-slate-500">
+                        {project.publish_date}
+                     </p>
+                  </div>
+                  <div className="text-right">
+                     <p className="text-[11px] uppercase tracking-[0.3em] text-slate-400">
+                        Platform
+                     </p>
+                     <p className="text-2xl font-semibold tracking-[-0.04em] text-slate-950">
+                        {projectNumber}
+                     </p>
+                  </div>
+               </div>
+
+               <h2 className="relative z-10 mt-10 max-w-[16ch] text-[30px] font-semibold leading-[1.08] tracking-[-0.04em] text-slate-950">
                   {project.title}
                </h2>
-               <Link href={`/projects/${project.slug}`}>
-                  <div className="flex items-center gap-2 mt-4 group">
-                     <span className="relative font-medium leading-5 text-white border-b border-transparent font-inter before:inline-block before:border-white before:border-b before:absolute before:bottom-0 before:transition-all before:duration-300 before:w-0 hover:before:w-full before:overflow-hidden before:h-5">
-                        Read More
+
+               <p className="relative z-10 mt-4 max-w-[56ch] text-[15px] leading-7 text-slate-600">
+                  {project.summary}
+               </p>
+            </div>
+
+            <div className="flex flex-1 flex-col px-6 pb-6 pt-5 md:px-7 md:pb-7">
+               <div className="flex flex-wrap gap-2">
+                  {capabilityPreview.map((capability) => (
+                     <span
+                        key={capability}
+                        className="rounded-full border border-slate-200 bg-slate-50 px-3 py-2 text-[12px] font-medium text-slate-600">
+                        {capability}
                      </span>
+                  ))}
+               </div>
+
+               <div className="mt-6 flex flex-1 items-end justify-between gap-4 border-t border-slate-200 pt-5">
+                  <div className="text-xs uppercase tracking-[0.24em] text-slate-400">
+                     AI Product Engineering
+                  </div>
+                  <div
+                     className="inline-flex items-center gap-2 text-sm font-medium transition-colors duration-300"
+                     style={{ color: project.theme.primary }}>
+                     Explore platform
                      <svg
-                        width="7"
-                        height="11"
-                        viewBox="0 0 7 11"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
                         fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="transition-transform duration-300 group-hover:translate-x-1">
                         <path
-                           d="M1.5 10L5.29289 6.20711C5.62623 5.87377 5.79289 5.70711 5.79289 5.5C5.79289 5.29289 5.62623 5.12623 5.29289 4.79289L1.5 1"
-                           stroke="#ffff"
+                           d="M3.33301 8H12.6663"
+                           stroke="currentColor"
+                           strokeWidth="1.5"
+                           strokeLinecap="round"
+                        />
+                        <path
+                           d="M8.66699 4L12.667 8L8.66699 12"
+                           stroke="currentColor"
                            strokeWidth="1.5"
                            strokeLinecap="round"
                            strokeLinejoin="round"
                         />
                      </svg>
                   </div>
-               </Link>
+               </div>
             </div>
-         </div>
-      </div>
+         </article>
+      </Link>
    );
 }

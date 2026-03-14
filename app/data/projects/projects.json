@@ -1,142 +1,244 @@
 [
    {
-      "title": "Heart & Haven Care | Healthcare Services Platform",
-      "slug": "heart-haven-healthcare-staffing",
-      "publish_date": "February 2025",
-      "preview_link": "https://heartandhavenhealthcare.co.uk/",
-      "description": "Developed a comprehensive healthcare services platform for Heart & Haven Care using React and Next.js, featuring three core service areas: Domiciliary Care, Temporary Staffing, and Supported Living. Built with a strong focus on performance, accessibility, and search visibility to showcase compassionate care services. Delivered a clean, responsive layout using modular, reusable components to present service offerings, care features (Hourly Visiting, Live In, 24h Service), compliance standards (CQC registration), and clear lead-generation calls to action. Optimized the application for fast load times through efficient asset handling, code splitting, and SEO-friendly meta structure. Ensured consistent styling across all screen sizes and built a scalable frontend foundation that supports future content growth and feature expansion.",
-      "thumbnail": "/images/project/haven/banner_01.png",
-      "overview": "A modern healthcare services platform built with React and Next.js, showcasing domiciliary care, temporary staffing, and supported living services with focus on performance, accessibility, and SEO optimization.",
-      "screenshots": [
-         {
-            "image": "/images/project/haven/banner_01.png",
-            "title": "Homepage Banner"
-         },
-         {
-            "image": "/images/project/haven/banner_02.jpg",
-            "title": "Service Overview Section"
-         },
-         {
-            "image": "/images/project/haven/home_card_domilciary.jpg",
-            "title": "Domiciliary Care Services"
-         },
-         {
-            "image": "/images/project/haven/home_card_staffing.jpg",
-            "title": "Temporary Staffing Services"
-         },
-         {
-            "image": "/images/project/haven/home_card_supported_living.jpg",
-            "title": "Supported Living Solutions"
-         },
-         {
-            "image": "/images/project/haven/banner_03.png",
-            "title": "Care Features & Information"
-         }
-      ]
+      "title": "AI Document Intelligence Platform",
+      "slug": "ai-document-intelligence-platform",
+      "category": "AI Infrastructure",
+      "publish_date": "Flagship Platform",
+      "summary": "Enterprise document operations platform for extracting data, classifying files, and routing human review with AI-assisted workflows.",
+      "description": "An enterprise platform that automatically processes documents, extracts structured data, and routes downstream workflows using AI. It is designed for organizations handling high volumes of scanned forms, handwritten submissions, and compliance-heavy document pipelines.",
+      "capabilities": [
+         "OCR for scanned forms",
+         "Handwritten form recognition",
+         "Document classification",
+         "AI field extraction",
+         "Human review workflow",
+         "API integrations"
+      ],
+      "industries": [
+         "Banking",
+         "Insurance",
+         "Government"
+      ],
+      "technologies": [
+         "FastAPI",
+         "Transformers",
+         "Tesseract",
+         "AWS SQS",
+         "Angular review dashboard"
+      ],
+      "whyItMatters": "Shows SofGent's strength in OCR systems, AI pipelines, and operational workflow automation for regulated industries.",
+      "ctaLabel": "Discuss document intelligence",
+      "ctaHref": "/contact",
+      "theme": {
+         "primary": "#0f766e",
+         "secondary": "#99f6e4",
+         "surface": "#ecfeff"
+      }
    },
    {
-      "title": "Personal Portfolio Website",
-      "slug": "personal-portfolio",
-      "publish_date": "February 17, 2025",
-      "preview_link": "www.google.com",
-      "description": "A modern analytics dashboard built with React and TypeScript, featuring real-time data visualization, customizable widgets, and advanced filtering capabilities. The dashboard helps businesses track KPIs, analyze trends, and make data-driven decisions through an intuitive and responsive interface.",
-      "thumbnail": "https://images.unsplash.com/photo-1664575599730-0814817939de",
-      "overview": "A sleek and modern personal portfolio website to showcase skills, projects, and resume.",
-      "screenshots": [
-         {
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-            "title": "Homepage"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-            "title": "Projects Section"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-            "title": "Homepage"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-            "title": "Projects Section"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-            "title": "Homepage"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-            "title": "Projects Section"
-         }
-      ]
+      "title": "Enterprise Knowledge AI (EasyKT)",
+      "slug": "enterprise-knowledge-ai-easykt",
+      "category": "AI Knowledge Platform",
+      "publish_date": "Flagship Platform",
+      "summary": "A company knowledge layer that turns documents, training materials, and video archives into an internal AI assistant and search system.",
+      "description": "An AI-powered knowledge system that converts company documents, videos, and training materials into a searchable intelligence layer. It enables teams to build an internal ChatGPT experience trained on company-specific knowledge.",
+      "capabilities": [
+         "RAG-based AI assistant",
+         "Knowledge ingestion pipelines",
+         "AI summarization",
+         "Video transcription",
+         "AI search across company data",
+         "Slack and Drive integrations"
+      ],
+      "impact": "Companies build an internal ChatGPT trained on company knowledge.",
+      "whyItMatters": "Positions SofGent as a builder of enterprise AI systems that connect knowledge retrieval, search, and operational tooling.",
+      "ctaLabel": "Discuss knowledge AI",
+      "ctaHref": "/contact",
+      "theme": {
+         "primary": "#1d4ed8",
+         "secondary": "#93c5fd",
+         "surface": "#eff6ff"
+      }
    },
    {
-      "title": "Personal Portfolio Website",
-      "slug": "personal-portfolio2",
-      "publish_date": "February 17, 2025",
-      "preview_link": "www.google.com",
-      "description": "A modern analytics dashboard built with React and TypeScript, featuring real-time data visualization, customizable widgets, and advanced filtering capabilities. The dashboard helps businesses track KPIs, analyze trends, and make data-driven decisions through an intuitive and responsive interface.",
-      "thumbnail": "https://images.unsplash.com/photo-1664575599730-0814817939de",
-      "overview": "A sleek and modern personal portfolio website to showcase skills, projects, and resume.",
-      "screenshots": [
-         {
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-            "title": "Homepage"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-            "title": "Projects Section"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-            "title": "Homepage"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-            "title": "Projects Section"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-            "title": "Homepage"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-            "title": "Projects Section"
-         }
-      ]
+      "title": "AI Backlog Intelligence System",
+      "slug": "ai-backlog-intelligence-system",
+      "category": "Engineering AI",
+      "publish_date": "Flagship Platform",
+      "summary": "An engineering intelligence layer for analyzing Jira tickets, requirements, and backlog data to improve planning and prioritization.",
+      "description": "An AI platform that analyzes Jira tickets, engineering documents, and backlog data to automatically organize, summarize, and prioritize work. It is built for CTOs and engineering leaders who need more signal from growing delivery complexity.",
+      "capabilities": [
+         "AI ticket clustering",
+         "Duplicate detection",
+         "Sprint planning suggestions",
+         "Requirement summarization",
+         "Release prediction"
+      ],
+      "impact": "Highly attractive to CTOs because it directly improves engineering planning, execution clarity, and delivery forecasting.",
+      "whyItMatters": "Makes SofGent's engineering systems expertise visible in a way that speaks to technical decision makers rather than just end-user UX.",
+      "ctaLabel": "Discuss backlog intelligence",
+      "ctaHref": "/contact",
+      "theme": {
+         "primary": "#7c3aed",
+         "secondary": "#c4b5fd",
+         "surface": "#f5f3ff"
+      }
    },
    {
-      "title": "Personal Portfolio Website",
-      "slug": "personal-portfolio3",
-      "preview_link": "www.google.com",
-      "publish_date": "February 17, 2025",
-      "description": "A modern analytics dashboard built with React and TypeScript, featuring real-time data visualization, customizable widgets, and advanced filtering capabilities. The dashboard helps businesses track KPIs, analyze trends, and make data-driven decisions through an intuitive and responsive interface.",
-      "thumbnail": "https://images.unsplash.com/photo-1664575599730-0814817939de",
-      "overview": "A sleek and modern personal portfolio website to showcase skills, projects, and resume.",
-      "screenshots": [
-         {
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-            "title": "Homepage"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-            "title": "Projects Section"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-            "title": "Homepage"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-            "title": "Projects Section"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-            "title": "Homepage"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-            "title": "Projects Section"
-         }
-      ]
+      "title": "Digital Wallet Infrastructure Platform (EasyCash)",
+      "slug": "digital-wallet-infrastructure-platform-easycash",
+      "category": "Fintech Infrastructure",
+      "publish_date": "Flagship Platform",
+      "summary": "A modular wallet and ledger foundation for fintech startups and payment products that need controlled transaction flows and compliance-ready architecture.",
+      "description": "A modular digital wallet system designed for fintech startups and payment platforms. It provides the core infrastructure needed to manage balances, monitor activity, and connect payment services through an API-driven architecture.",
+      "capabilities": [
+         "Wallet accounts",
+         "Ledger system",
+         "Transaction monitoring",
+         "Payment integrations",
+         "KYC workflows",
+         "API-based architecture"
+      ],
+      "whyItMatters": "Demonstrates strong fintech infrastructure design across ledgers, workflows, integrations, and compliance-sensitive backend systems.",
+      "ctaLabel": "Discuss wallet infrastructure",
+      "ctaHref": "/contact",
+      "theme": {
+         "primary": "#0f172a",
+         "secondary": "#38bdf8",
+         "surface": "#f8fafc"
+      }
+   },
+   {
+      "title": "Multi-Tenant SaaS Platform Engine",
+      "slug": "multi-tenant-saas-platform-engine",
+      "category": "SaaS Infrastructure",
+      "publish_date": "Flagship Platform",
+      "summary": "A reusable platform architecture for launching secure multi-tenant SaaS products with tenancy, roles, billing, and scalable APIs built in.",
+      "description": "A scalable platform architecture for building multi-tenant SaaS products. It is designed for teams that need a serious backend foundation before layering product-specific workflows on top.",
+      "capabilities": [
+         "Tenant isolation",
+         "Role-based permissions",
+         "Schema-based tenancy",
+         "Billing systems",
+         "API gateway architecture"
+      ],
+      "whyItMatters": "Shows deep SaaS architecture expertise and reinforces SofGent's ability to build systems meant to scale beyond MVP stage.",
+      "ctaLabel": "Discuss SaaS architecture",
+      "ctaHref": "/contact",
+      "theme": {
+         "primary": "#2563eb",
+         "secondary": "#67e8f9",
+         "surface": "#f0f9ff"
+      }
+   },
+   {
+      "title": "AI Knowledge Audit System",
+      "slug": "ai-knowledge-audit-system",
+      "category": "AI Consulting Platform",
+      "publish_date": "Flagship Platform",
+      "summary": "A consulting-oriented AI system for identifying knowledge gaps, documenting workflows, and generating operational guidance from company materials.",
+      "description": "A system that analyzes company documents and workflows to detect knowledge gaps and operational inefficiencies. It can function as a SofGent consulting product for diagnosing process issues and generating structured operational outputs.",
+      "capabilities": [
+         "Document ingestion",
+         "AI process analysis",
+         "Knowledge gap detection",
+         "Automated SOP generation"
+      ],
+      "whyItMatters": "Creates a bridge between SofGent's consulting value and its product engineering depth by turning audits into platformized workflows.",
+      "ctaLabel": "Discuss AI audit systems",
+      "ctaHref": "/contact",
+      "theme": {
+         "primary": "#9333ea",
+         "secondary": "#e9d5ff",
+         "surface": "#faf5ff"
+      }
+   },
+   {
+      "title": "AI Powered Training Platform",
+      "slug": "ai-powered-training-platform",
+      "category": "AI Learning Platform",
+      "publish_date": "Flagship Platform",
+      "summary": "An internal learning platform that transforms company training materials into interactive lessons, onboarding flows, and retention loops.",
+      "description": "A system that converts company training materials into interactive learning experiences. It is designed to help companies modernize onboarding, improve training consistency, and measure knowledge retention across teams.",
+      "capabilities": [
+         "Video-to-lesson conversion",
+         "AI quiz generation",
+         "Knowledge retention tracking",
+         "Employee onboarding modules"
+      ],
+      "whyItMatters": "Extends SofGent's AI knowledge positioning into learning systems where content processing, retrieval, and user engagement meet.",
+      "ctaLabel": "Discuss AI training platforms",
+      "ctaHref": "/contact",
+      "theme": {
+         "primary": "#ea580c",
+         "secondary": "#fdba74",
+         "surface": "#fff7ed"
+      }
+   },
+   {
+      "title": "AI Commerce Platform",
+      "slug": "ai-commerce-platform",
+      "category": "E-commerce Infrastructure",
+      "publish_date": "Flagship Platform",
+      "summary": "An AI-driven commerce architecture for catalog ingestion, product content generation, recommendations, and multi-store operations.",
+      "description": "A next-generation e-commerce platform with AI-driven catalog management and automated product content generation. It is structured for businesses that need smarter merchandising operations and scalable commerce foundations.",
+      "capabilities": [
+         "AI product description generation",
+         "Automated catalog ingestion",
+         "AI recommendations",
+         "Multi-store architecture"
+      ],
+      "whyItMatters": "Shows SofGent can apply AI systems thinking beyond internal tools into revenue-driving commerce workflows and product infrastructure.",
+      "ctaLabel": "Discuss AI commerce",
+      "ctaHref": "/contact",
+      "theme": {
+         "primary": "#db2777",
+         "secondary": "#f9a8d4",
+         "surface": "#fdf2f8"
+      }
+   },
+   {
+      "title": "Secure Remote Development Platform",
+      "slug": "secure-remote-development-platform",
+      "category": "Developer Infrastructure",
+      "publish_date": "Flagship Platform",
+      "summary": "A secure browser-based development environment for teams that need isolated workspaces, enterprise controls, and auditable access.",
+      "description": "A cloud-based development workspace that enables teams to code securely inside controlled environments. It is designed for organizations that need tighter security boundaries without sacrificing developer productivity.",
+      "capabilities": [
+         "Browser-based IDE",
+         "Isolated development containers",
+         "VPN integration",
+         "Enterprise access control"
+      ],
+      "whyItMatters": "Connects SofGent's engineering credibility to secure developer tooling, infrastructure automation, and controlled enterprise environments.",
+      "ctaLabel": "Discuss secure dev platforms",
+      "ctaHref": "/contact",
+      "theme": {
+         "primary": "#334155",
+         "secondary": "#94a3b8",
+         "surface": "#f8fafc"
+      }
+   },
+   {
+      "title": "Enterprise AI Integration Platform",
+      "slug": "enterprise-ai-integration-platform",
+      "category": "AI Infrastructure",
+      "publish_date": "Flagship Platform",
+      "summary": "A connective AI platform for enterprise data sources that supports search, automation, document embeddings, and decision support workflows.",
+      "description": "A platform that integrates enterprise data sources and provides AI capabilities such as search, automation, and decision support. It connects fragmented tools into a single AI-enabled operating layer.",
+      "capabilities": [
+         "Connect to Jira, Drive, and Docs",
+         "AI search layer",
+         "Document embeddings",
+         "Enterprise RAG architecture"
+      ],
+      "whyItMatters": "Reinforces SofGent's ability to build integration-heavy AI platforms that sit across systems instead of living as isolated demos.",
+      "ctaLabel": "Discuss enterprise AI integration",
+      "ctaHref": "/contact",
+      "theme": {
+         "primary": "#0f766e",
+         "secondary": "#5eead4",
+         "surface": "#f0fdfa"
+      }
    }
 ]

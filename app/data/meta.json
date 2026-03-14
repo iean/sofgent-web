@@ -12,8 +12,8 @@
     "description": "Explore SofGent’s wide range of Enterprise Software Development Services including custom software, AI solutions, SaaS development, DevOps, testing."
   },
   "/projects": {
-    "title": "Our Projects | Custom AI Software Solutions Delivered",
-    "description": "Browse successful case studies and software projects delivered by SofGent. From SaaS platforms to AI Software Solutions, see how we solve real business challenges."
+    "title": "AI Product Engineering Studio | SofGent Flagship Platforms",
+    "description": "Explore SofGent's flagship AI and software platforms across document intelligence, enterprise knowledge systems, fintech infrastructure, developer tooling, and multi-tenant SaaS architecture."
   },
   "/blog": {
     "title": "Tech Insights & Software Trends Blog | SofGent",
@@ -67,21 +67,45 @@
     "title": "Software maintenance management system | SofGent",
     "description": "Keep your software running smoothly with a proactive maintenance management system by SofGent. Ensure stability, security, and performance at all times."
   },
-  "/projects/heart-haven-healthcare-staffing": {
-    "title": "Heart & Haven Healthcare Staffing Page | React & Next.js Development | SofGent",
-    "description": "Healthcare staffing web platform built with React and Next.js. Focused on performance, accessibility, SEO optimization, and lead generation for healthcare staffing services."
+  "/projects/ai-document-intelligence-platform": {
+    "title": "AI Document Intelligence Platform | SofGent",
+    "description": "Enterprise AI document operations platform with OCR, handwritten recognition, classification, field extraction, and workflow routing."
   },
-  "/projects/personal-portfolio": {
-    "title": "Custom UI/UX & Development | SofGent",
-    "description": "Explore our personal portfolio project showcasing modern UI/UX, responsive design, and custom frontend-backend development with clean architecture."
+  "/projects/enterprise-knowledge-ai-easykt": {
+    "title": "Enterprise Knowledge AI (EasyKT) | SofGent",
+    "description": "An enterprise knowledge AI platform for RAG search, summarization, ingestion pipelines, transcription, and internal knowledge assistants."
   },
-  "/projects/personal-portfolio2": {
-    "title": "custom web application development company | SofGent",
-    "description": "See how SofGent built a creative personal portfolio using full-stack development, custom components, and seamless performance optimization."
+  "/projects/ai-backlog-intelligence-system": {
+    "title": "AI Backlog Intelligence System | SofGent",
+    "description": "Engineering AI platform for backlog analysis, ticket clustering, planning suggestions, release prediction, and delivery intelligence."
   },
-  "/projects/personal-portfolio3": {
-    "title": "Developer Portfolio Showcase | SofGent",
-    "description": "A developer-focused portfolio project built with clean code structure, interactive UI, and optimized performance to reflect best coding practices."
+  "/projects/digital-wallet-infrastructure-platform-easycash": {
+    "title": "Digital Wallet Infrastructure Platform (EasyCash) | SofGent",
+    "description": "Fintech wallet infrastructure with ledger systems, KYC workflows, transaction monitoring, and API-based payment architecture."
+  },
+  "/projects/multi-tenant-saas-platform-engine": {
+    "title": "Multi-Tenant SaaS Platform Engine | SofGent",
+    "description": "Scalable SaaS infrastructure for tenant isolation, permissions, schema-based tenancy, billing, and API gateway architecture."
+  },
+  "/projects/ai-knowledge-audit-system": {
+    "title": "AI Knowledge Audit System | SofGent",
+    "description": "AI consulting platform for knowledge gap detection, document ingestion, process analysis, and automated SOP generation."
+  },
+  "/projects/ai-powered-training-platform": {
+    "title": "AI Powered Training Platform | SofGent",
+    "description": "AI learning platform that transforms training materials into lessons, quizzes, onboarding modules, and retention workflows."
+  },
+  "/projects/ai-commerce-platform": {
+    "title": "AI Commerce Platform | SofGent",
+    "description": "AI commerce infrastructure for catalog ingestion, product content generation, recommendations, and multi-store architecture."
+  },
+  "/projects/secure-remote-development-platform": {
+    "title": "Secure Remote Development Platform | SofGent",
+    "description": "Enterprise developer infrastructure with browser-based IDEs, isolated containers, VPN integration, and access control."
+  },
+  "/projects/enterprise-ai-integration-platform": {
+    "title": "Enterprise AI Integration Platform | SofGent",
+    "description": "Enterprise AI integration layer for connected data sources, AI search, embeddings, automation, and RAG architecture."
   },
   "/services/privacy-policy": {
     "title": "Privacy Policy for Services | SofGent",
@@ -90,10 +114,6 @@
   "/services/terms-conditions": {
     "title": "Terms & Conditions for Services | SofGent",
     "description": "Read the terms governing the use of SofGent’s services including software development, DevOps, and AI solutions. Transparency you can trust."
-  },
-  "/projects/www.google.com": {
-    "title": "",
-    "description": ""
   },
   "/projects/privacy-policy": {
     "title": "Privacy-Centric Software Project | SofGent",
