@@ -2,13 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+   --page-bg: #f6f9fc;
+   --page-text: #0f172a;
+}
+
 html {
    scroll-behavior: smooth;
    overflow-x: hidden;
 }
 body {
+   background: var(--page-bg);
+   color: var(--page-text);
    font-size: 16px;
    line-height: 30px;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
 }
 h1,
 h2,
@@ -21,6 +30,59 @@ h6 {
 .theme-container {
    max-width: 1330px;
    padding: 0 20px;
+}
+
+a,
+button {
+   transition:
+      color 0.2s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+}
+
+:focus-visible {
+   outline: 2px solid rgba(50, 109, 109, 0.32);
+   outline-offset: 3px;
+}
+
+::selection {
+   background: rgba(50, 109, 109, 0.16);
+   color: #0f172a;
+}
+
+.studio-orbit-pulse {
+   animation: studio-pulse 5.6s ease-in-out infinite;
+}
+
+.studio-line-flow {
+   background-size: 200% 100%;
+   animation: studio-line-shift 6s ease-in-out infinite;
+}
+
+@keyframes studio-pulse {
+   0%,
+   100% {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 0 rgba(103, 232, 249, 0));
+   }
+   50% {
+      transform: scale(1.08);
+      filter: drop-shadow(0 0 18px rgba(103, 232, 249, 0.14));
+   }
+}
+
+@keyframes studio-line-shift {
+   0%,
+   100% {
+      background-position: 0% 50%;
+      opacity: 0.55;
+   }
+   50% {
+      background-position: 100% 50%;
+      opacity: 0.9;
+   }
 }
 /* Responsive embeds */
 .map-iframe {

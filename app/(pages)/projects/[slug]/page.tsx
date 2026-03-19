@@ -1,9 +1,10 @@
+import type { ProjectFieldsType } from "@/app/data/projects/types";
 import BreadCrumb from "@/app/components/common/BreadCrumb";
 import Button from "@/app/components/common/Button";
-import readLocalFile from "@/app/utils/readLocalFile";
+import VisualPlaceholder from "@/app/components/premiumStudio/VisualPlaceholder";
 import getPageMeta from "@/app/utils/getPageMeta";
+import readLocalFile from "@/app/utils/readLocalFile";
 import type { Metadata } from "next";
-import type { ProjectFieldsType } from "@/app/data/projects/types";
 import { notFound } from "next/navigation";
 
 export function generateMetadata({
@@ -15,12 +16,11 @@ export function generateMetadata({
 }
 
 async function ProjectDetails({ params }: { params: { slug: string } }) {
-   const slug = params.slug;
    const projects = (await readLocalFile(
       "/app/data/projects/projects.json"
    )) as ProjectFieldsType[];
    const project = projects.find(
-      (item: ProjectFieldsType) => item.slug === slug
+      (item: ProjectFieldsType) => item.slug === params.slug
    );
 
    if (!project) {
@@ -76,90 +76,105 @@ async function ProjectDetails({ params }: { params: { slug: string } }) {
                   </div>
 
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                     <VisualPlaceholder
+                        label={project.visualLabel || "[IMAGE: case study system view]"}
+                        description={project.description}
+                        className="border-white/60 bg-white/80 text-left shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+                     />
                      <div className="rounded-[24px] border border-white/60 bg-white/80 p-6 backdrop-blur-sm">
-                        <p className="text-xs uppercase tracking-[0.26em] text-slate-400">
-                           Positioning
+                         <p className="text-xs uppercase tracking-[0.26em] text-slate-400">
+                            Problem
                         </p>
                         <p className="mt-3 text-lg font-medium leading-8 text-slate-800">
-                           {project.summary}
+                           {project.problem}
                         </p>
                      </div>
 
-                     {project.impact ? (
-                        <div className="rounded-[24px] border border-white/60 bg-[#08111f] p-6 text-white shadow-[0_20px_60px_rgba(8,17,31,0.18)]">
-                           <p className="text-xs uppercase tracking-[0.26em] text-cyan-200/80">
-                              Impact
-                           </p>
-                           <p className="mt-3 text-lg leading-8 text-slate-100">
-                              {project.impact}
-                           </p>
-                        </div>
-                     ) : (
-                        <div className="rounded-[24px] border border-white/60 bg-white/80 p-6 backdrop-blur-sm">
-                           <p className="text-xs uppercase tracking-[0.26em] text-slate-400">
-                              Why It Matters
-                           </p>
-                           <p className="mt-3 text-lg leading-8 text-slate-700">
-                              {project.whyItMatters}
-                           </p>
-                        </div>
-                     )}
+                     <div className="rounded-[24px] border border-white/60 bg-[#08111f] p-6 text-white shadow-[0_20px_60px_rgba(8,17,31,0.18)]">
+                        <p className="text-xs uppercase tracking-[0.26em] text-cyan-200/80">
+                           Outcome
+                        </p>
+                        <p className="mt-3 text-lg leading-8 text-slate-100">
+                           {project.outcome}
+                        </p>
+                     </div>
                   </div>
                </div>
             </div>
 
             <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-               <div className="rounded-[30px] border border-slate-200 bg-white p-7 shadow-[0_24px_70px_rgba(15,23,42,0.06)] md:p-8">
-                  <div className="flex items-center justify-between gap-4">
-                     <div>
-                        <p className="text-xs uppercase tracking-[0.28em] text-slate-400">
-                           Core Capabilities
-                        </p>
-                        <h2 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-slate-950">
-                           What this platform enables
-                        </h2>
-                     </div>
-                     <div
-                        className="hidden h-12 w-12 rounded-2xl md:block"
-                        style={{
-                           background: `linear-gradient(135deg, ${project.theme.primary} 0%, ${project.theme.secondary} 100%)`,
-                        }}
-                     />
+               <div className="space-y-8">
+                  <div className="rounded-[30px] border border-slate-200 bg-white p-7 shadow-[0_24px_70px_rgba(15,23,42,0.06)] md:p-8">
+                     <p className="text-xs uppercase tracking-[0.28em] text-slate-400">
+                        What SofGent Built
+                     </p>
+                     <h2 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-slate-950">
+                        The system we designed
+                     </h2>
+                     <p className="mt-5 text-[17px] leading-8 text-slate-700">
+                        {project.solution}
+                     </p>
                   </div>
 
-                  <div className="mt-8 grid gap-4 md:grid-cols-2">
-                     {project.capabilities.map((capability, index) => (
-                        <div
-                           key={capability}
-                           className="rounded-[22px] border border-slate-200 bg-slate-50 p-5">
+                  <div className="rounded-[30px] border border-slate-200 bg-white p-7 shadow-[0_24px_70px_rgba(15,23,42,0.06)] md:p-8">
+                     <div className="flex items-center justify-between gap-4">
+                        <div>
                            <p className="text-xs uppercase tracking-[0.28em] text-slate-400">
-                              Capability {`${index + 1}`.padStart(2, "0")}
+                              Product Modules
                            </p>
-                           <p className="mt-3 text-lg font-medium leading-7 text-slate-800">
-                              {capability}
-                           </p>
+                           <h2 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-slate-950">
+                              What the system includes
+                           </h2>
                         </div>
-                     ))}
+                        <div
+                           className="hidden h-12 w-12 rounded-2xl md:block"
+                           style={{
+                              background: `linear-gradient(135deg, ${project.theme.primary} 0%, ${project.theme.secondary} 100%)`,
+                           }}
+                        />
+                     </div>
+
+                     <div className="mt-8 grid gap-4 md:grid-cols-2">
+                        {project.capabilities.map((capability, index) => (
+                           <div
+                              key={capability}
+                              className="rounded-[22px] border border-slate-200 bg-slate-50 p-5">
+                              <p className="text-xs uppercase tracking-[0.28em] text-slate-400">
+                                 Module {`${index + 1}`.padStart(2, "0")}
+                              </p>
+                              <p className="mt-3 text-lg font-medium leading-7 text-slate-800">
+                                 {capability}
+                              </p>
+                           </div>
+                        ))}
+                     </div>
                   </div>
                </div>
 
                <div className="space-y-8">
-                  {project.technologies && project.technologies.length > 0 ? (
-                     <div className="rounded-[30px] border border-slate-200 bg-white p-7 shadow-[0_24px_70px_rgba(15,23,42,0.06)] md:p-8">
-                        <p className="text-xs uppercase tracking-[0.28em] text-slate-400">
-                           Technology Stack
-                        </p>
-                        <div className="mt-5 flex flex-wrap gap-3">
-                           {project.technologies.map((technology) => (
-                              <span
-                                 key={technology}
-                                 className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700">
-                                 {technology}
-                              </span>
-                           ))}
-                        </div>
+                  <div className="rounded-[30px] border border-slate-200 bg-white p-7 shadow-[0_24px_70px_rgba(15,23,42,0.06)] md:p-8">
+                     <p className="text-xs uppercase tracking-[0.28em] text-slate-400">
+                        Tech / System Angle
+                     </p>
+                     <p className="mt-4 text-[17px] leading-8 text-slate-700">
+                        {project.systemAngle || project.summary}
+                     </p>
+                  </div>
+
+                  <div className="rounded-[30px] border border-slate-200 bg-white p-7 shadow-[0_24px_70px_rgba(15,23,42,0.06)] md:p-8">
+                     <p className="text-xs uppercase tracking-[0.28em] text-slate-400">
+                        Tech Used
+                     </p>
+                     <div className="mt-5 flex flex-wrap gap-3">
+                        {project.technologies?.map((technology) => (
+                           <span
+                              key={technology}
+                              className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700">
+                              {technology}
+                           </span>
+                        ))}
                      </div>
-                  ) : null}
+                  </div>
 
                   {project.industries && project.industries.length > 0 ? (
                      <div className="rounded-[30px] border border-slate-200 bg-white p-7 shadow-[0_24px_70px_rgba(15,23,42,0.06)] md:p-8">
@@ -184,12 +199,44 @@ async function ProjectDetails({ params }: { params: { slug: string } }) {
 
                   <div className="rounded-[30px] border border-slate-200 bg-[#08111f] p-7 text-white shadow-[0_24px_70px_rgba(8,17,31,0.18)] md:p-8">
                      <p className="text-xs uppercase tracking-[0.28em] text-cyan-200/80">
-                        Studio View
+                        Snapshot
                      </p>
                      <p className="mt-4 text-lg leading-8 text-slate-100">
-                        {project.whyItMatters || project.summary}
+                        {project.summary}
                      </p>
                   </div>
+               </div>
+            </div>
+
+            <div className="mt-10 rounded-[34px] border border-slate-200 bg-[linear-gradient(135deg,#08111f_0%,#163042_100%)] px-7 py-10 text-white shadow-[0_30px_100px_rgba(8,17,31,0.18)] md:px-10">
+               <div className="grid gap-8 xl:grid-cols-[0.92fr_1.08fr] xl:items-center">
+                  <div className="max-w-3xl">
+                     <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-200">
+                        Ready To Build
+                     </p>
+                     <h2 className="mt-4 text-34 font-semibold tracking-[-0.04em] md:text-48">
+                        Want a system like this inside your business?
+                     </h2>
+                     <p className="mt-5 text-[18px] leading-8 text-slate-200">
+                        We can map the workflow, architecture, and delivery plan
+                        for your product, internal tool, or AI system before the
+                        build starts.
+                     </p>
+                     <div className="mt-8 flex flex-wrap gap-4">
+                        <Button btnText="Discuss Your Product" href="/contact" />
+                        <Button
+                           btnText="Plan Your AI Workflow"
+                           href="/contact"
+                           className="border border-white/10 bg-white/5 text-white shadow-none hover:bg-white/10"
+                        />
+                     </div>
+                  </div>
+                  <VisualPlaceholder
+                     label="[IMAGE: delivery workshop board]"
+                     description="Placeholder for the architecture sketch, process map, and launch milestones used in a SofGent discovery workshop."
+                     tone="dark"
+                     className="min-h-[240px]"
+                  />
                </div>
             </div>
          </div>

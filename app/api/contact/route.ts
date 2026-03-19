@@ -1,111 +1,148 @@
-import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
-// WhatsApp notification function
-async function sendWhatsAppNotification(formData: { name: string; email: string; phone: string; subject: string; message: string }) {
-  const whatsappNumber = process.env.WHATSAPP_NUMBER; // Your WhatsApp number (e.g., +8801537740365)
-  const whatsappApiUrl = process.env.WHATSAPP_API_URL; // Your WhatsApp API endpoint
-  
-  if (!whatsappNumber || !whatsappApiUrl) {
-    console.log('WhatsApp configuration missing');
-    return;
-  }
+type LegacyPayload = {
+   name?: string;
+   email?: string;
+   phone?: string;
+   subject?: string;
+   message?: string;
+};
 
-  const message = `🔔 *New Contact Form Submission*
+type DiscoveryPayload = {
+   name?: string;
+   company?: string;
+   timeline?: string;
+   productIdea?: string;
+};
 
-👤 *Name:* ${formData.name}
-📧 *Email:* ${formData.email}
-📱 *Phone:* ${formData.phone}
-📋 *Subject:* ${formData.subject}
+type NormalizedPayload = {
+   name: string;
+   subject: string;
+   html: string;
+   whatsappMessage: string;
+};
 
-💬 *Message:*
-${formData.message}
+const normalizePayload = (
+   payload: LegacyPayload & DiscoveryPayload
+): NormalizedPayload | null => {
+   if (
+      payload.name &&
+      payload.company &&
+      payload.timeline &&
+      payload.productIdea
+   ) {
+      return {
+         name: payload.name,
+         subject: `Discovery Request: ${payload.company}`,
+         html: `
+           <h2>New Discovery Call Request</h2>
+           <p><strong>Name:</strong> ${payload.name}</p>
+           <p><strong>Company:</strong> ${payload.company}</p>
+           <p><strong>Timeline:</strong> ${payload.timeline}</p>
+           <p><strong>Product Idea:</strong></p>
+           <p>${payload.productIdea}</p>
+           <hr>
+           <p><em>Sent from the SofGent contact form.</em></p>
+         `,
+         whatsappMessage: `New Discovery Call Request\n\nName: ${payload.name}\nCompany: ${payload.company}\nTimeline: ${payload.timeline}\n\nProduct Idea:\n${payload.productIdea}`,
+      };
+   }
 
----
-*Sent from SofGent Website*`;
+   if (
+      payload.name &&
+      payload.email &&
+      payload.phone &&
+      payload.subject &&
+      payload.message
+   ) {
+      return {
+         name: payload.name,
+         subject: `Contact Form: ${payload.subject}`,
+         html: `
+           <h2>New Contact Form Submission</h2>
+           <p><strong>Name:</strong> ${payload.name}</p>
+           <p><strong>Email:</strong> ${payload.email}</p>
+           <p><strong>Phone:</strong> ${payload.phone}</p>
+           <p><strong>Subject:</strong> ${payload.subject}</p>
+           <p><strong>Message:</strong></p>
+           <p>${payload.message}</p>
+           <hr>
+           <p><em>Sent from the SofGent website.</em></p>
+         `,
+         whatsappMessage: `New Contact Form Submission\n\nName: ${payload.name}\nEmail: ${payload.email}\nPhone: ${payload.phone}\nSubject: ${payload.subject}\n\nMessage:\n${payload.message}`,
+      };
+   }
 
-  try {
-    const response = await fetch(whatsappApiUrl, {
-      method: 'POST',
+   return null;
+};
+
+async function sendWhatsAppNotification(message: string) {
+   const whatsappNumber = process.env.WHATSAPP_NUMBER;
+   const whatsappApiUrl = process.env.WHATSAPP_API_URL;
+
+   if (!whatsappNumber || !whatsappApiUrl) {
+      return;
+   }
+
+   const response = await fetch(whatsappApiUrl, {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        to: whatsappNumber,
-        message: message,
+         to: whatsappNumber,
+         message,
       }),
-    });
+   });
 
-    if (!response.ok) {
+   if (!response.ok) {
       throw new Error(`WhatsApp API error: ${response.status}`);
-    }
-
-    console.log('WhatsApp notification sent successfully');
-  } catch (error) {
-    console.error('Failed to send WhatsApp notification:', error);
-    throw error;
-  }
+   }
 }
 
 export async function POST(request: NextRequest) {
-  try {
-    const { name, email, phone, subject, message } = await request.json();
+   try {
+      const payload = (await request.json()) as LegacyPayload & DiscoveryPayload;
+      const normalizedPayload = normalizePayload(payload);
 
-    // Validate required fields
-    if (!name || !email || !phone || !subject || !message) {
+      if (!normalizedPayload) {
+         return NextResponse.json(
+            { error: "Required form fields are missing" },
+            { status: 400 }
+         );
+      }
+
+      const transporter = nodemailer.createTransport({
+         service: "gmail",
+         auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS,
+         },
+      });
+
+      await transporter.sendMail({
+         from: process.env.EMAIL_USER,
+         to: "support@sofgent.com",
+         subject: normalizedPayload.subject,
+         html: normalizedPayload.html,
+      });
+
+      try {
+         await sendWhatsAppNotification(normalizedPayload.whatsappMessage);
+      } catch (whatsappError) {
+         console.error("WhatsApp notification failed:", whatsappError);
+      }
+
       return NextResponse.json(
-        { error: 'All fields are required' },
-        { status: 400 }
+         { message: "Email sent successfully" },
+         { status: 200 }
       );
-    }
-
-    // Create transporter (you'll need to configure this with your email service)
-    const transporter = nodemailer.createTransport({
-      service: 'gmail', // or your preferred email service
-      auth: {
-        user: process.env.EMAIL_USER, // your email
-        pass: process.env.EMAIL_PASS, // your email password or app password
-      },
-    });
-
-    // Email content
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: 'support@sofgent.com',
-      subject: `Contact Form: ${subject}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-        <hr>
-        <p><em>This email was sent from the contact form on your website.</em></p>
-      `,
-    };
-
-    // Send email
-    await transporter.sendMail(mailOptions);
-
-    // Send WhatsApp notification
-    try {
-      await sendWhatsAppNotification({ name, email, phone, subject, message });
-    } catch (whatsappError) {
-      console.error('WhatsApp notification failed:', whatsappError);
-      // Don't fail the entire request if WhatsApp fails
-    }
-
-    return NextResponse.json(
-      { message: 'Email sent successfully' },
-      { status: 200 }
-    );
-  } catch (error) {
-    console.error('Error sending email:', error);
-    return NextResponse.json(
-      { error: 'Failed to send email' },
-      { status: 500 }
-    );
-  }
+   } catch (error) {
+      console.error("Error sending email:", error);
+      return NextResponse.json(
+         { error: "Failed to send email" },
+         { status: 500 }
+      );
+   }
 }

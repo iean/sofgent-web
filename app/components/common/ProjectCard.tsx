@@ -1,13 +1,14 @@
 import Link from "next/link";
 import type { ProjectFieldsType } from "@/app/data/projects/types";
+import VisualPlaceholder from "@/app/components/premiumStudio/VisualPlaceholder";
 
 export default function ProjectCard({
    project,
    index,
-}: {
-   project: ProjectFieldsType;
-   index: number;
-}) {
+   }: {
+      project: ProjectFieldsType;
+      index: number;
+   }) {
    const projectNumber = `${index + 1}`.padStart(2, "0");
    const capabilityPreview = project.capabilities.slice(0, 3);
 
@@ -42,7 +43,7 @@ export default function ProjectCard({
                   </div>
                   <div className="text-right">
                      <p className="text-[11px] uppercase tracking-[0.3em] text-slate-400">
-                        Platform
+                        Case
                      </p>
                      <p className="text-2xl font-semibold tracking-[-0.04em] text-slate-950">
                         {projectNumber}
@@ -50,13 +51,21 @@ export default function ProjectCard({
                   </div>
                </div>
 
-               <h2 className="relative z-10 mt-10 max-w-[16ch] text-[30px] font-semibold leading-[1.08] tracking-[-0.04em] text-slate-950">
+               <h2 className="relative z-10 mt-10 max-w-[18ch] text-[30px] font-semibold leading-[1.08] tracking-[-0.04em] text-slate-950">
                   {project.title}
                </h2>
 
                <p className="relative z-10 mt-4 max-w-[56ch] text-[15px] leading-7 text-slate-600">
                   {project.summary}
                </p>
+
+               <div className="relative z-10 mt-6">
+                  <VisualPlaceholder
+                     label={project.visualLabel || "[IMAGE: case study system preview]"}
+                     description={project.description}
+                     className="min-h-[170px] border-slate-200/90 bg-white/70 p-5 text-left shadow-none"
+                  />
+               </div>
             </div>
 
             <div className="flex flex-1 flex-col px-6 pb-6 pt-5 md:px-7 md:pb-7">
@@ -70,14 +79,25 @@ export default function ProjectCard({
                   ))}
                </div>
 
+               {project.systemAngle ? (
+                  <div className="mt-6 rounded-[22px] border border-slate-200 bg-slate-50 p-4">
+                     <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-slate-400">
+                        System Angle
+                     </p>
+                     <p className="mt-3 text-[14px] leading-6 text-slate-700">
+                        {project.systemAngle}
+                     </p>
+                  </div>
+               ) : null}
+
                <div className="mt-6 flex flex-1 items-end justify-between gap-4 border-t border-slate-200 pt-5">
                   <div className="text-xs uppercase tracking-[0.24em] text-slate-400">
-                     AI Product Engineering
+                     Product Case Study
                   </div>
                   <div
                      className="inline-flex items-center gap-2 text-sm font-medium transition-colors duration-300"
                      style={{ color: project.theme.primary }}>
-                     Explore platform
+                     View build breakdown
                      <svg
                         width="16"
                         height="16"

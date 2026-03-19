@@ -4,7 +4,20 @@ import Link from "next/link";
 
 export default function ServiceDetailsSidebar({ slug }: { slug: string }) {
    const services = getServicesMeta("/app/data/services");
+   const staticServices = [
+      {
+         slug: "ai-ready-data-engineering",
+         title: "AI-Ready Data Engineering",
+      },
+      {
+         slug: "document-intelligence-systems",
+         title: "Document Intelligence Systems",
+      },
+   ];
    const filteredServices = services.filter((service) => service.slug !== slug);
+   const visibleStaticServices = staticServices.filter(
+      (service) => service.slug !== slug
+   );
    return (
       <div
          data-aos="fade-up"
@@ -43,13 +56,37 @@ export default function ServiceDetailsSidebar({ slug }: { slug: string }) {
                      </div>
                   </Link>
                ))}
+               {visibleStaticServices.map((service) => (
+                  <Link key={service.slug} href={`/services/${service.slug}`}>
+                     <div className="flex items-center gap-2 group text-gray-69 hover:text-brand">
+                        <svg
+                           width="7"
+                           height="11"
+                           viewBox="0 0 7 11"
+                           fill="none"
+                           xmlns="http://www.w3.org/2000/svg">
+                           <path
+                              className="transition-all duration-300"
+                              d="M1.5 10L5.29289 6.20711C5.62623 5.87377 5.79289 5.70711 5.79289 5.5C5.79289 5.29289 5.62623 5.12623 5.29289 4.79289L1.5 1"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                           />
+                        </svg>
+                        <p className="text-18 font-medium text-gray-69 font-inter leading-5 transition-colors duration-300 hover:text-brand">
+                           {service.title}
+                        </p>
+                     </div>
+                  </Link>
+               ))}
             </div>
          </div>
          <div className="border border-brand/10 rounded-2xl py-[30px] bg-main-gray mt-[30px]">
             <div className="flex gap-5 items-center px-10 pb-[30px]">
                <SupportIcon />
                <h1 className="font-semibold text-22 text-main-black">
-                  Get Consultation
+                  Get Free Consultation
                </h1>
             </div>
             <hr className="bg-brand/10" />

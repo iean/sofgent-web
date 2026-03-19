@@ -4,13 +4,14 @@ import HeroRight from "./HeroRight";
 
 export default function Hero() {
   return (
-    <section id="home-one-hero">
-      <div className="hero-one-section-wrapper w-full xl:h-[905px] overflow-hidden relative">
+    <section id="home-one-hero" className="relative">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(103,232,249,0.16),transparent_26%),radial-gradient(circle_at_top_right,rgba(50,109,109,0.1),transparent_30%)]" />
+      <div className="hero-one-section-wrapper relative w-full overflow-hidden xl:min-h-[905px]">
         <WinGrid />
         <div className="relative z-10 h-full mx-auto theme-container">
-          <div className="w-full grid grid-cols-1 xl:grid-cols-[1.3fr_0.7fr] 2xl:grid-cols-[1.4fr_0.6fr] 2xl:gap-24 xl:gap-16 gap-10 items-center lg:pt-[223px] pt-[130px] h-full">
+          <div className="grid h-full w-full grid-cols-1 items-center gap-10 pt-[130px] lg:pt-[223px] xl:grid-cols-[1.3fr_0.7fr] xl:gap-16 2xl:grid-cols-[1.4fr_0.6fr] 2xl:gap-24">
             <div className="article-area relative z-20">
-              <div className="inline-flex md:px-6 px-3 py-2.5 md:py-[14px] bg-white space-x-2.5 items-center rounded-full shadow-common mb-5">
+              <div className="mb-6 inline-flex items-center space-x-2.5 rounded-full border border-white/80 bg-white/88 px-3 py-2.5 shadow-[0_18px_45px_rgba(15,23,42,0.08)] md:px-6 md:py-[14px]">
                 <span>
                   <svg
                     width="20"
@@ -68,30 +69,62 @@ export default function Hero() {
                     </defs>
                   </svg>
                 </span>
-                <h1 className="text-sm font-semibold pointer-events-auto md:text-20 text-brand">
-                  Top Software Development Company
-                </h1>
+                <p className="pointer-events-auto text-sm font-semibold text-brand md:text-20">
+                  AI software for teams that need clarity, not complexity
+                </p>
               </div>
-              <h2 className="text-4xl md:text-[56px] leading-normal text-main-black font-semibold mb-[35px] pointer-events-auto">
-                <span>Crafting </span>
-                <span className="relative inline-block px-3 font-bold text-white uppercase">
-                  <span className="relative z-10">Innovation-First</span>
-                  <span className="absolute top-0 left-0 block w-full h-full bg-gradient-to-r from-brand"></span>
+              <h2 className="mb-6 text-4xl font-semibold leading-[1.03] tracking-[-0.04em] text-slate-950 pointer-events-auto md:text-[60px]">
+                <span>Modern software systems for </span>
+                <span className="relative inline-block rounded-[18px] bg-[#08111f] px-4 py-2 text-white">
+                  growing companies
                 </span>
                 <br />
-                <span>Next-Gen Software for a Smarter Tomorrow.</span>
+                <span>that want AI, SaaS, and operations to feel simpler.</span>
               </h2>
-              <div className="px-6 py-[14px] bg-white border-l-2 border-brand mb-[35px] pointer-events-auto xl:w-full md:w-[620px]">
-                <p className="text-ptwo text-paragraph">
-At Sofgent, we offer enterprise software development services that drive scalable SaaS success. As a trusted software development company, we focus on speed, quality, and seamless integration — empowering your business with systems that enhance performance and operational efficiency                </p>
+              <div className="mb-8 max-w-[760px] rounded-[28px] border border-white/80 bg-white/86 p-6 shadow-[0_22px_55px_rgba(15,23,42,0.08)] pointer-events-auto md:p-7">
+                <p className="text-[17px] leading-8 text-slate-600">
+                  SofGent helps CTOs, founders, and owners build software that
+                  is easier to use, easier to scale, and easier to trust. We
+                  combine product thinking, AI workflows, and solid engineering
+                  so teams can move faster without creating delivery chaos.
+                </p>
               </div>
-              <div className="flex flex-wrap gap-4 items-center pointer-events-auto">
-                <Button btnText="Our Services" href="/services" />
+              <div className="pointer-events-auto flex flex-wrap items-center gap-4">
+                <Button btnText="Explore Services" href="/services" />
                 <Button
-                  btnText="Lets discuss your project"
+                  btnText="Book a discovery call"
                   href="/contact"
-                  className="bg-transparent text-brand border border-brand hover:bg-brand hover:text-white"
+                  className="border border-slate-200 bg-white text-slate-900 shadow-[0_16px_40px_rgba(15,23,42,0.08)] hover:bg-slate-900 hover:text-white"
                 />
+              </div>
+
+              <div className="mt-10 grid gap-4 md:max-w-[760px] md:grid-cols-3">
+                {[
+                  {
+                    title: "For owners",
+                    copy: "Clear roadmaps and simpler software decisions.",
+                  },
+                  {
+                    title: "For CTOs",
+                    copy: "Reliable architecture with delivery discipline.",
+                  },
+                  {
+                    title: "For teams",
+                    copy: "AI workflows that reduce manual operational work.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-[24px] border border-white/80 bg-white/70 p-5 shadow-[0_16px_40px_rgba(15,23,42,0.06)] backdrop-blur-sm"
+                  >
+                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">
+                      {item.title}
+                    </p>
+                    <p className="mt-3 text-[15px] leading-7 text-slate-700">
+                      {item.copy}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
             {/* Right Image */}

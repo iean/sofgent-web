@@ -7,7 +7,7 @@ interface PropsType {
    className?: string;
    href?: string;
    btnText?: string;
-   external?: boolean|false;
+   external?: boolean | false;
 }
 const Button: React.FC<PropsType> = ({
    className,
@@ -15,6 +15,9 @@ const Button: React.FC<PropsType> = ({
    btnText,
    external,
 }) => {
+   const baseClassName =
+      "inline-flex items-center justify-center gap-2 rounded-[16px] border border-transparent px-6 py-3.5 mt-4 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(18,50,74,0.16)] transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/30 focus-visible:ring-offset-2 sm:mt-0";
+
    return (
       <>
          {external ? (
@@ -24,7 +27,8 @@ const Button: React.FC<PropsType> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   className={twMerge(
-                     "inline-flex items-center px-6 py-3 mt-4 sm:mt-0 bg-brand text-white rounded-lg font-semibold shadow-md hover:bg-secondary transform hover:-translate-y-0.5 transition-all duration-200 group",
+                     baseClassName,
+                     "group bg-[#12324a] hover:bg-[#0d2537]",
                      className
                   )}>
                   {btnText}
@@ -36,11 +40,12 @@ const Button: React.FC<PropsType> = ({
                <Link
                   href={href ? href : "#"}
                   className={twMerge(
-                     "inline-flex items-center px-6 py-3 mt-4 sm:mt-0 bg-brand text-white rounded-lg font-semibold shadow-md hover:bg-secondary transform hover:-translate-y-0.5 transition-all duration-200 group",
+                     baseClassName,
+                     "group bg-[#12324a] hover:bg-[#0d2537]",
                      className
                   )}>
                   {btnText}
-                  <FaArrowRight className="w-4 h-4 ml-2" />
+                  <FaArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
                </Link>
             </>
          )}

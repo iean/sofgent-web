@@ -1,7 +1,12 @@
-import { CtaNoSSR } from "@/app/page";
 import readLocalFile from "@/app/utils/readLocalFile";
 import type { ProjectFieldsType } from "@/app/data/projects/types";
 import ProjectCard from "../common/ProjectCard";
+import dynamic from "next/dynamic";
+import Button from "../common/Button";
+
+const CtaNoSSR = dynamic(() => import("@/app/components/home/cta"), {
+   ssr: false,
+});
 export default async function ProjectList() {
    const projects = (await readLocalFile(
       "/app/data/projects/projects.json"
@@ -19,19 +24,27 @@ export default async function ProjectList() {
                <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
                   <div className="max-w-3xl">
                      <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200">
-                        AI Product Engineering Studio
+                        Product Portfolio
                      </div>
                      <h2 className="mt-5 max-w-4xl text-34 font-semibold text-white md:text-48 md:leading-[1.05]">
-                        Flagship platforms built for enterprise operations, AI workflows, and scalable software infrastructure.
+                        A portfolio of AI systems, SaaS platforms, and workflow
+                        software built to solve real business bottlenecks.
                      </h2>
                   </div>
 
                   <p className="max-w-2xl text-[16px] leading-8 text-slate-300">
-                     SofGent does not compete on brochure websites. We design
-                     and build AI-powered software platforms spanning knowledge
-                     systems, fintech infrastructure, workflow automation,
-                     developer tooling, and multi-tenant SaaS foundations.
+                     These are not brochure projects. They are production-minded
+                     product builds designed to improve operations,
+                     decision-making, and commercial execution.
                   </p>
+               </div>
+               <div className="mt-8 flex flex-wrap gap-4">
+                  <Button btnText="Book a Strategy Call" href="/contact" />
+                  <Button
+                     btnText="Discuss Your Product"
+                     href="/contact"
+                     className="border border-white/10 bg-white/5 text-white shadow-none hover:bg-white/10"
+                  />
                </div>
             </div>
 

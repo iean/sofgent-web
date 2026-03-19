@@ -31,7 +31,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-dmSans font-rubik">
+      <body className="font-dmSans">
         {/* Google Tag Manager noscript */}
         <noscript>
           <iframe

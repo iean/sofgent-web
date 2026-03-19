@@ -20,15 +20,22 @@ export default function Cta({className}:{className?:string}) {
                      />
                   </div>
                   <div className="md:w-2/4 w-full">
-                    <SectionTag  tag="Get Consultation"/>
+                    <SectionTag tag="Build Your AI Product" />
                      <h2 className="md:text-48 mt-6 text-34 font-semibold mb-[32px]">
-                        Get your free software development consultation
+                        Have an idea? Let&apos;s build it in 30 days.
                      </h2>
                      <p className="text-paragraph mb-[45px]">
-                        Let&apos;s build innovative software solutions together
+                        We help founders launch MVPs, build AI systems, and
+                        rebuild products for scale without wasting months.
                      </p>
-
-                     <Button btnText="Get Consultation" href="/contact" />
+                     <div className="flex flex-wrap gap-4">
+                        <Button btnText="Book Call" href="/contact" />
+                        <Button
+                           btnText="Get Free Consultation"
+                           href="/contact"
+                           className="border border-brand bg-transparent text-brand shadow-none hover:bg-brand hover:text-white"
+                        />
+                     </div>
                   </div>
                   <CtaRightPart />
                </div>

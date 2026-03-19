@@ -1,9 +1,13 @@
 import BreadCrumb from "@/app/components/common/BreadCrumb";
 import ServiceDetailsInfo from "@/app/components/serviceDetails";
-import { CtaNoSSR } from "@/app/page";
 import getServicesMeta from "@/app/utils/getServicesMeta";
 import getPageMeta from "@/app/utils/getPageMeta";
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
+
+const CtaNoSSR = dynamic(() => import("@/app/components/home/cta"), {
+   ssr: false,
+});
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
    return getPageMeta(`/services/${params.slug}`);

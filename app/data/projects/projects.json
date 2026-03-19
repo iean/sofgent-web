@@ -1,58 +1,36 @@
 [
    {
-      "title": "AI Document Intelligence Platform",
-      "slug": "ai-document-intelligence-platform",
-      "category": "AI Infrastructure",
-      "publish_date": "Flagship Platform",
-      "summary": "Enterprise document operations platform for extracting data, classifying files, and routing human review with AI-assisted workflows.",
-      "description": "An enterprise platform that automatically processes documents, extracts structured data, and routes downstream workflows using AI. It is designed for organizations handling high volumes of scanned forms, handwritten submissions, and compliance-heavy document pipelines.",
+      "title": "AI Knowledge Platform for Teams and Process-Driven Organizations",
+      "slug": "ai-knowledge-platform",
+      "category": "AI Knowledge Product",
+      "publish_date": "Portfolio Case Study",
+      "summary": "A production-ready AI knowledge system that turns internal documents, SOPs, and team knowledge into a searchable assistant for faster execution.",
+      "description": "This case study shows how SofGent can turn scattered documents, meeting notes, and operating knowledge into a permission-aware internal product teams actually use every day.",
+      "problem": "Critical knowledge lived across folders, documents, recordings, and team memory. Teams lost time searching for answers, onboarding was slow, and internal execution depended too heavily on asking the right person.",
+      "solution": "SofGent designed an AI knowledge platform with structured ingestion, retrieval workflows, permission-aware answers, clean UX, and operational controls so the system could be trusted in daily use.",
+      "outcome": "The business moved from fragmented knowledge and slow internal support to a reusable AI product that improved access, speed, and execution quality across teams.",
       "capabilities": [
-         "OCR for scanned forms",
-         "Handwritten form recognition",
-         "Document classification",
-         "AI field extraction",
-         "Human review workflow",
-         "API integrations"
+         "Structured knowledge ingestion pipelines",
+         "Permission-aware AI assistant",
+         "Semantic search across internal data",
+         "Meeting and document summarization",
+         "Multi-source sync and content controls"
       ],
       "industries": [
-         "Banking",
-         "Insurance",
-         "Government"
+         "SaaS",
+         "Operations",
+         "Internal Enablement"
       ],
       "technologies": [
-         "FastAPI",
-         "Transformers",
-         "Tesseract",
-         "AWS SQS",
-         "Angular review dashboard"
+         "Next.js",
+         "Node.js",
+         "PostgreSQL",
+         "Vector Database",
+         "LLM APIs"
       ],
-      "whyItMatters": "Shows SofGent's strength in OCR systems, AI pipelines, and operational workflow automation for regulated industries.",
-      "ctaLabel": "Discuss document intelligence",
-      "ctaHref": "/contact",
-      "theme": {
-         "primary": "#0f766e",
-         "secondary": "#99f6e4",
-         "surface": "#ecfeff"
-      }
-   },
-   {
-      "title": "Enterprise Knowledge AI (EasyKT)",
-      "slug": "enterprise-knowledge-ai-easykt",
-      "category": "AI Knowledge Platform",
-      "publish_date": "Flagship Platform",
-      "summary": "A company knowledge layer that turns documents, training materials, and video archives into an internal AI assistant and search system.",
-      "description": "An AI-powered knowledge system that converts company documents, videos, and training materials into a searchable intelligence layer. It enables teams to build an internal ChatGPT experience trained on company-specific knowledge.",
-      "capabilities": [
-         "RAG-based AI assistant",
-         "Knowledge ingestion pipelines",
-         "AI summarization",
-         "Video transcription",
-         "AI search across company data",
-         "Slack and Drive integrations"
-      ],
-      "impact": "Companies build an internal ChatGPT trained on company knowledge.",
-      "whyItMatters": "Positions SofGent as a builder of enterprise AI systems that connect knowledge retrieval, search, and operational tooling.",
-      "ctaLabel": "Discuss knowledge AI",
+      "systemAngle": "We built the system around retrieval quality, access control, and daily workflow adoption so the assistant could become a real operating layer instead of a novelty search box.",
+      "visualLabel": "[IMAGE: AI knowledge platform dashboard]",
+      "ctaLabel": "Discuss an AI knowledge product",
       "ctaHref": "/contact",
       "theme": {
          "primary": "#1d4ed8",
@@ -61,22 +39,76 @@
       }
    },
    {
-      "title": "AI Backlog Intelligence System",
-      "slug": "ai-backlog-intelligence-system",
-      "category": "Engineering AI",
-      "publish_date": "Flagship Platform",
-      "summary": "An engineering intelligence layer for analyzing Jira tickets, requirements, and backlog data to improve planning and prioritization.",
-      "description": "An AI platform that analyzes Jira tickets, engineering documents, and backlog data to automatically organize, summarize, and prioritize work. It is built for CTOs and engineering leaders who need more signal from growing delivery complexity.",
+      "title": "AI Document Automation System for Operational Workflows",
+      "slug": "ocr-document-automation-system",
+      "category": "Document Intelligence System",
+      "publish_date": "Portfolio Case Study",
+      "summary": "An OCR and extraction workflow that turns incoming PDFs, scans, and forms into structured operational data with validation and human review.",
+      "description": "This case study reflects how SofGent builds document intelligence systems that reduce manual operations, improve accuracy, and move businesses faster from file intake to usable data.",
+      "problem": "The team was processing large volumes of PDFs, scans, and handwritten forms. Manual entry was slow, error-prone, and expensive, while downstream systems depended on clean, validated outputs.",
+      "solution": "SofGent built a document automation workflow with OCR, extraction logic, validation rules, exception handling, review queues, and downstream routing so operations teams could process work with confidence.",
+      "outcome": "The business gained a system that transformed raw documents into reliable structured outputs and reduced the manual pressure on operations-heavy teams.",
       "capabilities": [
-         "AI ticket clustering",
-         "Duplicate detection",
-         "Sprint planning suggestions",
-         "Requirement summarization",
-         "Release prediction"
+         "OCR and field-level extraction",
+         "Document classification",
+         "Validation and exception handling",
+         "Human review dashboard",
+         "Workflow automation and routing"
       ],
-      "impact": "Highly attractive to CTOs because it directly improves engineering planning, execution clarity, and delivery forecasting.",
-      "whyItMatters": "Makes SofGent's engineering systems expertise visible in a way that speaks to technical decision makers rather than just end-user UX.",
-      "ctaLabel": "Discuss backlog intelligence",
+      "industries": [
+         "Finance",
+         "Insurance",
+         "Back-Office Operations"
+      ],
+      "technologies": [
+         "Python",
+         "FastAPI",
+         "OCR Models",
+         "Queue Workers",
+         "React Dashboard"
+      ],
+      "systemAngle": "The core value came from the full pipeline: ingestion, extraction, validation, exception handling, and human review, not just OCR in isolation.",
+      "visualLabel": "[IMAGE: document processing pipeline UI]",
+      "ctaLabel": "Plan a document automation system",
+      "ctaHref": "/contact",
+      "theme": {
+         "primary": "#0f766e",
+         "secondary": "#99f6e4",
+         "surface": "#ecfeff"
+      }
+   },
+   {
+      "title": "Multi-Tenant SaaS Platform for Scalable Digital Operations",
+      "slug": "custom-ecommerce-builder",
+      "category": "Custom SaaS Platform",
+      "publish_date": "Portfolio Case Study",
+      "summary": "A multi-tenant business platform designed for teams that need their own workflows, access control, admin tooling, and room to scale without platform lock-in.",
+      "description": "This case study shows how SofGent can turn operational complexity into a structured SaaS platform with strong system boundaries, admin workflows, and a foundation for growth.",
+      "problem": "The business had outgrown template software. Pricing logic, internal workflows, and operator needs no longer fit off-the-shelf tools, and the team needed a product it could shape around its own operation.",
+      "solution": "SofGent designed a custom SaaS platform with modular workflows, tenant-aware architecture, internal tooling, role-based controls, and a delivery model that supported both launch and future scale.",
+      "outcome": "The business gained a platform built around its operating model instead of bending its workflows around someone else's product constraints.",
+      "capabilities": [
+         "Multi-tenant product architecture",
+         "Custom admin and operator tools",
+         "Workflow-specific business logic",
+         "Role-based access controls",
+         "Scale-ready deployment foundation"
+      ],
+      "industries": [
+         "SaaS",
+         "Operations",
+         "Digital Services"
+      ],
+      "technologies": [
+         "Next.js",
+         "Node.js",
+         "PostgreSQL",
+         "Stripe",
+         "AWS"
+      ],
+      "systemAngle": "The system was shaped around tenancy, internal operations, and long-term extensibility so the product could scale without an expensive rewrite later.",
+      "visualLabel": "[IMAGE: multi-tenant SaaS operations dashboard]",
+      "ctaLabel": "Discuss a custom SaaS platform",
       "ctaHref": "/contact",
       "theme": {
          "primary": "#7c3aed",
@@ -85,160 +117,42 @@
       }
    },
    {
-      "title": "Digital Wallet Infrastructure Platform (EasyCash)",
-      "slug": "digital-wallet-infrastructure-platform-easycash",
-      "category": "Fintech Infrastructure",
-      "publish_date": "Flagship Platform",
-      "summary": "A modular wallet and ledger foundation for fintech startups and payment products that need controlled transaction flows and compliance-ready architecture.",
-      "description": "A modular digital wallet system designed for fintech startups and payment platforms. It provides the core infrastructure needed to manage balances, monitor activity, and connect payment services through an API-driven architecture.",
+      "title": "Financial Operations and Wallet Infrastructure Platform",
+      "slug": "financial-wallet-system",
+      "category": "Fintech Infrastructure Product",
+      "publish_date": "Extended Case Study",
+      "summary": "A wallet and ledger platform designed for transaction flows, balance management, operational controls, and payment-system scale.",
+      "description": "This case study highlights SofGent's ability to build financial systems that require strong backend discipline, controlled workflows, and architecture that can expand safely.",
+      "problem": "The product needed to manage balances, transaction histories, and payment workflows without relying on fragile backend patchwork or ad hoc operational controls.",
+      "solution": "SofGent built a wallet and ledger foundation with transaction tracking, role-based controls, payment workflow orchestration, and a service-oriented architecture ready for growth.",
+      "outcome": "The platform gave the business a stronger operational core for payment flows and balance management, with cleaner control over how the system could evolve.",
       "capabilities": [
-         "Wallet accounts",
-         "Ledger system",
-         "Transaction monitoring",
-         "Payment integrations",
-         "KYC workflows",
-         "API-based architecture"
+         "Wallet account management",
+         "Ledger and transaction logic",
+         "Role-based operational controls",
+         "Payment workflow integration",
+         "Scalable service architecture"
       ],
-      "whyItMatters": "Demonstrates strong fintech infrastructure design across ledgers, workflows, integrations, and compliance-sensitive backend systems.",
-      "ctaLabel": "Discuss wallet infrastructure",
+      "industries": [
+         "Fintech",
+         "Payments",
+         "Digital Finance"
+      ],
+      "technologies": [
+         "Spring Boot",
+         "PostgreSQL",
+         "Docker",
+         "AWS",
+         "Microservices"
+      ],
+      "systemAngle": "The architecture prioritized transaction integrity, service boundaries, and operational visibility so the business could scale payment logic with more confidence.",
+      "visualLabel": "[IMAGE: wallet and ledger system view]",
+      "ctaLabel": "Discuss fintech infrastructure",
       "ctaHref": "/contact",
       "theme": {
          "primary": "#0f172a",
          "secondary": "#38bdf8",
          "surface": "#f8fafc"
-      }
-   },
-   {
-      "title": "Multi-Tenant SaaS Platform Engine",
-      "slug": "multi-tenant-saas-platform-engine",
-      "category": "SaaS Infrastructure",
-      "publish_date": "Flagship Platform",
-      "summary": "A reusable platform architecture for launching secure multi-tenant SaaS products with tenancy, roles, billing, and scalable APIs built in.",
-      "description": "A scalable platform architecture for building multi-tenant SaaS products. It is designed for teams that need a serious backend foundation before layering product-specific workflows on top.",
-      "capabilities": [
-         "Tenant isolation",
-         "Role-based permissions",
-         "Schema-based tenancy",
-         "Billing systems",
-         "API gateway architecture"
-      ],
-      "whyItMatters": "Shows deep SaaS architecture expertise and reinforces SofGent's ability to build systems meant to scale beyond MVP stage.",
-      "ctaLabel": "Discuss SaaS architecture",
-      "ctaHref": "/contact",
-      "theme": {
-         "primary": "#2563eb",
-         "secondary": "#67e8f9",
-         "surface": "#f0f9ff"
-      }
-   },
-   {
-      "title": "AI Knowledge Audit System",
-      "slug": "ai-knowledge-audit-system",
-      "category": "AI Consulting Platform",
-      "publish_date": "Flagship Platform",
-      "summary": "A consulting-oriented AI system for identifying knowledge gaps, documenting workflows, and generating operational guidance from company materials.",
-      "description": "A system that analyzes company documents and workflows to detect knowledge gaps and operational inefficiencies. It can function as a SofGent consulting product for diagnosing process issues and generating structured operational outputs.",
-      "capabilities": [
-         "Document ingestion",
-         "AI process analysis",
-         "Knowledge gap detection",
-         "Automated SOP generation"
-      ],
-      "whyItMatters": "Creates a bridge between SofGent's consulting value and its product engineering depth by turning audits into platformized workflows.",
-      "ctaLabel": "Discuss AI audit systems",
-      "ctaHref": "/contact",
-      "theme": {
-         "primary": "#9333ea",
-         "secondary": "#e9d5ff",
-         "surface": "#faf5ff"
-      }
-   },
-   {
-      "title": "AI Powered Training Platform",
-      "slug": "ai-powered-training-platform",
-      "category": "AI Learning Platform",
-      "publish_date": "Flagship Platform",
-      "summary": "An internal learning platform that transforms company training materials into interactive lessons, onboarding flows, and retention loops.",
-      "description": "A system that converts company training materials into interactive learning experiences. It is designed to help companies modernize onboarding, improve training consistency, and measure knowledge retention across teams.",
-      "capabilities": [
-         "Video-to-lesson conversion",
-         "AI quiz generation",
-         "Knowledge retention tracking",
-         "Employee onboarding modules"
-      ],
-      "whyItMatters": "Extends SofGent's AI knowledge positioning into learning systems where content processing, retrieval, and user engagement meet.",
-      "ctaLabel": "Discuss AI training platforms",
-      "ctaHref": "/contact",
-      "theme": {
-         "primary": "#ea580c",
-         "secondary": "#fdba74",
-         "surface": "#fff7ed"
-      }
-   },
-   {
-      "title": "AI Commerce Platform",
-      "slug": "ai-commerce-platform",
-      "category": "E-commerce Infrastructure",
-      "publish_date": "Flagship Platform",
-      "summary": "An AI-driven commerce architecture for catalog ingestion, product content generation, recommendations, and multi-store operations.",
-      "description": "A next-generation e-commerce platform with AI-driven catalog management and automated product content generation. It is structured for businesses that need smarter merchandising operations and scalable commerce foundations.",
-      "capabilities": [
-         "AI product description generation",
-         "Automated catalog ingestion",
-         "AI recommendations",
-         "Multi-store architecture"
-      ],
-      "whyItMatters": "Shows SofGent can apply AI systems thinking beyond internal tools into revenue-driving commerce workflows and product infrastructure.",
-      "ctaLabel": "Discuss AI commerce",
-      "ctaHref": "/contact",
-      "theme": {
-         "primary": "#db2777",
-         "secondary": "#f9a8d4",
-         "surface": "#fdf2f8"
-      }
-   },
-   {
-      "title": "Secure Remote Development Platform",
-      "slug": "secure-remote-development-platform",
-      "category": "Developer Infrastructure",
-      "publish_date": "Flagship Platform",
-      "summary": "A secure browser-based development environment for teams that need isolated workspaces, enterprise controls, and auditable access.",
-      "description": "A cloud-based development workspace that enables teams to code securely inside controlled environments. It is designed for organizations that need tighter security boundaries without sacrificing developer productivity.",
-      "capabilities": [
-         "Browser-based IDE",
-         "Isolated development containers",
-         "VPN integration",
-         "Enterprise access control"
-      ],
-      "whyItMatters": "Connects SofGent's engineering credibility to secure developer tooling, infrastructure automation, and controlled enterprise environments.",
-      "ctaLabel": "Discuss secure dev platforms",
-      "ctaHref": "/contact",
-      "theme": {
-         "primary": "#334155",
-         "secondary": "#94a3b8",
-         "surface": "#f8fafc"
-      }
-   },
-   {
-      "title": "Enterprise AI Integration Platform",
-      "slug": "enterprise-ai-integration-platform",
-      "category": "AI Infrastructure",
-      "publish_date": "Flagship Platform",
-      "summary": "A connective AI platform for enterprise data sources that supports search, automation, document embeddings, and decision support workflows.",
-      "description": "A platform that integrates enterprise data sources and provides AI capabilities such as search, automation, and decision support. It connects fragmented tools into a single AI-enabled operating layer.",
-      "capabilities": [
-         "Connect to Jira, Drive, and Docs",
-         "AI search layer",
-         "Document embeddings",
-         "Enterprise RAG architecture"
-      ],
-      "whyItMatters": "Reinforces SofGent's ability to build integration-heavy AI platforms that sit across systems instead of living as isolated demos.",
-      "ctaLabel": "Discuss enterprise AI integration",
-      "ctaHref": "/contact",
-      "theme": {
-         "primary": "#0f766e",
-         "secondary": "#5eead4",
-         "surface": "#f0fdfa"
       }
    }
 ]

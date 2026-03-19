@@ -8,18 +8,25 @@ const BreadCrumb: React.FC<{
    to: string;
 }> = ({ pageTitle, currentPage, to }) => {
    return (
-      <section id="h1-breadcrumb">
-         <div className="relative w-full pb-16 overflow-hidden h1-breadcrumb h-fit bg-main-gray md:pb-24">
-            <WinGrid />
-            <div className="relative z-20 mx-auto theme-container h-fit w-fit">
-               <div className="mt-[120px] md:mt-[272px] w-fit mx-auto relative z-10">
-                  <h1 className="w-full text-[#2F393E] font-semibold text-center text-34 sm:text-48">
+      <section
+         id="h1-breadcrumb"
+         className="relative overflow-hidden bg-[linear-gradient(180deg,#f6f9fc_0%,#eef3f8_100%)]">
+         <div className="relative w-full overflow-hidden pb-16 md:pb-20">
+            <div className="absolute inset-0 opacity-60">
+               <WinGrid />
+            </div>
+            <div className="relative z-20 mx-auto theme-container">
+               <div className="mx-auto mt-[118px] max-w-4xl rounded-[32px] border border-white/70 bg-white/80 px-6 py-10 text-center shadow-[0_24px_70px_rgba(15,23,42,0.08)] backdrop-blur-xl md:mt-[212px] md:px-10 md:py-12">
+                  <div className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
+                     {currentPage}
+                  </div>
+                  <h1 className="mt-5 w-full text-34 font-semibold tracking-[-0.04em] text-slate-900 sm:text-48">
                      {pageTitle}
                   </h1>
-                  <div className="flex items-center justify-center gap-5 mt-4">
+                  <div className="mt-5 flex items-center justify-center gap-3 text-sm text-slate-500">
                      <Link
                         href="/"
-                        className="relative leading-5 transition-all duration-300 home-two-nav-item text-18 font-inter text-paragraph hover:text-brand">
+                        className="rounded-full px-3 py-1.5 hover:bg-slate-100 hover:text-slate-900">
                         Home
                      </Link>
                      <svg
@@ -38,7 +45,7 @@ const BreadCrumb: React.FC<{
                      </svg>
                      <Link
                         href={to}
-                        className="relative leading-5 transition-all duration-300 home-two-nav-item text-18 font-inter text-paragraph hover:text-brand">
+                        className="rounded-full bg-slate-100 px-3 py-1.5 text-slate-700">
                         {currentPage}
                      </Link>
                   </div>
