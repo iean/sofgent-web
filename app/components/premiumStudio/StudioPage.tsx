@@ -20,7 +20,7 @@ export default function StudioPage({
    content: StudioPageContent;
 }) {
    return (
-      <div className="bg-[linear-gradient(180deg,#f7fafd_0%,#eef3f8_100%)]">
+      <div className="min-h-screen bg-white">
          <section className="pt-16 md:pt-20">
             <div className="mx-auto space-y-6 theme-container md:space-y-8">
                <HeroSection content={content.hero} />

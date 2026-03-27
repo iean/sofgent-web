@@ -27,104 +27,120 @@ export default async function CaseStudies() {
       .filter(Boolean) as ProjectFieldsType[];
 
    return (
-      <section className="bg-[linear-gradient(180deg,#f6f9fc_0%,#eef3f8_100%)]">
+      <main className="min-h-screen bg-slate-50">
          <BreadCrumb
             pageTitle="Case Studies"
             currentPage="Case Studies"
             to="/case-studies"
          />
 
-         <div className="mx-auto theme-container py-16 md:py-24">
-            <div className="grid gap-8 rounded-[36px] border border-slate-200 bg-white p-7 shadow-[0_28px_80px_rgba(15,23,42,0.08)] md:p-10 xl:grid-cols-[0.95fr_1.05fr]">
-               <div className="max-w-3xl">
-                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-brand">
-                     Portfolio Proof
-                  </p>
-                  <h1 className="mt-5 text-34 font-semibold tracking-[-0.04em] text-slate-950 md:text-[56px] md:leading-[1.04]">
-                     Case studies that show how SofGent builds real AI systems
-                     and product infrastructure.
-                  </h1>
-                  <p className="mt-6 text-[18px] leading-8 text-slate-600">
-                     These are polished SofGent-branded case studies built to
-                     show how we solve document workflows, AI knowledge systems,
-                     and custom SaaS operations with production-minded
-                     execution.
-                  </p>
-                  <div className="mt-8 flex flex-wrap gap-4">
-                     <Button btnText="Book a Strategy Call" href="/contact" />
-                     <Button
-                        btnText="Discuss Your Product"
-                        href="/contact"
-                        className="border border-slate-200 bg-white text-slate-900 shadow-none hover:bg-slate-50"
-                     />
-                  </div>
-               </div>
-
-               <VisualPlaceholder
-                  label="[IMAGE: portfolio overview board]"
-                  description="Placeholder for a clean case-study collage showing document automation, AI knowledge workflows, and a multi-tenant platform dashboard."
-                  className="min-h-[320px]"
-               />
-            </div>
-
-            <div className="mt-8 grid gap-4 rounded-[30px] border border-slate-200 bg-white/90 p-4 shadow-[0_18px_50px_rgba(15,23,42,0.05)] md:grid-cols-3 md:p-5">
-               {[
-                  "Production-ready systems, not vague demos",
-                  "Document AI, SaaS, and internal workflow software",
-                  "Built to sell, operate, and scale",
-               ].map((item) => (
-                  <div
-                     key={item}
-                     className="rounded-[22px] border border-slate-200 bg-slate-50 px-5 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-slate-600">
-                     {item}
-                  </div>
-               ))}
-            </div>
-
-            <div className="mt-12 grid gap-8">
-               {caseStudies.map((study, index) => (
-                  <CaseStudyStoryCard
-                     key={study.slug}
-                     project={study}
-                     index={index}
-                  />
-               ))}
-            </div>
-
-            <div className="mt-12 rounded-[36px] border border-slate-900/80 bg-[linear-gradient(135deg,#08111f_0%,#163042_100%)] px-7 py-10 text-white shadow-[0_30px_100px_rgba(8,17,31,0.18)] md:px-10 md:py-12">
-               <div className="grid gap-8 xl:grid-cols-[0.92fr_1.08fr] xl:items-center">
+         {/* HERO HEADER */}
+         <section className="relative pt-12 pb-24 overflow-hidden bg-grid-paper border-b border-slate-100">
+            <div className="absolute top-0 inset-x-0 h-48 bg-gradient-to-b from-slate-50 to-transparent pointer-events-none" />
+            
+            <div className="theme-container relative z-10">
+               <div className="grid gap-12 rounded-[2.5rem] border border-slate-200 bg-white p-10 shadow-sm md:p-14 xl:grid-cols-[1.1fr_0.9fr] items-center">
                   <div className="max-w-3xl">
-                     <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-200">
-                        Ready To Build
+                     <p className="text-sm font-bold uppercase tracking-widest text-brand mb-6">
+                        Portfolio Proof
                      </p>
-                     <h2 className="mt-4 text-34 font-semibold tracking-[-0.04em] md:text-48">
-                        Want your product or workflow to become the next case
-                        study?
-                     </h2>
-                     <p className="mt-5 text-[18px] leading-8 text-slate-200">
-                        We can map the architecture, workflow, and launch plan
-                        for your SaaS platform, AI system, or internal business
-                        software before the build starts.
+                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.05]">
+                        How we build real AI systems & product infrastructure.
+                     </h1>
+                     <p className="mt-6 text-lg leading-relaxed text-slate-600">
+                        These case studies show how we solve complex document workflows, AI knowledge systems,
+                        and scale SaaS operations with production-minded execution.
                      </p>
                      <div className="mt-8 flex flex-wrap gap-4">
-                        <Button btnText="Book a Strategy Call" href="/contact" />
+                        <Button btnText="Book a Strategy Call" href="/contact" variant="primary" />
                         <Button
-                           btnText="Plan Your AI Workflow"
+                           btnText="Discuss Your Product"
                            href="/contact"
-                           className="border border-white/10 bg-white/5 text-white shadow-none hover:bg-white/10"
+                           variant="outline"
                         />
                      </div>
                   </div>
 
-                  <VisualPlaceholder
-                     label="[IMAGE: next case study roadmap]"
-                     description="Placeholder for a simple product roadmap, system architecture sketch, and discovery workshop output."
-                     tone="dark"
-                     className="min-h-[240px]"
-                  />
+                  <div className="relative z-10 rounded-[2rem] border border-slate-100 bg-slate-50 p-6 shadow-sm h-full flex flex-col justify-center min-h-[350px]">
+                     <VisualPlaceholder
+                        label="[IMAGE: portfolio overview board]"
+                        description="Clean case-study collage showing document automation, AI knowledge workflows, and a multi-tenant platform dashboard."
+                        className="w-full flex-grow text-sm shadow-none"
+                     />
+                  </div>
+               </div>
+
+               <div className="mt-8 grid gap-4 rounded-[2rem] border border-slate-100 bg-white p-6 shadow-sm md:grid-cols-3">
+                  {[
+                     "Production-ready systems, not vague demos",
+                     "Document AI, SaaS, and internal workflows",
+                     "Built to sell, operate, and scale",
+                  ].map((item) => (
+                     <div
+                        key={item}
+                        className="flex items-center justify-center text-center rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-xs font-bold uppercase tracking-widest text-slate-500">
+                        {item}
+                     </div>
+                  ))}
                </div>
             </div>
-         </div>
-      </section>
+         </section>
+
+         {/* CASE STUDIES LIST */}
+         <section className="py-24 bg-white">
+            <div className="theme-container">
+               <div className="grid gap-16">
+                  {caseStudies.map((study, index) => (
+                     <CaseStudyStoryCard
+                        key={study.slug}
+                        project={study}
+                        index={index}
+                     />
+                  ))}
+               </div>
+            </div>
+         </section>
+
+         {/* BOTTOM CTA */}
+         <section className="py-24 bg-slate-50">
+            <div className="theme-container">
+               <div className="relative overflow-hidden rounded-[3rem] border border-slate-800 bg-slate-900 px-8 py-20 md:px-20 md:py-24 shadow-2xl grid gap-12 xl:grid-cols-[1.1fr_0.9fr] xl:items-center">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(50,109,109,0.25),transparent_50%)]" />
+                  
+                  <div className="relative z-10 max-w-2xl">
+                     <p className="text-cyan-200 font-semibold uppercase tracking-widest mb-4">
+                        Ready To Build
+                     </p>
+                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
+                        Want your product to become the next case study?
+                     </h2>
+                     <p className="text-xl text-slate-300 mb-10">
+                        We can map the architecture, workflow, and launch plan
+                        for your SaaS platform, AI system, or internal logic
+                        before the build starts.
+                     </p>
+                     <div className="flex flex-wrap items-center gap-4">
+                        <Button btnText="Book a Strategy Call" href="/contact" variant="primary" />
+                        <Button
+                           btnText="Plan Your AI Workflow"
+                           href="/contact"
+                           variant="outline"
+                           className="border-white/20 bg-white/5 text-white hover:border-white/40 hover:bg-white/10 hover:text-white"
+                        />
+                     </div>
+                  </div>
+
+                  <div className="relative z-10 w-full h-full min-h-[300px]">
+                     <VisualPlaceholder
+                        label="[IMAGE: next case study roadmap]"
+                        description="Product roadmap, system architecture sketch, and discovery workshop output."
+                        tone="dark"
+                        className="h-full shadow-xl"
+                     />
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
    );
 }

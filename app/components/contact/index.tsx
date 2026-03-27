@@ -110,23 +110,23 @@ export default function ContactForm() {
    };
 
    return (
-      <section className="p-7 md:p-9">
-         <div className="border-b border-slate-200 pb-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-brand">
+      <section className="p-8 md:p-12 h-full flex flex-col justify-center">
+         <div className="border-b border-slate-100 pb-8">
+            <p className="text-sm font-bold uppercase tracking-widest text-brand">
                Quick Intake
             </p>
-            <h2 className="mt-4 text-24 font-semibold tracking-[-0.03em] text-slate-950 md:text-[34px]">
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
                Share your product idea
             </h2>
-            <p className="mt-4 text-[16px] leading-8 text-slate-600">
+            <p className="mt-4 text-base leading-relaxed text-slate-600">
                Keep it short. We only need enough context to prepare for a
                useful first conversation.
             </p>
          </div>
 
-         <form onSubmit={handleSubmit} className="mt-8 grid gap-5">
+         <form onSubmit={handleSubmit} className="mt-8 grid gap-6 flex-grow">
             <div>
-               <label className="mb-2 block text-sm font-medium text-slate-700">
+               <label className="mb-2.5 block text-sm font-bold text-slate-700">
                   Name
                </label>
                <input
@@ -135,15 +135,15 @@ export default function ContactForm() {
                   name="name"
                   type="text"
                   placeholder="Your name"
-                  className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 focus:border-brand focus:bg-white focus:outline-none"
+                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-5 py-3.5 text-slate-900 transition-colors focus:border-brand focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand/10"
                />
                {errors.name ? (
-                  <p className="mt-2 text-sm text-red-500">{errors.name}</p>
+                  <p className="mt-2.5 text-sm font-medium text-red-500">{errors.name}</p>
                ) : null}
             </div>
 
             <div>
-               <label className="mb-2 block text-sm font-medium text-slate-700">
+               <label className="mb-2.5 block text-sm font-bold text-slate-700">
                   Company
                </label>
                <input
@@ -152,15 +152,15 @@ export default function ContactForm() {
                   name="company"
                   type="text"
                   placeholder="Company name"
-                  className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 focus:border-brand focus:bg-white focus:outline-none"
+                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-5 py-3.5 text-slate-900 transition-colors focus:border-brand focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand/10"
                />
                {errors.company ? (
-                  <p className="mt-2 text-sm text-red-500">{errors.company}</p>
+                  <p className="mt-2.5 text-sm font-medium text-red-500">{errors.company}</p>
                ) : null}
             </div>
 
             <div>
-               <label className="mb-2 block text-sm font-medium text-slate-700">
+               <label className="mb-2.5 block text-sm font-bold text-slate-700">
                   Timeline
                </label>
                <input
@@ -169,15 +169,15 @@ export default function ContactForm() {
                   name="timeline"
                   type="text"
                   placeholder="For example: ASAP, 4 weeks, this quarter"
-                  className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 focus:border-brand focus:bg-white focus:outline-none"
+                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-5 py-3.5 text-slate-900 transition-colors focus:border-brand focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand/10"
                />
                {errors.timeline ? (
-                  <p className="mt-2 text-sm text-red-500">{errors.timeline}</p>
+                  <p className="mt-2.5 text-sm font-medium text-red-500">{errors.timeline}</p>
                ) : null}
             </div>
 
             <div>
-               <label className="mb-2 block text-sm font-medium text-slate-700">
+               <label className="mb-2.5 block text-sm font-bold text-slate-700">
                   Product Idea
                </label>
                <textarea
@@ -185,31 +185,31 @@ export default function ContactForm() {
                   value={formData.productIdea}
                   name="productIdea"
                   placeholder="What are you building, and where do you need help?"
-                  className="min-h-[160px] w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-slate-900 focus:border-brand focus:bg-white focus:outline-none"
+                  className="min-h-[160px] w-full rounded-xl border border-slate-200 bg-slate-50 px-5 py-3.5 text-slate-900 transition-colors focus:border-brand focus:bg-white focus:outline-none focus:ring-4 focus:ring-brand/10 resize-y"
                />
                {errors.productIdea ? (
-                  <p className="mt-2 text-sm text-red-500">
+                  <p className="mt-2.5 text-sm font-medium text-red-500">
                      {errors.productIdea}
                   </p>
                ) : null}
             </div>
 
-            <div>
+            <div className="pt-4">
                <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_40px_rgba(50,109,109,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#285b5b] disabled:cursor-not-allowed disabled:opacity-60">
+                  className="w-full sm:w-auto inline-flex items-center justify-center rounded-2xl bg-brand px-8 py-3.5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(50,109,109,0.25)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#285b5b] hover:shadow-[0_12px_25px_rgba(50,109,109,0.35)] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0">
                   {isSubmitting ? "Sending..." : "Send details"}
                </button>
 
                {submitStatus === "success" ? (
-                  <div className="mt-4 rounded-2xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700">
-                     Thanks. Your details have been sent successfully.
+                  <div className="mt-6 rounded-xl border border-emerald-200 bg-emerald-50 px-5 py-4 text-sm font-medium text-emerald-800">
+                     Thanks. Your details have been sent successfully. We will be in touch shortly.
                   </div>
                ) : null}
 
                {submitStatus === "error" ? (
-                  <div className="mt-4 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                  <div className="mt-6 rounded-xl border border-red-200 bg-red-50 px-5 py-4 text-sm font-medium text-red-800">
                      There was a problem sending your details. Please try again.
                   </div>
                ) : null}

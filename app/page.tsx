@@ -1,550 +1,396 @@
-import ProjectCard from "@/app/components/common/ProjectCard";
-import AIHeroIllustration from "@/app/components/home/AIHeroIllustration";
-import Button from "@/app/components/common/Button";
+import React from "react";
+import Link from "next/link";
+import { ArrowRight, Database, Code2, Network, ChevronRight, Layers, Workflow, Server, ShieldCheck, Zap, Cog, CheckCircle2, Rocket, Building2, Briefcase } from "lucide-react";
 import Footer from "@/app/components/Layout/Footer/Footer";
 import Header from "@/app/components/Layout/Header/Header";
-import type { ProjectFieldsType } from "@/app/data/projects/types";
-import getPageMeta from "@/app/utils/getPageMeta";
-import readLocalFile from "@/app/utils/readLocalFile";
-import type { LucideIcon } from "lucide-react";
-import {
-   BrainCircuit,
-   Clock3,
-   Layers3,
-   Rocket,
-   ShieldCheck,
-   Sparkles,
-   Waypoints,
-   Workflow,
-} from "lucide-react";
+import HeroSlider from "@/app/components/home/HeroSlider";
 import type { Metadata } from "next";
-import Link from "next/link";
 
-export function generateMetadata(): Metadata {
-   return getPageMeta("/");
-}
+export const metadata: Metadata = {
+   title: "SofGent | Premium AI Product Studio",
+   description: "We build production-ready AI products, SaaS platforms, and internal tools in 2-4 weeks.",
+};
 
-const trustBullets = [
+const services = [
    {
-      icon: Layers3,
-      eyebrow: "Product delivery",
-      title: "Built multiple SaaS products",
-      description: "Architecture, product UX, and launch execution in one team.",
+      icon: Database,
+      title: "AI Document Automation",
+      pitch: "Turn your documents into structured data automatically",
+      description: "We build OCR pipelines, extraction logic, and validation schemas to replace manual data entry for financial, legal, and operational documents.",
+      proof: "Processing 50k+ documents daily for clients",
+      tags: ["OCR + Extraction", "Validation", "Structured Output"],
    },
    {
-      icon: BrainCircuit,
-      eyebrow: "AI + engineering",
-      title: "AI + full-stack expertise",
-      description:
-         "Product logic, automation, and scalable app delivery handled together.",
+      icon: Layers,
+      title: "AI SaaS MVP Builder",
+      pitch: "We turn your idea into a working SaaS in 14 days",
+      description: "From database architecture to full-stack frontend and AI integration, we launch your core product so you can acquire users and raise capital.",
+      proof: "Delivered 12+ production MVPs last year",
+      tags: ["Full SaaS", "AI Features", "Deployed System"],
    },
    {
-      icon: Rocket,
-      eyebrow: "Launch speed",
-      title: "Rapid MVP delivery",
-      description: "Focused 2–6 week engagements when scope and priorities are clear.",
-   },
-];
-
-const heroHighlights: {
-   label: string;
-   icon: LucideIcon;
-   tone?: "light" | "accent";
-}[] = [
-   { label: "AI Product Studio", icon: Sparkles },
-   { label: "Launch in 2–6 weeks", icon: Clock3, tone: "accent" },
-   { label: "Built for real users", icon: ShieldCheck },
-];
-
-const heroSupportCards: {
-   eyebrow: string;
-   title: string;
-   description: string;
-   icon: LucideIcon;
-   tone?: "light" | "bright";
-}[] = [
-   {
-      eyebrow: "Studio Focus",
-      title: "Architecture-first launch team",
-      description:
-         "MVPs, AI systems, and rebuilds designed for real product rollout.",
-      icon: Layers3,
-      tone: "light",
-   },
-   {
-      eyebrow: "Delivery Model",
-      title: "One team from strategy to launch",
-      description:
-         "AI workflows, engineering, and production rollout under one roof.",
       icon: Workflow,
-      tone: "bright",
+      title: "Internal AI Tools",
+      pitch: "Replace manual workflows with AI systems",
+      description: "Stop relying on spreadsheets and disjointed apps. We build secure internal dashboards and automated workflows powered by your proprietary data.",
+      proof: "Reduced manual operations by up to 80%",
+      tags: ["Dashboards", "Automation", "AI Workflows"],
    },
 ];
 
-const capabilityChips: { label: string; icon: LucideIcon }[] = [
-   { label: "MVP architecture", icon: Layers3 },
-   { label: "AI workflows", icon: BrainCircuit },
-   { label: "Launch-ready systems", icon: Waypoints },
-];
-
-const offers = [
+const portfolio = [
    {
-      label: "Core Offer",
-      title: "Launch Your SaaS MVP in 30 Days",
-      description:
-         "From product planning to launch, we turn early-stage ideas into usable AI-powered SaaS products fast.",
-      items: [
-         "Product planning",
-         "UI/UX design",
-         "Full-stack development",
-         "AI integration",
-         "Deployment",
-      ],
-      outcome: "Get a working product ready for real users and investors.",
+      title: "AI Knowledge Platform",
+      category: "Internal Tooling",
+      desc: "Turned isolated company wikis and PDFs into a centralized RAG assistant.",
    },
    {
-      label: "AI Systems",
-      title: "Custom AI Systems for Your Business",
-      description:
-         "We build operational AI systems that make your documents, workflows, and data more useful every day.",
-      items: [
-         "Document processing (OCR, RAG)",
-         "Chatbots & AI agents",
-         "Internal automation tools",
-      ],
-      outcome: "Turn your data into intelligence and automation.",
+      title: "Bank Document Automation",
+      category: "Fintech Data Pipeline",
+      desc: "Automated the extraction of KYB/KYC documents directly into core banking tables.",
    },
    {
-      label: "Scale Offer",
-      title: "Fix, Rebuild, and Scale Your Product",
-      description:
-         "When the first version becomes the bottleneck, we clean the architecture and prepare the product for growth.",
-      items: [
-         "Legacy system cleanup",
-         "Performance improvements",
-         "Microservices & cloud scaling",
-      ],
-      outcome: "Make your system production-ready and scalable.",
+      title: "Multi-tenant E-commerce Builder",
+      category: "SaaS Infrastructure",
+      desc: "Built the core provisioning engine for dynamic store creation and inventory management.",
+   },
+   {
+      title: "RAG / Document Intelligence",
+      category: "AI Workflow",
+      desc: "Deployed a secure, permission-aware semantic search pipeline for legal teams.",
    },
 ];
 
-const credibilityPoints = [
+const process = [
    {
-      title: "Led by experienced engineers building real SaaS systems",
-      description:
-         "This is product engineering for founders who need progress, clarity, and a team that can actually ship.",
+      week: "Week 1",
+      title: "Architecture & Design",
+      desc: "We map the database schemas, API routes, UX flow, and AI integration points before writing code.",
    },
    {
-      title: "AI, microservices, and cloud-native delivery",
-      description:
-         "We design systems around workflows, integrations, reliability, and product speed, not just isolated features.",
+      week: "Week 2",
+      title: "Core Build & AI Logic",
+      desc: "We construct the backend infrastructure, train/connect the AI models, and build the frontend interface.",
    },
    {
-      title: "Multi-tenant foundations built for growth",
-      description:
-         "Authentication, data boundaries, deployments, and observability are considered early so scaling does not trigger a rewrite.",
-   },
-];
-
-const buildSteps = [
-   {
-      step: "Step 1",
-      title: "Idea -> Validation",
-      description:
-         "We sharpen the offer, user, and MVP scope before code starts.",
-   },
-   {
-      step: "Step 2",
-      title: "MVP -> Fast Build",
-      description:
-         "Design, architecture, and development move together to keep momentum high.",
-   },
-   {
-      step: "Step 3",
-      title: "Launch -> Feedback",
-      description:
-         "We release quickly, learn from real usage, and turn feedback into the next sprint.",
-   },
-   {
-      step: "Step 4",
-      title: "Scale -> Growth",
-      description:
-         "We harden infrastructure, refine product systems, and support the next stage of growth.",
+      week: "Week 3",
+      title: "Testing & Deployment",
+      desc: "We perform security checks, optimize queries, deploy to production, and hand over the keys.",
    },
 ];
 
-export default async function Home() {
-   const featuredProjects = ((await readLocalFile(
-      "/app/data/projects/projects.json"
-   )) as ProjectFieldsType[]).slice(0, 3);
-
+export default function Home() {
    return (
-      <main>
+      <main className="min-h-screen bg-slate-50 selection:bg-cyan-500/20 selection:text-cyan-900">
          <Header />
 
-         <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f8fafc_0%,#eef2f6_100%)] pt-[126px] md:pt-[170px] xl:pt-[198px]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(18,50,74,0.08),transparent_26%),radial-gradient(circle_at_top_right,rgba(26,95,111,0.07),transparent_22%)]" />
-            <div className="absolute inset-x-0 top-0 h-[420px] bg-[linear-gradient(180deg,rgba(255,255,255,0.72)_0%,rgba(255,255,255,0)_100%)]" />
+         {/* HERO SECTION - Dark/Navy AI Technical Motif */}
+         <section className="relative pt-[220px] md:pt-[260px] pb-24 md:pb-32 overflow-hidden bg-slate-950 text-white">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(20,50,60,0.5),transparent_70%)]" />
+            <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
+            
+            {/* Minimal Background Grid overlay */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-            <div className="relative mx-auto theme-container">
-               <div className="grid items-center gap-14 pb-16 md:pb-24 xl:grid-cols-[60%_40%] xl:gap-16">
-                  <div className="min-w-0 max-w-none xl:pr-12">
-                     <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.24em] text-slate-600 shadow-[0_10px_24px_rgba(15,23,42,0.05)]">
-                        <Sparkles className="h-3.5 w-3.5 text-brand" strokeWidth={1.8} />
-                        SofGent AI Product Studio
+            <div className="theme-container relative z-10 w-full max-w-[1600px] mx-auto">
+               <div className="grid lg:grid-cols-[0.9fr_1.1fr] xl:grid-cols-[0.85fr_1.15fr] gap-16 lg:gap-20 xl:gap-32 items-center">
+                  
+                  {/* Left Content */}
+                  <div className="max-w-2xl">
+                     <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-cyan-400 mb-8 backdrop-blur-md">
+                        <Server className="w-4 h-4" />
+                        Premium AI Product Studio
                      </div>
-                     <h1 className="mt-7 max-w-[14.5ch] text-[50px] font-semibold leading-[0.9] tracking-[-0.065em] text-slate-950 md:max-w-[13.6ch] md:text-[80px] xl:max-w-[14.2ch] xl:text-[88px]">
-                        From Idea to{" "}
-                        <span className="inline-block bg-[linear-gradient(90deg,#11324a_0%,#1f5d6c_48%,#4f8da3_100%)] bg-clip-text text-transparent">
-                           AI Product
-                        </span>
-                        <span className="block">
-                           in Weeks <span className="text-slate-400">—</span>{" "}
-                           Not Months
-                        </span>
+                     
+                     <h1 className="text-5xl md:text-[64px] lg:text-[72px] font-bold leading-[1.05] tracking-tight text-white mb-6">
+                        Build your AI product in <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-200 whitespace-nowrap">2–4 weeks.</span>
                      </h1>
-                     <p className="mt-7 max-w-[42rem] text-[18px] leading-8 text-slate-600 md:text-[19px]">
-                        We design, build, and launch AI-powered SaaS products
-                        fast. MVPs, automation systems, and scalable platforms.
+                     
+                     <p className="text-xl md:text-2xl font-medium text-slate-300 mb-4">
+                        From idea to production-ready system.
                      </p>
-
-                     <div className="mt-11 flex flex-wrap items-center gap-4">
-                        <Button
-                           btnText="Book a Free Strategy Call"
-                           href="/contact"
-                           className="px-7 shadow-[0_24px_60px_rgba(18,50,74,0.24)] hover:scale-[1.02] hover:shadow-[0_28px_70px_rgba(18,50,74,0.3)]"
-                        />
-                        <Button
-                           btnText="See Our Work"
-                           href="/case-studies"
-                           className="border border-slate-200 bg-white text-slate-900 shadow-[0_16px_36px_rgba(15,23,42,0.05)] hover:scale-[1.02] hover:border-slate-900 hover:bg-slate-900 hover:text-white"
-                        />
-                     </div>
-
-                     <div className="mt-12 grid gap-3 sm:grid-cols-3">
-                        {trustBullets.map((item) => (
-                           <div
-                              key={item.title}
-                              className="rounded-[24px] border border-slate-200 bg-white px-5 py-5 shadow-[0_14px_30px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-[2px] hover:shadow-[0_22px_44px_rgba(15,23,42,0.08)]">
-                              <div className="flex h-12 w-12 items-center justify-center rounded-[16px] border border-[#dbe8e4] bg-[#eef5f3] text-brand">
-                                 <item.icon className="h-5 w-5" strokeWidth={1.8} />
-                              </div>
-                              <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-400">
-                                 {item.eyebrow}
-                              </p>
-                              <p className="mt-2 text-[16px] font-semibold leading-7 tracking-[-0.02em] text-slate-900">
-                                 {item.title}
-                              </p>
-                              <p className="mt-2 text-[14px] leading-6 text-slate-600">
-                                 {item.description}
-                              </p>
-                           </div>
-                        ))}
+                     
+                     <p className="text-base md:text-lg text-slate-400 leading-relaxed mb-10 max-w-[90%] font-light">
+                        SofGent builds production-ready AI systems, SaaS platforms, document automation tools, and internal business software fast.
+                     </p>
+                     
+                     <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 md:gap-6 mt-12 w-full md:w-auto">
+                        <Link href="https://calendly.com/sofgent" target="_blank" className="inline-flex w-full sm:w-auto items-center justify-center bg-cyan-500 text-slate-950 px-8 py-4 rounded-xl font-bold transition-all hover:bg-cyan-400 hover:shadow-[0_0_30px_rgba(6,182,212,0.3)]">
+                           Book a Free Strategy Call <ArrowRight className="ml-2 w-5 h-5" />
+                        </Link>
+                        <Link href="#portfolio" className="inline-flex items-center justify-center bg-white/5 text-white px-8 py-4 rounded-xl font-bold border border-white/10 transition-all hover:bg-white/10">
+                           See Our Work
+                        </Link>
                      </div>
                   </div>
 
-                  <div className="relative mt-10 min-w-0 md:mt-14 xl:mt-0">
-                     <div className="absolute left-1/2 top-12 h-44 w-[82%] -translate-x-1/2 rounded-full bg-cyan-300/10 blur-[95px]" />
-                     <div className="relative overflow-hidden rounded-[34px] border border-white/10 bg-[linear-gradient(160deg,#06121a_0%,#0b2230_100%)] p-6 shadow-[0_28px_70px_rgba(15,23,42,0.12)] md:p-8">
-                        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:28px_28px] opacity-[0.04]" />
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(103,232,249,0.14)_0%,rgba(6,18,26,0)_44%),radial-gradient(circle_at_bottom_left,rgba(45,212,191,0.08)_0%,rgba(11,34,48,0)_32%)]" />
-                        <div className="relative z-10 flex flex-wrap gap-3 border-b border-white/10 pb-6">
-                           {heroHighlights.map((item) => (
-                              <span
-                                 key={item.label}
-                                 className={`inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.24em] backdrop-blur-md transition-all duration-300 hover:-translate-y-[2px] ${
-                                    item.tone === "accent"
-                                       ? "border border-cyan-300/24 bg-cyan-300/10 text-cyan-100 hover:bg-cyan-300/14"
-                                       : "border border-white/10 bg-white/5 text-slate-100 hover:bg-white/10"
-                                 }`}>
-                                 <item.icon className="h-3.5 w-3.5" strokeWidth={1.8} />
-                                 {item.label}
-                              </span>
-                           ))}
+                  {/* Right Image/Graphic Area - Architecture Diagram Motif Slider */}
+                  <HeroSlider />
+               </div>
+            </div>
+         </section>
+
+         {/* WHAT WE DO SECTION */}
+         <section className="py-24 md:py-32 bg-slate-50 relative border-t border-slate-200">
+            <div className="theme-container">
+
+               {/* Outcome Strip */}
+               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 md:gap-4 lg:gap-6 mb-16 p-4 rounded-[2rem] bg-white border border-slate-200 shadow-sm w-full relative z-10">
+                  <div className="flex items-center gap-2 text-sm font-bold text-slate-600 bg-slate-50 px-4 py-2.5 rounded-xl border border-slate-100"><Zap className="w-4 h-4 text-amber-500" /> 2–4 week delivery</div>
+                  <div className="hidden lg:block w-1.5 h-1.5 rounded-full bg-slate-300" />
+                  <div className="flex items-center gap-2 text-sm font-bold text-slate-600 bg-slate-50 px-4 py-2.5 rounded-xl border border-slate-100"><Cog className="w-4 h-4 text-cyan-500" /> Reduce manual work by up to 80%</div>
+                  <div className="hidden lg:block w-1.5 h-1.5 rounded-full bg-slate-300" />
+                  <div className="flex items-center gap-2 text-sm font-bold text-slate-600 bg-slate-50 px-4 py-2.5 rounded-xl border border-slate-100"><Network className="w-4 h-4 text-teal-500" /> AI-ready systems from day one</div>
+                  <div className="hidden lg:block w-1.5 h-1.5 rounded-full bg-slate-300" />
+                  <div className="flex items-center gap-2 text-sm font-bold text-slate-600 bg-slate-50 px-4 py-2.5 rounded-xl border border-slate-100"><Rocket className="w-4 h-4 text-purple-500" /> Production-ready (no demos)</div>
+               </div>
+
+               <div className="mb-16 md:mb-20 max-w-3xl">
+                  <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">Expertise matching your ambitions.</h2>
+                  <p className="text-xl text-slate-600">We do not build generic landing pages. We build technically complex systems with clear business ROI.</p>
+               </div>
+
+               <div className="grid lg:grid-cols-3 gap-8">
+                  {services.map((service, idx) => (
+                     <div key={idx} className="flex flex-col p-8 md:p-10 rounded-[2.5rem] bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-cyan-500/30 transition-all duration-300 group hover:-translate-y-1">
+                        
+                        <div className="flex items-center gap-5 border-b border-slate-100 pb-6 mb-6">
+                           <div className="w-16 h-16 rounded-2xl bg-cyan-50 text-cyan-600 border border-cyan-100 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-cyan-500 group-hover:text-white transition-all duration-300 shadow-sm">
+                              <service.icon className="w-7 h-7" />
+                           </div>
+                           <div>
+                              <h3 className="text-2xl font-bold tracking-tight text-slate-900 leading-tight">{service.title}</h3>
+                           </div>
                         </div>
 
-                        <div className="relative z-10 mt-7 grid gap-4 xl:grid-cols-[minmax(0,0.34fr)_minmax(0,0.66fr)]">
-                           <div className="grid min-w-0 gap-4 sm:grid-cols-2 xl:grid-cols-1">
-                              {heroSupportCards.map((card) => (
-                                 <div
-                                    key={card.title}
-                                    className={`rounded-[22px] border p-5 transition-all duration-300 hover:-translate-y-[2px] ${
-                                       card.tone === "bright"
-                                          ? "border-white/12 bg-white/[0.96] shadow-[0_16px_36px_rgba(8,17,31,0.14)]"
-                                          : "border-white/10 bg-white/[0.04] backdrop-blur-sm hover:bg-white/[0.07]"
-                                    }`}>
-                                    <div className="flex items-start gap-3">
-                                       <div
-                                          className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-[16px] ${
-                                             card.tone === "bright"
-                                                ? "bg-[#eef5f3] text-brand"
-                                                : "border border-cyan-300/16 bg-cyan-300/10 text-cyan-100"
-                                          }`}>
-                                          <card.icon className="h-5 w-5" strokeWidth={1.8} />
-                                       </div>
-                                       <div>
-                                          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-400">
-                                             {card.eyebrow}
-                                          </p>
-                                          <p
-                                             className={`mt-3 text-[18px] font-semibold leading-7 tracking-[-0.03em] ${
-                                                card.tone === "bright"
-                                                   ? "text-slate-950"
-                                                   : "text-slate-50"
-                                             }`}>
-                                             {card.title}
-                                          </p>
-                                          <p
-                                             className={`mt-2.5 text-[13px] leading-6 ${
-                                                card.tone === "bright"
-                                                   ? "text-slate-600"
-                                                   : "text-slate-300"
-                                             }`}>
-                                             {card.description}
-                                          </p>
-                                       </div>
-                                    </div>
-                                 </div>
+                        <h4 className="text-sm font-bold uppercase tracking-wider text-brand mb-4">{service.pitch}</h4>
+                        <p className="text-base text-slate-600 flex-grow leading-relaxed mb-8">{service.description}</p>
+                        
+                        <div className="mt-auto pt-6 border-t border-slate-50">
+                           <div className="flex items-center gap-2 mb-5">
+                              <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                              <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">{service.proof}</span>
+                           </div>
+
+                           <div className="flex flex-wrap gap-2">
+                              {service.tags.map((tag) => (
+                                 <span key={tag} className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-xs font-bold uppercase tracking-wider text-slate-600">
+                                    {tag}
+                                 </span>
                               ))}
                            </div>
+                        </div>
+                     </div>
+                  ))}
+               </div>
 
-                           <div className="min-w-0">
-                              <AIHeroIllustration />
-                              <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                                 {capabilityChips.map((item) => (
-                                    <div
-                                       key={item.label}
-                                       className="rounded-[20px] border border-white/10 bg-white/5 px-4 py-3.5 text-sm font-medium text-slate-100 transition-all duration-300 hover:-translate-y-[2px] hover:bg-white/10">
-                                       <div className="flex items-center gap-2.5">
-                                          <div className="flex h-9 w-9 items-center justify-center rounded-[12px] border border-cyan-300/14 bg-cyan-300/10 text-cyan-100">
-                                             <item.icon
-                                                className="h-4 w-4"
-                                                strokeWidth={1.8}
-                                             />
-                                          </div>
-                                          <span className="leading-6">
-                                             {item.label}
-                                          </span>
-                                       </div>
-                                    </div>
-                                 ))}
+               {/* WHO THIS IS FOR & PROCESS */}
+               <div className="mt-20 lg:mt-32 max-w-5xl mx-auto">
+                  <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 border-b border-slate-200 pb-20">
+                     <div className="flex flex-col">
+                        <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-8">Who We Work With</h3>
+                        <div className="space-y-6">
+                           <div className="flex items-center gap-4 bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+                              <div className="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center shrink-0">
+                                 <Building2 className="w-6 h-6 text-cyan-600" />
                               </div>
+                              <span className="text-slate-800 font-bold">Founders scaling SaaS products & MVPs</span>
+                           </div>
+                           <div className="flex items-center gap-4 bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+                              <div className="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center shrink-0">
+                                 <Briefcase className="w-6 h-6 text-teal-600" />
+                              </div>
+                              <span className="text-slate-800 font-bold">Fintech & legal teams replacing manual workflows</span>
+                           </div>
+                           <div className="flex items-center gap-4 bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+                              <div className="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center shrink-0">
+                                 <Network className="w-6 h-6 text-purple-600" />
+                              </div>
+                              <span className="text-slate-800 font-bold">Enterprises preparing legacy data for AI adoption</span>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div className="pl-0 lg:pl-12 lg:border-l lg:border-slate-200 flex flex-col justify-center">
+                        <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-8">How We Deliver</h3>
+                        <div className="flex flex-col gap-10 relative">
+                           {/* connecting line */}
+                           <div className="absolute top-6 bottom-6 left-6 w-0.5 bg-slate-200 z-0" />
+                           <div className="flex items-center gap-6 relative z-10">
+                              <div className="w-12 h-12 rounded-full border-4 border-slate-50 bg-slate-900 text-white font-bold text-base flex items-center justify-center shrink-0 shadow-md">1</div>
+                              <span className="text-slate-800 font-bold text-lg">Architecture & Planning</span>
+                           </div>
+                           <div className="flex items-center gap-6 relative z-10">
+                              <div className="w-12 h-12 rounded-full border-4 border-slate-50 bg-cyan-500 text-white font-bold text-base flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(6,182,212,0.4)] scale-110">2</div>
+                              <span className="text-slate-800 font-bold text-lg">Build Core System & Data Layer</span>
+                           </div>
+                           <div className="flex items-center gap-6 relative z-10">
+                              <div className="w-12 h-12 rounded-full border-4 border-slate-50 bg-teal-500 text-white font-bold text-base flex items-center justify-center shrink-0 shadow-md">3</div>
+                              <span className="text-slate-800 font-bold text-lg">Deploy with Scalable AI Workflows</span>
                            </div>
                         </div>
                      </div>
                   </div>
                </div>
+
+               {/* WHY SOFGENT STRIP */}
+               <div className="max-w-5xl mx-auto mt-20 bg-[radial-gradient(ellipse_at_top_right,rgba(6,182,212,0.15),transparent_60%),linear-gradient(to_bottom_right,#0f172a,#1e293b)] rounded-[2.5rem] p-10 md:p-14 shadow-2xl flex flex-col md:flex-row items-center gap-12 relative overflow-hidden border border-slate-800">
+                  <div className="absolute inset-0 bg-grid-paper opacity-5 pointer-events-none mix-blend-overlay" />
+                  <div className="flex-1 relative z-10">
+                     <h3 className="text-3xl font-bold text-white mb-6 leading-tight">We look beyond just code. We design systems that <span className="text-cyan-400">actually work in production.</span></h3>
+                     <ul className="space-y-4">
+                        <li className="flex items-center gap-3 text-slate-300 font-medium"><CheckCircle2 className="w-5 h-5 text-cyan-400 shrink-0" /> Full-stack + AI + DevOps in one team</li>
+                        <li className="flex items-center gap-3 text-slate-300 font-medium"><CheckCircle2 className="w-5 h-5 text-teal-400 shrink-0" /> Built for real business workflows & scale</li>
+                        <li className="flex items-center gap-3 text-slate-300 font-medium"><CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" /> Architecture first, no fragile prototypes</li>
+                     </ul>
+                  </div>
+                  <div className="w-32 h-32 shrink-0 rounded-[2rem] bg-slate-900 border border-white/10 flex items-center justify-center relative z-10 shadow-[0_0_40px_rgba(6,182,212,0.2)]">
+                     <div className="absolute inset-0 bg-cyan-500/20 blur-xl rounded-[2rem]" />
+                     <Code2 className="w-12 h-12 text-cyan-300 relative z-10" />
+                  </div>
+               </div>
+
+               {/* CTA SECTION */}
+               <div className="text-center mt-32 max-w-2xl mx-auto pb-10">
+                  <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-10">Have a use case in mind?</h2>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                     <Link href="https://calendly.com/sofgent" target="_blank" className="w-full sm:w-auto inline-flex items-center justify-center bg-cyan-500 text-slate-950 px-10 py-5 rounded-2xl font-bold text-lg transition-all hover:bg-cyan-400 shadow-[0_0_40px_rgba(6,182,212,0.25)] hover:shadow-[0_0_50px_rgba(6,182,212,0.4)] hover:-translate-y-1">
+                        Book AI Strategy Call
+                     </Link>
+                     <Link href="/contact" className="w-full sm:w-auto inline-flex items-center justify-center bg-white text-slate-900 px-10 py-5 rounded-2xl font-bold text-lg border-2 border-slate-200 shadow-sm transition-all hover:bg-slate-50 hover:border-slate-300">
+                        Discuss Your Project
+                     </Link>
+                  </div>
+               </div>
+
             </div>
          </section>
 
-         <section className="py-16 md:py-24">
-            <div className="mx-auto theme-container">
-               <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+         {/* PROCESS SECTION */}
+         <section className="py-24 md:py-32 bg-slate-950 text-white relative overflow-hidden">
+            <div className="absolute inset-0 bg-grid-paper opacity-10 pointer-events-none invert mix-blend-overlay" />
+            <div className="relative z-10 theme-container">
+               <div className="max-w-3xl text-center mx-auto mb-20">
+                  <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">Launch fast, without breaking things.</h2>
+                  <p className="text-xl text-slate-400">Our structured 3-week delivery model ensures you go to market with a stable, scalable foundation.</p>
+               </div>
+
+               <div className="grid lg:grid-cols-3 gap-8 relative">
+                  {/* Connecting line on desktop */}
+                  <div className="hidden lg:block absolute top-12 left-[10%] right-[10%] h-px bg-white/10" />
+
+                  {process.map((step, idx) => (
+                     <div key={idx} className="relative z-10 flex flex-col items-center text-center p-8">
+                        <div className="w-24 h-24 rounded-full bg-slate-900 border-4 border-slate-950 flex flex-col items-center justify-center shadow-[0_0_30px_rgba(6,182,212,0.15)] mb-8 relative">
+                           {/* Outer glow ring indicating progress */}
+                           <svg className="absolute inset-0 w-full h-full -rotate-90">
+                              <circle cx="48" cy="48" r="46" fill="transparent" stroke="rgba(6,182,212,0.2)" strokeWidth="2" />
+                              <circle cx="48" cy="48" r="46" fill="transparent" stroke="#06b6d4" strokeWidth="2" strokeDasharray="300" strokeDashoffset={300 - (300 * ((idx + 1)/3))} className="transition-all duration-1000 ease-out" />
+                           </svg>
+                           <span className="text-sm font-bold text-cyan-400">{step.week}</span>
+                        </div>
+                        <h3 className="text-2xl font-bold tracking-tight text-white mb-4">{step.title}</h3>
+                        <p className="text-base text-slate-400 leading-relaxed max-w-sm">{step.desc}</p>
+                     </div>
+                  ))}
+               </div>
+            </div>
+         </section>
+
+         {/* PROOF / PORTFOLIO SECTION */}
+         <section id="portfolio" className="py-24 md:py-32 bg-white">
+            <div className="theme-container">
+               <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 md:mb-20">
                   <div className="max-w-3xl">
-                     <p className="text-sm font-semibold uppercase tracking-[0.28em] text-brand">
-                        Core Offers
-                     </p>
-                     <h2 className="mt-4 text-34 font-semibold tracking-[-0.04em] text-slate-950 md:text-48">
-                        Three premium offers built for founders and businesses
-                        that need speed, clarity, and usable software.
-                     </h2>
+                     <p className="text-brand font-bold uppercase tracking-widest text-sm mb-4">Proven Architecture</p>
+                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900">What we’ve shipped to production.</h2>
                   </div>
-                  <p className="max-w-xl text-[16px] leading-7 text-slate-600">
-                     SofGent is not a general dev agency. We act like a product
-                     studio, helping teams move from concept to launch with
-                     clear priorities and strong execution.
-                  </p>
-               </div>
-
-               <div className="mt-10 grid gap-6 xl:grid-cols-3">
-                  {offers.map((offer) => (
-                     <article
-                        key={offer.title}
-                        className="flex h-full flex-col rounded-[32px] border border-slate-200 bg-white p-7 shadow-[0_24px_70px_rgba(15,23,42,0.06)] md:p-8">
-                        <div className="inline-flex w-fit rounded-full border border-[#d5e4e0] bg-[#eef5f3] px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-brand">
-                           {offer.label}
-                        </div>
-                        <h3 className="mt-6 text-[28px] font-semibold leading-[1.12] tracking-[-0.04em] text-slate-950">
-                           {offer.title}
-                        </h3>
-                        <p className="mt-4 text-[16px] leading-8 text-slate-600">
-                           {offer.description}
-                        </p>
-                        <ul className="mt-6 space-y-3">
-                           {offer.items.map((item) => (
-                              <li
-                                 key={item}
-                                 className="rounded-[20px] border border-slate-200 bg-slate-50 px-4 py-3 text-[15px] font-medium text-slate-700">
-                                 {item}
-                              </li>
-                           ))}
-                        </ul>
-                        <div className="mt-6 rounded-[24px] border border-slate-200 bg-[#08111f] p-5 text-white shadow-[0_20px_50px_rgba(8,17,31,0.12)]">
-                           <p className="text-xs uppercase tracking-[0.24em] text-cyan-200/80">
-                              Outcome
-                           </p>
-                           <p className="mt-3 text-[16px] leading-7 text-slate-100">
-                              {offer.outcome}
-                           </p>
-                        </div>
-                     </article>
-                  ))}
-               </div>
-            </div>
-         </section>
-
-         <section className="bg-[#08111f] py-16 text-white md:py-24">
-            <div className="mx-auto theme-container">
-               <div className="grid gap-10 xl:grid-cols-[0.95fr_1.05fr]">
-                  <div className="max-w-2xl">
-                     <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-200">
-                        Founder Credibility
-                     </p>
-                     <h2 className="mt-4 text-34 font-semibold tracking-[-0.04em] md:text-48">
-                        Built by engineers who know AI systems, cloud
-                        infrastructure, and what it takes to ship real products.
-                     </h2>
-                     <p className="mt-6 max-w-xl text-[17px] leading-8 text-slate-300">
-                        We work across AI products, microservices, cloud
-                        delivery, and multi-tenant systems, with the mindset of
-                        a product team focused on traction, not outsourced task
-                        completion.
-                     </p>
-                     <div className="mt-8">
-                        <Button
-                           btnText="See How We Build"
-                           href="/how-we-build-saas"
-                        />
-                     </div>
-                  </div>
-
-                  <div className="grid gap-5 md:grid-cols-3 xl:grid-cols-1">
-                     {credibilityPoints.map((item) => (
-                        <div
-                           key={item.title}
-                           className="rounded-[28px] border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-                           <div className="flex h-11 w-11 items-center justify-center rounded-full bg-cyan-300/12 text-lg text-cyan-200">
-                              ✓
-                           </div>
-                           <h3 className="mt-5 text-[20px] font-semibold leading-8 text-slate-100">
-                              {item.title}
-                           </h3>
-                           <p className="mt-3 text-[15px] leading-7 text-slate-300">
-                              {item.description}
-                           </p>
-                        </div>
-                     ))}
-                  </div>
-               </div>
-            </div>
-         </section>
-
-         <section className="py-16 md:py-24">
-            <div className="mx-auto theme-container">
-               <div className="text-center">
-                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-brand">
-                     How We Build
-                  </p>
-                  <h2 className="mt-4 text-34 font-semibold tracking-[-0.04em] text-slate-950 md:text-48">
-                     A simple four-step path from first idea to growth.
-                  </h2>
-               </div>
-
-               <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-                  {buildSteps.map((item, index) => (
-                     <div
-                        key={item.title}
-                        className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.05)]">
-                        <div className="flex items-center justify-between gap-4">
-                           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#eef5f3] text-lg font-semibold text-brand">
-                              {index + 1}
-                           </div>
-                           <span className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">
-                              {item.step}
-                           </span>
-                        </div>
-                        <h3 className="mt-5 text-[22px] font-semibold tracking-[-0.03em] text-slate-950">
-                           {item.title}
-                        </h3>
-                        <p className="mt-4 text-[16px] leading-7 text-slate-600">
-                           {item.description}
-                        </p>
-                     </div>
-                  ))}
-               </div>
-
-               <div className="mt-8 text-center">
-                  <Link
-                     href="/how-we-build-saas"
-                     className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.24em] text-brand">
-                     View the full build process
-                     <span aria-hidden>→</span>
+                  <Link href="/case-studies" className="inline-flex items-center font-bold text-brand hover:text-brand/80 transition-colors">
+                     Explore all case studies <ArrowRight className="ml-2 w-5 h-5" />
                   </Link>
                </div>
-            </div>
-         </section>
 
-         <section className="pb-16 md:pb-24">
-            <div className="mx-auto theme-container">
-               <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-                  <div className="max-w-3xl">
-                     <p className="text-sm font-semibold uppercase tracking-[0.28em] text-brand">
-                        Case Studies
-                     </p>
-                     <h2 className="mt-4 text-34 font-semibold tracking-[-0.04em] text-slate-950 md:text-48">
-                        Product-style case studies that show how we turn ideas,
-                        operations, and revenue workflows into software.
-                     </h2>
-                  </div>
-                  <p className="max-w-xl text-[16px] leading-7 text-slate-600">
-                     These case studies show how SofGent turns documents,
-                     internal workflows, and product operations into serious
-                     software systems teams can rely on.
-                  </p>
-               </div>
-
-               <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-                  {featuredProjects.map((project, index) => (
-                     <ProjectCard
-                        key={project.slug}
-                        project={project}
-                        index={index}
-                     />
+               <div className="grid md:grid-cols-2 gap-8">
+                  {portfolio.map((item, idx) => (
+                     <div key={idx} className="group relative overflow-hidden rounded-[2.5rem] bg-slate-50 border border-slate-200 p-8 md:p-12 hover:border-brand/30 hover:shadow-lg transition-all">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-slate-200/50 rounded-full blur-3xl -mr-20 -mt-20 group-hover:bg-cyan-100 transition-colors duration-500" />
+                        
+                        <div className="relative z-10">
+                           <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">{item.category}</p>
+                           <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 mb-4">{item.title}</h3>
+                           <p className="text-lg text-slate-600 leading-relaxed mb-8 max-w-md">{item.desc}</p>
+                           
+                           <div className="inline-flex items-center text-sm font-bold text-brand transition-colors">
+                              View Architecture <ChevronRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                           </div>
+                        </div>
+                     </div>
                   ))}
                </div>
-               <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
-                  <Button btnText="View All Case Studies" href="/case-studies" />
-                  <Button
-                     btnText="Discuss Your Product"
-                     href="/contact"
-                     className="border border-slate-200 bg-white text-slate-900 shadow-none hover:bg-slate-50"
-                  />
+            </div>
+         </section>
+
+         {/* WHY SOFGENT */}
+         <section className="py-24 md:py-32 bg-white">
+            <div className="theme-container">
+               <div className="rounded-[3rem] border border-slate-200 bg-slate-50 p-10 md:p-16 lg:p-20 shadow-sm relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,rgba(50,109,109,0.05),transparent_60%)] pointer-events-none" />
+                  
+                  <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-16 relative z-10">
+                     <div className="flex flex-col justify-center">
+                        <p className="text-sm font-bold uppercase tracking-widest text-brand mb-6">Why SofGent</p>
+                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+                           We speak code,<br/>architecture, and business.
+                        </h2>
+                     </div>
+                     <div className="grid sm:grid-cols-2 gap-10">
+                        <div>
+                           <ShieldCheck className="w-10 h-10 text-brand mb-5" />
+                           <h3 className="text-xl font-bold text-slate-900 mb-3">Speed Without Tech Debt</h3>
+                           <p className="text-slate-600 leading-relaxed">Most agencies build fragile MVPs. We engineer scalable data models and secure infrastructure from day one, allowing you to launch in weeks and seamlessly pivot or scale later.</p>
+                        </div>
+                        <div>
+                           <Workflow className="w-10 h-10 text-brand mb-5" />
+                           <h3 className="text-xl font-bold text-slate-900 mb-3">ROI-Driven Automation</h3>
+                           <p className="text-slate-600 leading-relaxed">We don&apos;t just write code—we solve operational bottlenecks. We map your specific market workflows and deploy automation that slashes overhead costs and improves gross margins.</p>
+                        </div>
+                        <div>
+                           <Server className="w-10 h-10 text-brand mb-5" />
+                           <h3 className="text-xl font-bold text-slate-900 mb-3">Predictable Model</h3>
+                           <p className="text-slate-600 leading-relaxed">Stop paying for endless hourly billing with unaligned incentives. We operate with fixed-scope delivery sprints, offering absolute clarity on technical deliverables and business value.</p>
+                        </div>
+                        <div>
+                           <Code2 className="w-10 h-10 text-brand mb-5" />
+                           <h3 className="text-xl font-bold text-slate-900 mb-3">End-to-End Capabilities</h3>
+                           <p className="text-slate-600 leading-relaxed">Avoid the friction of managing fractured teams. From complex AI semantic routing to polished user interfaces and backend orchestration, we deliver the complete product under one roof.</p>
+                        </div>
+                     </div>
+                  </div>
                </div>
             </div>
          </section>
 
-         <section className="pb-20 md:pb-24">
-            <div className="mx-auto theme-container">
-               <div className="rounded-[36px] border border-slate-200 bg-[linear-gradient(135deg,#08111f_0%,#163042_100%)] px-6 py-10 text-white shadow-[0_30px_100px_rgba(8,17,31,0.18)] md:px-10 md:py-14">
-                  <div className="max-w-3xl">
-                     <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-200">
-                        Ready To Build
-                     </p>
-                     <h2 className="mt-4 text-34 font-semibold tracking-[-0.04em] md:text-48">
-                        Have an idea? Let&apos;s build it in 30 days.
-                     </h2>
-                     <p className="mt-4 text-[18px] leading-8 text-slate-200">
-                        Start with a focused strategy call. We will map the
-                        fastest route from concept to launch.
-                     </p>
-                     <div className="mt-8 flex flex-wrap gap-4">
-                        <Button btnText="Book Call" href="/contact" />
-                        <Button
-                           btnText="Get Free Consultation"
-                           href="/contact"
-                           className="border border-white/10 bg-white/5 text-white shadow-none hover:bg-white/10"
-                        />
+         {/* FINAL CTA SECTION */}
+         <section className="py-24">
+            <div className="theme-container">
+               <div className="relative overflow-hidden rounded-[3rem] border border-cyan-900/50 bg-slate-950 px-8 py-20 md:px-20 md:py-32 shadow-2xl text-center">
+                  <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(6,182,212,0.15),transparent_40%)] pointer-events-none" />
+                  <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(circle_at_bottom_left,rgba(50,109,109,0.3),transparent_40%)] pointer-events-none" />
+                  
+                  <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+                     <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8">
+                        <Database className="w-8 h-8 text-cyan-400" />
                      </div>
+                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-8">
+                        Have an idea, workflow, or product to launch?
+                     </h2>
+                     <p className="text-xl text-slate-300 mb-12 font-light">
+                        Let’s turn it into a working AI system.
+                     </p>
+                     
+                     <Link href="/contact" className="inline-flex items-center justify-center bg-cyan-500 text-slate-950 px-10 py-5 rounded-xl font-bold text-lg hover:bg-cyan-400 transition-all shadow-[0_0_40px_rgba(6,182,212,0.4)] hover:shadow-[0_0_60px_rgba(6,182,212,0.6)] hover:-translate-y-1">
+                        Book a Free Strategy Call
+                     </Link>
                   </div>
                </div>
             </div>

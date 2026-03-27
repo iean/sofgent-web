@@ -72,138 +72,107 @@ const socialMediaList = [
 
 export default function Footer() {
    return (
-      <footer className="relative mt-[8rem] overflow-hidden bg-[#07111d] pt-20 text-slate-200">
-         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(103,232,249,0.12),transparent_22%),radial-gradient(circle_at_top_right,rgba(94,234,212,0.08),transparent_18%)]" />
-         <div className="relative mx-auto grid grid-cols-4 gap-4 pb-16 theme-container md:grid-cols-8 xl:grid-cols-12">
-            {/* Logo */}
-            <div className="col-span-4 rounded-[30px] border border-white/10 bg-white/5 p-7 backdrop-blur-sm">
-               <Link href="/">
-                  <Image width={200} height={100} src={logo} alt="logo" />
+      <footer className="relative mt-[8rem] bg-slate-950 pt-16 text-slate-300 border-t border-white/10">
+         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(6,182,212,0.05),transparent_22%),radial-gradient(circle_at_top_right,rgba(45,212,191,0.05),transparent_18%)] pointer-events-none" />
+         <div className="relative mx-auto grid grid-cols-1 gap-12 pb-16 theme-container md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+            {/* Logo & About */}
+            <div className="lg:col-span-4">
+               <Link href="/" className="inline-block mb-6">
+                  <Image width={160} height={40} src={logo} alt="Sofgent" />
                </Link>
-               <p className="mt-6 max-w-[360px] text-[15px] leading-7 text-slate-300">
+               <p className="max-w-[320px] text-sm leading-relaxed text-slate-400 mb-8">
                   SofGent is an AI Product Studio that launches MVPs fast,
                   builds custom AI systems, and helps teams rebuild software
                   for scale.
                </p>
-               <div className="mt-6 flex flex-wrap gap-3 text-sm">
-                  <a
-                     href="mailto:contact@sofgent.com"
-                     className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-slate-200 hover:border-cyan-300/40 hover:text-white">
-                     contact@sofgent.com
-                  </a>
-                  <a
-                     href="tel:+8801537740365"
-                     className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-slate-200 hover:border-cyan-300/40 hover:text-white">
-                     +880 1537 740365
-                  </a>
-               </div>
-               <div className="mt-6 flex gap-[15px]">
+               <div className="flex gap-3">
                   {socialMediaList.map((social, index) => (
                      <a
                         key={index}
                         href={social.link}
                         target="_blank"
                         aria-label={social.name}
-                        className="flex h-[46px] w-[46px] items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 hover:border-cyan-300/40 hover:bg-white/10 hover:text-white">
-                        <span>{social.icon}</span>
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-400 hover:border-cyan-500/40 hover:bg-cyan-500/10 hover:text-cyan-400 transition-all">
+                        <span className="scale-90">{social.icon}</span>
                      </a>
                   ))}
                </div>
             </div>
+
             {/* Services */}
-            <div className="col-span-4 rounded-[30px] border border-white/10 bg-white/5 p-7 backdrop-blur-sm md:col-span-2 xl:col-span-3">
-               <h1 className="text-18 font-semibold text-white">Services</h1>
-               <ul className="mt-5 space-y-3">
+            <div className="lg:col-span-3">
+               <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-6">Services</h3>
+               <ul className="space-y-3.5">
                   {serviceList.map((service, index) => (
                      <li key={index}>
                         <Link
                            href={service.url}
-                           className="block rounded-2xl px-4 py-3 text-[15px] leading-6 text-slate-300 hover:bg-white/6 hover:text-white">
+                           className="text-sm text-slate-400 hover:text-cyan-400 transition-colors">
                            {service.title}
                         </Link>
                      </li>
                   ))}
                </ul>
             </div>
-            {/* Quick Link */}
-            <div className="col-span-4 rounded-[30px] border border-white/10 bg-white/5 p-7 backdrop-blur-sm md:col-span-2">
-               <h1 className="text-18 font-semibold text-white">Quick Link</h1>
-               <ul className="mt-5 space-y-3">
+
+            {/* Quick Links */}
+            <div className="lg:col-span-2">
+               <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-6">Company</h3>
+               <ul className="space-y-3.5">
                   {quickLinks.map((service, index) => (
                      <li key={index}>
                         <Link
                            href={service.url}
-                           className="block rounded-2xl px-4 py-3 text-[15px] leading-6 text-slate-300 hover:bg-white/6 hover:text-white">
+                           className="text-sm text-slate-400 hover:text-cyan-400 transition-colors">
                            {service.title}
                         </Link>
                      </li>
                   ))}
                </ul>
             </div>
-            {/* Address */}
-            <div className="col-span-4 rounded-[30px] border border-white/10 bg-white/5 p-7 backdrop-blur-sm md:col-span-4 xl:col-span-3">
-               <h1 className="text-18 font-semibold text-white">Address</h1>
-               <div className="mt-5 rounded-[24px] border border-white/10 bg-white/5 p-5 text-[15px] leading-7 text-slate-300">
-                  <span>
-                     House - 69 , Road - 06 , Block - A , Mirpur - 12 , Dhaka -
-                     1216
-                  </span>
-               </div>
-               <h1 className="mt-6 text-18 font-semibold text-white">Contact</h1>
-               <div className="mt-5 rounded-[24px] border border-white/10 bg-white/5 p-5 text-[15px] leading-7 text-slate-300">
-                  <span>
-                     <a
-                        className="hover:text-white"
-                        href="mailto:contact@sofgent.com">
-                        contact@sofgent.com
-                     </a>{" "}
-                     <br />
-                     <a className="hover:text-white" href="tel:+88045685299">
-                        01537740365
-                     </a>
-                  </span>
+
+            {/* Contact */}
+            <div className="lg:col-span-3">
+               <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-6">Contact Us</h3>
+               <address className="not-italic text-sm text-slate-400 leading-relaxed mb-6">
+                  House - 69 , Road - 06 , Block - A<br/>
+                  Mirpur - 12 , Dhaka - 1216
+               </address>
+               
+               <div className="flex flex-col gap-3">
+                  <a className="inline-flex items-center text-sm text-slate-400 hover:text-cyan-400 transition-colors" href="mailto:contact@sofgent.com">
+                     contact@sofgent.com
+                  </a>
+                  <a className="inline-flex items-center text-sm text-slate-400 hover:text-cyan-400 transition-colors" href="tel:+8801537740365">
+                     +880 1537 740365
+                  </a>
                </div>
             </div>
          </div>
-         <div className="relative z-10 border-t border-white/10 bg-[#07111d]">
+
+         {/* Bottom Bar */}
+         <div className="relative z-10 border-t border-white/5 bg-slate-950">
             <div className="mx-auto theme-container">
-               <div className="flex min-h-[80px] flex-col items-center justify-between gap-4 py-5 sm:flex-row">
-                  <Copyright />
+               <div className="flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
+                  <div className="text-sm text-slate-500">
+                     <Copyright />
+                  </div>
+                  <ul className="flex items-center gap-6">
+                     <li>
+                        <Link href="/privacy-policy" className="text-sm text-slate-500 hover:text-slate-300 transition-colors">Privacy Policy</Link>
+                     </li>
+                     <li>
+                        <Link href="/terms-conditions" className="text-sm text-slate-500 hover:text-slate-300 transition-colors">Terms & Conditions</Link>
+                     </li>
+                  </ul>
                   <a
                      href="#"
                      aria-label="go top"
-                     className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200 hover:border-cyan-300/40 hover:text-white">
-                     Back to top
-                     <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                           d="M8 12V4"
-                           stroke="currentColor"
-                           strokeWidth="1.5"
-                           strokeLinecap="round"
-                        />
-                        <path
-                           d="M4.66699 7.33333L8.00033 4L11.3337 7.33333"
-                           stroke="currentColor"
-                           strokeWidth="1.5"
-                           strokeLinecap="round"
-                           strokeLinejoin="round"
-                        />
+                     className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-slate-400 hover:bg-cyan-500/10 hover:text-cyan-400 border border-white/10 hover:border-cyan-500/30 transition-all">
+                     <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 12V4M4.66699 7.33333L8.00033 4L11.3337 7.33333" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                      </svg>
                   </a>
-                  <ul className="flex items-center gap-4 sm:gap-6">
-                     <li className="text-white/60 hover:text-white">
-                        <Link href="privacy-policy">Privacy Policy</Link>
-                     </li>
-                     <li className="text-white/30">|</li>
-                     <li className="text-white/60 hover:text-white">
-                        <Link href="terms-conditions">Terms & Conditions</Link>
-                     </li>
-                  </ul>
                </div>
             </div>
          </div>

@@ -2,6 +2,7 @@ import "./globals.css";
 import { dmSans, rubik } from "./fonts/fonts";
 import Script from "next/script";
 import type { Metadata } from "next";
+import WhatsAppWidget from "./components/WhatsAppWidget";
 
 export const metadata: Metadata = {
   title: "SofGent",
@@ -42,6 +43,7 @@ export default function RootLayout({
           ></iframe>
         </noscript>
         {children}
+        <WhatsAppWidget />
       </body>
     </html>
   );
