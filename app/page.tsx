@@ -5,79 +5,26 @@ import Footer from "@/app/components/Layout/Footer/Footer";
 import Header from "@/app/components/Layout/Header/Header";
 import HeroSlider from "@/app/components/home/HeroSlider";
 import type { Metadata } from "next";
+import { sharedHomeSections } from "@/lib/content/shared";
+import type { HomeServiceIconKey } from "@/lib/content/types";
 
 export const metadata: Metadata = {
    title: "SofGent | Premium AI Product Studio",
    description: "We build production-ready AI products, SaaS platforms, and internal tools in 2-4 weeks.",
 };
 
-const services = [
-   {
-      icon: Database,
-      title: "AI Document Automation",
-      pitch: "Turn your documents into structured data automatically",
-      description: "We build OCR pipelines, extraction logic, and validation schemas to replace manual data entry for financial, legal, and operational documents.",
-      proof: "Processing 50k+ documents daily for clients",
-      tags: ["OCR + Extraction", "Validation", "Structured Output"],
-   },
-   {
-      icon: Layers,
-      title: "AI SaaS MVP Builder",
-      pitch: "We turn your idea into a working SaaS in 14 days",
-      description: "From database architecture to full-stack frontend and AI integration, we launch your core product so you can acquire users and raise capital.",
-      proof: "Delivered 12+ production MVPs last year",
-      tags: ["Full SaaS", "AI Features", "Deployed System"],
-   },
-   {
-      icon: Workflow,
-      title: "Internal AI Tools",
-      pitch: "Replace manual workflows with AI systems",
-      description: "Stop relying on spreadsheets and disjointed apps. We build secure internal dashboards and automated workflows powered by your proprietary data.",
-      proof: "Reduced manual operations by up to 80%",
-      tags: ["Dashboards", "Automation", "AI Workflows"],
-   },
-];
+const serviceIcons: Record<HomeServiceIconKey, typeof Database> = {
+   database: Database,
+   layers: Layers,
+   workflow: Workflow,
+};
 
-const portfolio = [
-   {
-      title: "AI Knowledge Platform",
-      category: "Internal Tooling",
-      desc: "Turned isolated company wikis and PDFs into a centralized RAG assistant.",
-   },
-   {
-      title: "Bank Document Automation",
-      category: "Fintech Data Pipeline",
-      desc: "Automated the extraction of KYB/KYC documents directly into core banking tables.",
-   },
-   {
-      title: "Multi-tenant E-commerce Builder",
-      category: "SaaS Infrastructure",
-      desc: "Built the core provisioning engine for dynamic store creation and inventory management.",
-   },
-   {
-      title: "RAG / Document Intelligence",
-      category: "AI Workflow",
-      desc: "Deployed a secure, permission-aware semantic search pipeline for legal teams.",
-   },
-];
-
-const process = [
-   {
-      week: "Week 1",
-      title: "Architecture & Design",
-      desc: "We map the database schemas, API routes, UX flow, and AI integration points before writing code.",
-   },
-   {
-      week: "Week 2",
-      title: "Core Build & AI Logic",
-      desc: "We construct the backend infrastructure, train/connect the AI models, and build the frontend interface.",
-   },
-   {
-      week: "Week 3",
-      title: "Testing & Deployment",
-      desc: "We perform security checks, optimize queries, deploy to production, and hand over the keys.",
-   },
-];
+const services = sharedHomeSections.services.map((service) => ({
+   ...service,
+   icon: serviceIcons[service.iconKey],
+}));
+const portfolio = sharedHomeSections.portfolio;
+const process = sharedHomeSections.process;
 
 export default function Home() {
    return (

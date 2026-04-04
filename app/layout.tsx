@@ -3,11 +3,27 @@ import { dmSans, rubik } from "./fonts/fonts";
 import Script from "next/script";
 import type { Metadata } from "next";
 import WhatsAppWidget from "./components/WhatsAppWidget";
+import {
+  getSiteOriginFromEnv,
+  isPreviewDeployment,
+} from "@/lib/runtime/deployment";
 
-export const metadata: Metadata = {
-  title: "SofGent",
-  description: "Software IT Company",
-};
+export function generateMetadata(): Metadata {
+  const siteOrigin = getSiteOriginFromEnv();
+  const previewDeployment = isPreviewDeployment();
+
+  return {
+    metadataBase: new URL(siteOrigin),
+    title: "SofGent",
+    description: "Software IT Company",
+    robots: previewDeployment
+      ? {
+          index: false,
+          follow: false,
+        }
+      : undefined,
+  };
+}
 
 export default function RootLayout({
   children,

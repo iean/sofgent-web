@@ -3,7 +3,7 @@ import { ServiceCatIcon, SupportIcon } from "@/app/utils/SVGIcons";
 import Link from "next/link";
 
 export default function ServiceDetailsSidebar({ slug }: { slug: string }) {
-   const services = getServicesMeta("/app/data/services");
+   const services = getServicesMeta();
    const staticServices = [
       {
          slug: "ai-ready-data-engineering",
