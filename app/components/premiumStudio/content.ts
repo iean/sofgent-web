@@ -2,41 +2,62 @@ import {
    BarChart3,
    Bot,
    BrainCircuit,
+   Building2,
+   CalendarClock,
+   ClipboardList,
+   Clock,
+   Code2,
+   Cpu,
    Database,
    FileText,
    Gauge,
    Hammer,
    Layers3,
    LayoutDashboard,
+   LayoutGrid,
+   Lightbulb,
+   LineChart,
    Rocket,
    Search,
    ServerCog,
    ShieldCheck,
+   Sparkles,
    Target,
    Users,
    Workflow,
 } from "lucide-react";
+import { CALENDLY_URL } from "@/lib/constants";
 import type { StudioPageContent } from "./types";
 
 export const howWeBuildSaaSContent: StudioPageContent = {
    hero: {
       eyebrow: "SaaS Delivery System",
+      headingIcon: Rocket,
       title: "From Product Idea to Launch-Ready SaaS in Weeks",
       description:
          "We turn rough concepts, founder notes, and early requirements into a structured build plan, production-grade architecture, and a launch-ready product that can survive real users.",
       badges: [
-         "Built for real users",
-         "Launch in 2-6 weeks",
-         "AI-assisted delivery",
+         { label: "Built for real users", icon: Users },
+         { label: "Launch in 2-6 weeks", icon: Clock },
+         { label: "AI-assisted delivery", icon: Sparkles },
       ],
       highlights: [
-         "Product strategy, AI leverage, and engineering in one delivery team.",
-         "Built for launches, investor demos, and real customer onboarding.",
-         "Clear scope, clear milestones, and no bloated build cycle.",
+         {
+            text: "Product strategy, AI leverage, and engineering in one delivery team.",
+            icon: Layers3,
+         },
+         {
+            text: "Built for launches, investor demos, and real customer onboarding.",
+            icon: Rocket,
+         },
+         {
+            text: "Clear scope, clear milestones, and no bloated build cycle.",
+            icon: Target,
+         },
       ],
       primaryCta: {
          label: "Book Strategy Call",
-         href: "/contact",
+         href: CALENDLY_URL,
       },
       secondaryCta: {
          label: "See How It Works",
@@ -46,12 +67,17 @@ export const howWeBuildSaaSContent: StudioPageContent = {
          label: "[IMAGE: SaaS product architecture]",
          description:
             "Placeholder for the system view: app layers, data model, integrations, and launch environment.",
+         image: {
+            src: "/images/ai-product-studio/hero-architecture.png",
+            alt: "Isometric illustration of a SaaS product architecture with services, data layer, and integrations",
+         },
+         imagePriority: true,
       },
    },
    trustBar: [
-      "Built for founders, CTOs, and product teams",
-      "Launch in weeks, not months",
-      "AI + Product + Engineering under one roof",
+      { label: "Built for founders, CTOs, and product teams", icon: Users },
+      { label: "Launch in weeks, not months", icon: Rocket },
+      { label: "AI + Product + Engineering under one roof", icon: Layers3 },
    ],
    audience: {
       eyebrow: "Who This Is For",
@@ -62,6 +88,10 @@ export const howWeBuildSaaSContent: StudioPageContent = {
          label: "[IMAGE: founder and product team fit diagram]",
          description:
             "Placeholder for the ideal customer profile: founders, product teams, operators, and SaaS rebuilds.",
+         image: {
+            src: "/images/ai-product-studio/audience-fit.png",
+            alt: "Diagram of founders, product teams, and operators connecting into a single delivery system",
+         },
       },
       items: [
          {
@@ -99,6 +129,10 @@ export const howWeBuildSaaSContent: StudioPageContent = {
          label: "[IMAGE: launch blockers map]",
          description:
             "Placeholder for scope creep, fragmented execution, and launch-risk visualization.",
+         image: {
+            src: "/images/ai-product-studio/problem-fragmented.png",
+            alt: "Illustration of fragmented project work versus a unified launch system",
+         },
       },
       items: [
          {
@@ -136,6 +170,7 @@ export const howWeBuildSaaSContent: StudioPageContent = {
          label: "[PIPELINE DIAGRAM: Audit -> Structure -> Build -> Deploy]",
          description:
             "Placeholder for the delivery flow from product shaping to deployment and feedback loops.",
+         illustration: "process-pipeline",
       },
       steps: [
          {
@@ -177,6 +212,10 @@ export const howWeBuildSaaSContent: StudioPageContent = {
          label: "[IMAGE: product dashboard preview]",
          description:
             "Placeholder for admin, analytics, environment status, and release dashboard preview.",
+         image: {
+            src: "/images/ai-product-studio/deliverables-dashboard.png",
+            alt: "Product dashboard preview with analytics, environment status, and release notes",
+         },
       },
       items: [
          {
@@ -214,6 +253,10 @@ export const howWeBuildSaaSContent: StudioPageContent = {
          label: "[IMAGE: workflow transformation board]",
          description:
             "Placeholder for the shift from vague scope and fragmented work to launch-ready product operations.",
+         image: {
+            src: "/images/ai-product-studio/transformation-before-after.png",
+            alt: "Before-and-after view: vague scope versus a launch-ready product operation",
+         },
       },
       before: {
          title: "Before SofGent",
@@ -243,6 +286,10 @@ export const howWeBuildSaaSContent: StudioPageContent = {
          label: "[IMAGE: SaaS growth use case grid]",
          description:
             "Placeholder for founder MVPs, productized services, rebuilds, and AI-enabled product workflows.",
+         image: {
+            src: "/images/ai-product-studio/use-cases-board.png",
+            alt: "Grid of SaaS use cases including MVPs, productized services, and rebuilds",
+         },
       },
       items: [
          {
@@ -284,6 +331,10 @@ export const howWeBuildSaaSContent: StudioPageContent = {
          label: "[IMAGE: delivery authority stack]",
          description:
             "Placeholder for product ownership, engineering coverage, AI workflow design, and launch discipline.",
+         image: {
+            src: "/images/ai-product-studio/why-control-layer.png",
+            alt: "Layered delivery stack covering product, engineering, AI, and launch discipline",
+         },
       },
       items: [
          {
@@ -317,6 +368,7 @@ export const howWeBuildSaaSContent: StudioPageContent = {
       title: "Discuss the product before you spend the next month building the wrong scope.",
       description:
          "A focused strategy conversation is usually enough to expose scope creep, architecture risk, and the fastest path to a product that can actually launch.",
+      headingIcon: Lightbulb,
       primaryCta: {
          label: "Discuss Your Product",
          href: "/contact",
@@ -329,6 +381,10 @@ export const howWeBuildSaaSContent: StudioPageContent = {
          label: "[IMAGE: delivery brief snapshot]",
          description:
             "Placeholder for the product brief, technical audit notes, scope map, and launch plan.",
+         image: {
+            src: "/images/ai-product-studio/mid-cta-planning.png",
+            alt: "Snapshot of a delivery brief with audit notes, scope map, and launch plan",
+         },
       },
    },
    engagement: {
@@ -340,23 +396,30 @@ export const howWeBuildSaaSContent: StudioPageContent = {
          label: "[DIAGRAM: Week 1 audit -> Weeks 2-4 build -> Weeks 4-6 launch]",
          description:
             "Placeholder for the timeline from discovery and architecture through build and release.",
+         image: {
+            src: "/images/ai-product-studio/engagement-timeline.png",
+            alt: "Engagement timeline from week-1 discovery through build and launch",
+         },
       },
       phases: [
          {
             window: "Week 1",
             title: "Discovery + Audit",
+            icon: ClipboardList,
             description:
                "We define the product outcome, cut scope, map the architecture, and surface risks before build velocity matters.",
          },
          {
             window: "Weeks 2-4",
             title: "Build",
+            icon: Code2,
             description:
                "The product is designed, developed, integrated, and tested with one team moving against a shared plan.",
          },
          {
             window: "Weeks 4-6",
             title: "Launch",
+            icon: Rocket,
             description:
                "We deploy, stabilize, onboard initial users, and turn feedback into the next roadmap instead of ending at handoff.",
          },
@@ -367,10 +430,11 @@ export const howWeBuildSaaSContent: StudioPageContent = {
       title: "Let's Build Your SaaS Product",
       description:
          "If the product matters, the build system matters. We can map the fastest route from rough idea to a launch-ready SaaS platform with real technical confidence.",
+      headingIcon: Rocket,
       urgency: "Limited onboarding slots per month",
       primaryCta: {
          label: "Book a Free Strategy Call",
-         href: "/contact",
+         href: CALENDLY_URL,
       },
       secondaryCta: {
          label: "Get a Data Audit",
@@ -381,6 +445,10 @@ export const howWeBuildSaaSContent: StudioPageContent = {
          description:
             "Placeholder for the kickoff roadmap, technical audit notes, and delivery milestones shared during onboarding.",
          tone: "dark",
+         image: {
+            src: "/images/ai-product-studio/cta-workshop.png",
+            alt: "Onboarding roadmap with kickoff milestones and audit notes",
+         },
       },
    },
 };
@@ -388,22 +456,32 @@ export const howWeBuildSaaSContent: StudioPageContent = {
 export const aiProductStudioContent: StudioPageContent = {
    hero: {
       eyebrow: "AI Product Studio",
+      headingIcon: Cpu,
       title: "From Raw Operations to AI-Powered Systems That Drive Revenue",
       description:
          "We design and build production-ready AI systems that turn scattered data, manual work, and disconnected tools into software that answers, automates, and compounds operational value.",
       badges: [
-         "AI-first delivery",
-         "Production over prototypes",
-         "Data + apps + automation",
+         { label: "AI-first delivery", icon: Cpu },
+         { label: "Production over prototypes", icon: ShieldCheck },
+         { label: "Data + apps + automation", icon: Layers3 },
       ],
       highlights: [
-         "AI strategy, data engineering, and product delivery in one engagement.",
-         "Built for document-heavy, operations-heavy, and workflow-heavy businesses.",
-         "Designed for deployment, adoption, and measurable business impact.",
+         {
+            text: "AI strategy, data engineering, and product delivery in one engagement.",
+            icon: BrainCircuit,
+         },
+         {
+            text: "Built for document-heavy, operations-heavy, and workflow-heavy businesses.",
+            icon: Building2,
+         },
+         {
+            text: "Designed for deployment, adoption, and measurable business impact.",
+            icon: LineChart,
+         },
       ],
       primaryCta: {
          label: "Book Strategy Call",
-         href: "/contact",
+         href: CALENDLY_URL,
       },
       secondaryCta: {
          label: "See How It Works",
@@ -412,23 +490,33 @@ export const aiProductStudioContent: StudioPageContent = {
       visual: {
          label: "[IMAGE: AI system architecture]",
          description:
-            "Placeholder for orchestration layer, retrieval stack, dashboards, APIs, and human review loop.",
+            "Orchestration layer, retrieval stack, dashboards, APIs, and human review loop.",
+         image: {
+            src: "/images/ai-product-studio/hero-architecture.png",
+            alt: "Isometric illustration of AI system architecture with data pipelines and dashboards in teal and slate tones",
+         },
+         imagePriority: true,
       },
    },
    trustBar: [
-      "Built for founders, CTOs, and product teams",
-      "Launch in weeks, not months",
-      "AI + Data + Engineering under one roof",
+      { label: "Built for founders, CTOs, and product teams", icon: Users },
+      { label: "Launch in weeks, not months", icon: Rocket },
+      { label: "AI + Data + Engineering under one roof", icon: Database },
    ],
    audience: {
       eyebrow: "Who This Is For",
       title: "Built for businesses that have workflows, documents, and data - but no usable AI system around them.",
       description:
          "This fits operations-heavy teams that know there is leverage in the workflow, but need the right architecture and implementation partner to unlock it.",
+      headingIcon: Users,
       visual: {
          label: "[IMAGE: AI studio fit map]",
          description:
-            "Placeholder for operations-heavy teams, document workflows, internal tools, and AI-enabled products.",
+            "Operations-heavy teams, document workflows, internal tools, and AI-enabled products.",
+         image: {
+            src: "/images/ai-product-studio/audience-fit.png",
+            alt: "Abstract illustration of teams and workflows connecting into an organized AI-ready system",
+         },
       },
       items: [
          {
@@ -462,10 +550,15 @@ export const aiProductStudioContent: StudioPageContent = {
       title: "Most AI initiatives stall before they create measurable value.",
       description:
          "The issue is rarely the model. The issue is everything around it: bad data, broken workflows, weak orchestration, and no production delivery.",
+      headingIcon: BarChart3,
       visual: {
          label: "[IMAGE: fragmented data to AI map]",
          description:
-            "Placeholder for tool sprawl, document inputs, broken workflow handoffs, and slow decision paths.",
+            "Tool sprawl, document inputs, broken workflow handoffs, and slow decision paths.",
+         image: {
+            src: "/images/ai-product-studio/problem-fragmented.png",
+            alt: "Illustration of fragmented data sources versus a unified AI hub",
+         },
       },
       items: [
          {
@@ -499,11 +592,13 @@ export const aiProductStudioContent: StudioPageContent = {
       title: "Our AI system build pipeline is designed for production, not theater.",
       description:
          "We do not drop a chatbot into your stack and call it transformation. We build the operational layer around the intelligence so the system can be trusted.",
+      headingIcon: Workflow,
       visual: {
          label:
             "[PIPELINE DIAGRAM: Data sources -> Structuring -> AI layer -> Automation -> Output]",
          description:
-            "Placeholder for the end-to-end AI system from messy inputs to structured actions and outputs.",
+            "End-to-end AI system from messy inputs to structured actions and outputs.",
+         illustration: "process-pipeline",
       },
       steps: [
          {
@@ -541,10 +636,15 @@ export const aiProductStudioContent: StudioPageContent = {
       title: "Operational AI infrastructure the business can use every day.",
       description:
          "The outcome is not a one-off prototype. It is a system that processes work, creates structured data, and supports decisions at scale.",
+      headingIcon: LayoutDashboard,
       visual: {
          label: "[IMAGE: AI operations dashboard]",
          description:
-            "Placeholder for workflow status, review queues, system health, outputs, and KPI tracking.",
+            "Workflow status, review queues, system health, outputs, and KPI tracking.",
+         image: {
+            src: "/images/ai-product-studio/deliverables-dashboard.png",
+            alt: "Modern analytics dashboard with charts and KPIs in teal on dark slate",
+         },
       },
       items: [
          {
@@ -578,10 +678,15 @@ export const aiProductStudioContent: StudioPageContent = {
       title: "The difference shows up in throughput, accuracy, and trust.",
       description:
          "When the system goes live, the business stops treating AI as an experiment and starts using it as operational infrastructure.",
+      headingIcon: Sparkles,
       visual: {
          label: "[IMAGE: AI workflow before and after]",
          description:
-            "Placeholder for the shift from manual processing and fragmented data to structured automated operations.",
+            "The shift from manual processing and fragmented data to structured automated operations.",
+         image: {
+            src: "/images/ai-product-studio/transformation-before-after.png",
+            alt: "Before and after visualization from chaotic manual work to organized automated workflows",
+         },
       },
       before: {
          title: "Before SofGent",
@@ -607,10 +712,15 @@ export const aiProductStudioContent: StudioPageContent = {
       title: "High-value AI systems businesses actually pay for.",
       description:
          "These are the systems that remove cost, unlock speed, and create leverage across data-heavy and workflow-heavy operations.",
+      headingIcon: LayoutGrid,
       visual: {
          label: "[IMAGE: AI use case board]",
          description:
-            "Placeholder for document AI, knowledge systems, reporting layers, and automation workflows.",
+            "Document AI, knowledge systems, reporting layers, and automation workflows.",
+         image: {
+            src: "/images/ai-product-studio/use-cases-board.png",
+            alt: "Grid of AI use case concepts including documents, assistants, analytics, and automation",
+         },
       },
       items: [
          {
@@ -648,10 +758,15 @@ export const aiProductStudioContent: StudioPageContent = {
       title: "We are hired to build the system around the model, not just the model.",
       description:
          "The work includes data, orchestration, interfaces, review logic, and operational control so the business can trust what gets deployed.",
+      headingIcon: ShieldCheck,
       visual: {
          label: "[IMAGE: AI delivery control layer]",
          description:
-            "Placeholder for ingestion, validation, orchestration, interfaces, and human review checkpoints.",
+            "Ingestion, validation, orchestration, interfaces, and human review checkpoints.",
+         image: {
+            src: "/images/ai-product-studio/why-control-layer.png",
+            alt: "Layered control and trust diagram for AI ingestion, validation, and review",
+         },
       },
       items: [
          {
@@ -685,6 +800,7 @@ export const aiProductStudioContent: StudioPageContent = {
       title: "Plan the workflow before you plug in the model.",
       description:
          "The business value usually comes from the system around the AI: data movement, document handling, review logic, interfaces, and automation paths.",
+      headingIcon: Lightbulb,
       primaryCta: {
          label: "Plan Your AI Workflow",
          href: "/contact",
@@ -696,7 +812,11 @@ export const aiProductStudioContent: StudioPageContent = {
       visual: {
          label: "[IMAGE: AI workflow planning board]",
          description:
-            "Placeholder for the workflow map, source systems, review loop, and deployment path for an AI system.",
+            "Workflow map, source systems, review loop, and deployment path for an AI system.",
+         image: {
+            src: "/images/ai-product-studio/mid-cta-planning.png",
+            alt: "Workflow planning board with connected tasks and systems",
+         },
       },
    },
    engagement: {
@@ -704,27 +824,35 @@ export const aiProductStudioContent: StudioPageContent = {
       title: "How we work",
       description:
          "A focused engagement that gets from messy operations to a deployed AI system quickly without compromising production quality.",
+      headingIcon: CalendarClock,
       visual: {
          label: "[DIAGRAM: Week 1 audit -> Weeks 2-4 build -> Weeks 4-6 launch]",
          description:
-            "Placeholder for the timeline from workflow audit through production build and rollout.",
+            "Timeline from workflow audit through production build and rollout.",
+         image: {
+            src: "/images/ai-product-studio/engagement-timeline.png",
+            alt: "Project timeline from discovery through build to launch",
+         },
       },
       phases: [
          {
             window: "Week 1",
             title: "Discovery + Audit",
+            icon: Search,
             description:
                "We map workflows, source systems, data quality, failure points, and the highest-value automation opportunities.",
          },
          {
             window: "Weeks 2-4",
             title: "Build",
+            icon: Hammer,
             description:
                "We design the system, structure the data layer, implement automation, and wire the interfaces needed for real use.",
          },
          {
             window: "Weeks 4-6",
             title: "Launch",
+            icon: Rocket,
             description:
                "We deploy, validate outputs, support adoption, and set up the next iteration with better operational signal.",
          },
@@ -735,10 +863,11 @@ export const aiProductStudioContent: StudioPageContent = {
       title: "Let's Build Your AI System",
       description:
          "If your team is sitting on messy data, manual workflows, or stalled AI pilots, we can map the path to a production-ready system fast.",
+      headingIcon: Rocket,
       urgency: "Limited onboarding slots per month",
       primaryCta: {
          label: "Book a Free Strategy Call",
-         href: "/contact",
+         href: CALENDLY_URL,
       },
       secondaryCta: {
          label: "Get a Data Audit",
@@ -747,8 +876,12 @@ export const aiProductStudioContent: StudioPageContent = {
       visual: {
          label: "[IMAGE: strategy workshop board]",
          description:
-            "Placeholder for the audit snapshot, architecture notes, and business-priority system map shared during kickoff.",
+            "Audit snapshot, architecture notes, and business-priority system map shared during kickoff.",
          tone: "dark",
+         image: {
+            src: "/images/ai-product-studio/cta-workshop.png",
+            alt: "Strategy workshop with diagrams and collaboration in a professional studio setting",
+         },
       },
    },
 };

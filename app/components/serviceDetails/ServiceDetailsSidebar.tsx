@@ -1,5 +1,6 @@
 import getServicesMeta from "@/app/utils/getServicesMeta";
 import { ServiceCatIcon, SupportIcon } from "@/app/utils/SVGIcons";
+import { CALENDLY_URL } from "@/lib/constants";
 import Link from "next/link";
 
 export default function ServiceDetailsSidebar({ slug }: { slug: string }) {
@@ -23,18 +24,18 @@ export default function ServiceDetailsSidebar({ slug }: { slug: string }) {
          data-aos="fade-up"
          data-aos-delay="100"
          className="col-span-8 lg:col-span-4 sticky top-[30px] self-start">
-         <div className="border border-brand/10 rounded-2xl py-[30px] bg-main-gray">
+         <div className="border border-primary/10 rounded-2xl py-[30px] bg-main-gray">
             <div className="flex gap-5 items-center px-10 pb-[30px]">
                <ServiceCatIcon />
-               <h2 className="font-semibold text-22 text-main-black">
+               <h2 className="font-semibold text-[22px] text-main-black">
                   More Services
                </h2>
             </div>
-            <hr className="bg-brand/10" />
+            <hr className="bg-primary/10" />
             <div className="pt-10 flex flex-col px-10 gap-[30px]">
                {filteredServices.map((service) => (
                   <Link key={service.slug} href={`/services/${service.slug}`}>
-                     <div className="flex items-center gap-2 group text-gray-69 hover:text-brand">
+                     <div className="flex items-center gap-2 group text-gray-69 hover:text-primary">
                         <svg
                            width="7"
                            height="11"
@@ -50,7 +51,7 @@ export default function ServiceDetailsSidebar({ slug }: { slug: string }) {
                               strokeLinejoin="round"
                            />
                         </svg>
-                        <p className="text-18 font-medium text-gray-69 font-inter leading-5 transition-colors duration-300 hover:text-brand">
+                        <p className="text-lg font-medium text-gray-69 font-inter leading-5 transition-colors duration-300 hover:text-primary">
                            {service.title}
                         </p>
                      </div>
@@ -58,7 +59,7 @@ export default function ServiceDetailsSidebar({ slug }: { slug: string }) {
                ))}
                {visibleStaticServices.map((service) => (
                   <Link key={service.slug} href={`/services/${service.slug}`}>
-                     <div className="flex items-center gap-2 group text-gray-69 hover:text-brand">
+                     <div className="flex items-center gap-2 group text-gray-69 hover:text-primary">
                         <svg
                            width="7"
                            height="11"
@@ -74,7 +75,7 @@ export default function ServiceDetailsSidebar({ slug }: { slug: string }) {
                               strokeLinejoin="round"
                            />
                         </svg>
-                        <p className="text-18 font-medium text-gray-69 font-inter leading-5 transition-colors duration-300 hover:text-brand">
+                        <p className="text-lg font-medium text-gray-69 font-inter leading-5 transition-colors duration-300 hover:text-primary">
                            {service.title}
                         </p>
                      </div>
@@ -82,41 +83,31 @@ export default function ServiceDetailsSidebar({ slug }: { slug: string }) {
                ))}
             </div>
          </div>
-         <div className="border border-brand/10 rounded-2xl py-[30px] bg-main-gray mt-[30px]">
+         <div className="border border-primary/10 rounded-2xl py-[30px] bg-main-gray mt-[30px]">
             <div className="flex gap-5 items-center px-10 pb-[30px]">
                <SupportIcon />
-               <h1 className="font-semibold text-22 text-main-black">
+               <h1 className="font-semibold text-[22px] text-main-black">
                   Get Free Consultation
                </h1>
             </div>
-            <hr className="bg-brand/10" />
-            <div className="pt-10 flex flex-col px-10 gap-[30px]">
-               <form action="mailer.php" method="POST">
-                  <input
-                     placeholder="Full Name"
-                     id="fullName"
-                     type="text"
-                     name="name"
-                     className="placeholder:text-paragraph my-2 w-full h-[56px] bg-white border border-brandBorder rounded-md focus:border-brand focus:outline-none focus:right-0 px-[25px]"
-                  />
-                  <input
-                     placeholder="Enter your email..."
-                     id="eOne"
-                     type="text"
-                     name="email"
-                     className="placeholder:text-paragraph my-2 w-full h-[56px] bg-white border border-brandBorder rounded-md focus:border-brand focus:outline-none focus:right-0 px-[25px]"
-                  />
-                  <textarea
-                     placeholder="Your message..."
-                     id="message"
-                     name="message"
-                     className="placeholder:text-paragraph w-full bg-white border border-brandBorder rounded-md focus:border-brand focus:outline-none focus:right-0 px-[25px] py-5 h-[140px]"></textarea>
-                  <button
-                     type="submit"
-                     className="rounded-full w-full inline-block px-5 py-2.5 overflow-hidden group bg-brand relative hover:bg-gradient-to-r hover:from-[#5ca979] text-white transition-all ease-out duration-300">
-                     Get a Quote
-                  </button>
-               </form>
+            <hr className="bg-primary/10" />
+            <div className="pt-10 flex flex-col px-10 gap-4">
+               <p className="text-sm leading-6 text-paragraph">
+                  Tell us about your product, timeline, and where you need help. We&apos;ll
+                  prepare for a useful first conversation.
+               </p>
+               <Link
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full w-full inline-flex items-center justify-center px-5 py-3 bg-primary text-white font-semibold transition-all duration-300 hover:bg-primary/90">
+                  Book a Strategy Call
+               </Link>
+               <Link
+                  href="/contact"
+                  className="rounded-full w-full inline-flex items-center justify-center px-5 py-3 border border-primary/20 bg-white text-primary font-semibold transition-all duration-300 hover:bg-primary/5">
+                  Send Project Details
+               </Link>
             </div>
          </div>
       </div>
