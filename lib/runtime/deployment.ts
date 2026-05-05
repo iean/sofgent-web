@@ -39,7 +39,9 @@ export function isPreviewDeployment() {
 
 export function getSiteOriginFromEnv() {
   const explicitOrigin =
-    process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL;
+    process.env.NEXT_PUBLIC_SITE_ORIGIN ||
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    process.env.SITE_URL;
 
   if (explicitOrigin) {
     return toOrigin(explicitOrigin);

@@ -16,7 +16,7 @@ const MemberCard: React.FC<{
                className="object-cover w-full overflow-hidden rounded-lg"
             />
             {/* <!-- social links  --> */}
-            <div className="flex bg-brand absolute bottom-5 translate-y-16 group-hover/main:translate-y-0 transition-all duration-300">
+            <div className="flex bg-primary absolute bottom-5 translate-y-16 group-hover/main:translate-y-0 transition-all duration-300">
                <a
                   href="#"
                   aria-label="facebook"
@@ -100,7 +100,7 @@ const MemberCard: React.FC<{
             </div>
          </div>
 
-         <h1 className="mt-6 font-semibold text-22 text-main-black white_card_title">
+         <h1 className="mt-6 font-semibold text-[22px] text-main-black white_card_title">
             {name}
          </h1>
 

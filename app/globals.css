@@ -6,7 +6,6 @@
    :root {
       --page-bg: #ffffff;
       --page-text: #0f172a;
-      --brand: #326d6d;
    }
 
    html {
@@ -31,7 +30,7 @@
 
    /* Premium gradient text utility */
    .text-gradient-brand {
-      @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-700 to-teal-500;
+      @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-cyan-300;
    }
 
    /* Subtle grid paper background */

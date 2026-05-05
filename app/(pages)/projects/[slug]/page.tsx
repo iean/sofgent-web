@@ -55,7 +55,7 @@ async function ProjectDetails({ params }: { params: { slug: string } }) {
                         {project.category}
                      </div>
 
-                     <h1 className="mt-6 max-w-[16ch] text-34 font-semibold leading-[1.02] tracking-[-0.04em] text-slate-950 md:text-[56px] md:leading-[1.02]">
+                     <h1 className="mt-6 max-w-[16ch] text-4xl font-semibold leading-[1.02] tracking-[-0.04em] text-slate-950 md:text-[56px] md:leading-[1.02]">
                         {project.title}
                      </h1>
 
@@ -214,7 +214,7 @@ async function ProjectDetails({ params }: { params: { slug: string } }) {
                      <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-200">
                         Ready To Build
                      </p>
-                     <h2 className="mt-4 text-34 font-semibold tracking-[-0.04em] md:text-48">
+                     <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-5xl">
                         Want a system like this inside your business?
                      </h2>
                      <p className="mt-5 text-[18px] leading-8 text-slate-200">

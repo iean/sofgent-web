@@ -1,6 +1,7 @@
 import BreadCrumb from "@/app/components/common/BreadCrumb";
 import ContactForm from "@/app/components/contact";
 import Button from "@/app/components/common/Button";
+import { CALENDLY_URL, CONTACT_TO_EMAIL } from "@/lib/constants";
 import getPageMeta from "@/app/utils/getPageMeta";
 import type { Metadata } from "next";
 
@@ -39,9 +40,9 @@ export default function Contact() {
                               Email
                            </p>
                            <a
-                              href="mailto:support@sofgent.com"
+                              href={`mailto:${CONTACT_TO_EMAIL}`}
                               className="text-xl font-medium text-white transition-colors hover:text-cyan-400">
-                              support@sofgent.com
+                              {CONTACT_TO_EMAIL}
                            </a>
                         </div>
                         <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
@@ -61,7 +62,7 @@ export default function Contact() {
                      <p className="text-sm text-slate-400 mb-6">Prefer to bypass the form?</p>
                      <Button
                         btnText="Schedule directly on Calendly"
-                        href="mailto:support@sofgent.com?subject=Strategy%20Call%20with%20SofGent"
+                        href={CALENDLY_URL}
                         external={true}
                         variant="outline"
                         className="w-full sm:w-auto border-white/20 bg-white/5 text-white hover:border-white/40 hover:bg-white/10 hover:text-white"

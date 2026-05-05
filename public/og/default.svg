@@ -1,0 +1,47 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#020617"/>
+  <rect x="0" y="0" width="1200" height="630" fill="url(#fade)" opacity="0.9"/>
+
+  <defs>
+    <linearGradient id="fade" x1="86" y1="78" x2="1112" y2="574" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#082F49"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="74" y="72" width="154" height="48" rx="24" fill="#0F172A" stroke="#155E75"/>
+  <circle cx="108" cy="96" r="9" fill="#06B6D4"/>
+  <text x="129" y="105" fill="white" font-family="DM Sans, Arial, sans-serif" font-size="25" font-weight="700">SofGent</text>
+
+  <text x="74" y="170" fill="#67E8F9" font-family="DM Sans, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="0.22em">PREMIUM AI PRODUCT STUDIO</text>
+
+  <text x="74" y="262" fill="white" font-family="DM Sans, Arial, sans-serif" font-size="76" font-weight="700" letter-spacing="-0.05em">
+    <tspan x="74" dy="0">Ship your AI product</tspan>
+    <tspan x="74" dy="84">in 2–4 weeks.</tspan>
+  </text>
+
+  <text x="74" y="412" fill="#CBD5E1" font-family="DM Sans, Arial, sans-serif" font-size="30" font-weight="500" letter-spacing="-0.02em">
+    Production-ready AI systems, SaaS MVPs, and document automation.
+  </text>
+
+  <rect x="74" y="456" width="128" height="42" rx="21" fill="#0F172A" stroke="#155E75"/>
+  <text x="104" y="483" fill="#E0F2FE" font-family="DM Sans, Arial, sans-serif" font-size="22" font-weight="700">Fintech</text>
+
+  <rect x="216" y="456" width="108" height="42" rx="21" fill="#0F172A" stroke="#155E75"/>
+  <text x="246" y="483" fill="#E0F2FE" font-family="DM Sans, Arial, sans-serif" font-size="22" font-weight="700">Legal</text>
+
+  <rect x="338" y="456" width="94" height="42" rx="21" fill="#0F172A" stroke="#155E75"/>
+  <text x="368" y="483" fill="#E0F2FE" font-family="DM Sans, Arial, sans-serif" font-size="22" font-weight="700">Ops</text>
+
+  <rect x="758" y="144" width="334" height="210" rx="28" fill="#0F172A" stroke="#155E75"/>
+  <rect x="788" y="178" width="128" height="14" rx="7" fill="#67E8F9"/>
+  <rect x="788" y="214" width="228" height="12" rx="6" fill="#1E293B"/>
+  <rect x="788" y="238" width="198" height="12" rx="6" fill="#1E293B"/>
+  <rect x="788" y="262" width="156" height="12" rx="6" fill="#1E293B"/>
+  <rect x="788" y="304" width="128" height="18" rx="9" fill="#083344" stroke="#0891B2"/>
+  <rect x="928" y="304" width="128" height="18" rx="9" fill="#082F49" stroke="#155E75"/>
+
+  <rect x="836" y="392" width="256" height="96" rx="24" fill="#06B6D4"/>
+  <text x="872" y="434" fill="#020617" font-family="DM Sans, Arial, sans-serif" font-size="31" font-weight="700" letter-spacing="-0.03em">No prototypes.</text>
+  <text x="872" y="468" fill="#020617" font-family="DM Sans, Arial, sans-serif" font-size="31" font-weight="700" letter-spacing="-0.03em">No tech debt.</text>
+</svg>

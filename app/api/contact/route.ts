@@ -1,80 +1,92 @@
 import { NextRequest, NextResponse } from "next/server";
+import { escapeHtml } from "@/lib/escape";
+import { CONTACT_TO_EMAIL } from "@/lib/constants";
+import { limitContactSubmissions } from "@/lib/ratelimit";
+import {
+   DiscoverySchema,
+   LegacySchema,
+   type DiscoveryPayload,
+   type LegacyPayload,
+} from "@/lib/schemas/contact";
 import nodemailer from "nodemailer";
 
-type LegacyPayload = {
-   name?: string;
-   email?: string;
-   phone?: string;
-   subject?: string;
-   message?: string;
-};
-
-type DiscoveryPayload = {
-   name?: string;
-   company?: string;
-   timeline?: string;
-   productIdea?: string;
-};
-
 type NormalizedPayload = {
-   name: string;
    subject: string;
    html: string;
    whatsappMessage: string;
 };
 
+const sanitizePayload = <T extends Record<string, string>>(payload: T): T =>
+   Object.fromEntries(
+      Object.entries(payload).map(([key, value]) => [key, escapeHtml(value)])
+   ) as T;
+
 const normalizePayload = (
-   payload: LegacyPayload & DiscoveryPayload
-): NormalizedPayload | null => {
-   if (
-      payload.name &&
-      payload.company &&
-      payload.timeline &&
-      payload.productIdea
-   ) {
-      return {
+   payload: DiscoveryPayload | LegacyPayload
+): NormalizedPayload => {
+   if ("company" in payload) {
+      const safePayload = sanitizePayload({
          name: payload.name,
-         subject: `Discovery Request: ${payload.company}`,
+         company: payload.company,
+         timeline: payload.timeline,
+         productIdea: payload.productIdea,
+      });
+
+      return {
+         subject: `Discovery Request: ${safePayload.company}`,
          html: `
            <h2>New Discovery Call Request</h2>
-           <p><strong>Name:</strong> ${payload.name}</p>
-           <p><strong>Company:</strong> ${payload.company}</p>
-           <p><strong>Timeline:</strong> ${payload.timeline}</p>
+           <p><strong>Name:</strong> ${safePayload.name}</p>
+           <p><strong>Company:</strong> ${safePayload.company}</p>
+           <p><strong>Timeline:</strong> ${safePayload.timeline}</p>
            <p><strong>Product Idea:</strong></p>
-           <p>${payload.productIdea}</p>
+           <p>${safePayload.productIdea}</p>
            <hr>
            <p><em>Sent from the SofGent contact form.</em></p>
          `,
-         whatsappMessage: `New Discovery Call Request\n\nName: ${payload.name}\nCompany: ${payload.company}\nTimeline: ${payload.timeline}\n\nProduct Idea:\n${payload.productIdea}`,
+         whatsappMessage: `New Discovery Call Request\n\nName: ${safePayload.name}\nCompany: ${safePayload.company}\nTimeline: ${safePayload.timeline}\n\nProduct Idea:\n${safePayload.productIdea}`,
       };
    }
 
-   if (
-      payload.name &&
-      payload.email &&
-      payload.phone &&
-      payload.subject &&
-      payload.message
-   ) {
-      return {
-         name: payload.name,
-         subject: `Contact Form: ${payload.subject}`,
-         html: `
-           <h2>New Contact Form Submission</h2>
-           <p><strong>Name:</strong> ${payload.name}</p>
-           <p><strong>Email:</strong> ${payload.email}</p>
-           <p><strong>Phone:</strong> ${payload.phone}</p>
-           <p><strong>Subject:</strong> ${payload.subject}</p>
-           <p><strong>Message:</strong></p>
-           <p>${payload.message}</p>
-           <hr>
-           <p><em>Sent from the SofGent website.</em></p>
-         `,
-         whatsappMessage: `New Contact Form Submission\n\nName: ${payload.name}\nEmail: ${payload.email}\nPhone: ${payload.phone}\nSubject: ${payload.subject}\n\nMessage:\n${payload.message}`,
-      };
+   const safePayload = sanitizePayload({
+      name: payload.name,
+      email: payload.email,
+      phone: payload.phone,
+      subject: payload.subject,
+      message: payload.message,
+   });
+
+   return {
+      subject: `Contact Form: ${safePayload.subject}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${safePayload.name}</p>
+        <p><strong>Email:</strong> ${safePayload.email}</p>
+        <p><strong>Phone:</strong> ${safePayload.phone}</p>
+        <p><strong>Subject:</strong> ${safePayload.subject}</p>
+        <p><strong>Message:</strong></p>
+        <p>${safePayload.message}</p>
+        <hr>
+        <p><em>Sent from the SofGent website.</em></p>
+      `,
+      whatsappMessage: `New Contact Form Submission\n\nName: ${safePayload.name}\nEmail: ${safePayload.email}\nPhone: ${safePayload.phone}\nSubject: ${safePayload.subject}\n\nMessage:\n${safePayload.message}`,
+   };
+};
+
+const parsePayload = (payload: unknown): DiscoveryPayload | LegacyPayload => {
+   const discovery = DiscoverySchema.safeParse(payload);
+
+   if (discovery.success) {
+      return discovery.data;
    }
 
-   return null;
+   const legacy = LegacySchema.safeParse(payload);
+
+   if (legacy.success) {
+      return legacy.data;
+   }
+
+   throw new Error("Invalid contact payload");
 };
 
 async function sendWhatsAppNotification(message: string) {
@@ -103,15 +115,22 @@ async function sendWhatsAppNotification(message: string) {
 
 export async function POST(request: NextRequest) {
    try {
-      const payload = (await request.json()) as LegacyPayload & DiscoveryPayload;
-      const normalizedPayload = normalizePayload(payload);
+      const ip =
+         request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+         request.headers.get("x-real-ip") ||
+         "anon";
+      const rateLimit = await limitContactSubmissions(`contact:${ip}`);
 
-      if (!normalizedPayload) {
+      if (!rateLimit.success) {
          return NextResponse.json(
-            { error: "Required form fields are missing" },
-            { status: 400 }
+            { error: "Too many submissions. Please try again later." },
+            { status: 429 }
          );
       }
+
+      const body = (await request.json()) as unknown;
+      const payload = parsePayload(body);
+      const normalizedPayload = normalizePayload(payload);
 
       const transporter = nodemailer.createTransport({
          service: "gmail",
@@ -123,7 +142,7 @@ export async function POST(request: NextRequest) {
 
       await transporter.sendMail({
          from: process.env.EMAIL_USER,
-         to: "support@sofgent.com",
+         to: CONTACT_TO_EMAIL,
          subject: normalizedPayload.subject,
          html: normalizedPayload.html,
       });
@@ -139,9 +158,16 @@ export async function POST(request: NextRequest) {
          { status: 200 }
       );
    } catch (error) {
+      if (error instanceof Error && error.message === "Invalid contact payload") {
+         return NextResponse.json(
+            { error: "Invalid contact submission." },
+            { status: 400 }
+         );
+      }
+
       console.error("Error sending email:", error);
       return NextResponse.json(
-         { error: "Failed to send email" },
+         { error: "Failed to send email." },
          { status: 500 }
       );
    }

@@ -1,4 +1,5 @@
 import Button from "@/app/components/common/Button";
+import { CALENDLY_URL } from "@/lib/constants";
 import Link from "next/link";
 import { ArrowRight, Bot, Database, Sparkles } from "lucide-react";
 
@@ -21,7 +22,7 @@ export default function HeroSection() {
                      </span>
                   </div>
 
-                  <p className="mt-6 text-sm font-semibold uppercase tracking-[0.28em] text-brand">
+                  <p className="mt-6 text-sm font-semibold uppercase tracking-[0.28em] text-primary">
                      Data Foundation for AI
                   </p>
                   <h1 className="mt-4 max-w-[12ch] text-[44px] font-semibold leading-[0.98] tracking-[-0.055em] text-slate-950 md:text-[72px]">
@@ -35,7 +36,11 @@ export default function HeroSection() {
                   </p>
 
                   <div className="mt-9 flex flex-wrap items-center gap-4">
-                     <Button btnText="Book Free Data Audit" href="/contact" />
+                     <Button
+                        btnText="Book Free Data Audit"
+                        href={CALENDLY_URL}
+                        external={true}
+                     />
                   </div>
 
                   <div className="mt-10 grid gap-4 sm:grid-cols-3">

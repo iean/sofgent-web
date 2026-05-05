@@ -141,10 +141,10 @@ export default function HowWeBuildSaaS() {
         <div className="mx-auto theme-container">
           <div className="max-w-4xl mx-auto text-center">
             <SectionTag tag="How We Build SaaS That Scales" />
-            <h1 className="md:text-48 mt-6 text-34 font-semibold text-main-black mb-6">
+            <h1 className="md:text-5xl mt-6 text-4xl font-semibold text-main-black mb-6">
               How SofGent Builds Secure, Scalable SaaS Products
             </h1>
-            <p className="text-20 text-paragraph">
+            <p className="text-xl text-paragraph">
               From fintech platforms to enterprise knowledge systems, we engineer SaaS products
               with a clear path from MVP to scale—without costly rewrites.
             </p>
@@ -163,7 +163,7 @@ export default function HowWeBuildSaaS() {
             <p className="text-paragraph max-w-3xl mx-auto mb-8">
               A proven, feedback-driven process designed to reduce risk and ship fast.
             </p>
-            <p className="text-18 font-semibold text-main-black mb-12">
+            <p className="text-lg font-semibold text-main-black mb-12">
               Ideation → Prototyping → Feedback → Iteration → Launch
             </p>
           </div>
@@ -235,12 +235,12 @@ export default function HowWeBuildSaaS() {
                 className="rounded-[20px] border border-[#e7e8e9] bg-white p-6 md:p-8 hover:shadow-lg transition-shadow"
               >
                 <div className="text-4xl mb-4">{process.icon}</div>
-                <h3 className="text-20 font-semibold text-main-black mb-2">{process.title}</h3>
-                <p className="text-sm text-brand font-semibold mb-4">Timeline: {process.timeline}</p>
+                <h3 className="text-xl font-semibold text-main-black mb-2">{process.title}</h3>
+                <p className="text-sm text-primary font-semibold mb-4">Timeline: {process.timeline}</p>
                 <ul className="space-y-2 mb-6">
                   {process.items.map((item, i) => (
                     <li key={i} className="text-paragraph flex items-start">
-                      <span className="text-brand mr-2">•</span>
+                      <span className="text-primary mr-2">•</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -270,14 +270,14 @@ export default function HowWeBuildSaaS() {
                 className="rounded-[20px] border border-[#e7e8e9] bg-white p-8 hover:shadow-lg transition-shadow"
               >
                 <div className="text-5xl mb-4">{item.icon}</div>
-                <h3 className="text-24 font-semibold text-main-black mb-4">{item.title}</h3>
+                <h3 className="text-2xl font-semibold text-main-black mb-4">{item.title}</h3>
                 <p className="text-paragraph mb-6">{item.description}</p>
                 <div>
                   <p className="text-sm font-semibold text-main-black mb-3">Includes:</p>
                   <ul className="space-y-2">
                     {item.includes.map((include, i) => (
                       <li key={i} className="text-paragraph flex items-start">
-                        <span className="text-brand mr-2">•</span>
+                        <span className="text-primary mr-2">•</span>
                         <span>{include}</span>
                       </li>
                     ))}
@@ -303,7 +303,7 @@ export default function HowWeBuildSaaS() {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             <div className="rounded-[20px] border border-[#e7e8e9] bg-white p-6 hover:shadow-lg transition-shadow">
               <div className="text-3xl mb-4">⚡</div>
-              <h3 className="text-20 font-semibold text-main-black mb-3">Speed to Market</h3>
+              <h3 className="text-xl font-semibold text-main-black mb-3">Speed to Market</h3>
               <ul className="space-y-2 text-paragraph text-sm">
                 <li>• MVP in 4-6 weeks, not months</li>
                 <li>• Automated CI/CD for instant deployments</li>
@@ -313,7 +313,7 @@ export default function HowWeBuildSaaS() {
             </div>
             <div className="rounded-[20px] border border-[#e7e8e9] bg-white p-6 hover:shadow-lg transition-shadow">
               <div className="text-3xl mb-4">💰</div>
-              <h3 className="text-20 font-semibold text-main-black mb-3">Cost Control</h3>
+              <h3 className="text-xl font-semibold text-main-black mb-3">Cost Control</h3>
               <ul className="space-y-2 text-paragraph text-sm">
                 <li>• Fixed-scope MVP pricing</li>
                 <li>• Cloud cost optimization from day one</li>
@@ -323,7 +323,7 @@ export default function HowWeBuildSaaS() {
             </div>
             <div className="rounded-[20px] border border-[#e7e8e9] bg-white p-6 hover:shadow-lg transition-shadow">
               <div className="text-3xl mb-4">🛡️</div>
-              <h3 className="text-20 font-semibold text-main-black mb-3">Risk Mitigation</h3>
+              <h3 className="text-xl font-semibold text-main-black mb-3">Risk Mitigation</h3>
               <ul className="space-y-2 text-paragraph text-sm">
                 <li>• Week 1 risk assessment & planning</li>
                 <li>• Security & compliance built-in</li>
@@ -333,7 +333,7 @@ export default function HowWeBuildSaaS() {
             </div>
             <div className="rounded-[20px] border border-[#e7e8e9] bg-white p-6 hover:shadow-lg transition-shadow">
               <div className="text-3xl mb-4">🔄</div>
-              <h3 className="text-20 font-semibold text-main-black mb-3">Iteration & Feedback</h3>
+              <h3 className="text-xl font-semibold text-main-black mb-3">Iteration & Feedback</h3>
               <ul className="space-y-2 text-paragraph text-sm">
                 <li>• Real-time usage analytics</li>
                 <li>• User-driven feature prioritization</li>
@@ -358,7 +358,7 @@ export default function HowWeBuildSaaS() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             <div className="rounded-[20px] border border-[#e7e8e9] bg-white p-6">
-              <h3 className="text-20 font-semibold text-main-black mb-4">Frontend Frameworks</h3>
+              <h3 className="text-xl font-semibold text-main-black mb-4">Frontend Frameworks</h3>
               <ul className="space-y-2">
                 {techStack.frontend.map((tech, i) => (
                   <li key={i} className="text-paragraph">{tech}</li>
@@ -367,7 +367,7 @@ export default function HowWeBuildSaaS() {
               <p className="text-sm text-paragraph mt-4">Component-based, performance-optimized builds</p>
             </div>
             <div className="rounded-[20px] border border-[#e7e8e9] bg-white p-6">
-              <h3 className="text-20 font-semibold text-main-black mb-4">Backend Platforms</h3>
+              <h3 className="text-xl font-semibold text-main-black mb-4">Backend Platforms</h3>
               <ul className="space-y-2">
                 {techStack.backend.map((tech, i) => (
                   <li key={i} className="text-paragraph">{tech}</li>
@@ -376,7 +376,7 @@ export default function HowWeBuildSaaS() {
               <p className="text-sm text-paragraph mt-4">REST & event-driven, multi-tenant SaaS patterns</p>
             </div>
             <div className="rounded-[20px] border border-[#e7e8e9] bg-white p-6">
-              <h3 className="text-20 font-semibold text-main-black mb-4">Cloud Services & DevOps</h3>
+              <h3 className="text-xl font-semibold text-main-black mb-4">Cloud Services & DevOps</h3>
               <ul className="space-y-2">
                 {techStack.cloud.map((tech, i) => (
                   <li key={i} className="text-paragraph">{tech}</li>
@@ -385,7 +385,7 @@ export default function HowWeBuildSaaS() {
               <p className="text-sm text-paragraph mt-4">Containerized, scalable, automated deployments</p>
             </div>
             <div className="rounded-[20px] border border-[#e7e8e9] bg-white p-6">
-              <h3 className="text-20 font-semibold text-main-black mb-4">Data & Security</h3>
+              <h3 className="text-xl font-semibold text-main-black mb-4">Data & Security</h3>
               <ul className="space-y-2">
                 {techStack.data.map((tech, i) => (
                   <li key={i} className="text-paragraph">{tech}</li>
@@ -415,11 +415,11 @@ export default function HowWeBuildSaaS() {
                 className="rounded-[20px] border border-[#e7e8e9] bg-white p-6 md:p-8 hover:shadow-lg transition-shadow"
               >
                 <div className="text-4xl mb-4">{support.icon}</div>
-                <h3 className="text-20 font-semibold text-main-black mb-4">{support.title}</h3>
+                <h3 className="text-xl font-semibold text-main-black mb-4">{support.title}</h3>
                 <ul className="space-y-2">
                   {support.items.map((item, i) => (
                     <li key={i} className="text-paragraph flex items-start">
-                      <span className="text-brand mr-2">•</span>
+                      <span className="text-primary mr-2">•</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -427,8 +427,8 @@ export default function HowWeBuildSaaS() {
               </div>
             ))}
           </div>
-          <div className="rounded-[20px] border-2 border-brand bg-white p-8">
-            <h3 className="text-24 font-semibold text-main-black mb-4">Deployment & Infrastructure</h3>
+          <div className="rounded-[20px] border-2 border-primary bg-white p-8">
+            <h3 className="text-2xl font-semibold text-main-black mb-4">Deployment & Infrastructure</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <p className="font-semibold text-main-black mb-2">Multi-Environment Setup</p>
@@ -457,22 +457,22 @@ export default function HowWeBuildSaaS() {
             </div>
           </div>
           <div className="mt-6 rounded-[20px] border border-[#e7e8e9] bg-white p-8">
-            <h3 className="text-24 font-semibold text-main-black mb-4">How We Work With You</h3>
+            <h3 className="text-2xl font-semibold text-main-black mb-4">How We Work With You</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div>
-                <p className="font-semibold text-brand mb-2">Long-Term Product Engineering Partner</p>
+                <p className="font-semibold text-primary mb-2">Long-Term Product Engineering Partner</p>
                 <p className="text-paragraph text-sm">
                   Ongoing feature development, technical roadmap support, and product evolution based on user needs.
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-brand mb-2">Extended Technical Team</p>
+                <p className="font-semibold text-primary mb-2">Extended Technical Team</p>
                 <p className="text-paragraph text-sm">
                   Act as your dedicated development team, handling everything from infrastructure to feature development.
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-brand mb-2">Fractional CTO Support</p>
+                <p className="font-semibold text-primary mb-2">Fractional CTO Support</p>
                 <p className="text-paragraph text-sm">
                   Strategic technical guidance for growing SaaS companies, architecture decisions, and scaling strategies.
                 </p>
@@ -497,7 +497,7 @@ export default function HowWeBuildSaaS() {
                 className="rounded-[20px] border border-[#e7e8e9] bg-white p-6 hover:shadow-lg transition-shadow"
               >
                 <div className="text-2xl mb-3">{item.icon}</div>
-                <h3 className="text-18 font-semibold text-main-black mb-2">{item.title}</h3>
+                <h3 className="text-lg font-semibold text-main-black mb-2">{item.title}</h3>
                 <p className="text-paragraph text-sm">{item.description}</p>
               </div>
             ))}
@@ -512,14 +512,14 @@ export default function HowWeBuildSaaS() {
             <h2 className="md:text-40 text-28 font-semibold text-white mb-4">
               Ready to Launch Your SaaS MVP?
             </h2>
-            <p className="text-20 text-white/90 mb-8">
+            <p className="text-xl text-white/90 mb-8">
               Whether you&apos;re validating an idea or building a production-ready platform, we help you move fast—without cutting corners.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button
                 btnText="👉 Start Your MVP"
                 href="/contact"
-                className="bg-white text-brand hover:bg-gray"
+                className="bg-white text-primary hover:bg-gray"
               />
               <Button
                 btnText="👉 Talk to an Engineer"

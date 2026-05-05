@@ -9,7 +9,7 @@ export default function CTASection() {
                   <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-200">
                      Ready To Fix The Data Layer
                   </p>
-                  <h2 className="mt-4 text-34 font-semibold tracking-[-0.04em] md:text-48">
+                  <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-5xl">
                      Get Your Data AI-Ready in Weeks
                   </h2>
                   <p className="mt-5 text-[18px] leading-8 text-slate-200">

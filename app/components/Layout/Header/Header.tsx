@@ -8,6 +8,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Topbar from "./Topbar";
+import { CALENDLY_URL } from "@/lib/constants";
 
 const Header = () => {
    const [open, setOpen] = useState(false);
@@ -117,8 +118,9 @@ const Header = () => {
                      ))}
                   </ul>
                   <Link
-                     href="https://calendly.com/sofgent"
+                     href={CALENDLY_URL}
                      target="_blank"
+                     rel="noopener noreferrer"
                      onClick={() => setOpen(false)}
                      className="inline-flex w-full items-center justify-center gap-2 rounded-[16px] bg-[#12324a] px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(18,50,74,0.18)] hover:bg-[#0d2537]">
                      Book a Call
@@ -168,8 +170,9 @@ const Header = () => {
                      </ul>
                      <div className="hidden shrink-0 lg:block border-l border-white/10 pl-6 my-4 transition-colors duration-500">
                         <Link
-                           href="https://calendly.com/sofgent" // Updated href
+                           href={CALENDLY_URL}
                            target="_blank"
+                           rel="noopener noreferrer"
                            className={`inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold shadow-sm transition-all duration-300 hover:-translate-y-0.5 ${isDarkTheme ? 'bg-cyan-500 text-slate-950 hover:bg-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]' : 'bg-slate-950 text-white hover:bg-slate-800'}`}>
                            Book a Call
                            <ArrowUpRight className={`h-4 w-4 ${isDarkTheme ? 'text-slate-950' : 'text-white'}`} strokeWidth={2.5} />

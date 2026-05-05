@@ -1,5 +1,6 @@
 import BreadCrumb from "@/app/components/common/BreadCrumb";
 import Button from "@/app/components/common/Button";
+import { CALENDLY_URL } from "@/lib/constants";
 import getPageMeta from "@/app/utils/getPageMeta";
 import type { Metadata } from "next";
 
@@ -31,7 +32,7 @@ export default function LaunchYourMVP() {
                   <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-200">
                      Sales Landing Page
                   </p>
-                  <h1 className="mt-4 text-34 font-semibold tracking-[-0.04em] md:text-[56px]">
+                  <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-[56px]">
                      Launch Your SaaS MVP in 6 Weeks
                   </h1>
                   <p className="mt-6 text-[18px] leading-8 text-slate-200">
@@ -40,7 +41,7 @@ export default function LaunchYourMVP() {
                      technical foundation.
                   </p>
                   <div className="mt-8 flex flex-wrap gap-4">
-                     <Button btnText="Book a Free Strategy Call" href="/contact" />
+                     <Button btnText="Book a Free Strategy Call" href={CALENDLY_URL} external={true} />
                      <Button
                         btnText="See Services"
                         href="/services"
@@ -52,10 +53,10 @@ export default function LaunchYourMVP() {
 
             <div className="mt-10 grid gap-8 xl:grid-cols-[1fr_0.9fr]">
                <div className="rounded-[34px] border border-slate-200 bg-white p-7 shadow-[0_24px_70px_rgba(15,23,42,0.06)] md:p-9">
-                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-brand">
+                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary">
                      Process
                   </p>
-                  <h2 className="mt-4 text-24 font-semibold tracking-[-0.03em] text-slate-950 md:text-[34px]">
+                  <h2 className="mt-4 text-2xl font-semibold tracking-[-0.03em] text-slate-950 md:text-[34px]">
                      A simple path to launch.
                   </h2>
                   <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -63,7 +64,7 @@ export default function LaunchYourMVP() {
                         <div
                            key={step}
                            className="rounded-[24px] border border-slate-200 bg-slate-50 p-5">
-                           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eef5f3] text-brand">
+                           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eef5f3] text-primary">
                               {index + 1}
                            </div>
                            <p className="mt-4 text-[17px] font-medium text-slate-800">
@@ -90,7 +91,7 @@ export default function LaunchYourMVP() {
                </div>
 
                <div className="rounded-[34px] border border-slate-200 bg-white p-7 shadow-[0_24px_70px_rgba(15,23,42,0.06)] md:p-9">
-                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-brand">
+                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-primary">
                      Timeline and Pricing
                   </p>
                   <div className="mt-6 rounded-[24px] border border-slate-200 bg-slate-50 p-6">

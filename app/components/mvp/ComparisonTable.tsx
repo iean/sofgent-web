@@ -3,13 +3,13 @@ import { comparisonData } from "@/app/content/mvp";
 import { useState } from "react";
 
 const renderValue = (value: string | boolean) => {
-  if (value === true) return <span className="text-brand font-semibold">✅</span>;
+  if (value === true) return <span className="text-primary font-semibold">✅</span>;
   if (value === false) return <span className="text-gray-400">◻️</span>;
   if (typeof value === "string") {
     if (value === "optional" || value === "minimal" || value === "basic") {
       return <span className="text-paragraph text-sm">{value}</span>;
     }
-    return <span className="text-brand font-semibold text-sm">{value}</span>;
+    return <span className="text-primary font-semibold text-sm">{value}</span>;
   }
   return null;
 };
@@ -40,9 +40,9 @@ export default function ComparisonTable() {
                     Feature / Deliverable
                   </th>
                   <th className="text-center p-4 font-semibold text-main-black">Basic MVP</th>
-                  <th className="text-center p-4 font-semibold text-main-black bg-brand/5">
+                  <th className="text-center p-4 font-semibold text-main-black bg-primary/5">
                     Standard MVP
-                    <span className="block text-xs text-brand font-normal mt-1">(Most Popular)</span>
+                    <span className="block text-xs text-primary font-normal mt-1">(Most Popular)</span>
                   </th>
                   <th className="text-center p-4 font-semibold text-main-black">Premium MVP</th>
                 </tr>
@@ -59,7 +59,7 @@ export default function ComparisonTable() {
                       {row.feature}
                     </td>
                     <td className="p-4 text-center">{renderValue(row.basic)}</td>
-                    <td className="p-4 text-center bg-brand/5">{renderValue(row.standard)}</td>
+                    <td className="p-4 text-center bg-primary/5">{renderValue(row.standard)}</td>
                     <td className="p-4 text-center">{renderValue(row.premium)}</td>
                   </tr>
                 ))}
@@ -81,7 +81,7 @@ export default function ComparisonTable() {
               >
                 <span className="font-medium text-main-black">{row.feature}</span>
                 <svg
-                  className={`w-5 h-5 text-brand transition-transform ${
+                  className={`w-5 h-5 text-primary transition-transform ${
                     expandedRows.has(index) ? "rotate-180" : ""
                   }`}
                   fill="none"
@@ -97,7 +97,7 @@ export default function ComparisonTable() {
                     <span className="text-sm text-paragraph">Basic MVP</span>
                     <span>{renderValue(row.basic)}</span>
                   </div>
-                  <div className="flex justify-between items-center bg-brand/5 p-2 rounded">
+                  <div className="flex justify-between items-center bg-primary/5 p-2 rounded">
                     <span className="text-sm text-paragraph">Standard MVP</span>
                     <span>{renderValue(row.standard)}</span>
                   </div>

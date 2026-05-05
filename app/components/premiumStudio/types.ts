@@ -9,6 +9,15 @@ export type PlaceholderContent = {
    label: string;
    description: string;
    tone?: "light" | "dark";
+   /** When set, shows a themed illustration instead of the dashed placeholder box */
+   image?: {
+      src: string;
+      alt: string;
+   };
+   /** Pass through to next/image for LCP (e.g. hero) */
+   imagePriority?: boolean;
+   /** Sharp vector illustration (preferred over AI raster where clarity matters) */
+   illustration?: "process-pipeline";
 };
 
 export type StudioSectionIntro = {
@@ -16,13 +25,30 @@ export type StudioSectionIntro = {
    title: string;
    description: string;
    visual?: PlaceholderContent;
+   /** Optional icon beside the section eyebrow (premium studio pages) */
+   headingIcon?: LucideIcon;
+};
+
+export type HeroBadge = {
+   label: string;
+   icon: LucideIcon;
+};
+
+export type HeroHighlight = {
+   text: string;
+   icon: LucideIcon;
 };
 
 export type HeroContent = StudioSectionIntro & {
-   badges: string[];
-   highlights: string[];
+   badges: HeroBadge[];
+   highlights: HeroHighlight[];
    primaryCta: CTAButton;
    secondaryCta: CTAButton;
+};
+
+export type TrustBarItem = {
+   label: string;
+   icon: LucideIcon;
 };
 
 export type IconCardItem = {
@@ -83,6 +109,7 @@ export type EngagementPhase = {
    window: string;
    title: string;
    description: string;
+   icon: LucideIcon;
 };
 
 export type EngagementSectionContent = StudioSectionIntro & {
@@ -102,7 +129,7 @@ export type MidCTASectionContent = StudioSectionIntro & {
 
 export type StudioPageContent = {
    hero: HeroContent;
-   trustBar: string[];
+   trustBar: TrustBarItem[];
    audience: AudienceSectionContent;
    problem: ProblemSectionContent;
    process: ProcessSectionContent;

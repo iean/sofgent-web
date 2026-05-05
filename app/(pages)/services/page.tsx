@@ -1,6 +1,7 @@
 import BreadCrumb from "@/app/components/common/BreadCrumb";
 import Button from "@/app/components/common/Button";
 import getPageMeta from "@/app/utils/getPageMeta";
+import { CALENDLY_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Settings, FileText } from "lucide-react";
@@ -80,11 +81,11 @@ export default function Services() {
             <div className="theme-container relative z-10">
                <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 items-center bg-white/60 backdrop-blur-3xl rounded-[2.5rem] p-10 md:p-14 border border-slate-200/60 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)]">
                   <div className="max-w-3xl">
-                     <p className="text-brand font-semibold uppercase tracking-widest mb-4">
+                     <p className="text-primary font-semibold uppercase tracking-widest mb-4">
                         AI Product Studio
                      </p>
                      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1]">
-                        Three ways we turn ideas into <span className="text-brand">scalable systems.</span>
+                        Three ways we turn ideas into <span className="text-primary">scalable systems.</span>
                      </h1>
                      <p className="mt-6 text-lg leading-relaxed text-slate-600">
                         SofGent is built for teams that want product-level
@@ -93,7 +94,7 @@ export default function Services() {
                         survive real growth.
                      </p>
                      <div className="mt-8 flex flex-wrap items-center gap-4">
-                        <Button btnText="Book a Strategy Call" href="/contact" variant="primary" />
+                        <Button btnText="Book a Strategy Call" href={CALENDLY_URL} external={true} variant="primary" />
                         <Button
                            btnText="Plan Your AI Workflow"
                            href="/contact"
@@ -134,7 +135,7 @@ export default function Services() {
                         className="rounded-[2.5rem] border border-slate-100 bg-white p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.08)] transition-all">
                         <div className="grid lg:grid-cols-[1.5fr_1fr] gap-12 lg:gap-20">
                            <div>
-                              <div className="inline-flex rounded-full bg-brand/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand mb-6">
+                              <div className="inline-flex rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary mb-6">
                                  {service.label}
                               </div>
                               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6">
@@ -186,10 +187,10 @@ export default function Services() {
          <section className="py-24">
             <div className="theme-container">
                {/* Need help block */}
-               <div className="rounded-[2.5rem] border border-brand/20 bg-brand/5 p-10 md:p-16 mb-16">
+               <div className="rounded-[2.5rem] border border-primary/20 bg-primary/5 p-10 md:p-16 mb-16">
                   <div className="grid lg:grid-cols-[1.5fr_1fr] gap-12 items-center">
                      <div>
-                        <p className="text-brand font-semibold uppercase tracking-widest mb-3">
+                        <p className="text-primary font-semibold uppercase tracking-widest mb-3">
                            Need Help Choosing
                         </p>
                         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6">
@@ -215,7 +216,7 @@ export default function Services() {
                {/* Specialized pages */}
                <div>
                   <div className="mb-10">
-                     <p className="text-brand font-semibold uppercase tracking-widest mb-3">
+                     <p className="text-primary font-semibold uppercase tracking-widest mb-3">
                         Specialized Systems
                      </p>
                      <h2 className="text-3xl font-bold tracking-tight text-slate-900">
@@ -228,8 +229,8 @@ export default function Services() {
                         <Link
                            key={item.href}
                            href={item.href}
-                           className="group flex flex-col rounded-[2rem] border border-slate-200 bg-white p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all hover:-translate-y-1 hover:border-brand/30 hover:shadow-[0_20px_40px_-15px_rgba(50,109,109,0.15)]">
-                           <div className="w-14 h-14 rounded-2xl bg-brand/10 text-brand flex items-center justify-center mb-6">
+                           className="group flex flex-col rounded-[2rem] border border-slate-200 bg-white p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_20px_40px_-15px_rgba(50,109,109,0.15)]">
+                           <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6">
                               <item.icon className="w-7 h-7" />
                            </div>
                            <h3 className="text-2xl font-bold tracking-tight text-slate-900 mb-4">
@@ -238,7 +239,7 @@ export default function Services() {
                            <p className="text-base text-slate-600 flex-grow mb-8">
                               {item.description}
                            </p>
-                           <div className="flex items-center text-sm font-bold text-brand uppercase tracking-wider">
+                           <div className="flex items-center text-sm font-bold text-primary uppercase tracking-wider">
                               View service page
                               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                            </div>
@@ -267,7 +268,7 @@ export default function Services() {
                         product rebuild based on your current stage.
                      </p>
                      <div className="flex flex-wrap gap-4">
-                        <Button btnText="Book a Strategy Call" href="/contact" variant="primary" />
+                        <Button btnText="Book a Strategy Call" href={CALENDLY_URL} external={true} variant="primary" />
                         <Button
                            btnText="Plan Your AI Workflow"
                            href="/contact"

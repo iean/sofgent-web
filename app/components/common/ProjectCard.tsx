@@ -16,11 +16,11 @@ export default function ProjectCard({
       <Link
          href={`/projects/${project.slug}`}
          className="group block h-full">
-         <article className="flex h-full flex-col overflow-hidden rounded-[2.5rem] border border-slate-100 bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-2 hover:border-brand/30 hover:shadow-[0_20px_40px_-15px_rgba(50,109,109,0.15)]">
+         <article className="flex h-full flex-col overflow-hidden rounded-[2.5rem] border border-slate-100 bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-2 hover:border-primary/30 hover:shadow-[0_20px_40px_-15px_rgba(50,109,109,0.15)]">
             <div className="relative overflow-hidden px-8 pb-8 pt-8 bg-slate-50 border-b border-slate-100">
                <div className="relative z-10 flex items-start justify-between gap-5 mb-10">
                   <div>
-                     <div className="inline-flex items-center rounded-full bg-brand/10 text-brand px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest mb-4">
+                     <div className="inline-flex items-center rounded-full bg-primary/10 text-primary px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest mb-4">
                         {project.category}
                      </div>
                      <p className="text-sm font-medium text-slate-500">
@@ -80,7 +80,7 @@ export default function ProjectCard({
                   <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
                      Product Case Study
                   </div>
-                  <div className="inline-flex items-center text-sm font-bold text-brand transition-colors">
+                  <div className="inline-flex items-center text-sm font-bold text-primary transition-colors">
                      View build breakdown
                      <svg
                         width="16"

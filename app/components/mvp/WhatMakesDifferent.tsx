@@ -12,7 +12,7 @@ export default function WhatMakesDifferent() {
               className="rounded-[20px] border border-[#e7e8e9] bg-white p-6 hover:shadow-lg transition-shadow text-center"
             >
               <div className="text-4xl mb-4">{item.icon}</div>
-              <h3 className="text-20 font-semibold text-main-black mb-3">{item.title}</h3>
+              <h3 className="text-xl font-semibold text-main-black mb-3">{item.title}</h3>
               <p className="text-paragraph text-sm">{item.description}</p>
             </div>
           ))}

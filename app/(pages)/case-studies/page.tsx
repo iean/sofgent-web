@@ -5,6 +5,7 @@ import CaseStudyStoryCard from "@/app/components/projects/CaseStudyStoryCard";
 import type { ProjectFieldsType } from "@/app/data/projects/types";
 import getPageMeta from "@/app/utils/getPageMeta";
 import readLocalFile from "@/app/utils/readLocalFile";
+import { CALENDLY_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 
 export function generateMetadata(): Metadata {
@@ -41,7 +42,7 @@ export default async function CaseStudies() {
             <div className="theme-container relative z-10">
                <div className="grid gap-12 rounded-[2.5rem] border border-slate-200 bg-white p-10 shadow-sm md:p-14 xl:grid-cols-[1.1fr_0.9fr] items-center">
                   <div className="max-w-3xl">
-                     <p className="text-sm font-bold uppercase tracking-widest text-brand mb-6">
+                     <p className="text-sm font-bold uppercase tracking-widest text-primary mb-6">
                         Portfolio Proof
                      </p>
                      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.05]">
@@ -52,7 +53,7 @@ export default async function CaseStudies() {
                         and scale SaaS operations with production-minded execution.
                      </p>
                      <div className="mt-8 flex flex-wrap gap-4">
-                        <Button btnText="Book a Strategy Call" href="/contact" variant="primary" />
+                        <Button btnText="Book a Strategy Call" href={CALENDLY_URL} external={true} variant="primary" />
                         <Button
                            btnText="Discuss Your Product"
                            href="/contact"
@@ -120,7 +121,7 @@ export default async function CaseStudies() {
                         before the build starts.
                      </p>
                      <div className="flex flex-wrap items-center gap-4">
-                        <Button btnText="Book a Strategy Call" href="/contact" variant="primary" />
+                        <Button btnText="Book a Strategy Call" href={CALENDLY_URL} external={true} variant="primary" />
                         <Button
                            btnText="Plan Your AI Workflow"
                            href="/contact"

@@ -31,29 +31,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: path === "/" ? 1 : 0.7,
    }));
 
-   // Wrap dynamic-slug fetches in try/catch so a Sanity outage doesn't break
-   // the sitemap build. When the helpers are wired in, uncomment below:
-   let dynamicEntries: MetadataRoute.Sitemap = [];
-   try {
-      // const blogSlugs = await getAllBlogSlugs();
-      // const projectSlugs = await getAllProjectSlugs();
-      // dynamicEntries = [
-      //    ...blogSlugs.map((slug) => ({
-      //       url: `${baseUrl}/blog/${slug}`,
-      //       lastModified: now,
-      //       changeFrequency: "weekly" as const,
-      //       priority: 0.5,
-      //    })),
-      //    ...projectSlugs.map((slug) => ({
-      //       url: `${baseUrl}/projects/${slug}`,
-      //       lastModified: now,
-      //       changeFrequency: "weekly" as const,
-      //       priority: 0.6,
-      //    })),
-      // ];
-   } catch (error) {
-      console.error("[sitemap] Failed to load dynamic slugs", error);
-   }
+   // When the Sanity helpers are wired in, replace this with the dynamic blog
+   // and project entries.
+   const dynamicEntries: MetadataRoute.Sitemap = [];
 
    return [...staticEntries, ...dynamicEntries];
 }

@@ -1,4 +1,5 @@
 import Button from "@/app/components/common/Button";
+import { CALENDLY_URL } from "@/lib/constants";
 import Link from "next/link";
 import { ArrowRight, FileImage, FileJson, ScanSearch, ShieldCheck } from "lucide-react";
 
@@ -21,7 +22,7 @@ export default function HeroSection() {
                      </span>
                   </div>
 
-                  <p className="mt-6 text-sm font-semibold uppercase tracking-[0.28em] text-brand">
+                  <p className="mt-6 text-sm font-semibold uppercase tracking-[0.28em] text-primary">
                      OCR + AI Extraction Systems
                   </p>
                   <h1 className="mt-4 max-w-[12ch] text-[44px] font-semibold leading-[0.98] tracking-[-0.055em] text-slate-950 md:text-[72px]">
@@ -41,7 +42,8 @@ export default function HeroSection() {
                      />
                      <Button
                         btnText="Book Consultation"
-                        href="/contact"
+                        href={CALENDLY_URL}
+                        external={true}
                         className="border border-slate-200 bg-white text-slate-900 shadow-[0_16px_40px_rgba(15,23,42,0.08)] hover:bg-slate-900 hover:text-white"
                      />
                   </div>

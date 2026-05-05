@@ -11,7 +11,7 @@ export default function AboutSofgent() {
           <div className="col-span-6 lg:pr-[87px] flex h-full items-center">
             <div className="">
               <SectionTag tag="About Company" />
-              <h1 className="text-24 md:text-48 font-semibold text-main-black mt-2.5 md:mt-5">
+              <h1 className="text-2xl md:text-5xl font-semibold text-main-black mt-2.5 md:mt-5">
                 Innovating the Future, Your Partner in SaaS Excellence
               </h1>
               <p className="mt-5 md:mt-10 text-paragraph">
@@ -25,7 +25,7 @@ export default function AboutSofgent() {
                 outlines the comprehensive services offered by Sofgen,
                 emphasizing the processes and expertise involved.
               </p>
-              <hr className="mt-10 border-brand/10" />
+              <hr className="mt-10 border-primary/10" />
               <div className="w-full grid grid-cols-1 sm:grid-cols-2 mt-[50px] gap-8 md:gap-[70px]">
                 <div data-aos="fade-left" className="grid-cols-1">
                   <svg
@@ -37,7 +37,7 @@ export default function AboutSofgent() {
                   >
                     <path
                       d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10Z"
-                      fill="#326d6d"
+                      fill="#06b6d4"
                     />
                     <path
                       fillRule="evenodd"
@@ -46,7 +46,7 @@ export default function AboutSofgent() {
                       fill="white"
                     />
                   </svg>
-                  <h1 className="mt-4 font-semibold text-18 text-main-black">
+                  <h1 className="mt-4 font-semibold text-lg text-main-black">
                     Expert Team Member
                   </h1>
                   <p className="mt-3 text-paragraph">
@@ -67,7 +67,7 @@ export default function AboutSofgent() {
                   >
                     <path
                       d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10Z"
-                      fill="#326d6d"
+                      fill="#06b6d4"
                     />
                     <path
                       fillRule="evenodd"
@@ -76,7 +76,7 @@ export default function AboutSofgent() {
                       fill="white"
                     />
                   </svg>
-                  <h1 className="mt-4 font-semibold text-18 text-main-black">
+                  <h1 className="mt-4 font-semibold text-lg text-main-black">
                     Custom Software Development
                   </h1>
                   <p className="mt-3 text-paragraph">
@@ -99,7 +99,7 @@ export default function AboutSofgent() {
               />
             </div>
 
-            <div className="bg-brand p-[30px] rounded-2xl sm:absolute z-20 bottom-8 w-full md:w-[295px] left-8 mt-5 sm:mt-0 max-w-full">
+            <div className="bg-primary p-[30px] rounded-2xl sm:absolute z-20 bottom-8 w-full md:w-[295px] left-8 mt-5 sm:mt-0 max-w-full">
               <Image
                 width={100}
                 height={100}
