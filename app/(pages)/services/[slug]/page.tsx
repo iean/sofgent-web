@@ -4,19 +4,23 @@ import getServicesMeta from "@/app/utils/getServicesMeta";
 import getPageMeta from "@/app/utils/getPageMeta";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
+import { notFound } from "next/navigation";
 
 const CtaNoSSR = dynamic(() => import("@/app/components/home/cta"), {
    ssr: false,
 });
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+export function generateMetadata({
+   params,
+}: {
+   params: { slug: string };
+}): Metadata {
    return getPageMeta(`/services/${params.slug}`);
 }
 
 export async function generateStaticParams() {
    const services = getServicesMeta();
-   const paths = services.map((service) => ({ slug: service.slug }));
-   return paths;
+   return services.map((service) => ({ slug: service.slug }));
 }
 
 export default function ServiceDetail({
@@ -25,11 +29,16 @@ export default function ServiceDetail({
    params: { slug: string };
 }) {
    const services = getServicesMeta();
-   const service = services.find((service) => service.slug === params.slug);
+   const service = services.find((s) => s.slug === params.slug);
+
+   if (!service) {
+      notFound();
+   }
+
    return (
       <section>
          <BreadCrumb
-            pageTitle={service?.title}
+            pageTitle={service.title}
             currentPage="Services"
             to="/services"
          />
