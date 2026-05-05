@@ -36,12 +36,12 @@ export default function AboutTeam() {
             <div className="flex flex-col justify-between w-full lg:flex-row">
                <div className="">
                   <SectionTag tag="Team Memebers" />
-                  <h2 className="pt-5 font-semibold text-main-black text-24 sm:text-48">
+                  <h2 className="pt-5 font-semibold text-main-black text-2xl sm:text-5xl">
                      Experience Team Member
                   </h2>
                </div>
                <div className="flex flex-col items-center gap-10 sm:flex-row">
-                  <h1 className="flex items-center justify-between w-full gap-4 font-semibold text-48 sm:text-65 text-main-black sm:w-fit">
+                  <h1 className="flex items-center justify-between w-full gap-4 font-semibold text-5xl sm:text-[65px] text-main-black sm:w-fit">
                      <span
                         data-scroll-qs="scroll"
                         data-count-qs="28"
@@ -49,7 +49,7 @@ export default function AboutTeam() {
                         data-speed-qs="1000">
                         28+
                      </span>
-                     <span className="font-normal text-20 sm:text-22 text-paragraph">
+                     <span className="font-normal text-xl sm:text-[22px] text-paragraph">
                         Team Member
                      </span>
                   </h1>

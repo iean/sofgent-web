@@ -1,4 +1,5 @@
 import Button from "@/app/components/common/Button";
+import { CALENDLY_URL } from "@/lib/constants";
 import SectionHeader from "./SectionHeader";
 import { differentiators } from "./content";
 
@@ -15,7 +16,11 @@ export default function WhySofGentSection() {
                      theme="dark"
                   />
                   <div className="mt-8">
-                     <Button btnText="Book Consultation" href="/contact" />
+                     <Button
+                        btnText="Book Consultation"
+                        href={CALENDLY_URL}
+                        external={true}
+                     />
                   </div>
                </div>
 

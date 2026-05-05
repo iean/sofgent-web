@@ -1,89 +1,113 @@
+import BlogPortableText from "@/app/components/blog/BlogPortableText";
 import BreadCrumb from "@/app/components/common/BreadCrumb";
-import keystaticConfig from "@/keystatic.config";
-import { createReader } from "@keystatic/core/reader";
-import Markdoc from "@markdoc/markdoc";
+import { getBlogPostBySlug, getBlogSlugs } from "@/lib/sanity/content";
+import getPageMeta from "@/app/utils/getPageMeta";
 import { ArrowLeft, Clock, User } from "lucide-react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import "./style.css";
+import { notFound } from "next/navigation";
 
-const reader = createReader(process.cwd(), keystaticConfig);
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+   const slugs = await getBlogSlugs();
+
+   return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({
+   params,
+}: {
+   params: { slug: string };
+}): Promise<Metadata> {
+   const post = await getBlogPostBySlug(params.slug);
+
+   if (!post) {
+      return getPageMeta("/blog");
+   }
+
+   return {
+      title: post.seoTitle || `${post.title} | SofGent Blog`,
+      description: post.seoDescription || post.excerpt,
+   };
+}
+
 const BlogPost = async ({ params }: { params: { slug: string } }) => {
-   const slug = params.slug;
-   // const post = await getPostBySlug(slug);
-   const post = await reader.collections.posts.read(slug);
-   if (!post) {
-      return <div>No Post Found</div>;
-   }
-   const { node } = await post.content();
-   const errors = Markdoc.validate(node);
-   if (errors.length) {
-      console.error(errors);
-      throw new Error("Invalid content");
-   }
-   const renderable = Markdoc.transform(node);
+   const post = await getBlogPostBySlug(params.slug);
 
    if (!post) {
-      return (
-         <div className="min-h-screen flex items-center justify-center">
-            <div className="text-center">
-               <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                  Post not found
-               </h1>
-               <Link href="/blog" className="text-blue-600 hover:text-blue-800">
-                  Return to blog
-               </Link>
-            </div>
-         </div>
-      );
+      notFound();
    }
+
+   const coverImage = post.coverImage?.asset?.url || "/banners/front-banner-01.png";
+   const formattedDate = post.publishedAt
+      ? new Date(post.publishedAt).toLocaleDateString("en-US", {
+           month: "long",
+           day: "numeric",
+           year: "numeric",
+        })
+      : "Recently published";
 
    return (
-      <section>
+      <main className="min-h-screen bg-slate-50">
          <BreadCrumb pageTitle={post?.title} currentPage="Blog" to="/blog" />
-         <div className="bg-gray-50">
-            <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+         <section className="bg-slate-50">
+            <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
                <Link
                   href="/blog"
-                  className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8">
-                  <ArrowLeft className="h-4 w-4 mr-2" />
+                  className="mb-8 inline-flex items-center text-cyan-700 transition-colors hover:text-cyan-600">
+                  <ArrowLeft className="mr-2 h-4 w-4" />
                   Back to blog
                </Link>
 
-               <article>
+               <article className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
                   <Image
-                     width={800}
-                     height={700}
-                     src={
-                        `/blogs/${slug}/${post.imageUrl}` ||
-                        "/default-image.jpg"
-                     }
+                     width={1440}
+                     height={810}
+                     src={coverImage}
                      alt={post.title}
-                     className="w-full h-64 object-cover rounded-xl mb-8"
+                     className="h-[300px] w-full object-cover md:h-[420px]"
                   />
 
-                  <div className="flex items-center gap-4 text-gray-600 mb-6">
-                     <div className="flex items-center gap-2">
-                        <User size={16} />
-                        <span>{post.author}</span>
+                  <div className="p-8 md:p-12">
+                     <div className="mb-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">
+                        {post.categories?.map((category) => (
+                           <span
+                              key={category}
+                              className="rounded-full bg-cyan-50 px-3 py-1.5 font-medium text-cyan-700"
+                           >
+                              {category}
+                           </span>
+                        ))}
                      </div>
-                     <div className="flex items-center gap-2">
-                        <Clock size={16} />
-                        <span>{post.readTime}</span>
-                     </div>
-                  </div>
-                  <div className="prose">
-                     {Markdoc.renderers.react(renderable, React)}
-                  </div>
 
-                  {/* <div
-                     dangerouslySetInnerHTML={{ __html: post?.content }}
-                     className="prose prose-lg max-w-none"></div> */}
+                     <div className="mb-8 flex flex-wrap items-center gap-4 text-slate-500">
+                        <div className="flex items-center gap-2">
+                           <User size={16} />
+                           <span>{post.author || "SofGent"}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                           <Clock size={16} />
+                           <span>{post.readTime || "5 min read"}</span>
+                        </div>
+                        <span>{formattedDate}</span>
+                     </div>
+
+                     <div className="max-w-3xl">
+                        <p className="text-xl leading-8 text-slate-600">
+                           {post.excerpt}
+                        </p>
+                     </div>
+
+                     <div className="mt-10 border-t border-slate-200 pt-10">
+                        <BlogPortableText value={post.body} />
+                     </div>
+                  </div>
                </article>
             </div>
-         </div>
-      </section>
+         </section>
+      </main>
    );
 };
 

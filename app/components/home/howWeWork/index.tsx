@@ -38,7 +38,7 @@ export default function HowWeWork() {
             <div className="col-span-5">
               <div className="title-area">
                 <SectionTag tag="How We Work" />
-                <h2 className="md:text-48 mt-6 text-34 font-semibold text-main-black mb-[24px]">
+                <h2 className="md:text-5xl mt-6 text-4xl font-semibold text-main-black mb-[24px]">
                   A clear, collaborative delivery process
                 </h2>
                 <p className="text-paragraph mb-8">
@@ -49,14 +49,14 @@ export default function HowWeWork() {
                     <div
                       key={step.serial}
                       data-aos="fade-up"
-                      className="w-full rounded-[20px] border border-brand bg-gray px-6 md:px-8 py-5 md:py-[30px] overflow-hidden group relative"
+                      className="w-full rounded-[20px] border border-primary bg-gray px-6 md:px-8 py-5 md:py-[30px] overflow-hidden group relative"
                     >
                       <div className="relative z-10 flex items-start gap-4">
-                        <div className="flex items-center justify-center w-10 h-10 bg-white border-2 rounded-full border-brand shrink-0">
-                          <span className="font-semibold text-brand">{step.serial}</span>
+                        <div className="flex items-center justify-center w-10 h-10 bg-white border-2 rounded-full border-primary shrink-0">
+                          <span className="font-semibold text-primary">{step.serial}</span>
                         </div>
                         <div>
-                          <p className="mb-2 font-semibold text-18 md:text-20 text-main-black">{step.title}</p>
+                          <p className="mb-2 font-semibold text-lg md:text-xl text-main-black">{step.title}</p>
                           <p className="text-paragraph">{step.description}</p>
                         </div>
                       </div>

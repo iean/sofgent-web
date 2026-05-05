@@ -1,14 +1,14 @@
 export default function SocialFollow() {
    return (
       <div className="flex items-center gap-[15px]">
-         <h1 className="font-semibold text-18 text-main-black pr-2.5">
+         <h1 className="font-semibold text-lg text-main-black pr-2.5">
             Follow Us
          </h1>
          <a
             href="https://www.facebook.com/people/Sofgent/61564357926545/"
             target="blank"
             aria-label="facebook"
-            className="w-10 h-10 text-[#326d6d] hover:text-white rounded-full flex justify-center items-center border border-brand/10 overflow-hidden relative before:inline-block before:absolute before:z-0 before:w-full before:h-full before:bg-brand before:scale-x-0 group hover:before:scale-x-100 before:origin-right hover:before:origin-left before:transition-transform before:ease-out before:duration-300">
+            className="w-10 h-10 text-[#06b6d4] hover:text-white rounded-full flex justify-center items-center border border-primary/10 overflow-hidden relative before:inline-block before:absolute before:z-0 before:w-full before:h-full before:bg-primary before:scale-x-0 group hover:before:scale-x-100 before:origin-right hover:before:origin-left before:transition-transform before:ease-out before:duration-300">
             <span className="relative z-10">
                <svg
                   width="11"
@@ -27,7 +27,7 @@ export default function SocialFollow() {
             href="#"
             aria-label="twitter"
             target="blank"
-            className="w-10 h-10 text-[#326d6d] hover:text-white rounded-full flex justify-center items-center border border-brand/10 overflow-hidden relative before:inline-block before:absolute before:z-0 before:w-full before:h-full before:bg-brand before:scale-x-0 group hover:before:scale-x-100 before:origin-right hover:before:origin-left before:transition-transform before:ease-out before:duration-300">
+            className="w-10 h-10 text-[#06b6d4] hover:text-white rounded-full flex justify-center items-center border border-primary/10 overflow-hidden relative before:inline-block before:absolute before:z-0 before:w-full before:h-full before:bg-primary before:scale-x-0 group hover:before:scale-x-100 before:origin-right hover:before:origin-left before:transition-transform before:ease-out before:duration-300">
             <span className="relative z-10">
                <svg
                   width="19"
@@ -46,7 +46,7 @@ export default function SocialFollow() {
             href="#"
             aria-label="instagram"
             target="blank"
-            className="w-10 h-10 text-[#326d6d] hover:text-white rounded-full flex justify-center items-center border border-brand/10 overflow-hidden relative before:inline-block before:absolute before:z-0 before:w-full before:h-full before:bg-brand before:scale-x-0 group hover:before:scale-x-100 before:origin-right hover:before:origin-left before:transition-transform before:ease-out before:duration-300">
+            className="w-10 h-10 text-[#06b6d4] hover:text-white rounded-full flex justify-center items-center border border-primary/10 overflow-hidden relative before:inline-block before:absolute before:z-0 before:w-full before:h-full before:bg-primary before:scale-x-0 group hover:before:scale-x-100 before:origin-right hover:before:origin-left before:transition-transform before:ease-out before:duration-300">
             <span className="relative z-10">
                <svg
                   width="17"
@@ -67,7 +67,7 @@ export default function SocialFollow() {
             href="https://www.linkedin.com/company/sofgent/"
             aria-label="linkedin"
             target="blank"
-            className="w-10 h-10 text-[#326d6d] hover:text-white rounded-full flex justify-center items-center border border-brand/10 overflow-hidden relative before:inline-block before:absolute before:z-0 before:w-full before:h-full before:bg-brand before:scale-x-0 group hover:before:scale-x-100 before:origin-right hover:before:origin-left before:transition-transform before:ease-out before:duration-300">
+            className="w-10 h-10 text-[#06b6d4] hover:text-white rounded-full flex justify-center items-center border border-primary/10 overflow-hidden relative before:inline-block before:absolute before:z-0 before:w-full before:h-full before:bg-primary before:scale-x-0 group hover:before:scale-x-100 before:origin-right hover:before:origin-left before:transition-transform before:ease-out before:duration-300">
             <span className="relative z-10">
                <svg
                   xmlns="http://www.w3.org/2000/svg"

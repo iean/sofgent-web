@@ -1,5 +1,6 @@
 import BreadCrumb from "@/app/components/common/BreadCrumb";
 import Button from "@/app/components/common/Button";
+import { CALENDLY_URL } from "@/lib/constants";
 import getPageMeta from "@/app/utils/getPageMeta";
 import type { Metadata } from "next";
 
@@ -24,7 +25,7 @@ export default function About() {
                <div className="rounded-[2.5rem] border border-slate-200 bg-white p-10 shadow-sm md:p-14 relative overflow-hidden">
                   <div className="absolute top-0 inset-x-0 h-48 bg-grid-paper opacity-50 pointer-events-none" />
                   <div className="relative z-10">
-                     <p className="text-sm font-bold uppercase tracking-widest text-brand mb-6">
+                     <p className="text-sm font-bold uppercase tracking-widest text-primary mb-6">
                         Who We Are
                      </p>
                      <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.05]">
@@ -71,7 +72,7 @@ export default function About() {
             <div className="rounded-[2.5rem] border border-slate-200 bg-white p-10 shadow-sm md:p-14">
                <div className="grid gap-12 xl:grid-cols-[0.85fr_1.15fr]">
                   <div>
-                     <p className="text-sm font-bold uppercase tracking-widest text-brand mb-6">
+                     <p className="text-sm font-bold uppercase tracking-widest text-primary mb-6">
                         What We Bring
                      </p>
                      <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
@@ -83,7 +84,7 @@ export default function About() {
                         <div
                            key={item}
                            className="flex flex-col justify-center rounded-[2rem] border border-slate-100 bg-slate-50 p-6 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]">
-                           <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand/10 text-brand font-bold text-xl mb-4">
+                           <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary font-bold text-xl mb-4">
                               ✓
                            </div>
                            <p className="text-base font-medium text-slate-700 leading-snug">
@@ -95,15 +96,15 @@ export default function About() {
                </div>
             </div>
 
-            <div className="rounded-[2.5rem] border border-brand/20 bg-brand/5 p-10 md:p-14 text-center grid place-items-center">
+            <div className="rounded-[2.5rem] border border-primary/20 bg-primary/5 p-10 md:p-14 text-center grid place-items-center">
                <div className="max-w-3xl">
-                  <p className="text-sm font-bold uppercase tracking-widest text-brand mb-6">
+                  <p className="text-sm font-bold uppercase tracking-widest text-primary mb-6">
                      Work With Us
                   </p>
                   <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-10">
                      If you need a product builder and technical architect, let&apos;s talk.
                   </h2>
-                  <Button btnText="Book a Free Strategy Call" href="/contact" variant="primary" />
+                  <Button btnText="Book a Free Strategy Call" href={CALENDLY_URL} external={true} variant="primary" />
                </div>
             </div>
          </div>

@@ -4,7 +4,7 @@ import ServiceDetailsSidebar from "./ServiceDetailsSidebar";
 import "./style.css";
 
 export default function ServiceDetailsInfo({ slug }: { slug: string }) {
-   const services = getServicesMeta("/app/data/services");
+   const services = getServicesMeta();
    const service = services.find((service) => service.slug === slug);
 
    return (

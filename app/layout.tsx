@@ -3,11 +3,55 @@ import { dmSans, rubik } from "./fonts/fonts";
 import Script from "next/script";
 import type { Metadata } from "next";
 import WhatsAppWidget from "./components/WhatsAppWidget";
+import {
+  getSiteOriginFromEnv,
+  isPreviewDeployment,
+} from "@/lib/runtime/deployment";
 
-export const metadata: Metadata = {
-  title: "SofGent",
-  description: "Software IT Company",
-};
+export function generateMetadata(): Metadata {
+  const siteOrigin = getSiteOriginFromEnv();
+  const previewDeployment = isPreviewDeployment();
+
+  return {
+    metadataBase: new URL(siteOrigin),
+    title: {
+      default: "SofGent",
+      template: "%s | SofGent",
+    },
+    description:
+      "Premium AI Product Studio. We ship production-ready AI products, SaaS MVPs, and document automation in 2–4 weeks.",
+    openGraph: {
+      type: "website",
+      siteName: "SofGent",
+      locale: "en_US",
+      url: siteOrigin,
+      title: "SofGent — Premium AI Product Studio",
+      description:
+        "Ship AI products in 2–4 weeks. No prototypes, no tech debt.",
+      images: [
+        {
+          url: "/og/default.png",
+          width: 1200,
+          height: 630,
+          alt: "SofGent — Premium AI Product Studio",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "SofGent — Premium AI Product Studio",
+      description:
+        "Ship AI products in 2–4 weeks. No prototypes, no tech debt.",
+      images: ["/og/default.png"],
+    },
+    robots: previewDeployment
+      ? {
+          index: false,
+          follow: false,
+        }
+      : undefined,
+  };
+}
 
 export default function RootLayout({
   children,

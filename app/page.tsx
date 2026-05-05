@@ -5,79 +5,27 @@ import Footer from "@/app/components/Layout/Footer/Footer";
 import Header from "@/app/components/Layout/Header/Header";
 import HeroSlider from "@/app/components/home/HeroSlider";
 import type { Metadata } from "next";
+import { sharedHomeSections } from "@/lib/content/shared";
+import { CALENDLY_URL } from "@/lib/constants";
+import type { HomeServiceIconKey } from "@/lib/content/types";
 
 export const metadata: Metadata = {
    title: "SofGent | Premium AI Product Studio",
    description: "We build production-ready AI products, SaaS platforms, and internal tools in 2-4 weeks.",
 };
 
-const services = [
-   {
-      icon: Database,
-      title: "AI Document Automation",
-      pitch: "Turn your documents into structured data automatically",
-      description: "We build OCR pipelines, extraction logic, and validation schemas to replace manual data entry for financial, legal, and operational documents.",
-      proof: "Processing 50k+ documents daily for clients",
-      tags: ["OCR + Extraction", "Validation", "Structured Output"],
-   },
-   {
-      icon: Layers,
-      title: "AI SaaS MVP Builder",
-      pitch: "We turn your idea into a working SaaS in 14 days",
-      description: "From database architecture to full-stack frontend and AI integration, we launch your core product so you can acquire users and raise capital.",
-      proof: "Delivered 12+ production MVPs last year",
-      tags: ["Full SaaS", "AI Features", "Deployed System"],
-   },
-   {
-      icon: Workflow,
-      title: "Internal AI Tools",
-      pitch: "Replace manual workflows with AI systems",
-      description: "Stop relying on spreadsheets and disjointed apps. We build secure internal dashboards and automated workflows powered by your proprietary data.",
-      proof: "Reduced manual operations by up to 80%",
-      tags: ["Dashboards", "Automation", "AI Workflows"],
-   },
-];
+const serviceIcons: Record<HomeServiceIconKey, typeof Database> = {
+   database: Database,
+   layers: Layers,
+   workflow: Workflow,
+};
 
-const portfolio = [
-   {
-      title: "AI Knowledge Platform",
-      category: "Internal Tooling",
-      desc: "Turned isolated company wikis and PDFs into a centralized RAG assistant.",
-   },
-   {
-      title: "Bank Document Automation",
-      category: "Fintech Data Pipeline",
-      desc: "Automated the extraction of KYB/KYC documents directly into core banking tables.",
-   },
-   {
-      title: "Multi-tenant E-commerce Builder",
-      category: "SaaS Infrastructure",
-      desc: "Built the core provisioning engine for dynamic store creation and inventory management.",
-   },
-   {
-      title: "RAG / Document Intelligence",
-      category: "AI Workflow",
-      desc: "Deployed a secure, permission-aware semantic search pipeline for legal teams.",
-   },
-];
-
-const process = [
-   {
-      week: "Week 1",
-      title: "Architecture & Design",
-      desc: "We map the database schemas, API routes, UX flow, and AI integration points before writing code.",
-   },
-   {
-      week: "Week 2",
-      title: "Core Build & AI Logic",
-      desc: "We construct the backend infrastructure, train/connect the AI models, and build the frontend interface.",
-   },
-   {
-      week: "Week 3",
-      title: "Testing & Deployment",
-      desc: "We perform security checks, optimize queries, deploy to production, and hand over the keys.",
-   },
-];
+const services = sharedHomeSections.services.map((service) => ({
+   ...service,
+   icon: serviceIcons[service.iconKey],
+}));
+const portfolio = sharedHomeSections.portfolio;
+const process = sharedHomeSections.process;
 
 export default function Home() {
    return (
@@ -115,10 +63,10 @@ export default function Home() {
                      </p>
                      
                      <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 md:gap-6 mt-12 w-full md:w-auto">
-                        <Link href="https://calendly.com/sofgent" target="_blank" className="inline-flex w-full sm:w-auto items-center justify-center bg-cyan-500 text-slate-950 px-8 py-4 rounded-xl font-bold transition-all hover:bg-cyan-400 hover:shadow-[0_0_30px_rgba(6,182,212,0.3)]">
-                           Book a Free Strategy Call <ArrowRight className="ml-2 w-5 h-5" />
+                        <Link href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="inline-flex w-full sm:w-auto shrink-0 items-center justify-center whitespace-nowrap bg-cyan-500 text-slate-950 px-8 py-4 rounded-xl font-bold transition-all hover:bg-cyan-400 hover:shadow-[0_0_30px_rgba(6,182,212,0.3)]">
+                           Book a Free Strategy Call <ArrowRight className="ml-2 w-5 h-5 shrink-0" />
                         </Link>
-                        <Link href="#portfolio" className="inline-flex items-center justify-center bg-white/5 text-white px-8 py-4 rounded-xl font-bold border border-white/10 transition-all hover:bg-white/10">
+                        <Link href="#portfolio" className="inline-flex w-full sm:w-auto shrink-0 items-center justify-center whitespace-nowrap bg-white/5 text-white px-8 py-4 rounded-xl font-bold border border-white/10 transition-all hover:bg-white/10">
                            See Our Work
                         </Link>
                      </div>
@@ -163,7 +111,7 @@ export default function Home() {
                            </div>
                         </div>
 
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-brand mb-4">{service.pitch}</h4>
+                        <h4 className="text-sm font-bold uppercase tracking-wider text-primary mb-4">{service.pitch}</h4>
                         <p className="text-base text-slate-600 flex-grow leading-relaxed mb-8">{service.description}</p>
                         
                         <div className="mt-auto pt-6 border-t border-slate-50">
@@ -254,7 +202,7 @@ export default function Home() {
                <div className="text-center mt-32 max-w-2xl mx-auto pb-10">
                   <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-10">Have a use case in mind?</h2>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                     <Link href="https://calendly.com/sofgent" target="_blank" className="w-full sm:w-auto inline-flex items-center justify-center bg-cyan-500 text-slate-950 px-10 py-5 rounded-2xl font-bold text-lg transition-all hover:bg-cyan-400 shadow-[0_0_40px_rgba(6,182,212,0.25)] hover:shadow-[0_0_50px_rgba(6,182,212,0.4)] hover:-translate-y-1">
+                     <Link href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto inline-flex items-center justify-center bg-cyan-500 text-slate-950 px-10 py-5 rounded-2xl font-bold text-lg transition-all hover:bg-cyan-400 shadow-[0_0_40px_rgba(6,182,212,0.25)] hover:shadow-[0_0_50px_rgba(6,182,212,0.4)] hover:-translate-y-1">
                         Book AI Strategy Call
                      </Link>
                      <Link href="/contact" className="w-full sm:w-auto inline-flex items-center justify-center bg-white text-slate-900 px-10 py-5 rounded-2xl font-bold text-lg border-2 border-slate-200 shadow-sm transition-all hover:bg-slate-50 hover:border-slate-300">
@@ -302,17 +250,17 @@ export default function Home() {
             <div className="theme-container">
                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 md:mb-20">
                   <div className="max-w-3xl">
-                     <p className="text-brand font-bold uppercase tracking-widest text-sm mb-4">Proven Architecture</p>
+                     <p className="text-primary font-bold uppercase tracking-widest text-sm mb-4">Proven Architecture</p>
                      <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900">What we’ve shipped to production.</h2>
                   </div>
-                  <Link href="/case-studies" className="inline-flex items-center font-bold text-brand hover:text-brand/80 transition-colors">
+                  <Link href="/case-studies" className="inline-flex items-center font-bold text-primary hover:text-primary/80 transition-colors">
                      Explore all case studies <ArrowRight className="ml-2 w-5 h-5" />
                   </Link>
                </div>
 
                <div className="grid md:grid-cols-2 gap-8">
                   {portfolio.map((item, idx) => (
-                     <div key={idx} className="group relative overflow-hidden rounded-[2.5rem] bg-slate-50 border border-slate-200 p-8 md:p-12 hover:border-brand/30 hover:shadow-lg transition-all">
+                     <div key={idx} className="group relative overflow-hidden rounded-[2.5rem] bg-slate-50 border border-slate-200 p-8 md:p-12 hover:border-primary/30 hover:shadow-lg transition-all">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-slate-200/50 rounded-full blur-3xl -mr-20 -mt-20 group-hover:bg-cyan-100 transition-colors duration-500" />
                         
                         <div className="relative z-10">
@@ -320,7 +268,7 @@ export default function Home() {
                            <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 mb-4">{item.title}</h3>
                            <p className="text-lg text-slate-600 leading-relaxed mb-8 max-w-md">{item.desc}</p>
                            
-                           <div className="inline-flex items-center text-sm font-bold text-brand transition-colors">
+                           <div className="inline-flex items-center text-sm font-bold text-primary transition-colors">
                               View Architecture <ChevronRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
                            </div>
                         </div>
@@ -338,29 +286,29 @@ export default function Home() {
                   
                   <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-16 relative z-10">
                      <div className="flex flex-col justify-center">
-                        <p className="text-sm font-bold uppercase tracking-widest text-brand mb-6">Why SofGent</p>
+                        <p className="text-sm font-bold uppercase tracking-widest text-primary mb-6">Why SofGent</p>
                         <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-[1.1]">
                            We speak code,<br/>architecture, and business.
                         </h2>
                      </div>
                      <div className="grid sm:grid-cols-2 gap-10">
                         <div>
-                           <ShieldCheck className="w-10 h-10 text-brand mb-5" />
+                           <ShieldCheck className="w-10 h-10 text-primary mb-5" />
                            <h3 className="text-xl font-bold text-slate-900 mb-3">Speed Without Tech Debt</h3>
                            <p className="text-slate-600 leading-relaxed">Most agencies build fragile MVPs. We engineer scalable data models and secure infrastructure from day one, allowing you to launch in weeks and seamlessly pivot or scale later.</p>
                         </div>
                         <div>
-                           <Workflow className="w-10 h-10 text-brand mb-5" />
+                           <Workflow className="w-10 h-10 text-primary mb-5" />
                            <h3 className="text-xl font-bold text-slate-900 mb-3">ROI-Driven Automation</h3>
                            <p className="text-slate-600 leading-relaxed">We don&apos;t just write code—we solve operational bottlenecks. We map your specific market workflows and deploy automation that slashes overhead costs and improves gross margins.</p>
                         </div>
                         <div>
-                           <Server className="w-10 h-10 text-brand mb-5" />
+                           <Server className="w-10 h-10 text-primary mb-5" />
                            <h3 className="text-xl font-bold text-slate-900 mb-3">Predictable Model</h3>
                            <p className="text-slate-600 leading-relaxed">Stop paying for endless hourly billing with unaligned incentives. We operate with fixed-scope delivery sprints, offering absolute clarity on technical deliverables and business value.</p>
                         </div>
                         <div>
-                           <Code2 className="w-10 h-10 text-brand mb-5" />
+                           <Code2 className="w-10 h-10 text-primary mb-5" />
                            <h3 className="text-xl font-bold text-slate-900 mb-3">End-to-End Capabilities</h3>
                            <p className="text-slate-600 leading-relaxed">Avoid the friction of managing fractured teams. From complex AI semantic routing to polished user interfaces and backend orchestration, we deliver the complete product under one roof.</p>
                         </div>
@@ -388,7 +336,7 @@ export default function Home() {
                         Let’s turn it into a working AI system.
                      </p>
                      
-                     <Link href="/contact" className="inline-flex items-center justify-center bg-cyan-500 text-slate-950 px-10 py-5 rounded-xl font-bold text-lg hover:bg-cyan-400 transition-all shadow-[0_0_40px_rgba(6,182,212,0.4)] hover:shadow-[0_0_60px_rgba(6,182,212,0.6)] hover:-translate-y-1">
+                     <Link href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-cyan-500 text-slate-950 px-10 py-5 rounded-xl font-bold text-lg hover:bg-cyan-400 transition-all shadow-[0_0_40px_rgba(6,182,212,0.4)] hover:shadow-[0_0_60px_rgba(6,182,212,0.6)] hover:-translate-y-1">
                         Book a Free Strategy Call
                      </Link>
                   </div>

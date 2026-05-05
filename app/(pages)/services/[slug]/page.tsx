@@ -14,7 +14,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 }
 
 export async function generateStaticParams() {
-   const services = getServicesMeta("/app/data/services");
+   const services = getServicesMeta();
    const paths = services.map((service) => ({ slug: service.slug }));
    return paths;
 }
@@ -24,7 +24,7 @@ export default function ServiceDetail({
 }: {
    params: { slug: string };
 }) {
-   const services = getServicesMeta("/app/data/services");
+   const services = getServicesMeta();
    const service = services.find((service) => service.slug === params.slug);
    return (
       <section>

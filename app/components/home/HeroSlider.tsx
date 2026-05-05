@@ -1,21 +1,47 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Code2, Database, Network, Play, FileText, Download } from "lucide-react";
+
+const TOTAL_SLIDES = 3;
+const SLIDE_DURATION_MS = 5000;
 
 export default function HeroSlider() {
    const [currentSlide, setCurrentSlide] = useState(0);
+   const [isVisible, setIsVisible] = useState(true);
+   const containerRef = useRef<HTMLDivElement | null>(null);
 
-   // Auto-play
+   // Pause autoplay when scrolled off-screen
    useEffect(() => {
-      const timer = setInterval(() => {
-         setCurrentSlide((prev) => (prev + 1) % 3);
-      }, 5000);
-      return () => clearInterval(timer);
+      const node = containerRef.current;
+      if (!node || typeof IntersectionObserver === "undefined") return;
+      const observer = new IntersectionObserver(
+         ([entry]) => setIsVisible(entry.isIntersecting),
+         { rootMargin: "0px", threshold: 0.1 }
+      );
+      observer.observe(node);
+      return () => observer.disconnect();
    }, []);
 
+   // Auto-play, but only when visible and motion is allowed
+   useEffect(() => {
+      if (!isVisible) return;
+      if (typeof window === "undefined") return;
+      const reduceMotion = window.matchMedia(
+         "(prefers-reduced-motion: reduce)"
+      ).matches;
+      if (reduceMotion) return;
+
+      const timer = setInterval(() => {
+         setCurrentSlide((prev) => (prev + 1) % TOTAL_SLIDES);
+      }, SLIDE_DURATION_MS);
+      return () => clearInterval(timer);
+   }, [isVisible]);
+
    return (
-      <div className="relative w-full h-[450px] sm:h-[500px] md:h-[600px] lg:h-[640px] xl:h-[700px] flex flex-col justify-center">
+      <div
+         ref={containerRef}
+         className="relative w-full h-[450px] sm:h-[500px] md:h-[600px] lg:h-[640px] xl:h-[700px] flex flex-col justify-center">
          <div className="absolute inset-0 bg-cyan-500/5 blur-[100px] rounded-full" />
          
          <div className="relative z-10 w-full h-full rounded-[32px] border border-white/10 bg-slate-900/50 backdrop-blur-xl p-8 shadow-2xl flex flex-col overflow-hidden">

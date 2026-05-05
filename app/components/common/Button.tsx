@@ -20,13 +20,13 @@ const Button: React.FC<PropsType> = ({
    variant = "primary",
    icon,
 }) => {
-   const baseStyles = "inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand/30 focus-visible:ring-offset-2 hover:-translate-y-0.5";
+   const baseStyles = "inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2 hover:-translate-y-0.5";
    
    const variantStyles = {
-      primary: "bg-brand text-white shadow-lg shadow-brand/20 hover:bg-brand/90",
+      primary: "bg-primary text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90",
       secondary: "bg-slate-900 text-white shadow-lg shadow-slate-900/20 hover:bg-slate-800",
-      outline: "border border-slate-200 bg-white text-slate-900 hover:border-brand hover:text-brand shadow-sm",
-      ghost: "text-slate-600 hover:bg-slate-50 hover:text-brand",
+      outline: "border border-slate-200 bg-white text-slate-900 hover:border-primary hover:text-primary shadow-sm",
+      ghost: "text-slate-600 hover:bg-slate-50 hover:text-primary",
    };
 
    const defaultIcon = external ? (

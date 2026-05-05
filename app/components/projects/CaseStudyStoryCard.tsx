@@ -16,7 +16,7 @@ export default function CaseStudyStoryCard({
          <div className="grid gap-12 xl:grid-cols-[1.1fr_0.9fr] xl:items-start">
             <div>
                <div className="flex flex-wrap items-center gap-6 mb-8">
-                  <div className="inline-flex items-center rounded-full bg-brand/10 text-brand px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest">
+                  <div className="inline-flex items-center rounded-full bg-primary/10 text-primary px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest">
                      {project.category}
                   </div>
                   <span className="text-sm font-bold uppercase tracking-widest text-slate-400">
@@ -95,8 +95,8 @@ export default function CaseStudyStoryCard({
                   </p>
                </div>
 
-               <div className="rounded-[2rem] border border-brand/20 bg-brand/5 p-8 md:p-10">
-                  <p className="text-xs font-bold uppercase tracking-widest text-brand mb-4">
+               <div className="rounded-[2rem] border border-primary/20 bg-primary/5 p-8 md:p-10">
+                  <p className="text-xs font-bold uppercase tracking-widest text-primary mb-4">
                      Tech / System Angle
                   </p>
                   <p className="text-base leading-relaxed text-slate-800 mb-6 font-medium">
@@ -106,7 +106,7 @@ export default function CaseStudyStoryCard({
                      {(project.technologies || []).map((technology) => (
                         <span
                            key={technology}
-                           className="rounded-xl border border-brand/20 bg-white px-3 py-1.5 text-xs font-bold text-brand shadow-sm">
+                           className="rounded-xl border border-primary/20 bg-white px-3 py-1.5 text-xs font-bold text-primary shadow-sm">
                            {technology}
                         </span>
                      ))}

@@ -3,6 +3,7 @@ import type { ProjectFieldsType } from "@/app/data/projects/types";
 import ProjectCard from "../common/ProjectCard";
 import dynamic from "next/dynamic";
 import Button from "../common/Button";
+import { CALENDLY_URL } from "@/lib/constants";
 
 const CtaNoSSR = dynamic(() => import("@/app/components/home/cta"), {
    ssr: false,
@@ -26,7 +27,7 @@ export default async function ProjectList() {
                      <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200">
                         Product Portfolio
                      </div>
-                     <h2 className="mt-5 max-w-4xl text-34 font-semibold text-white md:text-48 md:leading-[1.05]">
+                     <h2 className="mt-5 max-w-4xl text-4xl font-semibold text-white md:text-5xl md:leading-[1.05]">
                         A portfolio of AI systems, SaaS platforms, and workflow
                         software built to solve real business bottlenecks.
                      </h2>
@@ -39,7 +40,7 @@ export default async function ProjectList() {
                   </p>
                </div>
                <div className="mt-8 flex flex-wrap gap-4">
-                  <Button btnText="Book a Strategy Call" href="/contact" />
+                  <Button btnText="Book a Strategy Call" href={CALENDLY_URL} external={true} />
                   <Button
                      btnText="Discuss Your Product"
                      href="/contact"

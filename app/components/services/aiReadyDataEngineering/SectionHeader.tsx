@@ -23,12 +23,12 @@ export default function SectionHeader({
          }`}>
          <p
             className={`text-sm font-semibold uppercase tracking-[0.28em] ${
-               isDark ? "text-cyan-200" : "text-brand"
+               isDark ? "text-cyan-200" : "text-primary"
             }`}>
             {eyebrow}
          </p>
          <h2
-            className={`mt-4 text-34 font-semibold tracking-[-0.04em] md:text-48 ${
+            className={`mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-5xl ${
                isDark ? "text-white" : "text-slate-950"
             }`}>
             {title}
