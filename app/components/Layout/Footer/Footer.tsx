@@ -2,35 +2,9 @@ import { FacebookIcon, LinkedinIcon } from "@/app/utils/SVGIcons";
 import logo from "@assets/images/sofgent-logo-white.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { getServices } from "@/lib/sanity/content";
+import BackToTop from "./BackToTop";
 import Copyright from "./Copyright";
-
-// Services List
-const serviceList = [
-   {
-      title: "Launch Your SaaS MVP in 30 Days",
-      url: "/services",
-   },
-   {
-      title: "Custom AI Systems for Your Business",
-      url: "/services",
-   },
-   {
-      title: "AI-Ready Data Engineering",
-      url: "/services/ai-ready-data-engineering",
-   },
-   {
-      title: "Document Intelligence Systems",
-      url: "/services/document-intelligence-systems",
-   },
-   {
-      title: "Fix, Rebuild, and Scale Your Product",
-      url: "/services",
-   },
-   {
-      title: "How We Build SaaS",
-      url: "/how-we-build-saas",
-   },
-];
 
 // Quick Links List
 const quickLinks = [
@@ -70,7 +44,15 @@ const socialMediaList = [
    },
 ];
 
-export default function Footer() {
+export default async function Footer() {
+   const serviceList = (await getServices())
+      .sort((a, b) => a.order - b.order)
+      .slice(0, 6)
+      .map((service) => ({
+         title: service.title,
+         url: `/services/${service.slug}`,
+      }));
+
    return (
       <footer className="relative mt-[8rem] bg-slate-950 pt-16 text-slate-300 border-t border-white/10">
          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(6,182,212,0.05),transparent_22%),radial-gradient(circle_at_top_right,rgba(45,212,191,0.05),transparent_18%)] pointer-events-none" />
@@ -165,14 +147,7 @@ export default function Footer() {
                         <Link href="/terms-conditions" className="text-sm text-slate-500 hover:text-slate-300 transition-colors">Terms & Conditions</Link>
                      </li>
                   </ul>
-                  <a
-                     href="#"
-                     aria-label="go top"
-                     className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-slate-400 hover:bg-cyan-500/10 hover:text-cyan-400 border border-white/10 hover:border-cyan-500/30 transition-all">
-                     <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 12V4M4.66699 7.33333L8.00033 4L11.3337 7.33333" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                     </svg>
-                  </a>
+                  <BackToTop />
                </div>
             </div>
          </div>

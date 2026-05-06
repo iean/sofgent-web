@@ -1,33 +1,45 @@
-import fs from "fs";
-import matter from "gray-matter";
-import path from "path";
 import { cache } from "react";
+import services from "@/app/data/services/services.json";
+import type { LocalService } from "@/app/data/services/types";
 
-const servicesPath = path.join(process.cwd(), "app", "data", "services");
+const CATEGORY_ICON: Record<string, string> = {
+   ai: "/icons/services/ui-ux-design.svg",
+   saas: "/icons/services/software-development.svg",
+   devops: "/icons/services/dev-ops.svg",
+   integration: "/icons/services/system-integration.svg",
+   qa: "/icons/services/software-testing.svg",
+   maintenance: "/icons/services/system-maintainance.svg",
+};
 
-const getServicesMeta = cache(() => {
-   const services = fs
-      .readdirSync(servicesPath)
-      .filter((filename) => filename.endsWith(".md"));
+export type ServiceMeta = {
+   slug: string;
+   title: string;
+   description: string;
+   icon: string;
+   category: string;
+   order: number;
+};
 
-   return services
-      .map((filename) => {
-         const fileContent = fs.readFileSync(
-            path.join(servicesPath, filename),
-            "utf8"
-         );
-         const matterResult = matter(fileContent);
-
-         return {
-            title: matterResult.data.title,
-            description: matterResult.data.description,
-            icon: matterResult.data.icon,
-            slug: filename.replace(".md", ""),
-            content: matterResult.content,
-            order: matterResult.data.order,
-         };
-      })
-      .sort((left, right) => (left.order ?? 0) - (right.order ?? 0));
+/**
+ * Synchronous service metadata for SSR components on the home page,
+ * sidebars, and the legacy services list. Sources from
+ * app/data/services/services.json — the same inventory that drives the
+ * dynamic /services/[slug] route. Sanity-backed services are surfaced
+ * through getServices() in lib/sanity/content.ts.
+ */
+const getServicesMeta = cache((): ServiceMeta[] => {
+   return (services as LocalService[])
+      .map((service) => ({
+         slug: service.slug,
+         title: service.title,
+         description: service.tagline ?? service.summary,
+         icon:
+            CATEGORY_ICON[service.category] ??
+            "/icons/services/software-development.svg",
+         category: service.category,
+         order: typeof service.order === "number" ? service.order : 999,
+      }))
+      .sort((a, b) => a.order - b.order);
 });
 
 export default getServicesMeta;

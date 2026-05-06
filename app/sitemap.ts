@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getSiteOriginFromEnv } from "@/lib/runtime/deployment";
-// When the Sanity helpers are ready, import them here:
-// import { getAllBlogSlugs, getAllProjectSlugs } from "@/lib/sanity/queries";
+import { getCaseStudySlugs, getServiceSlugs } from "@/lib/sanity/content";
 
 const STATIC_ROUTES = [
    "/",
@@ -14,8 +13,6 @@ const STATIC_ROUTES = [
    "/about",
    "/contact",
    "/launch-your-mvp",
-   "/services/ai-ready-data-engineering",
-   "/services/document-intelligence-systems",
    "/privacy-policy",
    "/terms-conditions",
 ];
@@ -31,9 +28,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: path === "/" ? 1 : 0.7,
    }));
 
-   // When the Sanity helpers are wired in, replace this with the dynamic blog
-   // and project entries.
-   const dynamicEntries: MetadataRoute.Sitemap = [];
+   let caseStudyEntries: MetadataRoute.Sitemap = [];
+   try {
+      const slugs = await getCaseStudySlugs();
+      caseStudyEntries = slugs.map((slug) => ({
+         url: `${baseUrl}/case-studies/${slug}`,
+         lastModified: now,
+         changeFrequency: "weekly" as const,
+         priority: 0.6,
+      }));
+   } catch (error) {
+      console.error("[sitemap] Failed to load case-study slugs", error);
+   }
 
-   return [...staticEntries, ...dynamicEntries];
+   let serviceEntries: MetadataRoute.Sitemap = [];
+   try {
+      const slugs = await getServiceSlugs();
+      serviceEntries = slugs.map((slug) => ({
+            url: `${baseUrl}/services/${slug}`,
+            lastModified: now,
+            changeFrequency: "weekly" as const,
+            priority: 0.7,
+         }));
+   } catch (error) {
+      console.error("[sitemap] Failed to load service slugs", error);
+   }
+
+   return [...staticEntries, ...caseStudyEntries, ...serviceEntries];
 }

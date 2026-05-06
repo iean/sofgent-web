@@ -5,7 +5,13 @@
   "scripts": {
     "dev": "sanity dev --host 0.0.0.0 --port 3333",
     "build": "sanity build",
-    "deploy": "sanity deploy"
+    "deploy": "sanity deploy",
+    "seed:case-studies": "sanity exec scripts/seed-case-studies.mjs --with-user-token",
+    "seed:case-studies:dry": "sanity exec scripts/seed-case-studies.mjs --with-user-token -- --dry-run",
+    "seed:faqs": "sanity exec scripts/seed-faqs.mjs --with-user-token",
+    "seed:faqs:dry": "sanity exec scripts/seed-faqs.mjs --with-user-token -- --dry-run",
+    "seed:services": "sanity exec scripts/seed-services.mjs --with-user-token",
+    "seed:services:dry": "sanity exec scripts/seed-services.mjs --with-user-token -- --dry-run"
   },
   "dependencies": {
     "react": "^19.2.0",

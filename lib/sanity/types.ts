@@ -34,3 +34,102 @@ export interface SanityFaqItem {
   section: string;
   order?: number;
 }
+
+export interface SanityImageWithCaption extends SanityImage {
+  caption?: string;
+}
+
+export interface SanityMetric {
+  value: string;
+  label: string;
+  hint?: string;
+}
+
+export interface SanityCaseStudyListItem {
+  _id: string;
+  title: string;
+  slug: string;
+  client?: string;
+  industry: string;
+  summary: string;
+  duration?: string;
+  publishedAt?: string;
+  featured?: boolean;
+  heroImage?: SanityImage;
+  metrics?: SanityMetric[];
+}
+
+export interface SanityCaseStudy extends SanityCaseStudyListItem {
+  architectureImage?: SanityImageWithCaption;
+  problem?: PortableTextBlock[];
+  approach?: PortableTextBlock[];
+  outcome?: PortableTextBlock[];
+  techStack?: string[];
+  seoTitle?: string;
+  seoDescription?: string;
+}
+
+export interface SanityServiceProblemPoint {
+  title: string;
+  body: string;
+}
+
+export interface SanityServiceApproachStep {
+  step: string;
+  title: string;
+  body: string;
+}
+
+export interface SanityServiceUseCase {
+  title: string;
+  body: string;
+  outcome?: string;
+}
+
+export interface SanityServiceWhyPillar {
+  title: string;
+  body: string;
+}
+
+export interface SanityServicePricing {
+  from?: string;
+  model?: string;
+  note?: string;
+}
+
+export interface SanityServiceListItem {
+  _id: string;
+  title: string;
+  slug: string;
+  category: string;
+  tagline: string;
+  summary: string;
+  heroImage?: SanityImage;
+  industries?: string[];
+  outcomes?: string[];
+  featured?: boolean;
+  order?: number;
+  publishedAt?: string;
+}
+
+export interface SanityService extends SanityServiceListItem {
+  keywords?: string[];
+  problem?: {
+    eyebrow?: string;
+    title?: string;
+    points?: SanityServiceProblemPoint[];
+  };
+  approach?: {
+    eyebrow?: string;
+    title?: string;
+    steps?: SanityServiceApproachStep[];
+  };
+  deliverables?: string[];
+  techStack?: string[];
+  whyChooseUs?: SanityServiceWhyPillar[];
+  useCases?: SanityServiceUseCase[];
+  pricing?: SanityServicePricing;
+  faqSection?: string;
+  seoTitle?: string;
+  seoDescription?: string;
+}
