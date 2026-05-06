@@ -1,0 +1,302 @@
+[
+  {
+    "section": "services",
+    "order": 1,
+    "question": "Why should I outsource custom software development to SofGent?",
+    "answer": "Outsourcing to SofGent gives you direct access to experienced product engineers, modern AI-enabled workflows, and scalable engineering practices. We focus on delivering reliable systems tailored to your business needs while reducing delivery time and operational overhead."
+  },
+  {
+    "section": "services",
+    "order": 2,
+    "question": "How do you ensure the security of my project and data?",
+    "answer": "We apply secure development practices from the start, including access control, environment separation, encrypted data handling, and review processes that protect your codebase and operational data."
+  },
+  {
+    "section": "services",
+    "order": 3,
+    "question": "What industries do you specialize in for software and AI systems?",
+    "answer": "SofGent has delivered solutions across healthcare, finance and fintech, e-commerce, education, logistics, and internal business operations. Our focus is less on generic templates and more on solving workflow-heavy product problems."
+  },
+  {
+    "section": "services",
+    "order": 4,
+    "question": "How will I stay updated on project progress?",
+    "answer": "We keep delivery transparent through regular planning checkpoints, short update cycles, and direct communication through the channels your team already uses."
+  },
+  {
+    "section": "services",
+    "order": 5,
+    "question": "What technologies do you use?",
+    "answer": "We work across modern full-stack and AI tooling including Angular, React, Next.js, Django, FastAPI, .NET, PostgreSQL, containerized infrastructure, workflow automation, and retrieval-augmented AI systems."
+  },
+  {
+    "section": "services",
+    "order": 6,
+    "question": "Can you integrate third-party services and APIs into my software?",
+    "answer": "Yes. We regularly integrate payment tools, CRMs, cloud services, internal platforms, and AI APIs so the final product fits into your real operating environment."
+  },
+  {
+    "section": "services",
+    "order": 7,
+    "question": "How do you manage time zone differences?",
+    "answer": "We structure delivery around predictable communication windows and async updates so founders and leadership teams can stay informed without operational friction."
+  },
+  {
+    "section": "services",
+    "order": 8,
+    "question": "What is your typical project timeline?",
+    "answer": "That depends on the product scope, but we are optimized for fast architecture-first delivery. MVP builds typically move in weeks, not quarters."
+  },
+  {
+    "section": "services",
+    "order": 9,
+    "question": "What is the cost of a custom software engagement?",
+    "answer": "Pricing depends on product scope, technical complexity, and delivery timeline. We structure engagements clearly so founders understand what is being built, when it will ship, and what it will cost."
+  },
+  {
+    "section": "services",
+    "order": 10,
+    "question": "Will I own the code and intellectual property?",
+    "answer": "Yes. Once the engagement is complete and payment obligations are met, the delivered code and related project assets are transferred to you."
+  },
+  {
+    "section": "services",
+    "order": 11,
+    "question": "What happens after the project is delivered?",
+    "answer": "We can continue with post-launch support, stabilization, iteration, and scaling work so the product keeps improving after the initial release."
+  },
+  {
+    "section": "services",
+    "order": 12,
+    "question": "How do I start a project with SofGent?",
+    "answer": "The process starts with a discovery call. We clarify the product goal, scope, technical risks, and timeline, then define the right execution path before development begins."
+  },
+  {
+    "section": "services",
+    "order": 13,
+    "question": "Can the team scale up or down as the project evolves?",
+    "answer": "Yes. Our engagement model is flexible enough to expand or narrow the execution scope based on product stage, priorities, and launch needs."
+  },
+  {
+    "section": "services",
+    "order": 14,
+    "question": "How do you handle delays or unexpected technical challenges?",
+    "answer": "We reduce risk by front-loading architecture, keeping the build iterative, and surfacing blockers early so product decisions can be made before they turn into expensive rework."
+  },
+  {
+    "section": "services",
+    "order": 15,
+    "question": "Why choose SofGent over other development agencies?",
+    "answer": "SofGent combines product architecture, AI system design, and delivery execution in one team. That means fewer handoffs, faster decisions, and systems built to survive real production use."
+  },
+  {
+    "section": "service:custom-software-development",
+    "order": 1,
+    "question": "How long does a custom software project take?",
+    "answer": "Most engagements ship a launch-ready first version in 2–6 weeks. We confirm the timeline in a free 20-minute discovery call after scoping the workflow, integrations, and risk."
+  },
+  {
+    "section": "service:custom-software-development",
+    "order": 2,
+    "question": "What technologies do you use for custom software?",
+    "answer": "Modern, well-supported stacks: TypeScript / Next.js / React on the frontend; Node.js, Python (Django / FastAPI), or .NET Core on the backend; PostgreSQL or your existing database. We pick stacks based on your team's strengths and the product's lifetime, not on vendor preferences."
+  },
+  {
+    "section": "service:custom-software-development",
+    "order": 3,
+    "question": "Do you sign NDAs before discussing my project?",
+    "answer": "Yes. We sign mutual NDAs before any technical or commercial discussion. You can use our template or your own."
+  },
+  {
+    "section": "service:custom-software-development",
+    "order": 4,
+    "question": "Will I own the source code and infrastructure?",
+    "answer": "Yes. Code, repos, cloud accounts, and any third-party tooling are transferred to your organisation on completion. Nothing stays locked behind us."
+  },
+  {
+    "section": "service:custom-software-development",
+    "order": 5,
+    "question": "Do you support post-launch?",
+    "answer": "We include a 30-day stabilization window in every engagement, and most clients keep us on a part-time retainer for iteration, scaling, and feature work. You can also handover fully to your in-house team."
+  },
+  {
+    "section": "service:saas-mvp-development",
+    "order": 1,
+    "question": "Can you really ship a SaaS MVP in 30 days?",
+    "answer": "Yes — when scope is one wedge, not a kitchen-sink product. Discovery sets the wedge in week zero. We then deliver multi-tenant architecture, auth + RBAC, the core feature, Stripe billing, and a launch-ready deploy in 30 days."
+  },
+  {
+    "section": "service:saas-mvp-development",
+    "order": 2,
+    "question": "Do you handle Stripe and billing setup?",
+    "answer": "Yes. Stripe subscriptions, plans, customer portal, webhooks, invoicing, and trial flows are part of the standard MVP scope."
+  },
+  {
+    "section": "service:saas-mvp-development",
+    "order": 3,
+    "question": "Will the MVP scale to a real customer base?",
+    "answer": "It's built to. Multi-tenant data isolation, indexed Postgres, Vercel edge caching, and Sentry monitoring are standard from day one. We design for the version-two state, not just launch."
+  },
+  {
+    "section": "service:saas-mvp-development",
+    "order": 4,
+    "question": "What happens after the 30-day sprint?",
+    "answer": "You have a working SaaS in production. From there we either hand off to your team, run iteration sprints with you, or move into a part-time CTO retainer — whichever fits your stage."
+  },
+  {
+    "section": "service:saas-mvp-development",
+    "order": 5,
+    "question": "Do you help with go-to-market or just the build?",
+    "answer": "We focus on the build. We do hand off a working landing page, onboarding flow, and analytics so the GTM team has the foundation to test channels."
+  },
+  {
+    "section": "service:ai-solutions",
+    "order": 1,
+    "question": "Which AI models do you work with?",
+    "answer": "We're vendor-neutral. OpenAI, Anthropic, Google, open-source models (Llama, Mistral) — we pick what fits the task. Most production builds use OpenAI or Anthropic with a retrieval layer over your own data."
+  },
+  {
+    "section": "service:ai-solutions",
+    "order": 2,
+    "question": "How do you stop AI from hallucinating?",
+    "answer": "Retrieval-augmented generation forces the model to cite sources. Schema validation rejects malformed outputs. Eval sets catch regressions before deploy. And human-in-the-loop review handles the edge cases that aren't safe to automate."
+  },
+  {
+    "section": "service:ai-solutions",
+    "order": 3,
+    "question": "Can you fine-tune a model on our data?",
+    "answer": "Sometimes. We usually start with retrieval and prompting because they ship faster and are cheaper to maintain. We recommend fine-tuning only when retrieval has hit a measured ceiling."
+  },
+  {
+    "section": "service:ai-solutions",
+    "order": 4,
+    "question": "How do you keep our data secure?",
+    "answer": "We use vendor APIs with zero-data-retention enabled, run sensitive workloads in your own cloud account, and design retrieval pipelines so confidential data never leaves your perimeter."
+  },
+  {
+    "section": "service:ai-solutions",
+    "order": 5,
+    "question": "What does an AI engagement cost?",
+    "answer": "AI projects start at $25,000 for the first production workflow. Cost scales with the number of integrations, the volume of data, and whether evals + monitoring are part of scope (we recommend they always are)."
+  },
+  {
+    "section": "service:ai-ready-data-engineering",
+    "order": 1,
+    "question": "What does AI-ready data engineering actually include?",
+    "answer": "It covers the full foundation layer: data audit, schema design, ingestion and transformation pipelines, storage, metadata, and the API or retrieval layer that makes the data usable for dashboards, automation, and AI systems."
+  },
+  {
+    "section": "service:ai-ready-data-engineering",
+    "order": 2,
+    "question": "Can you work with the tools and databases we already use?",
+    "answer": "Yes. We regularly clean up and unify data from spreadsheets, CRMs, internal apps, document stores, SQL databases, and event streams. The point is to make your current data usable without forcing an unnecessary platform rewrite."
+  },
+  {
+    "section": "service:ai-ready-data-engineering",
+    "order": 3,
+    "question": "Do you build dashboards too, or only the pipelines?",
+    "answer": "Usually both. The pipeline and schema work make the data dependable, and then we can expose that through dashboards, APIs, or downstream AI workflows depending on what the business needs first."
+  },
+  {
+    "section": "service:ai-ready-data-engineering",
+    "order": 4,
+    "question": "How long does a data foundation project take?",
+    "answer": "Most first-phase engagements land in 2–4 weeks. We scope the fastest usable version first, then expand from there if you need more sources, more automation, or a deeper AI retrieval layer."
+  },
+  {
+    "section": "service:document-intelligence-systems",
+    "order": 1,
+    "question": "What kinds of documents can you process?",
+    "answer": "Scanned PDFs, images, forms, invoices, IDs, KYC packets, statements, and multi-page document sets. If the workflow has recurring document patterns, we can usually build a structured extraction pipeline for it."
+  },
+  {
+    "section": "service:document-intelligence-systems",
+    "order": 2,
+    "question": "How accurate is the OCR and extraction layer?",
+    "answer": "Accuracy depends on document quality and variation, so we design for operational reliability rather than a marketing percentage. That means confidence scoring, rule validation, and review workflows so weak outputs do not silently enter your system."
+  },
+  {
+    "section": "service:document-intelligence-systems",
+    "order": 3,
+    "question": "Can the system support human review before data is accepted?",
+    "answer": "Yes. Human-in-the-loop review is a standard part of the architecture for low-confidence fields, exceptions, and compliance-sensitive workflows. We do not assume every document should bypass review."
+  },
+  {
+    "section": "service:document-intelligence-systems",
+    "order": 4,
+    "question": "Can the extracted data be pushed into our CRM, ERP, or internal app?",
+    "answer": "Yes. The output layer is designed for operational use, which means structured JSON, database-ready records, and APIs that can feed your CRM, ERP, onboarding flow, reporting system, or any other downstream tool."
+  },
+  {
+    "section": "service:devops-continuous-delivery",
+    "order": 1,
+    "question": "Do we need Kubernetes?",
+    "answer": "Probably not. For most product teams under 50 engineers, Vercel + a managed Postgres + S3 is the right stack. We recommend Kubernetes only when you genuinely need it — multi-region, complex internal services, or specific compliance constraints."
+  },
+  {
+    "section": "service:devops-continuous-delivery",
+    "order": 2,
+    "question": "What does observability include?",
+    "answer": "Logs, metrics, traces, and alerts — wired into Sentry plus a log/metrics backend like Datadog or Grafana Cloud. Plus on-call playbooks and an alerts runbook so incidents have a clear owner."
+  },
+  {
+    "section": "service:devops-continuous-delivery",
+    "order": 3,
+    "question": "How do you reduce our cloud bill?",
+    "answer": "We audit running resources, reserved-instance usage, and zombie services. Right-sizing, autoscaling, and S3 lifecycle policies usually trim 20–40% in the first month without changing performance."
+  },
+  {
+    "section": "service:devops-continuous-delivery",
+    "order": 4,
+    "question": "Can you train our engineers on the new pipeline?",
+    "answer": "Yes. Knowledge transfer is part of the deliverable — we document the pipeline, run a hands-on walkthrough, and step out so your team owns it after."
+  },
+  {
+    "section": "service:software-testing-qa",
+    "order": 1,
+    "question": "What test frameworks do you use?",
+    "answer": "Playwright for E2E (more reliable than Cypress for modern apps), Vitest or Jest for JS unit tests, pytest for Python. We pick what's idiomatic for your stack rather than imposing a foreign framework."
+  },
+  {
+    "section": "service:software-testing-qa",
+    "order": 2,
+    "question": "How do you handle flaky tests?",
+    "answer": "We treat flakes as bugs. Each flaky test gets a root-cause investigation — bad selector, async race, test pollution. If it can't be made deterministic, it gets deleted. Muted flakes are technical debt, not a strategy."
+  },
+  {
+    "section": "service:software-testing-qa",
+    "order": 3,
+    "question": "How much coverage should we aim for?",
+    "answer": "Coverage % is a side-effect, not a goal. We aim for 100% on critical business paths — payments, auth, data-mutating routes — and leave the rest light. Total coverage usually lands between 50–75%."
+  },
+  {
+    "section": "service:software-testing-qa",
+    "order": 4,
+    "question": "Do you write tests for legacy code we already have?",
+    "answer": "Yes. We add a 'change-protection' suite around the riskiest code paths first, so refactors stop breaking things. Full historical coverage isn't usually worth the time — risk-weighted is."
+  },
+  {
+    "section": "service:system-integration",
+    "order": 1,
+    "question": "Should we use Zapier or build a custom integration?",
+    "answer": "Use Zapier or n8n when the flow is low-volume, simple, and the cost per task is acceptable. Build custom when volume is high, the workflow has complex branching, or vendor connectors don't cover your real schema. We help you pick the right shape per flow."
+  },
+  {
+    "section": "service:system-integration",
+    "order": 2,
+    "question": "How do you handle integration failures?",
+    "answer": "Every integration has retries with exponential backoff, dead-letter queues for unrecoverable failures, and alerts that page on silent stalls. You see the health of every flow on a single dashboard."
+  },
+  {
+    "section": "service:system-integration",
+    "order": 3,
+    "question": "Can you work with our existing systems?",
+    "answer": "Almost certainly. Salesforce, HubSpot, NetSuite, QuickBooks, Stripe, Shopify, Zendesk, custom internal APIs — we've integrated with most of them. If a system has any API or webhook surface, we can connect it."
+  },
+  {
+    "section": "service:system-integration",
+    "order": 4,
+    "question": "Do we need an integration platform like MuleSoft?",
+    "answer": "Usually not. Most teams under 200 engineers do better with a small set of custom integration services and a message queue. Heavy iPaaS platforms make sense at enterprise scale and complexity."
+  }
+]

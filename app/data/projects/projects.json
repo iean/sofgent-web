@@ -1,142 +1,158 @@
 [
    {
-      "title": "Heart & Haven Care | Healthcare Services Platform",
-      "slug": "heart-haven-healthcare-staffing",
-      "publish_date": "February 2025",
-      "preview_link": "https://heartandhavenhealthcare.co.uk/",
-      "description": "Developed a comprehensive healthcare services platform for Heart & Haven Care using React and Next.js, featuring three core service areas: Domiciliary Care, Temporary Staffing, and Supported Living. Built with a strong focus on performance, accessibility, and search visibility to showcase compassionate care services. Delivered a clean, responsive layout using modular, reusable components to present service offerings, care features (Hourly Visiting, Live In, 24h Service), compliance standards (CQC registration), and clear lead-generation calls to action. Optimized the application for fast load times through efficient asset handling, code splitting, and SEO-friendly meta structure. Ensured consistent styling across all screen sizes and built a scalable frontend foundation that supports future content growth and feature expansion.",
-      "thumbnail": "/images/project/haven/banner_01.png",
-      "overview": "A modern healthcare services platform built with React and Next.js, showcasing domiciliary care, temporary staffing, and supported living services with focus on performance, accessibility, and SEO optimization.",
-      "screenshots": [
-         {
-            "image": "/images/project/haven/banner_01.png",
-            "title": "Homepage Banner"
-         },
-         {
-            "image": "/images/project/haven/banner_02.jpg",
-            "title": "Service Overview Section"
-         },
-         {
-            "image": "/images/project/haven/home_card_domilciary.jpg",
-            "title": "Domiciliary Care Services"
-         },
-         {
-            "image": "/images/project/haven/home_card_staffing.jpg",
-            "title": "Temporary Staffing Services"
-         },
-         {
-            "image": "/images/project/haven/home_card_supported_living.jpg",
-            "title": "Supported Living Solutions"
-         },
-         {
-            "image": "/images/project/haven/banner_03.png",
-            "title": "Care Features & Information"
-         }
-      ]
+      "title": "AI Knowledge Platform for Teams and Process-Driven Organizations",
+      "slug": "ai-knowledge-platform",
+      "category": "AI Knowledge Product",
+      "publish_date": "Portfolio Case Study",
+      "summary": "A production-ready AI knowledge system that turns internal documents, SOPs, and team knowledge into a searchable assistant for faster execution.",
+      "description": "This case study shows how SofGent can turn scattered documents, meeting notes, and operating knowledge into a permission-aware internal product teams actually use every day.",
+      "problem": "Critical knowledge lived across folders, documents, recordings, and team memory. Teams lost time searching for answers, onboarding was slow, and internal execution depended too heavily on asking the right person.",
+      "solution": "SofGent designed an AI knowledge platform with structured ingestion, retrieval workflows, permission-aware answers, clean UX, and operational controls so the system could be trusted in daily use.",
+      "outcome": "The business moved from fragmented knowledge and slow internal support to a reusable AI product that improved access, speed, and execution quality across teams.",
+      "capabilities": [
+         "Structured knowledge ingestion pipelines",
+         "Permission-aware AI assistant",
+         "Semantic search across internal data",
+         "Meeting and document summarization",
+         "Multi-source sync and content controls"
+      ],
+      "industries": [
+         "SaaS",
+         "Operations",
+         "Internal Enablement"
+      ],
+      "technologies": [
+         "Next.js",
+         "Node.js",
+         "PostgreSQL",
+         "Vector Database",
+         "LLM APIs"
+      ],
+      "systemAngle": "We built the system around retrieval quality, access control, and daily workflow adoption so the assistant could become a real operating layer instead of a novelty search box.",
+      "visualLabel": "[IMAGE: AI knowledge platform dashboard]",
+      "ctaLabel": "Discuss an AI knowledge product",
+      "ctaHref": "/contact",
+      "theme": {
+         "primary": "#1d4ed8",
+         "secondary": "#93c5fd",
+         "surface": "#eff6ff"
+      }
    },
    {
-      "title": "Personal Portfolio Website",
-      "slug": "personal-portfolio",
-      "publish_date": "February 17, 2025",
-      "preview_link": "www.google.com",
-      "description": "A modern analytics dashboard built with React and TypeScript, featuring real-time data visualization, customizable widgets, and advanced filtering capabilities. The dashboard helps businesses track KPIs, analyze trends, and make data-driven decisions through an intuitive and responsive interface.",
-      "thumbnail": "https://images.unsplash.com/photo-1664575599730-0814817939de",
-      "overview": "A sleek and modern personal portfolio website to showcase skills, projects, and resume.",
-      "screenshots": [
-         {
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-            "title": "Homepage"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-            "title": "Projects Section"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-            "title": "Homepage"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-            "title": "Projects Section"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-            "title": "Homepage"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-            "title": "Projects Section"
-         }
-      ]
+      "title": "AI Document Automation System for Operational Workflows",
+      "slug": "ocr-document-automation-system",
+      "category": "Document Intelligence System",
+      "publish_date": "Portfolio Case Study",
+      "summary": "An OCR and extraction workflow that turns incoming PDFs, scans, and forms into structured operational data with validation and human review.",
+      "description": "This case study reflects how SofGent builds document intelligence systems that reduce manual operations, improve accuracy, and move businesses faster from file intake to usable data.",
+      "problem": "The team was processing large volumes of PDFs, scans, and handwritten forms. Manual entry was slow, error-prone, and expensive, while downstream systems depended on clean, validated outputs.",
+      "solution": "SofGent built a document automation workflow with OCR, extraction logic, validation rules, exception handling, review queues, and downstream routing so operations teams could process work with confidence.",
+      "outcome": "The business gained a system that transformed raw documents into reliable structured outputs and reduced the manual pressure on operations-heavy teams.",
+      "capabilities": [
+         "OCR and field-level extraction",
+         "Document classification",
+         "Validation and exception handling",
+         "Human review dashboard",
+         "Workflow automation and routing"
+      ],
+      "industries": [
+         "Finance",
+         "Insurance",
+         "Back-Office Operations"
+      ],
+      "technologies": [
+         "Python",
+         "FastAPI",
+         "OCR Models",
+         "Queue Workers",
+         "React Dashboard"
+      ],
+      "systemAngle": "The core value came from the full pipeline: ingestion, extraction, validation, exception handling, and human review, not just OCR in isolation.",
+      "visualLabel": "[IMAGE: document processing pipeline UI]",
+      "ctaLabel": "Plan a document automation system",
+      "ctaHref": "/contact",
+      "theme": {
+         "primary": "#0f766e",
+         "secondary": "#99f6e4",
+         "surface": "#ecfeff"
+      }
    },
    {
-      "title": "Personal Portfolio Website",
-      "slug": "personal-portfolio2",
-      "publish_date": "February 17, 2025",
-      "preview_link": "www.google.com",
-      "description": "A modern analytics dashboard built with React and TypeScript, featuring real-time data visualization, customizable widgets, and advanced filtering capabilities. The dashboard helps businesses track KPIs, analyze trends, and make data-driven decisions through an intuitive and responsive interface.",
-      "thumbnail": "https://images.unsplash.com/photo-1664575599730-0814817939de",
-      "overview": "A sleek and modern personal portfolio website to showcase skills, projects, and resume.",
-      "screenshots": [
-         {
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-            "title": "Homepage"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-            "title": "Projects Section"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-            "title": "Homepage"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-            "title": "Projects Section"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-            "title": "Homepage"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-            "title": "Projects Section"
-         }
-      ]
+      "title": "Multi-Tenant SaaS Platform for Scalable Digital Operations",
+      "slug": "custom-ecommerce-builder",
+      "category": "Custom SaaS Platform",
+      "publish_date": "Portfolio Case Study",
+      "summary": "A multi-tenant business platform designed for teams that need their own workflows, access control, admin tooling, and room to scale without platform lock-in.",
+      "description": "This case study shows how SofGent can turn operational complexity into a structured SaaS platform with strong system boundaries, admin workflows, and a foundation for growth.",
+      "problem": "The business had outgrown template software. Pricing logic, internal workflows, and operator needs no longer fit off-the-shelf tools, and the team needed a product it could shape around its own operation.",
+      "solution": "SofGent designed a custom SaaS platform with modular workflows, tenant-aware architecture, internal tooling, role-based controls, and a delivery model that supported both launch and future scale.",
+      "outcome": "The business gained a platform built around its operating model instead of bending its workflows around someone else's product constraints.",
+      "capabilities": [
+         "Multi-tenant product architecture",
+         "Custom admin and operator tools",
+         "Workflow-specific business logic",
+         "Role-based access controls",
+         "Scale-ready deployment foundation"
+      ],
+      "industries": [
+         "SaaS",
+         "Operations",
+         "Digital Services"
+      ],
+      "technologies": [
+         "Next.js",
+         "Node.js",
+         "PostgreSQL",
+         "Stripe",
+         "AWS"
+      ],
+      "systemAngle": "The system was shaped around tenancy, internal operations, and long-term extensibility so the product could scale without an expensive rewrite later.",
+      "visualLabel": "[IMAGE: multi-tenant SaaS operations dashboard]",
+      "ctaLabel": "Discuss a custom SaaS platform",
+      "ctaHref": "/contact",
+      "theme": {
+         "primary": "#7c3aed",
+         "secondary": "#c4b5fd",
+         "surface": "#f5f3ff"
+      }
    },
    {
-      "title": "Personal Portfolio Website",
-      "slug": "personal-portfolio3",
-      "preview_link": "www.google.com",
-      "publish_date": "February 17, 2025",
-      "description": "A modern analytics dashboard built with React and TypeScript, featuring real-time data visualization, customizable widgets, and advanced filtering capabilities. The dashboard helps businesses track KPIs, analyze trends, and make data-driven decisions through an intuitive and responsive interface.",
-      "thumbnail": "https://images.unsplash.com/photo-1664575599730-0814817939de",
-      "overview": "A sleek and modern personal portfolio website to showcase skills, projects, and resume.",
-      "screenshots": [
-         {
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-            "title": "Homepage"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-            "title": "Projects Section"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-            "title": "Homepage"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-            "title": "Projects Section"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-            "title": "Homepage"
-         },
-         {
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-            "title": "Projects Section"
-         }
-      ]
+      "title": "Financial Operations and Wallet Infrastructure Platform",
+      "slug": "financial-wallet-system",
+      "category": "Fintech Infrastructure Product",
+      "publish_date": "Extended Case Study",
+      "summary": "A wallet and ledger platform designed for transaction flows, balance management, operational controls, and payment-system scale.",
+      "description": "This case study highlights SofGent's ability to build financial systems that require strong backend discipline, controlled workflows, and architecture that can expand safely.",
+      "problem": "The product needed to manage balances, transaction histories, and payment workflows without relying on fragile backend patchwork or ad hoc operational controls.",
+      "solution": "SofGent built a wallet and ledger foundation with transaction tracking, role-based controls, payment workflow orchestration, and a service-oriented architecture ready for growth.",
+      "outcome": "The platform gave the business a stronger operational core for payment flows and balance management, with cleaner control over how the system could evolve.",
+      "capabilities": [
+         "Wallet account management",
+         "Ledger and transaction logic",
+         "Role-based operational controls",
+         "Payment workflow integration",
+         "Scalable service architecture"
+      ],
+      "industries": [
+         "Fintech",
+         "Payments",
+         "Digital Finance"
+      ],
+      "technologies": [
+         "Spring Boot",
+         "PostgreSQL",
+         "Docker",
+         "AWS",
+         "Microservices"
+      ],
+      "systemAngle": "The architecture prioritized transaction integrity, service boundaries, and operational visibility so the business could scale payment logic with more confidence.",
+      "visualLabel": "[IMAGE: wallet and ledger system view]",
+      "ctaLabel": "Discuss fintech infrastructure",
+      "ctaHref": "/contact",
+      "theme": {
+         "primary": "#0f172a",
+         "secondary": "#38bdf8",
+         "surface": "#f8fafc"
+      }
    }
 ]

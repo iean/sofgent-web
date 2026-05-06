@@ -3,13 +3,13 @@ import { mvpPackages } from "@/app/content/mvp";
 
 const colorClasses = {
   blue: "border-blue-500 bg-blue-50",
-  green: "border-brand bg-brand/5",
+  green: "border-primary bg-primary/5",
   yellow: "border-yellow-500 bg-yellow-50",
 };
 
 const badgeColors = {
   blue: "bg-blue-500",
-  green: "bg-brand",
+  green: "bg-primary",
   yellow: "bg-yellow-500",
 };
 
@@ -35,7 +35,7 @@ export default function MvpPackages() {
                 </div>
               )}
               <div className="mb-4">
-                <h3 className="text-24 font-semibold text-main-black mb-2">{pkg.name}</h3>
+                <h3 className="text-2xl font-semibold text-main-black mb-2">{pkg.name}</h3>
                 <p className="text-paragraph text-sm mb-3">{pkg.whoFor}</p>
                 <div className="inline-block px-3 py-1 bg-white/80 text-main-black text-sm font-semibold rounded-full">
                   {pkg.timeline}
@@ -47,7 +47,7 @@ export default function MvpPackages() {
                 <ul className="space-y-2">
                   {pkg.deliverables.map((item, i) => (
                     <li key={i} className="text-paragraph text-sm flex items-start">
-                      <span className="text-brand mr-2">•</span>
+                      <span className="text-primary mr-2">•</span>
                       <span>{item}</span>
                     </li>
                   ))}

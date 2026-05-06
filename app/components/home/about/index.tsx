@@ -40,7 +40,7 @@ export default function About() {
             <AboutThumbnail />
             <div className="about-article-area">
               <SectionTag tag="About Company" />
-              <h2 className="md:text-48 mt-6 text-34 font-semibold text-main-black mb-[30px] md:w-[80%] w-full xl:w-full">
+              <h2 className="md:text-5xl mt-6 text-4xl font-semibold text-main-black mb-[30px] md:w-[80%] w-full xl:w-full">
                 Innovating the Future, Your Partner in Cloud Based SaaS Services
               </h2>
 

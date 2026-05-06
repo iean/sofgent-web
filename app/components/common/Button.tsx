@@ -7,44 +7,61 @@ interface PropsType {
    className?: string;
    href?: string;
    btnText?: string;
-   external?: boolean|false;
+   external?: boolean;
+   variant?: "primary" | "secondary" | "outline" | "ghost";
+   icon?: React.ReactNode;
 }
+
 const Button: React.FC<PropsType> = ({
    className,
    href,
    btnText,
-   external,
+   external = false,
+   variant = "primary",
+   icon,
 }) => {
-   return (
+   const baseStyles = "inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2 hover:-translate-y-0.5";
+   
+   const variantStyles = {
+      primary: "bg-primary text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90",
+      secondary: "bg-slate-900 text-white shadow-lg shadow-slate-900/20 hover:bg-slate-800",
+      outline: "border border-slate-200 bg-white text-slate-900 hover:border-primary hover:text-primary shadow-sm",
+      ghost: "text-slate-600 hover:bg-slate-50 hover:text-primary",
+   };
+
+   const defaultIcon = external ? (
+      <RxOpenInNewWindow className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+   ) : (
+      <FaArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+   );
+
+   const buttonContent = (
       <>
-         {external ? (
-            <>
-               <a
-                  href={href ? href : "#"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={twMerge(
-                     "inline-flex items-center px-6 py-3 mt-4 sm:mt-0 bg-brand text-white rounded-lg font-semibold shadow-md hover:bg-secondary transform hover:-translate-y-0.5 transition-all duration-200 group",
-                     className
-                  )}>
-                  {btnText}
-                  <RxOpenInNewWindow className="w-4 h-4 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-               </a>
-            </>
-         ) : (
-            <>
-               <Link
-                  href={href ? href : "#"}
-                  className={twMerge(
-                     "inline-flex items-center px-6 py-3 mt-4 sm:mt-0 bg-brand text-white rounded-lg font-semibold shadow-md hover:bg-secondary transform hover:-translate-y-0.5 transition-all duration-200 group",
-                     className
-                  )}>
-                  {btnText}
-                  <FaArrowRight className="w-4 h-4 ml-2" />
-               </Link>
-            </>
-         )}
+         {btnText}
+         {icon !== undefined ? icon : defaultIcon}
       </>
+   );
+
+   if (external) {
+      return (
+         <a
+            href={href || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={twMerge(baseStyles, variantStyles[variant], "group", className)}
+         >
+            {buttonContent}
+         </a>
+      );
+   }
+
+   return (
+      <Link
+         href={href || "#"}
+         className={twMerge(baseStyles, variantStyles[variant], "group", className)}
+      >
+         {buttonContent}
+      </Link>
    );
 };
 

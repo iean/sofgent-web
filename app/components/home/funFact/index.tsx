@@ -11,10 +11,10 @@ export default function FunFact() {
                <div className="grid xl:grid-cols-2 grid-cols-1 xl:gap-[155px]">
                   <div className="w-full">
                      <SectionTag tag="Our Story"/>
-                     <h2 className="md:text-48 mt-10 text-34 font-semibold text-main-black mb-[50px]">
+                     <h2 className="md:text-5xl mt-10 text-4xl font-semibold text-main-black mb-[50px]">
                         We worked with diverse clients and industries.
                      </h2>
-                     <p className="text-paragraph mb-[40px] pl-5 border-l-[3px] border-brand">
+                     <p className="text-paragraph mb-[40px] pl-5 border-l-[3px] border-primary">
                         Defined by digital dynamism, our digital marketing
                         agency emerges beacon of innovation and strategic
                         prowess.

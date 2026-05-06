@@ -62,7 +62,7 @@ export default function AboutThumbnail() {
                      <div
                         data-aos="fade-left"
                         data-aos-delay="100"
-                        className="inline-block h-fit px-[30px] py-2.5 bg-brand text-pone shadow-small text-white rounded-full rounded-bl-none">
+                        className="inline-block h-fit px-[30px] py-2.5 bg-primary text-base leading-[1.875rem] shadow-small text-white rounded-full rounded-bl-none">
                         System Integration
                      </div>
                   </div>
