@@ -2,7 +2,7 @@ import "./globals.css";
 import { dmSans, rubik } from "./fonts/fonts";
 import Script from "next/script";
 import type { Metadata } from "next";
-import WhatsAppWidget from "./components/WhatsAppWidget";
+import TawkWidget from "./components/TawkWidget";
 import {
   getSiteOriginFromEnv,
   isPreviewDeployment,
@@ -87,7 +87,7 @@ export default function RootLayout({
           ></iframe>
         </noscript>
         {children}
-        <WhatsAppWidget />
+        <TawkWidget />
       </body>
     </html>
   );
