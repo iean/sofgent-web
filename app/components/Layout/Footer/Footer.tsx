@@ -2,36 +2,9 @@ import { FacebookIcon, LinkedinIcon } from "@/app/utils/SVGIcons";
 import logo from "@assets/images/sofgent-logo-white.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { getServices } from "@/lib/sanity/content";
 import BackToTop from "./BackToTop";
 import Copyright from "./Copyright";
-
-// Services List
-const serviceList = [
-   {
-      title: "Launch Your SaaS MVP in 30 Days",
-      url: "/services",
-   },
-   {
-      title: "Custom AI Systems for Your Business",
-      url: "/services",
-   },
-   {
-      title: "AI-Ready Data Engineering",
-      url: "/services/ai-ready-data-engineering",
-   },
-   {
-      title: "Document Intelligence Systems",
-      url: "/services/document-intelligence-systems",
-   },
-   {
-      title: "Fix, Rebuild, and Scale Your Product",
-      url: "/services",
-   },
-   {
-      title: "How We Build SaaS",
-      url: "/how-we-build-saas",
-   },
-];
 
 // Quick Links List
 const quickLinks = [
@@ -71,7 +44,15 @@ const socialMediaList = [
    },
 ];
 
-export default function Footer() {
+export default async function Footer() {
+   const serviceList = (await getServices())
+      .sort((a, b) => a.order - b.order)
+      .slice(0, 6)
+      .map((service) => ({
+         title: service.title,
+         url: `/services/${service.slug}`,
+      }));
+
    return (
       <footer className="relative mt-[8rem] bg-slate-950 pt-16 text-slate-300 border-t border-white/10">
          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(6,182,212,0.05),transparent_22%),radial-gradient(circle_at_top_right,rgba(45,212,191,0.05),transparent_18%)] pointer-events-none" />

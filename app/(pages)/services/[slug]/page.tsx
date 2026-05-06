@@ -1,49 +1,75 @@
-import BreadCrumb from "@/app/components/common/BreadCrumb";
-import ServiceDetailsInfo from "@/app/components/serviceDetails";
-import getServicesMeta from "@/app/utils/getServicesMeta";
-import getPageMeta from "@/app/utils/getPageMeta";
-import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import BreadCrumb from "@/app/components/common/BreadCrumb";
+import ServicePage from "@/app/components/services/detail/ServicePage";
+import {
+   getServiceBySlug,
+   getServiceSlugs,
+} from "@/lib/sanity/content";
 
-const CtaNoSSR = dynamic(() => import("@/app/components/home/cta"), {
-   ssr: false,
-});
+export const revalidate = 60;
 
-export function generateMetadata({
+export async function generateStaticParams() {
+   const slugs = await getServiceSlugs();
+   return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({
    params,
 }: {
    params: { slug: string };
-}): Metadata {
-   return getPageMeta(`/services/${params.slug}`);
+}): Promise<Metadata> {
+   const service = await getServiceBySlug(params.slug);
+   if (!service) {
+      return { title: "Service not found" };
+   }
+
+   const title = service.seoTitle || `${service.title} | SofGent`;
+   const description = service.seoDescription || service.summary;
+
+   return {
+      title,
+      description,
+      keywords: service.keywords?.length ? service.keywords.join(", ") : undefined,
+      openGraph: {
+         title,
+         description,
+         images: [
+            {
+               url: service.heroImage.src,
+               width: 1600,
+               height: 900,
+               alt: service.heroImage.alt,
+            },
+         ],
+      },
+      twitter: {
+         card: "summary_large_image",
+         title,
+         description,
+         images: [service.heroImage.src],
+      },
+   };
 }
 
-export async function generateStaticParams() {
-   const services = getServicesMeta();
-   return services.map((service) => ({ slug: service.slug }));
-}
-
-export default function ServiceDetail({
+export default async function ServiceDetail({
    params,
 }: {
    params: { slug: string };
 }) {
-   const services = getServicesMeta();
-   const service = services.find((s) => s.slug === params.slug);
-
+   const service = await getServiceBySlug(params.slug);
    if (!service) {
       notFound();
    }
 
    return (
-      <section>
+      <main className="min-h-screen bg-slate-50">
          <BreadCrumb
             pageTitle={service.title}
             currentPage="Services"
-            to="/services"
+            to={`/services/${service.slug}`}
          />
-         <ServiceDetailsInfo slug={params.slug} />
-         <CtaNoSSR />
-      </section>
+         <ServicePage service={service} />
+      </main>
    );
 }

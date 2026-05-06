@@ -1,0 +1,24 @@
+/* Basic Reset */
+ul.styled-list-privacy {
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  list-style-type: none; /* Removes default bullets */
+}
+
+/* List Item Styling */
+ul.styled-list-privacy li {
+  padding: 10px 15px; /* Adds padding around the text */
+  margin-bottom: 5px; /* Adds space between items */
+  background-color: #f9f9f9; /* Light gray background */
+  border: 1px solid #ddd; /* Adds a border around the item */
+  border-radius: 5px; /* Rounds the corners */
+  font-family: Arial, sans-serif; /* Sets the font */
+  font-size: 16px; /* Adjusts font size */
+  color: #333; /* Dark gray text */
+}
+
+/* Hover Effect */
+ul.styled-list-privacy li:hover {
+  background-color: #eaeaea; /* Slightly darker background on hover */
+  cursor: pointer; /* Changes cursor to pointer */
+}

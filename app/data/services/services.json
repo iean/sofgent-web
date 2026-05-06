@@ -1,0 +1,527 @@
+[
+   {
+      "slug": "custom-software-development",
+      "title": "Custom Software Development",
+      "category": "saas",
+      "tagline": "Production-grade software, built around how your business actually works.",
+      "summary": "We design and build custom software for founders and operations teams that need real systems — not template apps. Full-stack web platforms, internal tools, and operational software that survive growth.",
+      "heroImage": {
+         "src": "/images/services/software-development.webp",
+         "alt": "Architecture diagram of a full-stack custom software product"
+      },
+      "keywords": ["custom software development company", "bespoke software development", "saas product engineering", "software development bangladesh"],
+      "industries": ["Fintech", "Healthcare", "Logistics", "Retail", "Education"],
+      "outcomes": ["Launch in 2–6 weeks", "Production-grade architecture", "Predictable delivery"],
+      "problem": {
+         "eyebrow": "The Problem",
+         "title": "Off-the-shelf tools don't match how your business runs.",
+         "points": [
+            { "title": "Manual workflows that don't scale", "body": "You're stitching spreadsheets, forms, and email to compensate for software that was never designed for your process." },
+            { "title": "Fragile prototypes that broke under real load", "body": "An earlier MVP shipped, but the moment users grew or workflows changed, the system started fighting the team." },
+            { "title": "Generic templates that miss the operating reality", "body": "SaaS tools cover 70% of what you need. The remaining 30% is where the actual business value lives." },
+            { "title": "Long delivery cycles with unclear progress", "body": "Past vendors took months and still left you with software you can't extend without paying them again." }
+         ]
+      },
+      "approach": {
+         "eyebrow": "Our Approach",
+         "title": "Architecture-first delivery in four tight steps.",
+         "steps": [
+            { "step": "Step 1", "title": "Discovery & scope", "body": "We map the business workflow, technical risk, and revenue path before a single line of production code." },
+            { "step": "Step 2", "title": "Architecture & design", "body": "Data model, auth, integrations, deployment, and the launch surface get locked. Clear scope, fixed timeline." },
+            { "step": "Step 3", "title": "Build", "body": "UI, backend, integrations, and QA move in one sprint instead of disconnected handoffs. You see weekly working software." },
+            { "step": "Step 4", "title": "Launch & support", "body": "We deploy with monitoring, onboard your team, and stabilize. Post-launch iteration is part of the engagement." }
+         ]
+      },
+      "deliverables": [
+         "Product discovery document and architecture brief",
+         "Full-stack web application (frontend + backend + database)",
+         "Authentication, role-based access, and audit logging",
+         "Deployment pipeline (CI/CD on Vercel, AWS, or your cloud)",
+         "Documentation, handover, and 30-day stabilization window"
+      ],
+      "techStack": ["TypeScript", "Next.js", "React", "Node.js", "Python", "Django", ".NET Core", "PostgreSQL", "Redis", "AWS", "Docker"],
+      "whyChooseUs": [
+         { "title": "Architecture-first, not feature-first", "body": "We design for the version-two state of your product, not just the first demo." },
+         { "title": "One team, end to end", "body": "Product, engineering, AI, and DevOps under one roof. No fractured handoffs." },
+         { "title": "Fixed-scope sprints", "body": "Predictable cost and timeline — you know what is being built, when, and for how much." },
+         { "title": "You own the IP", "body": "Code, infra, and accounts move to your team on completion. Nothing is locked behind us." }
+      ],
+      "useCases": [
+         { "title": "Founder MVP → revenue-ready product", "body": "Take a concept from notes to a deployed product real users can pay for.", "outcome": "Faster fundraising and earlier customer traction." },
+         { "title": "Manual workflow → productized SaaS", "body": "Convert a service-heavy operation into repeatable software your team can resell.", "outcome": "Higher margins and a more scalable operating model." },
+         { "title": "Internal tool that the business actually trusts", "body": "Replace fragile spreadsheets with a real internal app that handles auth, audit, and edge cases.", "outcome": "Less ops overhead and cleaner data for decisions." },
+         { "title": "Legacy system rebuild", "body": "Replace a brittle first version with a production-grade foundation that can carry the next stage.", "outcome": "Less rework, fewer outages, and better delivery confidence." }
+      ],
+      "pricing": {
+         "from": "From $15,000",
+         "model": "Fixed-scope sprints",
+         "note": "Typical engagements run 2–6 weeks. Final scope confirmed after a free 20-minute discovery call."
+      },
+      "faqSection": "service:custom-software-development",
+      "featured": true,
+      "order": 1,
+      "publishedAt": "2026-04-01T09:00:00.000Z",
+      "seoTitle": "Custom Software Development Company | SofGent",
+      "seoDescription": "Production-grade custom software development for founders and operations teams. Full-stack web apps, SaaS platforms, and internal tools shipped in 2–6 weeks."
+   },
+   {
+      "slug": "saas-mvp-development",
+      "title": "SaaS & Micro-SaaS MVP Development",
+      "category": "saas",
+      "tagline": "From idea to investor-ready SaaS in 30 days — without tech debt.",
+      "summary": "We help founders move from rough concept to a launch-ready SaaS MVP fast. Multi-tenant architecture, billing, auth, and the deploy pipeline are part of day one — not a future migration.",
+      "heroImage": {
+         "src": "/images/ai-product-studio/use-cases-board.png",
+         "alt": "SaaS product surface with multi-tenant dashboard and billing"
+      },
+      "keywords": ["custom saas development company", "saas mvp development", "micro saas builder", "multi tenant saas"],
+      "industries": ["Fintech", "Vertical SaaS", "B2B Tools", "Operations"],
+      "outcomes": ["MVP in 30 days", "Multi-tenant from day one", "Stripe + auth wired"],
+      "problem": {
+         "eyebrow": "The Problem",
+         "title": "Most SaaS MVPs ship as prototypes that can't scale.",
+         "points": [
+            { "title": "Single-tenant code that's a rebuild later", "body": "First-version MVPs that ignore tenancy create six months of cleanup the moment a second customer signs." },
+            { "title": "Auth and billing as 'phase two'", "body": "Real customers need real auth, real RBAC, and a working subscription. Half-built billing kills trust on day one." },
+            { "title": "No deploy story", "body": "If shipping a fix takes a manual SSH and a deep breath, the product is already in tech debt." },
+            { "title": "Founders pulled into engineering decisions", "body": "You should be selling. Picking ORMs is not your job." }
+         ]
+      },
+      "approach": {
+         "eyebrow": "Our Approach",
+         "title": "A 30-day SaaS MVP system designed for real customers.",
+         "steps": [
+            { "step": "Step 1", "title": "Define the wedge", "body": "We cut scope to one wedge — the smallest thing customers will pay for — and sequence everything around it." },
+            { "step": "Step 2", "title": "Multi-tenant architecture", "body": "Tenant isolation, role-based access, and a billing-ready user model are scaffolded before any feature code." },
+            { "step": "Step 3", "title": "Core feature build", "body": "We ship the wedge feature, the admin tooling, and a working storefront / dashboard in three sprints." },
+            { "step": "Step 4", "title": "Stripe + launch", "body": "Stripe subscriptions, transactional email, monitoring, and a working onboarding flow. Then we go live." }
+         ]
+      },
+      "deliverables": [
+         "Multi-tenant Next.js + Postgres architecture",
+         "Auth (email + OAuth), RBAC, and audit logs",
+         "Stripe subscription billing with plan management",
+         "Marketing landing page + product app",
+         "CI/CD to Vercel or AWS, with preview environments per PR",
+         "Operational dashboards and Sentry error tracking"
+      ],
+      "techStack": ["Next.js", "TypeScript", "Postgres", "Prisma", "Stripe", "Resend", "Vercel", "Sentry"],
+      "whyChooseUs": [
+         { "title": "We've shipped the same stack 10+ times", "body": "Multi-tenant patterns aren't experiments here — they're a known starting point." },
+         { "title": "Billing is wired before launch", "body": "Real Stripe integration, not a 'coming soon' upgrade button." },
+         { "title": "We build for version two", "body": "Architecture choices made in week one don't trap you when feature five lands." },
+         { "title": "Founders stay focused on selling", "body": "We handle architecture trade-offs so you can talk to customers." }
+      ],
+      "useCases": [
+         { "title": "Vertical SaaS for an operations niche", "body": "Productize a manual workflow you already run for clients into a self-serve subscription.", "outcome": "Recurring revenue with higher margins than service work." },
+         { "title": "Micro-SaaS founder side-project", "body": "Ship a tightly-scoped product targeting a specific persona without quitting your day job.", "outcome": "Real revenue from a small ICP, fast." },
+         { "title": "Internal tool turned product", "body": "Take an internal tool that already works and turn it into a SaaS your customers can adopt.", "outcome": "New revenue stream from existing IP." },
+         { "title": "Investor-ready demo", "body": "A working product with multi-tenant data and real auth de-risks fundraising conversations.", "outcome": "Better investor meetings and earlier traction stories." }
+      ],
+      "pricing": {
+         "from": "From $20,000",
+         "model": "Fixed 30-day MVP sprint",
+         "note": "Includes architecture, build, Stripe wiring, and deploy. Custom scope confirmed in discovery."
+      },
+      "faqSection": "service:saas-mvp-development",
+      "featured": true,
+      "order": 2,
+      "publishedAt": "2026-04-01T09:00:00.000Z",
+      "seoTitle": "Custom SaaS Development Company | SaaS MVP in 30 Days | SofGent",
+      "seoDescription": "We build custom SaaS and micro-SaaS MVPs in 30 days. Multi-tenant architecture, Stripe billing, and deploy pipeline ready for real customers from day one."
+   },
+   {
+      "slug": "ai-solutions",
+      "title": "AI Solutions & LLM Integration",
+      "category": "ai",
+      "tagline": "Production AI systems — not demos that never reach operations.",
+      "summary": "We build AI features that get deployed and used: document automation, retrieval-augmented assistants, agent workflows, and AI that lives inside the products your team already runs.",
+      "heroImage": {
+         "src": "/images/ai-product-studio/why-control-layer.png",
+         "alt": "AI control layer architecture with retrieval, validation, and review"
+      },
+      "keywords": ["ai solutions bangladesh", "llm integration services", "ai consulting", "rag system development"],
+      "industries": ["Fintech", "Legal", "Operations", "B2B SaaS"],
+      "outcomes": ["AI that ships to production", "Workflow automation", "Measurable ROI"],
+      "problem": {
+         "eyebrow": "The Problem",
+         "title": "Most AI projects look great in demos and never reach production.",
+         "points": [
+            { "title": "Pilots without context fail under real data", "body": "A prompt-and-pray demo collapses the moment messy production data shows up." },
+            { "title": "No control layer around the model", "body": "Without validation, retrieval, and review, AI outputs can't be trusted by the business." },
+            { "title": "Integrations stop at the API call", "body": "Real value comes from wiring AI into existing workflows — CRMs, ticketing, dashboards, ops tools." },
+            { "title": "No path from prototype to production", "body": "POCs without monitoring, eval sets, and rollback plans never make it past the experiment phase." }
+         ]
+      },
+      "approach": {
+         "eyebrow": "Our Approach",
+         "title": "Build the system around the model, not just the model.",
+         "steps": [
+            { "step": "Step 1", "title": "Workflow audit", "body": "We map the business process, identify the highest-ROI automation point, and validate that AI is actually the right answer." },
+            { "step": "Step 2", "title": "Data + retrieval", "body": "We structure the source data, build the retrieval layer, and validate context quality before tuning the model." },
+            { "step": "Step 3", "title": "Build with guardrails", "body": "Validation, schema enforcement, eval sets, and human review — every AI output earns its way through controls." },
+            { "step": "Step 4", "title": "Deploy + measure", "body": "Production rollout with logging, monitoring, eval-set regression checks, and a feedback loop into improvements." }
+         ]
+      },
+      "deliverables": [
+         "AI workflow architecture and orchestration layer",
+         "Retrieval-augmented generation (RAG) pipeline",
+         "Custom AI agents wired into your existing tools",
+         "Eval framework + monitoring dashboards",
+         "Human-in-the-loop review interfaces",
+         "Documentation and team handover"
+      ],
+      "techStack": ["OpenAI", "Anthropic", "LangChain", "pgvector", "Python", "Node.js", "Postgres", "Redis"],
+      "whyChooseUs": [
+         { "title": "We build production AI, not experiments", "body": "Reliability, monitoring, and controls are part of the build from day one." },
+         { "title": "Engineering + AI under one team", "body": "We own the data, model, interface, and operations — no fractured handoffs." },
+         { "title": "ROI-driven scope", "body": "We pick the workflow with the clearest financial impact, not the fanciest demo." },
+         { "title": "Vendor-neutral", "body": "OpenAI, Anthropic, open-source — we recommend what fits the use case, not what we resell." }
+      ],
+      "useCases": [
+         { "title": "Document → structured data", "body": "Turn PDFs, scans, and forms into validated outputs that feed downstream systems.", "outcome": "Less manual entry, faster turnaround, cleaner operations." },
+         { "title": "Internal AI assistant", "body": "Convert SOPs, runbooks, and Slack history into an answer engine your team can trust.", "outcome": "Faster answers, better execution, less internal friction." },
+         { "title": "Agent for repeatable ops", "body": "Automate intake, triage, validation, escalation, and routing across customer-facing workflows.", "outcome": "More throughput without adding headcount." },
+         { "title": "AI features inside your product", "body": "Embed AI features customers will actually pay for — drafting, summarization, semantic search.", "outcome": "Higher product value and a defensible moat." }
+      ],
+      "pricing": {
+         "from": "From $25,000",
+         "model": "Architecture sprint + build",
+         "note": "Most engagements ship the first production workflow in 4 weeks."
+      },
+      "faqSection": "service:ai-solutions",
+      "featured": true,
+      "order": 3,
+      "publishedAt": "2026-04-01T09:00:00.000Z",
+      "seoTitle": "AI Solutions & LLM Integration | Production AI Systems | SofGent",
+      "seoDescription": "We build production-grade AI: document automation, RAG assistants, AI agents, and LLM integrations that ship to operations — not demos. AI solutions for fintech, legal, and ops teams."
+   },
+   {
+      "slug": "ai-ready-data-engineering",
+      "title": "AI-Ready Data Engineering",
+      "category": "ai",
+      "tagline": "Turn fragmented business data into structured infrastructure for analytics, automation, and AI.",
+      "summary": "SofGent transforms raw, scattered, and messy business data into structured systems your AI products can actually use. We design schemas, pipelines, storage layers, and APIs so your data is ready for analytics, automation, and AI.",
+      "heroImage": {
+         "src": "/images/ai-product-studio/hero-architecture.png",
+         "alt": "AI-ready data architecture with pipelines, schemas, and business systems"
+      },
+      "keywords": ["data engineering services", "ai-ready data engineering", "data pipeline development", "schema design for AI"],
+      "industries": ["Fintech", "Healthcare", "Operations", "B2B SaaS"],
+      "outcomes": ["Structured for analytics and reporting", "Ready for assistants and automation", "Built for production, not one-off cleanup"],
+      "problem": {
+         "eyebrow": "The Problem",
+         "title": "Most teams want AI results but are still running on fragmented data.",
+         "points": [
+            { "title": "Data scattered across tools", "body": "Customer records, spreadsheets, documents, and app events live in separate systems with no dependable source of truth." },
+            { "title": "No structure for AI", "body": "Messy schemas, missing metadata, and inconsistent fields make your data difficult to search, retrieve, or reason over with AI." },
+            { "title": "Manual reporting", "body": "Teams keep exporting CSVs, cleaning data by hand, and rebuilding the same dashboards every reporting cycle." },
+            { "title": "Poor decision making", "body": "Leadership ends up working from delayed or conflicting numbers, which slows execution and creates avoidable risk." }
+         ]
+      },
+      "approach": {
+         "eyebrow": "Our Approach",
+         "title": "Build the data foundation before the AI layer becomes expensive guesswork.",
+         "steps": [
+            { "step": "Step 1", "title": "Data audit", "body": "We map your current sources, data quality issues, reporting gaps, and the business questions the system needs to support." },
+            { "step": "Step 2", "title": "Data structuring and schema design", "body": "We normalize entities, define schemas, add metadata, and shape the data model around analytics, automation, and AI use cases." },
+            { "step": "Step 3", "title": "Pipeline and storage setup", "body": "We implement ingestion, transformations, and storage across relational databases, warehouses, and vector infrastructure where needed." },
+            { "step": "Step 4", "title": "AI readiness layer", "body": "We add APIs, retrieval patterns, and documentation so your data can power assistants, automation flows, and AI products." }
+         ]
+      },
+      "deliverables": [
+         "Clean structured datasets with normalized entities and metadata",
+         "Data pipelines for ingestion and transformation across files, apps, and databases",
+         "API access layers for dashboards, internal tools, and downstream products",
+         "AI-ready storage across relational and vector-friendly systems",
+         "Schemas, data dictionaries, and implementation documentation"
+      ],
+      "techStack": ["PostgreSQL", "BigQuery", "Python", "FastAPI", "dbt", "Airbyte", "pgvector", "AWS"],
+      "whyChooseUs": [
+         { "title": "AI-first data architecture", "body": "We do not stop at tidy databases. We shape the data foundation around how AI systems will actually consume and retrieve information." },
+         { "title": "Fast path from MVP to production", "body": "We build the first usable version quickly, then harden the architecture so it supports real growth instead of a temporary reporting patch." },
+         { "title": "Deep experience in document and structured data", "body": "SofGent brings hands-on delivery experience across document processing, knowledge systems, and structured operational data." },
+         { "title": "Focused implementation", "body": "We optimize for the shortest path to a reliable data foundation instead of dragging the project into months of overengineering." }
+      ],
+      "useCases": [
+         { "title": "Analytics dashboards", "body": "Build reporting on top of a structured data backbone instead of fragile spreadsheet workflows.", "outcome": "Trusted reporting with less manual cleanup every cycle." },
+         { "title": "AI assistants", "body": "Give internal or customer-facing assistants access to clean, queryable business data.", "outcome": "Higher-quality answers and fewer hallucinations from bad context." },
+         { "title": "Automation systems", "body": "Trigger routing, decisions, and workflows from structured data instead of manual handoffs.", "outcome": "More throughput with less operational friction." },
+         { "title": "Reporting systems", "body": "Generate recurring reports faster, with less cleanup and fewer conflicting numbers.", "outcome": "Faster decisions based on a dependable source of truth." }
+      ],
+      "pricing": {
+         "from": "From $12,000",
+         "model": "Audit + implementation sprint",
+         "note": "Most data foundation engagements ship a first usable pipeline in 2–4 weeks."
+      },
+      "faqSection": "service:ai-ready-data-engineering",
+      "featured": true,
+      "order": 4,
+      "publishedAt": "2026-04-01T09:00:00.000Z",
+      "seoTitle": "AI-Ready Data Engineering Services | SofGent",
+      "seoDescription": "Turn fragmented business data into structured infrastructure for analytics, automation, and AI. SofGent designs schemas, pipelines, storage, and APIs for production-ready data systems."
+   },
+   {
+      "slug": "document-intelligence-systems",
+      "title": "Document Intelligence Systems",
+      "category": "ai",
+      "tagline": "Build OCR, extraction, and validation workflows that turn documents into operational data.",
+      "summary": "Extract, validate, and automate document workflows using AI. SofGent builds OCR and document intelligence systems that turn files, scans, and forms into usable business data.",
+      "heroImage": {
+         "src": "/images/ai-product-studio/transformation-before-after.png",
+         "alt": "Document intelligence workflow turning scanned files into structured outputs"
+      },
+      "keywords": ["document intelligence systems", "ocr software development", "AI document processing", "document extraction automation"],
+      "industries": ["Banking", "Fintech", "Insurance", "Operations"],
+      "outcomes": ["OCR for PDFs, images, and forms", "AI extraction with validation workflows", "Structured outputs for APIs and databases"],
+      "problem": {
+         "eyebrow": "The Problem",
+         "title": "Document-heavy workflows break down when every file still needs human re-entry.",
+         "points": [
+            { "title": "Manual data entry", "body": "Teams keep retyping document fields into internal systems, which slows operations and creates avoidable cost." },
+            { "title": "PDFs and images are not usable", "body": "Critical business information is trapped in scans, PDFs, photos, and attachments that applications cannot directly work with." },
+            { "title": "Errors in processing", "body": "Inconsistent extraction, missing fields, and human mistakes create unreliable downstream workflows." },
+            { "title": "Slow workflows", "body": "Approval flows, onboarding, reporting, and verification processes all stall when documents need manual review at every step." }
+         ]
+      },
+      "approach": {
+         "eyebrow": "Our Approach",
+         "title": "Build the extraction, validation, and routing system around the document flow.",
+         "steps": [
+            { "step": "Step 1", "title": "Document upload", "body": "Ingest PDFs, images, scans, forms, and multi-page files from user uploads, inboxes, or internal systems." },
+            { "step": "Step 2", "title": "OCR processing", "body": "Convert image-based and scanned documents into machine-readable text with layout-aware OCR pipelines." },
+            { "step": "Step 3", "title": "AI extraction", "body": "Extract target fields, entities, line items, and business attributes using rules plus AI-assisted parsing." },
+            { "step": "Step 4", "title": "Validation layer", "body": "Apply confidence scoring, business rules, and review workflows before data is accepted downstream." },
+            { "step": "Step 5", "title": "Structured output", "body": "Deliver clean JSON, API responses, or database-ready records that can feed operations and products." }
+         ]
+      },
+      "deliverables": [
+         "Structured JSON outputs ready for downstream systems",
+         "Admin review dashboard for low-confidence documents and exception handling",
+         "APIs for ingestion, extraction results, and system integration",
+         "Workflow automation for routing, validation, and business actions",
+         "Production-ready OCR and extraction pipeline documentation"
+      ],
+      "techStack": ["FastAPI", "Python", "Tesseract", "Transformers", "PostgreSQL", "AWS SQS", "Angular", "Docker"],
+      "whyChooseUs": [
+         { "title": "Built on real OCR delivery experience", "body": "SofGent has shipped document processing systems where extraction quality and operational reliability actually matter." },
+         { "title": "Production-grade pipelines", "body": "We build processing, validation, and review layers that work in real workflows, not shallow demos." },
+         { "title": "Designed for edge cases and scale", "body": "From messy scans to confidence thresholds and exception handling, we design for operational reality from day one." }
+      ],
+      "useCases": [
+         { "title": "Bank documents", "body": "Extract and structure fields from statements, forms, and financial onboarding documents.", "outcome": "Faster onboarding and fewer back-office manual steps." },
+         { "title": "KYC verification", "body": "Process IDs, proofs, and verification documents faster with extraction and review workflows.", "outcome": "Shorter verification cycles with clearer auditability." },
+         { "title": "Invoice processing", "body": "Capture line items, totals, vendors, and dates without manual re-entry.", "outcome": "Cleaner finance operations with lower processing cost." },
+         { "title": "Internal document systems", "body": "Turn operational documents into searchable, structured records for internal teams and products.", "outcome": "Usable business data instead of static file archives." }
+      ],
+      "pricing": {
+         "from": "From $18,000",
+         "model": "Architecture + workflow build",
+         "note": "Initial OCR and extraction workflows typically ship in 3–5 weeks."
+      },
+      "faqSection": "service:document-intelligence-systems",
+      "featured": true,
+      "order": 5,
+      "publishedAt": "2026-04-01T09:00:00.000Z",
+      "seoTitle": "Document Intelligence Systems | OCR & AI Extraction | SofGent",
+      "seoDescription": "Build OCR, extraction, and validation workflows that turn documents into structured operational data. SofGent delivers document intelligence systems for banking, fintech, and workflow-heavy teams."
+   },
+   {
+      "slug": "devops-continuous-delivery",
+      "title": "DevOps & Continuous Delivery",
+      "category": "devops",
+      "tagline": "Deploy daily without fear — repeatable infrastructure and CI/CD.",
+      "summary": "We design and ship deployment pipelines, cloud infrastructure, and observability for teams that want to ship every day without breaking production.",
+      "heroImage": {
+         "src": "/images/services/dev-ops.webp",
+         "alt": "DevOps pipeline diagram with build, test, deploy, monitor stages"
+      },
+      "keywords": ["devops services", "ci cd pipeline setup", "cloud infrastructure consulting", "kubernetes deployment"],
+      "industries": ["SaaS", "E-commerce", "Fintech", "B2B Tools"],
+      "outcomes": ["Daily deploys", "Sub-5-minute rollback", "Observability baked in"],
+      "problem": {
+         "eyebrow": "The Problem",
+         "title": "Manual deploys, brittle infrastructure, and no observability.",
+         "points": [
+            { "title": "Releases are scary, so they're rare", "body": "Bi-weekly merge nights mean accumulated risk and slow learning cycles." },
+            { "title": "No automated tests in the pipeline", "body": "Bugs reach production because tests live in someone's local laptop, not the CI." },
+            { "title": "Infrastructure is documented in someone's head", "body": "If your senior engineer leaves, the production environment goes with them." },
+            { "title": "When something breaks, nobody knows why", "body": "Without logs, traces, and metrics, every incident is a manual reconstruction." }
+         ]
+      },
+      "approach": {
+         "eyebrow": "Our Approach",
+         "title": "From manual ops to a self-driving deployment system.",
+         "steps": [
+            { "step": "Step 1", "title": "Audit", "body": "We map your current build/deploy/monitor flow and surface the riskiest gaps." },
+            { "step": "Step 2", "title": "Pipeline build", "body": "GitHub Actions (or your CI) runs full tests, builds, and deploys to preview environments per PR." },
+            { "step": "Step 3", "title": "Infrastructure as code", "body": "Terraform / Pulumi codifies your cloud setup so a fresh environment is one command away." },
+            { "step": "Step 4", "title": "Observability", "body": "Logs, metrics, traces, alerts, and on-call playbooks. When something breaks, you know within minutes." }
+         ]
+      },
+      "deliverables": [
+         "GitHub Actions / GitLab CI pipeline with full test coverage",
+         "Preview environments on every pull request",
+         "Infrastructure-as-code (Terraform / Pulumi) for production + staging",
+         "Sentry + observability stack (Datadog / Grafana)",
+         "Incident runbooks and on-call escalation paths",
+         "Post-handover support window"
+      ],
+      "techStack": ["GitHub Actions", "Vercel", "AWS", "Terraform", "Docker", "Kubernetes", "Sentry", "Datadog"],
+      "whyChooseUs": [
+         { "title": "We've shipped to production thousands of times", "body": "DevOps muscle isn't theoretical — we've debugged the 3 AM incidents." },
+         { "title": "Right-sized for your stage", "body": "We don't over-engineer Kubernetes for a 4-person team. Tooling matches your scale." },
+         { "title": "Hand-over to your engineers", "body": "We document, train, and step out — no permanent DevOps dependency." },
+         { "title": "Cost-conscious infrastructure", "body": "We tune cloud bills as part of the engagement, not as a separate consulting project." }
+      ],
+      "useCases": [
+         { "title": "Pre-launch hardening", "body": "Get your CI/CD, IaC, and observability in place before the first customer hits production.", "outcome": "Confident launch with no surprise outages." },
+         { "title": "Post-launch stability", "body": "Replace manual SSH deploys and missing logs with a real pipeline and a real observability stack.", "outcome": "Daily releases, faster MTTR, calmer engineering team." },
+         { "title": "Cloud cost reset", "body": "Audit and right-size cloud spend across accounts, reserved instances, and unused resources.", "outcome": "20–40% lower cloud bill within a month." },
+         { "title": "On-call setup", "body": "PagerDuty, alerts, runbooks, and rotation policies wired up so incidents have a clear owner.", "outcome": "Less burnout, faster recovery, better postmortems." }
+      ],
+      "pricing": {
+         "from": "From $10,000",
+         "model": "Audit + build sprint",
+         "note": "Pipeline + IaC + observability typically ships in 3 weeks."
+      },
+      "faqSection": "service:devops-continuous-delivery",
+      "featured": false,
+      "order": 6,
+      "publishedAt": "2026-04-01T09:00:00.000Z",
+      "seoTitle": "DevOps Services & CI/CD Pipeline Setup | SofGent",
+      "seoDescription": "DevOps consulting and continuous delivery pipelines for product teams. Daily deploys, infrastructure-as-code, and observability — without over-engineering."
+   },
+   {
+      "slug": "software-testing-qa",
+      "title": "Software Testing & QA Automation",
+      "category": "qa",
+      "tagline": "Catch regressions before customers do — automated test pyramids and CI gates.",
+      "summary": "We design test strategies and build automated suites for product teams that need to ship daily without breaking what already works.",
+      "heroImage": {
+         "src": "/images/services/software-testing.webp",
+         "alt": "Software testing pyramid with unit, integration, and end-to-end tests"
+      },
+      "keywords": ["qa automation services", "software testing services", "playwright e2e", "test automation framework"],
+      "industries": ["SaaS", "Fintech", "Healthcare", "E-commerce"],
+      "outcomes": ["Test pyramid wired", "CI gates per PR", "Lower escape rate"],
+      "problem": {
+         "eyebrow": "The Problem",
+         "title": "Bugs reach production because the tests don't exist or don't run.",
+         "points": [
+            { "title": "Manual QA is the only safety net", "body": "Regression cycles take days, slow releases, and miss the same bugs every sprint." },
+            { "title": "Flaky tests get ignored", "body": "Tests that fail randomly get muted, then deleted, then forgotten." },
+            { "title": "No coverage signal", "body": "You don't know which parts of the codebase are dangerous to change." },
+            { "title": "End-to-end tests run only locally", "body": "If E2E tests aren't in CI, they're not preventing anything." }
+         ]
+      },
+      "approach": {
+         "eyebrow": "Our Approach",
+         "title": "A pragmatic test pyramid wired into your CI.",
+         "steps": [
+            { "step": "Step 1", "title": "Strategy + audit", "body": "We profile the codebase, identify the riskiest paths, and design the right pyramid for your scale." },
+            { "step": "Step 2", "title": "Unit + integration", "body": "Fast feedback on every PR. Critical business logic earns coverage, the rest stays light." },
+            { "step": "Step 3", "title": "End-to-end automation", "body": "Playwright / Cypress flows for the top 5–10 customer journeys, running headless in CI." },
+            { "step": "Step 4", "title": "CI gates + reporting", "body": "Pull requests can't merge red. Coverage and flake rates are visible to the team." }
+         ]
+      },
+      "deliverables": [
+         "Test strategy document and pyramid design",
+         "Unit + integration suite (Vitest / Jest / pytest)",
+         "End-to-end suite (Playwright or Cypress) for top user journeys",
+         "CI integration with parallel runs and failure reports",
+         "Coverage and flake-rate dashboards",
+         "Team handover + ongoing test maintenance playbook"
+      ],
+      "techStack": ["Playwright", "Cypress", "Vitest", "Jest", "pytest", "GitHub Actions", "Allure"],
+      "whyChooseUs": [
+         { "title": "We focus on what actually breaks", "body": "Coverage % is a side-effect, not a goal. We test what costs the business when it fails." },
+         { "title": "We kill flake aggressively", "body": "Flaky tests get fixed or deleted — never muted." },
+         { "title": "We integrate with your CI", "body": "Tests live next to the code, run in CI, and block merges. Not an offline doc." },
+         { "title": "Knowledge transfer is part of delivery", "body": "Your engineers can extend the framework after we leave." }
+      ],
+      "useCases": [
+         { "title": "Pre-launch QA hardening", "body": "Build the safety net before the first customer payments hit production.", "outcome": "Fewer hotfixes after launch." },
+         { "title": "Inherited codebase confidence", "body": "Add tests to a legacy codebase so refactors stop breaking things.", "outcome": "Safer refactors and faster onboarding for new engineers." },
+         { "title": "Daily-deploy enabler", "body": "Lift a team from weekly releases to daily by adding CI gates and E2E coverage.", "outcome": "Faster learning loops and lower deploy risk." },
+         { "title": "Compliance + audit readiness", "body": "Document test coverage and traceability for SOC2 / ISO audits.", "outcome": "Cleaner audits and shorter compliance cycles." }
+      ],
+      "pricing": {
+         "from": "From $8,000",
+         "model": "Strategy + automation sprint",
+         "note": "Most teams have a working pyramid + CI gates in 2–3 weeks."
+      },
+      "faqSection": "service:software-testing-qa",
+      "featured": false,
+      "order": 7,
+      "publishedAt": "2026-04-01T09:00:00.000Z",
+      "seoTitle": "Software Testing & QA Automation Services | SofGent",
+      "seoDescription": "QA automation and software testing services. Test pyramid design, Playwright E2E, CI gates, and coverage dashboards for product teams shipping daily."
+   },
+   {
+      "slug": "system-integration",
+      "title": "System Integration & API Development",
+      "category": "integration",
+      "tagline": "Connect the systems you already run into one operating fabric.",
+      "summary": "We design and build the integration layer between your CRM, ERP, payment, AI, and internal tools so data flows where it needs to — without manual copy-paste.",
+      "heroImage": {
+         "src": "/images/services/system-integration.webp",
+         "alt": "System integration map showing data flows between CRM, ERP, AI, and dashboards"
+      },
+      "keywords": ["system integration services", "api development", "erp integration", "crm integration"],
+      "industries": ["Retail", "Healthcare", "Logistics", "B2B SaaS", "Fintech"],
+      "outcomes": ["Real-time data sync", "Resilient retries", "Single integration source"],
+      "problem": {
+         "eyebrow": "The Problem",
+         "title": "Your systems don't talk — and the gap is filled by people.",
+         "points": [
+            { "title": "Manual copy-paste between tools", "body": "Sales, ops, finance, and support all rekey the same data into different systems." },
+            { "title": "Integrations that silently fail", "body": "Webhooks die, retries don't exist, and nobody notices for days." },
+            { "title": "Vendor connectors that don't fit", "body": "Out-of-the-box integrations cover 60% of the case and ignore your real workflow." },
+            { "title": "Reporting lag because data is scattered", "body": "Leadership sees stale numbers because the source-of-truth is fragmented across systems." }
+         ]
+      },
+      "approach": {
+         "eyebrow": "Our Approach",
+         "title": "An integration layer designed to be observable and durable.",
+         "steps": [
+            { "step": "Step 1", "title": "Map the system landscape", "body": "We document every system, every data flow, and where the manual handoffs live today." },
+            { "step": "Step 2", "title": "Design the integration spine", "body": "Direct API calls, message queues, or workflow orchestrators — we pick the right shape per flow." },
+            { "step": "Step 3", "title": "Build with observability", "body": "Every integration logs, retries, and surfaces failures. You see the health of every flow at a glance." },
+            { "step": "Step 4", "title": "Hand over with documentation", "body": "Your team gets an integration map, runbooks, and a process for adding the next connection." }
+         ]
+      },
+      "deliverables": [
+         "System landscape and data-flow documentation",
+         "Custom integration services (Node / Python) with retries + dead-letter queues",
+         "Webhook receivers, polling jobs, and message-queue consumers",
+         "Public + internal APIs with OpenAPI specs",
+         "Integration health dashboard with alerts",
+         "Runbooks for common failure modes"
+      ],
+      "techStack": ["Node.js", "Python", "Postgres", "Redis", "RabbitMQ / SQS", "Zapier / n8n", "OpenAPI"],
+      "whyChooseUs": [
+         { "title": "We build for failure modes", "body": "Every integration retries, dead-letters, and alerts when it goes silent." },
+         { "title": "We pick the right tool per flow", "body": "Sometimes Zapier is the answer; sometimes you need a custom service. We don't over-engineer." },
+         { "title": "We document everything", "body": "Your next engineer can pick up the integration map without us." },
+         { "title": "We tie integrations to business outcomes", "body": "Every integration we build solves a measurable pain — not a hypothetical one." }
+      ],
+      "useCases": [
+         { "title": "CRM ↔ accounting sync", "body": "Wire HubSpot / Salesforce → QuickBooks / Xero so deals flow into invoices automatically.", "outcome": "Hours of manual entry removed; cleaner finance data." },
+         { "title": "POS ↔ inventory ↔ e-commerce", "body": "Real-time stock visibility across in-store and online with no double-selling.", "outcome": "Fewer stockouts and fewer angry customers." },
+         { "title": "AI workflow + ticketing", "body": "Pipe AI-extracted data from documents into Zendesk / Jira tickets with the right routing.", "outcome": "Faster triage and a smaller queue." },
+         { "title": "Internal dashboard from many sources", "body": "Pull data from SaaS tools into a single dashboard for leadership.", "outcome": "Faster decisions and a single source of truth." }
+      ],
+      "pricing": {
+         "from": "From $7,500",
+         "model": "Per-integration scope",
+         "note": "Pricing scales with the number and complexity of systems being connected."
+      },
+      "faqSection": "service:system-integration",
+      "featured": false,
+      "order": 8,
+      "publishedAt": "2026-04-01T09:00:00.000Z",
+      "seoTitle": "System Integration & API Development Services | SofGent",
+      "seoDescription": "Connect your CRM, ERP, payment, AI, and internal tools with resilient integrations. API development, webhooks, message queues, and observability included."
+   }
+]
