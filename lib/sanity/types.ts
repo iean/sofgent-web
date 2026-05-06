@@ -97,6 +97,21 @@ export interface SanityServicePricing {
   note?: string;
 }
 
+export interface SanityServiceProofMetric {
+  value: string;
+  label: string;
+}
+
+export interface SanityServiceArchitectureHighlight {
+  title: string;
+  body: string;
+}
+
+export interface SanityServiceIdealFit {
+  title: string;
+  body: string;
+}
+
 export interface SanityServiceListItem {
   _id: string;
   title: string;
@@ -107,6 +122,8 @@ export interface SanityServiceListItem {
   heroImage?: SanityImage;
   industries?: string[];
   outcomes?: string[];
+  proofMetrics?: SanityServiceProofMetric[];
+  idealFit?: SanityServiceIdealFit[];
   featured?: boolean;
   order?: number;
   publishedAt?: string;
@@ -128,6 +145,9 @@ export interface SanityService extends SanityServiceListItem {
   techStack?: string[];
   whyChooseUs?: SanityServiceWhyPillar[];
   useCases?: SanityServiceUseCase[];
+  proofMetrics?: SanityServiceProofMetric[];
+  architectureHighlights?: SanityServiceArchitectureHighlight[];
+  idealFit?: SanityServiceIdealFit[];
   pricing?: SanityServicePricing;
   faqSection?: string;
   seoTitle?: string;

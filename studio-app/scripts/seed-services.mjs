@@ -133,6 +133,24 @@ async function buildServiceDocument(item) {
         outcome: useCase.outcome,
       }),
     ),
+    proofMetrics: (item.proofMetrics || []).map((metric) =>
+      createArrayObject({
+        value: metric.value,
+        label: metric.label,
+      }),
+    ),
+    architectureHighlights: (item.architectureHighlights || []).map((highlight) =>
+      createArrayObject({
+        title: highlight.title,
+        body: highlight.body,
+      }),
+    ),
+    idealFit: (item.idealFit || []).map((item) =>
+      createArrayObject({
+        title: item.title,
+        body: item.body,
+      }),
+    ),
     pricing: item.pricing,
     faqSection: item.faqSection,
     featured: Boolean(item.featured),

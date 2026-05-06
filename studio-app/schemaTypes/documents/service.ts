@@ -165,6 +165,50 @@ export const serviceType = defineType({
       ],
     }),
     defineField({
+      name: "proofMetrics",
+      title: "Proof metrics",
+      description: "Quantified or outcome-oriented proof points shown near the top of the service page.",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({ name: "value", title: "Value", type: "string" }),
+            defineField({ name: "label", title: "Label", type: "string" }),
+          ],
+        },
+      ],
+    }),
+    defineField({
+      name: "architectureHighlights",
+      title: "Architecture highlights",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({ name: "title", title: "Title", type: "string" }),
+            defineField({ name: "body", title: "Body", type: "text", rows: 3 }),
+          ],
+        },
+      ],
+    }),
+    defineField({
+      name: "idealFit",
+      title: "Ideal fit",
+      description: "Who this service is best for and what kind of team should buy it.",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({ name: "title", title: "Title", type: "string" }),
+            defineField({ name: "body", title: "Body", type: "text", rows: 3 }),
+          ],
+        },
+      ],
+    }),
+    defineField({
       name: "pricing",
       title: "Pricing",
       type: "object",

@@ -132,6 +132,8 @@ export const SERVICES_QUERY = defineQuery(`
     },
     industries,
     outcomes,
+    proofMetrics,
+    idealFit,
     featured,
     order,
     publishedAt
@@ -176,6 +178,9 @@ export const SERVICE_QUERY = defineQuery(`
     techStack,
     whyChooseUs,
     useCases,
+    proofMetrics,
+    architectureHighlights,
+    idealFit,
     pricing,
     faqSection,
     seoTitle,

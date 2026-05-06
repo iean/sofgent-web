@@ -36,7 +36,7 @@ export default function StickyServiceCta() {
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 rounded-full bg-cyan-500 text-slate-950 px-6 py-3 text-sm md:text-base font-bold shadow-[0_15px_40px_rgba(6,182,212,0.35)] hover:bg-cyan-400 transition-colors">
-            Book a strategy call
+            Book free consultation
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
          </Link>
       </div>

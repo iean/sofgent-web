@@ -43,6 +43,21 @@ export interface LocalServicePricing {
    note?: string;
 }
 
+export interface LocalServiceProofMetric {
+   value: string;
+   label: string;
+}
+
+export interface LocalServiceArchitectureHighlight {
+   title: string;
+   body: string;
+}
+
+export interface LocalServiceIdealFit {
+   title: string;
+   body: string;
+}
+
 export interface LocalService {
    slug: string;
    title: string;
@@ -59,6 +74,9 @@ export interface LocalService {
    techStack: string[];
    whyChooseUs: LocalServiceWhyPillar[];
    useCases: LocalServiceUseCase[];
+   proofMetrics?: LocalServiceProofMetric[];
+   architectureHighlights?: LocalServiceArchitectureHighlight[];
+   idealFit?: LocalServiceIdealFit[];
    pricing?: LocalServicePricing;
    faqSection?: string;
    featured?: boolean;

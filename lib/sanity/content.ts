@@ -274,6 +274,8 @@ export type ServiceListView = {
    heroImage: { src: string; alt: string };
    industries: string[];
    outcomes: string[];
+   proofMetrics: Array<{ value: string; label: string }>;
+   idealFit: Array<{ title: string; body: string }>;
    featured?: boolean;
    order: number;
    publishedAt?: string;
@@ -295,6 +297,9 @@ export type ServiceView = ServiceListView & {
    techStack: string[];
    whyChooseUs: Array<{ title: string; body: string }>;
    useCases: Array<{ title: string; body: string; outcome?: string }>;
+   proofMetrics: Array<{ value: string; label: string }>;
+   architectureHighlights: Array<{ title: string; body: string }>;
+   idealFit: Array<{ title: string; body: string }>;
    pricing?: { from?: string; model?: string; note?: string };
    faqSection?: string;
    seoTitle?: string;
@@ -319,6 +324,8 @@ function fromSanityServiceList(item: SanityServiceListItem): ServiceListView {
          : FALLBACK_SERVICE_HERO,
       industries: item.industries ?? [],
       outcomes: item.outcomes ?? [],
+      proofMetrics: item.proofMetrics ?? [],
+      idealFit: item.idealFit ?? [],
       featured: item.featured,
       order: typeof item.order === "number" ? item.order : 999,
       publishedAt: item.publishedAt,
@@ -348,6 +355,9 @@ function fromSanityServiceFull(item: SanityService): ServiceView {
       techStack: item.techStack ?? [],
       whyChooseUs: item.whyChooseUs ?? [],
       useCases: item.useCases ?? [],
+      proofMetrics: item.proofMetrics ?? [],
+      architectureHighlights: item.architectureHighlights ?? [],
+      idealFit: item.idealFit ?? [],
       pricing: item.pricing,
       faqSection: item.faqSection,
       seoTitle: item.seoTitle,
@@ -376,6 +386,9 @@ function fromLocalService(item: LocalService): ServiceView {
       techStack: item.techStack,
       whyChooseUs: item.whyChooseUs,
       useCases: item.useCases,
+      proofMetrics: item.proofMetrics ?? [],
+      architectureHighlights: item.architectureHighlights ?? [],
+      idealFit: item.idealFit ?? [],
       pricing: item.pricing,
       faqSection: item.faqSection,
       seoTitle: item.seoTitle,

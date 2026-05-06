@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import BreadCrumb from "@/app/components/common/BreadCrumb";
 import ServicePage from "@/app/components/services/detail/ServicePage";
 import {
    getServiceBySlug,
@@ -64,11 +63,6 @@ export default async function ServiceDetail({
 
    return (
       <main className="min-h-screen bg-slate-50">
-         <BreadCrumb
-            pageTitle={service.title}
-            currentPage="Services"
-            to={`/services/${service.slug}`}
-         />
          <ServicePage service={service} />
       </main>
    );
