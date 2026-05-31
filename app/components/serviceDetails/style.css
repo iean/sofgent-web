@@ -1,0 +1,75 @@
+.service-details-page p a{
+   color: #326D6D;
+}
+.service-details-page p{
+   padding: 10px 0;
+}
+.service-details-page img{
+   width: 100%;
+   height: auto;
+   border-radius: 16px;
+   margin: 16px 0;
+}
+.service-details-page img:first-child{
+   margin-top: 0;
+}
+.service-details-page h1,
+.service-details-page h2,
+.service-details-page h3,
+.service-details-page h4,
+.service-details-page h5,
+.service-details-page h6 {
+   color: #326D6D;
+}
+.service-details-page h2{
+   font-size: 24px;
+   font-weight: 600;
+}
+.service-details-page h3{
+   font-size: 20px;
+   font-weight: 600;
+}
+.service-details-page ul {
+   padding-left: 20px;
+   margin: 10px 0;
+}
+
+.service-details-page ul li {
+   list-style-type: disc;
+   padding: 5px 0;
+   line-height: 26px;
+}
+.service-details-page table {
+   border-collapse: collapse;
+   width: 100%;
+   margin: 1rem 0;
+   font-size: 0.875rem;
+   line-height: 1.5;
+ }
+ 
+ .service-details-page table th {
+   font-weight: 600;
+   padding: 0.75rem;
+   border: 1px solid #e5e7eb;
+   background-color: #f9fafb;
+   color: #374151;
+ }
+ 
+ .service-details-page table td {
+   padding: 0.75rem;
+   border: 1px solid #e5e7eb;
+   color: #4b5563;
+   text-align: left;
+ }
+ 
+ .service-details-page table tr:hover {
+   background-color: #f3f4f6;
+ }
+ 
+ @media (max-width: 640px) {
+   .service-details-page table {
+     display: block;
+     overflow-x: auto;
+     -webkit-overflow-scrolling: touch;
+   }
+ }

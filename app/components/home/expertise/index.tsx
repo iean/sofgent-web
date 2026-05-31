@@ -33,7 +33,7 @@ export default function Expertise() {
                   <div className="col-span-5">
                      <div className="title-area">
                         <SectionTag tag="Our Expertise"/>
-                        <h2 className="md:text-5xl mt-6 text-4xl font-semibold text-main-black mb-[50px]">
+                        <h2 className="md:text-48 mt-6 text-34 font-semibold text-main-black mb-[50px]">
                            Our Expertise in Software Development
                         </h2>
                         <div
