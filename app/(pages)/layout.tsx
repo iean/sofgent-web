@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { dmSans, rubik } from "../fonts/fonts";
+// import "./globals.css";
 import Header from "../components/Layout/Header/Header";
 import Footer from "../components/Layout/Footer/Footer";
 
@@ -14,10 +16,14 @@ export default function PagesLayout({
    children: React.ReactNode;
 }>) {
    return (
-      <>
-         <Header />
-         {children}
-         <Footer />
-      </>
+      <html lang="en" className={`${dmSans.variable} ${rubik.variable}`}>
+         <body className="font-dmSans font-rubik"> 
+         
+            <Header/>
+            {children}
+           <Footer/>
+         
+         </body>
+      </html>
    );
 }

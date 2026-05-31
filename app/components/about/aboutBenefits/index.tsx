@@ -30,10 +30,10 @@ export default function AboutBenefit() {
                <div className="w-full">
                   <div className="flex flex-col items-center">
                      <SectionTag
-                        className="bg-white border-primary border-1"
+                        className="bg-white border-brand border-1"
                         tag="Our Benefits"
                      />
-                     <h2 className="text-2xl sm:text-5xl font-semibold text-main-black mb-[60px] text-center max-w-[653px]">
+                     <h2 className="text-24 sm:text-48 font-semibold text-main-black mb-[60px] text-center max-w-[653px]">
                         Empowering Your Business Through Software Excellence
                      </h2>
                   </div>

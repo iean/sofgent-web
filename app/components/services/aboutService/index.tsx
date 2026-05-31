@@ -8,7 +8,7 @@ export default function AboutService() {
       <div className="w-full mx-auto theme-container">
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div>
-            <h1 className="text-2xl md:text-5xl font-semibold mt-2.5 md:mt-5">
+            <h1 className="text-24 md:text-48 font-semibold mt-2.5 md:mt-5">
               Sofgent Offers a Wide Range of Services
             </h1>
             <p className="pb-10 mt-5 md:mt-10 text-paragraph">

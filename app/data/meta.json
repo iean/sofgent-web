@@ -1,51 +1,31 @@
 {
   "/": {
-    "title": "From Idea to AI Product in Weeks | SofGent",
-    "description": "SofGent is an AI Product Studio that helps founders and businesses launch SaaS MVPs fast, build AI systems, and scale products without months of delay."
+    "title": "Custom Software Development Agency | SofGent",
+    "description": "SofGent is a results-driven custom software development agency offering scalable, secure, and tailored digital solutions. Build smarter with adaptive software today."
   },
   "/about": {
-    "title": "About SofGent | SaaS and AI Product Builder",
-    "description": "Learn about SofGent, the product-minded software studio led by Masud Alam, focused on scalable SaaS platforms, AI systems, and cloud architecture."
+    "title": "About SofGent | Trusted Custom Software Partner",
+    "description": "Learn about SofGent’s mission, team, and commitment to delivering innovative, scalable AI software solutions with a focus on quality, agility, and client success."
   },
   "/services": {
-    "title": "AI Product Studio Services | SofGent",
-    "description": "Explore SofGent's three premium offers: SaaS MVP launch, custom AI systems, and product rebuilds for teams that need speed and scale."
-  },
-  "/services/ai-ready-data-engineering": {
-    "title": "AI-Ready Data Engineering | SofGent",
-    "description": "Turn messy business data into structured infrastructure for analytics, automation, and AI. SofGent designs schemas, pipelines, storage, and APIs that make data usable."
-  },
-  "/services/document-intelligence-systems": {
-    "title": "Document Intelligence Systems | SofGent",
-    "description": "Sell OCR, document processing, and AI extraction with production-ready pipelines that turn PDFs, scans, and forms into structured business data."
+    "title": "Enterprise Software Development Services | Sofgent",
+    "description": "Explore SofGent’s wide range of Enterprise Software Development Services including custom software, AI solutions, SaaS development, DevOps, testing."
   },
   "/projects": {
-    "title": "AI Product and Software Case Studies | SofGent",
-    "description": "See how SofGent builds AI knowledge systems, document automation workflows, SaaS platforms, and internal software that solve real business problems."
+    "title": "Our Projects | Custom AI Software Solutions Delivered",
+    "description": "Browse successful case studies and software projects delivered by SofGent. From SaaS platforms to AI Software Solutions, see how we solve real business challenges."
   },
   "/blog": {
     "title": "Tech Insights & Software Trends Blog | SofGent",
     "description": "Stay updated with the latest in software development, DevOps, AI, and agile practices. Read expert tips, industry insights, and thought leadership from SofGent."
   },
   "/contact": {
-    "title": "Book a Free Strategy Call | SofGent",
-    "description": "Contact SofGent to discuss your SaaS MVP, AI system, timeline, and product idea. The goal is simple: plan the fastest route to launch."
+    "title": "Contact SofGent | Start Your AI Driven Solutions",
+    "description": "Have a software idea or project? Contact SofGent today for a consultation. Let's build secure, scalable, and tailored AI Driven Solutions together."
   },
   "/how-we-build-saas": {
-    "title": "How We Build SaaS Products That Launch Fast | SofGent",
-    "description": "See SofGent's premium SaaS delivery model for turning product ideas into launch-ready platforms with clear architecture, fast execution, and stronger launch outcomes."
-  },
-  "/ai-product-studio": {
-    "title": "AI Product Studio for Production-Ready Systems | SofGent",
-    "description": "Discover how SofGent designs AI-powered systems across data, workflows, document intelligence, and product delivery for teams that need production results, not experiments."
-  },
-  "/case-studies": {
-    "title": "Case Studies for AI Systems and SaaS Builds | SofGent",
-    "description": "Explore SofGent case studies covering AI document automation, AI knowledge platforms, and multi-tenant SaaS systems built for real operations."
-  },
-  "/launch-your-mvp": {
-    "title": "Launch Your SaaS MVP in 6 Weeks | SofGent",
-    "description": "Learn how SofGent helps startups launch SaaS MVPs in 4 to 6 weeks with clear process, scalable architecture, and transparent pricing ranges."
+    "title": "How We Build Scalable SaaS Products | SofGent",
+    "description": "Learn how SofGent builds secure, scalable SaaS platforms from MVP to scale. Our proven 4-step delivery process, enterprise-tested tech stack, and post-launch support ensure production-ready products without costly rewrites."
   },
   "/services/custom-software-development": {
     "title": "Custom Software Development Services | Scalable Solutions",
@@ -87,21 +67,21 @@
     "title": "Software maintenance management system | SofGent",
     "description": "Keep your software running smoothly with a proactive maintenance management system by SofGent. Ensure stability, security, and performance at all times."
   },
-  "/projects/ai-knowledge-platform": {
-    "title": "AI Knowledge Platform for Teams | SofGent",
-    "description": "A SofGent case study showing how scattered documents and SOPs were turned into a searchable AI knowledge system for internal teams."
+  "/projects/heart-haven-healthcare-staffing": {
+    "title": "Heart & Haven Healthcare Staffing Page | React & Next.js Development | SofGent",
+    "description": "Healthcare staffing web platform built with React and Next.js. Focused on performance, accessibility, SEO optimization, and lead generation for healthcare staffing services."
   },
-  "/projects/ocr-document-automation-system": {
-    "title": "AI Document Automation System | SofGent",
-    "description": "A SofGent case study on OCR, extraction, validation, and workflow automation for document-heavy operational teams."
+  "/projects/personal-portfolio": {
+    "title": "Custom UI/UX & Development | SofGent",
+    "description": "Explore our personal portfolio project showcasing modern UI/UX, responsive design, and custom frontend-backend development with clean architecture."
   },
-  "/projects/custom-ecommerce-builder": {
-    "title": "Multi-Tenant SaaS Platform | SofGent",
-    "description": "A SofGent case study showing how a custom multi-tenant SaaS platform was built for scalable digital operations and internal workflows."
+  "/projects/personal-portfolio2": {
+    "title": "custom web application development company | SofGent",
+    "description": "See how SofGent built a creative personal portfolio using full-stack development, custom components, and seamless performance optimization."
   },
-  "/projects/financial-wallet-system": {
-    "title": "Financial / Wallet System | SofGent",
-    "description": "A fintech-style wallet and ledger platform for payment operations, transaction logic, and scalable financial workflows."
+  "/projects/personal-portfolio3": {
+    "title": "Developer Portfolio Showcase | SofGent",
+    "description": "A developer-focused portfolio project built with clean code structure, interactive UI, and optimized performance to reflect best coding practices."
   },
   "/services/privacy-policy": {
     "title": "Privacy Policy for Services | SofGent",
@@ -110,6 +90,10 @@
   "/services/terms-conditions": {
     "title": "Terms & Conditions for Services | SofGent",
     "description": "Read the terms governing the use of SofGent’s services including software development, DevOps, and AI solutions. Transparency you can trust."
+  },
+  "/projects/www.google.com": {
+    "title": "",
+    "description": ""
   },
   "/projects/privacy-policy": {
     "title": "Privacy-Centric Software Project | SofGent",

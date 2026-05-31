@@ -26,8 +26,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env
-.env.local
 .env*.local
 
 # vercel
@@ -37,8 +35,3 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .history/*
-.next.stale.1773909478/*
-output/playwright/*
-.playwright-cli/*
-.playwright-cli/*
-.codex/

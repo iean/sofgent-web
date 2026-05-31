@@ -2,9 +2,27 @@ import { FacebookIcon, LinkedinIcon } from "@/app/utils/SVGIcons";
 import logo from "@assets/images/sofgent-logo-white.svg";
 import Image from "next/image";
 import Link from "next/link";
-import { getServices } from "@/lib/sanity/content";
-import BackToTop from "./BackToTop";
 import Copyright from "./Copyright";
+
+// Services List
+const serviceList = [
+   {
+      title: "Custom Software Development with us",
+      url: "/services/custom-software-development",
+   },
+   {
+      title: "DevOps Services with Continuous Integration",
+      url: "/services/devops-deployment-continuous-delivery",
+   },
+   {
+      title: "AI Advanced Services",
+      url: "/services/advanced-ai-solutions",
+   },
+   {
+      title: "Custom Saas Solutions ",
+      url: "/services/saas-micro-saas-solutions",
+   },
+];
 
 // Quick Links List
 const quickLinks = [
@@ -13,19 +31,19 @@ const quickLinks = [
       url: "/",
    },
    {
+      title: "About Us",
+      url: "/about",
+   },
+   {
       title: "Services",
       url: "/services",
    },
    {
-      title: "Projects",
-      url: "/projects",
+      title: "Blog",
+      url: "/blog",
    },
    {
-      title: "How We Build SaaS",
-      url: "/how-we-build-saas",
-   },
-   {
-      title: "Contact",
+      title: "Contact Us",
       url: "/contact",
    },
 ];
@@ -44,110 +62,169 @@ const socialMediaList = [
    },
 ];
 
-export default async function Footer() {
-   const serviceList = (await getServices())
-      .sort((a, b) => a.order - b.order)
-      .slice(0, 6)
-      .map((service) => ({
-         title: service.title,
-         url: `/services/${service.slug}`,
-      }));
-
+export default function Footer() {
    return (
-      <footer className="relative mt-[8rem] bg-slate-950 pt-16 text-slate-300 border-t border-white/10">
-         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(6,182,212,0.05),transparent_22%),radial-gradient(circle_at_top_right,rgba(45,212,191,0.05),transparent_18%)] pointer-events-none" />
-         <div className="relative mx-auto grid grid-cols-1 gap-12 pb-16 theme-container md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
-            {/* Logo & About */}
-            <div className="lg:col-span-4">
-               <Link href="/" className="inline-block mb-6">
-                  <Image width={160} height={40} src={logo} alt="Sofgent" />
+      <footer className="relative pt-20 overflow-hidden mt-[10rem] bg-[#2f4858]">
+         <div className="grid grid-cols-4 gap-4 mx-auto mb-20 theme-container md:grid-cols-8 xl:grid-cols-12">
+            {/* Logo */}
+            <div className="col-span-4">
+               <Link href="/">
+                  <Image width={200} height={100} src={logo} alt="logo" />
                </Link>
-               <p className="max-w-[320px] text-sm leading-relaxed text-slate-400 mb-8">
-                  SofGent is an AI Product Studio that launches MVPs fast,
-                  builds custom AI systems, and helps teams rebuild software
-                  for scale.
+               <p className="max-w-[300px] text-white/50 mt-[30px] mb-6">
+                  Sofgent: Innovating Software. Empowering Businesses.
                </p>
-               <div className="flex gap-3">
+               {/* Sofgent is your trusted partner for custom software development,
+          specializing in tailored solutions that drive business growth and
+          efficiency. From scalable platforms to seamless integrations, we
+          deliver innovative software designed to meet your unique needs. */}
+               {/* Social Media */}
+               <div className="flex gap-[15px]">
                   {socialMediaList.map((social, index) => (
                      <a
                         key={index}
                         href={social.link}
                         target="_blank"
                         aria-label={social.name}
-                        className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-400 hover:border-cyan-500/40 hover:bg-cyan-500/10 hover:text-cyan-400 transition-all">
-                        <span className="scale-90">{social.icon}</span>
+                        className="w-[46px] h-[46px] rounded-full flex justify-center items-center border border-white/10 overflow-hidden relative before:inline-block before:absolute before:z-0 before:w-full before:h-full before:bg-brand before:scale-x-0 group hover:before:scale-x-100 before:origin-right hover:before:origin-left before:transition-transform before:ease-out before:duration-300">
+                        <span className="relative z-10">{social.icon}</span>
                      </a>
                   ))}
                </div>
             </div>
-
             {/* Services */}
-            <div className="lg:col-span-3">
-               <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-6">Services</h3>
-               <ul className="space-y-3.5">
+            <div className="col-span-4 md:col-span-3">
+               <h1 className="font-semibold text-white text-18">Services</h1>
+               <ul className="mt-3.5">
                   {serviceList.map((service, index) => (
-                     <li key={index}>
-                        <Link
-                           href={service.url}
-                           className="text-sm text-slate-400 hover:text-cyan-400 transition-colors">
-                           {service.title}
+                     <li key={index} className="">
+                        <Link href={service.url}>
+                           <div className="relative flex items-center gap-2 overflow-hidden font-medium transition-all duration-300 group text-white/50 hover:text-white hover:underline">
+                              <svg
+                                 className="absolute transition-all duration-300 -left-2 group-hover:left-0"
+                                 width="6"
+                                 height="12"
+                                 viewBox="0 0 6 12"
+                                 fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path
+                                    d="M1 1L5 6L1 11"
+                                    stroke="white"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                 />
+                              </svg>
+                              <span className="transition-all duration-300 group-hover:translate-x-4">
+                                 {service.title}
+                              </span>
+                           </div>
                         </Link>
                      </li>
                   ))}
                </ul>
             </div>
-
-            {/* Quick Links */}
-            <div className="lg:col-span-2">
-               <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-6">Company</h3>
-               <ul className="space-y-3.5">
+            {/* Quick Link */}
+            <div className="col-span-4 md:col-span-2">
+               <h1 className="font-semibold text-white text-18">Quick Link</h1>
+               <ul className="mt-3.5">
                   {quickLinks.map((service, index) => (
-                     <li key={index}>
-                        <Link
-                           href={service.url}
-                           className="text-sm text-slate-400 hover:text-cyan-400 transition-colors">
-                           {service.title}
+                     <li key={index} className="">
+                        <Link href={service.url}>
+                           <div className="relative flex items-center gap-2 overflow-hidden font-medium transition-all duration-300 group text-white/50 hover:text-white hover:underline">
+                              <svg
+                                 className="absolute transition-all duration-300 -left-2 group-hover:left-0"
+                                 width="6"
+                                 height="12"
+                                 viewBox="0 0 6 12"
+                                 fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path
+                                    d="M1 1L5 6L1 11"
+                                    stroke="white"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                 />
+                              </svg>
+                              <span className="transition-all duration-300 group-hover:translate-x-4">
+                                 {service.title}
+                              </span>
+                           </div>
                         </Link>
                      </li>
                   ))}
                </ul>
             </div>
-
-            {/* Contact */}
-            <div className="lg:col-span-3">
-               <h3 className="text-sm font-bold uppercase tracking-widest text-white mb-6">Contact Us</h3>
-               <address className="not-italic text-sm text-slate-400 leading-relaxed mb-6">
-                  House - 69 , Road - 06 , Block - A<br/>
-                  Mirpur - 12 , Dhaka - 1216
-               </address>
-               
-               <div className="flex flex-col gap-3">
-                  <a className="inline-flex items-center text-sm text-slate-400 hover:text-cyan-400 transition-colors" href="mailto:contact@sofgent.com">
-                     contact@sofgent.com
-                  </a>
-                  <a className="inline-flex items-center text-sm text-slate-400 hover:text-cyan-400 transition-colors" href="tel:+8801537740365">
-                     +880 1537 740365
-                  </a>
+            {/* Address */}
+            <div className="col-span-4 md:col-span-3">
+               <h1 className="font-semibold text-white text-18">Address</h1>
+               <div className="flex gap-2 items-center relative group font-medium text-white/50 hover:text-white hover:underline transition-all duration-300 mt-3.5">
+                  <span className="transition-all duration-300">
+                     House - 69 , Road - 06 , Block - A , Mirpur - 12 , Dhaka -
+                     1216
+                  </span>
+               </div>
+               <h1 className="font-semibold text-white text-18">Contact</h1>
+               <div className="flex gap-2 items-center relative text-white/50 group font-medium transition-all duration-300 mt-3.5">
+                  <span className="">
+                     <a
+                        className="hover:text-white"
+                        href="mailto:contact@sofgent.com">
+                        contact@sofgent.com
+                     </a>{" "}
+                     <br />
+                     <a className="hover:text-white" href="tel:+88045685299">
+                        01537740365
+                     </a>
+                  </span>
                </div>
             </div>
          </div>
-
-         {/* Bottom Bar */}
-         <div className="relative z-10 border-t border-white/5 bg-slate-950">
-            <div className="mx-auto theme-container">
-               <div className="flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
-                  <div className="text-sm text-slate-500">
-                     <Copyright />
+         <div className="w-full h-[80px] md:h-[65px] bg-[#2f4858] border-t border-brand border-1 relative z-10">
+            <div className="h-full mx-auto theme-container">
+               <div className="flex flex-col items-center justify-between w-full h-full sm:flex-row">
+                  <Copyright />
+                  <div className="relative">
+                     <a
+                        href="#"
+                        aria-label="go top"
+                        className="w-[45px] h-[45px] rounded-full border-[1px] border-brand flex justify-center items-center bg-brand absolute -top-[70px] md:-top-[55px]">
+                        <span>
+                           <svg
+                              width="45"
+                              height="45"
+                              viewBox="0 0 45 45"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <circle
+                                 cx="22.5"
+                                 cy="22.5"
+                                 r="21"
+                                 fill="#326d6d"
+                                 stroke="#326d6d"
+                                 strokeWidth="1"
+                              />
+                              <path
+                                 d="M19 21L23 17M23 17L27 21M23 17V29"
+                                 stroke="white"
+                                 strokeWidth="2"
+                                 strokeLinecap="round"
+                                 strokeLinejoin="round"
+                              />
+                           </svg>
+                        </span>
+                     </a>
                   </div>
-                  <ul className="flex items-center gap-6">
-                     <li>
-                        <Link href="/privacy-policy" className="text-sm text-slate-500 hover:text-slate-300 transition-colors">Privacy Policy</Link>
+                  <ul className="flex items-center sm:space-x-6">
+                     <li className=" hover:text-white hover:underline common-transition text-white/50">
+                        <Link href="privacy-policy">Privacy Policy</Link>
                      </li>
-                     <li>
-                        <Link href="/terms-conditions" className="text-sm text-slate-500 hover:text-slate-300 transition-colors">Terms & Conditions</Link>
+                     <li className=" text-white/50">|</li>
+                     <li className=" hover:text-white hover:underline common-transition text-white/50">
+                        <Link href="terms-conditions">Terms & Conditions</Link>
                      </li>
                   </ul>
-                  <BackToTop />
                </div>
             </div>
          </div>

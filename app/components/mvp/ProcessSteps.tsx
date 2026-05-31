@@ -12,10 +12,10 @@ export default function ProcessSteps() {
               className="rounded-[20px] border border-[#e7e8e9] bg-white p-6 md:p-8 hover:shadow-lg transition-shadow"
             >
               <div className="text-4xl mb-4">{step.icon}</div>
-              <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-4">
+              <div className="inline-block px-3 py-1 bg-brand/10 text-brand text-xs font-semibold rounded-full mb-4">
                 {step.timeline}
               </div>
-              <h3 className="text-xl font-semibold text-main-black mb-3">{step.title}</h3>
+              <h3 className="text-20 font-semibold text-main-black mb-3">{step.title}</h3>
               <p className="text-paragraph mb-4">{step.description}</p>
               <div className="pt-4 border-t border-[#e7e8e9]">
                 <p className="text-sm font-semibold text-main-black mb-1">Outcome</p>

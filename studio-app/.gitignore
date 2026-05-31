@@ -1,6 +1,0 @@
-dist
-.sanity
-node_modules
-.vercel
-.env
-.env.local
