@@ -2,6 +2,7 @@ import { z } from "zod";
 
 export const DiscoverySchema = z.object({
   name: z.string().trim().min(2).max(100),
+  email: z.string().trim().email().max(160),
   company: z.string().trim().min(1).max(120),
   timeline: z.string().trim().min(1).max(60),
   productIdea: z.string().trim().min(10).max(4000),

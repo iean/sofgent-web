@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Code2, Database, Network, Play, FileText, Download } from "lucide-react";
+import Image from "next/image";
+import { Code2, Database, Network, Download } from "lucide-react";
 
 const TOTAL_SLIDES = 3;
 const SLIDE_DURATION_MS = 5000;
@@ -93,40 +94,66 @@ export default function HeroSlider() {
                   </div>
                </div>
 
-               {/* SLIDE 2: Video Player Placeholder */}
+               {/* SLIDE 2: Studio Overview */}
                <div className={`absolute inset-0 flex flex-col justify-center items-center transition-opacity duration-500 ease-in-out ${currentSlide === 1 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}>
-                  <div className="w-full h-full bg-slate-900 rounded-3xl border border-white/5 overflow-hidden relative group cursor-pointer flex flex-col items-center justify-center shadow-inner">
-                     <div className="absolute inset-0 bg-cyan-950 mix-blend-overlay" />
-                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.1),transparent_70%)] pointer-events-none" />
-                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 to-transparent pointer-events-none" />
-                     
-                     <div className="w-20 h-20 rounded-full bg-cyan-500/20 border-2 border-cyan-400 flex items-center justify-center backdrop-blur-md group-hover:scale-110 group-hover:bg-cyan-500/30 transition-all duration-300 shadow-[0_0_30px_rgba(6,182,212,0.4)] z-10 mb-6">
-                        <Play className="w-10 h-10 text-cyan-300 ml-1.5" fill="currentColor" />
+                  <div className="w-full h-full overflow-hidden rounded-3xl border border-white/5 bg-slate-900 shadow-inner relative">
+                     <Image
+                        src="/images/home/sofgent-hero-dashboard.png"
+                        alt="SofGent platform dashboard showing AI product delivery architecture and live system operations."
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover object-center"
+                     />
+                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/45 to-slate-950/15" />
+                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(6,182,212,0.18),transparent_42%)]" />
+
+                     <div className="absolute left-5 top-5 rounded-full border border-cyan-400/20 bg-slate-950/75 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.24em] text-cyan-300 backdrop-blur-md">
+                        Studio overview
                      </div>
-                     <div className="text-center z-10 px-4">
-                        <h3 className="text-2xl font-bold text-white mb-2 shadow-sm tracking-tight group-hover:text-cyan-200 transition-colors">How SofGent Operates</h3>
-                        <p className="text-sm text-cyan-100/70 font-medium">Watch our 2-minute studio overview</p>
+                     <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-7">
+                        <h3 className="max-w-lg text-2xl font-bold tracking-tight text-white sm:text-[30px]">
+                           The delivery system behind faster AI product execution.
+                        </h3>
+                        <p className="mt-3 max-w-xl text-sm leading-6 text-slate-200/80 sm:text-base">
+                           A clear architecture layer, measurable operating metrics, and deployment visibility from the first build sprint.
+                        </p>
                      </div>
                   </div>
                </div>
 
-               {/* SLIDE 3: Pitch Deck */}
+               {/* SLIDE 3: Capability Brief */}
                <div className={`absolute inset-0 flex flex-col justify-center items-center transition-opacity duration-500 ease-in-out ${currentSlide === 2 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}>
-                  <div className="w-full h-full border-2 border-dashed border-cyan-500/20 rounded-3xl bg-cyan-950/10 flex flex-col items-center justify-center p-8 text-center hover:bg-cyan-950/20 hover:border-cyan-500/40 transition-all">
-                     <div className="w-28 h-28 mb-8 rounded-2xl bg-gradient-to-br from-cyan-400 to-teal-600 p-1 shadow-2xl rotate-3 hover:rotate-6 transition-transform">
-                        <div className="w-full h-full bg-slate-900 rounded-xl flex items-center justify-center flex-col gap-2 relative overflow-hidden">
-                           <div className="absolute top-0 right-0 w-10 h-10 bg-cyan-500/20 rounded-bl-xl" />
-                           <FileText className="w-12 h-12 text-cyan-400" />
-                           <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest mt-1">PDF</span>
-                        </div>
+                  <div className="w-full h-full overflow-hidden rounded-3xl border border-cyan-500/20 bg-slate-950/60 relative">
+                     <Image
+                        src="/images/about/studio-delivery-board.png"
+                        alt="SofGent strategy and architecture planning board used as a capability brief cover."
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover object-center"
+                     />
+                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-slate-950/15" />
+                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(45,212,191,0.18),transparent_38%)]" />
+
+                     <div className="absolute left-6 top-6 rounded-full border border-white/10 bg-slate-950/70 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.24em] text-slate-200 backdrop-blur-md">
+                        Capability brief
                      </div>
-                     <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3 tracking-tight">SofGent Pitch Deck</h3>
-                     <p className="text-slate-400 text-sm lg:text-base mb-8 max-w-[300px]">Deep dive into our execution model, technical capabilities, and pricing.</p>
-                     
-                     <a href="/pitch-deck.pdf" target="_blank" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-slate-950 font-bold hover:bg-cyan-50 hover:text-cyan-900 hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)]">
-                        <Download className="w-4 h-4" />
-                        Download Pitch Deck
-                     </a>
+                     <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                        <h3 className="max-w-lg text-2xl font-bold tracking-tight text-white sm:text-[30px]">
+                           Download the SofGent pitch deck.
+                        </h3>
+                        <p className="mt-3 max-w-md text-sm leading-6 text-slate-200/80 sm:text-base">
+                           A short overview of delivery model, architecture priorities, and the types of AI systems we ship.
+                        </p>
+
+                        <a
+                           href="/pitch-deck.pdf"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           className="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 font-bold text-slate-950 shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all hover:scale-105 hover:bg-cyan-50 hover:text-cyan-900">
+                           <Download className="w-4 h-4" />
+                           Download Pitch Deck
+                        </a>
+                     </div>
                   </div>
                </div>
 

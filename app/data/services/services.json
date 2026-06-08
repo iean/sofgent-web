@@ -698,7 +698,7 @@
       "pricing": {
          "from": "From $12,000",
          "model": "Audit + implementation sprint",
-         "note": "Most data foundation engagements ship a first usable pipeline in 2–4 weeks."
+         "note": "Most data foundation engagements ship a first usable pipeline in 2-6 weeks."
       },
       "faqSection": "service:ai-ready-data-engineering",
       "featured": true,

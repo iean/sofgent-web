@@ -86,7 +86,14 @@ const Header = () => {
          <div className="fixed top-0 left-0 z-40 w-full border-b border-slate-200/80 bg-white/90 backdrop-blur-xl supports-[backdrop-filter]:bg-white/82 xl:hidden">
             <div className="mx-auto flex h-[72px] max-w-[1330px] items-center justify-between px-4">
                <Link href="/" aria-label="logo">
-                  <Image width={160} height={40} src={logo} alt="Sofgent Logo" />
+                  <Image
+                     width={389}
+                     height={113}
+                     src={logo}
+                     alt="Sofgent Logo"
+                     priority
+                     className="h-auto w-[160px]"
+                  />
                </Link>
                <button
                   aria-label="Toggle menu"
@@ -136,10 +143,12 @@ const Header = () => {
                <div className="flex h-[84px] items-center justify-between gap-4 px-6 relative z-10 w-full">
                   <Link href="/" aria-label="logo" className="shrink-0 pl-2">
                      <Image
-                        width={180}
-                        height={44}
+                        width={389}
+                        height={113}
                         src={desktopLogo}
                         alt="Sofgent Logo"
+                        priority
+                        className="h-auto w-[180px]"
                      />
                   </Link>
                   <nav className="flex items-center justify-end gap-3 xl:gap-4 overflow-hidden min-w-0">

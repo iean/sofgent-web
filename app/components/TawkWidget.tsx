@@ -1,9 +1,18 @@
+"use client";
+
 import Script from "next/script";
+import { usePathname } from "next/navigation";
 
 const TAWK_TO_SRC =
   "https://embed.tawk.to/69fb290cdd30e51c30efd47e/1jnuhgmvk";
 
 export default function TawkWidget() {
+  const pathname = usePathname();
+
+  if (pathname === "/contact" || pathname === "/launch-your-mvp") {
+    return null;
+  }
+
   return (
     <Script
       id="tawk-to-script"

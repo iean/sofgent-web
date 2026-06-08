@@ -1,6 +1,7 @@
 import BreadCrumb from "@/app/components/common/BreadCrumb";
 import "./style.css";
 import getPageMeta from "@/app/utils/getPageMeta";
+import { CONTACT_TO_EMAIL } from "@/lib/constants";
 import type { Metadata } from "next";
 
 export function generateMetadata(): Metadata {
@@ -328,7 +329,7 @@ export default function TermsCondition() {
                </p>
                <ul className="styled-list-privacy">
                   <li>
-                     <p>By email: contact@sofgent.com</p>
+                     <p>By email: {CONTACT_TO_EMAIL}</p>
                   </li>
                   <li>
                      <p>

@@ -1,5 +1,6 @@
 import { getFaqItems } from "@/lib/content/shared";
 import FaqAccordion from "@/app/components/services/faq/FaqAccordion";
+import FaqStructuredData from "@/app/components/seo/FaqStructuredData";
 import type { ServiceView } from "@/lib/sanity/content";
 
 export default async function ServiceFAQ({ service }: { service: ServiceView }) {
@@ -34,6 +35,7 @@ export default async function ServiceFAQ({ service }: { service: ServiceView }) 
                </div>
             </div>
          </div>
+         <FaqStructuredData items={faqs} />
       </section>
    );
 }

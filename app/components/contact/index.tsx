@@ -4,6 +4,7 @@ import { useState } from "react";
 
 interface FormData {
    name: string;
+   email: string;
    company: string;
    timeline: string;
    productIdea: string;
@@ -18,6 +19,10 @@ const validateField = (name: keyof FormData, value: string) => {
          return value.trim().length < 2
             ? "Name must be at least 2 characters"
             : "";
+      case "email":
+         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())
+            ? ""
+            : "Please enter a valid email address";
       case "company":
          return value.trim().length < 2
             ? "Company must be at least 2 characters"
@@ -37,6 +42,7 @@ const validateField = (name: keyof FormData, value: string) => {
 
 const INITIAL_FORM_DATA: FormData = {
    name: "",
+   email: "",
    company: "",
    timeline: "",
    productIdea: "",
@@ -48,6 +54,7 @@ export default function ContactForm() {
 
    const [errors, setErrors] = useState<FormErrors>({
       name: "",
+      email: "",
       company: "",
       timeline: "",
       productIdea: "",
@@ -85,6 +92,7 @@ export default function ContactForm() {
 
       const nextErrors = {
          name: validateField("name", formData.name),
+         email: validateField("email", formData.email),
          company: validateField("company", formData.company),
          timeline: validateField("timeline", formData.timeline),
          productIdea: validateField("productIdea", formData.productIdea),
@@ -154,14 +162,13 @@ export default function ContactForm() {
       <section className="p-8 md:p-12 h-full flex flex-col justify-center">
          <div className="border-b border-slate-100 pb-8">
             <p className="text-sm font-bold uppercase tracking-widest text-primary">
-               Quick Intake
+               Project Brief
             </p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-               Share your product idea
+               Share the build context
             </h2>
             <p className="mt-4 text-base leading-relaxed text-slate-600">
-               Keep it short. We only need enough context to prepare for a
-               useful first conversation.
+               Keep it short. We only need enough context to prepare a useful first call and recommend the right delivery path.
             </p>
          </div>
 
@@ -199,6 +206,31 @@ export default function ContactForm() {
                      id="contact-name-error"
                      className="mt-2.5 text-sm font-medium text-red-500">
                      {errors.name}
+                  </p>
+               ) : null}
+            </div>
+
+            <div>
+               <label htmlFor="contact-email" className="mb-2.5 block text-sm font-bold text-slate-700">
+                  Work email
+               </label>
+               <input
+                  id="contact-email"
+                  onChange={handleChange}
+                  value={formData.email}
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  placeholder="you@company.com"
+                  aria-invalid={Boolean(errors.email)}
+                  aria-describedby={errors.email ? "contact-email-error" : undefined}
+                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-5 py-3.5 text-slate-900 transition-colors focus:border-primary focus:bg-white focus:outline-none focus:ring-4 focus:ring-primary/10"
+               />
+               {errors.email ? (
+                  <p
+                     id="contact-email-error"
+                     className="mt-2.5 text-sm font-medium text-red-500">
+                     {errors.email}
                   </p>
                ) : null}
             </div>

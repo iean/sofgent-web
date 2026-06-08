@@ -1,5 +1,13 @@
-import { homeConversionContent } from "@/app/content/home-conversion";
 import { getSiteOriginFromEnv } from "@/lib/runtime/deployment";
+
+const SERVICE_TYPES = [
+  "SaaS MVP development",
+  "AI implementation",
+  "Workflow automation",
+  "AI document systems",
+  "AI-ready data engineering",
+  "Custom business systems",
+];
 
 export default function HomeStructuredData() {
   const siteOrigin = getSiteOriginFromEnv();
@@ -11,7 +19,7 @@ export default function HomeStructuredData() {
     description:
       "SofGent builds AI-powered SaaS products, automation systems, and internal business tools fast.",
     areaServed: "Global",
-    serviceType: homeConversionContent.capabilities.map((item) => item.title),
+    serviceType: SERVICE_TYPES,
     knowsAbout: [
       "AI implementation",
       "SaaS MVP development",

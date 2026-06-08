@@ -201,7 +201,7 @@
     "section": "service:ai-ready-data-engineering",
     "order": 4,
     "question": "How long does a data foundation project take?",
-    "answer": "Most first-phase engagements land in 2–4 weeks. We scope the fastest usable version first, then expand from there if you need more sources, more automation, or a deeper AI retrieval layer."
+    "answer": "Most first-phase engagements land in 2-6 weeks. We scope the fastest usable version first, then expand from there if you need more sources, more automation, or a deeper AI retrieval layer."
   },
   {
     "section": "service:document-intelligence-systems",

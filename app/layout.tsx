@@ -3,6 +3,7 @@ import { dmSans, rubik } from "./fonts/fonts";
 import Script from "next/script";
 import type { Metadata } from "next";
 import TawkWidget from "./components/TawkWidget";
+import GlobalStructuredData from "./components/seo/GlobalStructuredData";
 import {
   getSiteOriginFromEnv,
   isPreviewDeployment,
@@ -19,7 +20,7 @@ export function generateMetadata(): Metadata {
       template: "%s | SofGent",
     },
     description:
-      "Premium AI Product Studio. We ship production-ready AI products, SaaS MVPs, and document automation in 2–4 weeks.",
+      "AI product studio for teams that need production-ready SaaS, AI workflows, and internal business systems in 2-6 weeks.",
     openGraph: {
       type: "website",
       siteName: "SofGent",
@@ -27,7 +28,7 @@ export function generateMetadata(): Metadata {
       url: siteOrigin,
       title: "SofGent — Premium AI Product Studio",
       description:
-        "Ship AI products in 2–4 weeks. No prototypes, no tech debt.",
+        "Build production-ready AI products, SaaS systems, and workflow automation in 2-6 weeks.",
       images: [
         {
           url: "/og/default.png",
@@ -41,7 +42,7 @@ export function generateMetadata(): Metadata {
       card: "summary_large_image",
       title: "SofGent — Premium AI Product Studio",
       description:
-        "Ship AI products in 2–4 weeks. No prototypes, no tech debt.",
+        "Build production-ready AI products, SaaS systems, and workflow automation in 2-6 weeks.",
       images: ["/og/default.png"],
     },
     robots: previewDeployment
@@ -86,6 +87,7 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
+        <GlobalStructuredData />
         {children}
         <TawkWidget />
       </body>

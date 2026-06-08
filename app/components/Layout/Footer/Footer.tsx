@@ -3,6 +3,7 @@ import logo from "@assets/images/sofgent-logo-white.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { getServices } from "@/lib/sanity/content";
+import { CONTACT_TO_EMAIL } from "@/lib/constants";
 import BackToTop from "./BackToTop";
 import Copyright from "./Copyright";
 
@@ -17,8 +18,8 @@ const quickLinks = [
       url: "/services",
    },
    {
-      title: "Projects",
-      url: "/projects",
+      title: "Case Studies",
+      url: "/case-studies",
    },
    {
       title: "How We Build SaaS",
@@ -122,8 +123,8 @@ export default async function Footer() {
                </address>
                
                <div className="flex flex-col gap-3">
-                  <a className="inline-flex items-center text-sm text-slate-400 hover:text-cyan-400 transition-colors" href="mailto:contact@sofgent.com">
-                     contact@sofgent.com
+                  <a className="inline-flex items-center text-sm text-slate-400 hover:text-cyan-400 transition-colors" href={`mailto:${CONTACT_TO_EMAIL}`}>
+                     {CONTACT_TO_EMAIL}
                   </a>
                   <a className="inline-flex items-center text-sm text-slate-400 hover:text-cyan-400 transition-colors" href="tel:+8801537740365">
                      +880 1537 740365

@@ -117,8 +117,8 @@ export default async function Services() {
                         Coming soon
                      </p>
                      <p className="text-slate-700">
-                        Services are being authored in studio.sofgent.com.
-                     </p>
+                        Service pages will appear here as new engagements are published.
+                      </p>
                   </div>
                ) : (
                   <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

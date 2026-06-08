@@ -27,6 +27,7 @@ const normalizePayload = (
    if ("company" in payload) {
       const safePayload = sanitizePayload({
          name: payload.name,
+         email: payload.email,
          company: payload.company,
          timeline: payload.timeline,
          productIdea: payload.productIdea,
@@ -37,6 +38,7 @@ const normalizePayload = (
          html: `
            <h2>New Discovery Call Request</h2>
            <p><strong>Name:</strong> ${safePayload.name}</p>
+           <p><strong>Email:</strong> ${safePayload.email}</p>
            <p><strong>Company:</strong> ${safePayload.company}</p>
            <p><strong>Timeline:</strong> ${safePayload.timeline}</p>
            <p><strong>Product Idea:</strong></p>
@@ -44,7 +46,7 @@ const normalizePayload = (
            <hr>
            <p><em>Sent from the SofGent contact form.</em></p>
          `,
-         whatsappMessage: `New Discovery Call Request\n\nName: ${safePayload.name}\nCompany: ${safePayload.company}\nTimeline: ${safePayload.timeline}\n\nProduct Idea:\n${safePayload.productIdea}`,
+         whatsappMessage: `New Discovery Call Request\n\nName: ${safePayload.name}\nEmail: ${safePayload.email}\nCompany: ${safePayload.company}\nTimeline: ${safePayload.timeline}\n\nProduct Idea:\n${safePayload.productIdea}`,
       };
    }
 

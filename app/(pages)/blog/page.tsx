@@ -1,6 +1,6 @@
 import BlogCard from "@/app/components/common/BlogCard";
 import BlogEmptyState from "@/app/components/blog/BlogEmptyState";
-import BreadCrumb from "@/app/components/common/BreadCrumb";
+import PageIntro from "@/app/components/common/PageIntro";
 import { getBlogPosts } from "@/lib/sanity/content";
 import getPageMeta from "@/app/utils/getPageMeta";
 import type { Metadata } from "next";
@@ -16,18 +16,21 @@ const BlogList = async () => {
 
    return (
       <main className="min-h-screen bg-slate-50">
-         <BreadCrumb pageTitle="Blog" currentPage="Blog" to="/blog" />
+         <PageIntro
+            eyebrow="Insights"
+            title="Strategy, architecture, and AI execution for teams that need clarity."
+            description="Notes from the SofGent delivery model: building SaaS products, workflow automation, AI systems, and modernization paths that hold up in production."
+            currentPage="Blog"
+            currentPath="/blog"
+         />
          <section className="w-full py-16 md:py-[130px]">
             <div className="w-full mx-auto theme-container">
                <div className="max-w-3xl">
                   <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
                      Insights
                   </p>
-                  <h2 className="mt-4 text-4xl font-bold tracking-tight text-slate-950 md:text-5xl">
-                     Strategy, architecture, and AI product execution for teams that need clarity.
-                  </h2>
                   <p className="mt-6 text-lg leading-8 text-slate-600">
-                     Articles are now served from Sanity so content can stay shared across preview and production branches.
+                     Practical writing for teams planning AI products, internal systems, modern integrations, and architecture decisions that need to survive real delivery pressure.
                   </p>
                </div>
 
@@ -40,9 +43,9 @@ const BlogList = async () => {
                      </div>
                   ) : (
                      <BlogEmptyState
-                        title="No blog posts are published yet."
-                        description="Once Sanity is configured and posts are published, this page will populate automatically in both preview and production environments."
-                     />
+                        title="No articles are published yet."
+                        description="New strategy notes and implementation guides will appear here as they are published."
+                      />
                   )}
                </div>
             </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { Facebook, Linkedin, Mail, Phone, Sparkles } from "lucide-react";
+import { CONTACT_TO_EMAIL } from "@/lib/constants";
 
 export default function Topbar({ theme = "dark" }: { theme?: "dark" | "light" }) {
    const isDark = theme === "dark";
@@ -22,7 +23,7 @@ export default function Topbar({ theme = "dark" }: { theme?: "dark" | "light" })
 
          <div className="flex items-center gap-2.5">
             <a
-               href="mailto:support@sofgent.com"
+               href={`mailto:${CONTACT_TO_EMAIL}`}
                className={`group inline-flex h-11 items-center gap-2.5 whitespace-nowrap rounded-[16px] border px-4 shadow-sm transition-all duration-300 ${
                   isDark ? "border-white/5 bg-white/5 text-slate-300 hover:border-white/20 hover:text-white" : "border-slate-200/90 bg-white/90 text-slate-700 hover:border-slate-300 hover:text-slate-950"
                }`}>
@@ -32,7 +33,7 @@ export default function Topbar({ theme = "dark" }: { theme?: "dark" | "light" })
                   <Mail className="h-3.5 w-3.5" strokeWidth={1.8} />
                </span>
                <span className="text-[13px] font-semibold tracking-[-0.01em]">
-                  support@sofgent.com
+                  {CONTACT_TO_EMAIL}
                </span>
             </a>
 

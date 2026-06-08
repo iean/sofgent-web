@@ -8,7 +8,6 @@ const STATIC_ROUTES = [
    "/ai-product-studio",
    "/how-we-build-saas",
    "/case-studies",
-   "/projects",
    "/blog",
    "/about",
    "/contact",
