@@ -22,6 +22,40 @@
          { "value": "18d", "label": "From kickoff to production" },
          { "value": "<1%", "label": "Error rate", "hint": "human-reviewed" }
       ],
+      "processPhases": [
+         {
+            "label": "Discovery",
+            "title": "We diagnosed where the manual bottleneck was actually costing the team.",
+            "body": [
+               "The first step was not OCR selection. It was operational diagnosis. We reviewed the document types, exception rates, handoff points, and how much analyst time was really being spent on extraction versus correction.",
+               "That discovery work showed the problem was concentrated in a small number of high-volume document classes, and that the real failure point in earlier pilots was not text extraction alone. It was the absence of schema validation, review routing, and an output format downstream systems could trust."
+            ]
+         },
+         {
+            "label": "Planning & Design",
+            "title": "We designed the process around trust, not just extraction accuracy.",
+            "body": [
+               "Once the workflow was mapped, we defined a canonical schema for the fields operations actually needed, then set confidence thresholds for when data could move forward automatically versus when it had to stop for human review.",
+               "The planning phase also covered queue states, reviewer actions, audit history, and the shape of the reporting layer. That meant the system design was tied to the operating process from the start instead of becoming a generic OCR output dump."
+            ]
+         },
+         {
+            "label": "Implementation",
+            "title": "We built a pipeline with ingestion, extraction, validation, and reviewer controls in one flow.",
+            "body": [
+               "The implementation phase covered S3-based ingestion, OCR processing, field-level extraction, schema validation, and a review queue where analysts could approve or correct low-confidence results without leaving the system.",
+               "Structured outputs landed in Postgres with strict types and a delivery layer that fed downstream reporting and operations systems. That architecture kept the workflow operational instead of experimental."
+            ]
+         },
+         {
+            "label": "Testing & Release",
+            "title": "We validated the pipeline against real documents before moving it into production.",
+            "body": [
+               "Testing focused on the things that usually break these systems in real usage: edge-case documents, low-confidence fields, queue behavior, review ergonomics, and whether corrected records stayed clean in downstream workflows.",
+               "Release happened only after the team could process representative volumes with stable review behavior and a sub-1% post-review error rate. That gave the client confidence to shift analysts out of repetitive entry work and into exception handling."
+            ]
+         }
+      ],
       "problem": [
          "The team was processing thousands of supplier and compliance PDFs per week by hand. Three full-time analysts split their day between data entry, exception triage, and reporting.",
          "Earlier OCR pilots failed because the output had no validation layer and dumped raw text into spreadsheets that no downstream system could trust."
@@ -59,6 +93,40 @@
          { "value": "63%", "label": "Faster answers", "hint": "vs. legacy search" },
          { "value": "4 wks", "label": "Idea to production" },
          { "value": "92%", "label": "Answer-acceptance rate" }
+      ],
+      "processPhases": [
+         {
+            "label": "Discovery",
+            "title": "We started by identifying why previous AI attempts lost trust internally.",
+            "body": [
+               "The discovery phase focused on user behavior rather than model hype. We looked at what support, customer success, and operations teams were actually searching for, where answers lived, and why previous chatbot attempts were rejected.",
+               "That uncovered the real problem: content quality varied, authoritative sources were mixed with outdated ones, and users had no source visibility. Without a retrieval and trust model, no AI layer would have been adopted."
+            ]
+         },
+         {
+            "label": "Planning & Design",
+            "title": "We designed the knowledge system around source control, retrieval quality, and answer trust.",
+            "body": [
+               "Before implementation, we defined the ingestion strategy, chunking rules, freshness logic, metadata model, and the retrieval contract for when the assistant should answer versus when it should say there is not enough context.",
+               "We also designed the operator controls: source linking, feedback capture, and re-ranking improvement loops. That planning work kept the product anchored to knowledge reliability instead of generic chat UX."
+            ]
+         },
+         {
+            "label": "Implementation",
+            "title": "We unified the knowledge sources and built the retrieval stack around operational queries.",
+            "body": [
+               "Implementation covered ingestion from Confluence, Slack archives, Drive documents, and curated SOPs, then moved into indexing, vector retrieval, re-ranking, citation handling, and answer delivery in the internal product surface.",
+               "Each answer was tied back to the chunks used, and the system was built so that missing evidence produced a constrained response instead of an overconfident one."
+            ]
+         },
+         {
+            "label": "Testing & Release",
+            "title": "We tested on real team questions and acceptance behavior, not synthetic demo prompts.",
+            "body": [
+               "Testing focused on repeated support and operations questions, source accuracy, answer acceptance, and whether teams would actually trust the response enough to stop context-switching into Slack or Confluence.",
+               "The release was treated as a knowledge operations rollout, not a chatbot launch. Feedback events were instrumented from day one so weak answers immediately became improvement data instead of silent failure."
+            ]
+         }
       ],
       "problem": [
          "Support, customer success, and operations were all answering the same questions a hundred times a week. Confluence search was unreliable; Slack history was fragmented across years of channels.",
@@ -100,6 +168,40 @@
          { "value": "3.4×", "label": "Faster page loads", "hint": "p95 LCP" },
          { "value": "0", "label": "Tenant data leaks", "hint": "since rebuild" },
          { "value": "Daily", "label": "Deploy cadence", "hint": "previously bi-weekly" }
+      ],
+      "processPhases": [
+         {
+            "label": "Discovery",
+            "title": "We identified the structural issues behind the fragile MVP before rewriting anything.",
+            "body": [
+               "The first phase focused on the product surface, onboarding flow, tenant setup steps, performance bottlenecks, and the release habits that were making every change risky.",
+               "That showed the MVP had outgrown its original architecture. The data model, onboarding process, and deploy pipeline were all forcing engineering time into operational work the product should have handled automatically."
+            ]
+         },
+         {
+            "label": "Planning & Design",
+            "title": "We planned the rebuild around tenancy, performance, and release velocity.",
+            "body": [
+               "Before implementation, we defined the tenant isolation strategy, the catalog service boundaries, storefront rendering model, cache rules, and the deployment path needed to support frequent releases.",
+               "Planning also covered what had to remain stable during migration, what could be rebuilt cleanly, and which metrics would prove the rebuild was commercially better, not just technically cleaner."
+            ]
+         },
+         {
+            "label": "Implementation",
+            "title": "We rebuilt the product foundation while keeping the product aligned to daily operations.",
+            "body": [
+               "Implementation replaced the old schema with tenant-safe structures, introduced a catalog service shared by the storefront and admin, and moved storefront rendering into a faster server-side model with better image and cache behavior.",
+               "At the same time, the deployment workflow was rebuilt so pull requests, previews, tests, and production pushes could happen on a repeatable daily cadence."
+            ]
+         },
+         {
+            "label": "Testing & Release",
+            "title": "We tested both technical quality and operational readiness before the new version became the default.",
+            "body": [
+               "Testing covered tenant isolation, onboarding behavior, real-device page performance, deploy safety, and whether the team could ship and recover confidently without a merge-night ritual.",
+               "Release happened only after onboarding moved into a self-serve path, the p95 load target held, and the team could adopt daily deploys without fear of breaking another tenant."
+            ]
+         }
       ],
       "problem": [
          "The first version shipped in a weekend hackathon and survived 18 months of feature additions before the data model and deploy pipeline started fighting the team.",

@@ -213,6 +213,11 @@ export const CASE_STUDY_QUERY = defineQuery(`
       asset->{ url }
     },
     metrics,
+    processPhases[]{
+      label,
+      title,
+      body
+    },
     problem,
     approach,
     outcome,

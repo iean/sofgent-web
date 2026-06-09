@@ -106,6 +106,11 @@ export type CaseStudyView = {
    architectureImage?: { src: string; alt: string; caption?: string };
    architectureSvg?: "process-pipeline";
    metrics: Array<{ value: string; label: string; hint?: string }>;
+   processPhases?: Array<{
+      label: string;
+      title: string;
+      body?: LocalCaseStudy["problem"] | SanityCaseStudy["problem"];
+   }>;
    problem?: LocalCaseStudy["problem"] | SanityCaseStudy["problem"];
    approach?: LocalCaseStudy["approach"] | SanityCaseStudy["approach"];
    outcome?: LocalCaseStudy["outcome"] | SanityCaseStudy["outcome"];
@@ -155,6 +160,11 @@ function fromSanityFull(item: SanityCaseStudy): CaseStudyView {
       architectureSvg: item.architectureImage?.asset?.url
          ? undefined
          : "process-pipeline",
+      processPhases: item.processPhases?.map((phase) => ({
+         label: phase.label,
+         title: phase.title,
+         body: phase.body,
+      })),
       problem: item.problem,
       approach: item.approach,
       outcome: item.outcome,
@@ -179,12 +189,43 @@ function fromLocal(item: LocalCaseStudy): CaseStudyView {
       architectureImage: item.architectureImage,
       architectureSvg: item.architectureSvg,
       metrics: item.metrics,
+      processPhases: item.processPhases,
       problem: item.problem,
       approach: item.approach,
       outcome: item.outcome,
       techStack: item.techStack,
       seoTitle: item.seoTitle,
       seoDescription: item.seoDescription,
+   };
+}
+
+function mergeCaseStudyViews(
+   primary: CaseStudyView,
+   fallback?: CaseStudyView | null,
+): CaseStudyView {
+   if (!fallback) {
+      return primary;
+   }
+
+   return {
+      ...fallback,
+      ...primary,
+      heroImage: primary.heroImage ?? fallback.heroImage,
+      architectureImage: primary.architectureImage ?? fallback.architectureImage,
+      architectureSvg:
+         primary.architectureImage || primary.architectureSvg
+            ? primary.architectureSvg
+            : fallback.architectureSvg,
+      metrics: primary.metrics.length > 0 ? primary.metrics : fallback.metrics,
+      processPhases: primary.processPhases && primary.processPhases.length > 0
+         ? primary.processPhases
+         : fallback.processPhases,
+      problem: primary.problem && primary.problem.length > 0 ? primary.problem : fallback.problem,
+      approach: primary.approach && primary.approach.length > 0 ? primary.approach : fallback.approach,
+      outcome: primary.outcome && primary.outcome.length > 0 ? primary.outcome : fallback.outcome,
+      techStack: primary.techStack.length > 0 ? primary.techStack : fallback.techStack,
+      seoTitle: primary.seoTitle || fallback.seoTitle,
+      seoDescription: primary.seoDescription || fallback.seoDescription,
    };
 }
 
@@ -214,9 +255,10 @@ export async function getCaseStudyBySlug(
    slug: string,
 ): Promise<CaseStudyView | null> {
    const fallback = LOCAL_CASE_STUDIES.find((item) => item.slug === slug);
+   const fallbackView = fallback ? fromLocal(fallback) : null;
 
    if (!isSanityConfigured) {
-      return fallback ? fromLocal(fallback) : null;
+      return fallbackView;
    }
 
    try {
@@ -227,13 +269,13 @@ export async function getCaseStudyBySlug(
       })) as SanityCaseStudy | null;
 
       if (item) {
-         return fromSanityFull(item);
+         return mergeCaseStudyViews(fromSanityFull(item), fallbackView);
       }
    } catch (error) {
       logSanityError(`Failed to fetch case study for slug "${slug}"`, error);
    }
 
-   return fallback ? fromLocal(fallback) : null;
+   return fallbackView;
 }
 
 export async function getCaseStudySlugs(): Promise<string[]> {

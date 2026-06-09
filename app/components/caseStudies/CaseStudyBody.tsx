@@ -51,9 +51,9 @@ function SectionRenderer({ section }: { section: Section }) {
 
 export default function CaseStudyBody({ study }: { study: CaseStudyView }) {
    const sections: Section[] = [
-      { eyebrow: "The Problem", heading: "Where the engagement started.", content: study.problem },
-      { eyebrow: "Our Approach", heading: "How we cut the scope and de-risked the build.", content: study.approach },
-      { eyebrow: "The Outcome", heading: "What changed after the system shipped.", content: study.outcome },
+      { eyebrow: "Problem Context", heading: "What the client was dealing with before the build started.", content: study.problem },
+      { eyebrow: "Strategic Approach", heading: "How we framed the solution and kept the work commercially focused.", content: study.approach },
+      { eyebrow: "Business Outcome", heading: "What changed after release and why it mattered operationally.", content: study.outcome },
    ];
 
    const hasAny = sections.some((section) => {

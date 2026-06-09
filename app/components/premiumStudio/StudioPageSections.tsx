@@ -209,6 +209,9 @@ export function ProblemSection({ content }: { content: ProblemSectionContent }) 
 }
 
 export function ProcessSection({ content }: { content: ProcessSectionContent }) {
+   const processGridClass =
+      content.steps.length > 4 ? "md:grid-cols-2 xl:grid-cols-3" : "md:grid-cols-2 xl:grid-cols-4";
+
    return (
       <section id="process" className="py-24 bg-white border-y border-slate-100">
          <div className="theme-container">
@@ -231,11 +234,13 @@ export function ProcessSection({ content }: { content: ProcessSectionContent }) 
                   className="mt-12 min-h-[300px]"
                />
             ) : null}
-            <div className="relative mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-               <div
-                  className="pointer-events-none absolute left-[10%] right-[10%] top-[26px] z-0 hidden h-[3px] bg-gradient-to-r from-transparent via-brand/25 to-transparent xl:block"
-                  aria-hidden
-               />
+            <div className={`relative mt-16 grid gap-6 ${processGridClass}`}>
+               {content.steps.length <= 4 ? (
+                  <div
+                     className="pointer-events-none absolute left-[10%] right-[10%] top-[26px] z-0 hidden h-[3px] bg-gradient-to-r from-transparent via-brand/25 to-transparent xl:block"
+                     aria-hidden
+                  />
+               ) : null}
                {content.steps.map((step) => (
                   <article key={step.title} className="relative z-10 rounded-[2.5rem] border border-slate-100 bg-white p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all hover:border-primary/20 hover:shadow-lg">
                      <div className="flex items-center justify-between gap-4 mb-8">

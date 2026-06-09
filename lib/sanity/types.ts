@@ -45,6 +45,12 @@ export interface SanityMetric {
   hint?: string;
 }
 
+export interface SanityCaseStudyProcessPhase {
+  label: string;
+  title: string;
+  body?: PortableTextBlock[];
+}
+
 export interface SanityCaseStudyListItem {
   _id: string;
   title: string;
@@ -61,6 +67,7 @@ export interface SanityCaseStudyListItem {
 
 export interface SanityCaseStudy extends SanityCaseStudyListItem {
   architectureImage?: SanityImageWithCaption;
+  processPhases?: SanityCaseStudyProcessPhase[];
   problem?: PortableTextBlock[];
   approach?: PortableTextBlock[];
   outcome?: PortableTextBlock[];

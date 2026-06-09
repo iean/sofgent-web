@@ -123,6 +123,13 @@ async function buildCaseStudyDocument(item) {
       label: metric.label,
       hint: metric.hint,
     })),
+    processPhases: (item.processPhases || []).map((phase) => ({
+      _type: "processPhase",
+      _key: crypto.randomUUID(),
+      label: phase.label,
+      title: phase.title,
+      body: createPortableTextBlocks(phase.body),
+    })),
     problem: createPortableTextBlocks(item.problem),
     approach: createPortableTextBlocks(item.approach),
     outcome: createPortableTextBlocks(item.outcome),

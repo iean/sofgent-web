@@ -1,4 +1,4 @@
-import BreadCrumb from "@/app/components/common/BreadCrumb";
+import PageIntro from "@/app/components/common/PageIntro";
 import StudioPage from "@/app/components/premiumStudio/StudioPage";
 import { howWeBuildSaaSContent } from "@/app/components/premiumStudio/content";
 import getPageMeta from "@/app/utils/getPageMeta";
@@ -11,10 +11,13 @@ export function generateMetadata(): Metadata {
 export default function HowWeBuildSaaSPage() {
    return (
       <>
-         <BreadCrumb
-            pageTitle="How We Build SaaS"
+         <PageIntro
+            eyebrow="SaaS Delivery Process"
+            title="How SofGent Builds SaaS Products That Can Actually Launch"
+            description="A founder-facing breakdown of how product scoping, architecture, software development, release preparation, and production launch work inside a disciplined SaaS engagement."
             currentPage="How We Build SaaS"
-            to="/how-we-build-saas"
+            currentPath="/how-we-build-saas"
+            compact
          />
          <StudioPage content={howWeBuildSaaSContent} />
       </>

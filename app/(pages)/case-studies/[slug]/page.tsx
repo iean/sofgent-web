@@ -7,6 +7,7 @@ import CaseStudyArchitecture from "@/app/components/caseStudies/CaseStudyArchite
 import CaseStudyBody from "@/app/components/caseStudies/CaseStudyBody";
 import CaseStudyHero from "@/app/components/caseStudies/CaseStudyHero";
 import CaseStudyMetrics from "@/app/components/caseStudies/CaseStudyMetrics";
+import CaseStudyProcess from "@/app/components/caseStudies/CaseStudyProcess";
 import CaseStudyTechStack from "@/app/components/caseStudies/CaseStudyTechStack";
 import { CALENDLY_URL } from "@/lib/constants";
 import {
@@ -78,6 +79,7 @@ export default async function CaseStudyDetailPage({
 
          <CaseStudyHero study={study} />
          <CaseStudyMetrics study={study} />
+         <CaseStudyProcess study={study} />
          <CaseStudyArchitecture study={study} />
          <CaseStudyBody study={study} />
          <CaseStudyTechStack study={study} />

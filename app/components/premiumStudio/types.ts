@@ -17,7 +17,7 @@ export type PlaceholderContent = {
    /** Pass through to next/image for LCP (e.g. hero) */
    imagePriority?: boolean;
    /** Sharp vector illustration (preferred over AI raster where clarity matters) */
-   illustration?: "process-pipeline";
+   illustration?: "process-pipeline" | "saas-delivery-workflow" | "release-architecture";
 };
 
 export type StudioSectionIntro = {

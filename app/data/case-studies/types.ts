@@ -14,6 +14,12 @@ export interface LocalCaseStudyImage {
    caption?: string;
 }
 
+export interface LocalCaseStudyProcessPhase {
+   label: string;
+   title: string;
+   body: string[];
+}
+
 export interface LocalCaseStudy {
    slug: string;
    title: string;
@@ -28,6 +34,7 @@ export interface LocalCaseStudy {
    /** When set, the detail page renders the in-app SVG illustration instead. */
    architectureSvg?: "process-pipeline";
    metrics: LocalCaseStudyMetric[];
+   processPhases?: LocalCaseStudyProcessPhase[];
    problem: string[];
    approach: string[];
    outcome: string[];

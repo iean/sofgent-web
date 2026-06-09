@@ -31,63 +31,59 @@ import type { StudioPageContent } from "./types";
 
 export const howWeBuildSaaSContent: StudioPageContent = {
    hero: {
-      eyebrow: "SaaS Delivery System",
+      eyebrow: "SaaS Release Process",
       headingIcon: Rocket,
-      title: "From Product Idea to Launch-Ready SaaS in Weeks",
+      title: "How SofGent takes a SaaS product from product decision to production release.",
       description:
-         "We turn rough concepts, founder notes, and early requirements into a structured build plan, production-grade architecture, and a launch-ready product that can survive real users.",
+         "Entrepreneurs do not just need developers. They need a delivery process that turns product intent into a scoped roadmap, a release-safe architecture, and software that can survive onboarding, billing, integrations, and real users.",
       badges: [
-         { label: "Built for real users", icon: Users },
+         { label: "Architecture before code", icon: Layers3 },
          { label: "Launch in 2-6 weeks", icon: Clock },
-         { label: "AI-assisted delivery", icon: Sparkles },
+         { label: "Release-ready systems", icon: ShieldCheck },
       ],
       highlights: [
          {
-            text: "Product strategy, AI leverage, and engineering in one delivery team.",
-            icon: Layers3,
+            text: "Product scoping, technical design, build, and release handled in one execution model.",
+            icon: Workflow,
          },
          {
-            text: "Built for launches, investor demos, and real customer onboarding.",
+            text: "Designed for customer onboarding, internal operations, and version-two growth decisions.",
             icon: Rocket,
          },
          {
-            text: "Clear scope, clear milestones, and no bloated build cycle.",
+            text: "Clear milestones, working demos, and release discipline instead of open-ended delivery.",
             icon: Target,
          },
       ],
       primaryCta: {
-         label: "Book Strategy Call",
+         label: "Book Process Review",
          href: CALENDLY_URL,
       },
       secondaryCta: {
-         label: "See How It Works",
+         label: "See Release Process",
          href: "#process",
       },
       visual: {
-         label: "[IMAGE: SaaS product architecture]",
+         label: "[DIAGRAM: SaaS release architecture]",
          description:
-            "Placeholder for the system view: app layers, data model, integrations, and launch environment.",
-         image: {
-            src: "/images/ai-product-studio/hero-architecture.png",
-            alt: "Isometric illustration of a SaaS product architecture with services, data layer, and integrations",
-         },
-         imagePriority: true,
+            "Application core, data layer, integrations, staging, and production release path.",
+         illustration: "release-architecture",
       },
    },
    trustBar: [
-      { label: "Built for founders, CTOs, and product teams", icon: Users },
-      { label: "Launch in weeks, not months", icon: Rocket },
-      { label: "AI + Product + Engineering under one roof", icon: Layers3 },
+      { label: "Built for founders, operators, and product teams", icon: Users },
+      { label: "Release path defined before sprint velocity", icon: Rocket },
+      { label: "Product, architecture, and engineering in one team", icon: Layers3 },
    ],
    audience: {
-      eyebrow: "Who This Is For",
-      title: "Built for teams that need product clarity and execution in the same room.",
+      eyebrow: "Who This Process Fits",
+      title: "Built for entrepreneurs choosing a delivery partner, not shopping for generic development hours.",
       description:
-         "This offer fits teams that cannot afford months of drift, unclear ownership, or a prototype that collapses as soon as real users show up.",
+         "This page is for teams evaluating whether the process behind the build is strong enough to protect budget, release quality, and the next stage of growth.",
       visual: {
          label: "[IMAGE: founder and product team fit diagram]",
          description:
-            "Placeholder for the ideal customer profile: founders, product teams, operators, and SaaS rebuilds.",
+            "Founders, product teams, operators, and SaaS rebuilds.",
          image: {
             src: "/images/ai-product-studio/audience-fit.png",
             alt: "Diagram of founders, product teams, and operators connecting into a single delivery system",
@@ -96,39 +92,39 @@ export const howWeBuildSaaSContent: StudioPageContent = {
       items: [
          {
             icon: Users,
-            title: "Founders with a product idea and no room for drift",
+            title: "Founders who need clarity before they commit budget",
             description:
-               "You need a team that can translate vision into scope, architecture, and a launch path fast.",
+               "You need a team that can translate rough product intent into scope, architecture, and a release plan without wasting a month in abstraction.",
          },
          {
             icon: Workflow,
-            title: "Businesses turning a service into software",
+            title: "Operators turning a service workflow into software",
             description:
-               "You want to productize a manual workflow without losing control of how the operation actually works.",
+               "You want to productize a manual process without losing the underlying business logic that makes the operation work.",
          },
          {
             icon: ShieldCheck,
-            title: "Teams rebuilding a fragile first version",
+            title: "Teams replacing a fragile first version",
             description:
-               "Your version one proved the need, but now the product needs a stronger system underneath it.",
+               "The first build proved demand, but now you need better tenancy, auth, billing, data structure, and release safety.",
          },
          {
             icon: Gauge,
-            title: "Product teams under pressure to launch properly",
+            title: "Product teams under pressure to release with confidence",
             description:
-               "You need speed, but not at the cost of structure, deployment quality, or future scale.",
+               "You need speed, but not at the cost of staging discipline, deployment quality, or future scale decisions.",
          },
       ],
    },
    problem: {
-      eyebrow: "The Real Problem",
-      title: "Most SaaS builds do not fail on effort. They fail on structure.",
+      eyebrow: "Why Builds Slip",
+      title: "Most SaaS projects do not fail because people worked too little. They fail because the release system was weak.",
       description:
-         "What looks like a delivery problem is usually a system problem: weak scope, fragmented execution, and no one owning the product end to end.",
+         "When founders evaluate a build partner, the real question is not who can code. It is who can reduce release risk, protect scope, and keep business decisions attached to technical decisions.",
       visual: {
          label: "[IMAGE: launch blockers map]",
          description:
-            "Placeholder for scope creep, fragmented execution, and launch-risk visualization.",
+            "Scope creep, fragmented execution, and release-risk visualization.",
          image: {
             src: "/images/ai-product-studio/problem-fragmented.png",
             alt: "Illustration of fragmented project work versus a unified launch system",
@@ -137,155 +133,166 @@ export const howWeBuildSaaSContent: StudioPageContent = {
       items: [
          {
             icon: Target,
-            title: "The product scope keeps moving",
+            title: "The commercial goal is never translated into a release scope",
             description:
-               "Requirements stay loose, priorities shift weekly, and the build never gets tight enough to ship on time.",
+               "Requirements stay loose, priorities change every week, and the team never gets tight enough around one release-worthy product decision.",
          },
          {
             icon: Layers3,
-            title: "Teams build before the system is clear",
+            title: "Teams start building before the architecture is resolved",
             description:
-               "Design, backend, frontend, and AI work split apart, so decisions break across the stack and delivery slows down.",
+               "Frontend, backend, AI, and ops concerns split apart early, so important decisions break across the stack and slow everything down later.",
          },
          {
             icon: Search,
-            title: "Launches slip because architecture was never planned",
+            title: "Release blockers surface late",
             description:
-               "What looked fast in week one becomes expensive when auth, billing, data, and deployment collide late in the process.",
+               "Auth, billing, roles, staging, data migration, and integrations only become real near the end, when they are most expensive to fix.",
          },
          {
             icon: Gauge,
-            title: "What ships is hard to demo, sell, or scale",
+            title: "What ships looks complete but is not operationally ready",
             description:
-               "You end up with a prototype that looks finished but is not ready for users, investors, or growth.",
+               "The interface may be present, but the release lacks the internal controls, feedback loops, and deployment discipline needed for real usage.",
          },
       ],
    },
    process: {
-      eyebrow: "Your Process",
-      title: "A four-step build system that keeps momentum high and risk controlled.",
+      eyebrow: "Our Delivery Workflow",
+      title: "A six-stage process that moves from product decision to production release without breaking scope or quality.",
       description:
-         "We compress strategy, architecture, build, and launch into one delivery model that is fast enough for founders and disciplined enough for serious product teams.",
+         "This is the part most founders look for when choosing a technical partner: how decisions move, where risk gets caught, and what has to exist before a release is considered ready.",
       visual: {
-         label: "[PIPELINE DIAGRAM: Audit -> Structure -> Build -> Deploy]",
+         label: "[PIPELINE DIAGRAM: Discovery -> Architecture -> Build -> QA -> UAT -> Release]",
          description:
-            "Placeholder for the delivery flow from product shaping to deployment and feedback loops.",
-         illustration: "process-pipeline",
+            "The delivery flow from product shaping to release and feedback loops.",
+         illustration: "saas-delivery-workflow",
       },
       steps: [
          {
             icon: Search,
-            step: "Step 1",
-            title: "Audit",
+            step: "Stage 1",
+            title: "Discovery & decision framing",
             description:
-               "We audit the idea, offer, user flow, revenue path, and technical risk before writing production code.",
+               "We align the business goal, the target user, the first release scope, and the technical risk before production work starts.",
          },
          {
             icon: Layers3,
-            step: "Step 2",
-            title: "Structure",
+            step: "Stage 2",
+            title: "Architecture & backlog design",
             description:
-               "We lock the architecture, schema, backlog, delivery milestones, and launch constraints so the team can move with confidence.",
+               "We define the app structure, auth model, data model, integrations, AI touchpoints, and delivery milestones so scope stays stable.",
          },
          {
             icon: Hammer,
-            step: "Step 3",
-            title: "Build",
+            step: "Stage 3",
+            title: "Sprint-based software development",
             description:
-               "UI, backend, integrations, AI workflows, and QA move in one sprint instead of in disconnected handoffs.",
+               "UI, backend, workflows, APIs, and operator tooling are built in one coordinated sprint loop with weekly progress visibility.",
+         },
+         {
+            icon: ShieldCheck,
+            step: "Stage 4",
+            title: "Internal QA & release hardening",
+            description:
+               "We validate key flows, roles, integrations, and failure paths so the release does not break the first time real users touch it.",
+         },
+         {
+            icon: ClipboardList,
+            step: "Stage 5",
+            title: "Staging, demos, and user acceptance",
+            description:
+               "The build moves through staging with demo-ready flows, stakeholder review, and the final fixes required before production.",
          },
          {
             icon: Rocket,
-            step: "Step 4",
-            title: "Deploy",
+            step: "Stage 6",
+            title: "Production release & next-iteration planning",
             description:
-               "We ship, instrument feedback, and hand over a system ready for customers, demos, and the next release.",
+               "We deploy, monitor, gather first feedback, and shape the next release based on real usage instead of assumption.",
          },
       ],
    },
    deliverables: {
-      eyebrow: "What You Actually Deliver",
-      title: "A product system the business can launch, operate, and improve.",
+      eyebrow: "What The Business Gets",
+      title: "A release-ready SaaS product with the technical layers entrepreneurs usually find out about too late.",
       description:
-         "This is not a vague sprint. It is a working delivery package designed to move you toward launch and revenue with less rework later.",
+         "Good software delivery is not just a UI and an API. It is the set of release assets, technical decisions, and operator controls that let the business launch without improvising.",
       visual: {
-         label: "[IMAGE: product dashboard preview]",
+         label: "[DIAGRAM: release architecture and operating layers]",
          description:
-            "Placeholder for admin, analytics, environment status, and release dashboard preview.",
-         image: {
-            src: "/images/ai-product-studio/deliverables-dashboard.png",
-            alt: "Product dashboard preview with analytics, environment status, and release notes",
-         },
+            "Admin, app surface, services, integrations, staging, and production flow.",
+         illustration: "release-architecture",
       },
       items: [
          {
             icon: Target,
-            title: "Launch blueprint",
+            title: "Release blueprint",
             description:
-               "A focused scope, delivery roadmap, and technical plan aligned to the first meaningful release.",
+               "A defined release scope, milestone plan, and decision framework aligned to the first commercial launch.",
          },
          {
             icon: BrainCircuit,
-            title: "AI-ready product architecture",
+            title: "Production-grade product architecture",
             description:
-               "Data model, auth, services, integrations, and deployment decisions made for version two, not just week one.",
+               "Data model, roles, tenancy, integrations, and deployment structure decided early enough to avoid expensive rebuilds.",
          },
          {
             icon: ServerCog,
-            title: "Production build pipeline",
+            title: "Release pipeline and deployment controls",
             description:
-               "A maintainable codebase, deployment workflow, QA coverage, and launch environment built for real usage.",
+               "A maintainable codebase, staging path, QA coverage, observability, and production deployment setup built for live use.",
          },
          {
             icon: LayoutDashboard,
             title: "Admin, APIs, and operator tooling",
             description:
-               "The interfaces and integration surface required to run the product after launch without chaos.",
+               "The internal surfaces required to support onboarding, operations, support, reporting, and the next release cycle.",
          },
       ],
    },
    transformation: {
-      eyebrow: "Before vs After",
-      title: "The engagement changes more than the codebase.",
+      eyebrow: "What Changes",
+      title: "The value is not just the code. It is the shift from uncertain build effort to a product the business can actually release.",
       description:
-         "The real value is a product system the company can actually run, sell, and grow without guessing every next move.",
+         "Entrepreneurs are usually comparing two risks: spending money without getting a releasable product, or delaying too long and losing momentum. The right process changes both.",
       visual: {
          label: "[IMAGE: workflow transformation board]",
          description:
-            "Placeholder for the shift from vague scope and fragmented work to launch-ready product operations.",
+            "The shift from vague scope and fragmented work to launch-ready product operations.",
          image: {
             src: "/images/ai-product-studio/transformation-before-after.png",
             alt: "Before-and-after view: vague scope versus a launch-ready product operation",
          },
       },
       before: {
-         title: "Before SofGent",
+         title: "Before a disciplined release process",
          points: [
-            "Loose requirements and no decision framework",
-            "Freelancers or agencies moving in different directions",
+            "Loose requirements and no release decision framework",
+            "Frontend, backend, and ops concerns handled separately",
             "Prototype thinking instead of launch discipline",
-            "No confidence around demo readiness, onboarding, or scale",
+            "No confidence around onboarding, support, or production readiness",
          ],
       },
       after: {
          title: "After SofGent",
          points: [
-            "A clear build plan with product and technical ownership",
-            "One connected system across UX, app, data, and AI",
-            "A launch-ready MVP that can handle real users",
-            "A foundation built for iteration, analytics, and growth",
+            "A clear build plan with product and technical ownership attached",
+            "One connected system across product, app, data, and release logic",
+            "A launch-ready SaaS product that can handle real users and real workflows",
+            "A foundation built for iteration, analytics, and operational growth",
          ],
       },
    },
    useCases: {
-      eyebrow: "Use Cases",
-      title: "Where this delivery model creates real leverage.",
+      eyebrow: "When This Process Wins",
+      title: "Where an architecture-first release process creates the most leverage.",
       description:
-         "We use the same system whether you are launching a new SaaS offer or fixing a product that never got properly structured.",
+         "We use the same decision model whether you are launching a new SaaS offer, productizing a service workflow, or rebuilding a product that outgrew its first version.",
       visual: {
          label: "[IMAGE: SaaS growth use case grid]",
          description:
-            "Placeholder for founder MVPs, productized services, rebuilds, and AI-enabled product workflows.",
+            "Founder MVPs, productized services, rebuilds, and AI-enabled product workflows.",
          image: {
             src: "/images/ai-product-studio/use-cases-board.png",
             alt: "Grid of SaaS use cases including MVPs, productized services, and rebuilds",
@@ -294,43 +301,43 @@ export const howWeBuildSaaSContent: StudioPageContent = {
       items: [
          {
             icon: Users,
-            title: "Founder idea -> investor-ready MVP",
+            title: "Founder idea -> launch-ready MVP",
             description:
-               "Turn a raw product concept into a system you can demo, test, and start selling.",
+               "Turn a raw product concept into software you can demo, onboard users into, and improve through real release cycles.",
             outcome: "Faster fundraising conversations and earlier customer traction.",
          },
          {
             icon: Workflow,
             title: "Manual workflow -> productized SaaS",
             description:
-               "Convert a service-heavy process into a repeatable software experience customers can actually use.",
+               "Convert a service-heavy internal or client-facing process into a repeatable product with real operator controls.",
             outcome: "Higher margins and a more scalable operating model.",
          },
          {
             icon: ShieldCheck,
-            title: "Prototype -> scalable rebuild",
+            title: "Prototype -> releasable rebuild",
             description:
-               "Replace the fragile first version with a production-ready foundation that can carry the next stage.",
+               "Replace the fragile first version with a stronger architecture before scale and customer expectations go up.",
             outcome: "Less rework, fewer outages, and better delivery confidence.",
          },
          {
             icon: Bot,
             title: "AI concept -> usable workflow",
             description:
-               "Wrap AI features inside a product users can trust and teams can manage without manual patchwork.",
+               "Wrap AI capability inside a product or internal system people can actually operate without manual patchwork.",
             outcome: "Real adoption instead of a demo that never reaches operations.",
          },
       ],
    },
    whySofGent: {
       eyebrow: "Why SofGent",
-      title: "This is premium product delivery, not outsourced task completion.",
+      title: "Why this process is different from buying generic development capacity.",
       description:
-         "Teams pay more for this model because it protects the business from slow launches, weak architecture, and expensive rebuilds later.",
+         "Entrepreneurs choose this model when they want release quality, decision clarity, and technical ownership - not just extra hands writing code against a vague brief.",
       visual: {
          label: "[IMAGE: delivery authority stack]",
          description:
-            "Placeholder for product ownership, engineering coverage, AI workflow design, and launch discipline.",
+            "Product ownership, engineering coverage, AI workflow design, and launch discipline.",
          image: {
             src: "/images/ai-product-studio/why-control-layer.png",
             alt: "Layered delivery stack covering product, engineering, AI, and launch discipline",
@@ -339,42 +346,42 @@ export const howWeBuildSaaSContent: StudioPageContent = {
       items: [
          {
             icon: ShieldCheck,
-            title: "We build systems, not demos",
+            title: "We build for release, not just for demo day",
             description:
-               "The goal is a product the business can sell, support, and grow, not a polished prototype that breaks under use.",
+               "The goal is software the business can sell, support, and operate, not a polished prototype that fails under real usage.",
          },
          {
             icon: Target,
-            title: "We think like product owners, not developers",
+            title: "We think like product owners, not ticket processors",
             description:
-               "Every decision is pushed through the lens of launch readiness, business value, and what users actually need first.",
+               "Every decision is filtered through launch readiness, business value, and what the first release actually has to prove.",
          },
          {
             icon: BrainCircuit,
-            title: "We deliver production-ready AI, not experiments",
+            title: "We keep business logic close to technical decisions",
             description:
-               "AI is folded into the product system with structure, workflows, and control, not bolted on as a novelty feature.",
+               "Scope, architecture, integrations, release timing, and operator workflow are handled together instead of in isolated handoffs.",
          },
          {
             icon: ServerCog,
-            title: "We keep architecture close to business outcomes",
+            title: "We design for version two while shipping version one",
             description:
-               "The technical foundation is shaped around onboarding, revenue paths, integrations, and the next stage of scale.",
+               "The technical foundation is shaped around onboarding, billing, data integrity, and the next stage of scale while still moving fast now.",
          },
       ],
    },
    midCta: {
-      eyebrow: "Middle CTA",
-      title: "Discuss the product before you spend the next month building the wrong scope.",
+      eyebrow: "Release Review",
+      title: "Discuss the product before you spend the next month building the wrong release scope.",
       description:
-         "A focused strategy conversation is usually enough to expose scope creep, architecture risk, and the fastest path to a product that can actually launch.",
+         "A short process review is usually enough to expose weak scope, missing release steps, and the technical risks most teams discover too late.",
       headingIcon: Lightbulb,
       primaryCta: {
          label: "Discuss Your Product",
          href: "/contact",
       },
       secondaryCta: {
-         label: "Build My SaaS",
+         label: "Get Release Advice",
          href: "/contact",
       },
       visual: {
@@ -389,13 +396,13 @@ export const howWeBuildSaaSContent: StudioPageContent = {
    },
    engagement: {
       eyebrow: "Engagement Model",
-      title: "How we work",
+      title: "What the engagement actually looks like from week one to release.",
       description:
-         "Every engagement is shaped to move from uncertainty to launch without dragging the process out or bloating the team.",
+         "The engagement is designed to move from uncertainty to production release without dragging the process out or bloating the team before it is necessary.",
       visual: {
-         label: "[DIAGRAM: Week 1 audit -> Weeks 2-4 build -> Weeks 4-6 launch]",
+         label: "[DIAGRAM: Week 1 decision framing -> Weeks 2-4 build -> Weeks 4-6 release]",
          description:
-            "Placeholder for the timeline from discovery and architecture through build and release.",
+            "Timeline from discovery and architecture through build and release.",
          image: {
             src: "/images/ai-product-studio/engagement-timeline.png",
             alt: "Engagement timeline from week-1 discovery through build and launch",
@@ -404,40 +411,40 @@ export const howWeBuildSaaSContent: StudioPageContent = {
       phases: [
          {
             window: "Week 1",
-            title: "Discovery + Audit",
+            title: "Discovery + architecture audit",
             icon: ClipboardList,
             description:
-               "We define the product outcome, cut scope, map the architecture, and surface risks before build velocity matters.",
+               "We define the product outcome, cut scope, map the architecture, and surface release risks before velocity matters.",
          },
          {
             window: "Weeks 2-4",
-            title: "Build",
+            title: "Build + internal release prep",
             icon: Code2,
             description:
-               "The product is designed, developed, integrated, and tested with one team moving against a shared plan.",
+               "The product is designed, developed, integrated, and tested with one team moving against a shared release plan.",
          },
          {
             window: "Weeks 4-6",
-            title: "Launch",
+            title: "Launch + iteration plan",
             icon: Rocket,
             description:
-               "We deploy, stabilize, onboard initial users, and turn feedback into the next roadmap instead of ending at handoff.",
+               "We deploy, stabilize, onboard initial users, and convert real feedback into the next release roadmap instead of stopping at handoff.",
          },
       ],
    },
    cta: {
-      eyebrow: "Strong CTA",
-      title: "Let's Build Your SaaS Product",
+      eyebrow: "Next Step",
+      title: "See whether your product idea is ready for the release process it actually needs.",
       description:
-         "If the product matters, the build system matters. We can map the fastest route from rough idea to a launch-ready SaaS platform with real technical confidence.",
+         "If the product matters, the release system matters. We can map the fastest route from rough idea or fragile MVP to a SaaS platform with real technical confidence.",
       headingIcon: Rocket,
-      urgency: "Limited onboarding slots per month",
+      urgency: "Limited onboarding slots for hands-on build engagements",
       primaryCta: {
          label: "Book a Free Strategy Call",
          href: CALENDLY_URL,
       },
       secondaryCta: {
-         label: "Get a Data Audit",
+         label: "Send Product Details",
          href: "/contact",
       },
       visual: {

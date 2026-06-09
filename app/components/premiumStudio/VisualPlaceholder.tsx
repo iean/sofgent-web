@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import ProcessPipelineIllustration from "./illustrations/ProcessPipelineIllustration";
+import ReleaseArchitectureIllustration from "./illustrations/ReleaseArchitectureIllustration";
+import SaaSDeliveryWorkflowIllustration from "./illustrations/SaaSDeliveryWorkflowIllustration";
 
 type VisualPlaceholderProps = {
    label: string;
@@ -12,7 +14,7 @@ type VisualPlaceholderProps = {
       alt: string;
    };
    imagePriority?: boolean;
-   illustration?: "process-pipeline";
+   illustration?: "process-pipeline" | "saas-delivery-workflow" | "release-architecture";
 };
 
 export default function VisualPlaceholder({
@@ -38,6 +40,38 @@ export default function VisualPlaceholder({
                className
             )}>
             <ProcessPipelineIllustration className="h-auto w-full" />
+            <figcaption className="sr-only">
+               {label}. {description}
+            </figcaption>
+         </figure>
+      );
+   }
+
+   if (illustration === "saas-delivery-workflow") {
+      return (
+         <figure
+            className={twMerge(
+               "relative w-full overflow-hidden rounded-[28px] border border-slate-200/90 bg-[#07111f] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.25)]",
+               tone === "dark" ? "ring-1 ring-white/10" : "",
+               className
+            )}>
+            <SaaSDeliveryWorkflowIllustration className="h-auto w-full" />
+            <figcaption className="sr-only">
+               {label}. {description}
+            </figcaption>
+         </figure>
+      );
+   }
+
+   if (illustration === "release-architecture") {
+      return (
+         <figure
+            className={twMerge(
+               "relative w-full overflow-hidden rounded-[28px] border border-slate-200/90 bg-[#07111f] shadow-[0_20px_50px_-20px_rgba(0,0,0,0.25)]",
+               tone === "dark" ? "ring-1 ring-white/10" : "",
+               className
+            )}>
+            <ReleaseArchitectureIllustration className="h-auto w-full" />
             <figcaption className="sr-only">
                {label}. {description}
             </figcaption>

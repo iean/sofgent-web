@@ -118,6 +118,49 @@ export const caseStudyType = defineType({
       validation: (rule) => rule.max(5),
     }),
     defineField({
+      name: "processPhases",
+      title: "Process phases",
+      type: "array",
+      description:
+        "Discovery, planning, implementation, testing, and other execution phases that explain how the work unfolded.",
+      of: [
+        defineField({
+          type: "object",
+          name: "processPhase",
+          fields: [
+            defineField({
+              name: "label",
+              title: "Label",
+              type: "string",
+              description: "Example: 'Discovery' or 'Implementation & Testing'.",
+              validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: "title",
+              title: "Title",
+              type: "string",
+              description: "Short client-facing phase title.",
+              validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: "body",
+              title: "Body",
+              type: "array",
+              of: [{ type: "block" }],
+              validation: (rule) => rule.required().min(1),
+            }),
+          ],
+          preview: {
+            select: {
+              title: "title",
+              subtitle: "label",
+            },
+          },
+        }),
+      ],
+      validation: (rule) => rule.max(6),
+    }),
+    defineField({
       name: "problem",
       title: "The problem",
       type: "array",
