@@ -1,15 +1,15 @@
 {
   "/": {
-    "title": "Custom Software Development Agency | SofGent",
-    "description": "SofGent is a results-driven custom software development agency offering scalable, secure, and tailored digital solutions. Build smarter with adaptive software today."
+    "title": "AI Product Studio for Operations Teams | SofGent",
+    "description": "SofGent builds AI apps, internal AI tools, and AI-powered SaaS products for operations teams with architecture-first delivery."
   },
   "/about": {
     "title": "About SofGent | Trusted Custom Software Partner",
     "description": "Learn about SofGent’s mission, team, and commitment to delivering innovative, scalable AI software solutions with a focus on quality, agility, and client success."
   },
   "/services": {
-    "title": "Enterprise Software Development Services | Sofgent",
-    "description": "Explore SofGent’s wide range of Enterprise Software Development Services including custom software, AI solutions, SaaS development, DevOps, testing."
+    "title": "AI Product Studio Services and SaaS Delivery | SofGent",
+    "description": "Explore SofGent’s AI Product Studio services for AI app delivery, internal AI tools, and SaaS MVP development for operations teams."
   },
   "/projects": {
     "title": "Our Projects | Custom AI Software Solutions Delivered",
@@ -24,8 +24,12 @@
     "description": "Have a software idea or project? Contact SofGent today for a consultation. Let's build secure, scalable, and tailored AI Driven Solutions together."
   },
   "/how-we-build-saas": {
-    "title": "How We Build Scalable SaaS Products | SofGent",
-    "description": "Learn how SofGent builds secure, scalable SaaS platforms from MVP to scale. Our proven 4-step delivery process, enterprise-tested tech stack, and post-launch support ensure production-ready products without costly rewrites."
+    "title": "How SofGent Builds AI Products and SaaS | SofGent",
+    "description": "See how SofGent scopes, architects, builds, tests, and launches AI apps, internal AI tools, and SaaS products for operations teams."
+  },
+  "/ai-product-studio": {
+    "title": "AI Product Studio | AI Apps and SaaS for Operations Teams",
+    "description": "SofGent builds AI apps, AI-powered internal tools, and SaaS products for operations teams."
   },
   "/services/custom-software-development": {
     "title": "Custom Software Development Services | Scalable Solutions",

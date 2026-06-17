@@ -1,0 +1,447 @@
+[    3072ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[    3073ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[    3141ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[    3141ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[    3333ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[    3333ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[    3403ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[    3403ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[    3693ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[    3693ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[    3763ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[    3763ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[    4203ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[    4203ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[    4273ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[    4273ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[    5106ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[    5106ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[    5224ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[    5224ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[    6850ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[    6850ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[    6983ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[    6984ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[    7303ms] [ERROR] Warning: Cannot update a component (`%s`) while rendering a different component (`%s`). To locate the bad setState() call inside `%s`, follow the stack trace as described in https://reactjs.org/link/setstate-in-render%s HotReload AuthBoundary AuthBoundary 
+    at AuthBoundary (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:75493:70)
+    at UserColorManagerProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:5342:70)
+    at LayerProvider (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/_chunks-es/_visual-editing.mjs:3150:70)
+    at et (webpack-internal:///(app-pages-browser)/./node_modules/styled-components/dist/styled-components.browser.esm.js:31:23055)
+    at ThemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/_chunks-es/_visual-editing.mjs:450:70)
+    at StudioThemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:76929:70)
+    at RouterHistoryProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70116:70)
+    at eval (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70130:70)
+    at ActiveWorkspaceMatcher (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70257:70)
+    at WorkspacesProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70097:70)
+    at StudioRootErrorHandler (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:76142:5)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/index.mjs:247:1)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/_chunks-es/generate-help-url.esm.mjs:94:3)
+    at StudioErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:72376:5)
+    at ToastProvider (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/index.mjs:1349:70)
+    at et (webpack-internal:///(app-pages-browser)/./node_modules/styled-components/dist/styled-components.browser.esm.js:31:23055)
+    at ThemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/_chunks-es/_visual-editing.mjs:450:70)
+    at ColorThemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70401:70)
+    at ColorSchemeLocalStorageProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70423:70)
+    at ColorSchemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70410:70)
+    at StudioProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:77411:70)
+    at Studio (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:77446:70)
+    at div
+    at NextStudioLayoutComponent (webpack-internal:///(app-pages-browser)/./node_modules/next-sanity/dist/_chunks-es/NextStudioNoScript.js:16:35)
+    at StyledComponentsRegistry (webpack-internal:///(app-pages-browser)/./node_modules/next-sanity/dist/_chunks-es/NextStudio.js:58:3)
+    at NextStudioComponent (webpack-internal:///(app-pages-browser)/./node_modules/next-sanity/dist/_chunks-es/NextStudio.js:77:3)
+    at Suspense
+    at NextStudioLazyClientComponent
+    at StudioClient
+    at BailoutToCSR (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-bailout-to-csr.js:13:11)
+    at Suspense
+    at LoadableComponent (Server)
+    at StudioPage (Server)
+    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)
+    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)
+    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)
+    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)
+    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)
+    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)
+    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)
+    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)
+    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)
+    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)
+    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)
+    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)
+    at body
+    at html
+    at RootLayout (Server)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)
+    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)
+    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)
+    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)
+    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)
+    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)
+    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11) @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[    7306ms] CorsOriginError: CorsOriginError
+    at getCurrentUser (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:5712:13)
+    at async eval (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:5755:27)
+[    7312ms] CorsOriginError: CorsOriginError
+    at getCurrentUser (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:5712:13)
+    at async eval (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:5755:27)
+[    7312ms] [ERROR] The above error occurred in the <AuthBoundary> component:
+
+    at AuthBoundary (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:75493:70)
+    at UserColorManagerProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:5342:70)
+    at LayerProvider (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/_chunks-es/_visual-editing.mjs:3150:70)
+    at et (webpack-internal:///(app-pages-browser)/./node_modules/styled-components/dist/styled-components.browser.esm.js:31:23055)
+    at ThemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/_chunks-es/_visual-editing.mjs:450:70)
+    at StudioThemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:76929:70)
+    at RouterHistoryProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70116:70)
+    at eval (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70130:70)
+    at ActiveWorkspaceMatcher (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70257:70)
+    at WorkspacesProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70097:70)
+    at StudioRootErrorHandler (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:76142:5)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/index.mjs:247:1)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/_chunks-es/generate-help-url.esm.mjs:94:3)
+    at StudioErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:72376:5)
+    at ToastProvider (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/index.mjs:1349:70)
+    at et (webpack-internal:///(app-pages-browser)/./node_modules/styled-components/dist/styled-components.browser.esm.js:31:23055)
+    at ThemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/_chunks-es/_visual-editing.mjs:450:70)
+    at ColorThemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70401:70)
+    at ColorSchemeLocalStorageProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70423:70)
+    at ColorSchemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70410:70)
+    at StudioProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:77411:70)
+    at Studio (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:77446:70)
+    at div
+    at NextStudioLayoutComponent (webpack-internal:///(app-pages-browser)/./node_modules/next-sanity/dist/_chunks-es/NextStudioNoScript.js:16:35)
+    at StyledComponentsRegistry (webpack-internal:///(app-pages-browser)/./node_modules/next-sanity/dist/_chunks-es/NextStudio.js:58:3)
+    at NextStudioComponent (webpack-internal:///(app-pages-browser)/./node_modules/next-sanity/dist/_chunks-es/NextStudio.js:77:3)
+    at Suspense
+    at NextStudioLazyClientComponent
+    at StudioClient
+    at BailoutToCSR (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-bailout-to-csr.js:13:11)
+    at Suspense
+    at LoadableComponent (Server)
+    at StudioPage (Server)
+    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)
+    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)
+    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)
+    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)
+    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)
+    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)
+    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)
+    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)
+    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)
+    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)
+    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)
+    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)
+    at body
+    at html
+    at RootLayout (Server)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)
+    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)
+    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)
+    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)
+    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)
+    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)
+    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary. @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[  600821ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[  600821ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[  600892ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[  600892ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[  600961ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[  600961ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[  601071ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[  601071ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[  601131ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[  601131ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[  601303ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[  601303ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[  601401ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[  601401ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[  601490ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[  601491ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[  601661ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[  601661ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[  601977ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[  601978ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[  602072ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[  602073ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[  602215ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[  602215ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[  602893ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[  602894ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[  602995ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[  602995ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[  603082ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[  603082ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[  604632ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[  604632ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[  604697ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[  604698ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[  604836ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[  604837ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[  605883ms] CorsOriginError: CorsOriginError
+    at getCurrentUser (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:5712:13)
+    at async eval (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:5755:27)
+[  605885ms] CorsOriginError: CorsOriginError
+    at getCurrentUser (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:5712:13)
+    at async eval (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:5755:27)
+[  605886ms] [ERROR] The above error occurred in the <AuthBoundary> component:
+
+    at AuthBoundary (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:75493:70)
+    at UserColorManagerProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:5342:70)
+    at LayerProvider (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/_chunks-es/_visual-editing.mjs:3150:70)
+    at et (webpack-internal:///(app-pages-browser)/./node_modules/styled-components/dist/styled-components.browser.esm.js:31:23055)
+    at ThemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/_chunks-es/_visual-editing.mjs:450:70)
+    at StudioThemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:76929:70)
+    at RouterHistoryProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70116:70)
+    at eval (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70130:70)
+    at ActiveWorkspaceMatcher (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70257:70)
+    at WorkspacesProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70097:70)
+    at StudioRootErrorHandler (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:76142:5)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/index.mjs:247:1)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/_chunks-es/generate-help-url.esm.mjs:94:3)
+    at StudioErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:72376:5)
+    at ToastProvider (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/index.mjs:1349:70)
+    at et (webpack-internal:///(app-pages-browser)/./node_modules/styled-components/dist/styled-components.browser.esm.js:31:23055)
+    at ThemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/_chunks-es/_visual-editing.mjs:450:70)
+    at ColorThemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70401:70)
+    at ColorSchemeLocalStorageProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70423:70)
+    at ColorSchemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70410:70)
+    at StudioProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:77411:70)
+    at Studio (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:77446:70)
+    at div
+    at NextStudioLayoutComponent (webpack-internal:///(app-pages-browser)/./node_modules/next-sanity/dist/_chunks-es/NextStudioNoScript.js:16:35)
+    at StyledComponentsRegistry (webpack-internal:///(app-pages-browser)/./node_modules/next-sanity/dist/_chunks-es/NextStudio.js:58:3)
+    at NextStudioComponent (webpack-internal:///(app-pages-browser)/./node_modules/next-sanity/dist/_chunks-es/NextStudio.js:77:3)
+    at Suspense
+    at NextStudioLazyClientComponent
+    at StudioClient
+    at BailoutToCSR (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-bailout-to-csr.js:13:11)
+    at Suspense
+    at LoadableComponent (Server)
+    at StudioPage (Server)
+    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)
+    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)
+    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)
+    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)
+    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)
+    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)
+    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)
+    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)
+    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)
+    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)
+    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)
+    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)
+    at body
+    at html
+    at RootLayout (Server)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)
+    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)
+    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)
+    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)
+    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)
+    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)
+    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary. @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32
+[ 1452890ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[ 1452890ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[ 1453049ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[ 1453049ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[ 1453120ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[ 1453121ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[ 1453190ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[ 1453190ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[ 1453280ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[ 1453280ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[ 1453350ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[ 1453350ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[ 1453510ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[ 1453510ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[ 1453579ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[ 1453579ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[ 1453650ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[ 1453650ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[ 1454039ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[ 1454040ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[ 1454109ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[ 1454110ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[ 1454180ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[ 1454180ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[ 1454959ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[ 1454960ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[ 1455049ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[ 1455050ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[ 1455120ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[ 1455120ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[ 1456700ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[ 1456700ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[ 1456810ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[ 1456810ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[ 1456880ms] [ERROR] Access to XMLHttpRequest at 'https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/studio:0
+[ 1456880ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://2cv744jx.api.sanity.io/v2021-06-07/users/me?tag=sanity.studio.users.get-current:0
+[ 1457733ms] CorsOriginError: CorsOriginError
+    at getCurrentUser (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:5712:13)
+    at async eval (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:5755:27)
+[ 1457734ms] CorsOriginError: CorsOriginError
+    at getCurrentUser (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:5712:13)
+    at async eval (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:5755:27)
+[ 1457734ms] [ERROR] The above error occurred in the <AuthBoundary> component:
+
+    at AuthBoundary (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:75493:70)
+    at UserColorManagerProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:5342:70)
+    at LayerProvider (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/_chunks-es/_visual-editing.mjs:3150:70)
+    at et (webpack-internal:///(app-pages-browser)/./node_modules/styled-components/dist/styled-components.browser.esm.js:31:23055)
+    at ThemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/_chunks-es/_visual-editing.mjs:450:70)
+    at StudioThemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:76929:70)
+    at RouterHistoryProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70116:70)
+    at eval (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70130:70)
+    at ActiveWorkspaceMatcher (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70257:70)
+    at WorkspacesProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70097:70)
+    at StudioRootErrorHandler (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:76142:5)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/index.mjs:247:1)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/_chunks-es/generate-help-url.esm.mjs:94:3)
+    at StudioErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:72376:5)
+    at ToastProvider (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/index.mjs:1349:70)
+    at et (webpack-internal:///(app-pages-browser)/./node_modules/styled-components/dist/styled-components.browser.esm.js:31:23055)
+    at ThemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/@sanity/ui/dist/_chunks-es/_visual-editing.mjs:450:70)
+    at ColorThemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70401:70)
+    at ColorSchemeLocalStorageProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70423:70)
+    at ColorSchemeProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:70410:70)
+    at StudioProvider (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:77411:70)
+    at Studio (webpack-internal:///(app-pages-browser)/./node_modules/sanity/lib/index.mjs:77446:70)
+    at div
+    at NextStudioLayoutComponent (webpack-internal:///(app-pages-browser)/./node_modules/next-sanity/dist/_chunks-es/NextStudioNoScript.js:16:35)
+    at StyledComponentsRegistry (webpack-internal:///(app-pages-browser)/./node_modules/next-sanity/dist/_chunks-es/NextStudio.js:58:3)
+    at NextStudioComponent (webpack-internal:///(app-pages-browser)/./node_modules/next-sanity/dist/_chunks-es/NextStudio.js:77:3)
+    at Suspense
+    at NextStudioLazyClientComponent
+    at StudioClient
+    at BailoutToCSR (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-bailout-to-csr.js:13:11)
+    at Suspense
+    at LoadableComponent (Server)
+    at StudioPage (Server)
+    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)
+    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)
+    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)
+    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)
+    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)
+    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)
+    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)
+    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)
+    at InnerLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:243:11)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at LoadingBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:349:11)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at InnerScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:153:9)
+    at ScrollAndFocusHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:228:11)
+    at RenderFromTemplateContext (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js:16:44)
+    at OuterLayoutRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js:370:11)
+    at body
+    at html
+    at RootLayout (Server)
+    at RedirectErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:74:9)
+    at RedirectBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/redirect-boundary.js:82:11)
+    at NotFoundErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:76:9)
+    at NotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/not-found-boundary.js:84:11)
+    at DevRootNotFoundBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/dev-root-not-found-boundary.js:33:11)
+    at ReactDevOverlay (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/ReactDevOverlay.js:87:9)
+    at HotReload (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:321:11)
+    at Router (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:207:11)
+    at ErrorBoundaryHandler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:113:9)
+    at ErrorBoundary (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/error-boundary.js:160:11)
+    at AppRouter (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/components/app-router.js:585:13)
+    at ServerRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:112:27)
+    at Root (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:117:11)
+
+React will try to recreate this component tree from scratch using the error boundary you provided, ErrorBoundary. @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/app-index.js:32

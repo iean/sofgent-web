@@ -1,0 +1,343 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e4]:
+      - link "logo" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Sofgent Logo" [ref=e6]
+      - button "Toggle menu" [ref=e7] [cursor=pointer]:
+        - img [ref=e8]
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - img [ref=e16]
+          - text: Premium AI Product Studio
+        - heading "Build your AI product in 2–4 weeks." [level=1] [ref=e19]
+        - paragraph [ref=e20]: From idea to production-ready system.
+        - paragraph [ref=e21]: SofGent builds production-ready AI systems, SaaS platforms, document automation tools, and internal business software fast.
+        - generic [ref=e22]:
+          - link "Book a Free Strategy Call" [ref=e23] [cursor=pointer]:
+            - /url: https://calendly.com/sofgent
+            - text: Book a Free Strategy Call
+            - img [ref=e24]
+          - link "See Our Work" [ref=e26] [cursor=pointer]:
+            - /url: "#portfolio"
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e31]:
+            - generic [ref=e36]: POST /api/v1/orchestrate
+            - generic [ref=e37]:
+              - generic [ref=e39]:
+                - img [ref=e41]
+                - generic [ref=e46]:
+                  - paragraph [ref=e47]: Data Ingestion
+                  - paragraph [ref=e48]: Unstructured inputs securely parsed
+              - generic [ref=e49]:
+                - img [ref=e51]
+                - generic [ref=e58]:
+                  - paragraph [ref=e59]: AI Processing
+                  - paragraph [ref=e60]: Semantic routing & inference
+              - generic [ref=e61]:
+                - img [ref=e63]
+                - generic [ref=e68]:
+                  - paragraph [ref=e69]: Production App
+                  - paragraph [ref=e70]: Structured UI & Webhooks out
+          - generic:
+            - generic:
+              - generic:
+                - img
+              - generic:
+                - heading "How SofGent Operates" [level=3]
+                - paragraph: Watch our 2-minute studio overview
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                  - generic: PDF
+              - heading "SofGent Pitch Deck" [level=3]
+              - paragraph: Deep dive into our execution model, technical capabilities, and pricing.
+              - link "Download Pitch Deck":
+                - /url: /pitch-deck.pdf
+                - img
+                - text: Download Pitch Deck
+        - generic [ref=e71]:
+          - button "Go to slide 1" [ref=e72] [cursor=pointer]
+          - button "Go to slide 2" [ref=e73] [cursor=pointer]
+          - button "Go to slide 3" [ref=e74] [cursor=pointer]
+    - generic [ref=e76]:
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - img [ref=e79]
+          - text: 2–4 week delivery
+        - generic [ref=e82]:
+          - img [ref=e83]
+          - text: Reduce manual work by up to 80%
+        - generic [ref=e95]:
+          - img [ref=e96]
+          - text: AI-ready systems from day one
+        - generic [ref=e102]:
+          - img [ref=e103]
+          - text: Production-ready (no demos)
+      - generic [ref=e108]:
+        - heading "Expertise matching your ambitions." [level=2] [ref=e109]
+        - paragraph [ref=e110]: We do not build generic landing pages. We build technically complex systems with clear business ROI.
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - generic [ref=e113]:
+            - img [ref=e115]
+            - heading "AI Document Automation" [level=3] [ref=e120]
+          - heading "Turn your documents into structured data automatically" [level=4] [ref=e121]
+          - paragraph [ref=e122]: We build OCR pipelines, extraction logic, and validation schemas to replace manual data entry for financial, legal, and operational documents.
+          - generic [ref=e123]:
+            - generic [ref=e124]:
+              - img [ref=e125]
+              - generic [ref=e128]: Processing 50k+ documents daily for clients
+            - generic [ref=e129]:
+              - generic [ref=e130]: OCR + Extraction
+              - generic [ref=e131]: Validation
+              - generic [ref=e132]: Structured Output
+        - generic [ref=e133]:
+          - generic [ref=e134]:
+            - img [ref=e136]
+            - heading "AI SaaS MVP Builder" [level=3] [ref=e141]
+          - heading "We turn your idea into a working SaaS in 14 days" [level=4] [ref=e142]
+          - paragraph [ref=e143]: From database architecture to full-stack frontend and AI integration, we launch your core product so you can acquire users and raise capital.
+          - generic [ref=e144]:
+            - generic [ref=e145]:
+              - img [ref=e146]
+              - generic [ref=e149]: Delivered 12+ production MVPs last year
+            - generic [ref=e150]:
+              - generic [ref=e151]: Full SaaS
+              - generic [ref=e152]: AI Features
+              - generic [ref=e153]: Deployed System
+        - generic [ref=e154]:
+          - generic [ref=e155]:
+            - img [ref=e157]
+            - heading "Internal AI Tools" [level=3] [ref=e162]
+          - heading "Replace manual workflows with AI systems" [level=4] [ref=e163]
+          - paragraph [ref=e164]: Stop relying on spreadsheets and disjointed apps. We build secure internal dashboards and automated workflows powered by your proprietary data.
+          - generic [ref=e165]:
+            - generic [ref=e166]:
+              - img [ref=e167]
+              - generic [ref=e170]: Reduced manual operations by up to 80%
+            - generic [ref=e171]:
+              - generic [ref=e172]: Dashboards
+              - generic [ref=e173]: Automation
+              - generic [ref=e174]: AI Workflows
+      - generic [ref=e176]:
+        - generic [ref=e177]:
+          - heading "Who We Work With" [level=3] [ref=e178]
+          - generic [ref=e179]:
+            - generic [ref=e180]:
+              - img [ref=e182]
+              - generic [ref=e186]: Founders scaling SaaS products & MVPs
+            - generic [ref=e187]:
+              - img [ref=e189]
+              - generic [ref=e192]: Fintech & legal teams replacing manual workflows
+            - generic [ref=e193]:
+              - img [ref=e195]
+              - generic [ref=e200]: Enterprises preparing legacy data for AI adoption
+        - generic [ref=e201]:
+          - heading "How We Deliver" [level=3] [ref=e202]
+          - generic [ref=e203]:
+            - generic [ref=e205]:
+              - generic [ref=e206]: "1"
+              - generic [ref=e207]: Architecture & Planning
+            - generic [ref=e208]:
+              - generic [ref=e209]: "2"
+              - generic [ref=e210]: Build Core System & Data Layer
+            - generic [ref=e211]:
+              - generic [ref=e212]: "3"
+              - generic [ref=e213]: Deploy with Scalable AI Workflows
+      - generic [ref=e214]:
+        - generic [ref=e215]:
+          - heading "We look beyond just code. We design systems that actually work in production." [level=3] [ref=e216]
+          - list [ref=e217]:
+            - listitem [ref=e218]:
+              - img [ref=e219]
+              - text: Full-stack + AI + DevOps in one team
+            - listitem [ref=e222]:
+              - img [ref=e223]
+              - text: Built for real business workflows & scale
+            - listitem [ref=e226]:
+              - img [ref=e227]
+              - text: Architecture first, no fragile prototypes
+        - img [ref=e232]
+      - generic [ref=e236]:
+        - heading "Have a use case in mind?" [level=2] [ref=e237]
+        - generic [ref=e238]:
+          - link "Book AI Strategy Call" [ref=e239] [cursor=pointer]:
+            - /url: https://calendly.com/sofgent
+          - link "Discuss Your Project" [ref=e240] [cursor=pointer]:
+            - /url: /contact
+    - generic [ref=e242]:
+      - generic [ref=e243]:
+        - heading "Launch fast, without breaking things." [level=2] [ref=e244]
+        - paragraph [ref=e245]: Our structured 3-week delivery model ensures you go to market with a stable, scalable foundation.
+      - generic [ref=e246]:
+        - generic [ref=e248]:
+          - generic [ref=e249]:
+            - img [ref=e250]
+            - generic [ref=e253]: Week 1
+          - heading "Architecture & Design" [level=3] [ref=e254]
+          - paragraph [ref=e255]: We map the database schemas, API routes, UX flow, and AI integration points before writing code.
+        - generic [ref=e256]:
+          - generic [ref=e257]:
+            - img [ref=e258]
+            - generic [ref=e261]: Week 2
+          - heading "Core Build & AI Logic" [level=3] [ref=e262]
+          - paragraph [ref=e263]: We construct the backend infrastructure, train/connect the AI models, and build the frontend interface.
+        - generic [ref=e264]:
+          - generic [ref=e265]:
+            - img [ref=e266]
+            - generic [ref=e269]: Week 3
+          - heading "Testing & Deployment" [level=3] [ref=e270]
+          - paragraph [ref=e271]: We perform security checks, optimize queries, deploy to production, and hand over the keys.
+    - generic [ref=e273]:
+      - generic [ref=e274]:
+        - generic [ref=e275]:
+          - paragraph [ref=e276]: Proven Architecture
+          - heading "What we’ve shipped to production." [level=2] [ref=e277]
+        - link "Explore all case studies" [ref=e278] [cursor=pointer]:
+          - /url: /case-studies
+          - text: Explore all case studies
+          - img [ref=e279]
+      - generic [ref=e281]:
+        - generic [ref=e284]:
+          - paragraph [ref=e285]: Internal Tooling
+          - heading "AI Knowledge Platform" [level=3] [ref=e286]
+          - paragraph [ref=e287]: Turned isolated company wikis and PDFs into a centralized RAG assistant.
+          - generic [ref=e288]:
+            - text: View Architecture
+            - img [ref=e289]
+        - generic [ref=e293]:
+          - paragraph [ref=e294]: Fintech Data Pipeline
+          - heading "Bank Document Automation" [level=3] [ref=e295]
+          - paragraph [ref=e296]: Automated the extraction of KYB/KYC documents directly into core banking tables.
+          - generic [ref=e297]:
+            - text: View Architecture
+            - img [ref=e298]
+        - generic [ref=e302]:
+          - paragraph [ref=e303]: SaaS Infrastructure
+          - heading "Multi-tenant E-commerce Builder" [level=3] [ref=e304]
+          - paragraph [ref=e305]: Built the core provisioning engine for dynamic store creation and inventory management.
+          - generic [ref=e306]:
+            - text: View Architecture
+            - img [ref=e307]
+        - generic [ref=e311]:
+          - paragraph [ref=e312]: AI Workflow
+          - heading "RAG / Document Intelligence" [level=3] [ref=e313]
+          - paragraph [ref=e314]: Deployed a secure, permission-aware semantic search pipeline for legal teams.
+          - generic [ref=e315]:
+            - text: View Architecture
+            - img [ref=e316]
+    - generic [ref=e321]:
+      - generic [ref=e322]:
+        - paragraph [ref=e323]: Why SofGent
+        - heading "We speak code, architecture, and business." [level=2] [ref=e324]:
+          - text: We speak code,
+          - text: architecture, and business.
+      - generic [ref=e325]:
+        - generic [ref=e326]:
+          - img [ref=e327]
+          - heading "Speed Without Tech Debt" [level=3] [ref=e330]
+          - paragraph [ref=e331]: Most agencies build fragile MVPs. We engineer scalable data models and secure infrastructure from day one, allowing you to launch in weeks and seamlessly pivot or scale later.
+        - generic [ref=e332]:
+          - img [ref=e333]
+          - heading "ROI-Driven Automation" [level=3] [ref=e337]
+          - paragraph [ref=e338]: We don't just write code—we solve operational bottlenecks. We map your specific market workflows and deploy automation that slashes overhead costs and improves gross margins.
+        - generic [ref=e339]:
+          - img [ref=e340]
+          - heading "Predictable Model" [level=3] [ref=e343]
+          - paragraph [ref=e344]: Stop paying for endless hourly billing with unaligned incentives. We operate with fixed-scope delivery sprints, offering absolute clarity on technical deliverables and business value.
+        - generic [ref=e345]:
+          - img [ref=e346]
+          - heading "End-to-End Capabilities" [level=3] [ref=e350]
+          - paragraph [ref=e351]: Avoid the friction of managing fractured teams. From complex AI semantic routing to polished user interfaces and backend orchestration, we deliver the complete product under one roof.
+    - generic [ref=e355]:
+      - img [ref=e357]
+      - heading "Have an idea, workflow, or product to launch?" [level=2] [ref=e361]
+      - paragraph [ref=e362]: Let’s turn it into a working AI system.
+      - link "Book a Free Strategy Call" [ref=e363] [cursor=pointer]:
+        - /url: https://calendly.com/sofgent
+    - generic [ref=e364]:
+      - generic [ref=e365]:
+        - generic [ref=e366]:
+          - link "Sofgent" [ref=e367] [cursor=pointer]:
+            - /url: /
+            - img "Sofgent" [ref=e368]
+          - paragraph [ref=e369]: SofGent is an AI Product Studio that launches MVPs fast, builds custom AI systems, and helps teams rebuild software for scale.
+          - generic [ref=e370]:
+            - link "Facebook" [ref=e371] [cursor=pointer]:
+              - /url: https://www.facebook.com/people/Sofgent/61564357926545/
+              - img [ref=e373]
+            - link "Linkedin" [ref=e375] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/sofgent/
+              - img [ref=e377]
+        - generic [ref=e379]:
+          - heading "Services" [level=3] [ref=e380]
+          - list [ref=e381]:
+            - listitem [ref=e382]:
+              - link "Launch Your SaaS MVP in 30 Days" [ref=e383] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e384]:
+              - link "Custom AI Systems for Your Business" [ref=e385] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e386]:
+              - link "AI-Ready Data Engineering" [ref=e387] [cursor=pointer]:
+                - /url: /services/ai-ready-data-engineering
+            - listitem [ref=e388]:
+              - link "Document Intelligence Systems" [ref=e389] [cursor=pointer]:
+                - /url: /services/document-intelligence-systems
+            - listitem [ref=e390]:
+              - link "Fix, Rebuild, and Scale Your Product" [ref=e391] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e392]:
+              - link "How We Build SaaS" [ref=e393] [cursor=pointer]:
+                - /url: /how-we-build-saas
+        - generic [ref=e394]:
+          - heading "Company" [level=3] [ref=e395]
+          - list [ref=e396]:
+            - listitem [ref=e397]:
+              - link "Home" [ref=e398] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e399]:
+              - link "Services" [ref=e400] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e401]:
+              - link "Projects" [ref=e402] [cursor=pointer]:
+                - /url: /projects
+            - listitem [ref=e403]:
+              - link "How We Build SaaS" [ref=e404] [cursor=pointer]:
+                - /url: /how-we-build-saas
+            - listitem [ref=e405]:
+              - link "Contact" [ref=e406] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e407]:
+          - heading "Contact Us" [level=3] [ref=e408]
+          - generic [ref=e409]:
+            - text: House - 69 , Road - 06 , Block - A
+            - text: Mirpur - 12 , Dhaka - 1216
+          - generic [ref=e410]:
+            - link "contact@sofgent.com" [ref=e411] [cursor=pointer]:
+              - /url: mailto:contact@sofgent.com
+            - link "+880 1537 740365" [ref=e412] [cursor=pointer]:
+              - /url: tel:+8801537740365
+      - generic [ref=e415]:
+        - generic [ref=e417]: 2026 © All rights reserved by SofGent
+        - list [ref=e418]:
+          - listitem [ref=e419]:
+            - link "Privacy Policy" [ref=e420] [cursor=pointer]:
+              - /url: /privacy-policy
+          - listitem [ref=e421]:
+            - link "Terms & Conditions" [ref=e422] [cursor=pointer]:
+              - /url: /terms-conditions
+        - link "go top" [ref=e423] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e424]
+  - generic [ref=e426]:
+    - generic [ref=e427]: Chat with us 👋
+    - link "Chat with us on WhatsApp" [ref=e428] [cursor=pointer]:
+      - /url: https://wa.me/8801537740365?text=Hi%2C%20I'm%20interested%20in%20working%20with%20SofGent.
+      - img [ref=e429]
+  - alert [ref=e431]

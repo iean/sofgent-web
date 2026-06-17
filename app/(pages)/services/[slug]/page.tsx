@@ -1,31 +1,35 @@
 import BreadCrumb from "@/app/components/common/BreadCrumb";
 import ServiceDetailsInfo from "@/app/components/serviceDetails";
 import { CtaNoSSR } from "@/app/page";
-import getServicesMeta from "@/app/utils/getServicesMeta";
+import { getServiceBySlug, getServiceSlugs } from "@/lib/sanity/content";
 import getPageMeta from "@/app/utils/getPageMeta";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
    return getPageMeta(`/services/${params.slug}`);
 }
 
 export async function generateStaticParams() {
-   const services = getServicesMeta("/app/data/services");
-   const paths = services.map((service) => ({ slug: service.slug }));
-   return paths;
+   const slugs = await getServiceSlugs();
+   return slugs.map((slug) => ({ slug }));
 }
 
-export default function ServiceDetail({
+export default async function ServiceDetail({
    params,
 }: {
    params: { slug: string };
 }) {
-   const services = getServicesMeta("/app/data/services");
-   const service = services.find((service) => service.slug === params.slug);
+   const service = await getServiceBySlug(params.slug);
+
+   if (!service) {
+      notFound();
+   }
+
    return (
       <section>
          <BreadCrumb
-            pageTitle={service?.title}
+            pageTitle={service.title}
             currentPage="Services"
             to="/services"
          />

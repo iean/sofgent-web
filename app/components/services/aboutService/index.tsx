@@ -9,22 +9,23 @@ export default function AboutService() {
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div>
             <h1 className="text-24 md:text-48 font-semibold mt-2.5 md:mt-5">
-              Sofgent Offers a Wide Range of Services
+              Services built to ship AI systems and SaaS products for operations teams
             </h1>
             <p className="pb-10 mt-5 md:mt-10 text-paragraph">
-              In today&apos;s rapidly evolving digital landscape, businesses
-              require tailored software solutions to remain competitive. Sofgent
-              stands out by offering a wide range of services designed to meet
-              the unique needs of clients across various industries. From
-              software development to system integration and image processing,
-              Sofgent employs teams of skilled professionals dedicated to
-              delivering high-quality results. This document outlines the
-              comprehensive services offered by Sofgen, emphasizing the
-              processes and expertise involved.
+              This page should not read like a generic service catalog. The
+              core offer is AI Product Studio: SofGent builds AI apps, internal
+              AI tools, and AI-powered SaaS systems with architecture-first
+              delivery, weekly working demos, and production-focused execution.
+            </p>
+            <p className="pb-10 text-paragraph">
+              The service entries below still come from Sanity, but the top-line
+              message is narrower. We lead with AI product delivery and SaaS MVP
+              execution, then support that work with integrations, data systems,
+              document intelligence, QA, and deployment capability.
             </p>
             <Button
-              btnText="Explore Service"
-              href="/services"
+              btnText="See How We Build"
+              href="/how-we-build-saas"
             />
           </div>
           <div>

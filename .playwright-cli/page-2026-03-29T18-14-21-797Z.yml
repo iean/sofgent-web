@@ -1,0 +1,7 @@
+- generic [active]:
+  - generic [ref=e1]:
+    - generic [ref=e2]: Chat with us 👋
+    - link "Chat with us on WhatsApp" [ref=e3] [cursor=pointer]:
+      - /url: https://wa.me/8801537740365?text=Hi%2C%20I'm%20interested%20in%20working%20with%20SofGent.
+      - img [ref=e4]
+  - alert [ref=e6]

@@ -1,9 +1,12 @@
-"use client";
-import { useState } from "react";
-import LottieLines from "../../common/LottieLine";
+import dynamic from "next/dynamic";
+import { getFaqs } from "@/lib/sanity/content";
+import type { SanityFaqItem } from "@/lib/sanity/types";
 
-// Faq Items
-const faqItems = [
+const LottieLines = dynamic(() => import("../../common/LottieLine"), {
+   ssr: false,
+});
+
+const fallbackFaqItems: Array<Pick<SanityFaqItem, "question" | "answer">> = [
    {
      "question": "Why should I outsource custom software development to Sofgent?",
      "answer": "Outsourcing to Sofgent allows you to leverage a team of experienced developers, cutting-edge technology, and proven processes. We focus on delivering high-quality, scalable software solutions tailored to your specific business needs, all while helping you save time and reduce costs."
@@ -65,14 +68,20 @@ const faqItems = [
      "answer": "With Sofgent, you gain access to a proven track record of delivering successful projects, expertise in modern technologies and industry best practices, transparent communication and customer-centric processes, and tailored solutions designed to align with your unique business goals."
    }
  ]
- 
 
-export default function Faq() {
-   const [activeFaq, setActiveFaq] = useState(0);
+interface FaqProps {
+   section?: string;
+   tag?: string;
+   title?: string;
+}
 
-   const toggleFAQ = (index: number) => {
-      setActiveFaq(activeFaq === index ? 0 : index);
-   };
+export default async function Faq({
+   section = "services",
+   tag = "FAQs",
+   title = "Asked Questions & Answer",
+}: FaqProps) {
+   const faqItems = await getFaqs(section);
+   const items = faqItems.length > 0 ? faqItems : fallbackFaqItems;
 
    return (
       <section className="relative mt-40" id="faq">
@@ -89,63 +98,47 @@ export default function Faq() {
                   </div>
                   <div className="max-w-[850px] w-full flex justify-center items-center flex-col relative z-10">
                      <h1 className="py-0.5 px-5 bg-white border-brand border rounded-[30px] font-medium text-blue-seo">
-                        FAQs
+                        {tag}
                      </h1>
                      <h2 className="mt-5 font-semibold text-24 sm:text-48">
-                        Asked Questions & Answer
+                        {title}
                      </h2>
 
                      <div className="flex flex-col gap-2.5 w-full mt-5 md:mt-10 p-0 sm:p-5">
-                        {faqItems.map((faq, index) => (
-                           <div
-                              onClick={() => toggleFAQ(index)}
-                              key={index}
-                              className="py-2">
-                              <h2>
-                                 <button className="flex items-center justify-between w-full text-left font-semibold py-2">
-                                    <span>{faq.question}</span>
-                                    <svg
-                                       className="fill-brand shrink-0 ml-8"
+                        {items.map((faq, index) => (
+                           <details
+                              key={`${faq.question}-${index}`}
+                              className="group py-2"
+                              open={index === 0}>
+                              <summary className="flex items-center justify-between w-full py-2 font-semibold text-left list-none cursor-pointer">
+                                 <span>{faq.question}</span>
+                                 <svg
+                                    className="fill-brand shrink-0 ml-8"
+                                    width="16"
+                                    height="16"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect
+                                       y="7"
                                        width="16"
-                                       height="16"
-                                       xmlns="http://www.w3.org/2000/svg">
-                                       <rect
-                                          y="7"
-                                          width="16"
-                                          height="2"
-                                          rx="1"
-                                          className={`transform origin-center transition duration-200 ease-out ${
-                                             activeFaq === index &&
-                                             "!rotate-180"
-                                          }`}
-                                       />
-                                       <rect
-                                          y="7"
-                                          width="16"
-                                          height="2"
-                                          rx="1"
-                                          className={`transform origin-center rotate-90 transition duration-200 ease-out ${
-                                             activeFaq === index &&
-                                             "!rotate-180"
-                                          }`}
-                                       />
-                                    </svg>
-                                 </button>
-                              </h2>
-                              <div
-                                 id={`accordion-text-01`}
-                                 role="region"
-                                 aria-labelledby={`accordion-title-01`}
-                                 className={`grid text-sm text-slate-600 overflow-hidden transition-all duration-300 ease-in-out ${
-                                    activeFaq === index
-                                       ? "grid-rows-[1fr] opacity-100"
-                                       : "grid-rows-[0fr] opacity-0"
-                                 }`}>
+                                       height="2"
+                                       rx="1"
+                                       className="origin-center transition duration-200 ease-out group-open:rotate-180"
+                                    />
+                                    <rect
+                                       y="7"
+                                       width="16"
+                                       height="2"
+                                       rx="1"
+                                       className="origin-center rotate-90 transition duration-200 ease-out group-open:rotate-180"
+                                    />
+                                 </svg>
+                              </summary>
+                              <div className="grid overflow-hidden text-sm text-slate-600 transition-all duration-300 ease-in-out group-open:grid-rows-[1fr] group-open:opacity-100 grid-rows-[0fr] opacity-0">
                                  <div className="overflow-hidden">
                                     <p className="pb-3">{faq.answer}</p>
                                  </div>
                               </div>
-                           </div>
+                           </details>
                         ))}
                      </div>
                   </div>

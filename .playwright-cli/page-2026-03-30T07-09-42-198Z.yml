@@ -1,0 +1,4 @@
+- generic [ref=e4]:
+  - generic [ref=e5]: "Uncaught error: Missing required Sanity Studio environment variables: SANITY_STUDIO_PROJECT_ID"
+  - generic [ref=e6]: https://studio.sofgent.com/static/sanity-CQJ98xmA.js:3624:54459
+  - generic [ref=e7]: "Error: Missing required Sanity Studio environment variables: SANITY_STUDIO_PROJECT_ID at Sfr (https://studio.sofgent.com/static/sanity-CQJ98xmA.js:3624:54459) at https://studio.sofgent.com/static/sanity-CQJ98xmA.js:3624:56951"

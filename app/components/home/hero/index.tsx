@@ -69,27 +69,28 @@ export default function Hero() {
                   </svg>
                 </span>
                 <h1 className="text-sm font-semibold pointer-events-auto md:text-20 text-brand">
-                  Top Software Development Company
+                  AI Product Studio
                 </h1>
               </div>
               <h2 className="text-4xl md:text-[56px] leading-normal text-main-black font-semibold mb-[35px] pointer-events-auto">
-                <span>Crafting </span>
+                <span>Build </span>
                 <span className="relative inline-block px-3 font-bold text-white uppercase">
-                  <span className="relative z-10">Innovation-First</span>
+                  <span className="relative z-10">AI Apps</span>
                   <span className="absolute top-0 left-0 block w-full h-full bg-gradient-to-r from-brand"></span>
                 </span>
                 <br />
-                <span>Next-Gen Software for a Smarter Tomorrow.</span>
+                <span>and AI-powered SaaS for operations teams.</span>
               </h2>
               <div className="px-6 py-[14px] bg-white border-l-2 border-brand mb-[35px] pointer-events-auto xl:w-full md:w-[620px]">
                 <p className="text-ptwo text-paragraph">
-At Sofgent, we offer enterprise software development services that drive scalable SaaS success. As a trusted software development company, we focus on speed, quality, and seamless integration — empowering your business with systems that enhance performance and operational efficiency                </p>
+                  SofGent designs and ships internal AI tools, workflow automation, and production-ready SaaS systems for teams that need faster operations, cleaner data flow, and real delivery momentum.
+                </p>
               </div>
               <div className="flex flex-wrap gap-4 items-center pointer-events-auto">
-                <Button btnText="Our Services" href="/services" />
+                <Button btnText="AI Product Studio" href="/ai-product-studio" />
                 <Button
-                  btnText="Lets discuss your project"
-                  href="/contact"
+                  btnText="See How We Build"
+                  href="/how-we-build-saas"
                   className="bg-transparent text-brand border border-brand hover:bg-brand hover:text-white"
                 />
               </div>

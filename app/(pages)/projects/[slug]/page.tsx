@@ -1,36 +1,31 @@
 import BreadCrumb from "@/app/components/common/BreadCrumb";
 import Button from "@/app/components/common/Button";
-import readLocalFile from "@/app/utils/readLocalFile";
+import { getProjectBySlug, getProjectSlugs } from "@/lib/sanity/content";
 import Image from "next/image";
 import getPageMeta from "@/app/utils/getPageMeta";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
    return getPageMeta(`/projects/${params.slug}`);
 }
 
-interface ProjectFieldsType {
-   title: string;
-   thumbnail: string;
-   slug: string;
-   overview: string;
-   publish_date: string;
-   preview_link: string;
-   description: string;
-   screenshots: { title: string; image: string }[];
+export async function generateStaticParams() {
+   const slugs = await getProjectSlugs();
+   return slugs.map((slug) => ({ slug }));
 }
 
 async function ProjectDetails({ params }: { params: { slug: string } }) {
-   const slug = params.slug;
-   const projects = await readLocalFile("/app/data/projects/projects.json");
-   const project = projects.find(
-      (item: ProjectFieldsType) => item.slug === slug
-   );
+   const project = await getProjectBySlug(params.slug);
+
+   if (!project) {
+      notFound();
+   }
 
    return (
       <section>
          <BreadCrumb
-            pageTitle={project?.title}
+            pageTitle={project.title}
             currentPage="Projects"
             to="/projects"
          />
@@ -39,20 +34,62 @@ async function ProjectDetails({ params }: { params: { slug: string } }) {
             <div className="bg-white rounded-xl shadow-sm p-8 mb-12">
                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
                   <h2 className="text-2xl font-semibold">Project Overview</h2>
-                  <Button
-                     btnText="Live Preview"
-                     external={true}
-                     href={project?.preview_link}
-                  />
+                  {project.previewLink ? (
+                     <Button
+                        btnText="Live Preview"
+                        external={true}
+                        href={project.previewLink}
+                     />
+                  ) : null}
                </div>
                <p className="text-gray-600 leading-relaxed">
-                  {project?.description}
+                  {project.description}
                </p>
             </div>
 
+            {project.category === "case-study" ? (
+               <div className="grid gap-8 mb-12 md:grid-cols-2">
+                  <div className="bg-white rounded-xl shadow-sm p-8">
+                     <h3 className="text-xl font-semibold mb-4">Challenge</h3>
+                     <p className="text-gray-600 leading-relaxed">
+                        {project.challenge || project.overview}
+                     </p>
+                  </div>
+                  <div className="bg-white rounded-xl shadow-sm p-8">
+                     <h3 className="text-xl font-semibold mb-4">Solution</h3>
+                     <p className="text-gray-600 leading-relaxed">
+                        {project.solution || project.description}
+                     </p>
+                  </div>
+                  {project.architectureHighlight ? (
+                     <div className="bg-white rounded-xl shadow-sm p-8 md:col-span-2">
+                        <h3 className="text-xl font-semibold mb-4">Architecture Highlight</h3>
+                        <p className="text-gray-600 leading-relaxed">
+                           {project.architectureHighlight}
+                        </p>
+                     </div>
+                  ) : null}
+                  {project.outcomes && project.outcomes.length > 0 ? (
+                     <div className="bg-white rounded-xl shadow-sm p-8 md:col-span-2">
+                        <h3 className="text-xl font-semibold mb-4">Outcomes</h3>
+                        <div className="flex flex-wrap gap-3">
+                           {project.outcomes.map((outcome) => (
+                              <span
+                                 key={outcome}
+                                 className="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-900"
+                              >
+                                 {outcome}
+                              </span>
+                           ))}
+                        </div>
+                     </div>
+                  ) : null}
+               </div>
+            ) : null}
+
             {/* Project Images */}
             <div className="space-y-12">
-               {project?.screenshots.map(
+               {project.screenshots?.map(
                   (item: { image: string; title: string }, index: number) => (
                      <div
                         key={index}

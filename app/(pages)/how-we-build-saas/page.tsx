@@ -10,7 +10,11 @@ export function generateMetadata(): Metadata {
 export default function HowWeBuildSaaSPage() {
   return (
     <div>
-      <BreadCrumb pageTitle="How We Build SaaS" currentPage="How We Build SaaS" to="/" />
+      <BreadCrumb
+        pageTitle="How We Build AI SaaS"
+        currentPage="How We Build AI SaaS"
+        to="/"
+      />
       <HowWeBuildSaaS />
     </div>
   );

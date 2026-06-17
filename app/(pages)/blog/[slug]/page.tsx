@@ -1,42 +1,102 @@
 import BreadCrumb from "@/app/components/common/BreadCrumb";
-import keystaticConfig from "@/keystatic.config";
-import { createReader } from "@keystatic/core/reader";
-import Markdoc from "@markdoc/markdoc";
+import { getBlogPostBySlug } from "@/app/lib/blogs";
+import type { SanityPortableTextBlock } from "@/lib/sanity/types";
 import { ArrowLeft, Clock, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { notFound } from "next/navigation";
 import "./style.css";
 
-const reader = createReader(process.cwd(), keystaticConfig);
+function renderSpanText(block: SanityPortableTextBlock) {
+   const markDefs = block.markDefs ?? [];
+
+   return (block.children ?? []).map((child, index) => {
+      const key = child._key ?? `${block._key ?? "block"}-${index}`;
+      const linkMark = (child.marks ?? []).find((mark) =>
+         markDefs.some((definition) => definition._key === mark && definition.href),
+      );
+
+      if (!linkMark) {
+         return <React.Fragment key={key}>{child.text}</React.Fragment>;
+      }
+
+      const definition = markDefs.find((item) => item._key === linkMark);
+
+      return (
+         <a
+            key={key}
+            href={definition?.href}
+            target="_blank"
+            rel="noreferrer"
+            className="text-blue-600 underline underline-offset-4">
+            {child.text}
+         </a>
+      );
+   });
+}
+
+function renderPortableBlock(block: SanityPortableTextBlock, index: number) {
+   const key = block._key ?? `${block._type}-${index}`;
+
+   if (block._type === "image" && block.imageUrl) {
+      return (
+         <figure key={key} className="my-8">
+            <Image
+               width={1200}
+               height={700}
+               src={block.imageUrl}
+               alt={block.alt || "Blog image"}
+               className="w-full rounded-xl object-cover"
+            />
+            {block.caption ? (
+               <figcaption className="mt-3 text-sm text-gray-500">{block.caption}</figcaption>
+            ) : null}
+         </figure>
+      );
+   }
+
+   if (block.listItem) {
+      return (
+         <p key={key} className="mb-4 ml-6 text-lg leading-8 text-gray-700">
+            • {renderSpanText(block)}
+         </p>
+      );
+   }
+
+   switch (block.style) {
+      case "h2":
+         return (
+            <h2 key={key} className="mt-10 mb-4 text-3xl font-bold text-gray-900">
+               {renderSpanText(block)}
+            </h2>
+         );
+      case "h3":
+         return (
+            <h3 key={key} className="mt-8 mb-3 text-2xl font-semibold text-gray-900">
+               {renderSpanText(block)}
+            </h3>
+         );
+      case "blockquote":
+         return (
+            <blockquote key={key} className="my-6 border-l-4 border-blue-500 pl-4 italic text-gray-700">
+               {renderSpanText(block)}
+            </blockquote>
+         );
+      default:
+         return (
+            <p key={key} className="mb-5 text-lg leading-8 text-gray-700">
+               {renderSpanText(block)}
+            </p>
+         );
+   }
+}
+
 const BlogPost = async ({ params }: { params: { slug: string } }) => {
    const slug = params.slug;
-   // const post = await getPostBySlug(slug);
-   const post = await reader.collections.posts.read(slug);
+   const post = await getBlogPostBySlug(slug);
    if (!post) {
-      return <div>No Post Found</div>;
-   }
-   const { node } = await post.content();
-   const errors = Markdoc.validate(node);
-   if (errors.length) {
-      console.error(errors);
-      throw new Error("Invalid content");
-   }
-   const renderable = Markdoc.transform(node);
-
-   if (!post) {
-      return (
-         <div className="min-h-screen flex items-center justify-center">
-            <div className="text-center">
-               <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                  Post not found
-               </h1>
-               <Link href="/blog" className="text-blue-600 hover:text-blue-800">
-                  Return to blog
-               </Link>
-            </div>
-         </div>
-      );
+      notFound();
    }
 
    return (
@@ -55,10 +115,7 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
                   <Image
                      width={800}
                      height={700}
-                     src={
-                        `/blogs/${slug}/${post.imageUrl}` ||
-                        "/default-image.jpg"
-                     }
+                     src={post.imageUrl || "/default-image.jpg"}
                      alt={post.title}
                      className="w-full h-64 object-cover rounded-xl mb-8"
                   />
@@ -74,12 +131,8 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
                      </div>
                   </div>
                   <div className="prose">
-                     {Markdoc.renderers.react(renderable, React)}
+                     {post.content.map((block, index) => renderPortableBlock(block, index))}
                   </div>
-
-                  {/* <div
-                     dangerouslySetInnerHTML={{ __html: post?.content }}
-                     className="prose prose-lg max-w-none"></div> */}
                </article>
             </div>
          </div>

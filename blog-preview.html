@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>SofGent — Blog & Resources Design Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --brand:#326d6d; --brand-dk:#1e4848;
+      --brand-10:rgba(50,109,109,.10); --brand-20:rgba(50,109,109,.20);
+      --ink:#0c0c0c; --ink2:#1a1a1a;
+      --muted:#6a6a6a; --muted2:#999;
+      --line:#e6e6e6; --line2:#f0f0f0;
+      --surface:#f7f7f7; --surface2:#fafafa;
+      --white:#ffffff;
+      --amber:#f59e0b; --green:#22c55e;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{display:block}
+    .wrap{max-width:1140px;margin:0 auto;padding:0 32px}
+
+    /* ── RIBBON ─────────────────────────────── */
+    .ribbon{background:var(--ink);text-align:center;padding:7px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+    .ribbon b{color:#67e8f9}
+
+    /* ── TOPBAR ─────────────────────────────── */
+    .topbar{background:var(--brand);padding:8px 32px}
+    .topbar-in{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+    .topbar-msg{font-size:12.5px;color:rgba(255,255,255,.85)}.topbar-msg b{color:#fff}
+    .topbar-contacts{display:flex;gap:20px}
+    .tc{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.8);transition:color .15s}
+    .tc:hover{color:#fff}.tc svg{opacity:.7;flex-shrink:0}
+
+    /* ── NAV ──────────────────────────────── */
+    .header-wrap{position:sticky;top:0;z-index:100}
+    .nav{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+    .nav-in{max-width:1140px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+    .logo{display:flex;align-items:center;gap:9px}
+    .logo-mark{width:30px;height:30px}
+    .logo-text{font-size:19px;font-weight:800;letter-spacing:-.04em;color:var(--ink)}
+    .nav-links{display:flex;gap:6px;list-style:none}
+    .nav-links a{font-size:13.5px;font-weight:500;color:var(--muted);padding:6px 10px;border-radius:6px;transition:color .15s,background .15s}
+    .nav-links a:hover,.nav-links a.active{color:var(--ink);background:var(--surface)}
+    .nav-links a.active{font-weight:600;color:var(--brand)}
+    .nav-cta{font-size:13.5px;font-weight:600;background:var(--brand);color:#fff;padding:9px 20px;border-radius:8px;transition:background .15s;white-space:nowrap}
+    .nav-cta:hover{background:var(--brand-dk)}
+
+    /* ── PAGE HEADER ──────────────────────── */
+    .page-hdr{border-bottom:1px solid var(--line);padding:56px 0 0}
+    .ph-eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-bottom:10px}
+    .page-hdr h1{font-size:clamp(36px,4.5vw,58px);font-weight:900;letter-spacing:-.045em;line-height:1.0;color:var(--ink);margin-bottom:12px}
+    .page-hdr h1 em{font-style:normal;color:var(--brand)}
+    .ph-desc{font-size:15px;color:var(--muted);max-width:480px;line-height:1.65;margin-bottom:36px}
+
+    /* ── FILTER TABS ──────────────────────── */
+    .filters{display:flex;align-items:center;gap:0;border-top:1px solid var(--line)}
+    .ftab{font-size:13px;font-weight:500;color:var(--muted);padding:14px 20px;cursor:pointer;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;white-space:nowrap;background:none;border-left:none;border-right:none;border-top:none}
+    .ftab:first-child{padding-left:0}
+    .ftab:hover{color:var(--ink)}
+    .ftab.active{color:var(--ink);font-weight:700;border-bottom-color:var(--ink)}
+    .ftab .count{font-size:11px;font-weight:600;color:var(--muted2);background:var(--surface);border-radius:100px;padding:1px 7px;margin-left:5px}
+    .ftab.active .count{background:var(--brand-10);color:var(--brand)}
+
+    /* ── MAIN LAYOUT ──────────────────────── */
+    .blog-layout{display:grid;grid-template-columns:1fr 300px;gap:64px;padding:64px 0 96px;align-items:start}
+
+    /* ── FEATURED POST ────────────────────── */
+    .featured{margin-bottom:2px}
+    .featured-inner{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;transition:box-shadow .2s}
+    .featured-inner:hover{box-shadow:0 8px 32px rgba(0,0,0,.07)}
+    .featured-img{overflow:hidden;height:280px}
+    .featured-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .featured-inner:hover .featured-img img{transform:scale(1.04)}
+    .featured-body{padding:32px 32px;display:flex;flex-direction:column;justify-content:space-between}
+    .post-badge{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);background:var(--brand-10);border:1px solid var(--brand-20);padding:3px 10px;border-radius:100px;margin-bottom:14px}
+    .featured-body h2{font-size:clamp(18px,1.8vw,24px);font-weight:800;letter-spacing:-.03em;line-height:1.2;color:var(--ink);margin-bottom:12px}
+    .featured-body p{font-size:14px;color:var(--muted);line-height:1.68;flex:1}
+    .post-meta{display:flex;align-items:center;gap:12px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line2)}
+    .post-av{width:28px;height:28px;border-radius:50%;background:var(--brand-10);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:var(--brand);flex-shrink:0}
+    .post-author{font-size:12.5px;font-weight:600;color:var(--ink)}
+    .post-date{font-size:12px;color:var(--muted2)}
+    .post-read{font-size:12px;color:var(--muted2);margin-left:auto}
+
+    /* ── DIVIDER ──────────────────────────── */
+    .list-divider{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);padding:24px 0 16px;border-bottom:1px solid var(--line);margin-bottom:0}
+
+    /* ── POST LIST ────────────────────────── */
+    .post-list{display:flex;flex-direction:column}
+    .post-row{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;padding:22px 0;border-bottom:1px solid var(--line2);cursor:pointer;transition:background .15s}
+    .post-row:hover .pr-title{color:var(--brand)}
+    .post-row:last-child{border-bottom:none}
+    .pr-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin-bottom:7px}
+    .pr-tag.blog{color:var(--brand)}
+    .pr-tag.case{color:#7c3aed}
+    .pr-tag.guide{color:#0369a1}
+    .pr-tag.insight{color:#b45309}
+    .pr-title{font-size:15.5px;font-weight:700;letter-spacing:-.02em;color:var(--ink);line-height:1.3;margin-bottom:7px;transition:color .15s}
+    .pr-excerpt{font-size:13px;color:var(--muted);line-height:1.62}
+    .pr-foot{display:flex;align-items:center;gap:10px;margin-top:12px}
+    .pr-date{font-size:11.5px;color:var(--muted2)}
+    .pr-dot{width:3px;height:3px;border-radius:50%;background:var(--line);flex-shrink:0}
+    .pr-read{font-size:11.5px;color:var(--muted2)}
+    .pr-img{width:120px;height:80px;border-radius:10px;overflow:hidden;flex-shrink:0}
+    .pr-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+    .post-row:hover .pr-img img{transform:scale(1.05)}
+
+    /* load more */
+    .load-more{margin-top:32px;text-align:center}
+    .btn-ghost{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;color:var(--muted);border:1px solid var(--line);padding:12px 28px;border-radius:9px;transition:border-color .15s,color .15s;cursor:pointer;background:none}
+    .btn-ghost:hover{border-color:#bbb;color:var(--ink)}
+
+    /* ── SIDEBAR ──────────────────────────── */
+    .sidebar{position:sticky;top:88px;display:flex;flex-direction:column;gap:28px}
+
+    /* newsletter */
+    .sdb-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px}
+    .sdb-card h3{font-size:14.5px;font-weight:800;letter-spacing:-.02em;color:var(--ink);margin-bottom:8px}
+    .sdb-card p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:18px}
+    .sdb-input{width:100%;font-size:13px;padding:10px 14px;border:1px solid var(--line);border-radius:8px;background:var(--white);color:var(--ink);outline:none;margin-bottom:8px;font-family:inherit}
+    .sdb-input:focus{border-color:var(--brand)}
+    .sdb-btn{width:100%;font-size:13px;font-weight:700;background:var(--brand);color:#fff;padding:10px;border:none;border-radius:8px;cursor:pointer;transition:background .15s;font-family:inherit}
+    .sdb-btn:hover{background:var(--brand-dk)}
+
+    /* topic tags */
+    .sdb-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+    .stag{font-size:11.5px;font-weight:600;color:var(--muted);background:var(--white);border:1px solid var(--line);padding:5px 12px;border-radius:100px;cursor:pointer;transition:border-color .15s,color .15s}
+    .stag:hover,.stag.active{border-color:var(--brand);color:var(--brand);background:var(--brand-10)}
+
+    /* popular posts */
+    .pop-list{display:flex;flex-direction:column;gap:16px;margin-top:12px}
+    .pop-item{display:flex;gap:12px;align-items:start;cursor:pointer}
+    .pop-n{font-size:22px;font-weight:900;letter-spacing:-.04em;color:var(--line);flex-shrink:0;line-height:1;margin-top:2px}
+    .pop-title{font-size:13px;font-weight:600;color:var(--ink);line-height:1.4;transition:color .15s}
+    .pop-item:hover .pop-title{color:var(--brand)}
+    .pop-tag{font-size:10px;color:var(--muted2);margin-top:3px}
+
+    /* ── CTA STRIP ────────────────────────── */
+    .cta-strip{background:var(--ink);border-radius:20px;padding:56px 64px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px;position:relative;overflow:hidden;margin:0 0 96px}
+    .cta-strip::before{content:'';position:absolute;top:-80px;left:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(50,109,109,.45) 0%,transparent 70%);pointer-events:none}
+    .cta-strip::after{content:'';position:absolute;bottom:-60px;right:-40px;width:200px;height:200px;background:radial-gradient(circle,rgba(103,232,249,.1) 0%,transparent 70%);pointer-events:none}
+    .cs-stripe{position:absolute;inset:0;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.012) 0px,rgba(255,255,255,.012) 1px,transparent 1px,transparent 40px);pointer-events:none}
+    .cs-ey{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#67e8f9;margin-bottom:10px;position:relative;z-index:1}
+    .cta-strip h2{font-size:clamp(22px,2.5vw,36px);font-weight:800;letter-spacing:-.035em;color:#fff;line-height:1.1;margin-bottom:8px;position:relative;z-index:1}
+    .cta-strip p{font-size:14px;color:rgba(255,255,255,.42);max-width:380px;line-height:1.6;position:relative;z-index:1}
+    .cs-btn{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;background:#fff;color:var(--ink);padding:14px 28px;border-radius:10px;white-space:nowrap;transition:background .15s;position:relative;z-index:1;flex-shrink:0}
+    .cs-btn:hover{background:#f0f0f0}
+
+    /* ── FOOTER ──────────────────────────── */
+    footer{background:var(--surface);border-top:1px solid var(--line);padding:48px 0 28px}
+    .foot-row{display:flex;align-items:center;justify-content:space-between}
+    .foot-links{display:flex;gap:24px;list-style:none}
+    .foot-links a{font-size:13px;color:var(--muted);transition:color .15s}
+    .foot-links a:hover{color:var(--ink)}
+    .foot-copy{font-size:12.5px;color:#bbb}
+
+    /* hidden posts */
+    .post-row.hidden{display:none}
+  </style>
+</head>
+<body>
+
+<div class="ribbon">SofGent — <b>Blog & Resources</b> Design Preview</div>
+
+<!-- ═══ HEADER ════════════════════════════════════ -->
+<div class="header-wrap">
+  <div class="topbar">
+    <div class="topbar-in">
+      <p class="topbar-msg">Welcome to <b>SofGent</b> — Build and Launch Your AI Product. Fast, Scalable, Production-Ready.</p>
+      <div class="topbar-contacts">
+        <a href="#" class="tc">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          support@sofgent.com
+        </a>
+        <a href="#" class="tc">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.9 1.27h3a2 2 0 0 1 2 1.72c.13.97.35 1.92.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.09-1.08a2 2 0 0 1 2.11-.45c.89.35 1.84.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +8801537740365
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="nav">
+    <div class="nav-in">
+      <a href="#" class="logo">
+        <svg class="logo-mark" viewBox="0 0 30 30" fill="none">
+          <rect width="30" height="30" rx="7" fill="#326d6d"/>
+          <path d="M8 15a7 7 0 0 1 14 0" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M15 22a7 7 0 0 1-7-7" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M15 22a7 7 0 0 0 7-7" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="15" cy="15" r="1.8" fill="white"/>
+        </svg>
+        <span class="logo-text">SofGent</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">How We Build SaaS</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#" class="active">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <a href="#" class="nav-cta">Get a Quote</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PAGE HEADER ════════════════════════════════ -->
+<div class="page-hdr">
+  <div class="wrap">
+    <p class="ph-eyebrow">Resource Library</p>
+    <h1>Insights on building<br/><em>AI products.</em></h1>
+    <p class="ph-desc">Practical writing on AI development, document automation, SaaS architecture, and how we build — from the team that ships it.</p>
+
+    <!-- filter tabs -->
+    <div class="filters">
+      <button class="ftab active" data-filter="all">All <span class="count">24</span></button>
+      <button class="ftab" data-filter="blog">Blog <span class="count">14</span></button>
+      <button class="ftab" data-filter="case">Case Study <span class="count">4</span></button>
+      <button class="ftab" data-filter="guide">Guide <span class="count">4</span></button>
+      <button class="ftab" data-filter="insight">Insight <span class="count">2</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ BLOG LAYOUT ════════════════════════════════ -->
+<div class="wrap">
+  <div class="blog-layout">
+
+    <!-- ── MAIN CONTENT ── -->
+    <div>
+
+      <!-- Featured post -->
+      <div class="featured">
+        <a href="#" class="featured-inner">
+          <div class="featured-img">
+            <img src="public/images/services/software-development.webp" alt="Featured"/>
+          </div>
+          <div class="featured-body">
+            <div>
+              <div class="post-badge">
+                <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+                Featured · Blog
+              </div>
+              <h2>Why Most AI SaaS Projects Fail in the First 60 Days — And How We Prevent It</h2>
+              <p>The failure pattern is almost always the same: unclear scope, no production mindset, and an AI layer bolted on after the fact. Here's the process we use to ensure every project ships and sticks.</p>
+            </div>
+            <div class="post-meta">
+              <div class="post-av">MS</div>
+              <div>
+                <div class="post-author">Masud S.</div>
+                <div class="post-date">Jun 12, 2026</div>
+              </div>
+              <span class="post-read">8 min read</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- List divider -->
+      <div class="list-divider">Latest</div>
+
+      <!-- Post list -->
+      <div class="post-list" id="post-list">
+
+        <a href="#" class="post-row" data-cat="blog">
+          <div>
+            <div class="pr-tag blog">Blog</div>
+            <div class="pr-title">How We Built a Document Intelligence System in 3 Weeks for a UK Care Provider</div>
+            <div class="pr-excerpt">End-to-end OCR, classification, and structured extraction — deployed to production with zero manual review. A full technical walkthrough.</div>
+            <div class="pr-foot"><span class="pr-date">Jun 9, 2026</span><span class="pr-dot"></span><span class="pr-read">6 min read</span></div>
+          </div>
+          <div class="pr-img"><img src="public/images/services/image-processing.webp" alt=""/></div>
+        </a>
+
+        <a href="#" class="post-row" data-cat="case">
+          <div>
+            <div class="pr-tag case">Case Study</div>
+            <div class="pr-title">Haven: From 6-Month Manual Process to Fully Automated in 18 Days</div>
+            <div class="pr-excerpt">How we replaced a 6-month document review workflow with an AI pipeline — and launched with zero critical bugs on day one.</div>
+            <div class="pr-foot"><span class="pr-date">Jun 3, 2026</span><span class="pr-dot"></span><span class="pr-read">5 min read</span></div>
+          </div>
+          <div class="pr-img"><img src="public/images/project/haven/HOME_Financing.jpg" alt=""/></div>
+        </a>
+
+        <a href="#" class="post-row" data-cat="guide">
+          <div>
+            <div class="pr-tag guide">Guide</div>
+            <div class="pr-title">The Founder's Guide to Scoping an AI MVP: What to Decide Before You Write Code</div>
+            <div class="pr-excerpt">Scope creep kills AI projects. This is the framework we use to lock in scope before sprint one — including the 5 questions every founder must answer first.</div>
+            <div class="pr-foot"><span class="pr-date">May 28, 2026</span><span class="pr-dot"></span><span class="pr-read">10 min read</span></div>
+          </div>
+          <div class="pr-img"><img src="public/images/services/software-development.webp" alt=""/></div>
+        </a>
+
+        <a href="#" class="post-row" data-cat="blog">
+          <div>
+            <div class="pr-tag blog">Blog</div>
+            <div class="pr-title">Claude vs OpenAI for Production AI: Which Model Actually Ships Better?</div>
+            <div class="pr-excerpt">We've shipped products with both. Here's an honest breakdown of where each model wins — based on real production use, not benchmarks.</div>
+            <div class="pr-foot"><span class="pr-date">May 21, 2026</span><span class="pr-dot"></span><span class="pr-read">7 min read</span></div>
+          </div>
+          <div class="pr-img"><img src="public/images/services/system-integration.webp" alt=""/></div>
+        </a>
+
+        <a href="#" class="post-row" data-cat="insight">
+          <div>
+            <div class="pr-tag insight">Insight</div>
+            <div class="pr-title">Tokens Aren't Spend — They're Units of Work. Here's Why That Changes Pricing.</div>
+            <div class="pr-excerpt">Most companies measure AI cost in dollars per API call. The ones actually getting ROI measure it in work completed per dollar. A reframe that changes everything.</div>
+            <div class="pr-foot"><span class="pr-date">May 14, 2026</span><span class="pr-dot"></span><span class="pr-read">4 min read</span></div>
+          </div>
+          <div class="pr-img"><img src="public/images/services/managed-security.webp" alt=""/></div>
+        </a>
+
+        <a href="#" class="post-row" data-cat="guide">
+          <div>
+            <div class="pr-tag guide">Guide</div>
+            <div class="pr-title">RAG in Production: The Practical Setup Nobody Writes About</div>
+            <div class="pr-excerpt">Everyone writes about how RAG works in theory. Here's what the actual production setup looks like — chunking strategy, embedding models, retrieval scoring, and where it breaks.</div>
+            <div class="pr-foot"><span class="pr-date">May 7, 2026</span><span class="pr-dot"></span><span class="pr-read">12 min read</span></div>
+          </div>
+          <div class="pr-img"><img src="public/images/services/dev-ops.webp" alt=""/></div>
+        </a>
+
+        <a href="#" class="post-row" data-cat="case">
+          <div>
+            <div class="pr-tag case">Case Study</div>
+            <div class="pr-title">Staffing SaaS MVP: Scoped, Built, and Shipped in 21 Days</div>
+            <div class="pr-excerpt">How we turned a care operations brief into a working AI-assisted scheduling tool — live in production, zero onboarding issues, 40% fewer scheduling errors week one.</div>
+            <div class="pr-foot"><span class="pr-date">Apr 30, 2026</span><span class="pr-dot"></span><span class="pr-read">5 min read</span></div>
+          </div>
+          <div class="pr-img"><img src="public/images/project/haven/home_card_staffing.jpg" alt=""/></div>
+        </a>
+
+        <a href="#" class="post-row" data-cat="blog">
+          <div>
+            <div class="pr-tag blog">Blog</div>
+            <div class="pr-title">What "Production-Ready" Actually Means for an AI Product in 2026</div>
+            <div class="pr-excerpt">Not just "it runs." Monitoring, fallback logic, rate-limit handling, cost controls, and the 12 other things that separate a demo from a product people pay for.</div>
+            <div class="pr-foot"><span class="pr-date">Apr 22, 2026</span><span class="pr-dot"></span><span class="pr-read">9 min read</span></div>
+          </div>
+          <div class="pr-img"><img src="public/images/services/software-testing.webp" alt=""/></div>
+        </a>
+
+        <a href="#" class="post-row hidden" data-cat="blog">
+          <div>
+            <div class="pr-tag blog">Blog</div>
+            <div class="pr-title">The Hidden Cost of Building AI Features Without Data Infrastructure</div>
+            <div class="pr-excerpt">Teams rush to add AI features on top of messy data. It always comes back to bite them. Here's how to build the foundation before the model.</div>
+            <div class="pr-foot"><span class="pr-date">Apr 15, 2026</span><span class="pr-dot"></span><span class="pr-read">7 min read</span></div>
+          </div>
+          <div class="pr-img"><img src="public/images/services/system-maintenance.webp" alt=""/></div>
+        </a>
+
+        <a href="#" class="post-row hidden" data-cat="case">
+          <div>
+            <div class="pr-tag case">Case Study</div>
+            <div class="pr-title">Supported Living Portal: Building Compliance-Ready Infrastructure from Zero</div>
+            <div class="pr-excerpt">Audit-ready dashboards, data versioning, and zero legacy dependencies — delivered in 4 weeks for a supported living provider with strict regulatory requirements.</div>
+            <div class="pr-foot"><span class="pr-date">Apr 8, 2026</span><span class="pr-dot"></span><span class="pr-read">5 min read</span></div>
+          </div>
+          <div class="pr-img"><img src="public/images/project/haven/home_card_supported_living.jpg" alt=""/></div>
+        </a>
+
+        <a href="#" class="post-row hidden" data-cat="guide">
+          <div>
+            <div class="pr-tag guide">Guide</div>
+            <div class="pr-title">Next.js App Router for AI Products: The Architecture Decisions That Matter</div>
+            <div class="pr-excerpt">Server components, streaming responses, edge functions — here's how we wire Next.js App Router for AI-heavy products that need to be fast and reliable.</div>
+            <div class="pr-foot"><span class="pr-date">Mar 31, 2026</span><span class="pr-dot"></span><span class="pr-read">11 min read</span></div>
+          </div>
+          <div class="pr-img"><img src="public/images/services/ui-ux-design.webp" alt=""/></div>
+        </a>
+
+        <a href="#" class="post-row hidden" data-cat="insight">
+          <div>
+            <div class="pr-tag insight">Insight</div>
+            <div class="pr-title">Why Founders Underestimate the Ops Layer of an AI Product</div>
+            <div class="pr-excerpt">The AI layer is the easy part. It's the orchestration, rate limiting, retry logic, and cost management that determine whether the product survives real users.</div>
+            <div class="pr-foot"><span class="pr-date">Mar 24, 2026</span><span class="pr-dot"></span><span class="pr-read">5 min read</span></div>
+          </div>
+          <div class="pr-img"><img src="public/images/services/managed-security.webp" alt=""/></div>
+        </a>
+
+        <a href="#" class="post-row hidden" data-cat="guide">
+          <div>
+            <div class="pr-tag guide">Guide</div>
+            <div class="pr-title">How to Evaluate an AI Development Agency: 8 Questions That Actually Matter</div>
+            <div class="pr-excerpt">Speed claims are easy. Here's the checklist we'd use if we were hiring someone else — covering architecture, delivery process, post-launch support, and red flags.</div>
+            <div class="pr-foot"><span class="pr-date">Mar 17, 2026</span><span class="pr-dot"></span><span class="pr-read">8 min read</span></div>
+          </div>
+          <div class="pr-img"><img src="public/images/services/software-development.webp" alt=""/></div>
+        </a>
+
+        <a href="#" class="post-row hidden" data-cat="blog">
+          <div>
+            <div class="pr-tag blog">Blog</div>
+            <div class="pr-title">Document Automation for Fintech: Why OCR Alone Isn't Enough</div>
+            <div class="pr-excerpt">OCR gives you text. Understanding gives you data. The difference between them is what separates an invoice scanner from a real document intelligence system.</div>
+            <div class="pr-foot"><span class="pr-date">Mar 10, 2026</span><span class="pr-dot"></span><span class="pr-read">6 min read</span></div>
+          </div>
+          <div class="pr-img"><img src="public/images/services/image-processing.webp" alt=""/></div>
+        </a>
+
+      </div>
+
+      <!-- load more -->
+      <div class="load-more">
+        <button class="btn-ghost" id="load-more-btn">
+          Load more articles
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 2v9M2.5 7.5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- ── SIDEBAR ── -->
+    <div class="sidebar">
+
+      <!-- newsletter -->
+      <div class="sdb-card" style="background:var(--ink);border-color:rgba(255,255,255,.08)">
+        <h3 style="color:#fff">Stay in the loop.</h3>
+        <p style="color:rgba(255,255,255,.45)">Get new articles on AI development, SaaS architecture, and product building — once a week, no noise.</p>
+        <input class="sdb-input" type="email" placeholder="your@email.com" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);color:#fff"/>
+        <button class="sdb-btn">Subscribe</button>
+      </div>
+
+      <!-- topics -->
+      <div class="sdb-card">
+        <h3>Topics</h3>
+        <div class="sdb-tags" style="margin-top:14px;">
+          <span class="stag active">AI Development</span>
+          <span class="stag">Document Automation</span>
+          <span class="stag">SaaS MVP</span>
+          <span class="stag">Data Infrastructure</span>
+          <span class="stag">Next.js</span>
+          <span class="stag">Claude AI</span>
+          <span class="stag">Product Design</span>
+          <span class="stag">DevOps</span>
+          <span class="stag">Case Studies</span>
+        </div>
+      </div>
+
+      <!-- popular -->
+      <div class="sdb-card">
+        <h3>Most read</h3>
+        <div class="pop-list">
+          <div class="pop-item">
+            <span class="pop-n">01</span>
+            <div>
+              <div class="pop-title">Why Most AI SaaS Projects Fail in the First 60 Days</div>
+              <div class="pop-tag">Blog · 8 min</div>
+            </div>
+          </div>
+          <div class="pop-item">
+            <span class="pop-n">02</span>
+            <div>
+              <div class="pop-title">RAG in Production: The Practical Setup Nobody Writes About</div>
+              <div class="pop-tag">Guide · 12 min</div>
+            </div>
+          </div>
+          <div class="pop-item">
+            <span class="pop-n">03</span>
+            <div>
+              <div class="pop-title">Haven: From 6-Month Process to Automated in 18 Days</div>
+              <div class="pop-tag">Case Study · 5 min</div>
+            </div>
+          </div>
+          <div class="pop-item">
+            <span class="pop-n">04</span>
+            <div>
+              <div class="pop-title">Claude vs OpenAI for Production AI: Which Ships Better?</div>
+              <div class="pop-tag">Blog · 7 min</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA card -->
+      <div class="sdb-card" style="background:var(--brand-10);border-color:var(--brand-20)">
+        <h3 style="color:var(--brand)">Ready to ship?</h3>
+        <p>We build production-ready AI products in 2–4 weeks. Book a free 30-minute call.</p>
+        <a href="#" style="display:block;margin-top:14px;background:var(--brand);color:#fff;padding:11px 16px;border-radius:8px;font-size:13px;font-weight:700;text-align:center;transition:background .15s">Book a Free Call →</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ── CTA STRIP ── -->
+  <div class="cta-strip">
+    <div class="cs-stripe"></div>
+    <div>
+      <div class="cs-ey">Free 30-min consultation</div>
+      <h2>Got an AI product idea?<br/>Let's scope it together.</h2>
+      <p>We'll give you a written scope, timeline, and estimate within 48 hours. No obligation.</p>
+    </div>
+    <a href="#" class="cs-btn">
+      Book a Free Call
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7.5 3l3.5 3.5L7.5 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ══════════════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <a href="#" class="logo">
+        <svg class="logo-mark" viewBox="0 0 30 30" fill="none">
+          <rect width="30" height="30" rx="7" fill="#326d6d"/>
+          <path d="M8 15a7 7 0 0 1 14 0" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M15 22a7 7 0 0 1-7-7" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M15 22a7 7 0 0 0 7-7" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="15" cy="15" r="1.8" fill="white"/>
+        </svg>
+        <span class="logo-text">SofGent</span>
+      </a>
+      <ul class="foot-links">
+        <li><a href="#">Services</a></li><li><a href="#">Work</a></li>
+        <li><a href="#">Blog</a></li><li><a href="#">Privacy</a></li>
+      </ul>
+      <span class="foot-copy">© 2026 SofGent</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Filter tabs ────────────────────────────────────
+const ftabs = document.querySelectorAll('.ftab');
+const rows  = document.querySelectorAll('.post-row');
+const loadMoreBtn = document.getElementById('load-more-btn');
+
+ftabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    ftabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    const filter = tab.dataset.filter;
+    rows.forEach(row => {
+      const match = filter === 'all' || row.dataset.cat === filter;
+      row.style.display = match ? 'grid' : 'none';
+      // reset hidden on filter change
+      if (match) row.classList.remove('hidden-by-load');
+    });
+  });
+});
+
+// ── Load more ──────────────────────────────────────
+loadMoreBtn.addEventListener('click', () => {
+  const hiddenRows = document.querySelectorAll('.post-row.hidden');
+  hiddenRows.forEach(r => r.classList.remove('hidden'));
+  loadMoreBtn.parentElement.style.display = 'none';
+});
+
+// ── Sidebar topic tags ─────────────────────────────
+document.querySelectorAll('.stag').forEach(tag => {
+  tag.addEventListener('click', () => {
+    document.querySelectorAll('.stag').forEach(t => t.classList.remove('active'));
+    tag.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

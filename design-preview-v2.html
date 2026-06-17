@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SofGent — Design Preview v3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --brand:      #326d6d;
+      --brand-dk:   #1e4848;
+      --brand-10:   rgba(50,109,109,0.10);
+      --brand-20:   rgba(50,109,109,0.20);
+      --ink:        #0c0c0c;
+      --ink-2:      #1a1a1a;
+      --muted:      #6a6a6a;
+      --line:       #e6e6e6;
+      --surface:    #f7f7f7;
+      --white:      #ffffff;
+      --amber:      #f59e0b;
+      --green:      #22c55e;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--ink); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; }
+
+    /* ─── LAYOUT ───────────────────────────────── */
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 32px; }
+
+    /* ─── RIBBON ───────────────────────────────── */
+    .ribbon { background: var(--ink); text-align: center; padding: 7px; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.45); }
+    .ribbon b { color: #67e8f9; font-weight: 600; }
+
+    /* ─── TOPBAR ───────────────────────────────── */
+    .topbar { background: var(--brand); padding: 8px 32px; }
+    .topbar-in { max-width: 1140px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .topbar-msg { font-size: 12.5px; color: rgba(255,255,255,.85); }
+    .topbar-msg b { color: #fff; }
+    .topbar-contacts { display: flex; gap: 20px; }
+    .tc { display: flex; align-items: center; gap: 6px; font-size: 12px; color: rgba(255,255,255,.8); transition: color .15s; }
+    .tc:hover { color: #fff; }
+    .tc svg { flex-shrink: 0; opacity: .7; }
+
+    /* ─── NAV ──────────────────────────────────── */
+    .header-wrap { position: sticky; top: 0; z-index: 100; }
+    .nav { background: rgba(255,255,255,.96); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); }
+    .nav-in { max-width: 1140px; margin: 0 auto; padding: 0 32px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .logo { display: flex; align-items: center; gap: 9px; }
+    .logo-mark { width: 30px; height: 30px; }
+    .logo-text { font-size: 19px; font-weight: 800; letter-spacing: -.04em; color: var(--ink); }
+    .nav-links { display: flex; gap: 6px; list-style: none; }
+    .nav-links a { font-size: 13.5px; font-weight: 500; color: var(--muted); padding: 6px 10px; border-radius: 6px; transition: color .15s, background .15s; }
+    .nav-links a:hover { color: var(--ink); background: var(--surface); }
+    .nav-cta { font-size: 13.5px; font-weight: 600; background: var(--brand); color: #fff; padding: 9px 20px; border-radius: 8px; transition: background .15s; white-space: nowrap; }
+    .nav-cta:hover { background: var(--brand-dk); }
+
+    /* ─── HERO ─────────────────────────────────── */
+    .hero { padding: 100px 0 88px; border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
+    /* subtle dot grid */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(50,109,109,0.07) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    /* fade the grid out toward bottom */
+    .hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, var(--white) 100%);
+      pointer-events: none;
+    }
+    .hero-in { display: grid; grid-template-columns: 55fr 45fr; gap: 64px; align-items: center; position: relative; z-index: 1; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--brand); background: var(--brand-10); border: 1px solid var(--brand-20);
+      padding: 5px 13px; border-radius: 100px; margin-bottom: 22px;
+    }
+    .hero-pulse { width: 5px; height: 5px; border-radius: 50%; background: var(--brand); animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.2;transform:scale(.6)} }
+    .hero h1 {
+      font-size: clamp(44px, 5.8vw, 76px);
+      font-weight: 900; letter-spacing: -.045em; line-height: .98;
+      color: var(--ink); margin-bottom: 22px;
+    }
+    .hero h1 .hi { color: var(--brand); }
+    .hero-p { font-size: 16px; color: var(--muted); line-height: 1.72; max-width: 420px; margin-bottom: 36px; }
+    .hero-btns { display: flex; align-items: center; gap: 10px; margin-bottom: 48px; }
+    .btn-solid { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 600; background: var(--ink); color: #fff; padding: 13px 28px; border-radius: 9px; transition: background .15s, transform .15s; }
+    .btn-solid:hover { background: var(--ink-2); transform: translateY(-1px); }
+    .btn-line { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 500; color: var(--muted); border: 1px solid var(--line); padding: 13px 24px; border-radius: 9px; transition: border-color .15s, color .15s; }
+    .btn-line:hover { border-color: #bbb; color: var(--ink); }
+    .hero-kpis { display: flex; gap: 0; border-top: 1px solid var(--line); padding-top: 28px; }
+    .kpi { flex: 1; padding-right: 24px; border-right: 1px solid var(--line); margin-right: 24px; }
+    .kpi:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+    .kpi-n { font-size: 26px; font-weight: 800; letter-spacing: -.04em; color: var(--ink); }
+    .kpi-l { font-size: 11.5px; color: var(--muted); margin-top: 1px; }
+
+    /* ─── HERO VISUAL ──────────────────────────── */
+    .hv { position: relative; }
+    .hv-main { border-radius: 18px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 20px 60px rgba(0,0,0,.09); position: relative; }
+    .hv-main img { width: 100%; height: 300px; object-fit: cover; }
+    .hv-main::after { content:''; position:absolute; inset:0; background: linear-gradient(135deg, rgba(50,109,109,.06) 0%, transparent 55%); pointer-events:none; }
+    /* floating cards */
+    .hv-float {
+      position: absolute; background: #fff;
+      border: 1px solid var(--line); border-radius: 12px;
+      padding: 10px 14px; box-shadow: 0 8px 28px rgba(0,0,0,.09);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .hv-float.f1 { top: -12px; left: -16px; }
+    .hv-float.f2 { bottom: -12px; right: -16px; }
+    .hv-fi { width: 30px; height: 30px; border-radius: 8px; background: var(--brand-10); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .hv-fv { font-size: 15px; font-weight: 800; letter-spacing: -.03em; color: var(--ink); }
+    .hv-fl { font-size: 10px; color: var(--muted); }
+    /* thumbnails */
+    .hv-thumbs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+    .hv-thumb { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); position: relative; }
+    .hv-thumb img { width:100%; height:100px; object-fit:cover; transition: transform .4s; }
+    .hv-thumb:hover img { transform: scale(1.05); }
+    .hv-thumb-lbl { position:absolute; bottom:0; left:0; right:0; padding:16px 10px 8px; background: linear-gradient(0deg,rgba(0,0,0,.68),transparent); font-size:10.5px; font-weight:600; color:#fff; }
+    /* stack */
+    .hv-stack { display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-top:8px; }
+    .hv-stack-lbl { font-size:10px; color:var(--muted); font-weight:600; }
+    .sp { font-size:10px; font-weight:700; color:var(--muted); background:var(--surface); border:1px solid var(--line); padding:3px 9px; border-radius:100px; }
+
+    /* ─── LOGOS ─────────────────────────────────── */
+    .logos { padding: 48px 0; border-bottom: 1px solid var(--line); }
+    .logos-l { font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #ccc; text-align: center; margin-bottom: 24px; }
+    .logos-row { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
+    .logo-name { font-size: 14px; font-weight: 700; letter-spacing: -.02em; color: #d4d4d4; }
+
+    /* ─── SECTION LABELS ───────────────────────── */
+    .s-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--brand); margin-bottom: 12px; }
+    .s-tag::before { content:''; width:16px; height:2px; background:var(--brand); border-radius:2px; display:block; }
+    .s-h2 { font-size: clamp(27px,3.2vw,42px); font-weight: 800; letter-spacing: -.035em; line-height: 1.1; color: var(--ink); margin-bottom: 10px; }
+    .s-sub { font-size: 15px; color: var(--muted); line-height: 1.68; max-width: 420px; }
+
+    /* ─── SERVICES ──────────────────────────────── */
+    .services { padding: 112px 0; border-bottom: 1px solid var(--line); }
+    .svc-hdr { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 44px; }
+    .svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); border-radius: 16px; overflow: hidden; border: 1px solid var(--line); }
+    .svc-card { background: var(--white); cursor: pointer; transition: background .18s; }
+    .svc-card:hover { background: var(--surface); }
+    .svc-img-wrap { overflow: hidden; }
+    .svc-img { width:100%; height:196px; object-fit:cover; filter:grayscale(15%); transition: filter .3s, transform .4s; }
+    .svc-card:hover .svc-img { filter:grayscale(0%); transform:scale(1.04); }
+    .svc-body { padding: 22px 24px 24px; }
+    .svc-body h3 { font-size: 15px; font-weight: 700; letter-spacing: -.02em; color: var(--ink); margin-bottom: 8px; }
+    .svc-body p { font-size: 13px; color: var(--muted); line-height: 1.62; }
+    .svc-lnk { display:inline-flex; align-items:center; gap:5px; font-size:12.5px; font-weight:700; color:var(--brand); margin-top:16px; }
+    .svc-lnk svg { transition: transform .15s; }
+    .svc-card:hover .svc-lnk svg { transform: translateX(3px); }
+
+    /* ─── PROCESS ───────────────────────────────── */
+    .process { padding: 112px 0; border-bottom: 1px solid var(--line); }
+    .proc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .proc-sticky { position: sticky; top: 90px; }
+    .steps { display: flex; flex-direction: column; margin-top: 40px; }
+    .step { display: flex; gap: 18px; }
+    .step-l { display:flex; flex-direction:column; align-items:center; flex-shrink:0; }
+    .step-n {
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 1.5px solid #ddd; background: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: #bbb;
+      transition: border-color .2s, color .2s, background .2s;
+      flex-shrink: 0; position: relative; z-index: 1;
+    }
+    .step:hover .step-n { border-color: var(--brand); color: var(--brand); }
+    .step-ln { width: 1px; flex: 1; min-height: 24px; background: var(--line); margin-top: 3px; }
+    .step:last-child .step-ln { display: none; }
+    .step-b { padding: 3px 0 28px; }
+    .step-b h3 { font-size: 14.5px; font-weight: 700; letter-spacing: -.02em; color: var(--ink); margin-bottom: 6px; }
+    .step-b p { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+    /* dark terminal */
+    .term {
+      background: #0f1117; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,.18);
+    }
+    .term-bar { background: #1a1d26; padding: 11px 16px; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .td { width: 10px; height: 10px; border-radius: 50%; }
+    .td.r{background:#ff5f57} .td.y{background:#febc2e} .td.g{background:#28c840}
+    .term-file { font-size: 11px; font-family: 'JetBrains Mono',monospace; color: rgba(255,255,255,.3); margin-left: 8px; }
+    .term-body { padding: 22px 22px 18px; font-family: 'JetBrains Mono',monospace; font-size: 12.5px; line-height: 1.9; }
+    .tk { color: #7dd3a8; } .ts { color: #e9967a; } .tc { color: rgba(255,255,255,.22); } .tn { color: rgba(255,255,255,.75); }
+    .term-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 22px 22px; }
+    .tm { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: 10px; padding: 14px 16px; }
+    .tm-v { font-size: 22px; font-weight: 800; letter-spacing: -.04em; color: #fff; }
+    .tm-l { font-size: 10.5px; color: rgba(255,255,255,.35); margin-top: 2px; }
+    .tm-t { font-size: 10px; font-weight: 700; color: var(--green); margin-top: 4px; }
+
+    /* ─── WORK ──────────────────────────────────── */
+    .work { padding: 112px 0; border-bottom: 1px solid var(--line); }
+    .work-hdr { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:44px; }
+    .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border-radius: 16px; overflow: hidden; border: 1px solid var(--line); }
+    .wc { background: var(--white); cursor: pointer; transition: background .18s; overflow: hidden; }
+    .wc:hover { background: var(--surface); }
+    .wc.full { grid-column: span 2; }
+    .wc-img-wrap { overflow: hidden; position: relative; }
+    .wc-img { width:100%; height:240px; object-fit:cover; transition: transform .4s; }
+    .wc.full .wc-img { height:300px; }
+    .wc:hover .wc-img { transform: scale(1.02); }
+    .wc-tag { position:absolute; top:14px; left:14px; font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; background:rgba(0,0,0,.75); color:#fff; padding:4px 10px; border-radius:100px; backdrop-filter:blur(4px); }
+    .wc-body { padding: 22px 26px 26px; }
+    .wc-body h3 { font-size: 16px; font-weight: 700; letter-spacing: -.025em; color: var(--ink); margin-bottom: 7px; }
+    .wc-body p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .wc-pills { display:flex; gap:6px; margin-top:14px; flex-wrap:wrap; }
+    .wp { font-size:10.5px; font-weight:600; color:var(--brand); background:var(--brand-10); padding:3px 10px; border-radius:100px; }
+
+    /* ─── TESTIMONIALS ──────────────────────────── */
+    .testi { padding: 112px 0; border-bottom: 1px solid var(--line); }
+    .testi-hdr { text-align: center; margin-bottom: 48px; }
+    .testi-hdr .s-tag { justify-content: center; }
+    .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); border-radius: 16px; overflow: hidden; border: 1px solid var(--line); }
+    .tc2 { background: var(--white); padding: 30px 26px; }
+    .stars { display:flex; gap:2px; margin-bottom:14px; color:var(--amber); font-size:13px; }
+    .tq { font-size: 14.5px; color: #444; line-height: 1.75; margin-bottom: 24px; font-style: italic; }
+    .ta { display:flex; align-items:center; gap:10px; }
+    .tav { width:34px; height:34px; border-radius:50%; background:var(--brand-10); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:var(--brand); flex-shrink:0; }
+    .tan { font-size:13px; font-weight:700; color:var(--ink); }
+    .tar { font-size:11px; color:var(--muted); }
+
+    /* ─── CTA ───────────────────────────────────── */
+    .cta-sec { padding: 112px 0; }
+    .cta-box {
+      background: var(--ink);
+      border-radius: 24px; padding: 80px 72px;
+      display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 56px;
+      position: relative; overflow: hidden;
+    }
+    /* accent glows */
+    .cta-box::before { content:''; position:absolute; top:-100px; left:-80px; width:320px; height:320px; background:radial-gradient(circle,rgba(50,109,109,.4) 0%,transparent 70%); pointer-events:none; }
+    .cta-box::after  { content:''; position:absolute; bottom:-100px; right:-60px; width:280px; height:280px; background:radial-gradient(circle,rgba(103,232,249,.1) 0%,transparent 70%); pointer-events:none; }
+    /* thin diagonal stripe texture */
+    .cta-stripe { position:absolute; inset:0; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,.015) 0px, rgba(255,255,255,.015) 1px, transparent 1px, transparent 40px); pointer-events:none; }
+    .cta-ey { display:inline-flex; align-items:center; gap:6px; font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#67e8f9; background:rgba(103,232,249,.1); border:1px solid rgba(103,232,249,.15); padding:4px 12px; border-radius:100px; margin-bottom:18px; position:relative; z-index:1; }
+    .cta-box h2 { font-size:clamp(26px,3vw,44px); font-weight:800; letter-spacing:-.035em; line-height:1.08; color:#fff; margin-bottom:12px; position:relative; z-index:1; }
+    .cta-sub { font-size:15px; color:rgba(255,255,255,.42); line-height:1.65; max-width:420px; position:relative; z-index:1; }
+    .cta-btns { display:flex; flex-direction:column; gap:8px; flex-shrink:0; position:relative; z-index:1; }
+    .btn-cw { display:inline-flex; align-items:center; justify-content:center; gap:7px; font-size:14px; font-weight:700; background:#fff; color:var(--ink); padding:14px 32px; border-radius:10px; white-space:nowrap; transition:background .15s; }
+    .btn-cw:hover { background:#f0f0f0; }
+    .btn-co { display:inline-flex; align-items:center; justify-content:center; font-size:13.5px; font-weight:500; color:rgba(255,255,255,.45); border:1px solid rgba(255,255,255,.1); padding:13px 32px; border-radius:10px; white-space:nowrap; transition:border-color .15s,color .15s; }
+    .btn-co:hover { border-color:rgba(255,255,255,.3); color:rgba(255,255,255,.85); }
+
+    /* ─── LOGO MARQUEE ─────────────────────────── */
+    .logos { padding: 44px 0; border-bottom: 1px solid var(--line); }
+    .logos-l { font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #ccc; text-align: center; margin-bottom: 22px; }
+    .logos-outer { overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); }
+    .logos-track { display: flex; gap: 64px; width: max-content; animation: marquee 22s linear infinite; }
+    .logos-track:hover { animation-play-state: paused; }
+    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    .logo-chip { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+    .logo-chip-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--line); flex-shrink: 0; }
+    .logo-name { font-size: 14px; font-weight: 700; letter-spacing: -.02em; color: #d4d4d4; }
+
+    /* ─── PROCESS TABS ──────────────────────────── */
+    .proc-tabs { display: flex; gap: 4px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 4px; margin-top: 28px; margin-bottom: 0; }
+    .ptab { flex: 1; font-size: 12.5px; font-weight: 600; color: var(--muted); background: none; border: none; cursor: pointer; padding: 8px 12px; border-radius: 7px; transition: background .15s, color .15s; white-space: nowrap; }
+    .ptab.active { background: var(--white); color: var(--ink); box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+    .step { display: flex; gap: 18px; opacity: .35; transition: opacity .2s; }
+    .step.active { opacity: 1; }
+    .step.active .step-n { border-color: var(--brand); color: var(--brand); background: var(--brand-10); }
+
+    /* ─── WORK METRICS ──────────────────────────── */
+    .wc-metric { display: flex; gap: 8px; margin-top: 16px; }
+    .wm { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 9px 13px; flex: 1; }
+    .wm-v { font-size: 17px; font-weight: 800; letter-spacing: -.03em; color: var(--ink); }
+    .wm-v .arr { font-size: 12px; color: var(--muted); font-weight: 500; }
+    .wm-l { font-size: 10.5px; color: var(--muted); margin-top: 1px; }
+    .wm.hi { background: var(--brand-10); border-color: var(--brand-20); }
+    .wm.hi .wm-v { color: var(--brand); }
+
+    /* ─── RESULTS SECTION ───────────────────────── */
+    .results { padding: 96px 0; border-bottom: 1px solid var(--line); background: var(--surface); }
+    .results-hdr { text-align: center; margin-bottom: 52px; }
+    .results-hdr .s-tag { justify-content: center; }
+    .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+    .rcard { background: var(--white); padding: 36px 32px; }
+    .rcard-before { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .rcard-arrow { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .rcard-from { font-size: 24px; font-weight: 800; letter-spacing: -.04em; color: #ccc; text-decoration: line-through; text-decoration-color: #ddd; }
+    .rcard-chevron { font-size: 16px; color: var(--brand); font-weight: 700; }
+    .rcard-to { font-size: 28px; font-weight: 900; letter-spacing: -.04em; color: var(--ink); }
+    .rcard-desc { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+    .rcard-client { display: flex; align-items: center; gap: 8px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .rcard-av { width: 26px; height: 26px; border-radius: 50%; background: var(--brand-10); display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 800; color: var(--brand); flex-shrink: 0; }
+    .rcard-who { font-size: 12px; font-weight: 600; color: var(--ink); }
+    .rcard-co { font-size: 11px; color: var(--muted); }
+
+    /* ─── FOOTER ────────────────────────────────── */
+    footer { background: var(--surface); border-top: 1px solid var(--line); padding: 64px 0 36px; }
+    .foot-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
+    .foot-brand .logo { margin-bottom: 14px; }
+    .foot-brand p { font-size: 13px; color: var(--muted); line-height: 1.7; max-width: 240px; }
+    .foot-col h4 { font-size: 12px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); margin-bottom: 16px; }
+    .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .foot-col ul a { font-size: 13.5px; color: var(--muted); transition: color .15s; }
+    .foot-col ul a:hover { color: var(--ink); }
+    .foot-bot { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 28px; }
+    .foot-copy { font-size: 12.5px; color: #bbb; }
+    .foot-legal { display: flex; gap: 20px; }
+    .foot-legal a { font-size: 12.5px; color: #bbb; transition: color .15s; }
+    .foot-legal a:hover { color: var(--ink); }
+  </style>
+</head>
+<body>
+
+<!-- ribbon -->
+<div class="ribbon">SofGent — Design Preview <b>v3</b> &nbsp;·&nbsp; Linear · Clean · Combined</div>
+
+<!-- ═══ HEADER ════════════════════════════════════ -->
+<div class="header-wrap">
+  <div class="topbar">
+    <div class="topbar-in">
+      <p class="topbar-msg">Welcome to <b>SofGent</b> — Build and Launch Your SaaS MVP. Fast, Scalable, Production-Ready.</p>
+      <div class="topbar-contacts">
+        <a href="mailto:support@sofgent.com" class="tc">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          support@sofgent.com
+        </a>
+        <a href="tel:+8801537740365" class="tc">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.9 1.27h3a2 2 0 0 1 2 1.72c.13.97.35 1.92.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.09-1.08a2 2 0 0 1 2.11-.45c.89.35 1.84.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +8801537740365
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="nav">
+    <div class="nav-in">
+      <a href="#" class="logo">
+        <svg class="logo-mark" viewBox="0 0 30 30" fill="none">
+          <rect width="30" height="30" rx="7" fill="#326d6d"/>
+          <path d="M8 15a7 7 0 0 1 14 0" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M15 22a7 7 0 0 1-7-7" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M15 22a7 7 0 0 0 7-7" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="15" cy="15" r="1.8" fill="white"/>
+        </svg>
+        <span class="logo-text">SofGent</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">How We Build SaaS</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <a href="#" class="nav-cta">Get a Quote</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ HERO ══════════════════════════════════════ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-in">
+
+      <!-- left -->
+      <div>
+        <div class="hero-eyebrow"><span class="hero-pulse"></span> AI Product Studio</div>
+        <h1>Ship your AI<br/>product in<br/><span class="hi">2–4 weeks.</span></h1>
+        <p class="hero-p">Document automation, AI SaaS MVPs, and data infrastructure — production-ready for founders, CTOs, and ops teams.</p>
+        <div class="hero-btns">
+          <a href="#" class="btn-solid">
+            Book a Free Call
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 6.5h10M7.5 2.5l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="btn-line">See Our Work</a>
+        </div>
+        <div class="hero-kpis">
+          <div class="kpi"><div class="kpi-n">2–4 wks</div><div class="kpi-l">Avg. delivery time</div></div>
+          <div class="kpi"><div class="kpi-n">30+</div><div class="kpi-l">AI products shipped</div></div>
+          <div class="kpi"><div class="kpi-n">0</div><div class="kpi-l">Critical launch bugs</div></div>
+        </div>
+      </div>
+
+      <!-- right: image composition -->
+      <div class="hv">
+        <div class="hv-main">
+          <img src="app/assets/images/home/hero-right-image.png" alt="SofGent product" />
+          <div class="hv-float f1">
+            <div class="hv-fi">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#326d6d" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div><div class="hv-fv">18 days</div><div class="hv-fl">Avg. time to ship</div></div>
+          </div>
+          <div class="hv-float f2">
+            <div class="hv-fi">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#326d6d" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div><div class="hv-fv">30+ shipped</div><div class="hv-fl">To production</div></div>
+          </div>
+        </div>
+        <div class="hv-thumbs">
+          <div class="hv-thumb">
+            <img src="public/images/project/haven/home_card_staffing.jpg" alt="Staffing SaaS" />
+            <div class="hv-thumb-lbl">Haven — Staffing SaaS</div>
+          </div>
+          <div class="hv-thumb">
+            <img src="public/images/project/haven/home_card_supported_living.jpg" alt="Supported Living" />
+            <div class="hv-thumb-lbl">Haven — Supported Living</div>
+          </div>
+        </div>
+        <div class="hv-stack">
+          <span class="hv-stack-lbl">Built with</span>
+          <span class="sp">Next.js</span><span class="sp">Claude AI</span><span class="sp">OpenAI</span><span class="sp">Sanity</span><span class="sp">Vercel</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LOGO STRIP ════════════════════════════════ -->
+<section class="logos">
+  <div class="wrap">
+    <p class="logos-l">Trusted by growth-stage teams &amp; founders</p>
+  </div>
+  <div class="logos-outer">
+    <div class="logos-track">
+      <!-- set 1 -->
+      <div class="logo-chip"><span class="logo-chip-dot"></span><span class="logo-name">Haven</span></div>
+      <div class="logo-chip"><span class="logo-chip-dot"></span><span class="logo-name">FinStack</span></div>
+      <div class="logo-chip"><span class="logo-chip-dot"></span><span class="logo-name">DocFlow</span></div>
+      <div class="logo-chip"><span class="logo-chip-dot"></span><span class="logo-name">NovaSME</span></div>
+      <div class="logo-chip"><span class="logo-chip-dot"></span><span class="logo-name">Clearbase</span></div>
+      <div class="logo-chip"><span class="logo-chip-dot"></span><span class="logo-name">Acme Bank</span></div>
+      <div class="logo-chip"><span class="logo-chip-dot"></span><span class="logo-name">EasyKT</span></div>
+      <div class="logo-chip"><span class="logo-chip-dot"></span><span class="logo-name">Meridian AI</span></div>
+      <!-- set 2 (duplicate for seamless loop) -->
+      <div class="logo-chip"><span class="logo-chip-dot"></span><span class="logo-name">Haven</span></div>
+      <div class="logo-chip"><span class="logo-chip-dot"></span><span class="logo-name">FinStack</span></div>
+      <div class="logo-chip"><span class="logo-chip-dot"></span><span class="logo-name">DocFlow</span></div>
+      <div class="logo-chip"><span class="logo-chip-dot"></span><span class="logo-name">NovaSME</span></div>
+      <div class="logo-chip"><span class="logo-chip-dot"></span><span class="logo-name">Clearbase</span></div>
+      <div class="logo-chip"><span class="logo-chip-dot"></span><span class="logo-name">Acme Bank</span></div>
+      <div class="logo-chip"><span class="logo-chip-dot"></span><span class="logo-name">EasyKT</span></div>
+      <div class="logo-chip"><span class="logo-chip-dot"></span><span class="logo-name">Meridian AI</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ══════════════════════════════════ -->
+<section class="services">
+  <div class="wrap">
+    <div class="svc-hdr">
+      <div>
+        <div class="s-tag">What we build</div>
+        <h2 class="s-h2">Three things we do<br/>better than anyone.</h2>
+      </div>
+      <a href="#" class="btn-line" style="align-self:flex-end;font-size:13px;padding:10px 20px;">View all services</a>
+    </div>
+    <div class="svc-grid">
+
+      <div class="svc-card">
+        <div class="svc-img-wrap"><img class="svc-img" src="public/images/services/software-development.webp" alt="AI SaaS"/></div>
+        <div class="svc-body">
+          <h3>AI SaaS MVP Development</h3>
+          <p>From scoped idea to deployed product in 2–4 weeks. Full stack — architecture, AI layer, and UI.</p>
+          <div class="svc-lnk">Learn more <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7.5 3l3.5 3.5L7.5 10" stroke="#326d6d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-img-wrap"><img class="svc-img" src="public/images/services/image-processing.webp" alt="Document AI"/></div>
+        <div class="svc-body">
+          <h3>AI Document Automation</h3>
+          <p>Turn invoices, contracts, and reports into structured data. Automated, end-to-end.</p>
+          <div class="svc-lnk">Learn more <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7.5 3l3.5 3.5L7.5 10" stroke="#326d6d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-img-wrap"><img class="svc-img" src="public/images/services/managed-security.webp" alt="Data Infrastructure"/></div>
+        <div class="svc-body">
+          <h3>AI-Ready Data Infrastructure</h3>
+          <p>Clean, labeled, structured data so your models train on signal, not noise.</p>
+          <div class="svc-lnk">Learn more <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7.5 3l3.5 3.5L7.5 10" stroke="#326d6d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-img-wrap"><img class="svc-img" src="public/images/services/system-integration.webp" alt="AI Integration"/></div>
+        <div class="svc-body">
+          <h3>AI Integration & APIs</h3>
+          <p>Connect OpenAI, Anthropic, or custom models to your systems via clean, well-documented APIs.</p>
+          <div class="svc-lnk">Learn more <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7.5 3l3.5 3.5L7.5 10" stroke="#326d6d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-img-wrap"><img class="svc-img" src="public/images/services/ui-ux-design.webp" alt="UX Design"/></div>
+        <div class="svc-body">
+          <h3>Product Design & UX</h3>
+          <p>Interface design that converts — from wireframes to pixel-perfect, accessible components.</p>
+          <div class="svc-lnk">Learn more <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7.5 3l3.5 3.5L7.5 10" stroke="#326d6d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-img-wrap"><img class="svc-img" src="public/images/services/dev-ops.webp" alt="DevOps"/></div>
+        <div class="svc-body">
+          <h3>DevOps & Infrastructure</h3>
+          <p>CI/CD pipelines, cloud architecture, and production monitoring from day one.</p>
+          <div class="svc-lnk">Learn more <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7.5 3l3.5 3.5L7.5 10" stroke="#326d6d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ════════════════════════════════════ -->
+<section class="process">
+  <div class="wrap">
+    <div class="proc-grid">
+
+      <div>
+        <div class="s-tag">How we work</div>
+        <h2 class="s-h2">A clear process.<br/>Zero surprises.</h2>
+        <p class="s-sub">Tight sprints, daily visibility, shipped in weeks — not quarters.</p>
+
+        <!-- week tabs -->
+        <div class="proc-tabs">
+          <button class="ptab active" data-week="1">Week 1</button>
+          <button class="ptab" data-week="2">Week 2</button>
+          <button class="ptab" data-week="3">Week 3</button>
+          <button class="ptab" data-week="4">Launch</button>
+        </div>
+
+        <div class="steps" style="margin-top:28px;">
+          <div class="step active" data-week="1">
+            <div class="step-l"><div class="step-n">01</div><div class="step-ln"></div></div>
+            <div class="step-b"><h3>Discover &amp; Define</h3><p>One focused call. We align on goals, constraints, and success criteria — then hand you a scoped plan to sign off on.</p></div>
+          </div>
+          <div class="step" data-week="2">
+            <div class="step-l"><div class="step-n">02</div><div class="step-ln"></div></div>
+            <div class="step-b"><h3>Plan &amp; Prototype</h3><p>Architecture, data flows, clickable prototype. You validate direction before a single line of prod code ships.</p></div>
+          </div>
+          <div class="step" data-week="3">
+            <div class="step-l"><div class="step-n">03</div><div class="step-ln"></div></div>
+            <div class="step-b"><h3>Build &amp; Iterate</h3><p>1-week agile sprints with real progress updates. No status theatre — you see working software every Friday.</p></div>
+          </div>
+          <div class="step" data-week="4">
+            <div class="step-l"><div class="step-n">04</div></div>
+            <div class="step-b"><h3>Launch &amp; Support</h3><p>We own the deploy and stay engaged 30 days post-launch. You go live with confidence, not crossed fingers.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proc-sticky">
+        <div class="term">
+          <div class="term-bar">
+            <span class="td r"></span><span class="td y"></span><span class="td g"></span>
+            <span class="term-file" id="term-filename">week-1-discovery.ts</span>
+          </div>
+          <div class="term-body" id="term-body">
+            <span class="tc">// Week 1 — Discovery &amp; Scoping</span><br/>
+            <span class="tk">const</span> <span class="tn">scope</span> = <span class="tk">await</span> <span class="tn">define</span>({<br/>
+            &nbsp;&nbsp;goal: <span class="ts">"invoice automation"</span>,<br/>
+            &nbsp;&nbsp;timeline: <span class="ts">"3 weeks"</span>,<br/>
+            &nbsp;&nbsp;stack: [<span class="ts">"Next.js"</span>, <span class="ts">"Claude AI"</span>],<br/>
+            &nbsp;&nbsp;budget: <span class="ts">"fixed"</span><br/>
+            });<br/><br/>
+            <span class="tc">// Output: written scope doc + timeline</span><br/>
+            <span class="tk">return</span> { scope, signoff: <span class="tk">true</span> };
+          </div>
+          <div class="term-metrics">
+            <div class="tm">
+              <div class="tm-v">18d</div>
+              <div class="tm-l">Avg. time to ship</div>
+              <div class="tm-t">↓ 40% vs industry</div>
+            </div>
+            <div class="tm">
+              <div class="tm-v">0</div>
+              <div class="tm-l">Critical launch bugs</div>
+              <div class="tm-t">Last 30 projects</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WORK ═══════════════════════════════════════ -->
+<section class="work">
+  <div class="wrap">
+    <div class="work-hdr">
+      <div>
+        <div class="s-tag">Selected work</div>
+        <h2 class="s-h2">Products we've shipped.</h2>
+      </div>
+      <a href="#" class="btn-line" style="align-self:flex-end;font-size:13px;padding:10px 20px;">All projects</a>
+    </div>
+    <div class="work-grid">
+      <div class="wc full">
+        <div class="wc-img-wrap">
+          <img class="wc-img" src="public/images/project/haven/HOME_Financing.jpg" alt="Haven"/>
+          <span class="wc-tag">Case Study</span>
+        </div>
+        <div class="wc-body">
+          <h3>Haven — AI-Powered Home Financing Platform</h3>
+          <p>End-to-end document processing and loan decision automation for a UK care services provider.</p>
+          <div class="wc-metric">
+            <div class="wm hi"><div class="wm-v">80%</div><div class="wm-l">Less manual review time</div></div>
+            <div class="wm hi"><div class="wm-v">6 mo <span class="arr">→</span> 3 wk</div><div class="wm-l">Time to automate</div></div>
+            <div class="wm hi"><div class="wm-v">0</div><div class="wm-l">Critical launch bugs</div></div>
+          </div>
+          <div class="wc-pills" style="margin-top:14px;"><span class="wp">Document Automation</span><span class="wp">AI Decision Engine</span><span class="wp">Next.js</span></div>
+        </div>
+      </div>
+      <div class="wc">
+        <div class="wc-img-wrap">
+          <img class="wc-img" src="public/images/project/haven/home_card_staffing.jpg" alt="Staffing"/>
+          <span class="wc-tag">Product</span>
+        </div>
+        <div class="wc-body">
+          <h3>Staffing Operations SaaS</h3>
+          <p>AI-assisted scheduling for domiciliary care providers.</p>
+          <div class="wc-metric">
+            <div class="wm hi"><div class="wm-v">8 wk <span class="arr">→</span> 3 wk</div><div class="wm-l">MVP shipped in</div></div>
+            <div class="wm"><div class="wm-v">40%</div><div class="wm-l">Fewer scheduling errors</div></div>
+          </div>
+          <div class="wc-pills" style="margin-top:14px;"><span class="wp">SaaS MVP</span><span class="wp">AI Workflows</span></div>
+        </div>
+      </div>
+      <div class="wc">
+        <div class="wc-img-wrap">
+          <img class="wc-img" src="public/images/project/haven/home_card_supported_living.jpg" alt="Portal"/>
+          <span class="wc-tag">Platform</span>
+        </div>
+        <div class="wc-body">
+          <h3>Supported Living Management Portal</h3>
+          <p>Compliance dashboards and audit-ready record management.</p>
+          <div class="wc-metric">
+            <div class="wm hi"><div class="wm-v">100%</div><div class="wm-l">Audit pass rate</div></div>
+            <div class="wm"><div class="wm-v">Zero</div><div class="wm-l">Legacy dependencies</div></div>
+          </div>
+          <div class="wc-pills" style="margin-top:14px;"><span class="wp">Data Infrastructure</span><span class="wp">Compliance</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RESULTS ════════════════════════════════════ -->
+<section class="results">
+  <div class="wrap">
+    <div class="results-hdr">
+      <div class="s-tag">Real outcomes</div>
+      <h2 class="s-h2" style="text-align:center;margin-top:10px;">Numbers from production.</h2>
+      <p class="s-sub" style="text-align:center;margin:10px auto 0;max-width:420px;">Not projections. Results from shipped projects with real clients.</p>
+    </div>
+    <div class="results-grid">
+
+      <div class="rcard">
+        <div class="rcard-before">Manual review time</div>
+        <div class="rcard-arrow">
+          <span class="rcard-from">6 months</span>
+          <span class="rcard-chevron">→</span>
+          <span class="rcard-to">3 weeks</span>
+        </div>
+        <p class="rcard-desc">Document automation pipeline replaced a 6-month manual review process on day one of launch.</p>
+        <div class="rcard-client">
+          <div class="rcard-av">HF</div>
+          <div><div class="rcard-who">Haven Finance</div><div class="rcard-co">AI Document Automation</div></div>
+        </div>
+      </div>
+
+      <div class="rcard">
+        <div class="rcard-before">Time to working MVP</div>
+        <div class="rcard-arrow">
+          <span class="rcard-from">12 weeks</span>
+          <span class="rcard-chevron">→</span>
+          <span class="rcard-to">18 days</span>
+        </div>
+        <p class="rcard-desc">Fully scoped, built, and deployed SaaS product including AI integration and production infrastructure.</p>
+        <div class="rcard-client">
+          <div class="rcard-av">FS</div>
+          <div><div class="rcard-who">FinStack</div><div class="rcard-co">SaaS MVP Development</div></div>
+        </div>
+      </div>
+
+      <div class="rcard">
+        <div class="rcard-before">Data prep for AI training</div>
+        <div class="rcard-arrow">
+          <span class="rcard-from">Months</span>
+          <span class="rcard-chevron">→</span>
+          <span class="rcard-to">1 sprint</span>
+        </div>
+        <p class="rcard-desc">Clean, labeled, structured datasets ready for model training — delivered in a single 2-week engagement.</p>
+        <div class="rcard-client">
+          <div class="rcard-av">NS</div>
+          <div><div class="rcard-who">NovaSME</div><div class="rcard-co">AI-Ready Data Infrastructure</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ══════════════════════════════ -->
+<section class="testi">
+  <div class="wrap">
+    <div class="testi-hdr">
+      <div class="s-tag" style="display:inline-flex;">Client results</div>
+      <h2 class="s-h2" style="text-align:center;margin-top:10px;">What clients say.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="tc2">
+        <div class="stars">★★★★★</div>
+        <p class="tq">"SofGent delivered a fully working document automation pipeline in 3 weeks. We replaced a 6-month manual process on day one."</p>
+        <div class="ta"><div class="tav">JK</div><div><div class="tan">James K.</div><div class="tar">CTO, FinStack</div></div></div>
+      </div>
+      <div class="tc2">
+        <div class="stars">★★★★★</div>
+        <p class="tq">"They scoped, built, and launched our AI SaaS MVP faster than I thought possible. Clean code, zero handholding needed."</p>
+        <div class="ta"><div class="tav">SR</div><div><div class="tan">Sara R.</div><div class="tar">Founder, DocFlow</div></div></div>
+      </div>
+      <div class="tc2">
+        <div class="stars">★★★★★</div>
+        <p class="tq">"The data-readiness audit alone saved us months. Our models now train on clean, structured data from day one."</p>
+        <div class="ta"><div class="tav">AM</div><div><div class="tan">Alex M.</div><div class="tar">Head of Ops, NovaSME</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ════════════════════════════════════════ -->
+<section class="cta-sec">
+  <div class="wrap">
+    <div class="cta-box">
+      <div class="cta-stripe"></div>
+      <div>
+        <div class="cta-ey">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Free 30-min consultation
+        </div>
+        <h2>Ready to ship your<br/>AI product?</h2>
+        <p class="cta-sub">Book a call. We'll scope your project, give you a timeline, and tell you exactly what it'll take.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="#" class="btn-cw">Book a Call <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7.5 3l3.5 3.5L7.5 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="#" class="btn-co">Request a Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═════════════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#" class="logo" style="margin-bottom:14px;">
+          <svg class="logo-mark" viewBox="0 0 30 30" fill="none">
+            <rect width="30" height="30" rx="7" fill="#326d6d"/>
+            <path d="M8 15a7 7 0 0 1 14 0" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M15 22a7 7 0 0 1-7-7" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M15 22a7 7 0 0 0 7-7" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="15" cy="15" r="1.8" fill="white"/>
+          </svg>
+          <span class="logo-text">SofGent</span>
+        </a>
+        <p>We build production-ready AI products in 2–4 weeks for founders, CTOs, and operations teams.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">AI SaaS MVP</a></li>
+          <li><a href="#">Document Automation</a></li>
+          <li><a href="#">Data Infrastructure</a></li>
+          <li><a href="#">AI Integration</a></li>
+          <li><a href="#">DevOps</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">How We Build SaaS</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="mailto:support@sofgent.com">support@sofgent.com</a></li>
+          <li><a href="tel:+8801537740365">+880 153 7740365</a></li>
+          <li><a href="#">Book a free call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span class="foot-copy">© 2026 SofGent. All rights reserved.</span>
+      <div class="foot-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Process tab interaction ───────────────────────
+const termContent = {
+  1: {
+    file: 'week-1-discovery.ts',
+    body: `<span class="tc">// Week 1 — Discovery &amp; Scoping</span><br/>
+<span class="tk">const</span> <span class="tn">scope</span> = <span class="tk">await</span> <span class="tn">define</span>({<br/>
+&nbsp;&nbsp;goal: <span class="ts">"invoice automation"</span>,<br/>
+&nbsp;&nbsp;timeline: <span class="ts">"3 weeks"</span>,<br/>
+&nbsp;&nbsp;stack: [<span class="ts">"Next.js"</span>, <span class="ts">"Claude AI"</span>],<br/>
+&nbsp;&nbsp;budget: <span class="ts">"fixed"</span><br/>
+});<br/><br/>
+<span class="tc">// Output: written scope doc + timeline</span><br/>
+<span class="tk">return</span> { scope, signoff: <span class="tk">true</span> };`
+  },
+  2: {
+    file: 'week-2-prototype.ts',
+    body: `<span class="tc">// Week 2 — Architecture &amp; Prototype</span><br/>
+<span class="tk">const</span> <span class="tn">arch</span> = <span class="tn">design</span>({<br/>
+&nbsp;&nbsp;api: <span class="ts">"Next.js App Router"</span>,<br/>
+&nbsp;&nbsp;db: <span class="ts">"Supabase"</span>,<br/>
+&nbsp;&nbsp;ai: <span class="ts">"Claude 3.5 Sonnet"</span><br/>
+});<br/><br/>
+<span class="tc">// Clickable prototype in Figma</span><br/>
+<span class="tk">const</span> <span class="tn">proto</span> = <span class="tk">await</span> <span class="tn">build</span>(arch);<br/>
+<span class="tn">client</span>.<span class="tn">approve</span>(proto); <span class="tc">// ✓</span>`
+  },
+  3: {
+    file: 'week-3-build.ts',
+    body: `<span class="tc">// Week 3 — Build &amp; Iterate</span><br/>
+<span class="tk">for</span> (<span class="tk">const</span> <span class="tn">sprint</span> <span class="tk">of</span> sprints) {<br/>
+&nbsp;&nbsp;<span class="tk">const</span> <span class="tn">result</span> = <span class="tk">await</span> <span class="tn">build</span>(sprint);<br/>
+&nbsp;&nbsp;<span class="tn">client</span>.<span class="tn">review</span>(result); <span class="tc">// every Friday</span><br/>
+&nbsp;&nbsp;<span class="tn">tests</span>.<span class="tn">run</span>(); <span class="tc">// zero regressions</span><br/>
+}<br/><br/>
+<span class="tc">// Real software, not status updates</span><br/>
+<span class="tn">console</span>.<span class="tn">log</span>(<span class="ts">"Shipping on Friday ✓"</span>);`
+  },
+  4: {
+    file: 'launch-deploy.ts',
+    body: `<span class="tc">// Week 4 — Ship to Production 🚀</span><br/>
+<span class="tk">await</span> <span class="tn">deploy</span>(product, {<br/>
+&nbsp;&nbsp;env: <span class="ts">"production"</span>,<br/>
+&nbsp;&nbsp;provider: <span class="ts">"Vercel"</span>,<br/>
+&nbsp;&nbsp;monitoring: <span class="tk">true</span>,<br/>
+&nbsp;&nbsp;support: <span class="ts">"30-day included"</span><br/>
+});<br/><br/>
+<span class="tc">// Zero critical bugs. Every time.</span><br/>
+<span class="tn">console</span>.<span class="tn">log</span>(<span class="ts">"🟢 Live in production"</span>);`
+  }
+};
+
+const tabs = document.querySelectorAll('.ptab');
+const steps = document.querySelectorAll('.step[data-week]');
+const termFile = document.getElementById('term-filename');
+const termBody = document.getElementById('term-body');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const week = parseInt(tab.dataset.week);
+
+    // update tab active state
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    // update steps
+    steps.forEach(s => {
+      s.classList.remove('active');
+      if (parseInt(s.dataset.week) <= week) s.classList.add('active');
+    });
+
+    // update terminal
+    const content = termContent[week];
+    termFile.textContent = content.file;
+    termBody.innerHTML = content.body;
+  });
+});
+</script>
+</body>
+</html>

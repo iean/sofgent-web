@@ -7,20 +7,20 @@ import Copyright from "./Copyright";
 // Services List
 const serviceList = [
    {
-      title: "Custom Software Development with us",
-      url: "/services/custom-software-development",
+      title: "AI Product Studio",
+      url: "/ai-product-studio",
    },
    {
-      title: "DevOps Services with Continuous Integration",
-      url: "/services/devops-deployment-continuous-delivery",
+      title: "AI Product Delivery",
+      url: "/services/ai-solutions",
    },
    {
-      title: "AI Advanced Services",
-      url: "/services/advanced-ai-solutions",
+      title: "SaaS MVP Delivery",
+      url: "/services/saas-mvp-development",
    },
    {
-      title: "Custom Saas Solutions ",
-      url: "/services/saas-micro-saas-solutions",
+      title: "How We Build SaaS",
+      url: "/how-we-build-saas",
    },
 ];
 
@@ -37,6 +37,10 @@ const quickLinks = [
    {
       title: "Services",
       url: "/services",
+   },
+   {
+      title: "AI Product Studio",
+      url: "/ai-product-studio",
    },
    {
       title: "Blog",

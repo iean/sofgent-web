@@ -5,27 +5,27 @@ import workProcess from "@assets/images/home/Process-amico.svg";
 const steps = [
   {
     serial: "01",
-    title: "Discover & Define",
+    title: "Map the workflow",
     description:
-      "We listen first—clarifying goals, constraints, and success metrics to align on a clear plan.",
+      "We audit the operational bottleneck, the tools involved, and the decisions the software needs to support.",
   },
   {
     serial: "02",
-    title: "Plan & Prototype",
+    title: "Design the system",
     description:
-      "We map architecture, milestones, and UI flows; quick prototypes validate UX and scope early.",
+      "We define architecture, data flow, AI touchpoints, and delivery scope before build speed takes over.",
   },
   {
     serial: "03",
-    title: "Build & Iterate",
+    title: "Ship working software",
     description:
-      "Agile sprints deliver incremental value with CI/CD, code reviews, and tight feedback loops.",
+      "Weekly demos keep progress visible while we build the app, integrations, and AI workflows together.",
   },
   {
     serial: "04",
-    title: "Test, Launch, Support",
+    title: "Launch with confidence",
     description:
-      "Automated + manual QA, secure releases, and ongoing monitoring with iterative improvements.",
+      "QA, release readiness, monitoring, and support are built in so the system can survive real usage.",
   },
 ];
 
@@ -39,10 +39,11 @@ export default function HowWeWork() {
               <div className="title-area">
                 <SectionTag tag="How We Work" />
                 <h2 className="md:text-48 mt-6 text-34 font-semibold text-main-black mb-[24px]">
-                  A clear, collaborative delivery process
+                  A delivery model built for AI products that need to work in production
                 </h2>
                 <p className="text-paragraph mb-8">
-                  A compact, outcome‑driven workflow designed for software product teams.
+                  We keep the process compact: scope the problem, shape the
+                  architecture, ship working software, and support the rollout.
                 </p>
                 <div className="grid grid-cols-1 gap-5">
                   {steps.map((step) => (
@@ -87,4 +88,3 @@ export default function HowWeWork() {
     </section>
   );
 }
-

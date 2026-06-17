@@ -4,22 +4,22 @@ import { Shield, Zap, Trophy } from 'lucide-react';
 const features = [
   {
     icon: Shield,
-    title: "Unwavering Quality",
-    description: "Every project is built to perform, with meticulous attention to detail and future scalability in mind.",
+    title: "Architecture Before Build",
+    description: "We define data flow, system boundaries, and delivery risk early so the product can scale beyond the first release.",
     color: "text-blue-600",
     bgColor: "bg-blue-100"
   },
   {
     icon: Zap,
-    title: "On-Time Delivery",
-    description: "Experience rapid solutions with our cutting-edge technology and streamlined processes.",
+    title: "One Team, Faster Delivery",
+    description: "AI workflows, backend systems, frontend delivery, and integrations move together instead of across separate vendors.",
     color: "text-yellow-600",
     bgColor: "bg-yellow-100"
   },
   {
     icon: Trophy,
-    title: "Tailored Solutions",
-    description: "We adapt to the specifics of your industry, aligning technology to your strategy for unmatched value.",
+    title: "Built for Real Operations",
+    description: "The goal is usable software that reduces manual effort, improves visibility, and keeps working after launch.",
     color: "text-purple-600",
     bgColor: "bg-purple-100"
   }
@@ -31,11 +31,13 @@ const WhyChooseUs = () => {
       <div className="theme-container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Why Choose Us
+            Why operations teams choose SofGent
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            We combine innovation, expertise, and dedication to deliver exceptional results that exceed expectations.
+            We act like an engineering-led delivery partner, not a broad agency
+            menu. The work stays focused on AI apps, internal tools, and
+            production-ready SaaS systems.
           </p>
         </div>
 

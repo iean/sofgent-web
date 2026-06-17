@@ -4,11 +4,13 @@ import Link from "next/link";
 
 interface ProjectFieldsType {
    title: string;
-   thumbnail: string;
+   thumbnail?: string;
    slug: string;
-   overview: string;
-   publish_date: string;
-   screenshots: { title: string; image: string }[];
+   overview?: string;
+   publish_date?: string;
+   publishDate?: string;
+   category?: string;
+   screenshots?: { title: string; image: string }[];
 }
 export default function ProjectCard({
    project,
@@ -21,7 +23,7 @@ export default function ProjectCard({
             <Image
                width={200}
                height={200}
-               src={project.thumbnail}
+               src={project.thumbnail || "/images/project/haven/banner_01.png"}
                alt="Project Thumbnail"
                className="w-full max-w-[380px] rounded-lg"
             />
@@ -34,11 +36,16 @@ export default function ProjectCard({
                   className="absolute right-2 top-bottom-moving"
                />
                <h1 className="transition-all duration-300 text-paragraph group-hover:text-white">
-                  {project.publish_date}
+                  {project.publishDate || project.publish_date || "Recent delivery"}
                </h1>
                <h2 className="text-18 sm:text-20 font-semibold mt-3 max-w-[255px] group-hover:text-white">
                   {project.title}
                </h2>
+               {project.category ? (
+                  <p className="mt-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand group-hover:text-white">
+                     {project.category === "case-study" ? "Case Study" : "Project"}
+                  </p>
+               ) : null}
                <Link href={`/projects/${project.slug}`}>
                   <div className="flex items-center gap-2 mt-4 group">
                      <span className="relative font-medium leading-5 text-white border-b border-transparent font-inter before:inline-block before:border-white before:border-b before:absolute before:bottom-0 before:transition-all before:duration-300 before:w-0 hover:before:w-full before:overflow-hidden before:h-5">

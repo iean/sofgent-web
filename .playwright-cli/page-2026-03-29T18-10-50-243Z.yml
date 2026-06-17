@@ -1,0 +1,17 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - paragraph [ref=e4]: Sanity setup required
+      - heading "Add your Sanity environment variables before opening the Studio." [level=1] [ref=e5]
+      - paragraph [ref=e6]:
+        - text: Set
+        - code [ref=e7]: NEXT_PUBLIC_SANITY_PROJECT_ID
+        - text: and
+        - code [ref=e8]: NEXT_PUBLIC_SANITY_DATASET
+        - text: in your local environment, Preview, and Production settings on Vercel.
+  - generic [ref=e9]:
+    - generic [ref=e10]: Chat with us 👋
+    - link "Chat with us on WhatsApp" [ref=e11] [cursor=pointer]:
+      - /url: https://wa.me/8801537740365?text=Hi%2C%20I'm%20interested%20in%20working%20with%20SofGent.
+      - img [ref=e12]
+  - alert [ref=e14]

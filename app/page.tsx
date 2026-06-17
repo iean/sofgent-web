@@ -1,9 +1,9 @@
 import About from "@/app/components/home/about";
-import FunFact from "@/app/components/home/funFact";
 import Hero from "@components/home/hero";
 import dynamic from "next/dynamic";
 import Expertise from "./components/home/expertise";
 import HowWeWork from "./components/home/howWeWork";
+import HomeProof from "./components/home/proof";
 import WhyChooseUs from "./components/home/whyChooseUs";
 import Header from "./components/Layout/Header/Header";
 import Footer from "./components/Layout/Footer/Footer";
@@ -25,11 +25,11 @@ export default function Home() {
          <Header/>
          <Hero />
          <About />
-         <HowWeWork />
-         <Expertise />
-         <WhyChooseUs />
-         <FunFact />
          <ServiceNoSSR />
+         <HomeProof />
+         <Expertise />
+         <HowWeWork />
+         <WhyChooseUs />
          <CtaNoSSR />
          <Footer/>
       </main>

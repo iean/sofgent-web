@@ -1,0 +1,9 @@
+[    2600ms] [ERROR] Error: Missing required Sanity Studio environment variables: SANITY_STUDIO_PROJECT_ID
+    at Sfr (https://studio.sofgent.com/static/sanity-CQJ98xmA.js:3624:54459)
+    at https://studio.sofgent.com/static/sanity-CQJ98xmA.js:3624:56951 @ https://studio.sofgent.com/:45
+[   63519ms] [ERROR] Error: Missing required Sanity Studio environment variables: SANITY_STUDIO_PROJECT_ID
+    at Sfr (https://studio.sofgent.com/static/sanity-CQJ98xmA.js:3624:54459)
+    at https://studio.sofgent.com/static/sanity-CQJ98xmA.js:3624:56951 @ https://studio.sofgent.com/:45
+[   76290ms] [ERROR] Error: Missing required Sanity Studio environment variables: SANITY_STUDIO_PROJECT_ID
+    at Sfr (https://studio.sofgent.com/static/sanity-CQJ98xmA.js:3624:54459)
+    at https://studio.sofgent.com/static/sanity-CQJ98xmA.js:3624:56951 @ https://studio.sofgent.com/:45

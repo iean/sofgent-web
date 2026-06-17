@@ -1,0 +1,3 @@
+[    1987ms] [ERROR] Error: Missing required Sanity Studio environment variables: SANITY_STUDIO_PROJECT_ID
+    at Efr (https://studio.sofgent.com/static/sanity-DMBdJEMv.js:3624:54713)
+    at https://studio.sofgent.com/static/sanity-DMBdJEMv.js:3624:57205 @ https://studio.sofgent.com/:45

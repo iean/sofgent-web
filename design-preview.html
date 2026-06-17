@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SofGent — Design Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand: #326d6d;
+      --brand-dark: #1f4a4a;
+      --brand-light: #e8f2f2;
+      --black: #0a0a0a;
+      --gray-900: #111111;
+      --gray-700: #3a3a3a;
+      --gray-500: #6b6b6b;
+      --gray-300: #d4d4d4;
+      --gray-100: #f5f5f5;
+      --gray-50: #fafafa;
+      --white: #ffffff;
+      --radius: 10px;
+      --radius-lg: 16px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── CONTAINER ──────────────────────────────── */
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ─── NAV ────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--gray-100);
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-700);
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--black); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      background: var(--black);
+      color: var(--white);
+      padding: 9px 20px;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+
+    .nav-cta:hover { background: var(--gray-900); }
+
+    /* ─── HERO ───────────────────────────────────── */
+    .hero {
+      padding-top: 140px;
+      padding-bottom: 100px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--brand);
+      background: var(--brand-light);
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .hero-badge .pulse {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--brand);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    .hero h1 {
+      font-size: clamp(44px, 6vw, 80px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.0;
+      color: var(--black);
+      margin-bottom: 24px;
+      max-width: 780px;
+    }
+
+    .hero h1 .accent {
+      color: var(--brand);
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: var(--gray-500);
+      max-width: 520px;
+      line-height: 1.65;
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      background: var(--black);
+      color: var(--white);
+      padding: 13px 28px;
+      border-radius: 9px;
+      transition: background 0.15s, transform 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: var(--gray-900);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      background: transparent;
+      color: var(--gray-700);
+      padding: 13px 24px;
+      border-radius: 9px;
+      border: 1px solid var(--gray-300);
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gray-700);
+      color: var(--black);
+    }
+
+    .hero-stats {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin-top: 64px;
+      padding-top: 40px;
+      border-top: 1px solid var(--gray-100);
+      flex-wrap: wrap;
+    }
+
+    .stat-item {}
+
+    .stat-num {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--black);
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--gray-500);
+      margin-top: 2px;
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 36px;
+      background: var(--gray-200, #e5e5e5);
+    }
+
+    /* ─── SECTION LABEL ──────────────────────────── */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 16px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--brand);
+      border-radius: 2px;
+    }
+
+    /* ─── SECTION HEADER ─────────────────────────── */
+    .section-header {
+      margin-bottom: 56px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--black);
+      margin-bottom: 14px;
+      max-width: 560px;
+    }
+
+    .section-header p {
+      font-size: 16px;
+      color: var(--gray-500);
+      max-width: 440px;
+      line-height: 1.65;
+    }
+
+    /* ─── SERVICES ───────────────────────────────── */
+    .services {
+      padding: 100px 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--gray-100);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 36px 32px;
+      transition: background 0.15s;
+      cursor: pointer;
+    }
+
+    .service-card:hover { background: var(--gray-50); }
+
+    .service-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--brand-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .service-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--brand);
+    }
+
+    .service-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--brand);
+      margin-top: 20px;
+    }
+
+    .service-link svg {
+      width: 14px;
+      height: 14px;
+      transition: transform 0.15s;
+    }
+
+    .service-card:hover .service-link svg {
+      transform: translateX(3px);
+    }
+
+    /* ─── HOW WE WORK ────────────────────────────── */
+    .process {
+      padding: 100px 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .process-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .process-sticky {
+      position: sticky;
+      top: 100px;
+    }
+
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .process-step {
+      display: flex;
+      gap: 24px;
+      padding-bottom: 36px;
+      position: relative;
+    }
+
+    .process-step:last-child { padding-bottom: 0; }
+
+    .step-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gray-300);
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gray-700);
+      flex-shrink: 0;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      position: relative;
+      z-index: 1;
+    }
+
+    .process-step:hover .step-num {
+      border-color: var(--brand);
+      color: var(--brand);
+    }
+
+    .step-line {
+      width: 1.5px;
+      flex: 1;
+      background: var(--gray-100);
+      margin-top: 6px;
+      min-height: 24px;
+    }
+
+    .process-step:last-child .step-line { display: none; }
+
+    .step-content {
+      padding-top: 6px;
+      padding-bottom: 12px;
+    }
+
+    .step-content h3 {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+
+    .step-content p {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.65;
+    }
+
+    /* Process visual panel */
+    .process-visual {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      overflow: hidden;
+    }
+
+    .terminal-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+
+    .terminal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .t-red { background: #ff5f57; }
+    .t-yellow { background: #febc2e; }
+    .t-green { background: #28c840; }
+
+    .code-block {
+      font-family: 'Menlo', 'Monaco', monospace;
+      font-size: 12.5px;
+      line-height: 1.8;
+      color: var(--gray-700);
+    }
+
+    .code-block .k { color: var(--brand); font-weight: 600; }
+    .code-block .s { color: #b07c4b; }
+    .code-block .c { color: var(--gray-300); }
+    .code-block .n { color: var(--black); font-weight: 500; }
+
+    .metric-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .metric-pill {
+      flex: 1;
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: 8px;
+      padding: 12px 16px;
+    }
+
+    .metric-pill .val {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--black);
+    }
+
+    .metric-pill .lbl {
+      font-size: 11px;
+      color: var(--gray-500);
+      margin-top: 2px;
+    }
+
+    .metric-pill .trend {
+      font-size: 11px;
+      font-weight: 600;
+      color: #16a34a;
+    }
+
+    /* ─── SOCIAL PROOF ───────────────────────────── */
+    .proof {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--gray-100);
+      text-align: center;
+    }
+
+    .proof-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 32px;
+    }
+
+    .proof-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .proof-logo {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gray-300);
+      letter-spacing: -0.02em;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--gray-100);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 60px;
+      text-align: left;
+    }
+
+    .testimonial {
+      background: var(--white);
+      padding: 32px 28px;
+    }
+
+    .testimonial-quote {
+      font-size: 15px;
+      color: var(--gray-700);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--brand-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--brand);
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .author-role {
+      font-size: 12px;
+      color: var(--gray-500);
+    }
+
+    /* ─── CTA ────────────────────────────────────── */
+    .cta {
+      padding: 100px 0;
+    }
+
+    .cta-inner {
+      background: var(--black);
+      border-radius: 20px;
+      padding: 80px 72px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-inner::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(50,109,109,0.3) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-inner::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: 100px;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(50,109,109,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brand);
+      background: rgba(50,109,109,0.15);
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    .cta h2 {
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .cta-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .btn-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      background: var(--white);
+      color: var(--black);
+      padding: 14px 32px;
+      border-radius: 9px;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+
+    .btn-cta-primary:hover { background: var(--gray-100); }
+
+    .btn-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      padding: 12px 32px;
+      border-radius: 9px;
+      border: 1px solid rgba(255,255,255,0.1);
+      white-space: nowrap;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .btn-cta-secondary:hover {
+      border-color: rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.9);
+    }
+
+    /* ─── FOOTER ─────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--gray-100);
+      padding: 48px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-logo .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--brand);
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--gray-500);
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: var(--black); }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+
+    /* ─── PREVIEW BANNER ─────────────────────────── */
+    .preview-banner {
+      background: var(--brand);
+      color: white;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Preview banner -->
+<div class="preview-banner">✦ SofGent UI Redesign — Design Preview (not live)</div>
+
+<!-- ─── NAV ──────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="dot"></span>
+      SofGent
+    </a>
+    <ul class="nav-links">
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Work</a></li>
+      <li><a href="#">Process</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+    <a href="#" class="nav-cta">
+      Book a Call
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">
+      <span class="pulse"></span>
+      AI Product Studio
+    </div>
+    <h1>
+      Production-ready<br/>AI products,<br/>in <span class="accent">2–4 weeks.</span>
+    </h1>
+    <p class="hero-sub">
+      We build document automation, AI SaaS MVPs, and data-ready infrastructure for founders, CTOs, and ops teams who can't afford to wait.
+    </p>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary">
+        Book a Free Call
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#" class="btn-secondary">
+        See Our Work
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">2–4 wks</div>
+        <div class="stat-label">Average delivery</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">30+</div>
+        <div class="stat-label">AI products shipped</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Production-ready code</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">Fintech</div>
+        <div class="stat-label">Core industry focus</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SOCIAL PROOF ──────────────────────────────── -->
+<section class="proof">
+  <div class="container">
+    <div class="proof-label">Trusted by growth-stage companies</div>
+    <div class="proof-logos">
+      <span class="proof-logo">Acme Bank</span>
+      <span class="proof-logo">FinStack</span>
+      <span class="proof-logo">DocFlow</span>
+      <span class="proof-logo">NovaSME</span>
+      <span class="proof-logo">Clearbase</span>
+    </div>
+
+    <div class="testimonials">
+      <div class="testimonial">
+        <p class="testimonial-quote">"SofGent delivered a fully working document automation pipeline in 3 weeks. We replaced a 6-month manual process on day one."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">JK</div>
+          <div>
+            <div class="author-name">James K.</div>
+            <div class="author-role">CTO, FinStack</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-quote">"They scoped, built, and launched our AI SaaS MVP faster than I thought possible. Clean code, zero handholding needed."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SR</div>
+          <div>
+            <div class="author-name">Sara R.</div>
+            <div class="author-role">Founder, DocFlow</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-quote">"The data-readiness audit alone saved us months. Our models now train on clean, structured data from day one."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AM</div>
+          <div>
+            <div class="author-name">Alex M.</div>
+            <div class="author-role">Head of Ops, NovaSME</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES ──────────────────────────────────── -->
+<section class="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">What we build</div>
+      <h2>Three things we do better than anyone.</h2>
+      <p>Narrow focus means deeper expertise. We don't build everything — we build the right things fast.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Service 1 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+          </svg>
+        </div>
+        <h3>AI Document Automation</h3>
+        <p>Turn unstructured documents — invoices, contracts, reports — into clean, structured data. Automated end-to-end.</p>
+        <a href="#" class="service-link">
+          Learn more
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <path d="M8 21h8M12 17v4"/>
+            <path d="M7 8h2M11 8h2M15 8h2M7 11h2M11 11h2"/>
+          </svg>
+        </div>
+        <h3>AI SaaS MVP Development</h3>
+        <p>From scoped idea to deployed product in 2–4 weeks. We own the full stack — architecture, AI layer, and UI.</p>
+        <a href="#" class="service-link">
+          Learn more
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <ellipse cx="12" cy="5" rx="9" ry="3"/>
+            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+          </svg>
+        </div>
+        <h3>AI-Ready Data Infrastructure</h3>
+        <p>Clean, labeled, and structured company data — so your models train on signal, not noise. Built for production from day one.</p>
+        <a href="#" class="service-link">
+          Learn more
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <h3>AI Chatbots & Assistants</h3>
+        <p>Intelligent, context-aware assistants trained on your data — for internal ops, customer support, or lead capture.</p>
+        <a href="#" class="service-link">
+          Learn more
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h3>AI Analytics Dashboards</h3>
+        <p>Real-time dashboards with AI-powered insights built on top of your existing data sources and APIs.</p>
+        <a href="#" class="service-link">
+          Learn more
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+          </svg>
+        </div>
+        <h3>AI Integration & APIs</h3>
+        <p>Connect OpenAI, Anthropic, or custom models to your existing systems via clean, well-documented APIs.</p>
+        <a href="#" class="service-link">
+          Learn more
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROCESS ────────────────────────────────────── -->
+<section class="process">
+  <div class="container">
+    <div class="process-layout">
+
+      <!-- Left: Steps -->
+      <div>
+        <div class="section-label">How we work</div>
+        <h2 style="font-size: clamp(28px,3.5vw,42px); font-weight:800; letter-spacing:-0.03em; line-height:1.1; color:var(--black); margin-bottom:14px; margin-top:16px;">A clear process.<br/>Zero surprises.</h2>
+        <p style="font-size:15px; color:var(--gray-500); line-height:1.65; margin-bottom:48px;">We move fast without cutting corners. Here's exactly how we turn an idea into a shipped product.</p>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-left">
+              <div class="step-num">01</div>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-content">
+              <h3>Discover &amp; Define</h3>
+              <p>We start with a deep-dive call — your goals, constraints, and success criteria. Output: a scoped plan both sides sign off on.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-left">
+              <div class="step-num">02</div>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-content">
+              <h3>Plan &amp; Prototype</h3>
+              <p>Architecture, data flows, and a clickable prototype in the first week. You validate the direction before a single line of prod code ships.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-left">
+              <div class="step-num">03</div>
+              <div class="step-line"></div>
+            </div>
+            <div class="step-content">
+              <h3>Build &amp; Iterate</h3>
+              <p>Agile 1-week sprints with daily check-ins. You see progress in real time — no big-reveal surprises at the end.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-left">
+              <div class="step-num">04</div>
+            </div>
+            <div class="step-content">
+              <h3>Launch &amp; Support</h3>
+              <p>We handle the deploy, monitor the rollout, and stay engaged for 30 days post-launch. You go live with confidence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Visual panel -->
+      <div class="process-sticky">
+        <div class="process-visual">
+          <div class="terminal-bar">
+            <span class="terminal-dot t-red"></span>
+            <span class="terminal-dot t-yellow"></span>
+            <span class="terminal-dot t-green"></span>
+          </div>
+          <div class="code-block">
+            <span class="c">// week 1 · discovery</span><br/>
+            <span class="k">const</span> <span class="n">scope</span> = <span class="k">await</span> define({<br/>
+            &nbsp;&nbsp;goals: <span class="s">"automate invoice processing"</span>,<br/>
+            &nbsp;&nbsp;timeline: <span class="s">"3 weeks"</span>,<br/>
+            &nbsp;&nbsp;stack: [<span class="s">"Next.js"</span>, <span class="s">"OpenAI"</span>]<br/>
+            });<br/><br/>
+            <span class="c">// week 2–3 · build</span><br/>
+            <span class="k">const</span> <span class="n">product</span> = <span class="k">await</span> build(scope);<br/><br/>
+            <span class="c">// week 4 · ship 🚀</span><br/>
+            <span class="k">await</span> deploy(product, {<br/>
+            &nbsp;&nbsp;env: <span class="s">"production"</span>,<br/>
+            &nbsp;&nbsp;monitoring: <span class="k">true</span><br/>
+            });
+          </div>
+
+          <div class="metric-row">
+            <div class="metric-pill">
+              <div class="val">18d</div>
+              <div class="lbl">Avg. time to ship</div>
+              <div class="trend">↓ 40% vs industry</div>
+            </div>
+            <div class="metric-pill">
+              <div class="val">0</div>
+              <div class="lbl">Critical bugs at launch</div>
+              <div class="trend">Last 12 projects</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ───────────────────────────────────────── -->
+<section class="cta">
+  <div class="container">
+    <div class="cta-inner">
+      <div>
+        <div class="cta-tag">Free consultation</div>
+        <h2>Ready to ship your AI product?</h2>
+        <p class="cta-sub">Book a 30-minute call. We'll scope your project, give you a timeline, and tell you exactly what it'll take to ship.</p>
+      </div>
+      <div class="cta-buttons">
+        <a href="#" class="btn-cta-primary">
+          Book a Call
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#" class="btn-cta-secondary">
+          Request a Demo
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="#" class="footer-logo">
+        <span class="dot"></span>
+        SofGent
+      </a>
+      <ul class="footer-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+      </ul>
+      <span class="footer-copy">© 2026 SofGent</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

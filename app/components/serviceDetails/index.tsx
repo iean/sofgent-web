@@ -1,11 +1,10 @@
-import getServicesMeta from "@/app/utils/getServicesMeta";
+import { getServiceBySlug } from "@/lib/sanity/content";
 import Markdown from "markdown-to-jsx";
 import ServiceDetailsSidebar from "./ServiceDetailsSidebar";
 import "./style.css";
 
-export default function ServiceDetailsInfo({ slug }: { slug: string }) {
-   const services = getServicesMeta("/app/data/services");
-   const service = services.find((service) => service.slug === slug);
+export default async function ServiceDetailsInfo({ slug }: { slug: string }) {
+   const service = await getServiceBySlug(slug);
 
    return (
       <section className="pt-16 md:pt-[130px] service-details-page">
@@ -14,10 +13,10 @@ export default function ServiceDetailsInfo({ slug }: { slug: string }) {
                <div
                   data-aos="fade-up"
                   className="col-span-8 sticky top-[30px] self-start">
-                  {service ? (
+                  {service?.content ? (
                      <Markdown>{service.content}</Markdown>
                   ) : (
-                     <p>Loading service details...</p>
+                     <p>Service details are being prepared in Sanity.</p>
                   )}
                </div>
                <ServiceDetailsSidebar slug={slug} />

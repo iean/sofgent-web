@@ -1,9 +1,9 @@
-import getServicesMeta from "@/app/utils/getServicesMeta";
+import { getServices } from "@/lib/sanity/content";
 import { ServiceCatIcon, SupportIcon } from "@/app/utils/SVGIcons";
 import Link from "next/link";
 
-export default function ServiceDetailsSidebar({ slug }: { slug: string }) {
-   const services = getServicesMeta("/app/data/services");
+export default async function ServiceDetailsSidebar({ slug }: { slug: string }) {
+   const services = await getServices();
    const filteredServices = services.filter((service) => service.slug !== slug);
    return (
       <div
