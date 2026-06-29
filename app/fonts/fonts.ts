@@ -1,15 +1,13 @@
-import { DM_Sans, Rubik } from 'next/font/google';
+import { Inter } from 'next/font/google';
 
-export const dmSans = DM_Sans({
+// Single, consistent typeface across the whole site — modern, Linear-style.
+export const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-dm-sans',
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-inter',
   display: 'swap',
 });
 
-export const rubik = Rubik({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-rubik',
-  display: 'swap',
-});
+// Kept as aliases so any legacy reference still resolves to Inter.
+export const dmSans = inter;
+export const rubik = inter;

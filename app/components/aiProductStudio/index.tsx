@@ -1,4 +1,3 @@
-import Button from "@/app/components/common/Button";
 import SectionTag from "@/app/components/common/SectionTag";
 import { getFaqs, getProjectCollections, getServices } from "@/lib/sanity/content";
 import FaqAccordion from "./FaqAccordion";
@@ -58,80 +57,15 @@ export default async function AiProductStudioPage() {
    const faqItems = serviceFaqs.slice(0, 4);
 
    return (
-      <div className="bg-white pb-24 pt-8 md:pb-32 md:pt-12">
-         <section className="theme-container">
-            <div className="grid gap-10 rounded-[36px] bg-[linear-gradient(135deg,#10263a_0%,#163854_55%,#0b2032_100%)] px-6 py-10 text-white shadow-[0_30px_80px_rgba(2,12,27,0.22)] md:px-10 md:py-14 lg:grid-cols-[1.3fr_0.9fr] lg:gap-14 lg:px-14">
-               <div>
-                  <SectionTag
-                     tag="AI Product Studio"
-                     className="mb-6 inline-flex bg-white/10 px-4 py-2 text-sm font-medium text-cyan-300"
-                  />
-                  <h1 className="max-w-3xl text-34 font-semibold leading-tight md:text-[52px] md:leading-[1.08]">
-                     AI apps, internal AI tools, and SaaS systems for operations teams
-                  </h1>
-                  <p className="mt-6 max-w-2xl text-base leading-8 text-slate-200 md:text-lg">
-                     We design and deliver production-ready AI software for operations-heavy businesses. The focus is simple: build software your team can use, launch, and improve without a long agency cycle.
-                  </p>
-                  <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                     <Button
-                        href="/contact"
-                        btnText="Talk About Your AI Product"
-                        className="bg-cyan-500 text-slate-950 hover:bg-cyan-400"
-                     />
-                     <Button
-                        href="/how-we-build-saas"
-                        btnText="See How We Build"
-                        className="border border-white/15 bg-white/10 text-white hover:bg-white/15"
-                     />
-                  </div>
-                  <div className="mt-8 grid gap-3 text-sm text-slate-200 sm:grid-cols-3">
-                     {[
-                        "AI apps that fit existing operations",
-                        "Internal tools with real workflow impact",
-                        "SaaS delivery built for production",
-                     ].map((item) => (
-                        <div key={item} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-                           {item}
-                        </div>
-                     ))}
-                  </div>
-               </div>
-
-               <div className="rounded-[32px] border border-white/10 bg-white/10 p-6 backdrop-blur">
-                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan-300">
-                     What clients are buying
-                  </p>
-                  <div className="mt-6 space-y-5">
-                     <div className="rounded-[24px] bg-white/10 p-5">
-                        <h2 className="text-xl font-semibold">AI Product Delivery</h2>
-                        <p className="mt-3 text-sm leading-7 text-slate-200">
-                           Shape the product, define the workflow, build the AI layer, and ship a usable system.
-                        </p>
-                     </div>
-                     <div className="rounded-[24px] bg-white/10 p-5">
-                        <h2 className="text-xl font-semibold">SaaS MVP Delivery</h2>
-                        <p className="mt-3 text-sm leading-7 text-slate-200">
-                           Turn the AI workflow into a secure product with interfaces, data structure, admin controls, and deployment readiness.
-                        </p>
-                     </div>
-                  </div>
-                  <div className="mt-6 rounded-[24px] border border-cyan-400/20 bg-cyan-400/10 p-5">
-                     <p className="text-sm font-medium text-cyan-100">
-                        This page is the plain-English version of the offer: SofGent builds AI-related software, not abstract innovation work.
-                     </p>
-                  </div>
-               </div>
-            </div>
-         </section>
-
-         <section className="theme-container mt-20 md:mt-28">
+      <div className="bg-white pb-24 pt-20 md:pb-32 md:pt-28">
+         <section className="max-w-[1140px] mx-auto px-8">
             <div className="max-w-3xl">
                <SectionTag tag="What We Build" className="inline-flex px-4 py-2 text-sm" />
                <h2 className="mt-6 text-30 font-semibold text-main-black md:text-48">
-                  The offer stays focused on AI product delivery, with SaaS as the shipping layer
+                  AI software that becomes part of how your business runs
                </h2>
                <p className="mt-5 text-base leading-8 text-paragraph md:text-lg">
-                  Clients should understand the offer quickly. We build AI software that improves operations, reduces manual workflow load, and becomes part of how the business runs day to day.
+                  We build AI apps, internal tools, and SaaS systems that cut manual workflow load and improve decision speed — software your team uses every day, not a one-off experiment.
                </p>
             </div>
 
@@ -150,15 +84,15 @@ export default async function AiProductStudioPage() {
             </div>
          </section>
 
-         <section className="theme-container mt-20 md:mt-28">
+         <section className="max-w-[1140px] mx-auto px-8 mt-20 md:mt-28">
             <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
                <div className="rounded-[32px] border border-[#e7e8e9] bg-[#f7fbff] p-7 md:p-10">
                   <SectionTag tag="Service Focus" className="inline-flex px-4 py-2 text-sm" />
                   <h2 className="mt-6 text-30 font-semibold text-main-black md:text-48">
-                     Two core lanes, supported by the right delivery capabilities
+                     Two core lanes, backed by full delivery capability
                   </h2>
                   <p className="mt-5 text-base leading-8 text-paragraph md:text-lg">
-                     The positioning should stay narrow. AI Product Studio is the main offer. SaaS delivery is how that product becomes usable, scalable, and ready for teams to operate.
+                     AI Product Studio is the core offer. SaaS delivery is how that product becomes usable, scalable, and ready for your team to operate in production.
                   </p>
 
                   <div className="mt-8 grid gap-4">
@@ -186,10 +120,10 @@ export default async function AiProductStudioPage() {
                      Supporting capabilities
                   </p>
                   <h3 className="mt-5 text-2xl font-semibold text-main-black md:text-[32px]">
-                     The supporting work stays visible without becoming the headline
+                     The capabilities that ship with every build
                   </h3>
                   <p className="mt-4 text-sm leading-7 text-paragraph md:text-base">
-                     These capabilities help the core offer succeed, but they should not read like a generic agency menu.
+                     Data engineering, integrations, DevOps, and QA — the work that makes the core product reliable in production.
                   </p>
 
                   <div className="mt-8 grid gap-4">
@@ -220,14 +154,14 @@ export default async function AiProductStudioPage() {
             </div>
          </section>
 
-         <section className="theme-container mt-20 md:mt-28">
+         <section className="max-w-[1140px] mx-auto px-8 mt-20 md:mt-28">
             <div className="max-w-3xl">
                <SectionTag tag="Proof" className="inline-flex px-4 py-2 text-sm" />
                <h2 className="mt-6 text-30 font-semibold text-main-black md:text-48">
-                  Recent delivery proof should show both outcomes and product execution
+                  Real projects, shipped to production
                </h2>
                <p className="mt-5 text-base leading-8 text-paragraph md:text-lg">
-                  This page should not depend on abstract claims. It needs real projects and case studies behind the positioning.
+                  Case studies and live products behind the positioning — outcomes you can see, not abstract claims.
                </p>
             </div>
 
@@ -237,47 +171,18 @@ export default async function AiProductStudioPage() {
             </div>
          </section>
 
-         <section className="theme-container mt-20 md:mt-28">
+         <section className="max-w-[1140px] mx-auto px-8 mt-20 md:mt-28 pb-4">
             <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
                <div>
                   <SectionTag tag="FAQs" className="inline-flex px-4 py-2 text-sm" />
                   <h2 className="mt-6 text-30 font-semibold text-main-black md:text-48">
-                     Clear answers for buyers evaluating AI-related delivery
+                     Questions, answered
                   </h2>
                   <p className="mt-5 text-base leading-8 text-paragraph md:text-lg">
-                     The wording needs to stay simple. Clients should understand they are hiring a team to build AI apps and AI-enabled software, not just strategy.
+                     You&apos;re hiring a team to build and ship AI software your operations can run on — not just strategy decks. Here&apos;s what that looks like.
                   </p>
                </div>
                <FaqAccordion items={faqItems.length > 0 ? faqItems : fallbackFaqs} />
-            </div>
-         </section>
-
-         <section className="theme-container mt-20 md:mt-28">
-            <div className="rounded-[36px] bg-[#10263a] px-6 py-10 text-white md:px-10 md:py-14">
-               <div className="max-w-3xl">
-                  <SectionTag
-                     tag="Next Step"
-                     className="inline-flex bg-white/10 px-4 py-2 text-sm font-medium text-cyan-300"
-                  />
-                  <h2 className="mt-6 text-30 font-semibold md:text-48">
-                     If you need AI software that fits real operations, start with the product, not just the model
-                  </h2>
-                  <p className="mt-5 text-base leading-8 text-slate-200 md:text-lg">
-                     We can help shape the product, define the workflow, and ship an AI-enabled system your team can actually operate.
-                  </p>
-                  <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                     <Button
-                        href="/contact"
-                        btnText="Start the Conversation"
-                        className="bg-cyan-500 text-slate-950 hover:bg-cyan-400"
-                     />
-                     <Button
-                        href="/services"
-                        btnText="Review Service Scope"
-                        className="border border-white/15 bg-white/10 text-white hover:bg-white/15"
-                     />
-                  </div>
-               </div>
             </div>
          </section>
       </div>

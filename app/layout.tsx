@@ -1,5 +1,5 @@
 import "./globals.css";
-import { dmSans, rubik } from "./fonts/fonts";
+import { inter } from "./fonts/fonts";
 import Script from "next/script";
 import type { Metadata } from "next";
 
@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${rubik.variable}`}>
+    <html lang="en" className={inter.variable}>
           <head>
         {/* Google Tag Manager Script */}
         <Script
@@ -31,7 +31,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-dmSans font-rubik">
+      <body style={{ fontFamily: "var(--font-inter), system-ui, -apple-system, sans-serif" }}>
         {/* Google Tag Manager noscript */}
         <noscript>
           <iframe

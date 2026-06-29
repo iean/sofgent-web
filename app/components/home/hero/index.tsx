@@ -1,105 +1,222 @@
-import WinGrid from "@/app/utils/WinGrid";
-import Button from "../../common/Button";
-import HeroRight from "./HeroRight";
+import Image from "next/image";
+import Link from "next/link";
+import heroImg from "@assets/images/home/hero-right-image.png";
 
 export default function Hero() {
   return (
-    <section id="home-one-hero">
-      <div className="hero-one-section-wrapper w-full xl:h-[905px] overflow-hidden relative">
-        <WinGrid />
-        <div className="relative z-10 h-full mx-auto theme-container">
-          <div className="w-full grid grid-cols-1 xl:grid-cols-[1.3fr_0.7fr] 2xl:grid-cols-[1.4fr_0.6fr] 2xl:gap-24 xl:gap-16 gap-10 items-center lg:pt-[223px] pt-[130px] h-full">
-            <div className="article-area relative z-20">
-              <div className="inline-flex md:px-6 px-3 py-2.5 md:py-[14px] bg-white space-x-2.5 items-center rounded-full shadow-common mb-5">
-                <span>
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clipPath="url(#clip0_460_7967)">
-                      <path
-                        d="M10.0005 10.9371L0.0507812 7.62184C0.132029 7.4156 0.3164 7.26529 0.535144 7.23435L6.68811 6.32812L10.0005 10.9371Z"
-                        fill="#FEC461"
-                      />
-                      <path
-                        d="M10.0002 10.937V16.6775L4.49725 19.6149C4.28475 19.7274 4.03195 19.709 3.83789 19.5649L10.0002 10.937Z"
-                        fill="#F7B84E"
-                      />
-                      <path
-                        d="M10.0005 10.937L3.83784 19.5646C3.64753 19.4243 3.55035 19.1837 3.59128 18.9431L4.64094 12.7248L10.0005 10.937Z"
-                        fill="#FEC461"
-                      />
-                      <path
-                        d="M10 10.9368L4.64079 12.7246L0.190595 8.31813C0.0190365 8.14938 -0.0437743 7.89595 0.0312237 7.66814C0.0377861 7.65252 0.0405985 7.63658 0.0502858 7.62158L10 10.9368Z"
-                        fill="#F7B84E"
-                      />
-                      <path
-                        d="M9.99992 0.312012V10.9367L6.6875 6.32748L9.44055 0.665128C9.54368 0.449196 9.76242 0.312012 9.99992 0.312012Z"
-                        fill="#FEC461"
-                      />
-                      <path
-                        d="M13.3124 6.32748L10 10.9367V0.312012C10.2375 0.312012 10.4562 0.449196 10.5594 0.665128L13.3124 6.32748Z"
-                        fill="#F7B84E"
-                      />
-                      <path
-                        d="M19.9497 7.62167L10 10.9369L13.3124 6.32764L19.4654 7.23386C19.6841 7.26511 19.8685 7.41511 19.9497 7.62167Z"
-                        fill="#FEC461"
-                      />
-                      <path
-                        d="M19.8123 8.31813L15.3592 12.7246L10 10.9368L19.9497 7.62158C19.9591 7.63689 19.9622 7.65283 19.9688 7.66814C20.0435 7.89626 19.981 8.14938 19.8123 8.31813Z"
-                        fill="#F7B84E"
-                      />
-                      <path
-                        d="M16.1623 19.5646L10 10.937L15.3592 12.7248L16.4092 18.9431C16.4498 19.184 16.353 19.4243 16.1623 19.5646Z"
-                        fill="#FEC461"
-                      />
-                      <path
-                        d="M16.1623 19.5646C15.9686 19.7087 15.7155 19.7274 15.5033 19.6146L10 16.6775V10.937L16.1623 19.5646Z"
-                        fill="#F7B84E"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_460_7967">
-                        <rect width="20" height="20" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </span>
-                <h1 className="text-sm font-semibold pointer-events-auto md:text-20 text-brand">
-                  AI Product Studio
-                </h1>
+    <section
+      className="relative overflow-hidden border-b border-[#e6e6e6]"
+      style={{ padding: "100px 0 88px" }}
+    >
+      {/* Teal dot grid */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(50,109,109,0.07) 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+        }}
+      />
+      {/* Fade out toward bottom */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "linear-gradient(to bottom, transparent 40%, #ffffff 100%)",
+        }}
+      />
+
+      <div className="relative z-10 max-w-[1140px] mx-auto px-8">
+        <div className="grid items-center gap-16" style={{ gridTemplateColumns: "55fr 45fr" }}>
+
+          {/* ── Left column ─────────────────────────── */}
+          <div>
+            {/* Eyebrow */}
+            <div
+              className="inline-flex items-center gap-2 mb-6 px-3.5 py-1.5 rounded-full text-[11px] font-bold tracking-[0.08em] uppercase"
+              style={{
+                color: "#326d6d",
+                background: "rgba(50,109,109,0.10)",
+                border: "1px solid rgba(50,109,109,0.20)",
+              }}
+            >
+              <span
+                className="w-[5px] h-[5px] rounded-full flex-shrink-0"
+                style={{
+                  background: "#326d6d",
+                  animation: "pulse 2s ease-in-out infinite",
+                }}
+              />
+              AI Product Studio
+            </div>
+
+            {/* Headline */}
+            <h1
+              className="font-black tracking-[-0.045em] leading-[0.98] text-[#0c0c0c] mb-5"
+              style={{ fontSize: "clamp(44px, 5.8vw, 76px)" }}
+            >
+              Ship your AI<br />
+              product in<br />
+              <span style={{ color: "#326d6d" }}>4–6 weeks.</span>
+            </h1>
+
+            {/* Sub */}
+            <p className="text-[16px] text-[#6a6a6a] leading-[1.72] max-w-[420px] mb-9">
+              Document automation, AI SaaS MVPs, and data infrastructure — production-ready for founders, CTOs, and ops teams.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex items-center gap-2.5 mb-12">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 text-[14px] font-semibold text-white px-7 py-3.5 rounded-[9px] transition-all hover:-translate-y-0.5"
+                style={{ background: "#0c0c0c" }}
+              >
+                Book a Free Call
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <path d="M1.5 6.5h10M7.5 2.5l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-2 text-[14px] font-medium text-[#6a6a6a] px-6 py-3.5 rounded-[9px] border border-[#e6e6e6] transition-colors hover:border-[#bbb] hover:text-[#0c0c0c]"
+              >
+                See Our Work
+              </Link>
+            </div>
+
+            {/* KPI strip */}
+            <div className="flex gap-0 border-t border-[#e6e6e6] pt-7">
+              <div className="flex-1 pr-6 mr-6 border-r border-[#e6e6e6]">
+                <div className="text-[26px] font-extrabold tracking-[-0.04em] text-[#0c0c0c]">2–4 wks</div>
+                <div className="text-[11.5px] text-[#6a6a6a] mt-0.5">Avg. delivery time</div>
               </div>
-              <h2 className="text-4xl md:text-[56px] leading-normal text-main-black font-semibold mb-[35px] pointer-events-auto">
-                <span>Build </span>
-                <span className="relative inline-block px-3 font-bold text-white uppercase">
-                  <span className="relative z-10">AI Apps</span>
-                  <span className="absolute top-0 left-0 block w-full h-full bg-gradient-to-r from-brand"></span>
-                </span>
-                <br />
-                <span>and AI-powered SaaS for operations teams.</span>
-              </h2>
-              <div className="px-6 py-[14px] bg-white border-l-2 border-brand mb-[35px] pointer-events-auto xl:w-full md:w-[620px]">
-                <p className="text-ptwo text-paragraph">
-                  SofGent designs and ships internal AI tools, workflow automation, and production-ready SaaS systems for teams that need faster operations, cleaner data flow, and real delivery momentum.
-                </p>
+              <div className="flex-1 pr-6 mr-6 border-r border-[#e6e6e6]">
+                <div className="text-[26px] font-extrabold tracking-[-0.04em] text-[#0c0c0c]">30+</div>
+                <div className="text-[11.5px] text-[#6a6a6a] mt-0.5">AI products shipped</div>
               </div>
-              <div className="flex flex-wrap gap-4 items-center pointer-events-auto">
-                <Button btnText="AI Product Studio" href="/ai-product-studio" />
-                <Button
-                  btnText="See How We Build"
-                  href="/how-we-build-saas"
-                  className="bg-transparent text-brand border border-brand hover:bg-brand hover:text-white"
-                />
+              <div className="flex-1">
+                <div className="text-[26px] font-extrabold tracking-[-0.04em] text-[#0c0c0c]">0</div>
+                <div className="text-[11.5px] text-[#6a6a6a] mt-0.5">Critical launch bugs</div>
               </div>
             </div>
-            {/* Right Image */}
-            <HeroRight />
           </div>
+
+          {/* ── Right column — image composition ─────── */}
+          <div className="relative">
+            {/* Main image */}
+            <div
+              className="relative rounded-[18px] overflow-hidden border border-[#e6e6e6]"
+              style={{ boxShadow: "0 20px 60px rgba(0,0,0,0.09)" }}
+            >
+              <Image
+                src={heroImg}
+                alt="SofGent product"
+                width={520}
+                height={300}
+                className="w-full object-cover"
+                style={{ height: "300px" }}
+                priority
+              />
+              {/* Teal overlay tint */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{ background: "linear-gradient(135deg, rgba(50,109,109,0.06) 0%, transparent 55%)" }}
+              />
+
+              {/* Float card top-left */}
+              <div
+                className="absolute flex items-center gap-2.5 rounded-[12px] px-3.5 py-2.5 bg-white border border-[#e6e6e6]"
+                style={{ top: "-12px", left: "-16px", boxShadow: "0 8px 28px rgba(0,0,0,0.09)" }}
+              >
+                <div
+                  className="w-[30px] h-[30px] rounded-[8px] flex items-center justify-center flex-shrink-0"
+                  style={{ background: "rgba(50,109,109,0.10)" }}
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#326d6d" strokeWidth="2" strokeLinecap="round">
+                    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-[15px] font-extrabold tracking-[-0.03em] text-[#0c0c0c]">18 days</div>
+                  <div className="text-[10px] text-[#6a6a6a]">Avg. time to ship</div>
+                </div>
+              </div>
+
+              {/* Float card bottom-right */}
+              <div
+                className="absolute flex items-center gap-2.5 rounded-[12px] px-3.5 py-2.5 bg-white border border-[#e6e6e6]"
+                style={{ bottom: "-12px", right: "-16px", boxShadow: "0 8px 28px rgba(0,0,0,0.09)" }}
+              >
+                <div
+                  className="w-[30px] h-[30px] rounded-[8px] flex items-center justify-center flex-shrink-0"
+                  style={{ background: "rgba(50,109,109,0.10)" }}
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#326d6d" strokeWidth="2" strokeLinecap="round">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-[15px] font-extrabold tracking-[-0.03em] text-[#0c0c0c]">30+ shipped</div>
+                  <div className="text-[10px] text-[#6a6a6a]">To production</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Thumbnails */}
+            <div className="grid grid-cols-2 gap-2 mt-2">
+              <div className="relative rounded-[12px] overflow-hidden border border-[#e6e6e6]">
+                <img
+                  src="/images/project/haven/home_card_staffing.jpg"
+                  alt="Staffing SaaS"
+                  className="w-full object-cover"
+                  style={{ height: "100px" }}
+                />
+                <div
+                  className="absolute bottom-0 left-0 right-0 px-2.5 pb-2 pt-4 text-[10.5px] font-semibold text-white"
+                  style={{ background: "linear-gradient(0deg, rgba(0,0,0,0.68), transparent)" }}
+                >
+                  Haven — Staffing SaaS
+                </div>
+              </div>
+              <div className="relative rounded-[12px] overflow-hidden border border-[#e6e6e6]">
+                <img
+                  src="/images/project/haven/home_card_supported_living.jpg"
+                  alt="Supported Living"
+                  className="w-full object-cover"
+                  style={{ height: "100px" }}
+                />
+                <div
+                  className="absolute bottom-0 left-0 right-0 px-2.5 pb-2 pt-4 text-[10.5px] font-semibold text-white"
+                  style={{ background: "linear-gradient(0deg, rgba(0,0,0,0.68), transparent)" }}
+                >
+                  Haven — Supported Living
+                </div>
+              </div>
+            </div>
+
+            {/* Stack chips */}
+            <div className="flex items-center gap-1.5 flex-wrap mt-2">
+              <span className="text-[10px] font-bold text-[#6a6a6a]">Built with</span>
+              {["Next.js", "Claude AI", "OpenAI", "Sanity", "Vercel"].map((chip) => (
+                <span
+                  key={chip}
+                  className="text-[10px] font-bold text-[#6a6a6a] px-2.5 py-1 rounded-full border border-[#e6e6e6] bg-[#f7f7f7]"
+                >
+                  {chip}
+                </span>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
+
+      {/* Pulse animation */}
+      <style>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.2; transform: scale(0.6); }
+        }
+      `}</style>
     </section>
   );
 }

@@ -110,7 +110,8 @@ export const BLOG_POSTS_QUERY = `
     "author": coalesce(author, "SofGent"),
     "date": string(publishedAt),
     "imageUrl": coverImage.asset->url,
-    "readTime": coalesce(readTime, "5 min read")
+    "readTime": coalesce(readTime, "5 min read"),
+    categories
   }
 `;
 
@@ -127,6 +128,7 @@ export const BLOG_POST_QUERY = `
     "date": string(publishedAt),
     "imageUrl": coverImage.asset->url,
     "readTime": coalesce(readTime, "5 min read"),
+    categories,
     "content": body[]{
       ...,
       markDefs[]{

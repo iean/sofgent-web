@@ -76,6 +76,7 @@ export interface SanityBlogPostSummary {
    date: string | null;
    imageUrl: string | null;
    readTime: string;
+   categories?: string[];
 }
 
 export interface SanityBlogPostDetail extends SanityBlogPostSummary {

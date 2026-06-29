@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Logo marquee ────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 22s linear infinite;
+}
+
+/* ── JetBrains Mono for code/terminal ─────────── */
+.font-mono-code {
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+}
+
 html {
    scroll-behavior: smooth;
    overflow-x: hidden;
@@ -9,6 +23,12 @@ html {
 body {
    font-size: 16px;
    line-height: 30px;
+   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   background-color: #ffffff;
+   color: #0c0c0c;
+   color-scheme: light;
 }
 h1,
 h2,
@@ -16,7 +36,7 @@ h3,
 h4,
 h5,
 h6 {
-   font-family: var(--font-rubik);
+   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 .theme-container {
    max-width: 1330px;

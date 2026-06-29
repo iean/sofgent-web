@@ -69,9 +69,11 @@ const config: Config = {
             ptwo: ["16px", "26px"],
          },
          fontFamily: {
-            dmSans: ['var(--font-dm-sans)', 'sans-serif'],
-            rubik: ['var(--font-rubik)', 'sans-serif'],
-            sans: ['Inter', 'sans-serif'], // or fallback
+            // One typeface everywhere — the loaded Inter web font.
+            sans: ['var(--font-inter)', 'system-ui', '-apple-system', 'sans-serif'],
+            dmSans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+            rubik: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+            mono: ['var(--font-inter)', 'ui-monospace', 'monospace'],
          },
          letterSpacing: {
             tight: "-0.03em",

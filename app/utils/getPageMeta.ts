@@ -8,8 +8,11 @@ const defaultMeta: Metadata = {
 
 export default function getPageMeta(path: string): Metadata {
   const meta = (metaMap as Record<string, Metadata>)[path];
-  if (meta && typeof meta === "object") {
-    return meta;
-  }
-  return defaultMeta;
+  const base = meta && typeof meta === "object" ? meta : defaultMeta;
+  return {
+    ...base,
+    alternates: {
+      canonical: `https://www.sofgent.com${path}`,
+    },
+  };
 }

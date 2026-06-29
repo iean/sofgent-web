@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Services — SofGent AI Product Studio</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .svc-block { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+  .svc-block.flip > .svc-visual { order:-1; }
+  .svc-visual { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg); padding:32px; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .svc-visual img { border-radius:12px; box-shadow:var(--shadow-md); width:100%; height:100%; object-fit:cover; }
+  @media (max-width:960px){ .svc-block{ grid-template-columns:1fr; gap:36px;} .svc-block.flip > .svc-visual{order:0;} }
+</style>
+</head>
+<body>
+
+<div class="ribbon">SofGent — <b>Three core capabilities</b> · AI MVPs · Document Automation · Integration &amp; Automation</div>
+<div class="header-wrap">
+  <div class="topbar"><div class="topbar-in"><p class="topbar-msg"><b>SofGent</b> — AI Product Studio. Production-grade AI, shipped in 2–4 weeks.</p><div class="topbar-contacts"><a href="mailto:support@sofgent.com" class="tc-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> support@sofgent.com</a></div></div></div>
+  <div class="nav"><div class="nav-in">
+    <a href="home.html" class="logo"><svg class="logo-mark" viewBox="0 0 30 30" fill="none"><rect width="30" height="30" rx="7" fill="#326d6d"/><path d="M8 15a7 7 0 0 1 14 0" stroke="white" stroke-width="1.8" stroke-linecap="round"/><path d="M15 22a7 7 0 0 1-7-7" stroke="white" stroke-width="1.8" stroke-linecap="round"/><path d="M15 22a7 7 0 0 0 7-7" stroke="white" stroke-width="1.8" stroke-linecap="round"/><circle cx="15" cy="15" r="1.8" fill="white"/></svg><span class="logo-text">SofGent</span></a>
+    <ul class="nav-links"><li><a href="home.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html" class="active">Services</a></li><li><a href="how-we-build.html">How We Build</a></li><li><a href="projects.html">Projects</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul>
+    <div class="nav-right"><a href="contact.html" class="btn btn-teal btn-sm">Book a Call</a></div>
+  </div></div>
+</div>
+
+<!-- hero -->
+<section class="phero">
+  <div class="glow-l"></div><div class="glow-r"></div>
+  <div class="wrap"><div class="phero-in">
+    <p class="phero-bc"><span>AI Product Studio</span><span class="sep">·</span> Services</p>
+    <h1>AI products that go live in <span class="hl">2–4 weeks.</span></h1>
+    <p class="phero-sub">From document automation to full SaaS MVPs to deep integrations — we scope, build, test, and ship production-ready AI. No fluff. No agency delays.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;"><a href="#pillars" class="btn btn-white">Explore services</a><a href="contact.html" class="btn btn-ghost">Book a free call</a></div>
+    <div class="kpis on-dark mt-40" style="max-width:560px;"><div class="kpi"><div class="kpi-n">3</div><div class="kpi-l">Core capabilities</div></div><div class="kpi"><div class="kpi-n">2–4 wks</div><div class="kpi-l">To production</div></div><div class="kpi"><div class="kpi-n">0</div><div class="kpi-l">Critical launch bugs</div></div></div>
+  </div></div>
+</section>
+
+<!-- trust -->
+<section class="trust"><div class="wrap"><div class="trust-in"><span class="trust-label">Built with</span><span class="trust-logo">Next.js</span><span class="trust-logo">Claude</span><span class="trust-logo">OpenAI</span><span class="trust-logo">Supabase</span><span class="trust-logo">Vercel</span><span class="trust-logo">Python</span></div></div></section>
+
+<!-- pillars overview -->
+<section class="section" id="pillars">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:44px;"><div class="s-tag center">What we do</div><h2 class="s-h2">Three capabilities. One studio.</h2><p class="s-sub mx-auto center">Everything else we offer — design, data infrastructure, DevOps — exists to make these three excellent.</p></div>
+    <div class="pillars">
+      <div class="pillar"><div class="pillar-num">01</div><div class="pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h5"/></svg></div><h3>AI Product &amp; MVP</h3><p>Full-stack, production-ready AI products — built and deployed in weeks.</p><a href="#svc-mvp" class="pillar-link">Details <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 2v9M2.5 7.5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="pillar"><div class="pillar-num">02</div><div class="pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13l2 2 4-4"/></svg></div><h3>Document Automation</h3><p>Turn documents into structured data — classify, extract, validate, route.</p><a href="#svc-doc" class="pillar-link">Details <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 2v9M2.5 7.5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="pillar"><div class="pillar-num">03</div><div class="pillar-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M6 9v6a3 3 0 0 0 3 3h6M9 6h6a3 3 0 0 1 3 3v6"/></svg></div><h3>Integration &amp; Automation</h3><p>AI models wired into your existing tools as reliable, monitored workflows.</p><a href="#svc-int" class="pillar-link">Details <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 2v9M2.5 7.5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- service 1: MVP -->
+<section class="section" id="svc-mvp">
+  <div class="wrap"><div class="svc-block">
+    <div>
+      <div class="s-tag">Service 01 · AI Product &amp; MVP</div>
+      <h2 class="s-h2">Ship a real product, <em>not a pitch deck.</em></h2>
+      <p class="s-sub" style="max-width:none;">We take a scoped idea to a deployed, production-grade AI product in 2–4 weeks — architecture, AI layer, UI, and infrastructure included.</p>
+      <ul class="pillar-list mt-24" style="max-width:none;"><li>Full-stack build on Next.js + your choice of AI models</li><li>Clean architecture and tests your engineers would approve</li><li>Deployed to your cloud with monitoring from day one</li><li>Fixed scope, fixed price, zero-bug launch guarantee</li></ul>
+      <a href="contact.html" class="btn btn-teal mt-24">Scope your MVP</a>
+    </div>
+    <div class="svc-visual"><img src="../public/images/services/software-development.webp" alt="MVP" onerror="this.parentElement.style.display='none'"/></div>
+  </div></div>
+</section>
+
+<!-- service 2: Document Automation -->
+<section class="section" id="svc-doc">
+  <div class="wrap"><div class="svc-block flip">
+    <div>
+      <div class="s-tag">Service 02 · Document Automation</div>
+      <h2 class="s-h2">Turn documents into <em>structured data.</em> Automatically.</h2>
+      <p class="s-sub" style="max-width:none;">OCR alone isn't enough. We build end-to-end document intelligence — classify, extract, validate, and route — eliminating manual review entirely.</p>
+      <ul class="pillar-list mt-24" style="max-width:none;"><li>Intelligent classification, even for scanned &amp; handwritten inputs</li><li>Field-level extraction with &gt;98% accuracy</li><li>Confidence scoring, exception handling, automatic routing</li><li>Live pipeline in 2–3 weeks — a system, not a PoC</li></ul>
+      <a href="contact.html" class="btn btn-teal mt-24">Automate your documents</a>
+    </div>
+    <div class="svc-visual"><img src="../public/images/services/image-processing.webp" alt="Document AI" onerror="this.parentElement.style.display='none'"/></div>
+  </div></div>
+</section>
+
+<!-- service 3: Integration & Automation (with flow graph) -->
+<section class="section" id="svc-int">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:48px;"><div class="s-tag center">Service 03 · Integration &amp; Automation</div><h2 class="s-h2">AI that works <em>inside</em> your stack.</h2><p class="s-sub mx-auto center">We connect AI models and your existing tools into clean, automated workflows — triggered, monitored, and reliable.</p></div>
+    <div class="flow">
+      <div>
+        <ul class="pillar-list" style="max-width:440px;"><li>Trigger from uploads, emails, webhooks, or forms</li><li>AI classifies, extracts, decides, and drafts</li><li>Results routed to Slack, CRM, database, or dashboards</li><li>Human-in-the-loop where it matters, logged end to end</li><li>Documented APIs your team can maintain</li></ul>
+        <a href="contact.html" class="btn btn-teal mt-24">Connect your tools</a>
+      </div>
+      <div class="flow-graph"><div class="flow-cols">
+        <div class="flow-col"><div class="flow-col-label">Sources</div><div class="flow-node"><span class="dot" style="background:#67e8f9"></span>Documents</div><div class="flow-node"><span class="dot" style="background:#f59e0b"></span>Email</div><div class="flow-node"><span class="dot" style="background:#d2a8ff"></span>Forms</div><div class="flow-node"><span class="dot" style="background:#22c55e"></span>Webhooks</div></div>
+        <div><div class="flow-arrow">→</div><div class="flow-core"><svg class="core-logo" viewBox="0 0 30 30" fill="none"><rect width="30" height="30" rx="7" fill="#ffffff" opacity="0.15"/><path d="M8 15a7 7 0 0 1 14 0" stroke="white" stroke-width="1.8" stroke-linecap="round"/><path d="M15 22a7 7 0 0 1-7-7" stroke="white" stroke-width="1.8" stroke-linecap="round"/><path d="M15 22a7 7 0 0 0 7-7" stroke="white" stroke-width="1.8" stroke-linecap="round"/><circle cx="15" cy="15" r="1.8" fill="white"/></svg><div class="core-t">SofGent AI Layer</div><div class="core-s">classify · decide · act</div></div><div class="flow-arrow">→</div></div>
+        <div class="flow-col"><div class="flow-col-label">Destinations</div><div class="flow-node"><span class="dot" style="background:#36c5f0"></span>Slack</div><div class="flow-node"><span class="dot" style="background:#ff6154"></span>CRM</div><div class="flow-node"><span class="dot" style="background:#67e8f9"></span>Database</div><div class="flow-node"><span class="dot" style="background:#f59e0b"></span>Dashboards</div></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- also included -->
+<section class="section" style="background:var(--surface);">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:44px;"><div class="s-tag center">Also included</div><h2 class="s-h2">Everything that makes the core three excellent.</h2></div>
+    <div class="pillars">
+      <div class="pillar"><div class="pillar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><h3>Product Design &amp; UX</h3><p>Interfaces that convert — wireframes to pixel-perfect, accessible components.</p></div>
+      <div class="pillar"><div class="pillar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/></svg></div><h3>AI-Ready Data Infrastructure</h3><p>Clean, labeled, structured data so your models train on signal, not noise.</p></div>
+      <div class="pillar"><div class="pillar-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg></div><h3>DevOps &amp; Infrastructure</h3><p>CI/CD, cloud architecture, and production monitoring from day one.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="wrap"><div class="faq-grid">
+    <div><div class="s-tag">FAQ</div><h2 class="s-h2">Common questions.</h2><a href="contact.html" class="btn btn-ink mt-24">Book a Call</a></div>
+    <div class="faq-list">
+      <div class="faq-item open"><button class="faq-q">Can you work with our existing codebase? <span class="ic">+</span></button><div class="faq-a"><p>Yes. We integrate with your repos, cloud, and stack — or start fresh if that's faster. Either way you own everything.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Which AI models do you use? <span class="ic">+</span></button><div class="faq-a"><p>Whatever fits — Anthropic Claude, OpenAI, or open / custom models. We pick for accuracy, cost, and your data constraints.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Do you sign NDAs? <span class="ic">+</span></button><div class="faq-a"><p>Always, before any sensitive details are shared. Data stays in your cloud and you own all IP.</p></div></div>
+      <div class="faq-item"><button class="faq-q">What does an engagement cost? <span class="ic">+</span></button><div class="faq-a"><p>Automation sprints from $4k, AI MVPs from $12k, and custom Product Partner retainers. Every project is fixed-scope, fixed-price after the first call.</p></div></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="border-bottom:none;"><div class="wrap"><div class="cta-box"><div class="cta-stripe"></div><div><div class="cta-ey"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Free 30-min consultation</div><h2>Let's scope your<br/>AI project.</h2><p class="cta-sub">Tell us the problem. We'll come back with a plan, a timeline, and a fixed price.</p></div><div class="cta-btns"><a href="contact.html" class="btn btn-white btn-lg">Book a Call</a><a href="contact.html" class="btn btn-ghost btn-lg">Request a Demo</a></div></div></div></section>
+
+<footer><div class="wrap"><div class="foot-top">
+  <div class="foot-brand"><a href="home.html" class="logo"><svg class="logo-mark" viewBox="0 0 30 30" fill="none"><rect width="30" height="30" rx="7" fill="#326d6d"/><path d="M8 15a7 7 0 0 1 14 0" stroke="white" stroke-width="1.8" stroke-linecap="round"/><path d="M15 22a7 7 0 0 1-7-7" stroke="white" stroke-width="1.8" stroke-linecap="round"/><path d="M15 22a7 7 0 0 0 7-7" stroke="white" stroke-width="1.8" stroke-linecap="round"/><circle cx="15" cy="15" r="1.8" fill="white"/></svg><span class="logo-text">SofGent</span></a><p>We build production-ready AI products in 2–4 weeks for founders, CTOs, and operations teams.</p></div>
+  <div class="foot-col"><h4>Services</h4><ul><li><a href="services.html">AI MVP Development</a></li><li><a href="services.html">Document Automation</a></li><li><a href="services.html">Integration &amp; Automation</a></li><li><a href="services.html">Data Infrastructure</a></li></ul></div>
+  <div class="foot-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="projects.html">Projects</a></li><li><a href="how-we-build.html">How We Build</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+  <div class="foot-col"><h4>Get in touch</h4><ul><li><a href="mailto:support@sofgent.com">support@sofgent.com</a></li><li><a href="tel:+8801537740365">+880 153 7740365</a></li><li><a href="contact.html">Book a free call</a></li></ul></div>
+</div><div class="foot-bot"><span class="foot-copy">© 2026 SofGent. All rights reserved.</span><div class="foot-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div></div></footer>
+
+<script>document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));</script>
+</body>
+</html>

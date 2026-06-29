@@ -1,4 +1,4 @@
-import { CtaNoSSR } from "@/app/page";
+import { CtaNoSSR } from "@/app/components/home/cta/CtaNoSSR";
 import { getProjectCollections } from "@/lib/sanity/content";
 import ProjectCard from "../common/ProjectCard";
 
