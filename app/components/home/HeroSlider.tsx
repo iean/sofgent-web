@@ -103,8 +103,8 @@ export default function HeroSlider() {
             </svg>
           </div>
           <div>
-            <div className="text-[13px] font-semibold text-[#0c0c0c] leading-tight">18 days</div>
-            <div className="text-[10px] text-[#9a9a9a]">Avg. time to ship</div>
+            <div className="text-[13px] font-semibold text-[#0c0c0c] leading-tight">4–6 weeks</div>
+            <div className="text-[10px] text-[#9a9a9a]">Idea to production</div>
           </div>
         </div>
 
@@ -122,8 +122,8 @@ export default function HeroSlider() {
             </svg>
           </div>
           <div>
-            <div className="text-[13px] font-semibold text-[#0c0c0c] leading-tight">30+ shipped</div>
-            <div className="text-[10px] text-[#9a9a9a]">To production</div>
+            <div className="text-[13px] font-semibold text-[#0c0c0c] leading-tight">0 critical</div>
+            <div className="text-[10px] text-[#9a9a9a]">Launch bugs</div>
           </div>
         </div>
       </div>

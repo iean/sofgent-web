@@ -20,7 +20,7 @@ const values = [
 ];
 
 const stats = [
-  { n: "2–4", l: "Weeks to ship" },
+  { n: "4–6", l: "Weeks to ship" },
   { n: "0", l: "Critical launch bugs" },
   { n: "100%", l: "Client-owned code" },
   { n: "UK + US", l: "Clients served" },

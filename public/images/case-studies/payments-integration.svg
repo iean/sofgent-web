@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="1200" height="760" role="img" aria-label="Payment integration dashboard mockup">
+  <defs>
+    <linearGradient id="pay-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1512"/>
+      <stop offset="1" stop-color="#0c0c0c"/>
+    </linearGradient>
+    <radialGradient id="pay-glow" cx="0.7" cy="0" r="0.9">
+      <stop offset="0" stop-color="#326d6d" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#326d6d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pay-bar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#326d6d"/>
+      <stop offset="1" stop-color="#67e8f9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#pay-bg)"/>
+  <rect width="1200" height="760" fill="url(#pay-glow)"/>
+
+  <rect x="80" y="70" width="1040" height="620" rx="20" fill="#12181a" stroke="rgba(255,255,255,0.08)"/>
+  <circle cx="116" cy="106" r="7" fill="#ff5f57"/>
+  <circle cx="140" cy="106" r="7" fill="#febc2e"/>
+  <circle cx="164" cy="106" r="7" fill="#28c840"/>
+  <text x="600" y="111" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="13">payments · reconciliation</text>
+
+  <!-- header -->
+  <text x="112" y="182" fill="#fff" font-family="sans-serif" font-size="22" font-weight="700">Ledger &amp; Reconciliation</text>
+
+  <!-- KPI cards -->
+  <g font-family="sans-serif">
+    <rect x="112" y="210" width="290" height="110" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)"/>
+    <text x="136" y="244" fill="rgba(255,255,255,0.45)" font-size="13">Settled today</text>
+    <text x="136" y="288" fill="#fff" font-size="30" font-weight="800">$1.24M</text>
+
+    <rect x="422" y="210" width="290" height="110" rx="14" fill="rgba(50,109,109,0.14)" stroke="rgba(50,109,109,0.35)"/>
+    <text x="446" y="244" fill="rgba(255,255,255,0.45)" font-size="13">Auto-reconciled</text>
+    <text x="446" y="288" fill="#67e8f9" font-size="30" font-weight="800">98.2%</text>
+
+    <rect x="732" y="210" width="288" height="110" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)"/>
+    <text x="756" y="244" fill="rgba(255,255,255,0.45)" font-size="13">Exceptions</text>
+    <text x="756" y="288" fill="#febc2e" font-size="30" font-weight="800">14</text>
+  </g>
+
+  <!-- chart -->
+  <rect x="112" y="342" width="500" height="316" rx="14" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)"/>
+  <text x="136" y="378" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="13" font-weight="600">Volume by day</text>
+  <g>
+    <rect x="150" y="520" width="46" height="110" rx="6" fill="url(#pay-bar)" opacity="0.55"/>
+    <rect x="212" y="480" width="46" height="150" rx="6" fill="url(#pay-bar)" opacity="0.65"/>
+    <rect x="274" y="500" width="46" height="130" rx="6" fill="url(#pay-bar)" opacity="0.6"/>
+    <rect x="336" y="440" width="46" height="190" rx="6" fill="url(#pay-bar)" opacity="0.8"/>
+    <rect x="398" y="410" width="46" height="220" rx="6" fill="url(#pay-bar)"/>
+    <rect x="460" y="460" width="46" height="170" rx="6" fill="url(#pay-bar)" opacity="0.7"/>
+    <rect x="522" y="430" width="46" height="200" rx="6" fill="url(#pay-bar)" opacity="0.85"/>
+  </g>
+
+  <!-- transaction list -->
+  <rect x="632" y="342" width="388" height="316" rx="14" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)"/>
+  <text x="656" y="378" fill="rgba(255,255,255,0.5)" font-family="sans-serif" font-size="13" font-weight="600">Recent transactions</text>
+  <g font-family="sans-serif" font-size="12">
+    <g>
+      <rect x="656" y="398" width="340" height="48" rx="10" fill="rgba(255,255,255,0.03)"/>
+      <rect x="672" y="414" width="150" height="9" rx="4.5" fill="rgba(255,255,255,0.35)"/>
+      <rect x="672" y="428" width="90" height="7" rx="3.5" fill="rgba(255,255,255,0.16)"/>
+      <rect x="900" y="412" width="80" height="20" rx="10" fill="rgba(40,200,64,0.18)"/>
+      <text x="940" y="426" text-anchor="middle" fill="#28c840">matched</text>
+    </g>
+    <g>
+      <rect x="656" y="456" width="340" height="48" rx="10" fill="rgba(255,255,255,0.03)"/>
+      <rect x="672" y="472" width="130" height="9" rx="4.5" fill="rgba(255,255,255,0.35)"/>
+      <rect x="672" y="486" width="110" height="7" rx="3.5" fill="rgba(255,255,255,0.16)"/>
+      <rect x="900" y="470" width="80" height="20" rx="10" fill="rgba(40,200,64,0.18)"/>
+      <text x="940" y="484" text-anchor="middle" fill="#28c840">matched</text>
+    </g>
+    <g>
+      <rect x="656" y="514" width="340" height="48" rx="10" fill="rgba(255,255,255,0.03)"/>
+      <rect x="672" y="530" width="160" height="9" rx="4.5" fill="rgba(255,255,255,0.35)"/>
+      <rect x="672" y="544" width="80" height="7" rx="3.5" fill="rgba(255,255,255,0.16)"/>
+      <rect x="900" y="528" width="80" height="20" rx="10" fill="rgba(254,188,46,0.2)"/>
+      <text x="940" y="542" text-anchor="middle" fill="#febc2e">review</text>
+    </g>
+    <g>
+      <rect x="656" y="572" width="340" height="48" rx="10" fill="rgba(255,255,255,0.03)"/>
+      <rect x="672" y="588" width="140" height="9" rx="4.5" fill="rgba(255,255,255,0.35)"/>
+      <rect x="672" y="602" width="100" height="7" rx="3.5" fill="rgba(255,255,255,0.16)"/>
+      <rect x="900" y="586" width="80" height="20" rx="10" fill="rgba(40,200,64,0.18)"/>
+      <text x="940" y="600" text-anchor="middle" fill="#28c840">matched</text>
+    </g>
+  </g>
+</svg>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Script from "next/script";
 import Header from "./components/Layout/Header/Header";
 import Footer from "./components/Layout/Footer/Footer";
 import HeroSlider from "./components/home/HeroSlider";
@@ -29,7 +30,7 @@ const clients = ["Heart & Haven Care", "Solidarity Center (ACILS)"];
 const techStack = ["Next.js", "Anthropic Claude", "OpenAI", "Supabase", "Vercel", "PostgreSQL", "Python", "TypeScript"];
 
 const kpis = [
-  { n: "2–4 wks", label: "Idea to production" },
+  { n: "4–6 wks", label: "Idea to production" },
   { n: "Fixed", label: "Scope & price" },
   { n: "0", label: "Critical launch bugs" },
   { n: "30 days", label: "Post-launch support" },
@@ -71,8 +72,8 @@ const pillars = [
   {
     num: "03",
     title: "AI Integration & Automation",
-    desc: "Connect Claude, GPT-4, and custom models into your existing tools — CRM, Slack, ERP — via clean, monitored workflows.",
-    points: ["Claude / GPT-4 / custom LLMs wired in", "Triggers from email, webhook, or form", "Observable, logged, human-in-loop ready"],
+    desc: "Connect Claude, GPT-5, and custom models into your existing tools — CRM, Slack, ERP — via clean, monitored workflows.",
+    points: ["Claude / GPT-5 / custom LLMs wired in", "Triggers from email, webhook, or form", "Observable, logged, human-in-loop ready"],
     href: "/custom-software",
     img: "/images/services/system-integration.webp",
     accent: "#2a5f5f",
@@ -160,7 +161,7 @@ const caseStudies = [
     label: "LIVE", stack: "Non-profit · Labor rights",
     title: "Solidarity Center — Tannery Workers Website",
     desc: "A website built for the American Center for International Labor Solidarity (Solidarity Center) supporting tannery workers — focused on clarity, access, and reach.",
-    img: "/images/project/haven/home_card_supported_living.jpg",
+    img: "/images/case-studies/solidarity-website.svg",
     tags: ["Web Platform", "Accessibility", "Content"],
     metrics: [{ n: "Live", label: "In production" }, { n: "NGO", label: "Labor solidarity" }],
     href: "/projects",
@@ -197,7 +198,7 @@ const security = [
 
 const pricing = [
   { name: "Automation Sprint", amt: "from $4k", desc: "A single AI workflow or document pipeline, live in production.", list: ["1–2 week delivery", "One integration / pipeline", "Deploy + handover"], cta: "Scope it", featured: false },
-  { name: "AI MVP", amt: "from $12k", desc: "A full, production-ready AI product your users and investors can touch.", list: ["2–4 week delivery", "Full stack + AI layer + UI", "Zero-bug launch guarantee", "30-day post-launch support"], cta: "Book a call", featured: true },
+  { name: "AI MVP", amt: "from $12k", desc: "A full, production-ready AI product your users and investors can touch.", list: ["4–6 week delivery", "Full stack + AI layer + UI", "Zero-bug launch guarantee", "30-day post-launch support"], cta: "Book a call", featured: true },
   { name: "Product Partner", amt: "Custom", desc: "Ongoing build & iteration for teams scaling an AI product.", list: ["Monthly rolling sprints", "Dedicated senior team", "Roadmap + priority support"], cta: "Talk to us", featured: false },
 ];
 
@@ -214,8 +215,23 @@ export default async function Home() {
   const { caseStudies: studies } = await getProjectCollections();
   const featuredStudies = studies.slice(0, 3);
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <main>
+      <Script
+        id="faq-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Header />
 
       {/* ════ HERO (problem-led) ════ */}
@@ -364,7 +380,7 @@ export default async function Home() {
                 </div>
                 <div>
                   <h3 className="text-[14px] font-bold text-[#0c0c0c] mb-1.5 group-hover:text-[#326d6d] transition-colors leading-snug">{s.title}</h3>
-                  <p className="text-[12.5px] text-[#7a7a7a] leading-[1.6]">{s.desc}</p>
+                  <p className="text-[13px] text-[#7a7a7a] leading-[1.6]">{s.desc}</p>
                 </div>
                 <span className="inline-flex items-center gap-1 text-[12px] font-bold mt-auto pt-2 border-t border-[#f2f2f2]" style={{ color: "#326d6d" }}>
                   Learn more <span className="transition-transform group-hover:translate-x-0.5 inline-flex"><ArrowRight /></span>
@@ -536,7 +552,7 @@ export default async function Home() {
                 </div>
                 <div className="p-5 hover:bg-[#fafafa] transition-colors">
                   <h3 className="text-[14px] font-semibold text-[#0c0c0c] mb-1.5 group-hover:text-[#326d6d] transition-colors leading-snug">{p.title}</h3>
-                  <p className="text-[12px] text-[#6a6a6a] leading-[1.55] mb-4">{p.desc}</p>
+                  <p className="text-[13px] text-[#6a6a6a] leading-[1.6] mb-4">{p.desc}</p>
                   <div className="flex gap-1.5 flex-wrap mb-4">
                     {p.tags.map((t) => (<span key={t} className="text-[10px] font-medium px-2 py-0.5 rounded-full text-[#6a6a6a]" style={{ background: "#f5f5f5", border: "0.5px solid #eaeaea" }}>{t}</span>))}
                   </div>
@@ -661,42 +677,13 @@ export default async function Home() {
                   <span className="text-[12px] text-[#326d6d]">→</span>
                   <span className="text-[24px] font-bold text-[#0c0c0c] tracking-[-0.03em]">{r.to}</span>
                 </div>
-                <p className="text-[12px] text-[#6a6a6a] leading-[1.6] mb-5">{r.body}</p>
+                <p className="text-[13px] text-[#6a6a6a] leading-[1.65] mb-5">{r.body}</p>
                 <div className="flex items-center gap-2.5 pt-4 border-t border-[#eaeaea]">
                   <div className="w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold" style={{ background: "rgba(50,109,109,0.09)", color: "#326d6d" }}>{r.initials}</div>
                   <div><div className="text-[12px] font-semibold text-[#0c0c0c]">{r.client}</div><div className="text-[10px] text-[#9a9a9a]">{r.service}</div></div>
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ════ LIVE IN PRODUCTION (factual proof) ════ */}
-      {/* TODO: add a real client testimonial quote here once one is collected. */}
-      <section className="border-b border-[#eaeaea]" style={{ padding: "80px 0" }}>
-        <div className="max-w-[1140px] mx-auto px-8 text-center">
-          <p className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#9a9a9a] mb-3">Live in production</p>
-          <h2 className="font-bold tracking-[-0.035em] text-[#0c0c0c] mb-8" style={{ fontSize: "clamp(22px,2.6vw,30px)" }}>Real sites, real users — shipped and running.</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-[820px] mx-auto">
-            <a href="https://www.heartandhavenhealthcare.co.uk/" target="_blank" rel="noopener noreferrer" className="rounded-[16px] p-6 text-left bg-white hover:-translate-y-1 transition-transform block" style={{ border: "1px solid #e6e6e6" }}>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="w-2 h-2 rounded-full" style={{ background: "#22c55e" }} />
-                <span className="text-[11px] font-bold uppercase tracking-[0.06em]" style={{ color: "#22c55e" }}>Live</span>
-              </div>
-              <h3 className="text-[16px] font-bold tracking-[-0.02em] text-[#0c0c0c] mb-1">Heart &amp; Haven Care</h3>
-              <p className="text-[13px] text-[#6a6a6a] leading-[1.6]">UK healthcare services platform — domiciliary care, staffing &amp; supported living. CQC-registered.</p>
-              <span className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold mt-3" style={{ color: "#326d6d" }}>heartandhavenhealthcare.co.uk <ArrowRight /></span>
-            </a>
-            <div className="rounded-[16px] p-6 text-left bg-white" style={{ border: "1px solid #e6e6e6" }}>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="w-2 h-2 rounded-full" style={{ background: "#22c55e" }} />
-                <span className="text-[11px] font-bold uppercase tracking-[0.06em]" style={{ color: "#22c55e" }}>Live</span>
-              </div>
-              <h3 className="text-[16px] font-bold tracking-[-0.02em] text-[#0c0c0c] mb-1">Solidarity Center (ACILS)</h3>
-              <p className="text-[13px] text-[#6a6a6a] leading-[1.6]">A website for tannery workers, built for the American Center for International Labor Solidarity.</p>
-              <span className="text-[12.5px] font-semibold mt-3 inline-block" style={{ color: "#9a9a9a" }}>Non-profit · Labor solidarity</span>
-            </div>
           </div>
         </div>
       </section>
@@ -776,7 +763,7 @@ export default async function Home() {
             </div>
             <div className="relative flex flex-col gap-2 shrink-0">
               <Link href="/contact" className="inline-flex items-center justify-center gap-2 text-[14px] font-bold text-[#0c0c0c] bg-white px-8 py-3.5 rounded-[10px] hover:bg-[#f0f0f0] transition-colors whitespace-nowrap">Book a Call <ArrowRight /></Link>
-              <Link href="/contact" className="inline-flex items-center justify-center text-[13.5px] font-medium px-8 py-3.5 rounded-[10px] transition-colors whitespace-nowrap" style={{ color: "rgba(255,255,255,0.55)", border: "1px solid rgba(255,255,255,0.14)" }}>Request a Demo</Link>
+              <Link href="/projects" className="inline-flex items-center justify-center text-[13.5px] font-medium px-8 py-3.5 rounded-[10px] transition-colors whitespace-nowrap" style={{ color: "rgba(255,255,255,0.6)", border: "1px solid rgba(255,255,255,0.14)" }}>See Our Work</Link>
             </div>
           </div>
         </div>

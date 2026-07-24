@@ -108,7 +108,7 @@ export default function AIStudioPage() {
                   code={`<span style="color:#79c0ff">import</span> { <span style="color:#4cd4d4">DocumentAI</span> } <span style="color:#79c0ff">from</span> <span style="color:#a5d6ff">'@sofgent/docai'</span>
 
 <span style="color:#79c0ff">const</span> pipeline = <span style="color:#79c0ff">new</span> <span style="color:#d2a8ff">DocumentAI</span>({
-  model: <span style="color:#a5d6ff">'claude-3-5-sonnet'</span>,
+  model: <span style="color:#a5d6ff">'claude-opus-4-8'</span>,
   confidence_threshold: <span style="color:#79c0ff">0.94</span>,
   fallback: <span style="color:#a5d6ff">'human-review'</span>,
 })
@@ -246,7 +246,7 @@ export default function AIStudioPage() {
             Got an AI product idea?<br />
             Let&apos;s scope it <span style={{ color: "#67e8f9" }}>together.</span>
           </h2>
-          <p className="text-[15px] max-w-[420px] mx-auto mb-10 leading-[1.65]" style={{ color: "rgba(255,255,255,0.36)" }}>
+          <p className="text-[15px] max-w-[420px] mx-auto mb-10 leading-[1.65]" style={{ color: "rgba(255,255,255,0.6)" }}>
             We&apos;ll give you a written scope, timeline, and estimate within 48 hours. No obligation.
           </p>
           <div className="flex items-center justify-center gap-2.5">

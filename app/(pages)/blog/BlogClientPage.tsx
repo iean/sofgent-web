@@ -22,194 +22,6 @@ interface Post {
   authorName?: string;
 }
 
-// ── Static fallback data ─────────────────────────────────────
-const FEATURED: Post = {
-  cat: "blog",
-  tag: "Featured · Blog",
-  tagColor: "#326d6d",
-  title: "Why Most AI SaaS Projects Fail in the First 60 Days — And How We Prevent It",
-  excerpt:
-    "The failure pattern is almost always the same: unclear scope, no production mindset, and an AI layer bolted on after the fact. Here's the process we use to ensure every project ships and sticks.",
-  date: "Jun 12, 2026",
-  read: "8 min read",
-  img: "/images/services/software-development.webp",
-  slug: "why-most-ai-saas-projects-fail",
-  authorInitials: "MS",
-  authorName: "Masud S.",
-};
-
-const POSTS: Post[] = [
-  {
-    cat: "blog",
-    tag: "Blog",
-    tagColor: "#326d6d",
-    title: "How We Built a Document Intelligence System in 3 Weeks for a UK Care Provider",
-    excerpt:
-      "End-to-end OCR, classification, and structured extraction — deployed to production with zero manual review. A full technical walkthrough.",
-    date: "Jun 9, 2026",
-    read: "6 min read",
-    img: "/images/services/image-processing.webp",
-    slug: "document-intelligence-system-3-weeks",
-  },
-  {
-    cat: "case",
-    tag: "Case Study",
-    tagColor: "#7c3aed",
-    title: "Haven: From 6-Month Manual Process to Fully Automated in 18 Days",
-    excerpt:
-      "How we replaced a 6-month document review workflow with an AI pipeline — and launched with zero critical bugs on day one.",
-    date: "Jun 3, 2026",
-    read: "5 min read",
-    img: "/images/project/haven/HOME_Financing.jpg",
-    slug: "haven-automation-case-study",
-  },
-  {
-    cat: "guide",
-    tag: "Guide",
-    tagColor: "#0369a1",
-    title: "The Founder's Guide to Scoping an AI MVP: What to Decide Before You Write Code",
-    excerpt:
-      "Scope creep kills AI projects. This is the framework we use to lock in scope before sprint one — including the 5 questions every founder must answer first.",
-    date: "May 28, 2026",
-    read: "10 min read",
-    img: "/images/services/software-development.webp",
-    slug: "founders-guide-scoping-ai-mvp",
-  },
-  {
-    cat: "blog",
-    tag: "Blog",
-    tagColor: "#326d6d",
-    title: "Claude vs OpenAI for Production AI: Which Model Actually Ships Better?",
-    excerpt:
-      "We've shipped products with both. Here's an honest breakdown of where each model wins — based on real production use, not benchmarks.",
-    date: "May 21, 2026",
-    read: "7 min read",
-    img: "/images/services/system-integration.webp",
-    slug: "claude-vs-openai-production",
-  },
-  {
-    cat: "insight",
-    tag: "Insight",
-    tagColor: "#b45309",
-    title: "Tokens Aren't Spend — They're Units of Work. Here's Why That Changes Pricing.",
-    excerpt:
-      "Most companies measure AI cost in dollars per API call. The ones actually getting ROI measure it in work completed per dollar. A reframe that changes everything.",
-    date: "May 14, 2026",
-    read: "4 min read",
-    img: "/images/services/managed-security.webp",
-    slug: "tokens-are-units-of-work",
-  },
-  {
-    cat: "guide",
-    tag: "Guide",
-    tagColor: "#0369a1",
-    title: "RAG in Production: The Practical Setup Nobody Writes About",
-    excerpt:
-      "Everyone writes about how RAG works in theory. Here's what the actual production setup looks like — chunking strategy, embedding models, retrieval scoring, and where it breaks.",
-    date: "May 7, 2026",
-    read: "12 min read",
-    img: "/images/services/dev-ops.webp",
-    slug: "rag-in-production-practical",
-  },
-  {
-    cat: "case",
-    tag: "Case Study",
-    tagColor: "#7c3aed",
-    title: "Staffing SaaS MVP: Scoped, Built, and Shipped in 21 Days",
-    excerpt:
-      "How we turned a care operations brief into a working AI-assisted scheduling tool — live in production, zero onboarding issues, 40% fewer scheduling errors week one.",
-    date: "Apr 30, 2026",
-    read: "5 min read",
-    img: "/images/project/haven/home_card_staffing.jpg",
-    slug: "staffing-saas-mvp-21-days",
-  },
-  {
-    cat: "blog",
-    tag: "Blog",
-    tagColor: "#326d6d",
-    title: "What \"Production-Ready\" Actually Means for an AI Product in 2026",
-    excerpt:
-      "Not just \"it runs.\" Monitoring, fallback logic, rate-limit handling, cost controls, and the 12 other things that separate a demo from a product people pay for.",
-    date: "Apr 22, 2026",
-    read: "9 min read",
-    img: "/images/services/software-testing.webp",
-    slug: "what-production-ready-means-ai",
-  },
-  // hidden initially
-  {
-    cat: "blog",
-    tag: "Blog",
-    tagColor: "#326d6d",
-    title: "The Hidden Cost of Building AI Features Without Data Infrastructure",
-    excerpt:
-      "Teams rush to add AI features on top of messy data. It always comes back to bite them. Here's how to build the foundation before the model.",
-    date: "Apr 15, 2026",
-    read: "7 min read",
-    img: "/images/services/system-maintenance.webp",
-    slug: "hidden-cost-ai-without-data-infra",
-  },
-  {
-    cat: "case",
-    tag: "Case Study",
-    tagColor: "#7c3aed",
-    title: "Supported Living Portal: Building Compliance-Ready Infrastructure from Zero",
-    excerpt:
-      "Audit-ready dashboards, data versioning, and zero legacy dependencies — delivered in 4–6 weeks for a supported living provider with strict regulatory requirements.",
-    date: "Apr 8, 2026",
-    read: "5 min read",
-    img: "/images/project/haven/home_card_supported_living.jpg",
-    slug: "supported-living-portal-compliance",
-  },
-  {
-    cat: "guide",
-    tag: "Guide",
-    tagColor: "#0369a1",
-    title: "Next.js App Router for AI Products: The Architecture Decisions That Matter",
-    excerpt:
-      "Server components, streaming responses, edge functions — here's how we wire Next.js App Router for AI-heavy products that need to be fast and reliable.",
-    date: "Mar 31, 2026",
-    read: "11 min read",
-    img: "/images/services/ui-ux-design.webp",
-    slug: "nextjs-app-router-ai-products",
-  },
-  {
-    cat: "insight",
-    tag: "Insight",
-    tagColor: "#b45309",
-    title: "Why Founders Underestimate the Ops Layer of an AI Product",
-    excerpt:
-      "The AI layer is the easy part. It's the orchestration, rate limiting, retry logic, and cost management that determine whether the product survives real users.",
-    date: "Mar 24, 2026",
-    read: "5 min read",
-    img: "/images/services/managed-security.webp",
-    slug: "founders-underestimate-ops-layer",
-  },
-  {
-    cat: "guide",
-    tag: "Guide",
-    tagColor: "#0369a1",
-    title: "How to Evaluate an AI Development Agency: 8 Questions That Actually Matter",
-    excerpt:
-      "Speed claims are easy. Here's the checklist we'd use if we were hiring someone else — covering architecture, delivery process, post-launch support, and red flags.",
-    date: "Mar 17, 2026",
-    read: "8 min read",
-    img: "/images/services/software-development.webp",
-    slug: "evaluate-ai-development-agency",
-  },
-  {
-    cat: "blog",
-    tag: "Blog",
-    tagColor: "#326d6d",
-    title: "Document Automation for Fintech: Why OCR Alone Isn't Enough",
-    excerpt:
-      "OCR gives you text. Understanding gives you data. The difference between them is what separates an invoice scanner from a real document intelligence system.",
-    date: "Mar 10, 2026",
-    read: "6 min read",
-    img: "/images/services/image-processing.webp",
-    slug: "document-automation-fintech-ocr",
-  },
-];
-
 const INITIAL_VISIBLE = 8;
 
 // TABS counts are computed dynamically inside the component using allPosts
@@ -231,13 +43,6 @@ const TOPICS = [
   "Product Design",
   "DevOps",
   "Case Studies",
-];
-
-const POPULAR = [
-  { n: "01", title: "Why Most AI SaaS Projects Fail in the First 60 Days", tag: "Blog · 8 min", slug: "why-most-ai-saas-projects-fail" },
-  { n: "02", title: "RAG in Production: The Practical Setup Nobody Writes About", tag: "Guide · 12 min", slug: "rag-in-production-practical" },
-  { n: "03", title: "Haven: From 6-Month Process to Automated in 18 Days", tag: "Case Study · 5 min", slug: "haven-automation-case-study" },
-  { n: "04", title: "Claude vs OpenAI for Production AI: Which Ships Better?", tag: "Blog · 7 min", slug: "claude-vs-openai-production" },
 ];
 
 // ── Arrow icon ────────────────────────────────────────────────
@@ -296,22 +101,31 @@ export default function BlogClientPage({ sanityPosts }: BlogClientPageProps) {
   const [activeFilter, setActiveFilter] = useState<PostCat>("all");
   const [showAll, setShowAll] = useState(false);
   const [activeTopic, setActiveTopic] = useState("AI Development");
+  const hasSanityPosts = Boolean(sanityPosts && sanityPosts.length > 0);
 
-  // Merge: use Sanity posts if available, else hardcoded fallback
   const allPosts = useMemo<Post[]>(() => {
-    if (sanityPosts && sanityPosts.length > 0) {
+    if (hasSanityPosts && sanityPosts) {
       return sanityPosts.map(toPost);
     }
-    return POSTS;
-  }, [sanityPosts]);
+    return [];
+  }, [hasSanityPosts, sanityPosts]);
 
-  const featured = useMemo<Post>(() => {
-    if (sanityPosts && sanityPosts.length > 0) {
+  const featured = useMemo<Post | null>(() => {
+    if (hasSanityPosts && sanityPosts) {
       const first = sanityPosts[0];
       return { ...toPost(first), authorInitials: first.author?.slice(0, 2).toUpperCase() ?? "SG", authorName: first.author };
     }
-    return FEATURED;
-  }, [sanityPosts]);
+    return null;
+  }, [hasSanityPosts, sanityPosts]);
+
+  const popular = useMemo(() => {
+    return allPosts.slice(0, 4).map((post, index) => ({
+      n: String(index + 1).padStart(2, "0"),
+      title: post.title,
+      tag: `${post.tag} · ${post.read}`,
+      slug: post.slug,
+    }));
+  }, [allPosts]);
 
   const filtered =
     activeFilter === "all" ? allPosts : allPosts.filter((p) => p.cat === activeFilter);
@@ -397,7 +211,7 @@ export default function BlogClientPage({ sanityPosts }: BlogClientPageProps) {
           {/* ── LEFT: Posts ── */}
           <div>
             {/* Featured post — only show when filter = all */}
-            {activeFilter === "all" && (
+            {activeFilter === "all" && featured && (
               <div className="mb-0.5">
                 <Link
                   href={`/blog/${featured.slug}`}
@@ -518,6 +332,19 @@ export default function BlogClientPage({ sanityPosts }: BlogClientPageProps) {
                   </div>
                 </Link>
               ))}
+              {!hasSanityPosts && (
+                <div
+                  className="py-10"
+                  style={{ borderBottom: "1px solid #f0f0f0" }}
+                >
+                  <div className="text-[15px] font-bold tracking-[-0.02em] text-[#0c0c0c] mb-2">
+                    Articles are being prepared.
+                  </div>
+                  <div className="text-[13px] leading-[1.62]" style={{ color: "#6a6a6a", maxWidth: "520px" }}>
+                    This page only shows posts that have a live article route behind them. Publish blog posts in the content source first, then they will appear here automatically.
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Load more */}
@@ -605,36 +432,38 @@ export default function BlogClientPage({ sanityPosts }: BlogClientPageProps) {
             </div>
 
             {/* Popular */}
-            <div
-              className="rounded-[14px] p-6"
-              style={{ background: "#f7f7f7", border: "1px solid #e6e6e6" }}
-            >
-              <h3 className="text-[14.5px] font-extrabold tracking-[-0.02em] text-[#0c0c0c] mb-4">
-                Most read
-              </h3>
-              <div className="flex flex-col gap-4">
-                {POPULAR.map((item) => (
-                  <Link
-                    key={item.n}
-                    href={`/blog/${item.slug}`}
-                    className="flex gap-3 items-start group"
-                  >
-                    <span
-                      className="text-[22px] font-black tracking-[-0.04em] shrink-0 leading-none mt-0.5"
-                      style={{ color: "#e6e6e6" }}
+            {popular.length > 0 && (
+              <div
+                className="rounded-[14px] p-6"
+                style={{ background: "#f7f7f7", border: "1px solid #e6e6e6" }}
+              >
+                <h3 className="text-[14.5px] font-extrabold tracking-[-0.02em] text-[#0c0c0c] mb-4">
+                  Most read
+                </h3>
+                <div className="flex flex-col gap-4">
+                  {popular.map((item) => (
+                    <Link
+                      key={item.n}
+                      href={`/blog/${item.slug}`}
+                      className="flex gap-3 items-start group"
                     >
-                      {item.n}
-                    </span>
-                    <div>
-                      <div className="text-[13px] font-semibold text-[#0c0c0c] leading-[1.4] transition-colors group-hover:text-[#326d6d]">
-                        {item.title}
+                      <span
+                        className="text-[22px] font-black tracking-[-0.04em] shrink-0 leading-none mt-0.5"
+                        style={{ color: "#e6e6e6" }}
+                      >
+                        {item.n}
+                      </span>
+                      <div>
+                        <div className="text-[13px] font-semibold text-[#0c0c0c] leading-[1.4] transition-colors group-hover:text-[#326d6d]">
+                          {item.title}
+                        </div>
+                        <div className="text-[10px] mt-0.5" style={{ color: "#999" }}>{item.tag}</div>
                       </div>
-                      <div className="text-[10px] mt-0.5" style={{ color: "#999" }}>{item.tag}</div>
-                    </div>
-                  </Link>
-                ))}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* CTA card */}
             <div

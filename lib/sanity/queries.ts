@@ -12,7 +12,15 @@ export const SERVICES_QUERY = `
     order,
     eyebrow,
     proof,
-    isPrimary
+    isPrimary,
+    "catalogPlacements": catalogPlacements[]{
+      section,
+      tag,
+      title,
+      description,
+      graphic,
+      order
+    }
   }
 `;
 
@@ -30,7 +38,15 @@ export const SERVICE_QUERY = `
     order,
     eyebrow,
     proof,
-    isPrimary
+    isPrimary,
+    "catalogPlacements": catalogPlacements[]{
+      section,
+      tag,
+      title,
+      description,
+      graphic,
+      order
+    }
   }
 `;
 

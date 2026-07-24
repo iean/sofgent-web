@@ -164,6 +164,196 @@ const aiStudioServiceOverrides = {
   },
 };
 
+const serviceCatalogPlacements = {
+  "saas-micro-saas-solutions": [
+    {
+      _type: "serviceCatalogPlacement",
+      section: "primary",
+      tag: "Core",
+      graphic: "mvp",
+      order: 1,
+      title: "AI SaaS MVP Development",
+      description:
+        "From scoped idea to deployed product in 4–6 weeks. Full stack — architecture, AI layer, UI. Fixed price, you own the code.",
+    },
+    {
+      _type: "serviceCatalogPlacement",
+      section: "legacy",
+      graphic: "mvp",
+      order: 3,
+      title: "Custom SaaS & Micro SaaS Solutions",
+      description: "Tailored SaaS and Micro SaaS solutions.",
+    },
+  ],
+  "document-intelligence-systems": [
+    {
+      _type: "serviceCatalogPlacement",
+      section: "primary",
+      tag: "Core",
+      graphic: "document-automation",
+      order: 2,
+      title: "AI Document Automation",
+      description:
+        "Turn invoices, contracts, and reports into structured data. OCR, extraction, validation, and routing — end to end.",
+    },
+  ],
+  "ai-ready-data-engineering": [
+    {
+      _type: "serviceCatalogPlacement",
+      section: "primary",
+      tag: "Core",
+      graphic: "data",
+      order: 3,
+      title: "AI-Ready Data Infrastructure",
+      description:
+        "Clean, label, and structure your data for AI. ETL pipelines, schema design, vector search, and RAG infrastructure.",
+    },
+  ],
+  "system-integration": [
+    {
+      _type: "serviceCatalogPlacement",
+      section: "primary",
+      tag: "Add-on",
+      graphic: "integration",
+      order: 4,
+      title: "AI Integration & APIs",
+      description:
+        "Connect OpenAI, Anthropic, or custom models to your existing systems via clean, versioned, documented APIs.",
+    },
+    {
+      _type: "serviceCatalogPlacement",
+      section: "legacy",
+      graphic: "integration",
+      order: 7,
+      title: "System Integration",
+      description:
+        "Connecting different systems so data flows reliably without manual handoffs or re-entry.",
+    },
+  ],
+  "product-design-ux": [
+    {
+      _type: "serviceCatalogPlacement",
+      section: "primary",
+      tag: "Add-on",
+      graphic: "design",
+      order: 5,
+      title: "Product Design & UX",
+      description:
+        "Interface design that converts — from wireframes to pixel-perfect, accessible components. Design system + handoff.",
+    },
+  ],
+  "devops-deployment-continuous-delivery": [
+    {
+      _type: "serviceCatalogPlacement",
+      section: "primary",
+      tag: "Add-on",
+      graphic: "devops",
+      order: 6,
+      title: "DevOps & Infrastructure",
+      description:
+        "CI/CD pipelines, containerised cloud architecture, monitoring, and production alerting from day one.",
+    },
+    {
+      _type: "serviceCatalogPlacement",
+      section: "legacy",
+      graphic: "devops",
+      order: 4,
+      title: "DevOps Services",
+      description:
+        "Streamlining software releases, delivery pipelines, cloud deployment, and operations.",
+    },
+  ],
+  "web-application-development": [
+    {
+      _type: "serviceCatalogPlacement",
+      section: "primary",
+      tag: "Standalone",
+      graphic: "web",
+      order: 7,
+      title: "Web Application Development",
+      description:
+        "Full-stack web apps on Next.js, React, and Node. Scalable architecture, SEO-ready, production-hardened.",
+    },
+  ],
+  "mobile-app-development": [
+    {
+      _type: "serviceCatalogPlacement",
+      section: "primary",
+      tag: "Standalone",
+      graphic: "mobile",
+      order: 8,
+      title: "Mobile App Development",
+      description:
+        "Cross-platform mobile apps (React Native) with native-feel performance. App Store and Play Store submission included.",
+    },
+  ],
+  "software-testing": [
+    {
+      _type: "serviceCatalogPlacement",
+      section: "primary",
+      tag: "Standalone",
+      graphic: "qa",
+      order: 9,
+      title: "QA & Testing",
+      description:
+        "Manual and automated coverage — unit, integration, E2E, and load testing — run every sprint before anything ships.",
+    },
+    {
+      _type: "serviceCatalogPlacement",
+      section: "legacy",
+      graphic: "qa",
+      order: 6,
+      title: "Software Testing",
+      description:
+        "Validates functionality, reliability, performance, and security before software reaches users.",
+    },
+  ],
+  "custom-software-development": [
+    {
+      _type: "serviceCatalogPlacement",
+      section: "legacy",
+      graphic: "web",
+      order: 1,
+      title: "Custom Software Development",
+      description:
+        "Tailored software development services for specific business workflows and operational needs.",
+    },
+  ],
+  "net-core-api-clean-architecture-design-services": [
+    {
+      _type: "serviceCatalogPlacement",
+      section: "legacy",
+      graphic: "integration",
+      order: 2,
+      title: ".NET and Angular development",
+      description:
+        ".NET Core API solutions using clean architecture for maintainable, scalable systems.",
+    },
+  ],
+  "advanced-ai-solutions": [
+    {
+      _type: "serviceCatalogPlacement",
+      section: "legacy",
+      graphic: "data",
+      order: 5,
+      title: "AI Advanced Services",
+      description:
+        "Unlock innovation with AI solutions including automation, LLM workflows, and enterprise AI use cases.",
+    },
+  ],
+  "system-maintenance": [
+    {
+      _type: "serviceCatalogPlacement",
+      section: "legacy",
+      graphic: "devops",
+      order: 8,
+      title: "System Maintenance",
+      description:
+        "Ensuring delivered systems stay stable, updated, secure, and operational over time.",
+    },
+  ],
+};
+
 function toKey(value) {
   return value
     .toLowerCase()
@@ -217,12 +407,19 @@ function loadLocalServices() {
       eyebrow: override?.eyebrow ?? "",
       proof: override?.proof ?? "",
       isPrimary: override?.isPrimary ?? false,
+      catalogPlacements: serviceCatalogPlacements[slug] ?? [],
     };
   });
 
-  return [...syntheticAiStudioServices, ...localItems].filter(
-    (item, index, items) => items.findIndex((entry) => entry.slug.current === item.slug.current) === index,
-  );
+  return [...syntheticAiStudioServices, ...localItems]
+    .map((service) => ({
+      ...service,
+      catalogPlacements:
+        service.catalogPlacements ?? serviceCatalogPlacements[service.slug.current] ?? [],
+    }))
+    .filter(
+      (item, index, items) => items.findIndex((entry) => entry.slug.current === item.slug.current) === index,
+    );
 }
 
 function loadProjects() {
@@ -263,12 +460,12 @@ function loadCaseStudies() {
       architectureHighlight:
         "Tenant-isolated retrieval architecture with ingestion, indexing, and review controls.",
       technologies: ["Next.js", "Python", "PostgreSQL", "pgvector", "AWS"],
-      outcomes: ["3x faster knowledge retrieval", "Lower onboarding friction"],
-      thumbnail: "/images/project/haven/banner_01.png",
+      outcomes: ["Searchable institutional knowledge", "Governed, tenant-isolated access"],
+      thumbnail: "/images/case-studies/knowledge-platform.svg",
       screenshots: mapScreenshots([
         {
           title: "Knowledge platform overview",
-          image: "/images/project/haven/banner_01.png",
+          image: "/images/case-studies/knowledge-platform.svg",
         },
       ]),
     },
@@ -289,12 +486,12 @@ function loadCaseStudies() {
       architectureHighlight:
         "Separated payment events, ledger logic, and retry-safe integration workflows.",
       technologies: [".NET", "PostgreSQL", "Stripe", "AWS SQS", "Docker"],
-      outcomes: ["55% faster ops handling", "Cleaner reconciliation workflow"],
-      thumbnail: "/images/project/haven/banner_02.jpg",
+      outcomes: ["Automated reconciliation", "Retry-safe partner integrations"],
+      thumbnail: "/images/case-studies/payments-integration.svg",
       screenshots: mapScreenshots([
         {
           title: "Payments workflow overview",
-          image: "/images/project/haven/banner_02.jpg",
+          image: "/images/case-studies/payments-integration.svg",
         },
       ]),
     },
@@ -315,12 +512,12 @@ function loadCaseStudies() {
       architectureHighlight:
         "OCR and extraction pipeline with structured outputs, review queue, and API delivery layer.",
       technologies: ["FastAPI", "Transformers", "Tesseract", "Angular", "AWS"],
-      outcomes: ["78% less manual document work", "Faster verification turnaround"],
-      thumbnail: "/images/project/haven/banner_03.png",
+      outcomes: ["Manual review eliminated", "Structured, validated outputs"],
+      thumbnail: "/images/case-studies/document-automation.svg",
       screenshots: mapScreenshots([
         {
           title: "Document pipeline overview",
-          image: "/images/project/haven/banner_03.png",
+          image: "/images/case-studies/document-automation.svg",
         },
       ]),
     },

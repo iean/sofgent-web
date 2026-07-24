@@ -9,7 +9,7 @@ const fieldBase =
   "w-full text-[14px] text-[#0c0c0c] rounded-[10px] px-3.5 py-3 bg-white transition-all outline-none focus:border-[#326d6d] focus:ring-2 focus:ring-[rgba(50,109,109,0.12)]";
 
 export default function ContactFormModern() {
-  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", company: "", need: "AI Product / MVP development", budget: "Not sure yet", message: "" });
+  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", company: "", need: "AI Product / MVP development", budget: "Not sure yet", message: "", company_website: "" });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   const set = (k: string, v: string) => setForm((p) => ({ ...p, [k]: v }));
@@ -23,6 +23,7 @@ export default function ContactFormModern() {
       phone: form.phone,
       subject: `${form.need}${form.company ? ` — ${form.company}` : ""}`,
       message: `Budget: ${form.budget}\n\n${form.message}`,
+      company_website: form.company_website,
     };
     try {
       const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
@@ -48,6 +49,19 @@ export default function ContactFormModern() {
     <div className="rounded-[16px] bg-white p-8" style={{ border: "1px solid #e6e6e6" }}>
       <h3 className="text-[18px] font-bold tracking-[-0.02em] text-[#0c0c0c] mb-5">Start your project</h3>
       <form onSubmit={onSubmit}>
+        {/* Honeypot — invisible to real users, bots tend to auto-fill any field they find */}
+        <div aria-hidden="true" style={{ position: "absolute", width: 0, height: 0, overflow: "hidden", opacity: 0 }}>
+          <label htmlFor="company_website">Company website</label>
+          <input
+            id="company_website"
+            name="company_website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={form.company_website}
+            onChange={(e) => set("company_website", e.target.value)}
+          />
+        </div>
         <div className="grid grid-cols-2 gap-4">
           <div className="mb-4"><label className="block text-[12.5px] font-semibold text-[#1a1a1a] mb-1.5">First name</label><input required value={form.firstName} onChange={(e) => set("firstName", e.target.value)} placeholder="Jane" className={fieldBase} style={{ border: "1px solid #e6e6e6" }} /></div>
           <div className="mb-4"><label className="block text-[12.5px] font-semibold text-[#1a1a1a] mb-1.5">Last name</label><input value={form.lastName} onChange={(e) => set("lastName", e.target.value)} placeholder="Doe" className={fieldBase} style={{ border: "1px solid #e6e6e6" }} /></div>

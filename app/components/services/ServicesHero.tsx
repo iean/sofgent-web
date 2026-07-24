@@ -80,7 +80,7 @@ export default function ServicesHero() {
 
       <div className="relative z-10 max-w-[1140px] mx-auto px-8">
         {/* Breadcrumb */}
-        <p className="inline-flex items-center gap-2 mb-6 text-[11px] font-semibold tracking-[0.1em] uppercase" style={{ color: "rgba(255,255,255,0.3)" }}>
+        <p className="inline-flex items-center gap-2 mb-6 text-[11px] font-semibold tracking-[0.1em] uppercase" style={{ color: "rgba(255,255,255,0.58)" }}>
           <span style={{ color: "#67e8f9", opacity: 0.9 }}>AI Product Studio</span>
           <span style={{ color: "rgba(255,255,255,0.15)" }}>·</span>
           Services
@@ -181,7 +181,7 @@ export default function ServicesHero() {
                 <div className="text-[13px] font-bold mb-1" style={{ color: active === card.step ? "#fff" : "rgba(255,255,255,0.7)" }}>
                   {card.title}
                 </div>
-                <div className="text-[11.5px] leading-[1.5]" style={{ color: "rgba(255,255,255,0.3)" }}>{card.desc}</div>
+                <div className="text-[11.5px] leading-[1.5]" style={{ color: "rgba(255,255,255,0.55)" }}>{card.desc}</div>
                 <div
                   className="inline-flex items-center gap-1 mt-2.5 px-2 py-0.5 rounded-full text-[10px] font-bold"
                   style={{ background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.2)", color: "#22c55e" }}

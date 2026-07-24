@@ -12,7 +12,7 @@ const weeks = [
     code: `<span style="color:#79c0ff">import</span> { <span style="color:#4cd4d4">SofGent</span> } <span style="color:#79c0ff">from</span> <span style="color:#a5d6ff">'@sofgent/core'</span>
 
 <span style="color:#79c0ff">const</span> project = <span style="color:#d2a8ff">define</span>({
-  client:   <span style="color:#a5d6ff">'Haven Finance'</span>,
+  client:   <span style="color:#a5d6ff">'&lt;your company&gt;'</span>,
   problem:  <span style="color:#a5d6ff">'Manual document review taking 6 months'</span>,
   scope:    [<span style="color:#a5d6ff">'OCR pipeline'</span>, <span style="color:#a5d6ff">'Classification'</span>, <span style="color:#a5d6ff">'Auto-routing'</span>],
   timeline: <span style="color:#79c0ff">18</span>, <span style="color:#4a4a4a">// days</span>
@@ -32,7 +32,7 @@ const weeks = [
     code: `<span style="color:#79c0ff">const</span> blueprint = <span style="color:#d2a8ff">design</span>({
   ui:           <span style="color:#d2a8ff">figma</span>(<span style="color:#a5d6ff">'wireframes + component library'</span>),
   dataModel:    <span style="color:#d2a8ff">schema</span>({ tables: <span style="color:#79c0ff">12</span>, relations: <span style="color:#79c0ff">18</span> }),
-  aiLayer:      <span style="color:#d2a8ff">llm</span>({ model: <span style="color:#a5d6ff">'claude-3-5-sonnet'</span>, fallback: <span style="color:#a5d6ff">'human-review'</span> }),
+  aiLayer:      <span style="color:#d2a8ff">llm</span>({ model: <span style="color:#a5d6ff">'claude-opus-4-8'</span>, fallback: <span style="color:#a5d6ff">'human-review'</span> }),
   apiContracts: <span style="color:#d2a8ff">openapi</span>(<span style="color:#a5d6ff">'v3'</span>),
 })
 

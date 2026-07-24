@@ -1,25 +1,14 @@
 import Link from "next/link";
+import Image from "next/image";
 import ServicesHero from "@/app/components/services/ServicesHero";
 import getPageMeta from "@/app/utils/getPageMeta";
-import ServiceGraphic, { ServiceGraphicName } from "@/app/components/graphics/ServiceGraphic";
+import { getServiceCatalogEntries } from "@/lib/content/serviceCatalog";
+import { getServices } from "@/lib/sanity/content";
 import type { Metadata } from "next";
 
 export function generateMetadata(): Metadata {
   return getPageMeta("/services");
 }
-
-/* ── Full service catalog ── */
-const catalog: { title: string; desc: string; graphic: ServiceGraphicName; tag: string; href: string }[] = [
-  { title: "AI SaaS MVP Development", desc: "From scoped idea to deployed product in 4–6 weeks. Full stack — architecture, AI layer, UI. Fixed price, you own the code.", graphic: "mvp", tag: "Core", href: "/services/saas-micro-saas-solutions" },
-  { title: "AI Document Automation", desc: "Turn invoices, contracts, and reports into structured data. OCR, extraction, validation, and routing — end to end.", graphic: "document-automation", tag: "Core", href: "/services/document-intelligence-systems" },
-  { title: "AI-Ready Data Infrastructure", desc: "Clean, label, and structure your data for AI. ETL pipelines, schema design, vector search, and RAG infrastructure.", graphic: "data", tag: "Core", href: "/services/ai-ready-data-engineering" },
-  { title: "AI Integration & APIs", desc: "Connect OpenAI, Anthropic, or custom models to your existing systems via clean, versioned, documented APIs.", graphic: "integration", tag: "Add-on", href: "/services/system-integration" },
-  { title: "Product Design & UX", desc: "Interface design that converts — from wireframes to pixel-perfect, accessible components. Design system + handoff.", graphic: "design", tag: "Add-on", href: "/services/product-design-ux" },
-  { title: "DevOps & Infrastructure", desc: "CI/CD pipelines, containerised cloud architecture, monitoring, and production alerting from day one.", graphic: "devops", tag: "Add-on", href: "/services/devops-deployment-continuous-delivery" },
-  { title: "Web Application Development", desc: "Full-stack web apps on Next.js, React, and Node. Scalable architecture, SEO-ready, production-hardened.", graphic: "web", tag: "Standalone", href: "/services/web-application-development" },
-  { title: "Mobile App Development", desc: "Cross-platform mobile apps (React Native) with native-feel performance. App Store and Play Store submission included.", graphic: "mobile", tag: "Standalone", href: "/services/mobile-app-development" },
-  { title: "QA & Testing", desc: "Manual and automated coverage — unit, integration, E2E, and load testing — run every sprint before anything ships.", graphic: "qa", tag: "Standalone", href: "/services/software-testing" },
-];
 
 const catalogTagColors: Record<string, { bg: string; color: string; border: string }> = {
   Core: { bg: "rgba(50,109,109,0.10)", color: "#326d6d", border: "rgba(50,109,109,0.20)" },
@@ -34,7 +23,11 @@ const ArrowRight = () => (
   </svg>
 );
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const services = await getServices();
+  const serviceCatalog = getServiceCatalogEntries(services);
+  const catalog = serviceCatalog.filter((item) => item.section === "primary");
+
   return (
     <main>
       <ServicesHero />
@@ -58,10 +51,10 @@ export default function ServicesPage() {
           <div className="text-center mb-10">
             <div className="flex items-center justify-center gap-2 text-[10.5px] font-bold tracking-[0.1em] uppercase text-[#326d6d] mb-3">
               <span className="w-4 h-0.5 rounded-full bg-[#326d6d]" />
-              Full service range
+              Solution lineup
             </div>
-            <h2 className="font-black tracking-[-0.04em] leading-[1.1] text-[#0c0c0c] mb-3" style={{ fontSize: "clamp(24px, 3vw, 38px)" }}>Everything we provide.</h2>
-            <p className="text-[15px] text-[#6a6a6a] max-w-[460px] mx-auto">Core AI services, standalone builds, and add-on capabilities — all delivered to production.</p>
+            <h2 className="font-black tracking-[-0.04em] leading-[1.1] text-[#0c0c0c] mb-3" style={{ fontSize: "clamp(24px, 3vw, 38px)" }}>Focused products and internal systems.</h2>
+            <p className="text-[15px] text-[#6a6a6a] max-w-[560px] mx-auto">The catalog now centers on a knowledge base, OCR automation, a knowledge transfer platform, employee onboarding, and a custom CRM solution.</p>
           </div>
 
           <div className="flex items-center justify-center gap-3 mb-10 flex-wrap">
@@ -75,18 +68,25 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 rounded-2xl overflow-hidden border border-[#e6e6e6]" style={{ gap: "1px", background: "#e6e6e6" }}>
             {catalog.map((svc) => {
-              const tc = catalogTagColors[svc.tag];
+              const tc = catalogTagColors[svc.tag ?? "Standalone"];
               return (
                 <Link key={svc.title} href={svc.href} className="group bg-white hover:bg-[#f8f8f8] transition-colors block">
-                  <div className="overflow-hidden relative h-[180px]">
-                    <div className="w-full h-full transition-transform duration-500 group-hover:scale-[1.04]"><ServiceGraphic name={svc.graphic} /></div>
+                  <div className="relative h-[210px] overflow-hidden bg-[#081415]">
+                    <Image
+                      src={svc.artwork}
+                      alt={svc.artworkAlt}
+                      fill
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(5,14,15,0.35)_100%)]" />
                     <div className="absolute top-3 left-3">
                       <span className="text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm" style={{ color: tc.color, background: "rgba(255,255,255,0.92)", border: `1px solid ${tc.border}` }}>{svc.tag}</span>
                     </div>
                   </div>
                   <div className="px-6 pt-5 pb-6">
                     <h3 className="text-[15px] font-bold tracking-[-0.02em] text-[#0c0c0c] mb-2">{svc.title}</h3>
-                    <p className="text-[13px] text-[#6a6a6a] leading-[1.62] mb-4">{svc.desc}</p>
+                    <p className="text-[13px] text-[#6a6a6a] leading-[1.62] mb-4">{svc.description}</p>
                     <span className="inline-flex items-center gap-1.5 text-[12.5px] font-bold text-[#326d6d]">Learn more <span className="transition-transform group-hover:translate-x-0.5 inline-flex"><ArrowRight /></span></span>
                   </div>
                 </Link>
@@ -99,11 +99,11 @@ export default function ServicesPage() {
       {/* ═══ CAPABILITY GRID ═══ */}
       <section style={{ background: "#0c0c0c", padding: "96px 0" }}>
         <div className="max-w-[1140px] mx-auto px-8">
-          <p className="text-[10px] font-bold tracking-[0.1em] uppercase text-center mb-3" style={{ color: "rgba(255,255,255,0.28)" }}>Everything included</p>
+          <p className="text-[11px] font-bold tracking-[0.1em] uppercase text-center mb-3" style={{ color: "rgba(255,255,255,0.55)" }}>Everything included</p>
           <h2 className="font-black tracking-[-0.04em] text-white text-center mb-2" style={{ fontSize: "clamp(24px, 3vw, 36px)" }}>
             Built for production from day one.
           </h2>
-          <p className="text-[15px] text-center max-w-[480px] mx-auto mb-14" style={{ color: "rgba(255,255,255,0.32)" }}>
+          <p className="text-[15px] text-center max-w-[480px] mx-auto mb-14" style={{ color: "rgba(255,255,255,0.6)" }}>
             Every engagement includes the infrastructure, testing, and ops layer most agencies leave out.
           </p>
           <div
@@ -123,7 +123,7 @@ export default function ServicesPage() {
                   <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="#4cd4d4" strokeWidth="1.7" strokeLinecap="round"><path d="M2 7.5l3.5 3.5 8-8" /></svg>
                 </div>
                 <h3 className="text-[14.5px] font-bold text-white mb-1.5">{cap.title}</h3>
-                <p className="text-[13px] leading-[1.6]" style={{ color: "rgba(255,255,255,0.33)" }}
+                <p className="text-[13px] leading-[1.6]" style={{ color: "rgba(255,255,255,0.62)" }}
                   dangerouslySetInnerHTML={{ __html: cap.desc }} />
               </div>
             ))}
@@ -238,7 +238,7 @@ export default function ServicesPage() {
             Got an AI product idea?<br />
             Let&apos;s scope it <span style={{ color: "#67e8f9" }}>together.</span>
           </h2>
-          <p className="text-[15px] max-w-[420px] mx-auto mb-10 leading-[1.65]" style={{ color: "rgba(255,255,255,0.36)" }}>
+          <p className="text-[15px] max-w-[420px] mx-auto mb-10 leading-[1.65]" style={{ color: "rgba(255,255,255,0.6)" }}>
             We&apos;ll give you a written scope, timeline, and estimate within 48 hours. No obligation, no sales pitch.
           </p>
           <div className="flex items-center justify-center gap-2.5">

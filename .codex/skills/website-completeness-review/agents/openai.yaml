@@ -1,0 +1,4 @@
+interface:
+  display_name: "Website Completeness Review"
+  short_description: "Launch-readiness audit for design, content, UX, and trust"
+  default_prompt: "Review this website for production readiness. Be brutally honest about design, content, UX, trust, navigation, CTAs, responsiveness, SEO, accessibility, and launch blockers."

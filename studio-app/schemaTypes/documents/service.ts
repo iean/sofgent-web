@@ -56,6 +56,14 @@ export const serviceType = defineType({
       initialValue: false,
     }),
     defineField({
+      name: "catalogPlacements",
+      title: "Services page placements",
+      type: "array",
+      of: [{ type: "serviceCatalogPlacement" }],
+      description:
+        "Optional card placements for the /services page. Use multiple items to show one service in more than one section.",
+    }),
+    defineField({
       name: "content",
       title: "Content",
       type: "text",

@@ -4,11 +4,13 @@ import { faqType } from "./documents/faq";
 import { pageType } from "./documents/page";
 import { projectEntryType } from "./documents/projectEntry";
 import { serviceType } from "./documents/service";
+import { serviceCatalogPlacementType } from "./objects/serviceCatalogPlacement";
 
 export const schemaTypes = [
   blogPostType,
   faqType,
   pageType,
+  serviceCatalogPlacementType,
   serviceType,
   projectEntryType,
   caseStudyType,

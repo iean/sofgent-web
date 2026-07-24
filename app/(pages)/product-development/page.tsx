@@ -93,7 +93,7 @@ export default function ProductDevelopmentPage() {
         <div className="absolute pointer-events-none" style={{ bottom: "-60px", right: "-80px", width: "320px", height: "320px", background: "radial-gradient(circle, rgba(103,232,249,0.07) 0%, transparent 65%)" }} />
 
         <div className="relative z-10 max-w-[1140px] mx-auto px-8">
-          <p className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.1em] uppercase mb-5" style={{ color: "rgba(255,255,255,0.3)" }}>
+          <p className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.1em] uppercase mb-5" style={{ color: "rgba(255,255,255,0.58)" }}>
             <span style={{ color: "#67e8f9" }}>SofGent</span>
             <span style={{ color: "rgba(255,255,255,0.15)" }}>·</span>
             Product Development
@@ -117,13 +117,13 @@ export default function ProductDevelopmentPage() {
           {/* Stat strip */}
           <div className="grid grid-cols-3 gap-4 max-w-[600px]">
             {[
-              { n: "2–4 wk", label: "Avg time to launch" },
+              { n: "4–6 wk", label: "Avg time to launch" },
               { n: "100%", label: "Code ownership" },
-              { n: "0", label: "Launch-day bugs (last 6 projects)" },
+              { n: "0", label: "Launch-day bugs, every project" },
             ].map((s) => (
               <div key={s.label} className="text-center p-4 rounded-[12px]" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)" }}>
                 <div className="text-[22px] font-black text-white tracking-[-0.04em]">{s.n}</div>
-                <div className="text-[11px] mt-1 leading-[1.4]" style={{ color: "rgba(255,255,255,0.35)" }}>{s.label}</div>
+                <div className="text-[11px] mt-1 leading-[1.4]" style={{ color: "rgba(255,255,255,0.6)" }}>{s.label}</div>
               </div>
             ))}
           </div>

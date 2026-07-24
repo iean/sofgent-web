@@ -1,4 +1,5 @@
 import { getFallbackProjectBySlug, getFallbackProjectCollections, getFallbackServiceBySlug, getFallbackServices } from "@/lib/content/fallback";
+import { curatedServiceSlugs } from "@/lib/content/serviceCatalog";
 import { sanityFetch } from "@/lib/sanity/client";
 import { isSanityConfigured } from "@/lib/sanity/env";
 import { FAQS_QUERY, PROJECT_QUERY, PROJECT_SLUGS_QUERY, PROJECTS_QUERY, SERVICE_QUERY, SERVICE_SLUGS_QUERY, SERVICES_QUERY } from "@/lib/sanity/queries";
@@ -6,6 +7,26 @@ import type { SanityFaqItem, SanityProjectItem, SanityServiceItem } from "@/lib/
 
 function logSanityError(scope: string, error: unknown) {
    console.error(`[sanity] ${scope}`, error);
+}
+
+const curatedServiceSlugSet = new Set<string>(curatedServiceSlugs);
+
+function mergeCuratedServices(items: SanityServiceItem[]): SanityServiceItem[] {
+   const sanityBySlug = new Map(items.map((item) => [item.slug, item]));
+
+   return getFallbackServices().map((fallbackItem) => {
+      const sanityItem = sanityBySlug.get(fallbackItem.slug);
+      if (!sanityItem) {
+         return fallbackItem;
+      }
+
+      return {
+         ...sanityItem,
+         ...fallbackItem,
+         _id: sanityItem._id,
+         icon: sanityItem.icon ?? fallbackItem.icon,
+      };
+   });
 }
 
 export async function getServices(): Promise<SanityServiceItem[]> {
@@ -19,7 +40,8 @@ export async function getServices(): Promise<SanityServiceItem[]> {
          revalidate: 60,
       });
 
-      return items.length > 0 ? items : getFallbackServices();
+      const filteredItems = items.filter((item) => curatedServiceSlugSet.has(item.slug));
+      return mergeCuratedServices(filteredItems);
    } catch (error) {
       logSanityError("Failed to fetch services", error);
       return getFallbackServices();
@@ -27,6 +49,10 @@ export async function getServices(): Promise<SanityServiceItem[]> {
 }
 
 export async function getServiceBySlug(slug: string): Promise<SanityServiceItem | null> {
+   if (!curatedServiceSlugSet.has(slug)) {
+      return null;
+   }
+
    if (!isSanityConfigured) {
       return getFallbackServiceBySlug(slug);
    }
@@ -38,7 +64,19 @@ export async function getServiceBySlug(slug: string): Promise<SanityServiceItem 
          revalidate: 60,
       });
 
-      return item ?? getFallbackServiceBySlug(slug);
+      const fallbackItem = getFallbackServiceBySlug(slug);
+      if (!item) {
+         return fallbackItem;
+      }
+
+      return fallbackItem
+         ? {
+              ...item,
+              ...fallbackItem,
+              _id: item._id,
+              icon: item.icon ?? fallbackItem.icon,
+           }
+         : item;
    } catch (error) {
       logSanityError(`Failed to fetch service "${slug}"`, error);
       return getFallbackServiceBySlug(slug);
@@ -56,7 +94,10 @@ export async function getServiceSlugs(): Promise<string[]> {
          revalidate: 60,
       });
 
-      const slugs = items.map((item) => item.slug).filter(Boolean) as string[];
+      const slugs = items
+         .map((item) => item.slug)
+         .filter((slug): slug is string => typeof slug === "string")
+         .filter((slug) => curatedServiceSlugSet.has(slug));
       return slugs.length > 0 ? slugs : getFallbackServices().map((item) => item.slug);
    } catch (error) {
       logSanityError("Failed to fetch service slugs", error);

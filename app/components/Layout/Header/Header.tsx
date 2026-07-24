@@ -175,7 +175,7 @@ const Header = () => {
       <div className="fixed top-0 left-0 z-50 w-full bg-white/97 backdrop-blur border-b border-[#eaeaea] xl:hidden">
         <div className="flex items-center justify-between h-[58px] px-5">
           <Link href="/" aria-label="logo">
-            <Image src={logo} alt="SofGent" width={118} height={32} priority style={{ width: "118px", height: "auto" }} />
+            <Image src={logo} alt="SofGent" width={118} height={34} priority style={{ width: "118px", height: "auto" }} />
           </Link>
           <button
             aria-label="Toggle menu"
@@ -244,7 +244,7 @@ const Header = () => {
 
             {/* Logo */}
             <Link href="/" className="flex items-center shrink-0">
-              <Image src={logo} alt="SofGent" width={118} height={32} priority style={{ width: "118px", height: "auto" }} />
+              <Image src={logo} alt="SofGent" width={118} height={34} priority style={{ width: "118px", height: "auto" }} />
             </Link>
 
             {/* Nav — dropdowns */}

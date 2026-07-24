@@ -42,6 +42,16 @@ export interface SanityServiceItem {
    eyebrow?: string;
    proof?: string;
    isPrimary?: boolean;
+   catalogPlacements?: SanityServiceCatalogPlacement[];
+}
+
+export interface SanityServiceCatalogPlacement {
+   section: "primary" | "legacy";
+   tag?: "Core" | "Add-on" | "Standalone";
+   title?: string;
+   description?: string;
+   graphic?: string;
+   order?: number;
 }
 
 export interface SanityProjectScreenshot {

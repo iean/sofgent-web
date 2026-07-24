@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spec Driven Delivery"
+  short_description: "Create specs, plans, backlog tasks, and resumable agent workflows"
+  default_prompt: "Convert this work into spec-driven execution artifacts for this repository. Create or update the relevant spec, plan, backlog, and next-task structure before broad implementation."

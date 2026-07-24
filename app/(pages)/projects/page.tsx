@@ -24,19 +24,9 @@ const projects = [
     label: "LIVE · Non-profit · Labor rights",
     title: "Solidarity Center — Tannery Workers Website",
     desc: "A website built for the American Center for International Labor Solidarity (Solidarity Center), supporting tannery workers — focused on clarity, accessibility, and reach.",
-    img: "/images/project/haven/home_card_supported_living.jpg",
+    img: "/images/case-studies/solidarity-website.svg",
     tags: ["Web Platform", "Accessibility", "Content"],
     metrics: [{ n: "Live", l: "In production" }, { n: "NGO", l: "Labor solidarity" }],
-    url: "",
-  },
-  {
-    // TODO: replace with the second UK company once name/URL confirmed.
-    label: "LIVE · UK",
-    title: "UK Company — Web Platform",
-    desc: "A second production website delivered for a UK company. Details to be confirmed — name, scope, and live URL coming soon.",
-    img: "/images/project/haven/HOME_Financing.jpg",
-    tags: ["Next.js", "React"],
-    metrics: [{ n: "Live", l: "In production" }, { n: "UK", l: "Client project" }],
     url: "",
   },
 ];

@@ -2,65 +2,41 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import projects from "@/app/data/projects/projects.json";
+import { curatedServiceSlugs } from "@/lib/content/serviceCatalog";
 import type { SanityProjectItem, SanityServiceItem } from "@/lib/sanity/types";
+
+const curatedServiceOrder = [...curatedServiceSlugs];
+const curatedServiceSlugSet = new Set<string>(curatedServiceOrder);
 
 const syntheticAiStudioServices: SanityServiceItem[] = [
    {
       _id: "document-intelligence-systems",
       slug: "document-intelligence-systems",
-      title: "AI document systems",
+      title: "OCR Document Automation",
       description:
-         "Turn PDFs, forms, scans, and attachments into validated operational data with OCR and extraction pipelines.",
+         "Turn PDFs, forms, scans, and attachments into structured, validated operational data with OCR pipelines.",
       icon: "/icons/services/image-processing.svg",
-      order: 4,
-      eyebrow: "Document-heavy operations",
-      proof: "OCR, classification, extraction, and review in one system.",
+      order: 2,
+      eyebrow: "OCR workflows",
+      proof: "Capture, extract, validate, and route documents end to end.",
       isPrimary: true,
       content: `
-# AI Document Systems
+# OCR Document Automation
 
-SofGent designs document-heavy operational systems where OCR, classification, extraction, validation, and human review work in one governed workflow.
+SofGent builds OCR-based document processing systems for teams that still depend on PDFs, scans, forms, and emailed attachments to run operations.
 
 ## What this service covers
 
 - OCR and document ingestion pipelines
 - Structured extraction for forms, PDFs, and scanned files
+- Confidence scoring and exception handling
 - Review queues for confidence-based exceptions
-- API delivery into downstream business systems
-- Auditability and retry-safe workflow design
+- Routing into downstream systems and approvals
+- Auditability, traceability, and retry-safe workflow design
 
 ## Best fit
 
-This is a strong fit for onboarding, compliance, finance ops, healthcare admin, claims handling, and other document-bound team workflows.
-`,
-   },
-   {
-      _id: "ai-ready-data-engineering",
-      slug: "ai-ready-data-engineering",
-      title: "AI-ready data engineering",
-      description:
-         "Structure fragmented business data into schemas, pipelines, and APIs your analytics and AI systems can trust.",
-      icon: "/icons/services/system-integration.svg",
-      order: 5,
-      eyebrow: "Data foundation",
-      proof: "Designed for retrieval, automation, and reporting.",
-      isPrimary: true,
-      content: `
-# AI-ready Data Engineering
-
-SofGent helps teams turn fragmented operational data into reliable schemas, pipelines, and interfaces that support reporting, automation, and AI systems.
-
-## What this service covers
-
-- Data modeling for operational systems
-- ETL and event pipeline design
-- API normalization across disconnected tools
-- Retrieval-ready content and structured records
-- Reporting foundations for AI-assisted workflows
-
-## Best fit
-
-This fits teams whose AI goals are blocked by inconsistent data, duplicated records, missing schemas, or disconnected business tools.
+This fits onboarding, finance operations, claims processing, compliance, healthcare administration, and any workflow where documents slow down execution.
 `,
    },
 ];
@@ -70,35 +46,35 @@ const aiStudioServiceOverrides: Record<
    Pick<SanityServiceItem, "title" | "description" | "eyebrow" | "proof" | "isPrimary">
 > = {
    "saas-micro-saas-solutions": {
-      title: "SaaS MVP development",
+      title: "AI Knowledge Base",
       description:
-         "Launch customer-ready SaaS products with tenancy, auth, billing, and deployment already in place.",
-      eyebrow: "Launch fast",
-      proof: "Built for real customers, not prototype rewrites.",
+         "An intelligent knowledge platform that turns SOPs, playbooks, and team expertise into trusted, searchable answers.",
+      eyebrow: "AI knowledge systems",
+      proof: "Grounded retrieval, governed content, and role-aware access built for dependable operational use.",
       isPrimary: true,
    },
    "advanced-ai-solutions": {
-      title: "AI implementation",
+      title: "AI Knowledge & Quality Platform",
       description:
-         "Deploy AI features, assistants, and workflow automation inside the systems your team already runs.",
-      eyebrow: "Operational AI",
-      proof: "Control layers, validation, and human review included.",
+         "Capture expert knowledge, guide execution, and continuously improve operational quality with an intelligent platform.",
+      eyebrow: "AI operations platform",
+      proof: "Turns tacit expertise into governed workflows, measurable standards, and actionable improvement signals.",
       isPrimary: true,
    },
    "system-integration": {
-      title: "Workflow automation & integrations",
+      title: "AI Employee Onboarding",
       description:
-         "Connect ERPs, CRMs, payment tools, and internal apps so data moves without manual re-entry.",
-      eyebrow: "Connected stack",
-      proof: "Built for resilience, retries, and auditability.",
+         "A role-aware onboarding platform that connects tasks, learning, knowledge, and progress into one guided employee journey.",
+      eyebrow: "AI-enabled onboarding",
+      proof: "Standardise the first 30, 60, and 90 days while giving every new hire contextual guidance.",
       isPrimary: true,
    },
    "custom-software-development": {
-      title: "Custom business systems",
+      title: "AI-Enabled Custom CRM",
       description:
-         "Replace brittle spreadsheets and legacy tools with internal software built around the way your team actually operates.",
-      eyebrow: "Internal modernization",
-      proof: "Production-grade software aligned to workflow reality.",
+         "A customer intelligence platform tailored to your pipeline, service model, communications, and operational workflow.",
+      eyebrow: "AI customer intelligence",
+      proof: "Unifies customer activity and adds intelligent recommendations without forcing a generic CRM template.",
       isPrimary: true,
    },
 };
@@ -139,16 +115,12 @@ export function getFallbackServices(): SanityServiceItem[] {
       [],
    );
 
-   return items.sort((left, right) => {
-      const leftPrimary = left.isPrimary ? 0 : 1;
-      const rightPrimary = right.isPrimary ? 0 : 1;
-
-      if (leftPrimary !== rightPrimary) {
-         return leftPrimary - rightPrimary;
-      }
-
-      return (left.order ?? 999) - (right.order ?? 999);
-   });
+   return items
+      .filter((item) => curatedServiceSlugSet.has(item.slug))
+      .sort((left, right) => {
+         return curatedServiceOrder.indexOf(left.slug as (typeof curatedServiceOrder)[number]) -
+            curatedServiceOrder.indexOf(right.slug as (typeof curatedServiceOrder)[number]);
+      });
 }
 
 export function getFallbackServiceBySlug(slug: string) {
@@ -174,12 +146,12 @@ export function getFallbackCaseStudies(): SanityProjectItem[] {
          architectureHighlight:
             "Tenant-isolated retrieval architecture with ingestion, indexing, and review controls.",
          technologies: ["Next.js", "Python", "PostgreSQL", "pgvector", "AWS"],
-         outcomes: ["3x faster knowledge retrieval", "Lower onboarding friction"],
-         thumbnail: "/images/project/haven/banner_01.png",
+         outcomes: ["Searchable institutional knowledge", "Governed, tenant-isolated access"],
+         thumbnail: "/images/case-studies/knowledge-platform.svg",
          screenshots: [
             {
                title: "Knowledge platform overview",
-               image: "/images/project/haven/banner_01.png",
+               image: "/images/case-studies/knowledge-platform.svg",
             },
          ],
       },
@@ -200,12 +172,12 @@ export function getFallbackCaseStudies(): SanityProjectItem[] {
          architectureHighlight:
             "Separated payment events, ledger logic, and retry-safe integration workflows.",
          technologies: [".NET", "PostgreSQL", "Stripe", "AWS SQS", "Docker"],
-         outcomes: ["55% faster ops handling", "Cleaner reconciliation workflow"],
-         thumbnail: "/images/project/haven/banner_02.jpg",
+         outcomes: ["Automated reconciliation", "Retry-safe partner integrations"],
+         thumbnail: "/images/case-studies/payments-integration.svg",
          screenshots: [
             {
                title: "Payments workflow overview",
-               image: "/images/project/haven/banner_02.jpg",
+               image: "/images/case-studies/payments-integration.svg",
             },
          ],
       },
@@ -226,12 +198,12 @@ export function getFallbackCaseStudies(): SanityProjectItem[] {
          architectureHighlight:
             "OCR and extraction pipeline with structured outputs, review queue, and API delivery layer.",
          technologies: ["FastAPI", "Transformers", "Tesseract", "Angular", "AWS"],
-         outcomes: ["78% less manual document work", "Faster verification turnaround"],
-         thumbnail: "/images/project/haven/banner_03.png",
+         outcomes: ["Manual review eliminated", "Structured, validated outputs"],
+         thumbnail: "/images/case-studies/document-automation.svg",
          screenshots: [
             {
                title: "Document pipeline overview",
-               image: "/images/project/haven/banner_03.png",
+               image: "/images/case-studies/document-automation.svg",
             },
          ],
       },

@@ -3,11 +3,11 @@ import Link from "next/link";
 import logo from "@assets/images/sofgent-logo.svg";
 
 const services = [
-  { title: "AI Product & MVP Development", href: "/product-development" },
-  { title: "AI Document Automation", href: "/ai-product-studio" },
-  { title: "Integration & Automation", href: "/custom-software" },
-  { title: "AI-Ready Data Infrastructure", href: "/ai-product-studio" },
-  { title: "DevOps & Infrastructure", href: "/custom-software" },
+  { title: "AI Knowledge Base", href: "/services/saas-micro-saas-solutions" },
+  { title: "OCR Document Automation", href: "/services/document-intelligence-systems" },
+  { title: "AI Knowledge & Quality", href: "/services/advanced-ai-solutions" },
+  { title: "AI Employee Onboarding", href: "/services/system-integration" },
+  { title: "AI-Enabled Custom CRM", href: "/services/custom-software-development" },
 ];
 
 const company = [
@@ -24,14 +24,11 @@ export default function Footer() {
       <div className="max-w-[1140px] mx-auto px-8">
 
         {/* 4-col top */}
-        <div
-          className="grid gap-12 mb-14"
-          style={{ gridTemplateColumns: "2fr 1fr 1fr 1fr" }}
-        >
+        <div className="mb-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-12">
           {/* Brand */}
           <div>
             <Link href="/" className="inline-block mb-4">
-              <Image src={logo} alt="SofGent" width={130} height={36} style={{ width: "130px", height: "auto" }} />
+              <Image src={logo} alt="SofGent" width={130} height={38} style={{ width: "130px", height: "auto" }} />
             </Link>
             <p className="text-[13px] text-[#6a6a6a] leading-[1.7] max-w-[240px]">
               We build production-ready AI products in 4–6 weeks for founders, CTOs, and operations teams.
@@ -91,7 +88,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div
-          className="flex items-center justify-between pt-7"
+          className="flex flex-col gap-4 pt-7 sm:flex-row sm:items-center sm:justify-between"
           style={{ borderTop: "1px solid #e6e6e6" }}
         >
           <span className="text-[12.5px] text-[#bbb]">© 2026 SofGent. All rights reserved.</span>

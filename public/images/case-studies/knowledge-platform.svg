@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" width="1200" height="760" role="img" aria-label="AI Knowledge Platform interface mockup">
+  <defs>
+    <linearGradient id="kp-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1512"/>
+      <stop offset="1" stop-color="#0c0c0c"/>
+    </linearGradient>
+    <radialGradient id="kp-glow" cx="0.5" cy="0" r="0.8">
+      <stop offset="0" stop-color="#326d6d" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#326d6d" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#kp-bg)"/>
+  <rect width="1200" height="760" fill="url(#kp-glow)"/>
+
+  <!-- window chrome -->
+  <rect x="80" y="70" width="1040" height="620" rx="20" fill="#12181a" stroke="rgba(255,255,255,0.08)"/>
+  <circle cx="116" cy="106" r="7" fill="#ff5f57"/>
+  <circle cx="140" cy="106" r="7" fill="#febc2e"/>
+  <circle cx="164" cy="106" r="7" fill="#28c840"/>
+  <rect x="470" y="94" width="260" height="24" rx="12" fill="rgba(255,255,255,0.06)"/>
+  <text x="600" y="111" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="monospace" font-size="13">knowledge.sofgent.app</text>
+
+  <!-- sidebar -->
+  <rect x="80" y="140" width="230" height="550" fill="rgba(255,255,255,0.02)"/>
+  <rect x="108" y="176" width="20" height="20" rx="6" fill="#326d6d"/>
+  <text x="140" y="192" fill="#fff" font-family="sans-serif" font-size="16" font-weight="700">Knowledge</text>
+  <g font-family="sans-serif" font-size="14">
+    <rect x="104" y="230" width="182" height="34" rx="9" fill="rgba(50,109,109,0.22)"/>
+    <text x="122" y="252" fill="#67e8f9" font-weight="600">Search</text>
+    <text x="122" y="298" fill="rgba(255,255,255,0.55)">Collections</text>
+    <text x="122" y="338" fill="rgba(255,255,255,0.55)">Sources</text>
+    <text x="122" y="378" fill="rgba(255,255,255,0.55)">Access control</text>
+    <text x="122" y="418" fill="rgba(255,255,255,0.55)">Audit log</text>
+  </g>
+
+  <!-- search bar -->
+  <rect x="345" y="176" width="740" height="52" rx="13" fill="rgba(255,255,255,0.05)" stroke="rgba(103,232,249,0.3)"/>
+  <circle cx="378" cy="202" r="9" fill="none" stroke="#67e8f9" stroke-width="2.5"/>
+  <line x1="385" y1="209" x2="393" y2="217" stroke="#67e8f9" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="410" y="208" fill="rgba(255,255,255,0.75)" font-family="sans-serif" font-size="16">What is our refund policy for enterprise plans?</text>
+
+  <!-- answer card -->
+  <rect x="345" y="252" width="740" height="150" rx="14" fill="rgba(50,109,109,0.14)" stroke="rgba(50,109,109,0.35)"/>
+  <text x="368" y="284" fill="#67e8f9" font-family="sans-serif" font-size="12" font-weight="700" letter-spacing="1">ANSWER · 3 SOURCES</text>
+  <rect x="368" y="300" width="690" height="10" rx="5" fill="rgba(255,255,255,0.22)"/>
+  <rect x="368" y="322" width="640" height="10" rx="5" fill="rgba(255,255,255,0.16)"/>
+  <rect x="368" y="344" width="500" height="10" rx="5" fill="rgba(255,255,255,0.12)"/>
+  <rect x="368" y="372" width="120" height="18" rx="9" fill="rgba(103,232,249,0.16)"/>
+  <text x="428" y="385" text-anchor="middle" fill="#67e8f9" font-family="sans-serif" font-size="11">policy.pdf</text>
+
+  <!-- results list -->
+  <g font-family="sans-serif">
+    <text x="345" y="440" fill="rgba(255,255,255,0.4)" font-size="12" font-weight="700" letter-spacing="1">TOP MATCHES</text>
+    <g>
+      <rect x="345" y="454" width="740" height="60" rx="12" fill="rgba(255,255,255,0.03)"/>
+      <rect x="368" y="474" width="360" height="9" rx="4.5" fill="rgba(255,255,255,0.4)"/>
+      <rect x="368" y="492" width="240" height="8" rx="4" fill="rgba(255,255,255,0.18)"/>
+      <rect x="960" y="476" width="100" height="16" rx="8" fill="rgba(50,109,109,0.35)"/>
+      <text x="1010" y="488" text-anchor="middle" fill="#8fe" font-size="11">0.96</text>
+    </g>
+    <g>
+      <rect x="345" y="524" width="740" height="60" rx="12" fill="rgba(255,255,255,0.03)"/>
+      <rect x="368" y="544" width="320" height="9" rx="4.5" fill="rgba(255,255,255,0.4)"/>
+      <rect x="368" y="562" width="280" height="8" rx="4" fill="rgba(255,255,255,0.18)"/>
+      <rect x="960" y="546" width="100" height="16" rx="8" fill="rgba(50,109,109,0.28)"/>
+      <text x="1010" y="558" text-anchor="middle" fill="#8fe" font-size="11">0.91</text>
+    </g>
+    <g>
+      <rect x="345" y="594" width="740" height="60" rx="12" fill="rgba(255,255,255,0.03)"/>
+      <rect x="368" y="614" width="380" height="9" rx="4.5" fill="rgba(255,255,255,0.4)"/>
+      <rect x="368" y="632" width="200" height="8" rx="4" fill="rgba(255,255,255,0.18)"/>
+      <rect x="960" y="616" width="100" height="16" rx="8" fill="rgba(50,109,109,0.22)"/>
+      <text x="1010" y="628" text-anchor="middle" fill="#8fe" font-size="11">0.88</text>
+    </g>
+  </g>
+</svg>
