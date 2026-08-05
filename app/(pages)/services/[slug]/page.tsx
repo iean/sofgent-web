@@ -19,8 +19,9 @@ type ParsedServiceContent = {
   sections: ContentSection[];
 };
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  return getPageMeta(`/services/${params.slug}`);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  return getPageMeta(`/services/${slug}`);
 }
 
 export async function generateStaticParams() {
@@ -300,11 +301,15 @@ function getFaqs(sections: ContentSection[]) {
 function buildHighlights(service: Awaited<ReturnType<typeof getServiceBySlug>>) {
   if (!service) return [];
 
-  return [
-    service.description,
+  // Keep highlights distinct from the hero subtitle (service.description) so the
+  // card doesn't repeat copy, and keep each line short so it wraps cleanly.
+  const items = [
     service.proof,
-    service.eyebrow ? `${service.eyebrow} teams use this to move faster without rebuilding core systems.` : undefined,
-  ].filter(Boolean) as string[];
+    "Built on your existing stack — no rebuild required.",
+    "Production-ready delivery: tested, monitored, and documented.",
+  ].filter((item): item is string => Boolean(item && item.trim()));
+
+  return items.slice(0, 3);
 }
 
 function buildPrimaryStats(service: NonNullable<Awaited<ReturnType<typeof getServiceBySlug>>>, sections: ContentSection[]) {
@@ -320,8 +325,9 @@ function buildPrimaryStats(service: NonNullable<Awaited<ReturnType<typeof getSer
   ];
 }
 
-export default async function ServiceDetail({ params }: { params: { slug: string } }) {
-  const [service, allServices] = await Promise.all([getServiceBySlug(params.slug), getServices()]);
+export default async function ServiceDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const [service, allServices] = await Promise.all([getServiceBySlug(slug), getServices()]);
 
   if (!service) {
     notFound();
@@ -423,14 +429,14 @@ export default async function ServiceDetail({ params }: { params: { slug: string
               </div>
             )}
 
-            <div className="grid gap-4 bg-[#0f2020] p-6 text-white sm:grid-cols-2">
+            <div className="flex flex-col gap-2.5 bg-[#0f2020] p-6 text-white">
               {highlights.map((highlight) => (
-                <div key={highlight} className="rounded-2xl border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.04)] p-4">
+                <div key={highlight} className="rounded-xl border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.04)] px-4 py-3">
                   <div className="flex items-start gap-3">
-                    <span className="mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#326d6d] text-xs font-bold">
+                    <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#326d6d] text-[11px] font-bold">
                       ✓
                     </span>
-                    <p className="text-[14px] leading-6 text-[rgba(255,255,255,0.84)]">{highlight}</p>
+                    <p className="text-[13.5px] leading-6 text-[rgba(255,255,255,0.84)]">{highlight}</p>
                   </div>
                 </div>
               ))}
@@ -440,179 +446,147 @@ export default async function ServiceDetail({ params }: { params: { slug: string
       </section>
 
       <section className="mx-auto max-w-[1200px] px-6 py-10 md:px-8 md:py-14">
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px]">
-          <div className="space-y-8">
-            {parsed.intro.length > 0 && (
-              <div className="rounded-[28px] border border-[#e4ebeb] bg-white p-7 shadow-[0_16px_40px_rgba(12,12,12,0.04)] md:p-9">
-                <div className="mb-5 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#326d6d]">Overview</div>
-                <div className="space-y-4">
-                  {parsed.intro.map((line, index) =>
-                    line ? (
-                      <p key={index} className="text-[16px] leading-8 text-[#464d4d]">
-                        {renderInline(line)}
-                      </p>
-                    ) : null,
-                  )}
-                </div>
-              </div>
-            )}
-
-            {sectionLinks.map((section, index) => (
-              <div
-                key={section.title}
-                id={section.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}
-                className="rounded-[28px] border border-[#e4ebeb] bg-white p-7 shadow-[0_16px_40px_rgba(12,12,12,0.04)] md:p-9"
-              >
-                <div className="mb-6 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#eef6f5] text-sm font-bold text-[#326d6d]">
-                    {String(index + 1).padStart(2, "0")}
-                  </div>
-                  <h2 className="text-[28px] font-black tracking-[-0.04em] text-[#111]">{section.title}</h2>
-                </div>
-                <div className="space-y-4">{renderSectionBody(section.body)}</div>
-              </div>
-            ))}
-
-            {faqs.length > 0 && (
-              <div className="rounded-[28px] border border-[#e4ebeb] bg-white p-7 shadow-[0_16px_40px_rgba(12,12,12,0.04)] md:p-9">
-                <div className="mb-6 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#326d6d]">FAQs</div>
-                <div className="space-y-4">
-                  {faqs.map((faq) => (
-                    <div key={faq.question} className="rounded-2xl border border-[#e7ecec] bg-[#fbfcfc] p-5">
-                      <h3 className="text-[18px] font-bold tracking-[-0.02em] text-[#111]">{faq.question}</h3>
-                      <div className="mt-3 space-y-3">
-                        {faq.answer.map((line, index) =>
-                          line ? (
-                            <p key={index} className="text-[15px] leading-7 text-[#4d4d4d]">
-                              {renderInline(line.replace(/^\*\*(.+?)\*\*/, "$1"))}
-                            </p>
-                          ) : null,
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <div className="overflow-hidden rounded-[28px] bg-[#0d0f10] p-8 text-white md:p-10">
-              <div className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#7ca7a7]">Next step</div>
-              <div className="mt-3 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-                <div className="max-w-[620px]">
-                  <h2 className="text-[32px] font-black leading-[1.06] tracking-[-0.04em]">
-                    Need this service scoped against your real system?
-                  </h2>
-                  <p className="mt-4 text-[15px] leading-7 text-[rgba(255,255,255,0.72)]">
-                    We turn requirements into a practical delivery plan, timeline, and architecture recommendation before build work starts.
-                  </p>
-                </div>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-xl bg-[#326d6d] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#244f4f]"
-                >
-                  Request a scoped proposal
-                </Link>
+        {/* Main content — full width */}
+        <div className="space-y-8">
+          {parsed.intro.length > 0 && (
+            <div className="rounded-[28px] border border-[#e4ebeb] bg-white p-7 shadow-[0_16px_40px_rgba(12,12,12,0.04)] md:p-9">
+              <div className="mb-5 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#326d6d]">Overview</div>
+              <div className="max-w-[75ch] space-y-4">
+                {parsed.intro.map((line, index) =>
+                  line ? (
+                    <p key={index} className="text-[16px] leading-8 text-[#464d4d]">
+                      {renderInline(line)}
+                    </p>
+                  ) : null,
+                )}
               </div>
             </div>
-          </div>
+          )}
 
-          <aside className="space-y-6 lg:sticky lg:top-6 lg:self-start">
-            {sectionLinks.length > 0 && (
-              <div className="rounded-[24px] border border-[#e4ebeb] bg-white p-6 shadow-[0_16px_40px_rgba(12,12,12,0.04)]">
-                <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#326d6d]">On this page</div>
-                <div className="space-y-2">
-                  {sectionLinks.map((section) => (
-                    <a
-                      key={section.title}
-                      href={`#${section.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                      className="block rounded-xl px-3 py-2 text-[14px] text-[#505757] transition-colors hover:bg-[#f3f7f7] hover:text-[#326d6d]"
-                    >
-                      {section.title}
-                    </a>
-                  ))}
+          {sectionLinks.map((section, index) => (
+            <div
+              key={section.title}
+              id={section.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}
+              className="rounded-[28px] border border-[#e4ebeb] bg-white p-7 shadow-[0_16px_40px_rgba(12,12,12,0.04)] md:p-9"
+            >
+              <div className="mb-6 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#eef6f5] text-sm font-bold text-[#326d6d]">
+                  {String(index + 1).padStart(2, "0")}
                 </div>
+                <h2 className="text-[28px] font-black tracking-[-0.04em] text-[#111]">{section.title}</h2>
               </div>
-            )}
-
-            {techGroups.length > 0 && (
-              <div className="rounded-[24px] border border-[#e4ebeb] bg-white p-6 shadow-[0_16px_40px_rgba(12,12,12,0.04)]">
-                <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#326d6d]">Technology stack</div>
-                <div className="space-y-4">
-                  {techGroups.map((group) => (
-                    <div key={group.label}>
-                      <div className="text-[13px] font-semibold text-[#111]">{group.label}</div>
-                      <div className="mt-2 flex flex-wrap gap-2">
-                        {group.items.map((item) => (
-                          <span
-                            key={item}
-                            className="rounded-full border border-[#dbe7e7] bg-[#f4f8f8] px-3 py-1.5 text-[12px] font-medium text-[#326d6d]"
-                          >
-                            {item}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <div className="rounded-[24px] bg-[#326d6d] p-6 text-white shadow-[0_18px_50px_rgba(50,109,109,0.28)]">
-              <div className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[#b9dddd]">Ready to start?</div>
-              <h3 className="mt-3 text-[26px] font-black leading-[1.08] tracking-[-0.04em]">
-                Get a scoped proposal in 48 hours.
-              </h3>
-              <p className="mt-3 text-[14px] leading-7 text-[rgba(255,255,255,0.82)]">
-                Tell us about the workflow, system, or product you need to improve. We will map scope, approach, and delivery options.
-              </p>
-              <Link
-                href="/contact"
-                className="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-white px-4 py-3 text-sm font-semibold text-[#326d6d] transition-colors hover:bg-[#edf5f5]"
-              >
-                Book a discovery call
-              </Link>
+              <div className="space-y-4 md:columns-2 md:gap-10 [&>*]:break-inside-avoid">{renderSectionBody(section.body)}</div>
             </div>
+          ))}
 
-            {related.length > 0 && (
-              <div className="rounded-[24px] border border-[#e4ebeb] bg-white p-6 shadow-[0_16px_40px_rgba(12,12,12,0.04)]">
-                <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#326d6d]">Related services</div>
-                <div className="space-y-2">
-                  {related.map((item) => (
-                    <Link
-                      key={item._id}
-                      href={`/services/${item.slug}`}
-                      className="flex items-center justify-between rounded-xl border border-transparent px-3 py-3 text-[14px] text-[#505757] transition-colors hover:border-[#e4ebeb] hover:bg-[#f8fbfb] hover:text-[#326d6d]"
-                    >
-                      <span>{item.title}</span>
-                      <span>→</span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <div className="rounded-[24px] border border-[#e4ebeb] bg-white p-6 shadow-[0_16px_40px_rgba(12,12,12,0.04)]">
-              <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#326d6d]">How we work</div>
-              <div className="space-y-4">
-                {[
-                  ["Discovery", "1 focused call to map systems, constraints, and delivery goals."],
-                  ["Proposal", "Written scope, timeline, and technical approach."],
-                  ["Build", "Weekly progress updates with production-minded implementation."],
-                  ["Launch", "Release support, handover, and post-launch follow-up."],
-                ].map(([label, text], index) => (
-                  <div key={label} className="flex gap-3">
-                    <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#eef5f5] text-xs font-bold text-[#326d6d]">
-                      {index + 1}
-                    </div>
-                    <div>
-                      <div className="text-[13px] font-semibold text-[#111]">{label}</div>
-                      <p className="mt-1 text-[13px] leading-6 text-[#5a6161]">{text}</p>
+          {faqs.length > 0 && (
+            <div className="rounded-[28px] border border-[#e4ebeb] bg-white p-7 shadow-[0_16px_40px_rgba(12,12,12,0.04)] md:p-9">
+              <div className="mb-6 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#326d6d]">FAQs</div>
+              <div className="grid gap-4 md:grid-cols-2">
+                {faqs.map((faq) => (
+                  <div key={faq.question} className="rounded-2xl border border-[#e7ecec] bg-[#fbfcfc] p-5">
+                    <h3 className="text-[18px] font-bold tracking-[-0.02em] text-[#111]">{faq.question}</h3>
+                    <div className="mt-3 space-y-3">
+                      {faq.answer.map((line, index) =>
+                        line ? (
+                          <p key={index} className="text-[15px] leading-7 text-[#4d4d4d]">
+                            {renderInline(line.replace(/^\*\*(.+?)\*\*/, "$1"))}
+                          </p>
+                        ) : null,
+                      )}
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-          </aside>
+          )}
+        </div>
+
+        {/* Supporting cards — full-width row beneath the content */}
+        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {techGroups.length > 0 && (
+            <div className="rounded-[24px] border border-[#e4ebeb] bg-white p-6 shadow-[0_16px_40px_rgba(12,12,12,0.04)]">
+              <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#326d6d]">Technology stack</div>
+              <div className="space-y-4">
+                {techGroups.map((group) => (
+                  <div key={group.label}>
+                    <div className="text-[13px] font-semibold text-[#111]">{group.label}</div>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {group.items.map((item) => (
+                        <span
+                          key={item}
+                          className="rounded-full border border-[#dbe7e7] bg-[#f4f8f8] px-3 py-1.5 text-[12px] font-medium text-[#326d6d]"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {related.length > 0 && (
+            <div className="rounded-[24px] border border-[#e4ebeb] bg-white p-6 shadow-[0_16px_40px_rgba(12,12,12,0.04)]">
+              <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#326d6d]">Related services</div>
+              <div className="space-y-2">
+                {related.map((item) => (
+                  <Link
+                    key={item._id}
+                    href={`/services/${item.slug}`}
+                    className="flex items-center justify-between rounded-xl border border-transparent px-3 py-3 text-[14px] text-[#505757] transition-colors hover:border-[#e4ebeb] hover:bg-[#f8fbfb] hover:text-[#326d6d]"
+                  >
+                    <span>{item.title}</span>
+                    <span>→</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div className="rounded-[24px] border border-[#e4ebeb] bg-white p-6 shadow-[0_16px_40px_rgba(12,12,12,0.04)]">
+            <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#326d6d]">How we work</div>
+            <div className="space-y-4">
+              {[
+                ["Discovery", "1 focused call to map systems, constraints, and delivery goals."],
+                ["Proposal", "Written scope, timeline, and technical approach."],
+                ["Build", "Weekly progress updates with production-minded implementation."],
+                ["Launch", "Release support, handover, and post-launch follow-up."],
+              ].map(([label, text], index) => (
+                <div key={label} className="flex gap-3">
+                  <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#eef5f5] text-xs font-bold text-[#326d6d]">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <div className="text-[13px] font-semibold text-[#111]">{label}</div>
+                    <p className="mt-1 text-[13px] leading-6 text-[#5a6161]">{text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Full-width closing CTA */}
+        <div className="mt-8 overflow-hidden rounded-[28px] bg-[#0d0f10] p-8 text-white md:p-10">
+          <div className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#7ca7a7]">Next step</div>
+          <div className="mt-3 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-[620px]">
+              <h2 className="text-[32px] font-black leading-[1.06] tracking-[-0.04em]">
+                Need this service scoped against your real system?
+              </h2>
+              <p className="mt-4 text-[15px] leading-7 text-[rgba(255,255,255,0.72)]">
+                We turn requirements into a practical delivery plan, timeline, and architecture recommendation before build work starts.
+              </p>
+            </div>
+            <Link
+              href="/contact"
+              className="inline-flex flex-shrink-0 items-center justify-center rounded-xl bg-[#326d6d] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#244f4f]"
+            >
+              Request a scoped proposal
+            </Link>
+          </div>
         </div>
       </section>
     </main>

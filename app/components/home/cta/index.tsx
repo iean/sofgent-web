@@ -59,7 +59,7 @@ export default function Cta({ className }: { className?: string }) {
               Ready to ship your<br />AI product?
             </h2>
             <p className="text-[15px] leading-[1.65] max-w-[420px]" style={{ color: "rgba(255,255,255,0.42)" }}>
-              Book a call. We&apos;ll scope your project, give you a timeline, and tell you exactly what it&apos;ll take.
+              Book a Call. We&apos;ll scope your project, give you a timeline, and tell you exactly what it&apos;ll take.
             </p>
           </div>
 

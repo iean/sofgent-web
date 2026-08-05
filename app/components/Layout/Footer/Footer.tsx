@@ -3,6 +3,13 @@ import Link from "next/link";
 import logo from "@assets/images/sofgent-logo.svg";
 
 const services = [
+  { title: "AI Product & MVP Development", href: "/product-development" },
+  { title: "AI Document Automation", href: "/services/document-intelligence-systems" },
+  { title: "AI Integration & Automation", href: "/custom-software" },
+  { title: "All Services", href: "/services" },
+];
+
+const solutions = [
   { title: "AI Knowledge Base", href: "/services/saas-micro-saas-solutions" },
   { title: "OCR Document Automation", href: "/services/document-intelligence-systems" },
   { title: "AI Knowledge & Quality", href: "/services/advanced-ai-solutions" },
@@ -23,8 +30,8 @@ export default function Footer() {
     <footer style={{ background: "#f7f7f7", borderTop: "1px solid #e6e6e6", padding: "64px 0 36px" }}>
       <div className="max-w-[1140px] mx-auto px-8">
 
-        {/* 4-col top */}
-        <div className="mb-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-12">
+        {/* 5-col top */}
+        <div className="mb-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.6fr_1.1fr_1.1fr_1fr_1fr] lg:gap-10">
           {/* Brand */}
           <div>
             <Link href="/" className="inline-block mb-4">
@@ -40,6 +47,20 @@ export default function Footer() {
             <h4 className="text-[12px] font-bold tracking-[0.07em] uppercase text-[#0c0c0c] mb-4">Services</h4>
             <ul className="flex flex-col gap-2.5">
               {services.map((s) => (
+                <li key={s.title}>
+                  <Link href={s.href} className="text-[13.5px] text-[#6a6a6a] hover:text-[#0c0c0c] transition-colors">
+                    {s.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Solutions */}
+          <div>
+            <h4 className="text-[12px] font-bold tracking-[0.07em] uppercase text-[#0c0c0c] mb-4">Solutions</h4>
+            <ul className="flex flex-col gap-2.5">
+              {solutions.map((s) => (
                 <li key={s.title}>
                   <Link href={s.href} className="text-[13.5px] text-[#6a6a6a] hover:text-[#0c0c0c] transition-colors">
                     {s.title}
@@ -68,8 +89,8 @@ export default function Footer() {
             <h4 className="text-[12px] font-bold tracking-[0.07em] uppercase text-[#0c0c0c] mb-4">Get in touch</h4>
             <ul className="flex flex-col gap-2.5">
               <li>
-                <a href="mailto:support@sofgent.com" className="text-[13.5px] text-[#6a6a6a] hover:text-[#0c0c0c] transition-colors">
-                  support@sofgent.com
+                <a href="mailto:contact@sofgent.com" className="text-[13.5px] text-[#6a6a6a] hover:text-[#0c0c0c] transition-colors">
+                  contact@sofgent.com
                 </a>
               </li>
               <li>
@@ -79,7 +100,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/contact" className="text-[13.5px] text-[#6a6a6a] hover:text-[#0c0c0c] transition-colors">
-                  Book a free call
+                  Book a Free Call
                 </Link>
               </li>
             </ul>

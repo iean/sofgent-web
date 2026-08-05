@@ -2,7 +2,7 @@
 
 **Spec ID:** `SPEC-WLR-002`  
 **Date:** 2026-07-17  
-**Status:** `Approved`  
+**Status:** `Done`  
 **Owner:** SofGent web team
 
 ## Problem Statement
@@ -35,10 +35,10 @@ Verified on 2026-07-17:
 
 ## Acceptance Criteria
 
-- [ ] `robots.txt` resolves successfully
-- [ ] sitemap resolves successfully
-- [ ] all primary marketing pages emit usable OG/Twitter image values
-- [ ] route metadata is re-verified after implementation
+- [x] `robots.txt` resolves successfully
+- [x] sitemap resolves successfully
+- [x] all primary marketing pages emit usable OG/Twitter image values
+- [x] route metadata is re-verified after implementation
 
 ## Verification
 

@@ -21,12 +21,21 @@ export const metadata: Metadata = {
     title: "SofGent — AI Product Studio",
     description:
       "Production-grade AI products — document automation, AI SaaS MVPs, and AI integrations — scoped, built, and shipped in weeks.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "SofGent — AI Product Studio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "SofGent — AI Product Studio",
     description:
       "Production-grade AI products — document automation, AI SaaS MVPs, and AI integrations — scoped, built, and shipped in weeks.",
+    images: ["/opengraph-image"],
   },
   robots: { index: true, follow: true },
 };
@@ -44,7 +53,7 @@ const structuredData = {
       logo: `${SITE_URL}/images/sofgent-logo.svg`,
       description:
         "AI product studio building production-grade AI products — document automation, AI SaaS MVPs, and AI integrations.",
-      email: "support@sofgent.com",
+      email: "contact@sofgent.com",
       sameAs: [] as string[],
     },
     {
@@ -71,7 +80,7 @@ const structuredData = {
       {
         name: "AI Integration & Automation",
         description:
-          "Connect Claude, GPT-5, and custom models into existing tools via clean, monitored, human-in-the-loop workflows.",
+          "Connect Claude, GPT, and custom models into existing tools via clean, monitored, human-in-the-loop workflows.",
       },
     ].map((s) => ({
       "@type": "Service",

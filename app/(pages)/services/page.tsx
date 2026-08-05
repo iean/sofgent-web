@@ -54,7 +54,7 @@ export default async function ServicesPage() {
               Solution lineup
             </div>
             <h2 className="font-black tracking-[-0.04em] leading-[1.1] text-[#0c0c0c] mb-3" style={{ fontSize: "clamp(24px, 3vw, 38px)" }}>Focused products and internal systems.</h2>
-            <p className="text-[15px] text-[#6a6a6a] max-w-[560px] mx-auto">The catalog now centers on a knowledge base, OCR automation, a knowledge transfer platform, employee onboarding, and a custom CRM solution.</p>
+            <p className="text-[15px] text-[#6a6a6a] max-w-[560px] mx-auto">Our three core services — AI product &amp; MVP development, AI document automation, and AI integration — delivered as five focused, production-ready solutions.</p>
           </div>
 
           <div className="flex items-center justify-center gap-3 mb-10 flex-wrap">
@@ -112,7 +112,7 @@ export default async function ServicesPage() {
           >
             {[
               { title: "AI-first architecture", desc: "Models integrated as first-class services — with rate limiting, fallbacks, and cost controls built in from sprint one." },
-              { title: "100% test coverage", desc: "Unit, integration, and E2E tests ship with every project. AI outputs validated under real load, not just happy paths." },
+              { title: "Full test suite", desc: "Unit, integration, and E2E tests ship with every project. AI outputs validated under real load, not just happy paths." },
               { title: "Monitoring + alerting", desc: "Logs, traces, and dashboards configured from day one. You&apos;ll know before users do when something breaks." },
               { title: "Auth + billing ready", desc: "User auth, team accounts, Stripe billing, and usage tracking baked in — so you can charge on day one." },
               { title: "CI/CD + DevOps", desc: "GitHub Actions pipelines, preview deploys, and rollback procedures configured for your stack from the start." },
@@ -246,7 +246,7 @@ export default async function ServicesPage() {
               href="/contact"
               className="inline-flex items-center gap-2 text-[14px] font-bold bg-white text-[#0c0c0c] px-7 py-3.5 rounded-[9px] hover:bg-gray-100 transition-all hover:-translate-y-0.5"
             >
-              Book a free call <ArrowRight />
+              Book a Free Call <ArrowRight />
             </Link>
             <Link
               href="/projects"

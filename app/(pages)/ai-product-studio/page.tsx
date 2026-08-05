@@ -108,7 +108,7 @@ export default function AIStudioPage() {
                   code={`<span style="color:#79c0ff">import</span> { <span style="color:#4cd4d4">DocumentAI</span> } <span style="color:#79c0ff">from</span> <span style="color:#a5d6ff">'@sofgent/docai'</span>
 
 <span style="color:#79c0ff">const</span> pipeline = <span style="color:#79c0ff">new</span> <span style="color:#d2a8ff">DocumentAI</span>({
-  model: <span style="color:#a5d6ff">'claude-opus-4-8'</span>,
+  model: <span style="color:#a5d6ff">'claude-opus-5'</span>,
   confidence_threshold: <span style="color:#79c0ff">0.94</span>,
   fallback: <span style="color:#a5d6ff">'human-review'</span>,
 })
@@ -158,9 +158,9 @@ export default function AIStudioPage() {
                   <Bullet title="Production-grade from day one" desc="Rate limits, fallback logic, error handling, cost controls — built in, not added later." />
                   <Bullet title="You own the code" desc="Full IP transfer. GitHub repo, deploy scripts, architecture docs. Your product, forever." />
                 </div>
-                <Outcome text="Staffing platform — scoped, built, and shipped in weeks" />
-                <Link href="/projects" className="inline-flex items-center gap-1.5 text-[13.5px] font-bold text-[#326d6d] mt-6 group">
-                  View staffing SaaS case study <span className="group-hover:translate-x-0.5 transition-transform inline-flex"><ArrowRight /></span>
+                <Outcome text="Healthcare staffing platform — scoped, built, and shipped to production" />
+                <Link href="/projects/heart-haven-healthcare-staffing" className="inline-flex items-center gap-1.5 text-[13.5px] font-bold text-[#326d6d] mt-6 group">
+                  View the Heart &amp; Haven case study <span className="group-hover:translate-x-0.5 transition-transform inline-flex"><ArrowRight /></span>
                 </Link>
               </div>
               <div>
@@ -251,7 +251,7 @@ export default function AIStudioPage() {
           </p>
           <div className="flex items-center justify-center gap-2.5">
             <Link href="/contact" className="inline-flex items-center gap-2 text-[14px] font-bold bg-white text-[#0c0c0c] px-7 py-3.5 rounded-[9px] hover:bg-gray-100 transition-all hover:-translate-y-0.5">
-              Book a free call <ArrowRight />
+              Book a Free Call <ArrowRight />
             </Link>
             <Link href="/projects" className="inline-flex items-center gap-2 text-[14px] font-medium px-6 py-3.5 rounded-[9px]" style={{ color: "rgba(255,255,255,0.65)", border: "1px solid rgba(255,255,255,0.15)" }}>
               See our work →

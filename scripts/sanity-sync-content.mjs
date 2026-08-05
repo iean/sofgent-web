@@ -449,6 +449,8 @@ function loadCaseStudies() {
       title: "AI Knowledge Platform",
       slug: { _type: "slug", current: "ai-knowledge-platform" },
       publishedAt: "2026-06-10T00:00:00.000Z",
+      featuredOnHomepage: true,
+      homepageOrder: 1,
       description:
         "Built a multi-tenant knowledge platform with ingestion, vector search, access controls, and answer workflows.",
       overview:
@@ -475,6 +477,8 @@ function loadCaseStudies() {
       title: "Fintech & Payment Integration System",
       slug: { _type: "slug", current: "fintech-payment-integration-system" },
       publishedAt: "2026-06-10T00:00:00.000Z",
+      featuredOnHomepage: true,
+      homepageOrder: 2,
       description:
         "Designed an integration and orchestration layer for payments, reconciliation, ledger updates, and exception handling.",
       overview:
@@ -501,6 +505,8 @@ function loadCaseStudies() {
       title: "AI Document Automation Platform",
       slug: { _type: "slug", current: "ocr-document-automation-system" },
       publishedAt: "2026-06-10T00:00:00.000Z",
+      featuredOnHomepage: true,
+      homepageOrder: 3,
       description:
         "Built OCR, classification, extraction, validation, and human review into one document pipeline.",
       overview:

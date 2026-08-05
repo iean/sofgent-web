@@ -127,8 +127,8 @@ export default function ContactForm() {
                   <div className="col-span-1">
                      <h2 className="flex gap-2.5 items-center">
                         <BiEnvelope className="text-2xl text-brand" />{" "}
-                        <a href="mailto:support@sofgent.com">
-                           support@sofgent.com
+                        <a href="mailto:contact@sofgent.com">
+                           contact@sofgent.com
                         </a>
                      </h2>
                   </div>

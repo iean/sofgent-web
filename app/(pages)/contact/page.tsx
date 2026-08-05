@@ -44,7 +44,7 @@ export default function Contact() {
               </ul>
               <div className="rounded-[16px] p-6" style={{ border: "1px solid #e6e6e6" }}>
                 {[
-                  ["Email", "support@sofgent.com", "mailto:support@sofgent.com", <svg key="e" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>],
+                  ["Email", "contact@sofgent.com", "mailto:contact@sofgent.com", <svg key="e" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>],
                   ["Phone", "+880 153 7740365", "tel:+8801537740365", <svg key="p" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.9 1.27h3a2 2 0 0 1 2 1.72c.13.97.35 1.92.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.09-1.08a2 2 0 0 1 2.11-.45c.89.35 1.84.57 2.81.7A2 2 0 0 1 22 16.92z" /></svg>],
                 ].map(([lbl, val, href, icon], i) => (
                   <div key={lbl as string} className="flex items-start gap-3 py-4" style={i === 0 ? { borderBottom: "1px solid #f0f0f0" } : {}}>

@@ -5,7 +5,7 @@ description: Connecting different systems to work together seamlessly.
 order: 7
 ---
 ![System Integration](/images/services/system-integration.webp)
-Employee onboarding becomes expensive when every new hire depends on memory, shadowing, and informal handoff. This solution gives teams a structured onboarding system with role-specific tasks, learning paths, SOP access, and progress visibility.
+Employee onboarding becomes expensive when every new hire depends on memory, shadowing, and informal handoff. This solution gives teams a structured onboarding system with role-specific tasks, learning paths, source-linked SOP access, and progress visibility.
 
 Instead of scattered documents and ad hoc explanations, new employees get a guided path through what they need to learn, complete, and understand in the first days, weeks, and months.
 
@@ -14,6 +14,7 @@ Instead of scattered documents and ad hoc explanations, new employees get a guid
 - Role-based onboarding journeys
 - Department, branch, or team-specific checklists
 - SOP and training-content access from one place
+- Shared-source sync so onboarding material stays tied to current documents
 - Progress tracking for managers and team leads
 - Task completion, handoff, and sign-off flows
 - Knowledge links between onboarding, quality, and operations
@@ -42,7 +43,7 @@ It is commonly used for:
 
 3. **Platform build**
 
-- Build the onboarding system with tasks, content, permissions, progress tracking, and reporting.
+- Build the onboarding system with tasks, content, source links, permissions, progress tracking, and reporting.
 
 4. **Rollout and improvement**
 
@@ -52,7 +53,7 @@ It is commonly used for:
 
 - Frontend: Next.js, React, responsive onboarding flows
 - Backend: Node.js, PostgreSQL, permission-aware data model
-- Admin: manager dashboard, content controls, reporting views
+- Admin: manager dashboard, content controls, reporting views, and source governance
 
 ## Why SofGent
 

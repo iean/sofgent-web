@@ -6,11 +6,11 @@ export default function Topbar() {
     >
       <div className="max-w-[1140px] mx-auto flex items-center justify-between gap-6">
         <p className="text-[12.5px]" style={{ color: "rgba(255,255,255,0.85)" }}>
-          Welcome to <strong className="text-white">SofGent</strong> — Build and Launch Your SaaS MVP. Fast, Scalable, Production-Ready.
+          Most AI projects die in pilot. <strong className="text-white">SofGent</strong> ships yours to production in 4–6 weeks — fixed scope, fixed price.
         </p>
         <div className="flex items-center gap-5 shrink-0">
           <a
-            href="mailto:support@sofgent.com"
+            href="mailto:contact@sofgent.com"
             className="flex items-center gap-1.5 text-[12px] transition-colors hover:text-white"
             style={{ color: "rgba(255,255,255,0.8)" }}
           >
@@ -18,7 +18,7 @@ export default function Topbar() {
               <rect x="2" y="4" width="20" height="16" rx="2"/>
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
             </svg>
-            support@sofgent.com
+            contact@sofgent.com
           </a>
           <a
             href="tel:+8801537740365"

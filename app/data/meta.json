@@ -1,11 +1,11 @@
 {
   "/": {
-    "title": "AI Product Studio for Operations Teams | SofGent",
-    "description": "SofGent builds AI apps, internal AI tools, and AI-powered SaaS products for operations teams with architecture-first delivery."
+    "title": "AI Product Studio | Production-Ready AI in 4–6 Weeks | SofGent",
+    "description": "SofGent builds production-ready AI products — document automation, AI SaaS MVPs, and AI integrations — for founders, CTOs, and operations teams in 4–6 weeks."
   },
   "/about": {
-    "title": "About SofGent | Trusted Custom Software Partner",
-    "description": "Learn about SofGent’s mission, team, and commitment to delivering innovative, scalable AI software solutions with a focus on quality, agility, and client success."
+    "title": "About SofGent | The AI Product Studio That Ships",
+    "description": "SofGent turns AI ideas into shipped, production-grade products in weeks. Senior engineers, fixed scope, fixed price — for founders, CTOs, and operations teams."
   },
   "/services": {
     "title": "AI Product Studio Services and SaaS Delivery | SofGent",
@@ -16,12 +16,12 @@
     "description": "Browse successful case studies and software projects delivered by SofGent. From SaaS platforms to AI Software Solutions, see how we solve real business challenges."
   },
   "/blog": {
-    "title": "Tech Insights & Software Trends Blog | SofGent",
-    "description": "Stay updated with the latest in software development, DevOps, AI, and agile practices. Read expert tips, industry insights, and thought leadership from SofGent."
+    "title": "Insights on Building AI Products | SofGent Blog",
+    "description": "Practical writing on AI development, document automation, and SaaS architecture — from the team that ships production AI products in 4–6 weeks."
   },
   "/contact": {
-    "title": "Contact SofGent | Start Your AI Driven Solutions",
-    "description": "Have a software idea or project? Contact SofGent today for a consultation. Let's build secure, scalable, and tailored AI Driven Solutions together."
+    "title": "Contact SofGent | Get a Scoped Plan in 48 Hours",
+    "description": "Book a free 30-minute call. We’ll scope your AI project and send a written timeline and fixed price within 48 hours — no obligation."
   },
   "/how-we-build-saas": {
     "title": "How SofGent Builds AI Products and SaaS | SofGent",
@@ -32,28 +32,32 @@
     "description": "SofGent builds AI apps, AI-powered internal tools, and SaaS products for operations teams."
   },
   "/services/custom-software-development": {
-    "title": "Custom Software Development Services | Scalable Solutions",
-    "description": "Get bespoke software built for your unique needs. SofGent develops adaptive software development which is scalable, and secure."
+    "title": "AI-Enabled Custom CRM | SofGent",
+    "description": "A sales and operations CRM tailored to your workflow — pipeline stages, customer records, and internal processes with AI built in. Shipped by SofGent in weeks."
   },
   "/services/devops-deployment-continuous-delivery": {
     "title": "cloud devops consulting services & CI/CD Services | Faster, Reliable Deployments",
     "description": "Optimize your software lifecycle with SofGent’s cloud devops consulting services. Accelerate development and reduce deployment risks."
   },
   "/services/advanced-ai-solutions": {
-    "title": "Advanced AI solutions company | SofGent Software Solution",
-    "description": "Unlock business growth with the best AI solutions company. SofGent offers AI-powered solutions including automation, analytics, and intelligent decision systems tailored to your goals."
+    "title": "AI Knowledge & Quality Platform | SofGent",
+    "description": "A system for knowledge transfer, onboarding, quality standards, and guided execution — built production-ready by SofGent."
   },
   "/services/saas-micro-saas-solutions": {
-    "title": "Cloud based saas Company | SofGent",
-    "description": "Build and scale your SaaS product with SofGent. We specialize in cloud-based SaaS and Micro-SaaS platforms tailored for innovation and growth."
+    "title": "AI Knowledge Base | SofGent",
+    "description": "A governed knowledge workspace that turns SOPs, synced sources, and team know-how into searchable answers and reusable training material. Built production-ready by SofGent."
+  },
+  "/services/document-intelligence-systems": {
+    "title": "OCR Document Automation | SofGent",
+    "description": "Convert forms, PDFs, scans, and attachments into structured, validated business data with production-grade OCR workflows by SofGent."
   },
   "/privacy-policy": {
     "title": "Privacy Policy | SofGent",
     "description": "Review how SofGent collects, uses, and protects your data. We’re committed to transparency and safeguarding your privacy."
   },
   "/terms-conditions": {
-    "title": "Terms & Conditions | SofGent",
-    "description": "Read the terms and conditions for using SofGent’s services and website. Understand your rights and responsibilities."
+    "title": "Terms of Service | SofGent",
+    "description": "Read the terms governing use of the SofGent website, including acceptable use, intellectual property, disclaimers, and client-service agreements."
   },
   "/services/net-core-api-clean-architecture-design-services": {
     "title": ".NET Core API & Clean Architecture Services | SofGent",
@@ -64,8 +68,8 @@
     "description": "Ensure software quality with our end-to-end testing services. From manual QA to QA automation services, SofGent ensures reliable and bug-free solutions."
   },
   "/services/system-integration": {
-    "title": "System Integration management system| SofGent",
-    "description": "Connect and streamline your IT systems with SofGent. We deliver a secure and seamless system integration management system for improved data flow and performance."
+    "title": "AI Employee Onboarding | SofGent",
+    "description": "A role-based onboarding system with source-linked SOPs, training flows, progress tracking, and manager visibility — built production-ready by SofGent."
   },
   "/services/system-maintenance": {
     "title": "Software maintenance management system | SofGent",

@@ -1,5 +1,6 @@
 import SectionTag from "@/app/components/common/SectionTag";
 import { getFaqs, getProjectCollections, getServices } from "@/lib/sanity/content";
+import Link from "next/link";
 import FaqAccordion from "./FaqAccordion";
 import ProofGrid from "./ProofGrid";
 
@@ -140,13 +141,13 @@ export default async function AiProductStudioPage() {
                   <div className="mt-8 rounded-[22px] border border-dashed border-brand/20 bg-brand/5 px-5 py-4">
                      <p className="text-sm leading-7 text-paragraph">
                         Need the detailed service list? Use this page as the strategic overview, then link deeper into{" "}
-                        <a href="/services" className="font-semibold text-brand hover:underline">
+                        <Link href="/services" className="font-semibold text-brand hover:underline">
                            services
-                        </a>{" "}
+                        </Link>{" "}
                         and{" "}
-                        <a href="/how-we-build-saas" className="font-semibold text-brand hover:underline">
+                        <Link href="/how-we-build-saas" className="font-semibold text-brand hover:underline">
                            delivery process
-                        </a>
+                        </Link>
                         .
                      </p>
                   </div>

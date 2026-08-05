@@ -1,10 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 import Header from "./components/Layout/Header/Header";
 import Footer from "./components/Layout/Footer/Footer";
 import HeroSlider from "./components/home/HeroSlider";
 import getPageMeta from "@/app/utils/getPageMeta";
-import { getProjectCollections } from "@/lib/sanity/content";
+import { getHomepageCaseStudies, getLiveProjects } from "@/lib/sanity/content";
 import type { Metadata } from "next";
 
 export function generateMetadata(): Metadata {
@@ -26,13 +27,35 @@ const Check = ({ color = "#326d6d" }: { color?: string }) => (
 
 /* ── Data ───────────────────────────────────────────────── */
 // Real clients we've shipped for. TODO: add the second UK company's name + logo.
-const clients = ["Heart & Haven Care", "Solidarity Center (ACILS)"];
+const clients = [
+  {
+    name: "EasyKT",
+    logo: "/images/client-logos/easykt.png",
+    href: "/live-projects/easykt-ai-knowledge-base",
+    width: 320,
+    height: 213,
+  },
+  {
+    name: "Heart & Haven Care",
+    logo: "/images/client-logos/heart-haven-care.png",
+    href: "/live-projects/heart-haven-healthcare-platform",
+    width: 480,
+    height: 133,
+  },
+  {
+    name: "Solidarity Center",
+    logo: "/images/client-logos/solidarity-center.png",
+    href: "/live-projects/solidarity-center-tannery-workers",
+    width: 180,
+    height: 180,
+  },
+];
 const techStack = ["Next.js", "Anthropic Claude", "OpenAI", "Supabase", "Vercel", "PostgreSQL", "Python", "TypeScript"];
 
 const kpis = [
   { n: "4–6 wks", label: "Idea to production" },
   { n: "Fixed", label: "Scope & price" },
-  { n: "0", label: "Critical launch bugs" },
+  { n: "Weekly", label: "Working demos" },
   { n: "30 days", label: "Post-launch support" },
 ];
 
@@ -57,7 +80,7 @@ const pillars = [
     num: "02",
     title: "AI Document Automation",
     desc: "Turn invoices, contracts, and reports into structured data. Classify, extract, validate, route — end to end.",
-    points: [">98% field-level accuracy", "Eliminates manual review", "Live pipeline in 4–6 weeks"],
+    points: ["Confidence-scored extraction", "Human review for exceptions", "Scoped pipeline delivered in weeks"],
     href: "/ai-product-studio",
     img: "/images/services/image-processing.webp",
     accent: "#326d6d",
@@ -72,8 +95,8 @@ const pillars = [
   {
     num: "03",
     title: "AI Integration & Automation",
-    desc: "Connect Claude, GPT-5, and custom models into your existing tools — CRM, Slack, ERP — via clean, monitored workflows.",
-    points: ["Claude / GPT-5 / custom LLMs wired in", "Triggers from email, webhook, or form", "Observable, logged, human-in-loop ready"],
+    desc: "Connect Claude, GPT, and custom models into your existing tools — CRM, Slack, ERP — via clean, monitored workflows.",
+    points: ["Claude / GPT / custom LLMs wired in", "Triggers from email, webhook, or form", "Observable, logged, human-in-loop ready"],
     href: "/custom-software",
     img: "/images/services/system-integration.webp",
     accent: "#2a5f5f",
@@ -110,19 +133,19 @@ const addons = [
     title: "AI Training Data Pipelines",
     desc: "Structured, labeled, clean data so your models train on signal — not noise. ETL, validation, and versioning included.",
     tag: "Foundation",
-    href: "/ai-product-studio",
+    href: "/services/advanced-ai-solutions",
   },
   {
     title: "AI Product Design & UX",
     desc: "Interfaces built for AI products — prompt UIs, dashboards, review queues. Tested with real users before a line of prod code.",
     tag: "Design",
-    href: "/custom-software",
+    href: "/services/custom-software-development",
   },
   {
     title: "MLOps & AI Deployment",
     desc: "CI/CD for AI — model versioning, rollback, cost monitoring, and alerting. Your AI stays live, observable, and under control.",
     tag: "Ops",
-    href: "/custom-software",
+    href: "/services/system-integration",
   },
 ];
 
@@ -146,46 +169,24 @@ const steps = [
   { n: "4", period: "Week 6", title: "Launch & Support", body: "We own the deploy and stay engaged 30 days post-launch." },
 ];
 
-// Real, shipped client work. Facts only — no invented metrics.
-const caseStudies = [
-  {
-    label: "LIVE", stack: "Healthcare · UK",
-    title: "Heart & Haven Care — Healthcare Services Platform",
-    desc: "A production healthcare platform covering Domiciliary Care, Temporary Staffing, and Supported Living for a CQC-registered UK provider. Built with Next.js & React.",
-    img: "/images/project/haven/home_card_staffing.jpg",
-    tags: ["Next.js", "React", "Accessibility", "CQC-aligned"],
-    metrics: [{ n: "3", label: "Service areas live" }, { n: "Live", label: "heartandhavenhealthcare.co.uk" }],
-    href: "/projects/heart-haven-healthcare-staffing",
-  },
-  {
-    label: "LIVE", stack: "Non-profit · Labor rights",
-    title: "Solidarity Center — Tannery Workers Website",
-    desc: "A website built for the American Center for International Labor Solidarity (Solidarity Center) supporting tannery workers — focused on clarity, access, and reach.",
-    img: "/images/case-studies/solidarity-website.svg",
-    tags: ["Web Platform", "Accessibility", "Content"],
-    metrics: [{ n: "Live", label: "In production" }, { n: "NGO", label: "Labor solidarity" }],
-    href: "/projects",
-  },
-];
-
 // Honest, verifiable proof points. TODO: add real ROI numbers from clients where available.
 const results = [
   { label: "Heart & Haven Care", from: "Brief", to: "Live platform", body: "Full healthcare services site — Domiciliary Care, Temporary Staffing, and Supported Living — shipped to production for a CQC-registered UK provider.", client: "Heart & Haven Care", service: "Next.js · React · Accessibility", initials: "HH" },
   { label: "Solidarity Center (ACILS)", from: "Concept", to: "Live website", body: "A website for tannery workers delivered for the American Center for International Labor Solidarity — built for clarity, accessibility, and reach.", client: "Solidarity Center", service: "Web Platform · Content", initials: "SC" },
-  { label: "Delivery standard", from: "Months", to: "4–6 weeks", body: "Our standard engagement: scoped, built, tested, and shipped to production in weeks — fixed scope, fixed price, zero critical launch bugs.", client: "Every SofGent project", service: "Production delivery", initials: "SG" },
+  { label: "Delivery model", from: "Scoped plan", to: "Production release", body: "A written scope and price, weekly working demos, acceptance testing, monitored deployment, and 30 days of post-launch support.", client: "SofGent delivery process", service: "Production delivery", initials: "SG" },
 ];
 
 const compareRows = [
-  { feat: "Time to production", us: "4–6 weeks", fast: "4–6 weeks", inhouse: "3–6 months" },
-  { feat: "Production-grade (not a PoC)", us: "✓ Always", fast: "✕ Often a demo", inhouse: "✓ Eventually" },
-  { feat: "Fixed scope & price", us: "✓", fast: "✕ Variable", inhouse: "✕ Salary + ramp" },
-  { feat: "Zero-critical-bug launch", us: "✓ Guaranteed", fast: "✕", inhouse: "Depends" },
-  { feat: "Owns deploy + 30-day support", us: "✓", fast: "✕ Hand-off", inhouse: "✓" },
+  { feat: "Scope & price", us: "Written upfront", fast: "Changes re-estimated", inhouse: "Approved before work" },
+  { feat: "Production readiness", us: "Acceptance criteria", fast: "Tests + monitoring", inhouse: "Deployment + docs" },
+  { feat: "Delivery visibility", us: "Weekly demos", fast: "Working increments", inhouse: "Shared progress" },
+  { feat: "Ownership", us: "Your repos + cloud", fast: "Documented handover", inhouse: "Client-owned deliverables" },
+  { feat: "Post-launch", us: "30 days included", fast: "Defect response", inhouse: "Continuation optional" },
 ];
 
 const personas = [
   { title: "Founders", desc: "Get a real, demo-ready AI product in front of users and investors in weeks — without hiring a team or burning runway.", icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z" /></svg> },
-  { title: "CTOs & Eng leaders", desc: "Production-grade code, clean architecture, and docs you'd approve in review. No tech debt to inherit, no rewrite later.", icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6" /></svg> },
+  { title: "CTOs & Eng leaders", desc: "Reviewable architecture, tests, monitoring, and documentation designed for a clean handover to your engineering team.", icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6" /></svg> },
   { title: "Operations teams", desc: "Automate the manual document and data work eating your week. We map the process, then ship the system that runs it.", icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M3 3v18h18" /><path d="M7 14l4-4 3 3 5-6" /></svg> },
 ];
 
@@ -198,7 +199,7 @@ const security = [
 
 const pricing = [
   { name: "Automation Sprint", amt: "from $4k", desc: "A single AI workflow or document pipeline, live in production.", list: ["1–2 week delivery", "One integration / pipeline", "Deploy + handover"], cta: "Scope it", featured: false },
-  { name: "AI MVP", amt: "from $12k", desc: "A full, production-ready AI product your users and investors can touch.", list: ["4–6 week delivery", "Full stack + AI layer + UI", "Zero-bug launch guarantee", "30-day post-launch support"], cta: "Book a call", featured: true },
+  { name: "AI MVP", amt: "from $12k", desc: "A full, production-ready AI product your users and investors can touch.", list: ["Typical 4–6 week delivery", "Full stack + AI layer + UI", "Acceptance testing + monitored launch", "30-day post-launch support"], cta: "Book a Call", featured: true },
   { name: "Product Partner", amt: "Custom", desc: "Ongoing build & iteration for teams scaling an AI product.", list: ["Monthly rolling sprints", "Dedicated senior team", "Roadmap + priority support"], cta: "Talk to us", featured: false },
 ];
 
@@ -212,8 +213,10 @@ const faqs = [
 
 /* ═══════════════════════════════════════════════════════════ */
 export default async function Home() {
-  const { caseStudies: studies } = await getProjectCollections();
-  const featuredStudies = studies.slice(0, 3);
+  const [featuredStudies, liveProjects] = await Promise.all([
+    getHomepageCaseStudies(),
+    getLiveProjects(),
+  ]);
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -249,12 +252,12 @@ export default async function Home() {
               </h1>
 
               <p className="text-[16px] text-[#6a6a6a] leading-[1.65] mb-4 max-w-[440px]">
-                Document automation, AI SaaS MVPs, and AI integrations — scoped, built, and live in 4–6 weeks. Production-grade, not proof-of-concept.
+                Document automation, AI SaaS MVPs, and AI integrations — typically scoped, built, and launched in 4–6 weeks for focused engagements.
               </p>
 
               <div className="flex items-center gap-2 text-[13px] text-[#1a1a1a] mb-8">
                 <Check />
-                <span><strong style={{ color: "#326d6d" }}>0 critical launch bugs</strong> across every project we&apos;ve shipped to production.</span>
+                <span><strong style={{ color: "#326d6d" }}>Acceptance tested and monitored</strong>, with 30 days of post-launch support included.</span>
               </div>
 
               <div className="flex items-center gap-2.5 mb-10">
@@ -285,9 +288,22 @@ export default async function Home() {
       <section className="border-b border-[#eaeaea]" style={{ padding: "28px 0" }}>
         <div className="max-w-[1140px] mx-auto px-8 text-center">
           <p className="text-[10.5px] font-semibold tracking-[0.1em] uppercase text-[#bbb] mb-4">Teams we&apos;ve built and shipped for</p>
-          <div className="flex items-center justify-center gap-x-9 gap-y-3 flex-wrap">
-            {clients.map((c) => (
-              <span key={c} className="text-[15px] font-bold tracking-[-0.02em] text-[#9a9a9a]">{c}</span>
+          <div className="flex items-center justify-center gap-x-10 gap-y-4 flex-wrap">
+            {clients.map((client) => (
+              <Link
+                key={client.name}
+                href={client.href}
+                aria-label={`View ${client.name} live project`}
+                className="flex min-h-[72px] min-w-[120px] items-center justify-center rounded-[10px] px-3 py-2 opacity-75 transition-all hover:bg-[#f7f7f7] hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#326d6d]"
+              >
+                <Image
+                  src={client.logo}
+                  alt={`${client.name} logo`}
+                  width={client.width}
+                  height={client.height}
+                  className="h-14 w-auto max-w-[210px] object-contain"
+                />
+              </Link>
             ))}
           </div>
           <div className="flex items-center justify-center gap-x-6 gap-y-2 flex-wrap mt-5">
@@ -400,7 +416,7 @@ export default async function Home() {
               className="inline-flex items-center gap-2 text-[13.5px] font-semibold px-5 py-2.5 rounded-[9px] whitespace-nowrap hover:opacity-90 transition-all"
               style={{ background: "#326d6d", color: "#fff" }}
             >
-              Book a free call <ArrowRight />
+              Book a Free Call <ArrowRight />
             </Link>
           </div>
 
@@ -539,26 +555,27 @@ export default async function Home() {
             <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#22c55e" }} />
             <p className="text-[11px] font-bold tracking-[0.08em] uppercase" style={{ color: "#22c55e" }}>Live client work</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 rounded-[12px] overflow-hidden mb-14" style={{ border: "0.5px solid #eaeaea" }}>
-            {caseStudies.map((p, i) => (
-              <Link key={p.title} href={p.href} className="block group" style={i < caseStudies.length - 1 ? { borderRight: "0.5px solid #eaeaea" } : {}}>
+          <div id="live-projects" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+            {liveProjects.map((p) => (
+              <Link key={p._id} href={`/live-projects/${p.slug}`} className="flex flex-col group rounded-[12px] overflow-hidden" style={{ border: "1px solid #e6e6e6" }}>
                 <div className="relative overflow-hidden" style={{ height: "160px", borderBottom: "0.5px solid #eaeaea" }}>
-                  <img src={p.img} alt={p.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+                  <img src={p.imageUrl} alt={p.imageAlt || p.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
                   <div className="absolute inset-0" style={{ background: "rgba(12,12,12,0.20)" }} />
                   <div className="absolute top-3 left-3 flex items-center gap-1.5">
-                    <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full text-white" style={{ background: "rgba(0,0,0,0.45)", letterSpacing: "0.06em" }}>{p.label}</span>
-                    <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full" style={{ background: "rgba(50,109,109,0.7)", color: "#fff", letterSpacing: "0.04em" }}>{p.stack}</span>
+                    <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full text-white" style={{ background: "rgba(0,0,0,0.45)", letterSpacing: "0.06em" }}>LIVE</span>
+                    <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full" style={{ background: "rgba(50,109,109,0.7)", color: "#fff", letterSpacing: "0.04em" }}>{p.eyebrow}</span>
                   </div>
                 </div>
-                <div className="p-5 hover:bg-[#fafafa] transition-colors">
+                <div className="p-5 hover:bg-[#fafafa] transition-colors flex flex-col flex-1">
                   <h3 className="text-[14px] font-semibold text-[#0c0c0c] mb-1.5 group-hover:text-[#326d6d] transition-colors leading-snug">{p.title}</h3>
-                  <p className="text-[13px] text-[#6a6a6a] leading-[1.6] mb-4">{p.desc}</p>
+                  <p className="text-[13px] text-[#6a6a6a] leading-[1.6] mb-4">{p.description}</p>
                   <div className="flex gap-1.5 flex-wrap mb-4">
-                    {p.tags.map((t) => (<span key={t} className="text-[10px] font-medium px-2 py-0.5 rounded-full text-[#6a6a6a]" style={{ background: "#f5f5f5", border: "0.5px solid #eaeaea" }}>{t}</span>))}
+                    {p.technologies?.map((t) => (<span key={t} className="text-[10px] font-medium px-2 py-0.5 rounded-full text-[#6a6a6a]" style={{ background: "#f5f5f5", border: "0.5px solid #eaeaea" }}>{t}</span>))}
                   </div>
-                  <div className="flex gap-2">
-                    {p.metrics.map((m) => (<div key={m.label} className="px-3 py-2 rounded-[8px]" style={{ background: "rgba(50,109,109,0.06)", border: "0.5px solid rgba(50,109,109,0.14)" }}><div className="text-[13px] font-semibold" style={{ color: "#326d6d" }}>{m.n}</div><div className="text-[10px]" style={{ color: "#326d6d" }}>{m.label}</div></div>))}
+                  <div className="flex flex-col gap-1.5 mb-4">
+                    {p.highlights?.map((highlight) => (<div key={`${highlight.value}-${highlight.label}`} className="flex items-baseline gap-2 px-3 py-1.5 rounded-[8px]" style={{ background: "rgba(50,109,109,0.06)", border: "0.5px solid rgba(50,109,109,0.14)" }}><span className="text-[12px] font-semibold shrink-0" style={{ color: "#326d6d" }}>{highlight.value}</span><span className="text-[10.5px] min-w-0 truncate" style={{ color: "#326d6d", opacity: 0.8 }}>{highlight.label}</span></div>))}
                   </div>
+                  <span className="inline-flex items-center gap-1.5 text-[12px] font-bold mt-auto" style={{ color: "#326d6d" }}>View project <ArrowRight /></span>
                 </div>
               </Link>
             ))}
@@ -578,7 +595,7 @@ export default async function Home() {
                 style={{ border: "1px solid #e6e6e6" }}
               >
                 <div className="relative overflow-hidden" style={{ height: "150px" }}>
-                  <img src={s.thumbnail} alt={s.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]" />
+                  <img src={s.thumbnail || "/images/case-studies/knowledge-platform.svg"} alt={s.thumbnailAlt || s.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]" />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, rgba(30,72,72,0.55) 0%, rgba(50,109,109,0.20) 60%, transparent 100%)" }} />
                   <span className="absolute top-3 left-3 text-[10px] font-bold tracking-[0.06em] uppercase px-2.5 py-1 rounded-full text-white" style={{ background: "rgba(0,0,0,0.4)", backdropFilter: "blur(6px)" }}>Case study</span>
                 </div>
@@ -608,20 +625,20 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* ════ WHY SOFGENT (comparison) ════ */}
+      {/* ════ DELIVERY COMMITMENT ════ */}
       <section className="border-b border-[#eaeaea]" style={{ padding: "80px 0" }}>
         <div className="max-w-[1140px] mx-auto px-8">
           <div className="text-center mb-10">
             <div className="flex items-center justify-center gap-2 mb-2"><span className="w-4 h-0.5 rounded-full bg-[#326d6d]" /><p className="text-[11px] font-bold tracking-[0.1em] uppercase text-[#326d6d]">Why SofGent</p></div>
-            <h2 className="font-bold tracking-[-0.035em] text-[#0c0c0c] leading-[1.1]" style={{ fontSize: "clamp(24px,3vw,36px)" }}>The speed of a fast shop.<br />The quality of a premium studio.</h2>
+            <h2 className="font-bold tracking-[-0.035em] text-[#0c0c0c] leading-[1.1]" style={{ fontSize: "clamp(24px,3vw,36px)" }}>What our delivery commitment includes.</h2>
           </div>
           <div className="rounded-[16px] overflow-x-auto" style={{ border: "1px solid #e6e6e6" }}>
             <div style={{ minWidth: "560px" }}>
               <div className="grid" style={{ gridTemplateColumns: "1.4fr 1fr 1fr 1fr" }}>
                 <div className="p-4 text-[12px] font-bold uppercase tracking-[0.04em] text-[#0c0c0c]" style={{ background: "#f7f7f7" }}>&nbsp;</div>
-                <div className="p-4 text-[12px] font-bold uppercase tracking-[0.04em] text-white text-center" style={{ background: "#326d6d" }}>SofGent</div>
-                <div className="p-4 text-[12px] font-bold uppercase tracking-[0.04em] text-[#0c0c0c] text-center" style={{ background: "#f7f7f7" }}>Cheap-&amp;-fast</div>
-                <div className="p-4 text-[12px] font-bold uppercase tracking-[0.04em] text-[#0c0c0c] text-center" style={{ background: "#f7f7f7" }}>In-house hire</div>
+                <div className="p-4 text-[12px] font-bold uppercase tracking-[0.04em] text-white text-center" style={{ background: "#326d6d" }}>Commitment</div>
+                <div className="p-4 text-[12px] font-bold uppercase tracking-[0.04em] text-[#0c0c0c] text-center" style={{ background: "#f7f7f7" }}>How it works</div>
+                <div className="p-4 text-[12px] font-bold uppercase tracking-[0.04em] text-[#0c0c0c] text-center" style={{ background: "#f7f7f7" }}>Handoff</div>
               </div>
               {compareRows.map((r) => (
                 <div key={r.feat} className="grid items-center" style={{ gridTemplateColumns: "1.4fr 1fr 1fr 1fr", borderTop: "1px solid #eaeaea" }}>
@@ -664,9 +681,9 @@ export default async function Home() {
       <section className="border-b border-[#eaeaea] bg-[#f7f7f7]" style={{ padding: "80px 0" }}>
         <div className="max-w-[1140px] mx-auto px-8">
           <div className="text-center mb-10">
-            <p className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#9a9a9a] mb-2">Real outcomes</p>
-            <h2 className="font-bold tracking-[-0.035em] text-[#0c0c0c]" style={{ fontSize: "clamp(24px,3vw,36px)" }}>Numbers from production.</h2>
-            <p className="text-[14px] text-[#9a9a9a] mt-3">Not projections — results from shipped projects with real clients.</p>
+            <p className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#9a9a9a] mb-2">Delivery evidence</p>
+            <h2 className="font-bold tracking-[-0.035em] text-[#0c0c0c]" style={{ fontSize: "clamp(24px,3vw,36px)" }}>Work shipped to production.</h2>
+            <p className="text-[14px] text-[#9a9a9a] mt-3">Live client platforms and the delivery controls included in our engagements.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 rounded-[12px] overflow-hidden bg-white" style={{ border: "0.5px solid #eaeaea" }}>
             {results.map((r, i) => (
@@ -688,7 +705,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* ════ PRICING + GUARANTEE ════ */}
+      {/* ════ PRICING + LAUNCH SUPPORT ════ */}
       <section className="border-b border-[#eaeaea] bg-[#f7f7f7]" style={{ padding: "80px 0" }}>
         <div className="max-w-[1140px] mx-auto px-8">
           <div className="text-center mb-10">
@@ -715,8 +732,8 @@ export default async function Home() {
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round"><path d="M12 2 4 5v6c0 5 3.5 8 8 11 4.5-3 8-6 8-11V5z" /><path d="M9 12l2 2 4-4" /></svg>
             </div>
             <div>
-              <h3 className="text-[18px] font-bold tracking-[-0.02em] text-[#0c0c0c] mb-1">The zero-critical-bug launch guarantee</h3>
-              <p className="text-[14px] text-[#1a1a1a] leading-[1.6]">Every product we&apos;ve shipped went live without a single critical bug — and we back it. If a critical bug ships on launch day, we fix it free, immediately. Plus 30 days of support, included.</p>
+              <h3 className="text-[18px] font-bold tracking-[-0.02em] text-[#0c0c0c] mb-1">Launch quality and support</h3>
+              <p className="text-[14px] text-[#1a1a1a] leading-[1.6]">Before launch, we verify the agreed acceptance criteria, production configuration, monitoring, and rollback path. Thirty days of post-launch support are included for defects within the agreed scope.</p>
             </div>
           </div>
         </div>
@@ -759,7 +776,7 @@ export default async function Home() {
                 Free 30-min consultation
               </div>
               <h2 className="font-bold tracking-[-0.035em] text-white leading-[1.08] mb-3" style={{ fontSize: "clamp(26px,3vw,40px)" }}>Ready to ship your<br />AI product?</h2>
-              <p className="text-[15px] leading-[1.65] max-w-[420px]" style={{ color: "rgba(255,255,255,0.5)" }}>Book a call. We&apos;ll scope your project, give you a timeline, and tell you exactly what it&apos;ll take.</p>
+              <p className="text-[15px] leading-[1.65] max-w-[420px]" style={{ color: "rgba(255,255,255,0.5)" }}>Book a Call. We&apos;ll scope your project, give you a timeline, and tell you exactly what it&apos;ll take.</p>
             </div>
             <div className="relative flex flex-col gap-2 shrink-0">
               <Link href="/contact" className="inline-flex items-center justify-center gap-2 text-[14px] font-bold text-[#0c0c0c] bg-white px-8 py-3.5 rounded-[10px] hover:bg-[#f0f0f0] transition-colors whitespace-nowrap">Book a Call <ArrowRight /></Link>

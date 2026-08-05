@@ -6,8 +6,69 @@ import getPageMeta from "@/app/utils/getPageMeta";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-   return getPageMeta(`/projects/${params.slug}`);
+const DEFAULT_DESCRIPTION =
+   "SofGent is an AI product studio. We scope, build, and ship production-grade AI products — document automation, AI SaaS MVPs, and AI integrations — in weeks, not months.";
+
+function truncateMetadataDescription(value: string, maxLength = 160) {
+   if (value.length <= maxLength) return value;
+   const truncated = value.slice(0, maxLength - 1).replace(/\s+\S*$/, "");
+   return `${truncated}…`;
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+   const { slug } = await params;
+   const path = `/projects/${slug}`;
+   const baseMetadata = getPageMeta(path);
+   const project = await getProjectBySlug(slug);
+
+   if (!project) {
+      return baseMetadata;
+   }
+
+   const configuredTitle =
+      typeof baseMetadata.title === "string" && baseMetadata.title !== "SofGent — AI Product Studio"
+         ? baseMetadata.title
+         : null;
+   const projectLabel = project.title.length > 60
+      ? project.title.split(/\s+that\s+/i)[0]
+      : project.title;
+   const title = configuredTitle || (project.category === "case-study"
+      ? `${projectLabel} Case Study | SofGent`
+      : `${projectLabel} | SofGent`);
+   const configuredDescription =
+      typeof baseMetadata.description === "string" && baseMetadata.description !== DEFAULT_DESCRIPTION
+         ? baseMetadata.description
+         : null;
+   const rawDescription =
+      configuredDescription ||
+      project.description?.trim() ||
+      project.overview?.trim() ||
+      project.challenge?.trim() ||
+      `See how SofGent delivered ${project.title} from product challenge to production.`;
+   const description = truncateMetadataDescription(rawDescription);
+   const image = project.thumbnail || project.cardImage || "/opengraph-image";
+
+   return {
+      ...baseMetadata,
+      title,
+      description,
+      alternates: { canonical: `https://www.sofgent.com${path}` },
+      openGraph: {
+         ...baseMetadata.openGraph,
+         type: "article",
+         url: `https://www.sofgent.com${path}`,
+         title,
+         description,
+         images: [{ url: image, alt: project.thumbnailAlt || project.title }],
+      },
+      twitter: {
+         ...baseMetadata.twitter,
+         card: "summary_large_image",
+         title,
+         description,
+         images: [image],
+      },
+   };
 }
 
 export async function generateStaticParams() {
@@ -15,8 +76,9 @@ export async function generateStaticParams() {
    return slugs.map((slug) => ({ slug }));
 }
 
-async function ProjectDetails({ params }: { params: { slug: string } }) {
-   const project = await getProjectBySlug(params.slug);
+async function ProjectDetails({ params }: { params: Promise<{ slug: string }> }) {
+   const { slug } = await params;
+   const project = await getProjectBySlug(slug);
 
    if (!project) {
       notFound();

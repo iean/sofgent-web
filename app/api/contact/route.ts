@@ -150,8 +150,18 @@ export async function POST(request: NextRequest) {
       message: escapeHtml(message).replace(/\n/g, '<br>'),
     };
 
+    // Provider-agnostic SMTP. Defaults target Microsoft 365 (smtp.office365.com,
+    // 587 STARTTLS); override SMTP_HOST/SMTP_PORT/SMTP_SECURE for any other provider.
+    const smtpHost = process.env.SMTP_HOST || 'smtp.office365.com';
+    const smtpPort = Number(process.env.SMTP_PORT || 587);
+    const smtpSecure = process.env.SMTP_SECURE
+      ? process.env.SMTP_SECURE === 'true'
+      : smtpPort === 465; // 465 = implicit TLS, 587 = STARTTLS
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpSecure,
+      requireTLS: !smtpSecure, // force STARTTLS on 587 (required by Microsoft 365)
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
@@ -161,7 +171,7 @@ export async function POST(request: NextRequest) {
     // Internal notification — escaped values only.
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      to: 'support@sofgent.com',
+      to: 'contact@sofgent.com',
       replyTo: email,
       subject: `Contact Form: ${subject}`,
       html: `

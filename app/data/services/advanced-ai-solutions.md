@@ -8,15 +8,16 @@ order: 5
 
 ![UI/UX Design](/images/services/ui-ux-design.webp)
 
-This solution is for teams that want a simple, operational product for knowledge transfer, quality standards, onboarding, and guided execution. The focus is on knowledge that is easy to capture, easy to access, and usable by real teams without technical friction.
+This solution is for teams that want one operational product for knowledge transfer, onboarding, quality standards, and guided execution. The focus is on knowledge that is easy to capture from real source systems, easy to access, and usable by real teams without technical friction.
 
 ## What this solution covers
 
 - Knowledge transfer workflows for repeatable business processes
+- Source sync for shared drives, uploads, and evolving reference content
 - Quality-management content and operational standards
 - Guided task execution with step-by-step instructions
 - Role-aware access for teams, branches, and departments
-- Search, QR, and process-linked access to instructions
+- Search, source-scoped training support, QR, and process-linked access to instructions
 - Mobile-friendly delivery for people working away from desks
 
 ## Best fit
@@ -37,7 +38,7 @@ We can build a custom version of that idea around your specific workflows, termi
 
 ### Process knowledge
 
-- Capture recurring how-to knowledge in structured, reusable formats.
+- Capture recurring how-to knowledge in structured, reusable formats tied to real source material.
 
 ### Quality standards
 
@@ -45,17 +46,17 @@ We can build a custom version of that idea around your specific workflows, termi
 
 ### Guided execution
 
-- Turn instructions into usable step-by-step workflows for daily work.
+- Turn instructions into usable step-by-step workflows for daily work and onboarding.
 
 ### Continuous improvement
 
-- Track what changes, what is outdated, and where teams still get stuck.
+- Track what changes, what is outdated, which sources need review, and where teams still get stuck.
 
 ## Technology Stack
 
 - Platform: Next.js, React, role-based admin interface
-- Data: PostgreSQL, content structures, search indexing
-- Delivery: responsive web app, mobile-friendly access, media support
+- Data: PostgreSQL, content structures, source sync, and search indexing
+- Delivery: responsive web app, mobile-friendly access, media support, and workflow reporting
 
 ## Why SofGent
 

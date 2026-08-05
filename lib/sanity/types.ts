@@ -68,13 +68,37 @@ export interface SanityProjectItem {
    previewLink?: string;
    description: string;
    overview?: string;
+   cardImage?: string;
    thumbnail?: string;
+   thumbnailAlt?: string;
    challenge?: string;
    solution?: string;
    architectureHighlight?: string;
    technologies?: string[];
    outcomes?: string[];
    screenshots?: SanityProjectScreenshot[];
+}
+
+export interface SanityLiveProjectHighlight {
+   value: string;
+   label: string;
+}
+
+export interface SanityLiveProjectItem {
+   _id: string;
+   title: string;
+   slug: string;
+   eyebrow: string;
+   relationship: string;
+   description: string;
+   overview: string;
+   supportScope?: string;
+   websiteUrl?: string;
+   imageUrl?: string;
+   imageAlt?: string;
+   technologies?: string[];
+   highlights?: SanityLiveProjectHighlight[];
+   order: number;
 }
 
 export interface SanityBlogPostSummary {

@@ -59,7 +59,7 @@ const nav = [
       {
         href: "/contact",
         label: "Contact",
-        sub: "Book a call, send a brief, or just say hello",
+        sub: "Book a Call, send a brief, or just say hello",
         icon: (
           <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
             <path d="M13 9.5c0 .4-.1.8-.3 1.2L11.5 13H3.5L2.3 10.7A3 3 0 0 1 2 9.5V4a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v5.5z" />
@@ -108,15 +108,40 @@ const Chevron = ({ open }: { open: boolean }) => (
 function DropdownMenu({ item }: { item: (typeof nav)[0] }) {
   const [open, setOpen] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const isActive = item.children.some((c) => pathname.startsWith(c.href));
+  const menuId = `nav-menu-${item.label.toLowerCase().replace(/\s+/g, "-")}`;
 
   const show = () => { if (timer.current) clearTimeout(timer.current); setOpen(true); };
   const hide = () => { timer.current = setTimeout(() => setOpen(false), 110); };
+  const close = () => { if (timer.current) clearTimeout(timer.current); setOpen(false); };
 
   return (
-    <div className="relative" onMouseEnter={show} onMouseLeave={hide}>
+    <div
+      className="relative"
+      ref={containerRef}
+      onMouseEnter={show}
+      onMouseLeave={hide}
+      onKeyDown={(e) => {
+        if (e.key === "Escape" && open) {
+          close();
+          (containerRef.current?.querySelector("button") as HTMLButtonElement | null)?.focus();
+        }
+      }}
+      onBlur={(e) => {
+        if (!containerRef.current?.contains(e.relatedTarget as Node | null)) close();
+      }}
+    >
       <button
+        type="button"
+        aria-haspopup="menu"
+        aria-expanded={open}
+        aria-controls={menuId}
+        onClick={() => setOpen((o) => !o)}
+        onKeyDown={(e) => {
+          if (e.key === "ArrowDown") { e.preventDefault(); show(); }
+        }}
         className={`flex items-center gap-1.5 px-3.5 py-2 rounded-md text-[13.5px] font-medium transition-colors whitespace-nowrap ${
           isActive ? "text-[#0c0c0c] bg-[#f5f5f5] font-semibold" : "text-[#555] hover:text-[#0c0c0c] hover:bg-[#f5f5f5]"
         }`}
@@ -126,6 +151,9 @@ function DropdownMenu({ item }: { item: (typeof nav)[0] }) {
 
       {open && (
         <div
+          id={menuId}
+          role="menu"
+          aria-label={item.label}
           className="absolute top-full left-0 mt-1.5 rounded-[12px] overflow-hidden"
           style={{
             background: "#fff",
@@ -141,8 +169,9 @@ function DropdownMenu({ item }: { item: (typeof nav)[0] }) {
               <Link
                 key={child.href}
                 href={child.href}
-                onClick={() => setOpen(false)}
-                className="flex items-start gap-3 px-3 py-2.5 rounded-[8px] hover:bg-[#f5f5f5] transition-colors group"
+                role="menuitem"
+                onClick={close}
+                className="flex items-start gap-3 px-3 py-2.5 rounded-[8px] hover:bg-[#f5f5f5] focus-visible:bg-[#f5f5f5] focus:outline-none transition-colors group"
               >
                 <div className="w-[30px] h-[30px] rounded-[7px] flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(50,109,109,0.09)", color: "#326d6d" }}>
                   {child.icon}
@@ -178,11 +207,14 @@ const Header = () => {
             <Image src={logo} alt="SofGent" width={118} height={34} priority style={{ width: "118px", height: "auto" }} />
           </Link>
           <button
-            aria-label="Toggle menu"
+            type="button"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav"
             onClick={() => setMobileOpen(!mobileOpen)}
             className="p-1.5 text-[#0c0c0c]"
           >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
               {mobileOpen
                 ? <><path d="M4 4l12 12M16 4L4 16" /></>
                 : <><path d="M3 6h14M3 10h14M3 14h14" /></>}
@@ -191,11 +223,14 @@ const Header = () => {
         </div>
 
         {mobileOpen && (
-          <div className="border-t border-[#eaeaea] bg-white px-4 pb-5 pt-3">
+          <div id="mobile-nav" className="border-t border-[#eaeaea] bg-white px-4 pb-5 pt-3">
             <ul className="space-y-0.5 mb-3">
               {nav.map((item) => (
                 <li key={item.label}>
                   <button
+                    type="button"
+                    aria-expanded={mobileExpanded === item.label}
+                    aria-controls={`mobile-sub-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
                     onClick={() => toggle(item.label)}
                     className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-[14px] font-medium text-[#6a6a6a] hover:text-[#0c0c0c] hover:bg-[#f5f5f5] transition-colors"
                   >
@@ -203,7 +238,7 @@ const Header = () => {
                     <Chevron open={mobileExpanded === item.label} />
                   </button>
                   {mobileExpanded === item.label && (
-                    <div className="ml-3 mt-1 space-y-0.5 border-l-2 border-[#f0f0f0] pl-3 pb-1">
+                    <div id={`mobile-sub-${item.label.toLowerCase().replace(/\s+/g, "-")}`} className="ml-3 mt-1 space-y-0.5 border-l-2 border-[#f0f0f0] pl-3 pb-1">
                       {item.children.map((child) => (
                         <Link
                           key={child.href}
@@ -248,7 +283,7 @@ const Header = () => {
             </Link>
 
             {/* Nav — dropdowns */}
-            <nav className="flex items-center gap-0.5 flex-1">
+            <nav aria-label="Primary" className="flex items-center gap-0.5 flex-1">
               <Link
                 href="/"
                 className={`px-3.5 py-2 rounded-md text-[13.5px] font-medium transition-colors whitespace-nowrap ${

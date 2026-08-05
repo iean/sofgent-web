@@ -38,8 +38,8 @@ Related specs:
 - `SPEC-WLR-002`
 
 - [ ] Fix blog listing slug integrity
-- [ ] Resolve `robots.txt` conflict
-- [ ] Re-verify public route status and crawler routes
+- [x] Resolve `robots.txt` conflict
+- [x] Re-verify public route status and crawler routes
 
 ### Task Group 2: Metadata Reliability
 
@@ -48,10 +48,10 @@ Related specs:
 - `SPEC-WLR-002`
 - `SPEC-WLR-005`
 
-- [ ] Add OG/Twitter image coverage to major routes
-- [ ] Normalize service detail metadata
-- [ ] Normalize project detail metadata
-- [ ] Re-run route metadata extraction
+- [x] Add OG/Twitter image coverage to major routes
+- [x] Normalize service detail metadata
+- [x] Normalize project detail metadata
+- [x] Re-run route metadata extraction
 
 ### Task Group 3: Trust-Language Correction
 

@@ -166,6 +166,7 @@ export default function BlogClientPage({ sanityPosts }: BlogClientPageProps) {
               const count = tab.value === "all"
                 ? allPosts.length
                 : allPosts.filter((p) => p.cat === tab.value).length;
+              if (tab.value !== "all" && count === 0) return null;
               return (
               <button
                 key={tab.value}

@@ -32,7 +32,7 @@ const weeks = [
     code: `<span style="color:#79c0ff">const</span> blueprint = <span style="color:#d2a8ff">design</span>({
   ui:           <span style="color:#d2a8ff">figma</span>(<span style="color:#a5d6ff">'wireframes + component library'</span>),
   dataModel:    <span style="color:#d2a8ff">schema</span>({ tables: <span style="color:#79c0ff">12</span>, relations: <span style="color:#79c0ff">18</span> }),
-  aiLayer:      <span style="color:#d2a8ff">llm</span>({ model: <span style="color:#a5d6ff">'claude-opus-4-8'</span>, fallback: <span style="color:#a5d6ff">'human-review'</span> }),
+  aiLayer:      <span style="color:#d2a8ff">llm</span>({ model: <span style="color:#a5d6ff">'claude-opus-5'</span>, fallback: <span style="color:#a5d6ff">'human-review'</span> }),
   apiContracts: <span style="color:#d2a8ff">openapi</span>(<span style="color:#a5d6ff">'v3'</span>),
 })
 

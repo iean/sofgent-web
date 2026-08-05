@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getServiceSlugs, getProjectSlugs } from "@/lib/sanity/content";
+import { getServiceSlugs, getProjectSlugs, getLiveProjectSlugs } from "@/lib/sanity/content";
 import { getFallbackServices } from "@/lib/content/fallback";
 import { getAllBlogPosts } from "@/app/lib/blogs";
 
@@ -23,9 +23,10 @@ const staticRoutes: { path: string; priority: number; changeFrequency: MetadataR
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
-  const [sanityServiceSlugs, projectSlugs, blogPosts] = await Promise.all([
+  const [sanityServiceSlugs, projectSlugs, liveProjectSlugs, blogPosts] = await Promise.all([
     getServiceSlugs().catch(() => [] as string[]),
     getProjectSlugs().catch(() => [] as string[]),
+    getLiveProjectSlugs().catch(() => [] as string[]),
     getAllBlogPosts().catch(() => []),
   ]);
 
@@ -53,6 +54,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
+  const liveProjectEntries: MetadataRoute.Sitemap = liveProjectSlugs.map((slug) => ({
+    url: `${BASE_URL}/live-projects/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
   const blogEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
     lastModified: post.date ? new Date(post.date) : now,
@@ -60,5 +68,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.5,
   }));
 
-  return [...staticEntries, ...serviceEntries, ...projectEntries, ...blogEntries];
+  return [...staticEntries, ...serviceEntries, ...projectEntries, ...liveProjectEntries, ...blogEntries];
 }

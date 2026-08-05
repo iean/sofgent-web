@@ -42,14 +42,46 @@ export const projectContentFields = [
     type: "datetime",
   }),
   defineField({
+    name: "featuredOnHomepage",
+    title: "Feature on homepage",
+    type: "boolean",
+    initialValue: false,
+  }),
+  defineField({
+    name: "homepageOrder",
+    title: "Homepage order",
+    type: "number",
+    description: "Lower numbers appear first.",
+    hidden: ({ document }) => !document?.featuredOnHomepage,
+    validation: (rule) => rule.integer().min(1).max(99),
+  }),
+  defineField({
     name: "previewLink",
     title: "Preview link",
     type: "url",
   }),
   defineField({
     name: "thumbnail",
-    title: "Thumbnail image path or URL",
+    title: "Legacy thumbnail path or URL",
     type: "string",
+    description: "Kept for existing content. New case studies should use Card image.",
+  }),
+  defineField({
+    name: "cardImage",
+    title: "Card image",
+    type: "image",
+    description: "Project-specific image used on homepage and project listing cards.",
+    options: {
+      hotspot: true,
+    },
+    fields: [
+      defineField({
+        name: "alt",
+        title: "Alt text",
+        type: "string",
+        validation: (rule) => rule.required(),
+      }),
+    ],
   }),
   defineField({
     name: "heroImage",

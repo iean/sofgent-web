@@ -12,14 +12,17 @@ export async function generateStaticParams() {
 }
 
 // ── generateMetadata ──────────────────────────────────────────
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = await getBlogPostBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getBlogPostBySlug(slug);
   if (!post) return {};
+  const image = post.imageUrl || "/opengraph-image";
   return {
     title: `${post.title} | SofGent Blog`,
     description: post.excerpt,
-    alternates: { canonical: `https://www.sofgent.com/blog/${params.slug}` },
-    openGraph: { title: post.title, description: post.excerpt, images: post.imageUrl ? [post.imageUrl] : [] },
+    alternates: { canonical: `https://www.sofgent.com/blog/${slug}` },
+    openGraph: { title: post.title, description: post.excerpt, images: [image] },
+    twitter: { card: "summary_large_image", title: post.title, description: post.excerpt, images: [image] },
   };
 }
 
@@ -152,8 +155,9 @@ function renderContent(content: SanityPortableTextBlock[]) {
 }
 
 // ── Page ──────────────────────────────────────────────────────
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = await getBlogPostBySlug(params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await getBlogPostBySlug(slug);
   if (!post) notFound();
 
   const cat = getCatStyle((post as { categories?: string[] }).categories);

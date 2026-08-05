@@ -40,7 +40,7 @@ const cards = [
     n: "03",
     title: "Sprint-based delivery",
     desc: "Daily updates, weekly demos. AI layers tested under real load.",
-    metric: "100% test coverage",
+    metric: "Full test suite",
   },
   {
     step: 4,
@@ -111,7 +111,7 @@ export default function ServicesHero() {
             className="inline-flex items-center gap-2 text-[14px] font-medium px-6 py-3.5 rounded-[9px] transition-colors"
             style={{ color: "rgba(255,255,255,0.65)", border: "1px solid rgba(255,255,255,0.15)" }}
           >
-            Book a free call
+            Book a Free Call
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M7.5 3l3.5 3.5L7.5 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </Link>
         </div>

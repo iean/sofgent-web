@@ -2,7 +2,7 @@
 
 **Spec ID:** `SPEC-WLR-005`  
 **Date:** 2026-07-17  
-**Status:** `Approved`  
+**Status:** `Done`  
 **Owner:** SofGent web team
 
 ## Problem Statement
@@ -30,9 +30,9 @@ Examples observed on 2026-07-17:
 
 ## Acceptance Criteria
 
-- [ ] every service detail page has a route-appropriate title and description
-- [ ] every project detail page has a route-appropriate title and description
-- [ ] generic fallback metadata is reduced or eliminated on public detail pages
+- [x] every service detail page has a route-appropriate title and description
+- [x] every project detail page has a route-appropriate title and description
+- [x] generic fallback metadata is reduced or eliminated on public detail pages
 
 ## Verification
 

@@ -47,7 +47,7 @@ const defaultPlacementsBySlug: Record<string, SanityServiceCatalogPlacement[]> =
       order: 1,
       title: "AI Knowledge Base",
       description:
-        "An intelligent knowledge platform that turns SOPs, playbooks, and team expertise into trusted, searchable answers.",
+        "A governed knowledge workspace that turns SOPs, synced sources, and team know-how into searchable answers and reusable training material.",
     },
   ],
   "document-intelligence-systems": [
@@ -69,7 +69,7 @@ const defaultPlacementsBySlug: Record<string, SanityServiceCatalogPlacement[]> =
       order: 3,
       title: "AI Knowledge & Quality Platform",
       description:
-        "A system for knowledge transfer, quality standards, process capture, and guided execution.",
+        "A system for knowledge transfer, onboarding, quality standards, and guided execution.",
     },
   ],
   "system-integration": [
@@ -80,7 +80,7 @@ const defaultPlacementsBySlug: Record<string, SanityServiceCatalogPlacement[]> =
       order: 4,
       title: "AI Employee Onboarding",
       description:
-        "A structured onboarding system with role-based checklists, training flows, SOP access, and progress tracking.",
+        "A role-based onboarding system with source-linked SOPs, training flows, progress tracking, and manager visibility.",
     },
   ],
   "custom-software-development": [

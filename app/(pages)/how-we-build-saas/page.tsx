@@ -13,7 +13,7 @@ const ArrowRight = () => (
 const timeline = [
   { week: "Week 1 · Discover & Define", title: "One call, one scoped plan.", body: "We align on goals, constraints, and success criteria in a focused discovery session — then hand you a written scope, timeline, and fixed price to sign off on before any code is written.", tags: ["Discovery call", "Written scope", "Fixed price"] },
   { week: "Week 2 · Plan & Prototype", title: "Architecture and a clickable prototype.", body: "We design the data model, system architecture, and AI approach, then build a clickable prototype. You validate direction before a single line of production code ships.", tags: ["Architecture", "Prototype", "Client sign-off"] },
-  { week: "Weeks 3–5 · Build & Iterate", title: "Working software every Friday.", body: "One-week agile sprints with real progress updates. No status theatre — you see and use working software each week, with AI layers tested under real load.", tags: ["Weekly demos", "100% test coverage", "Real load testing"] },
+  { week: "Weeks 3–5 · Build & Iterate", title: "Working software every Friday.", body: "One-week agile sprints with real progress updates. No status theatre — you see and use working software each week, with AI layers tested under real load.", tags: ["Weekly demos", "Full test suite", "Real load testing"] },
   { week: "Week 6 · Launch & Support", title: "We own the deploy.", body: "Production deployment, monitoring, and documentation — then 30 days of post-launch support. You go live with confidence, not crossed fingers.", tags: ["Production deploy", "Monitoring", "30-day support"] },
 ];
 
@@ -44,7 +44,7 @@ export default function HowWeBuildSaaSPage() {
       <section className="border-b border-[#eaeaea]" style={{ padding: "80px 0" }}>
         <div className="max-w-[820px] mx-auto px-8">
           <div className="flex items-center gap-2 mb-3"><span className="w-4 h-0.5 rounded-full bg-[#326d6d]" /><p className="text-[11px] font-bold tracking-[0.1em] uppercase text-[#326d6d]">The process</p></div>
-          <h2 className="font-bold tracking-[-0.035em] text-[#0c0c0c] mb-12" style={{ fontSize: "clamp(24px,3vw,36px)" }}>Four weeks, end to end.</h2>
+          <h2 className="font-bold tracking-[-0.035em] text-[#0c0c0c] mb-12" style={{ fontSize: "clamp(24px,3vw,36px)" }}>Six weeks, end to end.</h2>
           <div className="relative" style={{ paddingLeft: "36px" }}>
             <div className="absolute" style={{ left: "11px", top: "6px", bottom: "6px", width: "2px", background: "#e6e6e6" }} />
             {timeline.map((t, i) => (
@@ -104,7 +104,7 @@ export default function HowWeBuildSaaSPage() {
             <div className="absolute pointer-events-none" style={{ top: "-100px", left: "-80px", width: "320px", height: "320px", background: "radial-gradient(circle, rgba(50,109,109,0.4) 0%, transparent 70%)" }} />
             <div className="relative">
               <h2 className="font-bold tracking-[-0.035em] text-white leading-[1.08] mb-3" style={{ fontSize: "clamp(26px,3vw,38px)" }}>Ready to start<br />week one?</h2>
-              <p className="text-[15px] leading-[1.65] max-w-[420px]" style={{ color: "rgba(255,255,255,0.5)" }}>Book a call and we&apos;ll turn your idea into a scoped, priced plan.</p>
+              <p className="text-[15px] leading-[1.65] max-w-[420px]" style={{ color: "rgba(255,255,255,0.5)" }}>Book a Call and we&apos;ll turn your idea into a scoped, priced plan.</p>
             </div>
             <div className="relative flex flex-col gap-2 shrink-0">
               <Link href="/contact" className="inline-flex items-center justify-center gap-2 text-[14px] font-bold text-[#0c0c0c] bg-white px-8 py-3.5 rounded-[10px] hover:bg-[#f0f0f0] transition-colors whitespace-nowrap">Book a Call <ArrowRight /></Link>

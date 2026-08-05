@@ -20,7 +20,7 @@ const buildTypes: { title: string; desc: string; graphic: ServiceGraphicName; ta
     desc: "Full-stack web apps, dashboards, portals, and internal tools — built on Next.js, React, and Node around the way your team works.",
     graphic: "web",
     tags: ["Next.js", "React", "Node"],
-    href: "/services/web-application-development",
+    href: "/contact",
   },
   {
     title: "SaaS Products",
@@ -41,7 +41,7 @@ const buildTypes: { title: string; desc: string; graphic: ServiceGraphicName; ta
     desc: "Cross-platform mobile (React Native) with native-feel performance — App Store and Play Store submission handled end to end.",
     graphic: "mobile",
     tags: ["React Native", "iOS", "Android"],
-    href: "/services/mobile-app-development",
+    href: "/contact",
   },
 ];
 

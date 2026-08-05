@@ -138,9 +138,9 @@ export function getFallbackCaseStudies(): SanityProjectItem[] {
          description:
             "Built a multi-tenant knowledge platform with ingestion, vector search, access controls, and answer workflows.",
          overview:
-            "Operational knowledge was buried across documents, SOPs, and disconnected team systems. SofGent designed a retrieval platform that made institutional knowledge searchable, governed, and usable in production.",
+            "For a knowledge-intensive services organization, operational knowledge was buried across documents, SOPs, and disconnected team systems. SofGent designed a retrieval platform that made institutional knowledge searchable, governed, and usable in production.",
          challenge:
-            "Operational knowledge was buried across documents, SOPs, and disconnected team systems.",
+            "A knowledge-intensive services organization had operational knowledge buried across documents, SOPs, and disconnected team systems.",
          solution:
             "Built a multi-tenant knowledge platform with ingestion, vector search, access controls, and answer workflows.",
          architectureHighlight:
@@ -164,9 +164,9 @@ export function getFallbackCaseStudies(): SanityProjectItem[] {
          description:
             "Designed an integration and orchestration layer for payments, reconciliation, ledger updates, and exception handling.",
          overview:
-            "Payment operations depended on manual reconciliation, inconsistent partner APIs, and fragile back-office handoffs. The resulting platform normalized events and cleaned up operational risk.",
+            "A fintech operations team depended on manual reconciliation, inconsistent partner APIs, and fragile back-office handoffs. The resulting platform normalized events and cleaned up operational risk.",
          challenge:
-            "Payment operations depended on manual reconciliation, inconsistent partner APIs, and fragile back-office handoffs.",
+            "A fintech operations team depended on manual reconciliation, inconsistent partner APIs, and fragile back-office handoffs.",
          solution:
             "Designed an integration and orchestration layer for payments, reconciliation, ledger updates, and exception handling.",
          architectureHighlight:
@@ -190,9 +190,9 @@ export function getFallbackCaseStudies(): SanityProjectItem[] {
          description:
             "Built OCR, classification, extraction, validation, and human review into one document pipeline.",
          overview:
-            "High-volume forms and PDFs were slowing onboarding and increasing manual review costs. The new platform turned document-heavy operations into a governed pipeline.",
+            "At a document-heavy operations firm, high-volume forms and PDFs were slowing onboarding and increasing manual review costs. The new platform turned document-heavy operations into a governed pipeline.",
          challenge:
-            "High-volume forms and PDFs were slowing onboarding and increasing manual review costs.",
+            "A document-heavy operations firm had high-volume forms and PDFs slowing onboarding and increasing manual review costs.",
          solution:
             "Built OCR, classification, extraction, validation, and human review into one document pipeline.",
          architectureHighlight:
