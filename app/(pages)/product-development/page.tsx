@@ -99,7 +99,7 @@ export default function ProductDevelopmentPage() {
             Product Development
           </p>
           <h1 className="font-black tracking-[-0.05em] leading-[0.96] text-white mb-5" style={{ fontSize: "clamp(38px, 5vw, 68px)" }}>
-            From idea to live product<br />
+            From idea to live product{" "}<br />
             in <span style={{ color: "#67e8f9" }}>4–6 weeks.</span>
           </h1>
           <p className="text-[17px] leading-[1.65] max-w-[500px] mb-9" style={{ color: "rgba(255,255,255,0.45)" }}>
@@ -140,7 +140,7 @@ export default function ProductDevelopmentPage() {
                 What we deliver
               </div>
               <h2 className="font-extrabold tracking-[-0.035em] leading-[1.1] text-[#0c0c0c]" style={{ fontSize: "clamp(24px, 3vw, 38px)" }}>
-                Production-grade AI products.<br />Not prototypes.
+                Production-grade AI products.{" "}<br />Not prototypes.
               </h2>
             </div>
           </div>

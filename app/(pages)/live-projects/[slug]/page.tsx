@@ -78,7 +78,7 @@ export default async function LiveProjectDetails({ params }: { params: Promise<{
               </div>
             </div>
             <div className="rounded-[18px] overflow-hidden border border-[#dedede] bg-[#e9efef] shadow-[0_24px_70px_rgba(22,55,55,0.12)]">
-              <img src={project.imageUrl} alt={project.imageAlt || project.title} className="w-full aspect-[16/10] object-cover" />
+              <img width={1600} height={1000} decoding="async" src={project.imageUrl} alt={project.imageAlt || project.title} className="w-full aspect-[16/10] object-cover" />
             </div>
           </div>
         </div>

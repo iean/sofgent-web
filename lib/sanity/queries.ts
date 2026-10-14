@@ -258,3 +258,14 @@ export const FAQS_QUERY = `
     order
   }
 `;
+
+export const SITEMAP_DATES_QUERY = `
+  *[
+    _type in ["service", "projectEntry", "caseStudy", "liveProject"] &&
+    defined(slug.current)
+  ] {
+    _type,
+    _updatedAt,
+    "slug": slug.current
+  }
+`;

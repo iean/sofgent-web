@@ -3,6 +3,8 @@ import { inter } from "./fonts/fonts";
 import Script from "next/script";
 import type { Metadata } from "next";
 import CookieConsent from "./components/common/CookieConsent";
+import JsonLd from "./components/seo/JsonLd";
+import { SAME_AS } from "./components/seo/schema";
 
 const SITE_URL = "https://www.sofgent.com";
 
@@ -54,7 +56,7 @@ const structuredData = {
       description:
         "AI product studio building production-grade AI products — document automation, AI SaaS MVPs, and AI integrations.",
       email: "contact@sofgent.com",
-      sameAs: [] as string[],
+      sameAs: SAME_AS,
     },
     {
       "@type": "WebSite",
@@ -137,11 +139,7 @@ export default function RootLayout({
         />
       </head>
       <body style={{ fontFamily: "var(--font-inter), system-ui, -apple-system, sans-serif" }}>
-        <Script
-          id="structured-data-jsonld"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
+        <JsonLd id="structured-data-jsonld" data={structuredData} />
         {/* Google Tag Manager noscript */}
         <noscript>
           <iframe

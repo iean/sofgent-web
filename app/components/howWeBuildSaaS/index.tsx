@@ -143,9 +143,9 @@ export default function HowWeBuildSaaS() {
         <div className="mx-auto theme-container">
           <div className="max-w-4xl mx-auto text-center">
             <SectionTag tag="How We Build AI SaaS That Ships" />
-            <h1 className="md:text-48 mt-6 text-34 font-semibold text-main-black mb-6">
+            <h2 className="md:text-48 mt-6 text-34 font-semibold text-main-black mb-6">
               How SofGent Builds AI Products for Operations Teams
-            </h1>
+            </h2>
             <p className="text-20 text-paragraph">
               We design and deliver AI apps, internal tools, and SaaS systems with an
               architecture-first process that keeps teams moving toward launch readiness.

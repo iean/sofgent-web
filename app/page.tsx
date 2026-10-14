@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import Script from "next/script";
+import JsonLd from "@/app/components/seo/JsonLd";
 import Header from "./components/Layout/Header/Header";
 import Footer from "./components/Layout/Footer/Footer";
 import HeroSlider from "./components/home/HeroSlider";
@@ -230,11 +230,7 @@ export default async function Home() {
 
   return (
     <main>
-      <Script
-        id="faq-jsonld"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
+      <JsonLd id="faq-jsonld" data={faqJsonLd} />
       <Header />
 
       {/* ════ HERO (problem-led) ════ */}
@@ -327,7 +323,7 @@ export default async function Home() {
                 What we do
               </p>
               <h2 className="font-bold tracking-[-0.04em] text-[#0c0c0c] leading-[1.05]" style={{ fontSize: "clamp(30px,3.6vw,46px)" }}>
-                Three things we do<br />better than anyone.
+                Three things we do{" "}<br />better than anyone.
               </h2>
             </div>
             <Link
@@ -350,7 +346,7 @@ export default async function Home() {
               >
                 {/* Image */}
                 <div className="relative overflow-hidden" style={{ height: "196px" }}>
-                  <img src={p.img} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.08]" />
+                  <img width={760} height={392} loading="lazy" decoding="async" src={p.img} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.08]" />
                   <div className="absolute inset-0" style={{ background: `linear-gradient(155deg, ${p.accent}f2 0%, ${p.accent}b8 50%, ${p.accent}50 100%)` }} />
                   <span className="absolute top-4 right-4 text-[11px] font-bold tracking-[0.12em] px-3 py-1 rounded-full text-white" style={{ background: "rgba(255,255,255,0.18)", backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.28)" }}>{p.num}</span>
                   <div className="absolute left-5 flex items-center justify-center rounded-[14px] text-white" style={{ bottom: "-28px", width: "56px", height: "56px", background: p.accent, boxShadow: "0 10px 32px rgba(0,0,0,0.28)", border: "3px solid #fff" }}>{p.icon}</div>
@@ -429,7 +425,7 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
               <div className="flex items-center gap-2 mb-3"><span className="w-4 h-0.5 rounded-full bg-[#326d6d]" /><p className="text-[11px] font-bold tracking-[0.1em] uppercase text-[#326d6d]">Integration &amp; Automation</p></div>
-              <h2 className="font-bold tracking-[-0.035em] text-[#0c0c0c] leading-[1.1] mb-4" style={{ fontSize: "clamp(26px,3vw,38px)" }}>Your tools and AI,<br />finally working together.</h2>
+              <h2 className="font-bold tracking-[-0.035em] text-[#0c0c0c] leading-[1.1] mb-4" style={{ fontSize: "clamp(26px,3vw,38px)" }}>Your tools and AI,{" "}<br />finally working together.</h2>
               <p className="text-[15px] text-[#6a6a6a] leading-[1.7] mb-6 max-w-[440px]">We sit an AI layer between your existing systems and the actions you want automated — so data flows in, intelligence happens, and the right thing happens next. No brittle scripts. No manual copy-paste.</p>
               <ul className="flex flex-col gap-2.5 mb-7 max-w-[420px]">
                 {["Trigger from uploads, emails, webhooks, or forms", "AI classifies, extracts, decides, and drafts", "Routes results to the tools your team already uses", "Monitored and logged, with human-in-the-loop where it matters"].map((t) => (
@@ -559,7 +555,7 @@ export default async function Home() {
             {liveProjects.map((p) => (
               <Link key={p._id} href={`/live-projects/${p.slug}`} className="flex flex-col group rounded-[12px] overflow-hidden" style={{ border: "1px solid #e6e6e6" }}>
                 <div className="relative overflow-hidden" style={{ height: "160px", borderBottom: "0.5px solid #eaeaea" }}>
-                  <img src={p.imageUrl} alt={p.imageAlt || p.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+                  <img width={760} height={320} loading="lazy" decoding="async" src={p.imageUrl} alt={p.imageAlt || p.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
                   <div className="absolute inset-0" style={{ background: "rgba(12,12,12,0.20)" }} />
                   <div className="absolute top-3 left-3 flex items-center gap-1.5">
                     <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full text-white" style={{ background: "rgba(0,0,0,0.45)", letterSpacing: "0.06em" }}>LIVE</span>
@@ -595,7 +591,7 @@ export default async function Home() {
                 style={{ border: "1px solid #e6e6e6" }}
               >
                 <div className="relative overflow-hidden" style={{ height: "150px" }}>
-                  <img src={s.thumbnail || "/images/case-studies/knowledge-platform.svg"} alt={s.thumbnailAlt || s.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]" />
+                  <img width={760} height={300} loading="lazy" decoding="async" src={s.thumbnail || "/images/case-studies/knowledge-platform.svg"} alt={s.thumbnailAlt || s.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.06]" />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, rgba(30,72,72,0.55) 0%, rgba(50,109,109,0.20) 60%, transparent 100%)" }} />
                   <span className="absolute top-3 left-3 text-[10px] font-bold tracking-[0.06em] uppercase px-2.5 py-1 rounded-full text-white" style={{ background: "rgba(0,0,0,0.4)", backdropFilter: "blur(6px)" }}>Case study</span>
                 </div>
@@ -710,7 +706,7 @@ export default async function Home() {
         <div className="max-w-[1140px] mx-auto px-8">
           <div className="text-center mb-10">
             <p className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#9a9a9a] mb-2">Engagements</p>
-            <h2 className="font-bold tracking-[-0.035em] text-[#0c0c0c] leading-[1.1]" style={{ fontSize: "clamp(24px,3vw,36px)" }}>Fixed scope. Fixed price.<br />No surprise invoices.</h2>
+            <h2 className="font-bold tracking-[-0.035em] text-[#0c0c0c] leading-[1.1]" style={{ fontSize: "clamp(24px,3vw,36px)" }}>Fixed scope. Fixed price.{" "}<br />No surprise invoices.</h2>
             <p className="text-[14px] text-[#9a9a9a] mt-3 max-w-[480px] mx-auto">Every engagement is scoped on the first call. You&apos;ll know exactly what you get, when, and for how much before we start.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -775,7 +771,7 @@ export default async function Home() {
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>
                 Free 30-min consultation
               </div>
-              <h2 className="font-bold tracking-[-0.035em] text-white leading-[1.08] mb-3" style={{ fontSize: "clamp(26px,3vw,40px)" }}>Ready to ship your<br />AI product?</h2>
+              <h2 className="font-bold tracking-[-0.035em] text-white leading-[1.08] mb-3" style={{ fontSize: "clamp(26px,3vw,40px)" }}>Ready to ship your{" "}<br />AI product?</h2>
               <p className="text-[15px] leading-[1.65] max-w-[420px]" style={{ color: "rgba(255,255,255,0.5)" }}>Book a Call. We&apos;ll scope your project, give you a timeline, and tell you exactly what it&apos;ll take.</p>
             </div>
             <div className="relative flex flex-col gap-2 shrink-0">

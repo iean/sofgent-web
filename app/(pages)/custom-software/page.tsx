@@ -66,7 +66,7 @@ export default function CustomSoftwarePage() {
                 Custom Software Development
               </div>
               <h1 className="font-black tracking-[-0.04em] leading-[1.05] text-[#0c0c0c] mb-5" style={{ fontSize: "clamp(30px, 4vw, 52px)" }}>
-                Software built to fit<br />how your business works.
+                Software built to fit{" "}<br />how your business works.
               </h1>
               <p className="text-[15px] text-[#6a6a6a] leading-[1.72] mb-8 max-w-[440px]">
                 We don&apos;t sell off-the-shelf. Every engagement starts with a discovery brief, scoped to what you actually need — then we build it, test it, and hand over the keys.
@@ -81,7 +81,7 @@ export default function CustomSoftwarePage() {
               </div>
             </div>
             <div>
-              <img
+              <img width={1200} height={720} decoding="async"
                 src="/images/services/software-development.webp"
                 alt="Custom Software Development"
                 className="w-full rounded-2xl border border-[#e4e4e4] object-cover"
@@ -101,7 +101,7 @@ export default function CustomSoftwarePage() {
               Why bespoke
             </div>
             <h2 className="font-extrabold tracking-[-0.035em] leading-[1.1] text-[#0c0c0c] mb-3" style={{ fontSize: "clamp(24px, 3vw, 38px)" }}>
-              Off-the-shelf bends your business.<br />Custom software fits it.
+              Off-the-shelf bends your business.{" "}<br />Custom software fits it.
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">

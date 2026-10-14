@@ -89,7 +89,7 @@ export default function HowWeWork() {
         <div className="mb-12">
           <p className="text-[11px] font-bold tracking-[0.1em] uppercase text-[#9a9a9a] mb-3">How We Work</p>
           <h2 className="text-[28px] xl:text-[38px] font-black tracking-[-0.04em] text-[#0c0c0c] leading-[1.05] mb-4">
-            Sprint-based. Client-first.<br />Ships in 4–6 weeks.
+            Sprint-based. Client-first.{" "}<br />Ships in 4–6 weeks.
           </h2>
           <p className="text-[15px] text-[#6a6a6a] leading-[1.7] max-w-[460px]">
             Every project runs the same lean process. Scope locked, architecture approved, then sprint to launch.

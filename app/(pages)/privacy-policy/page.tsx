@@ -13,6 +13,7 @@ export default function PrivacyPolicy() {
   return (
     <>
       <BreadCrumb
+        titleAs="p"
         pageTitle="Privacy Policy"
         currentPage="Privacy Policy"
         to="/privacy-policy"

@@ -62,7 +62,14 @@ export default function AIStudioPage() {
   return (
     <main>
       {/* ═══ HERO (v2 interactive) ═══ */}
-      <ServicesHero />
+      <ServicesHero
+        headline={
+          <>
+            An AI product studio{" "}<br />
+            that ships to <span style={{ color: "#67e8f9" }}>production.</span>
+          </>
+        }
+      />
 
       {/* ═══ TRUST STRIP ═══ */}
       <div className="border-b border-[#e4e4e4] py-7 bg-white">
@@ -211,8 +218,8 @@ export default function AIStudioPage() {
                   <div className="inline-flex items-center gap-1 mt-2 px-2 py-0.5 rounded-full text-[10px] font-bold" style={{ background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.2)", color: "#22c55e" }}>Faster turnaround</div>
                 </div>
                 <div className="rounded-[14px] p-5 border border-[#e4e4e4] bg-[#f6f6f6]">
-                  <div className="text-[24px] font-black text-[#0c0c0c] tracking-[-0.04em] leading-tight">Clean,<br />queryable</div>
-                  <div className="text-[12px] text-[#6a6a6a] mt-1.5 leading-[1.5]">Data structured for AI<br />after pipeline rebuild</div>
+                  <div className="text-[24px] font-black text-[#0c0c0c] tracking-[-0.04em] leading-tight">Clean,{" "}<br />queryable</div>
+                  <div className="text-[12px] text-[#6a6a6a] mt-1.5 leading-[1.5]">Data structured for AI{" "}<br />after pipeline rebuild</div>
                   <div className="inline-flex items-center gap-1 mt-2 px-2 py-0.5 rounded-full text-[10px] font-bold" style={{ background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.2)", color: "#22c55e" }}>Deduplicated &amp; versioned</div>
                 </div>
                 <div className="col-span-2 rounded-[14px] p-5 border border-[#e4e4e4] bg-[#f6f6f6]">
@@ -243,7 +250,7 @@ export default function AIStudioPage() {
         <div className="relative z-10">
           <p className="text-[10px] font-bold tracking-[0.1em] uppercase mb-3" style={{ color: "rgba(103,232,249,0.7)" }}>Free 30-min consultation</p>
           <h2 className="font-black tracking-[-0.05em] leading-[1.0] text-white mb-3.5" style={{ fontSize: "clamp(28px, 4vw, 54px)" }}>
-            Got an AI product idea?<br />
+            Got an AI product idea?{" "}<br />
             Let&apos;s scope it <span style={{ color: "#67e8f9" }}>together.</span>
           </h2>
           <p className="text-[15px] max-w-[420px] mx-auto mb-10 leading-[1.65]" style={{ color: "rgba(255,255,255,0.6)" }}>

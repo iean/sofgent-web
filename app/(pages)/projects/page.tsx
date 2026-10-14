@@ -50,7 +50,7 @@ export default async function ProjectArchive() {
                 style={i < projects.length - 1 ? { borderRight: "0.5px solid #eaeaea" } : {}}
               >
                   <div className="relative overflow-hidden" style={{ height: "190px", borderBottom: "0.5px solid #eaeaea" }}>
-                    <img src={p.imageUrl} alt={p.imageAlt || p.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+                    <img width={760} height={380} loading="lazy" decoding="async" src={p.imageUrl} alt={p.imageAlt || p.title} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
                     <div className="absolute inset-0" style={{ background: "rgba(12,12,12,0.20)" }} />
                     <div className="absolute top-3 left-3"><span className="text-[10px] font-semibold px-2 py-0.5 rounded-full text-white" style={{ background: "rgba(0,0,0,0.5)", letterSpacing: "0.05em" }}>LIVE · {p.eyebrow}</span></div>
                   </div>
@@ -86,7 +86,7 @@ export default async function ProjectArchive() {
             {caseStudies.map((study) => (
               <Link key={study._id} href={`/projects/${study.slug}`} className="group flex flex-col overflow-hidden rounded-[14px] bg-white transition-all hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)]" style={{ border: "1px solid #e4e4e4" }}>
                 <div className="h-[190px] overflow-hidden border-b border-[#eaeaea] bg-[#eaf1f1]">
-                  <img src={study.thumbnail} alt={study.title} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+                  <img width={760} height={380} loading="lazy" decoding="async" src={study.thumbnail} alt={study.title} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <span className="mb-3 w-fit rounded-full bg-[rgba(50,109,109,0.08)] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.06em] text-[#326d6d]">Case study</span>
@@ -126,7 +126,7 @@ export default async function ProjectArchive() {
           <div className="relative overflow-hidden rounded-[24px] grid grid-cols-1 md:grid-cols-[1fr_auto] items-center gap-10" style={{ background: "#0c0c0c", padding: "64px 56px" }}>
             <div className="absolute pointer-events-none" style={{ top: "-100px", left: "-80px", width: "320px", height: "320px", background: "radial-gradient(circle, rgba(50,109,109,0.4) 0%, transparent 70%)" }} />
             <div className="relative">
-              <h2 className="font-bold tracking-[-0.035em] text-white leading-[1.08] mb-3" style={{ fontSize: "clamp(26px,3vw,38px)" }}>Want results like<br />these?</h2>
+              <h2 className="font-bold tracking-[-0.035em] text-white leading-[1.08] mb-3" style={{ fontSize: "clamp(26px,3vw,38px)" }}>Want results like{" "}<br />these?</h2>
               <p className="text-[15px] leading-[1.65] max-w-[420px]" style={{ color: "rgba(255,255,255,0.5)" }}>Book a Call and we&apos;ll scope your project — with a timeline and a fixed price.</p>
             </div>
             <div className="relative flex flex-col gap-2 shrink-0">

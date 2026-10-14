@@ -1,0 +1,17 @@
+.git
+.github
+.codex
+.next
+.next-stale-*
+**/node_modules
+**/.next
+**/.sanity
+.env
+.env.*
+!.env.example
+coverage
+docs
+content-audit-report.md
+*.log
+*.tsbuildinfo
+.DS_Store

@@ -13,6 +13,7 @@ export default function TermsOfService() {
   return (
     <>
       <BreadCrumb
+        titleAs="p"
         pageTitle="Terms of Service"
         currentPage="Terms of Service"
         to="/terms-conditions"

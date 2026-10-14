@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, type ReactNode } from "react";
 import Link from "next/link";
 
 const steps = [
@@ -51,7 +51,7 @@ const cards = [
   },
 ];
 
-export default function ServicesHero() {
+export default function ServicesHero({ headline }: { headline?: ReactNode } = {}) {
   const [active, setActive] = useState(2);
 
   useEffect(() => {
@@ -86,10 +86,14 @@ export default function ServicesHero() {
           Services
         </p>
 
-        {/* Headline */}
+        {/* Headline — pages sharing this hero must pass distinct headlines (unique H1 per URL) */}
         <h1 className="font-black tracking-[-0.055em] leading-[0.96] text-white mb-5" style={{ fontSize: "clamp(42px, 5.5vw, 76px)" }}>
-          AI products that go live<br />
-          in <span style={{ color: "#67e8f9" }}>4–6 weeks.</span>
+          {headline ?? (
+            <>
+              AI products that go live{" "}<br />
+              in <span style={{ color: "#67e8f9" }}>4–6 weeks.</span>
+            </>
+          )}
         </h1>
 
         {/* Sub */}

@@ -56,7 +56,7 @@ export default function Cta({ className }: { className?: string }) {
               className="font-extrabold tracking-[-0.035em] leading-[1.08] text-white mb-3"
               style={{ fontSize: "clamp(26px, 3vw, 44px)" }}
             >
-              Ready to ship your<br />AI product?
+              Ready to ship your{" "}<br />AI product?
             </h2>
             <p className="text-[15px] leading-[1.65] max-w-[420px]" style={{ color: "rgba(255,255,255,0.42)" }}>
               Book a Call. We&apos;ll scope your project, give you a timeline, and tell you exactly what it&apos;ll take.

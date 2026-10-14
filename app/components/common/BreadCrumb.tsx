@@ -6,16 +6,19 @@ const BreadCrumb: React.FC<{
    pageTitle: string;
    currentPage: string;
    to: string;
-}> = ({ pageTitle, currentPage, to }) => {
+   /** Render the title as a non-heading when the page already has its own H1. */
+   titleAs?: "h1" | "p";
+}> = ({ pageTitle, currentPage, to, titleAs = "h1" }) => {
+   const Title = titleAs;
    return (
       <section id="h1-breadcrumb">
          <div className="relative w-full pb-16 overflow-hidden h1-breadcrumb h-fit bg-main-gray md:pb-24">
             <WinGrid />
             <div className="relative z-20 mx-auto theme-container h-fit w-fit">
                <div className="mt-[120px] md:mt-[272px] w-fit mx-auto relative z-10">
-                  <h1 className="w-full text-[#2F393E] font-semibold text-center text-34 sm:text-48">
+                  <Title className="w-full text-[#2F393E] font-semibold text-center text-34 sm:text-48">
                      {pageTitle}
-                  </h1>
+                  </Title>
                   <div className="flex items-center justify-center gap-5 mt-4">
                      <Link
                         href="/"

@@ -1,0 +1,27 @@
+# SofGent
+
+> SofGent is an AI product studio. We scope, build and ship production-ready AI products — AI document automation, AI SaaS MVPs, and AI integrations — typically in 4–6 weeks for focused engagements.
+
+Contact: contact@sofgent.com · https://www.sofgent.com/contact
+
+## Services
+
+- [AI Product Studio](https://www.sofgent.com/ai-product-studio): AI apps, internal tools and SaaS MVPs for founders, CTOs and operations teams.
+- [Services overview](https://www.sofgent.com/services): AI product and MVP development, AI document automation, AI integration and automation.
+- [OCR document automation](https://www.sofgent.com/services/document-intelligence-systems): Turn PDFs, forms, scans and attachments into structured, validated data.
+- [AI SaaS MVP development](https://www.sofgent.com/product-development): From scoped idea to a live, monitored product.
+- [Custom software](https://www.sofgent.com/custom-software): Workflow tools, internal platforms and integrations built around how a business already works.
+
+## How we work
+
+- [How we build](https://www.sofgent.com/how-we-build-saas): Scope, build, test and launch in four steps.
+
+## Work
+
+- [Projects and case studies](https://www.sofgent.com/projects)
+- [Heart & Haven Care](https://www.sofgent.com/projects/heart-haven-healthcare-staffing): UK healthcare provider website, live in production.
+
+## Company
+
+- [About SofGent](https://www.sofgent.com/about)
+- [Blog](https://www.sofgent.com/blog)

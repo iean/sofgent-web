@@ -2,7 +2,7 @@ import { getFallbackProjectBySlug, getFallbackProjectCollections, getFallbackSer
 import { curatedServiceSlugs } from "@/lib/content/serviceCatalog";
 import { sanityFetch } from "@/lib/sanity/client";
 import { isSanityConfigured } from "@/lib/sanity/env";
-import { FAQS_QUERY, HOMEPAGE_CASE_STUDIES_QUERY, LIVE_PROJECT_QUERY, LIVE_PROJECT_SLUGS_QUERY, LIVE_PROJECTS_QUERY, PROJECT_QUERY, PROJECT_SLUGS_QUERY, PROJECTS_QUERY, SERVICE_QUERY, SERVICE_SLUGS_QUERY, SERVICES_QUERY } from "@/lib/sanity/queries";
+import { FAQS_QUERY, HOMEPAGE_CASE_STUDIES_QUERY, LIVE_PROJECT_QUERY, LIVE_PROJECT_SLUGS_QUERY, LIVE_PROJECTS_QUERY, PROJECT_QUERY, PROJECT_SLUGS_QUERY, PROJECTS_QUERY, SERVICE_QUERY, SERVICE_SLUGS_QUERY, SERVICES_QUERY, SITEMAP_DATES_QUERY } from "@/lib/sanity/queries";
 import type { SanityFaqItem, SanityLiveProjectItem, SanityProjectItem, SanityServiceItem } from "@/lib/sanity/types";
 
 function logSanityError(scope: string, error: unknown) {
@@ -332,4 +332,42 @@ export async function getFaqs(section?: string): Promise<SanityFaqItem[]> {
       logSanityError(`Failed to fetch FAQs for section "${section ?? "all"}"`, error);
       return [];
    }
+}
+
+/**
+ * Real last-edit dates for sitemap <lastmod>, keyed by "<route-prefix>/<slug>"
+ * (e.g. "services/system-integration"). Empty map when Sanity is unavailable.
+ */
+export async function getSitemapDates(): Promise<Map<string, Date>> {
+   const dates = new Map<string, Date>();
+   if (!isSanityConfigured) {
+      return dates;
+   }
+
+   const prefixByType: Record<string, string> = {
+      service: "services",
+      projectEntry: "projects",
+      caseStudy: "projects",
+      liveProject: "live-projects",
+   };
+
+   try {
+      const items = await sanityFetch<Array<{ _type?: string; _updatedAt?: string; slug?: string }>>({
+         query: SITEMAP_DATES_QUERY,
+         revalidate: 3600,
+      });
+
+      for (const item of items) {
+         const prefix = item._type ? prefixByType[item._type] : undefined;
+         if (!prefix || !item.slug || !item._updatedAt) continue;
+         const date = new Date(item._updatedAt);
+         if (!Number.isNaN(date.getTime())) {
+            dates.set(`${prefix}/${item.slug}`, date);
+         }
+      }
+   } catch (error) {
+      logSanityError("Failed to fetch sitemap dates", error);
+   }
+
+   return dates;
 }

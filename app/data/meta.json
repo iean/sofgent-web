@@ -29,7 +29,7 @@
   },
   "/ai-product-studio": {
     "title": "AI Product Studio | AI Apps and SaaS for Operations Teams",
-    "description": "SofGent builds AI apps, AI-powered internal tools, and SaaS products for operations teams."
+    "description": "SofGent is an AI product studio for operations teams. We design, build and launch AI apps, internal tools and SaaS MVPs, production-ready in 4–6 weeks."
   },
   "/services/custom-software-development": {
     "title": "AI-Enabled Custom CRM | SofGent",
@@ -76,7 +76,7 @@
     "description": "Keep your software running smoothly with a proactive maintenance management system by SofGent. Ensure stability, security, and performance at all times."
   },
   "/projects/heart-haven-healthcare-staffing": {
-    "title": "Heart & Haven Healthcare Staffing Page | React & Next.js Development | SofGent",
+    "title": "Heart & Haven Care Healthcare Website | SofGent",
     "description": "Healthcare staffing web platform built with React and Next.js. Focused on performance, accessibility, SEO optimization, and lead generation for healthcare staffing services."
   },
   "/projects/personal-portfolio": {
@@ -91,24 +91,12 @@
     "title": "Developer Portfolio Showcase | SofGent",
     "description": "A developer-focused portfolio project built with clean code structure, interactive UI, and optimized performance to reflect best coding practices."
   },
-  "/services/privacy-policy": {
-    "title": "Privacy Policy for Services | SofGent",
-    "description": "Understand how SofGent handles your data securely when you use our software development services. We prioritize your privacy and compliance."
+  "/custom-software": {
+    "title": "Custom Software Development for Operations Teams | SofGent",
+    "description": "Custom software built around how your business already works: workflow tools, internal platforms and integrations, scoped, built and supported by SofGent."
   },
-  "/services/terms-conditions": {
-    "title": "Terms & Conditions for Services | SofGent",
-    "description": "Read the terms governing the use of SofGent’s services including software development, DevOps, and AI solutions. Transparency you can trust."
-  },
-  "/projects/www.google.com": {
-    "title": "",
-    "description": ""
-  },
-  "/projects/privacy-policy": {
-    "title": "Privacy-Centric Software Project | SofGent",
-    "description": "This project emphasizes privacy-first architecture with compliance-driven design, secure storage, and responsible data handling practices."
-  },
-  "/projects/terms-conditions": {
-    "title": "Legal-Focused Software Project | SofGent",
-    "description": "A software solution centered on managing terms, policies, and user agreements—designed for flexibility, version control, and legal compliance."
+  "/product-development": {
+    "title": "AI SaaS MVP Development: Idea to Launch | SofGent",
+    "description": "SofGent takes your AI SaaS MVP from scoped idea to a live, monitored product: architecture, AI layer, UI and launch, in a fixed-scope 4–6 week build."
   }
 }

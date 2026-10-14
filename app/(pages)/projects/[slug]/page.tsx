@@ -5,6 +5,9 @@ import Image from "next/image";
 import getPageMeta from "@/app/utils/getPageMeta";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { isPlaceholderProjectSlug } from "@/app/components/seo/indexing";
+import JsonLd from "@/app/components/seo/JsonLd";
+import { breadcrumbList } from "@/app/components/seo/schema";
 
 const DEFAULT_DESCRIPTION =
    "SofGent is an AI product studio. We scope, build, and ship production-grade AI products — document automation, AI SaaS MVPs, and AI integrations — in weeks, not months.";
@@ -52,6 +55,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       ...baseMetadata,
       title,
       description,
+      ...(isPlaceholderProjectSlug(slug) ? { robots: { index: false, follow: true } } : {}),
       alternates: { canonical: `https://www.sofgent.com${path}` },
       openGraph: {
          ...baseMetadata.openGraph,
@@ -86,6 +90,14 @@ async function ProjectDetails({ params }: { params: Promise<{ slug: string }> })
 
    return (
       <section>
+         <JsonLd
+            id="project-breadcrumb-jsonld"
+            data={breadcrumbList([
+               { name: "Home", path: "/" },
+               { name: "Projects", path: "/projects" },
+               { name: project.title, path: `/projects/${slug}` },
+            ])}
+         />
          <BreadCrumb
             pageTitle={project.title}
             currentPage="Projects"

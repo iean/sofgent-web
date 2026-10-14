@@ -7,6 +7,8 @@ import getPageMeta from "@/app/utils/getPageMeta";
 import { getFallbackServices } from "@/lib/content/fallback";
 import { getPrimaryServiceCatalogEntry } from "@/lib/content/serviceCatalog";
 import { getServiceBySlug, getServiceSlugs, getServices } from "@/lib/sanity/content";
+import JsonLd from "@/app/components/seo/JsonLd";
+import { breadcrumbList, faqPage, ORG_ID, SITE_URL } from "@/app/components/seo/schema";
 
 type ContentSection = {
   title: string;
@@ -76,6 +78,12 @@ function parseContent(markdown?: string): ParsedServiceContent {
       } else if (!currentSection && intro[intro.length - 1] !== "") {
         intro.push("");
       }
+      continue;
+    }
+
+    // A top-level "# Title" in CMS markdown duplicates the page H1 and used to
+    // render as a literal "# ..." paragraph. Drop it.
+    if (/^#\s/.test(line)) {
       continue;
     }
 
@@ -342,8 +350,29 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
   const highlights = buildHighlights(service);
   const sectionLinks = parsed.sections.filter((section) => !/faq|get started today|let’s build|lets build/i.test(section.title));
 
+  const pagePath = `/services/${service.slug}`;
+  const schema: Record<string, unknown>[] = [
+    breadcrumbList([
+      { name: "Home", path: "/" },
+      { name: "Services", path: "/services" },
+      { name: service.title, path: pagePath },
+    ]),
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: service.title,
+      description: service.description,
+      url: `${SITE_URL}${pagePath}`,
+      provider: { "@id": ORG_ID },
+    },
+  ];
+  if (faqs.length > 0) {
+    schema.push(faqPage(faqs.map((faq) => ({ q: faq.question, a: faq.answer.join(" ").replace(/\*\*|`/g, "") }))));
+  }
+
   return (
     <main className="min-h-screen bg-[#f7f8f8]">
+      <JsonLd id="service-jsonld" data={schema} />
       <div className="border-b border-[#e5e7e7] bg-white">
         <div className="mx-auto flex max-w-[1200px] items-center gap-2 px-6 py-4 text-[13px] text-[#5f6666] md:px-8">
           <Link href="/" className="transition-colors hover:text-[#326d6d]">
@@ -413,7 +442,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_64%,rgba(7,19,20,0.45)_100%)]" />
               </div>
             ) : parsed.heroImage ? (
-              <img
+              <img width={1200} height={640} decoding="async"
                 src={parsed.heroImage.src}
                 alt={parsed.heroImage.alt}
                 className="h-[260px] w-full object-cover md:h-[320px]"

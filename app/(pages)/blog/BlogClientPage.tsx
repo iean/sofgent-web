@@ -226,7 +226,7 @@ export default function BlogClientPage({ sanityPosts }: BlogClientPageProps) {
                 >
                   {/* Image */}
                   <div className="overflow-hidden" style={{ height: "280px" }}>
-                    <img
+                    <img width={1200} height={560} decoding="async"
                       src={featured.img}
                       alt={featured.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
@@ -325,7 +325,7 @@ export default function BlogClientPage({ sanityPosts }: BlogClientPageProps) {
                     className="overflow-hidden shrink-0"
                     style={{ width: "120px", height: "80px", borderRadius: "10px" }}
                   >
-                    <img
+                    <img width={240} height={160} loading="lazy" decoding="async"
                       src={post.img}
                       alt={post.title}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.05]"

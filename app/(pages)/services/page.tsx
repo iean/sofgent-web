@@ -235,7 +235,7 @@ export default async function ServicesPage() {
         <div className="relative z-10">
           <p className="text-[10px] font-bold tracking-[0.1em] uppercase mb-3" style={{ color: "rgba(103,232,249,0.7)" }}>Free 30-min consultation</p>
           <h2 className="font-black tracking-[-0.05em] leading-[1.0] text-white mb-3.5" style={{ fontSize: "clamp(28px, 4vw, 54px)" }}>
-            Got an AI product idea?<br />
+            Got an AI product idea?{" "}<br />
             Let&apos;s scope it <span style={{ color: "#67e8f9" }}>together.</span>
           </h2>
           <p className="text-[15px] max-w-[420px] mx-auto mb-10 leading-[1.65]" style={{ color: "rgba(255,255,255,0.6)" }}>

@@ -61,7 +61,7 @@ export default function Services() {
               className="font-extrabold tracking-[-0.035em] leading-[1.1] text-[#0c0c0c]"
               style={{ fontSize: "clamp(27px, 3.2vw, 42px)" }}
             >
-              Three things we do<br />better than anyone.
+              Three things we do{" "}<br />better than anyone.
             </h2>
           </div>
           <Link
@@ -84,7 +84,7 @@ export default function Services() {
             >
               {/* Image */}
               <div className="overflow-hidden">
-                <img
+                <img width={760} height={392} loading="lazy" decoding="async"
                   src={svc.img}
                   alt={svc.title}
                   className="w-full object-cover h-[196px] transition-all duration-300 [filter:grayscale(15%)] group-hover:[filter:grayscale(0%)] group-hover:scale-[1.04]"

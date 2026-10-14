@@ -4,6 +4,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import React from "react";
 import type { Metadata } from "next";
+import JsonLd from "@/app/components/seo/JsonLd";
+import { breadcrumbList, ORG_ID, SITE_URL } from "@/app/components/seo/schema";
 
 // ── generateStaticParams ──────────────────────────────────────
 export async function generateStaticParams() {
@@ -87,7 +89,7 @@ function renderBlock(block: SanityPortableTextBlock, index: number) {
   if (block._type === "image" && block.imageUrl) {
     return (
       <figure key={k} style={{ margin: "2rem 0" }}>
-        <img src={block.imageUrl} alt={block.alt ?? "Article image"} style={{ width: "100%", borderRadius: "12px", display: "block" }} />
+        <img loading="lazy" decoding="async" src={block.imageUrl} alt={block.alt ?? "Article image"} style={{ width: "100%", borderRadius: "12px", display: "block" }} />
         {block.caption && <figcaption style={{ marginTop: "10px", fontSize: "13px", color: "#999", textAlign: "center" }}>{block.caption}</figcaption>}
       </figure>
     );
@@ -170,8 +172,36 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     id: `h2-${i}`,
   }));
 
+  const postUrl = `${SITE_URL}/blog/${slug}`;
+  const postImage = post.imageUrl
+    ? post.imageUrl.startsWith("http") ? post.imageUrl : `${SITE_URL}${post.imageUrl}`
+    : `${SITE_URL}/opengraph-image`;
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: post.title,
+      description: post.excerpt,
+      url: postUrl,
+      mainEntityOfPage: postUrl,
+      image: postImage,
+      ...(post.date ? { datePublished: post.date } : {}),
+      author: post.author
+        ? { "@type": "Person", name: post.author, worksFor: { "@id": ORG_ID } }
+        : { "@id": ORG_ID },
+      publisher: { "@id": ORG_ID },
+      inLanguage: "en",
+    },
+    breadcrumbList([
+      { name: "Home", path: "/" },
+      { name: "Blog", path: "/blog" },
+      { name: post.title, path: `/blog/${slug}` },
+    ]),
+  ];
+
   return (
     <div style={{ background: "#fff", minHeight: "100vh" }}>
+      <JsonLd id="blogposting-jsonld" data={schema} />
       {/* ── ARTICLE HEADER ──────────────────────────────── */}
       <div style={{ borderBottom: "1px solid #eaeaea", padding: "48px 0 0" }}>
         <div style={{ maxWidth: "1140px", margin: "0 auto", padding: "0 32px" }}>
@@ -256,7 +286,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {post.imageUrl && (
         <div style={{ maxWidth: "1140px", margin: "0 auto", padding: "32px 32px 0" }}>
           <div style={{ borderRadius: "16px", overflow: "hidden", maxHeight: "460px" }}>
-            <img
+            <img width={1600} height={900} decoding="async"
               src={post.imageUrl}
               alt={post.title}
               style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
@@ -480,7 +510,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               Free 30-min consultation
             </div>
             <h2 style={{ fontSize: "clamp(22px, 2.5vw, 36px)", fontWeight: 800, letterSpacing: "-0.035em", lineHeight: 1.1, color: "#fff", marginBottom: "8px" }}>
-              Got an AI product idea?<br />Let&apos;s scope it together.
+              Got an AI product idea?{" "}<br />Let&apos;s scope it together.
             </h2>
             <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.42)", maxWidth: "380px", lineHeight: 1.6 }}>
               We&apos;ll give you a written scope, timeline, and estimate within 48 hours. No obligation.
