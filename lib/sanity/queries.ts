@@ -221,13 +221,18 @@ export const BLOG_POSTS_QUERY = `
 export const BLOG_POST_QUERY = `
   *[
     _type == "blogPost" &&
-    slug.current == $slug
+    lower(slug.current) == lower($slug)
   ][0]{
     _id,
     title,
     "slug": slug.current,
     excerpt,
+    seoTitle,
+    seoDescription,
+    tldr,
+    sources[]{ title, url, publisher },
     "author": coalesce(author, "SofGent"),
+    authorRole,
     "date": string(publishedAt),
     "imageUrl": coverImage.asset->url,
     "readTime": coalesce(readTime, "5 min read"),

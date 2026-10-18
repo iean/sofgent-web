@@ -113,8 +113,19 @@ export interface SanityBlogPostSummary {
    categories?: string[];
 }
 
+export interface SanityBlogSource {
+   title?: string | null;
+   url: string;
+   publisher?: string | null;
+}
+
 export interface SanityBlogPostDetail extends SanityBlogPostSummary {
    content: SanityPortableTextBlock[];
+   seoTitle?: string | null;
+   seoDescription?: string | null;
+   tldr?: string[] | null;
+   sources?: SanityBlogSource[] | null;
+   authorRole?: string | null;
 }
 
 export interface SanityFaqItem {

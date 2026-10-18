@@ -5,13 +5,12 @@ import logo from "@assets/images/sofgent-logo.svg";
 const services = [
   { title: "AI Product & MVP Development", href: "/product-development" },
   { title: "AI Document Automation", href: "/services/document-intelligence-systems" },
-  { title: "AI Integration & Automation", href: "/custom-software" },
+  { title: "Custom Software & Integration", href: "/custom-software" },
   { title: "All Services", href: "/services" },
 ];
 
 const solutions = [
   { title: "AI Knowledge Base", href: "/services/saas-micro-saas-solutions" },
-  { title: "OCR Document Automation", href: "/services/document-intelligence-systems" },
   { title: "AI Knowledge & Quality", href: "/services/advanced-ai-solutions" },
   { title: "AI Employee Onboarding", href: "/services/system-integration" },
   { title: "AI-Enabled Custom CRM", href: "/services/custom-software-development" },

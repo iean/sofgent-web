@@ -11,7 +11,7 @@ interface BlogCardProps {
 const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
    return (
       <article className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
-         <Link href={`/blog/${post.slug}`}>
+         <Link href={`/blog/${post.slug.toLowerCase()}`}>
             <Image
                width={400}
                height={300}

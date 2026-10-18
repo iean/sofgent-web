@@ -26,10 +26,12 @@ const Check = ({ color = "#326d6d" }: { color?: string }) => (
 );
 
 /* ── Data ───────────────────────────────────────────────── */
-// Real clients we've shipped for. TODO: add the second UK company's name + logo.
+// Live in production: client work plus our own product (EasyKT is ours, not a client).
+// TODO: add the second UK company's name + logo.
 const clients = [
   {
     name: "EasyKT",
+    ownProduct: true,
     logo: "/images/client-logos/easykt.png",
     href: "/live-projects/easykt-ai-knowledge-base",
     width: 320,
@@ -283,7 +285,7 @@ export default async function Home() {
       {/* ════ TRUST STRIP (real clients) ════ */}
       <section className="border-b border-[#eaeaea]" style={{ padding: "28px 0" }}>
         <div className="max-w-[1140px] mx-auto px-8 text-center">
-          <p className="text-[10.5px] font-semibold tracking-[0.1em] uppercase text-[#bbb] mb-4">Teams we&apos;ve built and shipped for</p>
+          <p className="text-[10.5px] font-semibold tracking-[0.1em] uppercase text-[#bbb] mb-4">Live in production: client work and our own product</p>
           <div className="flex items-center justify-center gap-x-10 gap-y-4 flex-wrap">
             {clients.map((client) => (
               <Link
@@ -299,6 +301,9 @@ export default async function Home() {
                   height={client.height}
                   className="h-14 w-auto max-w-[210px] object-contain"
                 />
+                {"ownProduct" in client && client.ownProduct && (
+                  <span className="ml-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-[#9a9a9a]">Our product</span>
+                )}
               </Link>
             ))}
           </div>

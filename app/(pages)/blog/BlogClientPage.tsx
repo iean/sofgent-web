@@ -88,7 +88,7 @@ function toPost(s: SanityBlogPostSummary): Post {
     date: s.date ? new Date(s.date).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) : "",
     read: s.readTime,
     img: s.imageUrl ?? "/images/services/software-development.webp",
-    slug: s.slug,
+    slug: s.slug.toLowerCase(),
   };
 }
 

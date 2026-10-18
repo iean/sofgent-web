@@ -1,7 +1,7 @@
 import { getBlogPostBySlug, getAllBlogPosts } from "@/app/lib/blogs";
 import type { SanityPortableTextBlock, SanityPortableTextSpan } from "@/lib/sanity/types";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import React from "react";
 import type { Metadata } from "next";
 import JsonLd from "@/app/components/seo/JsonLd";
@@ -10,7 +10,7 @@ import { breadcrumbList, ORG_ID, SITE_URL } from "@/app/components/seo/schema";
 // ── generateStaticParams ──────────────────────────────────────
 export async function generateStaticParams() {
   const posts = await getAllBlogPosts();
-  return posts.map((p) => ({ slug: p.slug }));
+  return posts.map((p) => ({ slug: p.slug.toLowerCase() }));
 }
 
 // ── generateMetadata ──────────────────────────────────────────
@@ -19,12 +19,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = await getBlogPostBySlug(slug);
   if (!post) return {};
   const image = post.imageUrl || "/opengraph-image";
+  const title = post.seoTitle || post.title;
+  const description = post.seoDescription || post.excerpt;
   return {
-    title: `${post.title} | SofGent Blog`,
-    description: post.excerpt,
-    alternates: { canonical: `https://www.sofgent.com/blog/${slug}` },
-    openGraph: { title: post.title, description: post.excerpt, images: [image] },
-    twitter: { card: "summary_large_image", title: post.title, description: post.excerpt, images: [image] },
+    title: `${title} | SofGent Blog`,
+    description,
+    alternates: { canonical: `https://www.sofgent.com/blog/${slug.toLowerCase()}` },
+    openGraph: { title, description, images: [image] },
+    twitter: { card: "summary_large_image", title, description, images: [image] },
   };
 }
 
@@ -56,6 +58,46 @@ function formatDate(date: string | null) {
   return new Date(date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 }
 
+// ── Heading normalisation ─────────────────────────────────────
+// Older posts start their outline at H3, H4 or even H4/H5. Shift heading levels
+// so the top level is always H2 (H1 = post title), cap at H4, and give each H2
+// a stable anchor id for the table of contents.
+type AnchoredBlock = SanityPortableTextBlock & { _anchor?: string };
+
+function slugify(text: string) {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .slice(0, 64);
+}
+
+const HEADING_LEVEL: Record<string, number> = { h2: 2, h3: 3, h4: 4, h5: 5, h6: 6 };
+
+function normalizeHeadings(content: SanityPortableTextBlock[]): AnchoredBlock[] {
+  const levels = content.map((b) => HEADING_LEVEL[b.style ?? ""]).filter(Boolean);
+  const offset = levels.length ? Math.min(...levels) - 2 : 0;
+  const used = new Set<string>();
+  return content.map((b) => {
+    const level = HEADING_LEVEL[b.style ?? ""];
+    if (!level) return b;
+    const style = `h${Math.min(level - offset, 4)}`;
+    if (style !== "h2") return style === b.style ? b : { ...b, style };
+    const text = (b.children ?? []).map((c) => c.text).join("");
+    const base = slugify(text) || "section";
+    let id = base;
+    let n = 2;
+    while (used.has(id)) id = `${base}-${n++}`;
+    used.add(id);
+    return { ...b, style, _anchor: id };
+  });
+}
+
+function isOrganisationAuthor(author?: string | null) {
+  return !author || /^sofgent( team)?$/i.test(author.trim());
+}
+
 // ── Portable Text renderer ────────────────────────────────────
 function renderSpans(block: SanityPortableTextBlock) {
   const markDefs = block.markDefs ?? [];
@@ -83,7 +125,7 @@ function renderSpans(block: SanityPortableTextBlock) {
   });
 }
 
-function renderBlock(block: SanityPortableTextBlock, index: number) {
+function renderBlock(block: AnchoredBlock, index: number) {
   const k = block._key ?? `${block._type}-${index}`;
 
   if (block._type === "image" && block.imageUrl) {
@@ -112,7 +154,7 @@ function renderBlock(block: SanityPortableTextBlock, index: number) {
 
   switch (block.style) {
     case "h2":
-      return <h2 key={k} style={{ fontSize: "22px", fontWeight: 800, letterSpacing: "-0.03em", color: "#0c0c0c", marginTop: "2.5rem", marginBottom: "0.75rem", lineHeight: 1.2 }}>{renderSpans(block)}</h2>;
+      return <h2 key={k} id={block._anchor} style={{ scrollMarginTop: "96px", fontSize: "22px", fontWeight: 800, letterSpacing: "-0.03em", color: "#0c0c0c", marginTop: "2.5rem", marginBottom: "0.75rem", lineHeight: 1.2 }}>{renderSpans(block)}</h2>;
     case "h3":
       return <h3 key={k} style={{ fontSize: "17px", fontWeight: 700, letterSpacing: "-0.02em", color: "#0c0c0c", marginTop: "1.75rem", marginBottom: "0.5rem", lineHeight: 1.3 }}>{renderSpans(block)}</h3>;
     case "h4":
@@ -129,7 +171,7 @@ function renderBlock(block: SanityPortableTextBlock, index: number) {
 }
 
 // Groups consecutive list items into <ul>/<ol>
-function renderContent(content: SanityPortableTextBlock[]) {
+function renderContent(content: AnchoredBlock[]) {
   const nodes: React.ReactNode[] = [];
   let i = 0;
   while (i < content.length) {
@@ -159,17 +201,22 @@ function renderContent(content: SanityPortableTextBlock[]) {
 // ── Page ──────────────────────────────────────────────────────
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  // URLs are canonical in lower case; redirect legacy mixed-case slugs.
+  if (slug !== slug.toLowerCase()) permanentRedirect(`/blog/${slug.toLowerCase()}`);
   const post = await getBlogPostBySlug(slug);
   if (!post) notFound();
 
   const cat = getCatStyle((post as { categories?: string[] }).categories);
   const authorInitials = post.author?.slice(0, 2).toUpperCase() ?? "SG";
+  const content = normalizeHeadings(post.content ?? []);
+  const tldr = (post.tldr ?? []).filter(Boolean);
+  const sources = (post.sources ?? []).filter((s) => s?.url);
 
-  // Extract h2 headings for table of contents
-  const headings = (post.content ?? []).filter((b) => b.style === "h2").map((b, i) => ({
-    key: `h2-${i}`,
+  // H2 outline for the table of contents (anchors set in normalizeHeadings)
+  const headings = content.filter((b) => b.style === "h2" && b._anchor).map((b) => ({
+    key: b._anchor as string,
     text: b.children?.map((c) => c.text).join("") ?? "",
-    id: `h2-${i}`,
+    id: b._anchor as string,
   }));
 
   const postUrl = `${SITE_URL}/blog/${slug}`;
@@ -186,9 +233,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       mainEntityOfPage: postUrl,
       image: postImage,
       ...(post.date ? { datePublished: post.date } : {}),
-      author: post.author
-        ? { "@type": "Person", name: post.author, worksFor: { "@id": ORG_ID } }
-        : { "@id": ORG_ID },
+      author: isOrganisationAuthor(post.author)
+        ? { "@id": ORG_ID }
+        : {
+            "@type": "Person",
+            name: post.author,
+            ...(post.authorRole ? { jobTitle: post.authorRole } : {}),
+            worksFor: { "@id": ORG_ID },
+          },
+      ...(sources.length ? { citation: sources.map((s) => s.url) } : {}),
       publisher: { "@id": ORG_ID },
       inLanguage: "en",
     },
@@ -275,7 +328,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               {authorInitials}
             </div>
             <div>
-              <div style={{ fontSize: "13px", fontWeight: 600, color: "#0c0c0c" }}>{post.author}</div>
+              <div style={{ fontSize: "13px", fontWeight: 600, color: "#0c0c0c" }}>
+                {post.author}
+                {post.authorRole && <span style={{ fontWeight: 400, color: "#6a6a6a" }}> · {post.authorRole}</span>}
+              </div>
               <div style={{ fontSize: "12px", color: "#999" }}>{formatDate(post.date)}</div>
             </div>
           </div>
@@ -310,7 +366,37 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       >
         {/* ── ARTICLE BODY ── */}
         <article style={{ minWidth: 0 }}>
-          {renderContent(post.content ?? [])}
+          {tldr.length > 0 && (
+            <aside
+              aria-label="TL;DR"
+              style={{ margin: "0 0 2.25rem", padding: "1.25rem 1.5rem", borderRadius: "12px", border: "1px solid rgba(50,109,109,0.2)", background: "rgba(50,109,109,0.05)" }}
+            >
+              <h2 style={{ fontSize: "12px", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", color: "#326d6d", margin: "0 0 0.6rem" }}>TL;DR</h2>
+              <ul style={{ listStyle: "disc", paddingLeft: "1.25rem", margin: 0 }}>
+                {tldr.map((line, i) => (
+                  <li key={i} style={{ fontSize: "16px", color: "#2a2a2a", lineHeight: 1.6, marginBottom: "4px" }}>{line}</li>
+                ))}
+              </ul>
+            </aside>
+          )}
+
+          {renderContent(content)}
+
+          {sources.length > 0 && (
+            <section aria-labelledby="sources-heading" style={{ marginTop: "2.5rem" }}>
+              <h2 id="sources-heading" style={{ fontSize: "18px", fontWeight: 800, letterSpacing: "-0.02em", color: "#0c0c0c", marginBottom: "0.75rem" }}>Sources</h2>
+              <ol style={{ listStyle: "decimal", paddingLeft: "1.5rem", margin: 0 }}>
+                {sources.map((src, i) => (
+                  <li key={i} style={{ fontSize: "14px", color: "#444", lineHeight: 1.6, marginBottom: "6px" }}>
+                    <a href={src.url} target="_blank" rel="noreferrer" style={{ color: "#326d6d", textDecoration: "underline", textUnderlineOffset: "3px" }}>
+                      {src.title || src.url}
+                    </a>
+                    {src.publisher && <span style={{ color: "#999" }}> — {src.publisher}</span>}
+                  </li>
+                ))}
+              </ol>
+            </section>
+          )}
 
           {/* Share / tag row */}
           <div
@@ -407,9 +493,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <span style={{ fontSize: "11px", fontWeight: 700, color: "#326d6d", minWidth: "18px", lineHeight: "1.5" }}>
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span style={{ fontSize: "13px", color: "#444", lineHeight: 1.45, fontWeight: 500 }}>
+                    <a href={`#${h.id}`} style={{ fontSize: "13px", color: "#444", lineHeight: 1.45, fontWeight: 500, textDecoration: "none" }}>
                       {h.text}
-                    </span>
+                    </a>
                   </div>
                 ))}
               </nav>
